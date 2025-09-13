@@ -315,6 +315,8 @@ public class Character : MonoBehaviour
         // 判断当前游戏是否处于"对话阶段"（Progress中的talk状态为true）
         if (progress.GetComponent<Progress>().talk)
         {
+            TalkSystem talksys = TalkBar.GetComponent<TalkSystem>();
+            talksys.on = true;
             ClikDelay = true;
             Invoke("SetClik", 2.5f);
             // 如果未触发过对话（have_talk为false）
@@ -329,33 +331,33 @@ public class Character : MonoBehaviour
                 // 根据当前天数，从角色对话列表中获取对应对话数据，赋值给对话系统
                 Debug.Log("第"+end.GetComponent<Progress>().day_num.ToString());
                 Debug.Log("有几个元素" + textline.Count);
-                TalkBar.GetComponent<TalkSystem>().Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num];
+                talksys.Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num];
                 // 标记为已触发对话（避免重复触发）
                 have_talk = true;
-                
-                TalkBar.GetComponent<TalkSystem>()._inshop = false;
+                talksys.on = true;
+                talksys._inshop = false;
                 // 显示对话面板（调用TalkSystem的ShowBar方法，可能包含动画）
-                TalkBar.GetComponent<TalkSystem>().ShowBar();
+                talksys.ShowBar();
                 // 重置对话行数到第一行
-                TalkBar.GetComponent<TalkSystem>().line = 0;
+                talksys.line = 0;
                 // 启动对话文本显示（异步执行，避免UI卡顿）
-                TalkBar.GetComponent<TalkSystem>()._isShowingText = false;
-                _ = TalkBar.GetComponent<TalkSystem>().ShowText();
+                talksys._isShowingText = false;
+                _ = talksys.ShowText();
                 // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
                 Invoke("DownAnim", Delay);
             }
             else
             {
                 TalkBar.SetActive(true);
-                TalkBar.GetComponent<TalkSystem>().Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num].Option3;
+                talksys.Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num].Option3;
                 // 显示对话面板（调用TalkSystem的ShowBar方法，可能包含动画）
-                TalkBar.GetComponent<TalkSystem>().on = true;
-                TalkBar.GetComponent<TalkSystem>()._inshop = false;
-                TalkBar.GetComponent<TalkSystem>().ShowBar();
+                talksys.on = true;
+                talksys._inshop = false;
+                talksys.ShowBar();
                 // 重置对话行数到第一行
-                TalkBar.GetComponent<TalkSystem>().line = 0;
+                talksys.line = 0;
                 // 启动对话文本显示（异步执行，避免UI卡顿）
-                _ = TalkBar.GetComponent<TalkSystem>().ShowText();
+                _ = talksys.ShowText();
                 // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
                 Invoke("DownAnim",Delay);
             }
@@ -376,6 +378,7 @@ public class Character : MonoBehaviour
 
     public void SetSpecialTalk1()
     {
+        TalkBar.GetComponent<TalkSystem>().on = true;
 
         TalkBar.SetActive(true);
         Attention.SetActive(false);
@@ -395,7 +398,7 @@ public class Character : MonoBehaviour
 
     public void SetSpecialTalk2()
     {
-
+        TalkBar.GetComponent<TalkSystem>().on = true;
         TalkBar.SetActive(true);
         Attention.SetActive(false);
         TalkBar.GetComponent<TalkSystem>().Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num].SpecialTalk2;

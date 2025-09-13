@@ -53,9 +53,9 @@ public class TalkSystem : MonoBehaviour
 
     [Header("按钮位置")]
     [Tooltip("选择分支时的左按钮")]
-    public Button Lbutton;
+    public Button UpButton;
     [Tooltip("选择分支时的右按钮")]
-    public Button Rbutton;
+    public Button DownButton;
     [Tooltip("是否允许对话交互（防止重复点击）")]
     public bool on = true;
     [Tooltip("文本逐字显示的速度（毫秒/字）")]
@@ -99,8 +99,8 @@ public class TalkSystem : MonoBehaviour
         // 清空UI文本框
         CleanUI();
         // 隐藏选择按钮（初始状态不需要）
-        Lbutton.gameObject.SetActive(false);
-        Rbutton.gameObject.SetActive(false);
+        UpButton.gameObject.SetActive(false);
+        DownButton.gameObject.SetActive(false);
         // 从第0行开始显示对话
         line = 0;
         // 从进度管理器获取当前天数
@@ -108,8 +108,8 @@ public class TalkSystem : MonoBehaviour
         if (on && DaytimeOBJ.GetComponent<Progress>().talk)
         {
             // 隐藏选择按钮（点击文本时关闭选择界面）
-            Lbutton.gameObject.SetActive(false);
-            Rbutton.gameObject.SetActive(false);
+            UpButton.gameObject.SetActive(false);
+            DownButton.gameObject.SetActive(false);
 
            
         }
@@ -127,8 +127,8 @@ public class TalkSystem : MonoBehaviour
             {
 
                 ClikDelay = true;
-                Lbutton.gameObject.SetActive(false);
-                Rbutton.gameObject.SetActive(false);
+                UpButton.gameObject.SetActive(false);
+                DownButton.gameObject.SetActive(false);
 
                 
 
@@ -253,8 +253,37 @@ public class TalkSystem : MonoBehaviour
                         _ = ShowText(true);
                         return;
                     }
+                case "/CheckBoBody":
+                    foreach(string s in DeadName.TxtLine)
+                    {
+                        if(s == "博金森")
+                        {
+                            HandleChoice();
 
+                            return;
+                        }
+                        else if(s == "博金森Uesd")
+                        {
+                            HandleChoice(ban:1);
+                            return;
+                        }
+                        
+                    }
+                    return;
+                case "/UseBo":
+                    int index = -1;
+                    foreach(string s in DeadName.TxtLine)
+                    {
+                        index++;
+                        if(s == "博金森")
+                        {
+                            DeadName.TxtLine[index] = DeadName.TxtLine[index] + "Uesd";
+                        }
 
+                    }
+                    line++;
+                    _ = ShowText(true);
+                    return;
                 case "/specialchoice":
 
                     HandleChoice(true);
@@ -312,8 +341,12 @@ public class TalkSystem : MonoBehaviour
                     return;
                 case "/closeshop":
                     ShopManager.SetActive(false);
-                    line = 0;
-                    _inshop = false;
+                    line = 0;                           // 重置对话行索引
+                    _inshop = false;                    // 标记退出商店场景
+                    on = true;                          // 强制开启交互（关键！修复无法点击）
+                    _isShowingText = false;             // 重置文本显示状态，避免阻塞新文本
+                    _isTextFullyDisplayed = false;      // 重置文本完成标记
+                    _currentFullDialogue = "";
                     return;
 
                 case "/shop":
@@ -438,7 +471,7 @@ public class TalkSystem : MonoBehaviour
                     charaBar.GetComponent<Animator>().SetTrigger("Up");
                     line++;
                     this.CharacterImageManager.CloseImage();
-                    await Task.Delay(500);
+                    await Task.Delay(800);
 
                     _ = ShowText(true);
                     DaytimeOBJ.GetComponent<Progress>().CanSwitch = true;
@@ -654,22 +687,36 @@ public class TalkSystem : MonoBehaviour
     /// <summary>
     /// 处理选择分支逻辑
     /// </summary>
-    private void HandleChoice(bool _isSpecial = false)
+    private void HandleChoice(bool _isSpecial = false,int ban = 0)
     {
 
         if (!_inshop)//正常状态
         // 设置按钮文本（显示选项内容）
         {
+            UpButton.GetComponent<Image>().color = Color.white;
+            UpButton.GetComponent<Button>().enabled = true;
+            DownButton.GetComponent<Image>().color = Color.white;
+            DownButton.GetComponent<Button>().enabled = true;
             // 显示选择按钮
             PlayerTalkBackGround.transform.parent.gameObject.SetActive(false);
-            Lbutton.gameObject.SetActive(true);
-            Rbutton.gameObject.SetActive(true);
-            Lbutton.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = Talklines[Daytime].Option1.TxtLine[0];
-            Rbutton.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = Talklines[Daytime].Option2.TxtLine[0];
+            UpButton.gameObject.SetActive(true);
+            DownButton.gameObject.SetActive(true);
+            UpButton.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = Talklines[Daytime].Option1.TxtLine[0];
+            DownButton.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = Talklines[Daytime].Option2.TxtLine[0];
             // 绑定选项数据到按钮（选择后切换对话分支）
-            Lbutton.GetComponent<ButtonSelect>().textbox = Talklines[Daytime].Option1;
+            UpButton.GetComponent<ButtonSelect>().textbox = Talklines[Daytime].Option1;
 
-            Rbutton.GetComponent<ButtonSelect>().textbox = Talklines[Daytime].Option2;
+            DownButton.GetComponent<ButtonSelect>().textbox = Talklines[Daytime].Option2;
+            if (ban == 1)
+            {
+                UpButton.GetComponent<Image>().color = Color.gray;
+                UpButton.GetComponent<Button>().enabled = false;
+            }
+            else if (ban == 2)
+            {
+                DownButton.GetComponent<Image>().color = Color.gray;
+                DownButton.GetComponent<Button>().enabled = false;
+            }
         }
         else//商店状态
         {
@@ -718,8 +765,8 @@ public class TalkSystem : MonoBehaviour
         if (!_inshop)
         {
             PlayerTalkBackGround.transform.parent.gameObject.SetActive(true);
-            Lbutton.gameObject.SetActive(false);
-            Rbutton.gameObject.SetActive(false);
+            UpButton.gameObject.SetActive(false);
+            DownButton.gameObject.SetActive(false);
 
         }
         else
@@ -752,7 +799,7 @@ public class TalkSystem : MonoBehaviour
 
     public void ShowExchangeTalk()
     {
-        _inshop = false;
+        
         foreach (GameObject g in CharacterList)
         {
             g.GetComponent<Character>().have_talk = true;

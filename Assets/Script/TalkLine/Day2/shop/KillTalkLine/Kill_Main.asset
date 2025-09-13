@@ -15,9 +15,9 @@ MonoBehaviour:
   TxtLine:
   - c
   - "\u4E0D\u7B97\u516C\u6B63\uFF0C\u4F46\u6548\u7387\u5F88\u9AD8\u3002"
-  - choice
-  Option1: {fileID: 11400000, guid: 3272093168395194aa4787213b99aa4b, type: 2}
-  Option2: {fileID: 11400000, guid: 4d1dc7b4551e601408bb9ea124631c6f, type: 2}
+  - /exchangeBody
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}

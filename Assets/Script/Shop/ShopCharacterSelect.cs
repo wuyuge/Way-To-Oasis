@@ -31,8 +31,11 @@ public class ShopCharacterSelect : MonoBehaviour
             this.Character.Dead = true;
             if(ts.Daytime == 2)
             {
+                ts.on = true;
                 ts.Talklines[ts.Daytime] = SpecialTalk;
+                ts._inshop = true;
                 ts.line = 0;
+                _ = ts.ShowText(true);
             }
 
             _ = SetAnimation();
