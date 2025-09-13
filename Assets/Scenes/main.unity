@@ -892,6 +892,7 @@ MonoBehaviour:
   Mask: {fileID: 1825048670}
   Special1: 0
   Special2: 0
+  Comfort: 0
   Day0_Talk: {fileID: 0}
 --- !u!114 &68942826
 MonoBehaviour:
@@ -1542,6 +1543,7 @@ MonoBehaviour:
   Mask: {fileID: 0}
   Special1: 0
   Special2: 0
+  Comfort: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &89321879
 GameObject:
@@ -5169,6 +5171,7 @@ MonoBehaviour:
   Mask: {fileID: 1825048670}
   Special1: 0
   Special2: 0
+  Comfort: 0
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!114 &418109941
 MonoBehaviour:
@@ -12194,6 +12197,7 @@ MonoBehaviour:
   Mask: {fileID: 0}
   Special1: 0
   Special2: 0
+  Comfort: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &903133316
 GameObject:
@@ -13654,6 +13658,7 @@ MonoBehaviour:
   Mask: {fileID: 1825048670}
   Special1: 0
   Special2: 0
+  Comfort: 0
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!114 &984468084
 MonoBehaviour:
@@ -14634,6 +14639,7 @@ MonoBehaviour:
   Mask: {fileID: 0}
   Special1: 0
   Special2: 0
+  Comfort: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &1053723033
 GameObject:
@@ -15243,6 +15249,7 @@ MonoBehaviour:
   Mask: {fileID: 0}
   Special1: 0
   Special2: 0
+  Comfort: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &1068263845
 GameObject:
@@ -15715,6 +15722,7 @@ MonoBehaviour:
   Mask: {fileID: 0}
   Special1: 0
   Special2: 0
+  Comfort: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &1106928047
 GameObject:
@@ -17505,6 +17513,7 @@ MonoBehaviour:
   Mask: {fileID: 1825048670}
   Special1: 0
   Special2: 0
+  Comfort: 0
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!114 &1214813400
 MonoBehaviour:
@@ -24333,6 +24342,7 @@ MonoBehaviour:
   Mask: {fileID: 0}
   Special1: 0
   Special2: 0
+  Comfort: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &1734647521
 GameObject:
@@ -27236,6 +27246,7 @@ MonoBehaviour:
   Mask: {fileID: 1825048670}
   Special1: 0
   Special2: 0
+  Comfort: 0
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!114 &1977804956
 MonoBehaviour:
@@ -28216,7 +28227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &2039588928
 Animator:
   serializedVersion: 5
@@ -28516,6 +28527,7 @@ MonoBehaviour:
   Mask: {fileID: 1825048670}
   Special1: 0
   Special2: 0
+  Comfort: 0
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!114 &2055327924
 MonoBehaviour:

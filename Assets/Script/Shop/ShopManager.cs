@@ -28,15 +28,6 @@ public class ShopManager : MonoBehaviour
 
     public bool ExchangeFood()
     {
-        if (DeadName.TxtLine[0] == "Leader")
-        {
-            DeadName.TxtLine.Remove(DeadName.TxtLine[0]);
-            Body.Weight -= 1;
-            Food.Weight += 6 - DeadName.TxtLine.Count;
-            return true;
-        }
-
-
 
         if(Body.Weight == 1)
         {

@@ -80,6 +80,7 @@ public class Character : MonoBehaviour
     private GameObject Attention;
     [Header("安抚对话控制")]
     public bool Special1,Special2;
+    public bool Comfort;//用于判断安抚是否成功
     private bool ClikDelay;
     [Header("Day0用")]
     public Manager Day0_Talk;
