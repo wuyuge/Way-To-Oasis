@@ -111,30 +111,7 @@ public class TalkSystem : MonoBehaviour
             Lbutton.gameObject.SetActive(false);
             Rbutton.gameObject.SetActive(false);
 
-            //// 如果正在显示文本且尚未完全显示，则立即显示剩余内容
-            //if (_isShowingText && !_isTextFullyDisplayed)
-            //{
-            //    ShowRemainingText();
-            //    return;
-            //}
-
-            //try
-            //{
-            //    // 检查当前行对话是否存在（防止索引越界）
-            //    string temp = Talklines[Daytime].TxtLine[line];
-            //    // 开始显示当前行对话
-            //    _ = ShowText();
-            //}
-            //catch (ArgumentOutOfRangeException)
-            //{
-            //    //line--;
-            //    // 若索引越界则返回（避免报错）
-            //    return;
-            //}
-            //catch (NullReferenceException)
-            //{
-            //    return;
-            //}
+           
         }
     }
 
@@ -153,12 +130,7 @@ public class TalkSystem : MonoBehaviour
                 Lbutton.gameObject.SetActive(false);
                 Rbutton.gameObject.SetActive(false);
 
-                //// 优先处理：正在显示文本且未完全显示时，立即显示剩余内容
-                //if (_isShowingText && !_isTextFullyDisplayed)
-                //{
-                //    ShowRemainingText();
-                //    return; // 执行后直接返回，避免触发新文本显示
-                //}
+                
 
                 // 仅当不在显示文本时，才开始新的文本显示
                 if (!_isShowingText)
@@ -194,13 +166,7 @@ public class TalkSystem : MonoBehaviour
     {
         if (string.IsNullOrEmpty(_currentFullDialogue)) return;
 
-        // 彻底取消并清理任务
-        //if (_cts != null)
-        //{
-        //    _cts.Cancel();
-        //    _cts.Dispose();
-        //    _cts = null;
-        //}
+        
 
         // 强制更新文本显示
         if (!PlayerTalking)
@@ -249,15 +215,7 @@ public class TalkSystem : MonoBehaviour
             ShopTextBar.GetComponent<TextMeshProUGUI>().text = "";
         }
 
-        // 清理旧任务
-        //if (_cts != null)
-        //{
-        //    _cts.Cancel();
-        //    _cts.Dispose();
-        //    _cts = null;
-        //}
-        //_cts = new CancellationTokenSource();
-        //CancellationToken token = _cts.Token;
+        
 
         try
         {
@@ -625,7 +583,7 @@ public class TalkSystem : MonoBehaviour
                 // 逐字显示对话
                 foreach (char c in dialogueContent)
                 {
-                    //if (token.IsCancellationRequested) break;
+                    
 
                     if (_inshop)
                     {
@@ -639,14 +597,7 @@ public class TalkSystem : MonoBehaviour
                         Chara_Name.text = charaName;
                         Character.text += c;
                     }
-                    try
-                    {
-                        //await Task.Delay(TextSpeed, token);
-                    }
-                    catch (TaskCanceledException)
-                    {
-                        break;
-                    }
+                    
                 }
             }
             // 处理玩家说话
@@ -662,7 +613,7 @@ public class TalkSystem : MonoBehaviour
                 }
                 foreach (char c in curText)
                 {
-                    //if (token.IsCancellationRequested) break;
+                    
 
                     if (_inshop)
                     {
@@ -676,14 +627,7 @@ public class TalkSystem : MonoBehaviour
                         Player.text += c;
                         PlayerNameText.text = "■■";
                     }
-                    try
-                    {
-                        //await Task.Delay(TextSpeed, token);
-                    }
-                    catch (TaskCanceledException)
-                    {
-                        break;
-                    }
+                    
                 }
             }
 
