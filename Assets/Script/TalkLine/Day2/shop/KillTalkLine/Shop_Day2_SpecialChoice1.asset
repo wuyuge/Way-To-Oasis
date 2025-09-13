@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Shop_Day2_SpecialChoice1
   m_EditorClassIdentifier: 
   TxtLine:
-  - "\u6362\u5C38\u4F53"
   - /exchangeBody
   - c
   - "\u660E\u667A\u7684\u9009\u62E9\u3002"

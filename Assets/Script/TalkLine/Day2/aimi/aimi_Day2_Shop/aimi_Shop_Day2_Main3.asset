@@ -15,7 +15,7 @@ MonoBehaviour:
   TxtLine:
   - c
   - "\u827E\u7C73\u8389\uFF1A\u628A\u535A\u91D1\u68EE\u7684\u5C38\u4F53\u4EA4\u7ED9\u6211\u3002"
-  - choice
+  - /CheckBoBody
   Option1: {fileID: 11400000, guid: 45c0199ffb7878c4eaeb21337e338471, type: 2}
   Option2: {fileID: 11400000, guid: 3f84d91be40493342898c59e98555d76, type: 2}
   Option3: {fileID: 0}

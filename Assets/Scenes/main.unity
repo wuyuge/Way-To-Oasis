@@ -893,7 +893,7 @@ MonoBehaviour:
   Special1: 0
   Special2: 0
   AfterSpecialTalk: 0
-  Comfort: 0
+  NotComfort: 0
   Day0_Talk: {fileID: 0}
 --- !u!114 &68942826
 MonoBehaviour:
@@ -1546,7 +1546,7 @@ MonoBehaviour:
   Special1: 0
   Special2: 0
   AfterSpecialTalk: 0
-  Comfort: 0
+  NotComfort: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &89321879
 GameObject:
@@ -4754,7 +4754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &342679171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5325,7 +5325,7 @@ MonoBehaviour:
   Special1: 0
   Special2: 0
   AfterSpecialTalk: 0
-  Comfort: 0
+  NotComfort: 0
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!114 &418109941
 MonoBehaviour:
@@ -9736,8 +9736,8 @@ MonoBehaviour:
   Day2_Shop_KillSomeOne: {fileID: 0}
   _inshop: 0
   PlayerTalking: 0
-  Lbutton: {fileID: 665308071}
-  Rbutton: {fileID: 1326235612}
+  UpButton: {fileID: 665308071}
+  DownButton: {fileID: 1326235612}
   on: 1
   TextSpeed: 60
   anim: {fileID: 0}
@@ -12428,7 +12428,7 @@ MonoBehaviour:
   Special1: 0
   Special2: 0
   AfterSpecialTalk: 0
-  Comfort: 0
+  NotComfort: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &903133316
 GameObject:
@@ -13965,7 +13965,7 @@ MonoBehaviour:
   Special1: 0
   Special2: 0
   AfterSpecialTalk: 0
-  Comfort: 0
+  NotComfort: 0
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!114 &984468084
 MonoBehaviour:
@@ -14948,7 +14948,7 @@ MonoBehaviour:
   Special1: 0
   Special2: 0
   AfterSpecialTalk: 0
-  Comfort: 0
+  NotComfort: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &1053723033
 GameObject:
@@ -15560,7 +15560,7 @@ MonoBehaviour:
   Special1: 0
   Special2: 0
   AfterSpecialTalk: 0
-  Comfort: 0
+  NotComfort: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &1068263845
 GameObject:
@@ -16035,7 +16035,7 @@ MonoBehaviour:
   Special1: 0
   Special2: 0
   AfterSpecialTalk: 0
-  Comfort: 0
+  NotComfort: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &1106928047
 GameObject:
@@ -17924,7 +17924,7 @@ MonoBehaviour:
   Special1: 0
   Special2: 0
   AfterSpecialTalk: 0
-  Comfort: 0
+  NotComfort: 0
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!114 &1214813400
 MonoBehaviour:
@@ -24755,7 +24755,7 @@ MonoBehaviour:
   Special1: 0
   Special2: 0
   AfterSpecialTalk: 0
-  Comfort: 0
+  NotComfort: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &1734647521
 GameObject:
@@ -25139,7 +25139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1763126682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27660,7 +27660,7 @@ MonoBehaviour:
   Special1: 0
   Special2: 0
   AfterSpecialTalk: 0
-  Comfort: 0
+  NotComfort: 0
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!114 &1977804956
 MonoBehaviour:
@@ -28704,8 +28704,8 @@ MonoBehaviour:
   Day2_Shop_KillSomeOne: {fileID: 11400000, guid: cb725da40f5701845a1b16c66152618b, type: 2}
   _inshop: 0
   PlayerTalking: 0
-  Lbutton: {fileID: 207671176}
-  Rbutton: {fileID: 1380174570}
+  UpButton: {fileID: 207671176}
+  DownButton: {fileID: 1380174570}
   on: 1
   TextSpeed: 60
   anim: {fileID: 0}
@@ -28942,7 +28942,7 @@ MonoBehaviour:
   Special1: 0
   Special2: 0
   AfterSpecialTalk: 0
-  Comfort: 0
+  NotComfort: 0
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!114 &2055327924
 MonoBehaviour:

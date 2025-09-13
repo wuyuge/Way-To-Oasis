@@ -230,12 +230,12 @@ public class TalkSystem : MonoBehaviour
 
                     return;
                 case "/Laiwensuccess"://∞≤∏ß≥…π¶/ ß∞‹‘§¡Ù
-                    CharacterList[5].GetComponent<Character>().Comfort = true;
+                    CharacterList[5].GetComponent<Character>().NotComfort = false;
                     line++;
                     _ = ShowText(true);
                     return;
                 case "/Laiwenfail":
-                    CharacterList[5].GetComponent<Character>().Comfort = false;
+                    CharacterList[5].GetComponent<Character>().NotComfort = true;
                     line++;
                     _ = ShowText(true);
                     return;

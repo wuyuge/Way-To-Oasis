@@ -80,7 +80,7 @@ public class Character : MonoBehaviour
     private GameObject Attention,Attention2;
     [Header("安抚对话控制")]
     public bool Special1,Special2,AfterSpecialTalk;
-    public bool Comfort;//用于判断安抚是否成功
+    public bool NotComfort;//用于判断安抚是否成功
     private bool ClikDelay;
     [Header("Day0用")]
     public Manager Day0_Talk;
@@ -133,9 +133,14 @@ public class Character : MonoBehaviour
             gameObject.GetComponent<Image>().sprite = NewSprite;
             return; 
         }
-        if(AfterSpecialTalk && Comfort == false)
+        if(AfterSpecialTalk && NotComfort)
         {
             Attention2.SetActive(true);
+        }
+        if (AfterSpecialTalk && !NotComfort)
+        {
+            Attention2.SetActive(false);
+            
         }
 
 
@@ -281,7 +286,7 @@ public class Character : MonoBehaviour
 
         AfterSpecialTalk = false;
         toggle.GetComponent<Toggle>().isOn = false;
-        Comfort = false;
+        NotComfort = false;
     }
 
     /// <summary>
