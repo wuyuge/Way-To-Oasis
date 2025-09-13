@@ -77,9 +77,9 @@ public class Character : MonoBehaviour
     public float Delay = 1;
     public GameObject Mask;
     [Tooltip("安抚提示")]
-    private GameObject Attention;
+    private GameObject Attention,Attention2;
     [Header("安抚对话控制")]
-    public bool Special1,Special2;
+    public bool Special1,Special2,AfterSpecialTalk;
     public bool Comfort;//用于判断安抚是否成功
     private bool ClikDelay;
     [Header("Day0用")]
@@ -101,7 +101,9 @@ public class Character : MonoBehaviour
         if (curr_num != 0)
         {
             Attention = gameObject.transform.Find("Attention").gameObject;
+            Attention2 = gameObject.transform.Find("Attention2").gameObject;
             Attention.SetActive(false);
+            Attention2.SetActive(false);
         }
         
         // 初始化显示角色持有的尸体数量（更新UI文本）
@@ -131,6 +133,11 @@ public class Character : MonoBehaviour
             gameObject.GetComponent<Image>().sprite = NewSprite;
             return; 
         }
+        if(AfterSpecialTalk && Comfort == false)
+        {
+            Attention2.SetActive(true);
+        }
+
 
         // 获取资源选择面板（SelectBar）的状态，判断是否处于"食物选择"模式
         if (!progress.GetComponent<Progress>().food)
@@ -271,6 +278,10 @@ public class Character : MonoBehaviour
         gameObject.transform.parent.Find("Have_Food").GetComponent<TextMeshProUGUI>().text = food.Weight.ToString();
         // 同步更新UI显示当前持有尸体数量
         gameObject.transform.parent.Find("Have_Body").GetComponent<TextMeshProUGUI>().text = body.Weight.ToString();
+
+        AfterSpecialTalk = false;
+        toggle.GetComponent<Toggle>().isOn = false;
+        Comfort = false;
     }
 
     /// <summary>
@@ -376,6 +387,7 @@ public class Character : MonoBehaviour
         // 启动对话文本显示（异步执行，避免UI卡顿）
         _ = TalkBar.GetComponent<TalkSystem>().ShowText();
         // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
+        AfterSpecialTalk = true;
         Invoke("DownAnim", Delay);
 
     }
@@ -394,6 +406,7 @@ public class Character : MonoBehaviour
         // 启动对话文本显示（异步执行，避免UI卡顿）
         _ = TalkBar.GetComponent<TalkSystem>().ShowText();
         // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
+        AfterSpecialTalk = true;
         Invoke("DownAnim", Delay);
 
 

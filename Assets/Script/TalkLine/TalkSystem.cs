@@ -465,11 +465,19 @@ public class TalkSystem : MonoBehaviour
                     ShowName = true;
                     _ = ShowText(true);
                     return;
+                
+                case "showcharabar":
+                    charabar.SetActive(true);
+                    line++;
+
+                    Debug.Log("关闭角色文本框");
+                    _ = ShowText(true);
+                    return;
 
                 case "closecharabar":
                     charabar.SetActive(false);
                     line++;
-
+                    this.CharacterImageManager.CloseImage();
                     Debug.Log("关闭角色文本框");
                     _ = ShowText(true);
                     return;
@@ -810,7 +818,7 @@ public class TalkSystem : MonoBehaviour
     /// <param name="name">角色名称</param>
     async Task ShowCharacter(string name)
     {
-        await Task.Delay(500);
+        await Task.Delay(100);
         Debug.Log($"显示{name}立绘");
         this.CharacterImageManager.SetImage(name);
 

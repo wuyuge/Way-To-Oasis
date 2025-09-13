@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u2026\u2026"
+  - p
+  - "\u2026\u2026"
   - c
   - "\u83B1\u6587\uFF1A\u2026\u2026\u8BF7\u4E0D\u8981\u8FD9\u6837\uFF0C\u961F\u957F\u3002\u4F60\u7684\u6C89\u9ED8\u4F1A\u7ED9\u6211\u5E26\u6765\u5FC3\u7406\u521B\u4F24\u7684\u3002"
   - "\u83B1\u6587\uFF1A\u5443\uFF0C\u603B\u800C\u8A00\u4E4B\uFF0C\u6211\u5C31\u5F53\u4F60\u9ED8\u8BA4\u4E86\u5427\uFF0C\u53CD\u6B63\u6CA1\u6709\u4EBA\u80FD\u62D2\u7EDD\u9001\u4E0A\u95E8\u6765\u7684\u514D\u8D39\u52B3\u52A8\u529B\u3002"
@@ -22,5 +24,9 @@ MonoBehaviour:
   Option1: {fileID: 11400000, guid: fb5f80e9952eb0f4d94097dfc210e2f9, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

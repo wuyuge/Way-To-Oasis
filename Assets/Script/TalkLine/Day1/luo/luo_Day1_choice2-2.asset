@@ -14,11 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u4E0D\u6253\u6270\u4ED6"
+  - p
+  - "\u8FD8\u662F\u4E0D\u6253\u6270\u4ED6\u4E86"
   - c
   - "\u6D1B\u5C14\u574E\uFF1A\u54E6\u597D\u2026\u2026\u8F9B\u82E6\u4E86\u961F\u957F\u3002"
   - upcbar
   - down
   Option1: {fileID: 0}
   Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

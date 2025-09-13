@@ -14,10 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u2026\u2026\u6211\u4F1A\u5C3D\u529B\u7684\u3002"
+  - p
+  - "\u2026\u2026\u6211\u4F1A\u5C3D\u529B\u7684\u3002"
   - c
   - "\u963F\u66FC\u5FB7\uFF1A\u6211\u77E5\u9053\u3002"
   - end
   Option1: {fileID: 11400000, guid: d7f4d36f1d85f154dbe222a80888fbc7, type: 2}
   Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

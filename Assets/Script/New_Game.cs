@@ -9,6 +9,7 @@ public class New_Game : MonoBehaviour
     [Header("³õÊ¼ÊýÁ¿")]
     public int food, body;
     public Manager DeadName;
+    public Manager Day0_Talk;
     public void Clik()
     {
         if (is_New)
@@ -19,6 +20,7 @@ public class New_Game : MonoBehaviour
         }
         DeadName.TxtLine.Clear();
         DeadName.TxtLine.Add("Leader");
+        Day0_Talk.Weight = 0;
     }
 
     

@@ -242,7 +242,7 @@ public class CharacterImageManager : MonoBehaviour
         list[index].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
     }
 
-
+    
 
     private void SetGameObj(List<GameObject> list)
     {
