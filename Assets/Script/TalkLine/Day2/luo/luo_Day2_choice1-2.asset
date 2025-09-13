@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Name: luo_Day2_choice1-2
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u6211\u975E\u5E38\u62B1\u6B49\u3002"
+  - p
+  - "\u4F46\u8FD9\u6837\u7684\u60C5\u51B5\u4E0D\u4F1A\u662F\u6700\u540E\u4E00\u6B21\u3002"
+  - c
+  - "\u6D1B\u5C14\u574E\uFF1A\u4E0D\u7528\u5BF9\u6211\u9053\u6B49\uFF0C\u961F\u957F\u3002"
+  - end
+  Option1: {fileID: 11400000, guid: c50f4410cca33bc4889dbe3af9fafc58, type: 2}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Name: amande_Day0_choice1-1-1
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u5F88\u60B2\u4F24\u3002"
+  - c
+  - "\u963F\u66FC\u5FB7\uFF1A\u2026\u8FD9\u4E5F\u662F\u6CA1\u6709\u529E\u6CD5\u7684\u4E8B\u3002"
+  - end
+  Option1: {fileID: 11400000, guid: 363382479149f5e47bd0a23184003642, type: 2}
+  Option2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0

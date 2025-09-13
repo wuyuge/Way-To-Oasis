@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Name: lai_Day2_ShopSpecailMain
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - lock
+  - c
+  - "\u83B1\u6587\uFF1A\u2026\u2026\u4F60\u6709\u6CA1\u6709\u89C9\u5F97\u8FD9\u6837\u505A\u6709\u4E9B\u8349\u7387\uFF1F"
+  - p
+  - "\u4E3A\u4EC0\u4E48\uFF1F"
+  - c
+  - "\u83B1\u6587\uFF1A\u6211\u7684\u610F\u601D\u662F\u2026\u2026\u6211\u4EEC\u652F\u6301\u4F60\u6210\u4E3A\u961F\u957F\u662F\u4FE1\u4EFB\u4F60\u80FD\u9886\u5BFC\u6211\u4EEC\u8D70\u51FA\u8FD9\u91CC\u3002"
+  - "\u83B1\u6587\uFF1A\u4F46\u4F60\u8FD9\u6837\u968F\u610F\u6740\u6B7B\u4EFB\u4F55\u4E00\u4E2A\u4EBA\u4F1A\u7ED9\u5927\u5BB6\u5E26\u6765\u6050\u614C\u3002"
+  - "\u83B1\u6587\uFF1A\u800C\u4E14\u662F\u5426\u6709\u4E9B\u4E0D\u987E\u53CA\u5176\u4ED6\u4EBA\u7684\u611F\u53D7\u4E86\uFF1F"
+  - choice
+  Option1: {fileID: 11400000, guid: 672cfbed7000940448a62e891885d943, type: 2}
+  Option2: {fileID: 11400000, guid: 156a7d40960ae3542af4348f418c4993, type: 2}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

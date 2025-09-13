@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Name: lai_Day0_main
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - p
+  - "\u4E9A\u6469\u65AF\u6B7B\u4E86\u3002"
+  - c
+  - "\u83B1\u6587\uFF1A\u554A\uFF0C\u8FD8\u771F\u662F\u610F\u5916\uFF0C\u53EF\u601C\u7684\u8001\u4E9A\u6469\u65AF\u3002"
+  - p
+  - "\u4F60\u4E0D\u4E3A\u4ED6\u96BE\u8FC7\u4E00\u4E0B\u5417\uFF1F\u6211\u4EE5\u4E3A\u4F60\u4EEC\u4EA4\u60C5\u4E0D\u6D45\u3002"
+  - c
+  - "\u83B1\u6587\uFF1A\u2026\u7B97\u4E0D\u4E0A\u96BE\u8FC7\uFF0C\u4EE5\u73B0\u5728\u7684\u72B6\u51B5\u6765\u8BB2\u6B7B\u4E86\u4E5F\u4E0D\u7B97\u662F\u4E00\u4EF6\u574F\u4E8B\u3002"
+  - "\u83B1\u6587\uFF1A\u4ED6\u662F\u4E2A\u79F0\u804C\u7684\u7BA1\u7406\u8005\uFF0C\u96BE\u5F97\u7684\u597D\u4EBA\uFF0C\u4F1F\u5927\u7684\u961F\u957F\uFF0C\u6211\u4F1A\u6000\u5FF5\u4ED6\u8FD8\u5728\u7684\u90A3\u4E9B\u65E5\u5B50\u3002"
+  - "\u83B1\u6587\uFF1A\u4E0D\u8FC7\u73B0\u5728\u8BF4\u8FD9\u4E9B\u4E5F\u6CA1\u6709\u4EC0\u4E48\u610F\u4E49\u4E86\uFF0C\u4ED6\u5E94\u8BE5\u66F4\u5E0C\u671B\u770B\u5230\u6211\u4EEC\u6D3B\u7740\u8D70\u51FA\u53BB\u800C\u4E0D\u662F\u4E3A\u4ED6\u5982\u4F55\u54ED\u6CE3\u3002"
+  - "\u83B1\u6587\uFF1A\u6362\u4E2A\u8BDD\u9898\u5427\u3002\u6240\u4EE5\u4F60\u73B0\u5728\u662F\u961F\u957F\u4E86\uFF0C\u6211\u7684\u65B0\u4E0A\u53F8\uFF1F"
+  - choice
+  Option1: {fileID: 11400000, guid: 953406290c20aea46840a2607dc88b28, type: 2}
+  Option2: {fileID: 11400000, guid: fce0f4e268a60724896b0fe738b0bd91, type: 2}
+  Option3: {fileID: 11400000, guid: 3367a7eca911f854db114ee5f3f8b08b, type: 2}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

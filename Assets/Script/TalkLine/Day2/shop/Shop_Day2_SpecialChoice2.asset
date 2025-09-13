@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Name: Shop_Day2_SpecialChoice2
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u4E0D\u6362\u5C38\u4F53"
+  - c
+  - "\u591A\u4E48\u9AD8\u5C1A\u7684\u9009\u62E9\uFF0C\u7EF4\u62A4\u4E86\u4EBA\u7684\u5E95\u7EBF\u4E0E\u5C0A\u4E25"
+  - "\u6211\u671F\u5F85\u542C\u89C1\u4F60\u7684\u6B7B\u8BAF"
+  - "\u518D\u89C1"
+  - /closeshop
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Day1Eat: 0

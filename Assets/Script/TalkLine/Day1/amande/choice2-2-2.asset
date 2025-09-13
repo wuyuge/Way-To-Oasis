@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Name: choice2-2-2
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u6709\u70B9\u4E0D\u77E5\u6240\u63AA\u3002"
+  - c
+  - "\u963F\u66FC\u5FB7\uFF1A\u5F88\u6B63\u5E38\uFF0C\u7A81\u5982\u5176\u6765\u7684\u8D23\u4EFB\u4F1A\u7ED9\u4EBA\u5E26\u6765\u91CD\u62C5\u3002"
+  - "\u963F\u66FC\u5FB7\uFF1A\u4F60\u4F1A\u4E60\u60EF\u7684\u3002"
+  - end
+  Option1: {fileID: 11400000, guid: 71fe861e2ccde104ea5df4b551ae482d, type: 2}
+  Option2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0

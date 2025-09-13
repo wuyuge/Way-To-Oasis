@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Name: aimi_Shop_Day2_Choice1-3
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u7ED3\u679C\u4E0D\u4F1A\u6709\u4EFB\u4F55\u53D8\u5316\u3002"
+  - c
+  - "\u827E\u7C73\u8389\uFF1A\u2026\u2026\u8FD9\u5C31\u662F\u6211\u6C38\u8FDC\u65E0\u6CD5\u7406\u89E3\u4F60\u7684\u4E00\u70B9\u3002"
+  - "\u827E\u7C73\u8389\uFF1A\u4F60\u4E0D\u662F\u4E00\u4E2A\u51B7\u9177\u65E0\u60C5\u7684\u4EBA\uFF0C\u4F46\u5374\u80FD\u8F7B\u6613\u505A\u51FA\u8FD9\u79CD\u51B3\u5B9A\u3002"
+  - "\u827E\u7C73\u8389\uFF1A\u4F60\u4F1A\u4E3A\u6B64\u611F\u5230\u75DB\u82E6\u5417\uFF1F"
+  - choice
+  Option1: {fileID: 11400000, guid: 45c6f02bea7171d409a46fb7baeaa83e, type: 2}
+  Option2: {fileID: 11400000, guid: 4b0d93b7e44f4cc44bbe1e5d715652c6, type: 2}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

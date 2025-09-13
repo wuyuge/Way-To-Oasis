@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Name: luo_Day2_deadchoice
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - dead
+  Option1: {fileID: 11400000, guid: 5fce9acd7d1f3ad4eaaab4c2d6b2ebc9, type: 2}
+  Option2: {fileID: 11400000, guid: 6f68c99ff4f328e479e80d65727acd51, type: 2}
+  Option3: {fileID: 11400000, guid: 29e3b6006a37a1f4cb095a45a9c1596c, type: 2}
+  Weight: 0
+  Weight_tag: 0
+  Day1Eat: 0
