@@ -444,6 +444,7 @@ public class TalkSystem : MonoBehaviour
                     Invoke("SetCharBar", 1.5f);
                     line++;
                     this.CharacterImageManager.CloseImage();
+                    ClikDelay = false;
                     _ = ShowText(true);
                     return;
                 case "aimieat":
@@ -471,6 +472,7 @@ public class TalkSystem : MonoBehaviour
                     charaBar.GetComponent<Animator>().SetTrigger("Up");
                     line++;
                     this.CharacterImageManager.CloseImage();
+                    ClikDelay = true;
                     await Task.Delay(800);
 
                     _ = ShowText(true);

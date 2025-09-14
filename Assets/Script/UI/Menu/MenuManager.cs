@@ -11,7 +11,10 @@ public class MenuManager : MonoBehaviour
     public TalkSystem MainTalk, LearnTalk;
 
 
-
+    public void SetAnim(string anim)
+    {
+        GetComponent<Animator>().SetTrigger(anim);
+    }
 
 
     public void OpenMenu()
