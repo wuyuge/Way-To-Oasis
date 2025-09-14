@@ -8,7 +8,7 @@ public class MenuManager : MonoBehaviour
 
     public GameObject Menu;
 
-
+    public TalkSystem MainTalk, LearnTalk;
 
 
 
@@ -19,14 +19,17 @@ public class MenuManager : MonoBehaviour
         Menu.SetActive(true);
        
         Time.timeScale = 0;
-        
-        
+        MainTalk.on = false;
+        LearnTalk.on = false;
+
     }
 
     public void BackToGame()
     {
         Menu.SetActive(false);
         Time.timeScale = 1;
+        MainTalk.on = true;
+        LearnTalk.on = true;
     }
 
     public void OpenSetting()
@@ -43,7 +46,12 @@ public class MenuManager : MonoBehaviour
 
     }
 
-
+    public void BackToStart()
+    {
+         
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Start");
+    }
 
 
 

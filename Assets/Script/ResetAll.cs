@@ -13,7 +13,7 @@ public class ResetAll : MonoBehaviour
         {
             m.Day1Eat = false;
         }
-        deadname.TxtLine.Clear();
+        
     }
 
     // Update is called once per frame

@@ -737,6 +737,11 @@ public class TalkSystem : MonoBehaviour
 
 
             }
+            if(ShopLButton.transform.Find("Text").GetComponent<TextMeshProUGUI>().text == "»»Κ¬Με" && DeadName.TxtLine.Count == 0)
+            {
+                ShopLButton.GetComponent<Button>().enabled = false;
+                ShopLButton.GetComponent<Image>().color = Color.gray;
+            }
 
 
         }

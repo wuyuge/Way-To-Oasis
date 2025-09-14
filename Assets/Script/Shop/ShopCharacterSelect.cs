@@ -24,7 +24,7 @@ public class ShopCharacterSelect : MonoBehaviour
     {
         TalkSystem ts = TalkSys.GetComponent<TalkSystem>();
         //如果是要杀人
-        if (ShopManager.GetComponent<ShopCharacterManager>().kill)
+        if (ShopManager.GetComponent<ShopCharacterManager>().kill && Name != "Leader")
         {
             DeadName.TxtLine.Add(Name);
             TalkSys.GetComponent<TalkSystem>().ShowKillTalk();

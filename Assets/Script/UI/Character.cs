@@ -131,6 +131,8 @@ public class Character : MonoBehaviour
         {
             Sprite NewSprite = Sprite.Create(DeadImage, new Rect(0, 0, DeadImage.width, DeadImage.height),new Vector2(0.5f,0.5f));
             gameObject.GetComponent<Image>().sprite = NewSprite;
+            Attention.SetActive(false);
+            Attention2.SetActive(false);
             return; 
         }
         if(AfterSpecialTalk && NotComfort)
