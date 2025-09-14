@@ -336,10 +336,10 @@ public class Progress : MonoBehaviour
             {
                 ShopTalk = true;
             }
-            
-            // 非第0天的特殊处理：场景明暗切换（先暗后亮，模拟昼夜交替）
-            
 
+            // 非第0天的特殊处理：场景明暗切换（先暗后亮，模拟昼夜交替）
+
+            
             // 触发下一天开始前的幕间对话（若存在对应天数的对话数据）
             if (beforeStart[day_num] != null)
             {
@@ -358,8 +358,9 @@ public class Progress : MonoBehaviour
 
             // 通知对象管理器重置道具携带状态（可能将携带道具放回背包）
             ObjectManager.GetComponent<ObjectManager>().ReturnCarry();
+            ObjectManager.GetComponent<ObjectManager>().RestTag();
             // 重置背景状态（调用 BackGroundMoving 的 Re_set 方法，还原背景初始位置）
-            
+
         }
     }
 
