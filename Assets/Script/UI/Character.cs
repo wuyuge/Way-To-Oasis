@@ -333,9 +333,7 @@ public class Character : MonoBehaviour
                 }
                 // 显示对话面板
                 TalkBar.SetActive(true);
-                // 根据当前天数，从角色对话列表中获取对应对话数据，赋值给对话系统
-                Debug.Log("第"+end.GetComponent<Progress>().day_num.ToString());
-                Debug.Log("有几个元素" + textline.Count);
+                
                 talksys.Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num];
                 // 标记为已触发对话（避免重复触发）
                 have_talk = true;

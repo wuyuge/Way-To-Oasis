@@ -16,7 +16,7 @@ MonoBehaviour:
   - dead
   Option1: {fileID: 11400000, guid: c75e8aa18b840724599db3c5ba547401, type: 2}
   Option2: {fileID: 11400000, guid: 437de06d2f1bed24bb882a3133415e54, type: 2}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: 0e4400b27f8157e45bb384f79218b2d2, type: 2}
   SpecialTalk: {fileID: 11400000, guid: 3fe9b1830fd804f4f812df13944a05ea, type: 2}
   SpecialTalk2: {fileID: 11400000, guid: 11b2db68b9f2ae44c951064603260652, type: 2}
   Weight: 0
