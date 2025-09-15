@@ -278,6 +278,7 @@ public class Progress : MonoBehaviour
                 Final_Food.Weight = 0;
             }
             bool allEat = DownBar.GetComponent<ObjectManager>().CheckEat(true); // 判断哪个角色没有进食并将其状态设为死亡
+            Debug.Log($"Day{day_num},全吃{allEat}");
             // 触发进食后的幕间对话（若存在对应天数的对话数据）
             if (afterFood[day_num] != null)
             {
@@ -360,6 +361,7 @@ public class Progress : MonoBehaviour
             ObjectManager.GetComponent<ObjectManager>().ReturnCarry();
             ObjectManager.GetComponent<ObjectManager>().RestTag();
             // 重置背景状态（调用 BackGroundMoving 的 Re_set 方法，还原背景初始位置）
+            DownBar.GetComponent<ObjectManager>().ResetEat();
 
         }
     }

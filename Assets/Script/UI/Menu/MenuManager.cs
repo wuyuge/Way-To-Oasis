@@ -9,7 +9,16 @@ public class MenuManager : MonoBehaviour
     public GameObject Menu;
 
     public TalkSystem MainTalk, LearnTalk;
+    public Material Error;
+    public Animator Black;
 
+    private void Awake()
+    {
+        Error.SetFloat("_GlitchIntensity", 0);
+        Error.SetFloat("_NoiseIntensity", 0);
+        Error.SetFloat("_ColorShift", 0);
+        Error.SetFloat("_GlitchSpeed", 0);
+    }
 
     public void SetAnim(string anim)
     {
@@ -63,7 +72,17 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void BlackAnim()
+    {
+        Black.SetTrigger("Dark");
+    }
 
-
+    public void SetMaterial()
+    {
+        Error.SetFloat("_GlitchIntensity", 0.006f);
+        Error.SetFloat("_NoiseIntensity", 0.01f);
+        Error.SetFloat("_ColorShift", 0.015f);
+        Error.SetFloat("_GlitchSpeed", 0.25f);
+    }
 
 }
