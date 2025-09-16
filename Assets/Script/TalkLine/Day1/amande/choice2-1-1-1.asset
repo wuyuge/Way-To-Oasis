@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
-  m_Name: choice2-2-1
+  m_Name: choice2-1-1-1
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u610F\u5916\u5730\u5F88\u5B89\u5FC3\u3002"
@@ -19,9 +19,8 @@ MonoBehaviour:
   - c
   - "\u963F\u66FC\u5FB7\uFF1A\u2026\u54C8\u54C8\uFF0C\u771F\u50CF\u4F60\u4F1A\u8BF4\u51FA\u6765\u7684\u8BDD\u3002"
   - "\u963F\u66FC\u5FB7\uFF1A\u4F60\u8FD9\u6837\u60F3\u6211\u5C31\u653E\u5FC3\u4E86\u3002"
-  - "\u963F\u66FC\u5FB7\uFF1A\u8FD8\u6709\u4EC0\u4E48\u60F3\u804A\u7684\u5417?"
-  - choice
-  Option1: {fileID: 11400000, guid: a4070a66ee9568e4999b63a283f64249, type: 2}
+  - end
+  Option1: {fileID: 11400000, guid: 71fe861e2ccde104ea5df4b551ae482d, type: 2}
   Option2: {fileID: 11400000, guid: 6c7a72e488e92894fafd70a3202e2d77, type: 2}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}

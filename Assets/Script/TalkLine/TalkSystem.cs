@@ -85,9 +85,12 @@ public class TalkSystem : MonoBehaviour
     // 标记是否已经显示完整文本（避免重复处理）
     private bool _isTextFullyDisplayed = false;
 
-    private bool ClikDelay;
+    
     private bool CanSkip;
-
+    [Header("点击间隔配置")]
+    [Tooltip("点击后允许再次点击的间隔时间（毫秒），建议设置200-500ms")]
+    public float ClickInterval = 300f; // 默认300毫秒，可根据体验调整
+    private float _lastClickTime; // 记录上次有效点击的时间戳（单位：秒）
     /// <summary>
     /// 初始化对话系统
     /// </summary>
@@ -123,26 +126,28 @@ public class TalkSystem : MonoBehaviour
         if (DaytimeOBJ.GetComponent<Progress>().talk || DaytimeOBJ.GetComponent<Progress>().CanTalk || _inshop)
         {
             Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
-            if (Input.GetKeyDown(KeyCode.Mouse0) && on && !ClikDelay)
-            {
 
-                ClikDelay = true;
+            // 计算当前时间与上次点击的间隔（转换为毫秒便于比较）
+            float timeSinceLastClick = (Time.time - _lastClickTime) * 1000f;
+
+            // 点击条件：鼠标左键按下 + 交互开启（on） + 超过点击间隔
+            if (Input.GetKeyDown(KeyCode.Mouse0) && on && timeSinceLastClick >= ClickInterval)
+            {
+                // 更新上次点击时间戳为当前时间
+                _lastClickTime = Time.time;
+
                 UpButton.gameObject.SetActive(false);
                 DownButton.gameObject.SetActive(false);
-
-                
 
                 // 仅当不在显示文本时，才开始新的文本显示
                 if (!_isShowingText)
                 {
                     try
                     {
-                        
                         _ = ShowText();
                     }
                     catch (ArgumentOutOfRangeException)
                     {
-                        //line -= 1;
                         return;
                     }
                     catch (NullReferenceException)
@@ -150,11 +155,12 @@ public class TalkSystem : MonoBehaviour
                         return;
                     }
                 }
-            }
-            else if (ClikDelay && CanSkip && !_isTextFullyDisplayed)
-            {
-                ShowRemainingText();
-                return;
+                // 若正在显示文本且未完全展示，立即显示剩余内容
+                else if (!_isTextFullyDisplayed)
+                {
+                    ShowRemainingText();
+                    return;
+                }
             }
         }
     }
@@ -183,7 +189,7 @@ public class TalkSystem : MonoBehaviour
         // 立即更新状态，允许下一次交互
         _isTextFullyDisplayed = true;
         _isShowingText = false; // 手动标记为已完成，避免状态延迟
-        ClikDelay = false;
+        
         CanSkip = false;
     }
 
@@ -450,7 +456,7 @@ public class TalkSystem : MonoBehaviour
                     Invoke("SetCharBar", 1.5f);
                     line++;
                     this.CharacterImageManager.CloseImage();
-                    ClikDelay = false;
+                    
                     _ = ShowText(true);
                     return;
                 case "aimieat":
@@ -478,7 +484,7 @@ public class TalkSystem : MonoBehaviour
                     charaBar.GetComponent<Animator>().SetTrigger("Up");
                     line++;
                     this.CharacterImageManager.CloseImage();
-                    ClikDelay = true;
+                    
                     await Task.Delay(800);
 
                     _ = ShowText(true);
@@ -687,7 +693,7 @@ public class TalkSystem : MonoBehaviour
         finally
         {
             _isShowingText = false;
-            ClikDelay = false;
+            
         }
     }
 

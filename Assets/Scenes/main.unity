@@ -4605,7 +4605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &342679171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10321,6 +10321,7 @@ MonoBehaviour:
   DownBar: {fileID: 155937340}
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
   _isShowingText: 0
+  ClickInterval: 300
 --- !u!114 &719523452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25595,7 +25596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1763126682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29265,6 +29266,7 @@ MonoBehaviour:
   DownBar: {fileID: 921392543}
   Day0_Talk: {fileID: 0}
   _isShowingText: 0
+  ClickInterval: 300
 --- !u!114 &2039588930
 MonoBehaviour:
   m_ObjectHideFlags: 0

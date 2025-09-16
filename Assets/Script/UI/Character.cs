@@ -144,6 +144,14 @@ public class Character : MonoBehaviour
             Attention2.SetActive(false);
             
         }
+        if(progress.GetComponent<Progress>().talk && CharacterName == "主角")
+        {
+            gameObject.GetComponent<Image>().color = Color.gray;
+        }
+        else
+        {
+            gameObject.GetComponent<Image>().color = Color.white;
+        }
 
 
         // 获取资源选择面板（SelectBar）的状态，判断是否处于"食物选择"模式
