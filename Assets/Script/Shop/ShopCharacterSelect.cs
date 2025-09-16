@@ -7,10 +7,10 @@ public class ShopCharacterSelect : MonoBehaviour
 {
     public GameObject ShopManager,ShopTextBar;
     public string Name;
-    public Manager DeadName;
+    public Manager DeadName,UsedBody;
     public GameObject TalkSys;
     public Character Character;
-    public Manager SpecialTalk;
+    public Manager SpecialTalk,FinalFood,FinalBody;
 
     private void Start()
     {
@@ -37,7 +37,8 @@ public class ShopCharacterSelect : MonoBehaviour
                 ts.line = 0;
                 _ = ts.ShowText(true);
             }
-
+            FinalBody.Weight += 1;
+            TalkSys.GetComponent<TalkSystem>();
             _ = SetAnimation();
 
 
@@ -55,9 +56,12 @@ public class ShopCharacterSelect : MonoBehaviour
                 }
 
             }
-            DeadName.TxtLine[index] += "Uesd";
+            FinalFood.Weight += 7 - DeadName.TxtLine.Count;
+            UsedBody.TxtLine.Add(DeadName.TxtLine[index] += "Uesd");
+            DeadName.TxtLine.RemoveAt(index);
 
-
+            
+            TalkSys.GetComponent<TalkSystem>().DownBar.GetComponent<ObjectManager>().Food_Text.text = FinalFood.Weight.ToString();
             _ = SetAnimation();
 
         }

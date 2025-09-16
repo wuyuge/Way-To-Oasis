@@ -8,7 +8,7 @@ public class New_Game : MonoBehaviour
     public Manager Final_Food, Final_Body,Have_Food,Have_Body;
     [Header("³õÊ¼ÊýÁ¿")]
     public int food, body;
-    public Manager DeadName;
+    public Manager DeadName,UesdBody;
     public Manager Day0_Talk;
     public void Clik()
     {
@@ -18,6 +18,7 @@ public class New_Game : MonoBehaviour
             Final_Food.Weight = food;
             Have_Body.Weight = 0;
             Have_Food.Weight = 0;
+            UesdBody.TxtLine.Clear();
 
         }
         DeadName.TxtLine.Clear();
