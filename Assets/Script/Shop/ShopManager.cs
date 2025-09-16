@@ -10,9 +10,9 @@ public class ShopManager : MonoBehaviour
     public GameObject DayTime;
     public GameObject TextBar;
     public GameObject Talksys;
-
+    public ObjectManager ObjManager;
     [Header("¶Ò»»Ê¬Ìå¹ÜÀí")]
-    public Manager Body,Food,DeadName;
+    public Manager Body,Food,DeadName,UesdBody;
 
     private void OnEnable()
     {
@@ -29,14 +29,28 @@ public class ShopManager : MonoBehaviour
     public bool ExchangeFood()
     {
 
-        if(Body.Weight == 1)
+        int CanUseBody = 0;
+        foreach(string s in DeadName.TxtLine)
+        {
+            if (!s.Contains("Uesd"))
+            {
+                CanUseBody += 1;
+            }
+        }
+
+
+        if(CanUseBody == 1)
         {
             Body.Weight -= 1;
-            Food.Weight += 6 - DeadName.TxtLine.Count;
+            Food.Weight += 7 - DeadName.TxtLine.Count;
+            UesdBody.TxtLine.Add( DeadName.TxtLine[0] += "Uesd");
+            DeadName.TxtLine.RemoveAt(0);
+            ObjManager.Food_Text.text = Food.Weight.ToString();
+            ObjManager.Body_Text.text = Body.Weight.ToString();
             return true;
 
         }
-        else if(Body.Weight > 1)
+        else if(CanUseBody > 1)
         {
             return false;
         }

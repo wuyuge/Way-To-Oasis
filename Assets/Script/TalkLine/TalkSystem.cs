@@ -284,6 +284,11 @@ public class TalkSystem : MonoBehaviour
                     line++;
                     _ = ShowText(true);
                     return;
+                case "/BanClik":
+                    on = false;
+                    line++;
+                    _ = ShowText(true);
+                    return;
                 case "/specialchoice":
 
                     HandleChoice(true);
@@ -313,12 +318,13 @@ public class TalkSystem : MonoBehaviour
                     return;
 
                 case "/exchangeBody":
-                    bool notmultiple = true;
+                    
                     Day2_Shop_Exchange.GeneralBool = true;
-                    ShowExchangeTalk();
-                    notmultiple = ShopManager.GetComponent<ShopManager>().ExchangeFood();
-                    if (!notmultiple)
+                    
+                    
+                    if (!ShopManager.GetComponent<ShopManager>().ExchangeFood())
                     {
+                        ShowExchangeTalk();
                         ShopCharaBar.SetActive(true);
                         ShopCharaBar.GetComponent<Animator>().SetTrigger("Up");
                         ShopCharaBar.GetComponent<ShopCharacterManager>().SelectBody();
@@ -330,7 +336,7 @@ public class TalkSystem : MonoBehaviour
                     }
                     else
                     {
-
+                        ShowExchangeTalk();
                         _isShowingText = false;
                         line++;
                         _ = ShowText(true);

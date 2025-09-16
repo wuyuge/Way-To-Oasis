@@ -319,6 +319,7 @@ MonoBehaviour:
   food: 12
   body: 1
   DeadName: {fileID: 11400000, guid: 1b5012e8af746534e809d078e4fdd8ad, type: 2}
+  UesdBody: {fileID: 11400000, guid: 3b2059a793a087e438fe397c7bf5ac3d, type: 2}
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!95 &331195890
 Animator:
