@@ -20,6 +20,22 @@ public class MenuManager : MonoBehaviour
         Error.SetFloat("_GlitchSpeed", 0);
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Menu.activeSelf)
+            {
+                BackToGame();
+            }
+            else
+            {
+                OpenMenu();
+            }
+        }
+    }
+
+
     public void SetAnim(string anim)
     {
         GetComponent<Animator>().SetTrigger(anim);
@@ -29,7 +45,6 @@ public class MenuManager : MonoBehaviour
     public void OpenMenu()
     {
         Menu.SetActive(true);
-       
         Time.timeScale = 0;
         MainTalk.on = false;
         LearnTalk.on = false;

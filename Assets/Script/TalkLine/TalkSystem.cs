@@ -129,9 +129,9 @@ public class TalkSystem : MonoBehaviour
 
             // 计算当前时间与上次点击的间隔（转换为毫秒便于比较）
             float timeSinceLastClick = (Time.time - _lastClickTime) * 1000f;
-
+            if(Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
             // 点击条件：鼠标左键按下 + 交互开启（on） + 超过点击间隔
-            if (Input.GetKeyDown(KeyCode.Mouse0) && on && timeSinceLastClick >= ClickInterval)
+            {if ( on && timeSinceLastClick >= ClickInterval)
             {
                 // 更新上次点击时间戳为当前时间
                 _lastClickTime = Time.time;
@@ -139,27 +139,28 @@ public class TalkSystem : MonoBehaviour
                 UpButton.gameObject.SetActive(false);
                 DownButton.gameObject.SetActive(false);
 
-                // 仅当不在显示文本时，才开始新的文本显示
-                if (!_isShowingText)
-                {
-                    try
+                    // 仅当不在显示文本时，才开始新的文本显示
+                    if (!_isShowingText)
                     {
-                        _ = ShowText();
+                        try
+                        {
+                            _ = ShowText();
+                        }
+                        catch (ArgumentOutOfRangeException)
+                        {
+                            return;
+                        }
+                        catch (NullReferenceException)
+                        {
+                            return;
+                        }
                     }
-                    catch (ArgumentOutOfRangeException)
+                    // 若正在显示文本且未完全展示，立即显示剩余内容
+                    else if (!_isTextFullyDisplayed)
                     {
+                        ShowRemainingText();
                         return;
                     }
-                    catch (NullReferenceException)
-                    {
-                        return;
-                    }
-                }
-                // 若正在显示文本且未完全展示，立即显示剩余内容
-                else if (!_isTextFullyDisplayed)
-                {
-                    ShowRemainingText();
-                    return;
                 }
             }
         }
