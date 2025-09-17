@@ -2896,7 +2896,6 @@ MonoBehaviour:
   DeadName: {fileID: 0}
   aimi: {fileID: 0}
   fu: {fileID: 0}
-  UesdBody: {fileID: 0}
   progress: {fileID: 0}
   aimi_obj: {fileID: 0}
   fu_obj: {fileID: 0}
@@ -4606,7 +4605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &342679171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6383,7 +6382,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 278448209}
-  Setmaterial: 0
   MainTalk: {fileID: 0}
   LearnTalk: {fileID: 0}
   Error: {fileID: 0}
@@ -6948,7 +6946,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 0}
-  Setmaterial: 0
   MainTalk: {fileID: 2039588929}
   LearnTalk: {fileID: 719523450}
   Error: {fileID: 0}
@@ -7884,7 +7881,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 278448209}
-  Setmaterial: 0
   MainTalk: {fileID: 0}
   LearnTalk: {fileID: 0}
   Error: {fileID: 0}
@@ -8596,7 +8592,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 278448209}
-  Setmaterial: 0
   MainTalk: {fileID: 2039588929}
   LearnTalk: {fileID: 719523450}
   Error: {fileID: 2100000, guid: 5df817843ad288546ad95989f4f702f4, type: 2}
@@ -9908,7 +9903,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 1968255817}
-  Setmaterial: 1
   MainTalk: {fileID: 2039588929}
   LearnTalk: {fileID: 719523450}
   Error: {fileID: 2100000, guid: 5df817843ad288546ad95989f4f702f4, type: 2}
@@ -10291,7 +10285,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 74850c4107de92447a3f455bbd1925da, type: 2}
   - {fileID: 0}
   DeadName: {fileID: 0}
-  UesdBody: {fileID: 0}
   DaytimeOBJ: {fileID: 1185337235}
   Daytime: 0
   line: 0
@@ -10328,7 +10321,6 @@ MonoBehaviour:
   DownBar: {fileID: 155937340}
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
   _isShowingText: 0
-  CanSkip: 0
   ClickInterval: 300
 --- !u!114 &719523452
 MonoBehaviour:
@@ -13197,7 +13189,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 1968255817}
-  Setmaterial: 0
   MainTalk: {fileID: 0}
   LearnTalk: {fileID: 0}
   Error: {fileID: 0}
@@ -13533,7 +13524,6 @@ MonoBehaviour:
   DeadName: {fileID: 11400000, guid: 1b5012e8af746534e809d078e4fdd8ad, type: 2}
   aimi: {fileID: 11400000, guid: b8d347bc59fee894890b27ae5d1b962b, type: 2}
   fu: {fileID: 11400000, guid: 7017f7d7058355947b2f649c05570ef1, type: 2}
-  UesdBody: {fileID: 0}
   progress: {fileID: 880794419}
   aimi_obj: {fileID: 1061970914}
   fu_obj: {fileID: 88074887}
@@ -14026,7 +14016,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 1968255817}
-  Setmaterial: 0
   MainTalk: {fileID: 0}
   LearnTalk: {fileID: 0}
   Error: {fileID: 0}
@@ -14848,7 +14837,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1011968361}
-  - component: {fileID: 1011968362}
   m_Layer: 5
   m_Name: CharacterTalk
   m_TagString: Untagged
@@ -14879,27 +14867,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1011968362
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1011968360}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 90a633558a6f39f40bb0f362bd1805ab, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1012326636
 GameObject:
   m_ObjectHideFlags: 0
@@ -15094,7 +15061,6 @@ MonoBehaviour:
   - {fileID: 1437816154}
   RightBar: {fileID: 2054626015}
   LeftBar: {fileID: 280657276}
-  anim: {fileID: 1129449527}
 --- !u!224 &1015089394
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17175,7 +17141,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1129449526}
-  - component: {fileID: 1129449527}
   m_Layer: 5
   m_Name: CharacterTalk
   m_TagString: Untagged
@@ -17206,27 +17171,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1129449527
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129449525}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 90a633558a6f39f40bb0f362bd1805ab, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1139894714
 GameObject:
   m_ObjectHideFlags: 0
@@ -19479,8 +19423,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 0
-  m_fontColor: {r: 0, g: 0, b: 0, a: 0}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -23009,7 +22953,6 @@ MonoBehaviour:
   - {fileID: 1297343175}
   RightBar: {fileID: 972337715}
   LeftBar: {fileID: 828043952}
-  anim: {fileID: 1011968362}
 --- !u!1 &1568892379
 GameObject:
   m_ObjectHideFlags: 0
@@ -25653,7 +25596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1763126682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27219,7 +27162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 0}
-  Setmaterial: 0
   MainTalk: {fileID: 2039588929}
   LearnTalk: {fileID: 719523450}
   Error: {fileID: 0}
@@ -29282,7 +29224,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   DeadName: {fileID: 11400000, guid: 1b5012e8af746534e809d078e4fdd8ad, type: 2}
-  UesdBody: {fileID: 11400000, guid: 3b2059a793a087e438fe397c7bf5ac3d, type: 2}
   DaytimeOBJ: {fileID: 880794419}
   Daytime: 0
   line: 0
@@ -29325,7 +29266,6 @@ MonoBehaviour:
   DownBar: {fileID: 921392543}
   Day0_Talk: {fileID: 0}
   _isShowingText: 0
-  CanSkip: 0
   ClickInterval: 300
 --- !u!114 &2039588930
 MonoBehaviour:
