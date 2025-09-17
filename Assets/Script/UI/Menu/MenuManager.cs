@@ -7,20 +7,17 @@ public class MenuManager : MonoBehaviour
 {
 
     public GameObject Menu;
-    public bool Setmaterial;
+
     public TalkSystem MainTalk, LearnTalk;
     public Material Error;
     public Animator Black;
 
     private void Awake()
     {
-        if(Setmaterial)
-        {
-            Error.SetFloat("_GlitchIntensity", 0);
-            Error.SetFloat("_NoiseIntensity", 0);
-            Error.SetFloat("_ColorShift", 0);
-            Error.SetFloat("_GlitchSpeed", 0);
-        }
+        Error.SetFloat("_GlitchIntensity", 0);
+        Error.SetFloat("_NoiseIntensity", 0);
+        Error.SetFloat("_ColorShift", 0);
+        Error.SetFloat("_GlitchSpeed", 0);
     }
 
     void Update()

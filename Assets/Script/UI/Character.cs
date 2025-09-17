@@ -347,22 +347,32 @@ public class Character : MonoBehaviour
                 talksys.Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num];
                 // 标记为已触发对话（避免重复触发）
                 have_talk = true;
+                talksys.on = true;
+                talksys._inshop = false;
+                // 显示对话面板（调用TalkSystem的ShowBar方法，可能包含动画）
                 talksys.ShowBar();
+                // 重置对话行数到第一行
+                talksys.line = 0;
+                // 启动对话文本显示（异步执行，避免UI卡顿）
+                talksys._isShowingText = false;
+                _ = talksys.ShowText();
                 // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
                 Invoke("DownAnim", Delay);
-                Invoke("SetTalk", 1.2f);
-                
             }
             else
             {
                 TalkBar.SetActive(true);
                 talksys.Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num].Option3;
-                talksys.ShowBar();
-                // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
-                Invoke("DownAnim", Delay);
                 // 显示对话面板（调用TalkSystem的ShowBar方法，可能包含动画）
-                Invoke("SetTalk", 1.2f);
-                
+                talksys.on = true;
+                talksys._inshop = false;
+                talksys.ShowBar();
+                // 重置对话行数到第一行
+                talksys.line = 0;
+                // 启动对话文本显示（异步执行，避免UI卡顿）
+                _ = talksys.ShowText();
+                // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
+                Invoke("DownAnim",Delay);
             }
         }
     }
@@ -371,20 +381,6 @@ public class Character : MonoBehaviour
     {
         ClikDelay = false;
         TalkBar.GetComponent<TalkSystem>().on = true;
-    }
-
-    void SetTalk()
-    {
-        TalkSystem talksys = TalkBar.GetComponent<TalkSystem>();
-        talksys.on = true;
-        talksys._inshop = false;
-        // 显示对话面板（调用TalkSystem的ShowBar方法，可能包含动画）
-        
-        // 重置对话行数到第一行
-        talksys.line = 0;
-        // 启动对话文本显示（异步执行，避免UI卡顿）
-        talksys._isShowingText = false;
-        _ = talksys.ShowText();
     }
 
 
