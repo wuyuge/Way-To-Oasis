@@ -25,7 +25,7 @@ public class CharacterImageManager : MonoBehaviour
         }
         if (!haveImage)
         {
-            anim.SetTrigger("Up");
+            //anim.SetTrigger("Up");
         }
         switch (name)
         {

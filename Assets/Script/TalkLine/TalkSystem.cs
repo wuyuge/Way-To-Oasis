@@ -91,7 +91,30 @@ public class TalkSystem : MonoBehaviour
     [Tooltip("点击后允许再次点击的间隔时间（毫秒），建议设置200-500ms")]
     public float ClickInterval = 300f; // 默认300毫秒，可根据体验调整
     private float _lastClickTime; // 记录上次有效点击的时间戳（单位：秒）
-    
+
+    private void Awake()
+    {
+        Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
+        if (Daytime == 0)
+        {
+            on = false;
+            Invoke("SetStartTalk", 1.5f);
+
+        }
+    }
+
+    void SetStartTalk()
+    {
+        Invoke("SetOn", 1f);
+        _ = ShowText(true);
+        
+    }
+
+    void SetOn()
+    {
+        on = true;
+    }
+
     /// <summary>
     /// 初始化对话系统
     /// </summary>
@@ -108,7 +131,7 @@ public class TalkSystem : MonoBehaviour
         // 从第0行开始显示对话
         line = 0;
         // 从进度管理器获取当前天数
-        Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
+        
         if (on && DaytimeOBJ.GetComponent<Progress>().talk)
         {
             // 隐藏选择按钮（点击文本时关闭选择界面）

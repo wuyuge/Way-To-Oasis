@@ -33,13 +33,13 @@ public class BackGroundMoving : MonoBehaviour
     [Tooltip("Í£Ö¹Î»ÖÃ")]
     public float StopPositionx;
 
-
+    public GameObject BackImage;
 
 
     public GameObject LightSys, Skip;
 
     // ´æ´¢¸÷±³¾°²ãµÄ³õÊ¼Î»ÖÃ
-    private List<Vector3> initialLayerPositions = new List<Vector3>();
+    public  List<Vector3> initialLayerPositions = new List<Vector3>();
 
 
 
@@ -70,7 +70,7 @@ public class BackGroundMoving : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (open)
+        if (open && BackImage.GetComponent<RectTransform>().position.x > initialLayerPositions[9].x)
         { MoveAllLayers(); }
         if (LightSys.GetComponent<DayNightSystem>().complete)
         {
