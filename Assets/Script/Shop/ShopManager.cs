@@ -39,6 +39,7 @@ public class ShopManager : MonoBehaviour
         }
 
 
+
         if(CanUseBody == 1)
         {
             Body.Weight -= 1;
