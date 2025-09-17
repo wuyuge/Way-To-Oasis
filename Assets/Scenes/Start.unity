@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 0}
+  Setmaterial: 1
   MainTalk: {fileID: 0}
   LearnTalk: {fileID: 0}
   Error: {fileID: 2100000, guid: 5df817843ad288546ad95989f4f702f4, type: 2}
@@ -642,6 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 0}
+  Setmaterial: 0
   MainTalk: {fileID: 0}
   LearnTalk: {fileID: 0}
   Error: {fileID: 0}
@@ -1375,6 +1377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 0}
+  Setmaterial: 0
   MainTalk: {fileID: 0}
   LearnTalk: {fileID: 0}
   Error: {fileID: 2100000, guid: 5df817843ad288546ad95989f4f702f4, type: 2}

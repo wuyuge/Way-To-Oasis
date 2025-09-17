@@ -10,9 +10,23 @@ public class CharacterImageManager : MonoBehaviour
     public List<GameObject> LeftImage = new List<GameObject>();
     public GameObject RightBar,LeftBar;
     private int LastPosition;//0为左 1为右
+    public Animator anim;
 
     public void SetImage(string name,int express = 0)//先判断是否已经显示，如果已经显示则把对应图像高亮如果没有先置入右侧
     {
+        bool haveImage = false;
+        foreach (GameObject g in RightImage)
+        {
+            if (g.activeSelf)
+            {
+                haveImage = true;
+                break;
+            }
+        }
+        if (!haveImage)
+        {
+            anim.SetTrigger("Up");
+        }
         switch (name)
         {
             case "阿曼德":
@@ -323,6 +337,7 @@ public class CharacterImageManager : MonoBehaviour
             if (g.activeSelf)
                 g.GetComponent<Animator>().SetTrigger("close");
         }
+        anim.SetTrigger("Down");
         Invoke("SetGameObj",0.5f);
     }
     private void SetGameObj()
