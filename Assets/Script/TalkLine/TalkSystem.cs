@@ -17,7 +17,7 @@ public class TalkSystem : MonoBehaviour
     [Header("每天的文本线")]
     [Tooltip("存储每一天的对话数据列表")]
     public List<Manager> Talklines = new List<Manager>();
-    public Manager DeadName;
+    public Manager DeadName,UesdBody;
     [Header("管理时间,目前行数")]
     [Tooltip("关联到进度管理器对象，用于获取当前天数")]
     public GameObject DaytimeOBJ;
@@ -86,17 +86,18 @@ public class TalkSystem : MonoBehaviour
     private bool _isTextFullyDisplayed = false;
 
     
-    private bool CanSkip;
+    public bool CanSkip = true;
     [Header("点击间隔配置")]
     [Tooltip("点击后允许再次点击的间隔时间（毫秒），建议设置200-500ms")]
     public float ClickInterval = 300f; // 默认300毫秒，可根据体验调整
     private float _lastClickTime; // 记录上次有效点击的时间戳（单位：秒）
+    
     /// <summary>
     /// 初始化对话系统
     /// </summary>
     void Start()
     {
-
+        
         charaBar = gameObject.transform.parent.Find("DownBar").gameObject;
         anim = gameObject.GetComponent<Animator>();
         // 清空UI文本框
@@ -227,6 +228,7 @@ public class TalkSystem : MonoBehaviour
         try
         {
             string curText = Talklines[Daytime].TxtLine[line];
+            Debug.Log($"读取命令：{curText}");
             CanSkip = false;
             switch (curText)
             {
@@ -445,9 +447,19 @@ public class TalkSystem : MonoBehaviour
                     return;
 
                 case "dead":
-                    Talklines[Daytime] = DeadName.TxtLine.Count != 0
-                        ? Talklines[Daytime].Option1
-                        : Talklines[Daytime].Option2;
+
+                    // 如果满足以下任一条件，则使用Option2
+                    if ((DeadName.TxtLine.Count == 0 && UesdBody.TxtLine.Count == 0) ||
+                        (DeadName.TxtLine.Count == 1 && DeadName.TxtLine[0] == "Leader" && UesdBody.TxtLine.Count == 0))
+                    {
+                        Talklines[Daytime] = Talklines[Daytime].Option2;
+                    }
+                    // 如果DeadName至少有一条记录，则使用Option1
+                    else if (DeadName.TxtLine.Count >= 1)
+                    {
+                        Talklines[Daytime] = Talklines[Daytime].Option1;
+                    }
+
 
                     _ = ShowText(true);
                     return;
@@ -456,7 +468,7 @@ public class TalkSystem : MonoBehaviour
                     anim.SetTrigger("down");
                     Invoke("SetCharBar", 1.5f);
                     line++;
-                    this.CharacterImageManager.CloseImage();
+                    
                     
                     _ = ShowText(true);
                     return;
@@ -886,7 +898,7 @@ public class TalkSystem : MonoBehaviour
     async Task ShowCharacter(string name)
     {
         await Task.Delay(100);
-        Debug.Log($"显示{name}立绘");
+        
         this.CharacterImageManager.SetImage(name);
 
     }
