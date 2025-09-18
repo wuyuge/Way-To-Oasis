@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Day1_Dead
   m_EditorClassIdentifier: 
   TxtLine:
-  - Leader
+  - "\u535A\u91D1\u68EE"
+  - "\u963F\u66FC\u5FB7"
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

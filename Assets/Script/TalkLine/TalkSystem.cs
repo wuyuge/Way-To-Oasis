@@ -84,7 +84,7 @@ public class TalkSystem : MonoBehaviour
     private string _currentFullDialogue = "";
     // 标记是否已经显示完整文本（避免重复处理）
     private bool _isTextFullyDisplayed = false;
-
+    public bool inTech = false;
     
     public bool CanSkip = true;
     [Header("点击间隔配置")]
@@ -253,6 +253,7 @@ public class TalkSystem : MonoBehaviour
             string curText = Talklines[Daytime].TxtLine[line];
             Debug.Log($"读取命令：{curText}");
             CanSkip = false;
+            inTech = false;
             switch (curText)
             {
                 case "choice":
@@ -352,8 +353,8 @@ public class TalkSystem : MonoBehaviour
                 case "/exchangeBody":
                     
                     Day2_Shop_Exchange.GeneralBool = true;
-                    
-                    
+                    _inshop = true;
+
                     if (!ShopManager.GetComponent<ShopManager>().ExchangeFood())
                     {
                         ShowExchangeTalk();
@@ -381,7 +382,7 @@ public class TalkSystem : MonoBehaviour
                     ShopManager.SetActive(false);
                     line = 0;                           // 重置对话行索引
                     _inshop = false;                    // 标记退出商店场景
-                    on = true;                          // 强制开启交互（关键！修复无法点击）
+                    on = false;                          // 强制开启交互（关键！修复无法点击）
                     _isShowingText = false;             // 重置文本显示状态，避免阻塞新文本
                     _isTextFullyDisplayed = false;      // 重置文本完成标记
                     _currentFullDialogue = "";
@@ -396,6 +397,7 @@ public class TalkSystem : MonoBehaviour
                     return;
 
                 case "techtalk":
+                    inTech = true;
                     mask.transform.parent.gameObject.SetActive(true);
                     mask.GetComponent<Unmask>().m_FitTarget = DownBar.transform.Find("MaskLayer").GetComponent<RectTransform>();
                     mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "点击人物头像开始对话";
@@ -404,6 +406,7 @@ public class TalkSystem : MonoBehaviour
                     return;
 
                 case "techclose":
+                    inTech = true;
                     mask.transform.parent.gameObject.SetActive(true);
                     mask.GetComponent<Unmask>().m_FitTarget = DaytimeOBJ.GetComponent<RectTransform>();
                     mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "点击按钮结束交谈环节";
@@ -411,6 +414,7 @@ public class TalkSystem : MonoBehaviour
                     _ = ShowText(true);
                     return;
                 case "techfood":
+                    inTech = true;
                     mask.transform.parent.gameObject.SetActive(true);
                     mask.GetComponent<Unmask>().m_FitTarget = DownBar.transform.Find("MaskLayer").GetComponent<RectTransform>();
                     mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "请勾选所有人物头像旁的按钮分配食物";
@@ -420,6 +424,7 @@ public class TalkSystem : MonoBehaviour
                     return;
 
                 case "techweight":
+                    inTech = true;
                     mask.transform.parent.gameObject.SetActive(true);
                     mask.GetComponent<Unmask>().m_FitTarget = DownBar.transform.Find("MaskLayer").GetComponent<RectTransform>();
                     mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "选择右侧的物品然后点击人物头像分配携带物品";
@@ -463,7 +468,12 @@ public class TalkSystem : MonoBehaviour
                     return;
 
                 case "showdeadname":
+                    
                     string showtext = string.Concat(DeadName.TxtLine); // 简化字符串拼接
+                    if (showtext.Contains("Leader"))
+                    {
+                        showtext = showtext.Replace("Leader", string.Empty);
+                    }
                     line += 1;
 
                     _ = ShowText(true, showtext);
@@ -519,7 +529,7 @@ public class TalkSystem : MonoBehaviour
                 case "upcbar":
                     charaBar.GetComponent<Animator>().SetTrigger("Up");
                     line++;
-                    this.CharacterImageManager.CloseImage();
+                    if(!inTech)this.CharacterImageManager.CloseImage();
                     
                     await Task.Delay(800);
 
@@ -553,7 +563,7 @@ public class TalkSystem : MonoBehaviour
                     charabar.SetActive(true);
                     line++;
 
-                    Debug.Log("关闭角色文本框");
+                    Debug.Log("显示角色文本框");
                     _ = ShowText(true);
                     return;
 
@@ -668,7 +678,8 @@ public class TalkSystem : MonoBehaviour
 
                 _currentFullDialogue = dialogueContent; // 新增：统一赋值，确保ShowRemainingText能读取
 
-                _ = ShowCharacter(charaName);
+                if(!_inshop && !inTech)
+                { _ = ShowCharacter(charaName); }
                 Chara_Name.text = charaName;
 
                 // 逐字显示对话

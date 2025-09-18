@@ -395,39 +395,37 @@ public class Character : MonoBehaviour
 
     public void SetSpecialTalk1()
     {
+        TalkBar.GetComponent<TalkSystem>().Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num].SpecialTalk;
         TalkBar.GetComponent<TalkSystem>().on = true;
 
         TalkBar.SetActive(true);
         Attention.SetActive(false);
-        TalkBar.GetComponent<TalkSystem>().Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num].SpecialTalk;
+        
         // 显示对话面板（调用TalkSystem的ShowBar方法，可能包含动画）
         TalkBar.GetComponent<TalkSystem>().ShowBar();
-        // 重置对话行数到第一行
-        TalkBar.GetComponent<TalkSystem>().line = 0;
-        // 启动对话文本显示（异步执行，避免UI卡顿）
-        _ = TalkBar.GetComponent<TalkSystem>().ShowText();
+        
         // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
         AfterSpecialTalk = true;
         Invoke("DownAnim", Delay);
+        Invoke("SetTalk", 1.2f);
 
     }
 
 
     public void SetSpecialTalk2()
     {
+        TalkBar.GetComponent<TalkSystem>().Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num].SpecialTalk2;
         TalkBar.GetComponent<TalkSystem>().on = true;
         TalkBar.SetActive(true);
         Attention.SetActive(false);
-        TalkBar.GetComponent<TalkSystem>().Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num].SpecialTalk2;
+        
         // 显示对话面板（调用TalkSystem的ShowBar方法，可能包含动画）
         TalkBar.GetComponent<TalkSystem>().ShowBar();
-        // 重置对话行数到第一行
-        TalkBar.GetComponent<TalkSystem>().line = 0;
-        // 启动对话文本显示（异步执行，避免UI卡顿）
-        _ = TalkBar.GetComponent<TalkSystem>().ShowText();
+        
         // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
         AfterSpecialTalk = true;
         Invoke("DownAnim", Delay);
+        Invoke("SetTalk", 1.2f);
 
 
 

@@ -25,7 +25,8 @@ public class CharacterImageManager : MonoBehaviour
         }
         if (!haveImage)
         {
-            //anim.SetTrigger("Up");
+            Debug.Log("显示角色对话框");
+            anim.SetTrigger("Up");
         }
         switch (name)
         {
