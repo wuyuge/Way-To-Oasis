@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: luo_Day1_choice-1-2
   m_EditorClassIdentifier: 
   TxtLine:
-  - "\u4F60\u505A\u7684\u5F88\u597D\u3002"
+  - "\u4F60\u505A\u7684\u5F88\u597D"
   - p
   - "\u4F60\u505A\u7684\u5F88\u597D\u3002"
   - c

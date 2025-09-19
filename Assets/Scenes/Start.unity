@@ -317,7 +317,7 @@ MonoBehaviour:
   Final_Body: {fileID: 11400000, guid: 0872d8d3dfe5938478ece7b8160a6ed7, type: 2}
   Have_Food: {fileID: 11400000, guid: f06321c0dffc5bf4294a39dde43422df, type: 2}
   Have_Body: {fileID: 11400000, guid: c2d5f949fceb5fb46a5109f39c5d07fb, type: 2}
-  food: 12
+  food: 15
   body: 1
   DeadName: {fileID: 11400000, guid: 1b5012e8af746534e809d078e4fdd8ad, type: 2}
   UesdBody: {fileID: 11400000, guid: 3b2059a793a087e438fe397c7bf5ac3d, type: 2}

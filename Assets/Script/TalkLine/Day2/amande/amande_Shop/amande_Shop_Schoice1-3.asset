@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: amande_Shop_Schoice1-3
   m_EditorClassIdentifier: 
   TxtLine:
-  - "\u662F\u7684\u3002"
+  - "\u662F\u7684"
   - p
   - "\u662F\u7684\u3002"
   - c

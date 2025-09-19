@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: lai_Day2_ShopSpecialChoice1-4
   m_EditorClassIdentifier: 
   TxtLine:
-  - "\u7FA4\u4F53\u7684\u667A\u6167\u4E0D\u4E00\u5B9A\u6B63\u786E\u3002"
+  - "\u7FA4\u4F53\u7684\u667A\u6167\u4E0D\u4E00\u5B9A\u6B63\u786E"
   - p
   - "\u7FA4\u4F53\u7684\u667A\u6167\u5E76\u4E0D\u4E00\u5B9A\u80FD\u5BFC\u5411\u6B63\u786E\u3002"
   - c

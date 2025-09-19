@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: fu_Day2_Shop_choice2
   m_EditorClassIdentifier: 
   TxtLine:
-  - "\u6CA1\u4EC0\u4E48\u539F\u56E0\uFF0C\u6211\u4E50\u610F\u3002"
+  - "\u6CA1\u4EC0\u4E48\u539F\u56E0\uFF0C\u6211\u4E50\u610F"
   - p
   - "\u6CA1\u4EC0\u4E48\u539F\u56E0\uFF0C\u6211\u4E50\u610F\u3002"
   - c

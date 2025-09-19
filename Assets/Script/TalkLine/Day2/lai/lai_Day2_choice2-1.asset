@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: lai_Day2_choice2-1
   m_EditorClassIdentifier: 
   TxtLine:
-  - "\u8F9B\u82E6\u4F60\u4E86\u3002"
+  - "\u8F9B\u82E6\u4F60\u4E86"
   - p
   - "\u8F9B\u82E6\u4F60\u4E86\u3002"
   - c

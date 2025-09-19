@@ -155,13 +155,14 @@ public class TalkSystem : MonoBehaviour
             float timeSinceLastClick = (Time.time - _lastClickTime) * 1000f;
             if(Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
             // 点击条件：鼠标左键按下 + 交互开启（on） + 超过点击间隔
-            {if ( on && timeSinceLastClick >= ClickInterval)
             {
-                // 更新上次点击时间戳为当前时间
-                _lastClickTime = Time.time;
+                if ( on && timeSinceLastClick >= ClickInterval)
+                {
+                    // 更新上次点击时间戳为当前时间
+                    _lastClickTime = Time.time;
 
-                UpButton.gameObject.SetActive(false);
-                DownButton.gameObject.SetActive(false);
+                    UpButton.gameObject.SetActive(false);
+                    DownButton.gameObject.SetActive(false);
 
                     // 仅当不在显示文本时，才开始新的文本显示
                     if (!_isShowingText)

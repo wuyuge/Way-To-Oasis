@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: aimi_Shop_Day2_Choice1-3-2
   m_EditorClassIdentifier: 
   TxtLine:
-  - "\u4E0D\u4F1A\u3002"
+  - "\u4E0D\u4F1A"
   - p
   - "\u4E0D\u4F1A\u3002"
   - c

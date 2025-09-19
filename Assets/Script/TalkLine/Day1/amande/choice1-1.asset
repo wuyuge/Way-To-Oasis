@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: choice1-1
   m_EditorClassIdentifier: 
   TxtLine:
-  - "\u2026\u2026\u6211\u4F1A\u5C3D\u529B\u7684\u3002"
+  - "\u2026\u2026\u6211\u4F1A\u5C3D\u529B\u7684"
   - p
   - "\u2026\u2026\u6211\u4F1A\u5C3D\u529B\u7684\u3002"
   - c

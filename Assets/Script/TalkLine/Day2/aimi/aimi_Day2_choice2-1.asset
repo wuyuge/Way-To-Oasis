@@ -15,7 +15,7 @@ MonoBehaviour:
   TxtLine:
   - "\u4E0D\u7528\u62C5\u5FC3"
   - p
-  - "\u4E0D\u7528\u62C5\u5FC3"
+  - "\u4E0D\u7528\u62C5\u5FC3\u3002"
   - end
   Option1: {fileID: 11400000, guid: 8936878eb0f92834cbe2d833c996218a, type: 2}
   Option2: {fileID: 0}
