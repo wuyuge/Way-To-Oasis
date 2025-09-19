@@ -77,14 +77,7 @@ public class TalkSystem : MonoBehaviour
     public Manager Day0_Talk;
     public GameObject Menu;
 
-    // 用于取消异步文本显示任务的令牌源
-    private CancellationTokenSource _cts;
-    // 标记当前是否正在显示文本
-    public bool _isShowingText = false;
-    // 存储当前正在显示的完整文本（用于中途点击显示剩余内容）
-    private string _currentFullDialogue = "";
-    // 标记是否已经显示完整文本（避免重复处理）
-    private bool _isTextFullyDisplayed = false;
+   
     public bool inTech = false;
     
     public bool CanSkip = true;
@@ -92,6 +85,10 @@ public class TalkSystem : MonoBehaviour
     [Tooltip("点击后允许再次点击的间隔时间（毫秒），建议设置200-500ms")]
     public float ClickInterval = 300f; // 默认300毫秒，可根据体验调整
     private float _lastClickTime; // 记录上次有效点击的时间戳（单位：秒）
+    [Header("文字显示速度（毫秒）")]
+    public int TextSpeedI = 100;
+    public bool _IsShowingText = false; // 标记当前是否正在显示文本
+    public bool BreakText = false; // 标记是否请求中断文本显示
 
     private void Awake()
     {
@@ -157,36 +154,20 @@ public class TalkSystem : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
             // 点击条件：鼠标左键按下 + 交互开启（on） + 超过点击间隔
             {
-                if ( on && timeSinceLastClick >= ClickInterval)
+                if ( on && timeSinceLastClick >= ClickInterval && !_IsShowingText)
                 {
                     // 更新上次点击时间戳为当前时间
                     _lastClickTime = Time.time;
 
                     UpButton.gameObject.SetActive(false);
                     DownButton.gameObject.SetActive(false);
-
+                    _ = ShowText();
                     // 仅当不在显示文本时，才开始新的文本显示
-                    if (!_isShowingText)
-                    {
-                        try
-                        {
-                            _ = ShowText();
-                        }
-                        catch (ArgumentOutOfRangeException)
-                        {
-                            return;
-                        }
-                        catch (NullReferenceException)
-                        {
-                            return;
-                        }
-                    }
-                    // 若正在显示文本且未完全展示，立即显示剩余内容
-                    else if (!_isTextFullyDisplayed)
-                    {
-                        ShowRemainingText();
-                        return;
-                    }
+                    
+                }
+                else if (_IsShowingText && !BreakText)
+                {
+                    BreakText = true;
                 }
             }
         }
@@ -195,43 +176,14 @@ public class TalkSystem : MonoBehaviour
     /// <summary>
     /// 立即显示当前文本的剩余部分
     /// </summary>
-    private void ShowRemainingText()
-    {
-        if (string.IsNullOrEmpty(_currentFullDialogue)) return;
-
-        
-
-        // 强制更新文本显示
-        if (!PlayerTalking)
-        {
-            Character.text = _currentFullDialogue;
-            
-        }
-        else
-        {
-            Player.text = _currentFullDialogue;
-            
-        }
-
-        // 立即更新状态，允许下一次交互
-        _isTextFullyDisplayed = true;
-        _isShowingText = false; // 手动标记为已完成，避免状态延迟
-        
-        CanSkip = false;
-    }
+   
 
     /// <summary>
     /// 异步显示文本（支持逐字显示和中途取消）
     /// </summary>
     public async Task ShowText(bool isroll = false, string addtiontext = null, bool ClearText = true,bool ShowMask = false)
     {
-        if (isroll) _isShowingText = false;
-        if (_isShowingText) return;
-
-
-        _isShowingText = true;
-        _isTextFullyDisplayed = false;
-        _currentFullDialogue = "";
+        
 
         // 清空文本框（原有逻辑保留）
         if (!PlayerTalking && ClearText)
@@ -327,11 +279,16 @@ public class TalkSystem : MonoBehaviour
                 case "/specialchoice":
 
                     HandleChoice(true);
-                    _isShowingText = false;
+                   
 
                     return;
                 case "/showname":
                     ShowName = true;
+                    line++;
+                    _ = ShowText(true);
+                    return;
+                case "/ResetTrigger":
+                    this.CharacterImageManager.ResetTrigger();
                     line++;
                     _ = ShowText(true);
                     return;
@@ -372,7 +329,7 @@ public class TalkSystem : MonoBehaviour
                     else
                     {
                         ShowExchangeTalk();
-                        _isShowingText = false;
+                        
                         line++;
                         _ = ShowText(true);
 
@@ -385,9 +342,7 @@ public class TalkSystem : MonoBehaviour
                     line = 0;                           // 重置对话行索引
                     _inshop = false;                    // 标记退出商店场景
                     on = false;                          // 强制开启交互（关键！修复无法点击）
-                    _isShowingText = false;             // 重置文本显示状态，避免阻塞新文本
-                    _isTextFullyDisplayed = false;      // 重置文本完成标记
-                    _currentFullDialogue = "";
+                    
                     return;
 
                 case "/shop":
@@ -418,6 +373,7 @@ public class TalkSystem : MonoBehaviour
                     mask.transform.parent.gameObject.SetActive(true);
                     mask.GetComponent<Unmask>().m_FitTarget = gameObject.GetComponent<RectTransform>();
                     mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "点击鼠标左键或按下空格键继续对话";
+                    line++;
                     
                     
                     return;
@@ -716,18 +672,30 @@ public class TalkSystem : MonoBehaviour
                 }
 
 
-                _currentFullDialogue = dialogueContent; // 新增：统一赋值，确保ShowRemainingText能读取
+                
                 if (!_inshop && !inTech)
                 { _ = ShowCharacter(charaName); }
                 Chara_Name.text = charaName;
-                
-                
 
+
+                on = false;
+                _IsShowingText = true;
                 // 逐字显示对话
                 foreach (char c in dialogueContent)
                 {
-                    
 
+                    if (BreakText)
+                    {
+                        line++;
+                        if(!_inshop)Character.text = dialogueContent;
+                        else ShopTextBar.GetComponent<TextMeshProUGUI>().text = dialogueContent;
+                        _IsShowingText = false;
+                        on = true;
+                        BreakText = false;
+                        return;
+                    }
+
+                    await Task.Delay(TextSpeedI);
                     if (_inshop)
                     {
                         ShopTextBar.GetComponent<TextMeshProUGUI>().text += c;
@@ -742,7 +710,7 @@ public class TalkSystem : MonoBehaviour
                     }
                     
                 }
-                if (_currentFullDialogue == "你没事吧，■■？别太难过了。")
+                if (dialogueContent == "你没事吧，■■？别太难过了。")
                 {
                     on = false;
                     await Task.Delay(500);
@@ -750,22 +718,36 @@ public class TalkSystem : MonoBehaviour
                     _ = ShowText(true,ClearText:false);
                     Invoke("SetOn", 0.5f);
                 }
+                on = true;
+                BreakText = false;
+                _IsShowingText = false;
             }
             // 处理玩家说话
             else
             {
                 CanSkip = true;
-                _currentFullDialogue = curText; // 新增：统一赋值
+                
                 if (curText.Contains("："))
                 {
                     line--;
                     _ = ShowText();
                     return;
                 }
+                on = false;
+                _IsShowingText = true;
                 foreach (char c in curText)
                 {
-                    
-
+                    if (BreakText)
+                    {
+                        line++;
+                        if (!_inshop) Player.text = curText;
+                        else ShopTextBar.GetComponent<TextMeshProUGUI>().text = curText;
+                        _IsShowingText = false;
+                        on = true;
+                        BreakText = false;
+                        return;
+                    }
+                    await Task.Delay(TextSpeedI);
                     if (_inshop)
                     {
                         ShopTextBar.GetComponent<TextMeshProUGUI>().text += c;
@@ -780,15 +762,18 @@ public class TalkSystem : MonoBehaviour
                     }
                     
                 }
+                on = true;
+                BreakText = false;
+                _IsShowingText = false;
             }
 
             // 标记完成并准备下一行
-            _isTextFullyDisplayed = true;
+            
             line++;
         }
         finally
         {
-            _isShowingText = false;
+            
             
         }
     }

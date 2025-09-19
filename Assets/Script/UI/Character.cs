@@ -85,6 +85,9 @@ public class Character : MonoBehaviour
     [Header("Day0用")]
     public Manager Day0_Talk;
 
+    
+
+
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
     /// 1. 绑定UI组件 2. 初始化角色数据 3. 刷新初始UI显示
@@ -383,7 +386,7 @@ public class Character : MonoBehaviour
         // 重置对话行数到第一行
         talksys.line = 0;
         // 启动对话文本显示（异步执行，避免UI卡顿）
-        talksys._isShowingText = false;
+        
         _ = talksys.ShowText();
     }
 

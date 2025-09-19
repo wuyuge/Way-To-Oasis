@@ -323,7 +323,11 @@ public class CharacterImageManager : MonoBehaviour
 
 
 
-
+    public void ResetTrigger()
+    {
+        anim.ResetTrigger("Down");
+        anim.ResetTrigger("Up");
+    }
 
 
     public void CloseImage()
