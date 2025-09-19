@@ -75,6 +75,7 @@ public class TalkSystem : MonoBehaviour
     public GameObject mask;
     public GameObject DownBar;
     public Manager Day0_Talk;
+    public GameObject Menu;
 
     // 用于取消异步文本显示任务的令牌源
     private CancellationTokenSource _cts;
@@ -222,7 +223,7 @@ public class TalkSystem : MonoBehaviour
     /// <summary>
     /// 异步显示文本（支持逐字显示和中途取消）
     /// </summary>
-    public async Task ShowText(bool isroll = false, string addtiontext = null)
+    public async Task ShowText(bool isroll = false, string addtiontext = null, bool ClearText = true,bool ShowMask = false)
     {
         if (isroll) _isShowingText = false;
         if (_isShowingText) return;
@@ -233,7 +234,7 @@ public class TalkSystem : MonoBehaviour
         _currentFullDialogue = "";
 
         // 清空文本框（原有逻辑保留）
-        if (!PlayerTalking)
+        if (!PlayerTalking && ClearText)
         {
             Character.text = "";
             Chara_Name.text = "";
@@ -246,7 +247,7 @@ public class TalkSystem : MonoBehaviour
         {
             ShopTextBar.GetComponent<TextMeshProUGUI>().text = "";
         }
-
+        
         
 
         try
@@ -396,14 +397,52 @@ public class TalkSystem : MonoBehaviour
 
                     _ = ShowText(true);
                     return;
+                case "CloseMask":
+                    mask.transform.parent.gameObject.SetActive(false);
+                    line++;
+                    _ = ShowText(true);
+                    return;
+                case "techmenu":
+                    inTech = true;
+                    on = false;
+                    mask.transform.parent.gameObject.SetActive(true);
+                    mask.GetComponent<Unmask>().m_FitTarget = Menu.GetComponent<RectTransform>();
+                    mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "点击这里或按下Esc开启菜单界面";
+                    line++;
+                    await Task.Delay(3000);
+                    _ = ShowText(true, ShowMask: true);
+                    return;
+                case "techclik":
+                    
+                    
+                    mask.transform.parent.gameObject.SetActive(true);
+                    mask.GetComponent<Unmask>().m_FitTarget = gameObject.GetComponent<RectTransform>();
+                    mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "点击鼠标左键或按下空格键继续对话";
+                    
+                    
+                    return;
 
                 case "techtalk":
                     inTech = true;
+                    on = false;
                     mask.transform.parent.gameObject.SetActive(true);
                     mask.GetComponent<Unmask>().m_FitTarget = DownBar.transform.Find("MaskLayer").GetComponent<RectTransform>();
-                    mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "点击人物头像开始对话";
+                    mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "这是选择栏，里面分别展示着你和其他5位角色的状态，之后可以在这里分配负重与食物，现在请点击人物头像开始对话";
                     line++;
+                    DaytimeOBJ.GetComponent<Button>().enabled = true;
                     _ = ShowText(true);
+                    return;
+
+                case "techright":
+                    inTech = true;
+                    on = false;
+                    DaytimeOBJ.GetComponent<Button>().enabled = false;
+                    mask.transform.parent.gameObject.SetActive(true);
+                    mask.GetComponent<Unmask>().m_FitTarget = DaytimeOBJ.transform.parent.gameObject.GetComponent<RectTransform>();
+                    mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "这是日志栏，里面分别展示着你目前在哪一天处于哪个环节，点击下方按钮可以切换到下一环节";
+                    line++;
+                    await Task.Delay(3000);
+                    _ = ShowText(true,ShowMask:true);
                     return;
 
                 case "techclose":
@@ -678,10 +717,11 @@ public class TalkSystem : MonoBehaviour
 
 
                 _currentFullDialogue = dialogueContent; // 新增：统一赋值，确保ShowRemainingText能读取
-
-                if(!_inshop && !inTech)
+                if (!_inshop && !inTech)
                 { _ = ShowCharacter(charaName); }
                 Chara_Name.text = charaName;
+                
+                
 
                 // 逐字显示对话
                 foreach (char c in dialogueContent)
@@ -701,6 +741,14 @@ public class TalkSystem : MonoBehaviour
                         Character.text += c;
                     }
                     
+                }
+                if (_currentFullDialogue == "你没事吧，■■？别太难过了。")
+                {
+                    on = false;
+                    await Task.Delay(500);
+                    line++;
+                    _ = ShowText(true,ClearText:false);
+                    Invoke("SetOn", 0.5f);
                 }
             }
             // 处理玩家说话

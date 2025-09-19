@@ -1,3 +1,4 @@
+using Coffee.UIExtensions;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -121,6 +122,9 @@ public class Progress : MonoBehaviour
     public GameObject Mask;
     public DayNightSystem DNSys;
 
+    // 用于判断day0遮罩是否用过
+    private bool Day0MaskUsed = false;
+
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
     /// 1. 绑定UI文本组件 2. 设置初始阶段的文本颜色 3. 触发当天开始前的幕间对话
@@ -167,6 +171,25 @@ public class Progress : MonoBehaviour
             DownBar.GetComponent<Animator>().SetTrigger("Down");  // 底部栏播放"向下"动画（可能隐藏底部栏）
         }
 
+    }
+
+
+
+    public void FixedUpdate()
+    {
+        if(day_num == 0 && food && !Day0MaskUsed)
+        {
+            bool allEat = DownBar.GetComponent<ObjectManager>().CheckEat(false);
+            if(allEat)
+            {
+                Day0MaskUsed = true;
+                Mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "点击按钮结束分配食物环节";
+                Mask.GetComponent<Unmask>().fitTarget = gameObject.GetComponent<RectTransform>();
+                Mask.transform.parent.gameObject.SetActive(true);
+                Invoke("ColseMask", 1.5f);
+
+            }
+        }
     }
 
 

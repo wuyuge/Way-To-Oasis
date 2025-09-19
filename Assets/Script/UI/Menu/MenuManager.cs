@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class MenuManager : MonoBehaviour
 
     public GameObject Menu;
     public bool Setmaterial;
-    public TalkSystem MainTalk, LearnTalk;
+    public GameObject MainTalk, LearnTalk;
     public Material Error;
     public Animator Black;
 
@@ -49,8 +50,8 @@ public class MenuManager : MonoBehaviour
     {
         Menu.SetActive(true);
         Time.timeScale = 0;
-        MainTalk.on = false;
-        LearnTalk.on = false;
+        MainTalk.GetComponent<TalkSystem>().on = false;
+        LearnTalk.GetComponent<TalkSystem>().on = false;
 
     }
 
@@ -58,8 +59,10 @@ public class MenuManager : MonoBehaviour
     {
         Menu.SetActive(false);
         Time.timeScale = 1;
-        MainTalk.on = true;
-        LearnTalk.on = true;
+        MainTalk.GetComponent<TalkSystem>().on = true;
+        LearnTalk.GetComponent<TalkSystem>().on = true;
+        
+        
     }
 
     public void OpenSetting()
