@@ -91,6 +91,8 @@ public class TalkSystem : MonoBehaviour
     public bool BreakText = false; // 标记是否请求中断文本显示
     [Header("玩家名字")]
     public Manager PlayerName;
+    [Header("阿曼德自杀判断")]
+    public Manager amandeKillself;
     private void Awake()
     {
         Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
@@ -224,6 +226,37 @@ public class TalkSystem : MonoBehaviour
                 case "/Laiwenfail":
                     CharacterList[5].GetComponent<Character>().NotComfort = true;
                     line++;
+                    _ = ShowText(true);
+                    return;
+                case "/CheckAmandeKillself":
+                    if(amandeKillself.GeneralBool)
+                    {
+                        Talklines[Daytime] = Talklines[Daytime].Option1;
+                        line = 0;
+                        _ = ShowText(true);
+                    }
+                    else
+                    {
+                        line++;
+                        _ = ShowText(true);
+                    }
+                    return;
+                case "/CheckEveryOneLive":
+                    foreach(GameObject g in CharacterList)
+                    {
+                        if (g.GetComponent<Character>().Dead)
+                        {
+                            if (g.GetComponent<Character>().CharacterName == "阿曼德") continue;
+                            Talklines[Daytime] = Talklines[Daytime].Option2;
+                            line = 0;
+                            _ = ShowText(true);
+                            return;
+
+                        }
+                        
+                    }
+                    Talklines[Daytime] = Talklines[Daytime].Option1;
+                    line = 0;
                     _ = ShowText(true);
                     return;
                 case "/checktalk":
@@ -775,6 +808,8 @@ public class TalkSystem : MonoBehaviour
                         line++;
                         if (!_inshop) Player.text = curText;
                         else ShopTextBar.GetComponent<TextMeshProUGUI>().text = curText;
+                        if(ShowName) PlayerNameText.text = PlayerName.TxtLine[0];
+                        else PlayerNameText.text = "";
                         _IsShowingText = false;
                         on = true;
                         BreakText = false;
@@ -791,7 +826,8 @@ public class TalkSystem : MonoBehaviour
                     else
                     {
                         Player.text += c;
-                        PlayerNameText.text = PlayerName.TxtLine[0];
+                        if (ShowName) PlayerNameText.text = PlayerName.TxtLine[0];
+                        else PlayerNameText.text = "";
                     }
                     
                 }
@@ -939,6 +975,7 @@ public class TalkSystem : MonoBehaviour
         }
         if (Daytime == 2)
         {
+            amandeKillself.GeneralBool = true;
             if (CharacterList[4].GetComponent<Character>().Special2) return;
 
             CharacterList[4].GetComponent<Character>().Special1 = true;
@@ -962,7 +999,7 @@ public class TalkSystem : MonoBehaviour
         }
         if (Daytime == 2)
         {
-
+            amandeKillself.GeneralBool = true;
             CharacterList[4].GetComponent<Character>().Special2 = true;
             CharacterList[4].transform.Find("Attention").gameObject.SetActive(true);
             CharacterList[5].GetComponent<Character>().Special2 = true;

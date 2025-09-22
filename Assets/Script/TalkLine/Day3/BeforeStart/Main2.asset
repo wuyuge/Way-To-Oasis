@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Name: Main2
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - /noname
+  - p
+  - "\u867D\u7136\u7ECF\u5386\u4E86\u6628\u5929\u7684\u4E8B\uFF0C\u4F60\u4F9D\u65E7\u8FCE\u6765\u4E86\u65B0\u7684\u65E9\u6668\u3002"
+  - "\u4E00\u5207\u5982\u540C\u5F80\u65E5\u822C\u5E73\u9759\uFF0C\u5145\u6EE1\u6B7B\u6C14\u3002"
+  - "\u4F60\u7167\u5E38\u5F00\u59CB\u5DE5\u4F5C\uFF0C\u51B7\u6F20\u5730\u5206\u914D\u8D77\u4E86\u4ECA\u5929\u7684\u4EFB\u52A1\u3002"
+  - "\u76F4\u5230\u67D0\u4E2A\u4EBA\u544A\u8BC9\u4E86\u4F60\uFF0C\u963F\u66FC\u5FB7\u81EA\u6740\u4E86\u3002"
+  - "\u5979\u4F7F\u7528\u4E86\u81EA\u5DF1\u85CF\u5728\u533B\u7597\u7BB1\u5E95\u90E8\u7684\u6700\u540E\u4E00\u4EFD\u6BD2\u7D20\uFF0C\u5C06\u5B83\u6CE8\u5C04\u8FDB\u4E86\u81EA\u5DF1\u7684\u8840\u6DB2\u4E2D\u3002"
+  - "\u6B63\u5982\u5979\u6240\u8BF4\u7684\uFF0C\u5979\u901A\u8FC7\u4E86\u81EA\u5DF1\u65B9\u5F0F\u9003\u8D70\u4E86\u3002"
+  - upcbar
+  - /showname
+  - down
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Name: Main0
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - /CheckEveryOneLive
+  Option1: {fileID: 11400000, guid: f59b091aad652b84e9a7ebdd5c4d12e6, type: 2}
+  Option2: {fileID: 11400000, guid: f30656d6857258a438ed870ffbee2c70, type: 2}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

@@ -126,13 +126,16 @@ public class Progress : MonoBehaviour
     private bool Day0MaskUsed = false;
 
     private bool TipsWeight = false;
-
+    private TalkSystem talkSys;
+    [Header("阿曼德自杀判断")]
+    public Manager AmandeKillSelf;
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
     /// 1. 绑定UI文本组件 2. 设置初始阶段的文本颜色 3. 触发当天开始前的幕间对话
     /// </summary>
     void Start()
     {
+        talkSys = TalkBar.GetComponent<TalkSystem>();
         // 初始化日期显示（格式：Day X）
         day.text = "Day " + day_num;
 
@@ -167,9 +170,9 @@ public class Progress : MonoBehaviour
         {
             CanTalk = true;  // 允许触发对话
             // 将当前天数的对话数据赋值给对话系统
-            TalkBar.GetComponent<TalkSystem>().Talklines[day_num] = beforeStart[day_num];
-            TalkBar.GetComponent<TalkSystem>().line = 0;  // 重置对话行数到第一行
-            _ = TalkBar.GetComponent<TalkSystem>().ShowText();  // 启动对话显示（异步执行）
+            talkSys.Talklines[day_num] = beforeStart[day_num];
+            talkSys.line = 0;  // 重置对话行数到第一行
+            _ = talkSys.ShowText();  // 启动对话显示（异步执行）
             DownBar.GetComponent<Animator>().SetTrigger("Down");  // 底部栏播放"向下"动画（可能隐藏底部栏）
         }
 
@@ -202,6 +205,7 @@ public class Progress : MonoBehaviour
     /// </summary>
     public void SwtichProgress()
     {
+        
         // 1. 从【开始阶段】切换到【对话阶段】
         if (start && CanSwitch)
         {
@@ -274,9 +278,9 @@ public class Progress : MonoBehaviour
             {
                 CanTalk = true;  // 允许触发对话
                 // 赋值对话数据到对话系统
-                TalkBar.GetComponent<TalkSystem>().Talklines[day_num] = beforeFood[day_num];
-                TalkBar.GetComponent<TalkSystem>().line = 0;  // 重置对话行数
-                _ = TalkBar.GetComponent<TalkSystem>().ShowText();  // 启动对话显示
+                talkSys.Talklines[day_num] = beforeFood[day_num];
+                talkSys.line = 0;  // 重置对话行数
+                _ = talkSys.ShowText();  // 启动对话显示
                 TalkBar.GetComponent<Animator>().SetTrigger("up");
                 if (TalkBar.transform.position.y == 0)
                 {
@@ -331,9 +335,9 @@ public class Progress : MonoBehaviour
                 {
                     if (allEat)
                     {
-                        TalkBar.GetComponent<TalkSystem>().Talklines[day_num] = afterFood[day_num];
-                        TalkBar.GetComponent<TalkSystem>().line = 0;  // 重置对话行数
-                        _ = TalkBar.GetComponent<TalkSystem>().ShowText();  // 启动对话显示
+                        talkSys.Talklines[day_num] = afterFood[day_num];
+                        talkSys.line = 0;  // 重置对话行数
+                        _ = talkSys.ShowText();  // 启动对话显示
                         TalkBar.GetComponent<Animator>().SetTrigger("up");// 对话栏显示动画
                         //if (TalkBar.transform.position.y == 0)
                         //{
@@ -347,9 +351,9 @@ public class Progress : MonoBehaviour
                 }
                 else
                 {
-                    TalkBar.GetComponent<TalkSystem>().Talklines[day_num] = afterFood[day_num];
-                    TalkBar.GetComponent<TalkSystem>().line = 0;  // 重置对话行数
-                    _ = TalkBar.GetComponent<TalkSystem>().ShowText();  // 启动对话显示
+                    talkSys.Talklines[day_num] = afterFood[day_num];
+                    talkSys.line = 0;  // 重置对话行数
+                    _ = talkSys.ShowText();  // 启动对话显示
                     TalkBar.GetComponent<Animator>().SetTrigger("up");  // 对话栏显示动画
                     if (TalkBar.transform.position.y == 0)
                     {
@@ -389,15 +393,22 @@ public class Progress : MonoBehaviour
             {
                 CanTalk = true;  // 允许触发对话
                 // 赋值对话数据到对话系统
-                TalkBar.GetComponent<TalkSystem>().Talklines[day_num] = beforeStart[day_num];
-                TalkBar.GetComponent<TalkSystem>().line = 0;  // 重置对话行数
-                _ = TalkBar.GetComponent<TalkSystem>().ShowText();  // 启动对话显示
+                talkSys.Talklines[day_num] = beforeStart[day_num];
+                talkSys.line = 0;  // 重置对话行数
+                _ = talkSys.ShowText();  // 启动对话显示
                 TalkBar.GetComponent<Animator>().SetTrigger("up");  // 对话栏显示动画
                 if (TalkBar.transform.position.y == 0)
                 {
                     DownAnim();
                 }
 
+            }
+            if (AmandeKillSelf.GeneralBool)
+            {
+                Final_Body.Weight += 1;
+                talkSys.DeadName.TxtLine.Add("阿曼德Poison");
+                talkSys.CharacterList[4].GetComponent<Character>().Dead = true;
+                talkSys.CharacterList[4].transform.Find("Toggle").gameObject.SetActive(false);
             }
 
             // 通知对象管理器重置道具携带状态（可能将携带道具放回背包）

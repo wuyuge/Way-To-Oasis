@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
-  m_Name: Head
+  m_Name: Day3Head
   m_EditorClassIdentifier: 
-  TxtLine: []
-  Option1: {fileID: 0}
+  TxtLine:
+  - /CheckAmandeKillself
+  - upcbar
+  - down
+  Option1: {fileID: 11400000, guid: 73f49258efe4d854b918a90aceb9c512, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}

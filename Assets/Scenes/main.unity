@@ -4754,7 +4754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &342679171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8730,7 +8730,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -26.06, y: -54.38}
+  m_AnchoredPosition: {x: -26.059998, y: -54.380005}
   m_SizeDelta: {x: 52.12, y: 108.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &594638070
@@ -10486,6 +10486,7 @@ MonoBehaviour:
   _IsShowingText: 0
   BreakText: 0
   PlayerName: {fileID: 11400000, guid: 748c360d1bf29ef408e278ede50fb2b2, type: 2}
+  amandeKillself: {fileID: 0}
 --- !u!114 &719523452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12737,7 +12738,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 11400000, guid: f053c1633d2b75c4d849f92c23ea7ada, type: 2}
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: e51a4cb7bfddc574b82eed2c732340dd, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -12761,11 +12762,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Final_Food: {fileID: 0}
-  Final_Body: {fileID: 0}
+  Final_Body: {fileID: 11400000, guid: 0872d8d3dfe5938478ece7b8160a6ed7, type: 2}
   Have_Food: {fileID: 0}
   Have_Body: {fileID: 0}
   Mask: {fileID: 209115449}
   DNSys: {fileID: 499791838}
+  AmandeKillSelf: {fileID: 11400000, guid: 2c832edcdb4c9ef4e8f2e46d84491f26, type: 2}
 --- !u!1 &881720963
 GameObject:
   m_ObjectHideFlags: 0
@@ -15547,7 +15549,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 1324.9, y: -52.240005}
+  m_AnchoredPosition: {x: 1324.9, y: -52.23999}
   m_SizeDelta: {x: 4709.81, y: 180.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1037365662
@@ -18063,6 +18065,7 @@ MonoBehaviour:
   Have_Body: {fileID: 11400000, guid: c2d5f949fceb5fb46a5109f39c5d07fb, type: 2}
   Mask: {fileID: 1691453963}
   DNSys: {fileID: 1191215205}
+  AmandeKillSelf: {fileID: 0}
 --- !u!114 &1185337238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20904,7 +20907,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -226.51, y: 0.000061035156}
+  m_AnchoredPosition: {x: -226.51001, y: 0.000061035156}
   m_SizeDelta: {x: 453.03, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1312282176
@@ -25994,7 +25997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1763126682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29714,6 +29717,7 @@ MonoBehaviour:
   _IsShowingText: 0
   BreakText: 0
   PlayerName: {fileID: 11400000, guid: 748c360d1bf29ef408e278ede50fb2b2, type: 2}
+  amandeKillself: {fileID: 11400000, guid: 2c832edcdb4c9ef4e8f2e46d84491f26, type: 2}
 --- !u!114 &2039588930
 MonoBehaviour:
   m_ObjectHideFlags: 0
