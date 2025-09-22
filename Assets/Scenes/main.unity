@@ -1103,6 +1103,7 @@ MonoBehaviour:
   Special2: 0
   AfterSpecialTalk: 0
   NotComfort: 0
+  ClikDelay: 0
   Day0_Talk: {fileID: 0}
 --- !u!114 &68942826
 MonoBehaviour:
@@ -1757,6 +1758,7 @@ MonoBehaviour:
   Special2: 0
   AfterSpecialTalk: 0
   NotComfort: 0
+  ClikDelay: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &89321879
 GameObject:
@@ -4753,7 +4755,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &342679171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5458,6 +5460,7 @@ MonoBehaviour:
   Special2: 0
   AfterSpecialTalk: 0
   NotComfort: 0
+  ClikDelay: 0
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!114 &418109941
 MonoBehaviour:
@@ -13444,6 +13447,7 @@ MonoBehaviour:
   Special2: 0
   AfterSpecialTalk: 0
   NotComfort: 0
+  ClikDelay: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &903133316
 GameObject:
@@ -14917,6 +14921,7 @@ MonoBehaviour:
   Special2: 0
   AfterSpecialTalk: 0
   NotComfort: 0
+  ClikDelay: 0
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!114 &984468084
 MonoBehaviour:
@@ -15796,6 +15801,7 @@ MonoBehaviour:
   Special2: 0
   AfterSpecialTalk: 0
   NotComfort: 0
+  ClikDelay: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &1053723033
 GameObject:
@@ -16408,6 +16414,7 @@ MonoBehaviour:
   Special2: 0
   AfterSpecialTalk: 0
   NotComfort: 0
+  ClikDelay: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &1068263845
 GameObject:
@@ -16883,6 +16890,7 @@ MonoBehaviour:
   Special2: 0
   AfterSpecialTalk: 0
   NotComfort: 0
+  ClikDelay: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &1103929361
 GameObject:
@@ -19083,6 +19091,7 @@ MonoBehaviour:
   Special2: 0
   AfterSpecialTalk: 0
   NotComfort: 0
+  ClikDelay: 0
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!114 &1214813400
 MonoBehaviour:
@@ -24446,7 +24455,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 38fbfa99483ffde4da68f8ba5264c092, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ca40f452fdd60246b2c3d6e6c2ee658, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -25578,6 +25587,7 @@ MonoBehaviour:
   Special2: 0
   AfterSpecialTalk: 0
   NotComfort: 0
+  ClikDelay: 0
   Day0_Talk: {fileID: 0}
 --- !u!1 &1734647521
 GameObject:
@@ -25961,7 +25971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1763126682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28425,7 +28435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1968255818
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28568,6 +28578,7 @@ MonoBehaviour:
   Special2: 0
   AfterSpecialTalk: 0
   NotComfort: 0
+  ClikDelay: 0
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!114 &1977804956
 MonoBehaviour:
@@ -29856,6 +29867,7 @@ MonoBehaviour:
   Special2: 0
   AfterSpecialTalk: 0
   NotComfort: 0
+  ClikDelay: 0
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
 --- !u!114 &2055327924
 MonoBehaviour:

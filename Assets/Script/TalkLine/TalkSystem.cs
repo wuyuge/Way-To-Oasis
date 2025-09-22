@@ -173,9 +173,7 @@ public class TalkSystem : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 立即显示当前文本的剩余部分
-    /// </summary>
+    
    
 
     /// <summary>
@@ -205,7 +203,7 @@ public class TalkSystem : MonoBehaviour
         try
         {
             string curText = Talklines[Daytime].TxtLine[line];
-            Debug.Log($"读取命令：{curText}");
+            
             CanSkip = false;
             inTech = false;
             switch (curText)
@@ -359,13 +357,12 @@ public class TalkSystem : MonoBehaviour
                     return;
                 case "techmenu":
                     inTech = true;
-                    on = false;
+                    on = true;
                     mask.transform.parent.gameObject.SetActive(true);
                     mask.GetComponent<Unmask>().m_FitTarget = Menu.GetComponent<RectTransform>();
                     mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "点击这里或按下Esc开启菜单界面";
                     line++;
-                    await Task.Delay(3000);
-                    _ = ShowText(true, ShowMask: true);
+                    
                     return;
                 case "techclik":
                     
@@ -380,25 +377,24 @@ public class TalkSystem : MonoBehaviour
 
                 case "techtalk":
                     inTech = true;
-                    on = false;
+                    on = true;
                     mask.transform.parent.gameObject.SetActive(true);
                     mask.GetComponent<Unmask>().m_FitTarget = DownBar.transform.Find("MaskLayer").GetComponent<RectTransform>();
                     mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "这是选择栏，里面分别展示着你和其他5位角色的状态，之后可以在这里分配负重与食物，现在请点击人物头像开始对话";
                     line++;
                     DaytimeOBJ.GetComponent<Button>().enabled = true;
-                    _ = ShowText(true);
+                    
                     return;
 
                 case "techright":
                     inTech = true;
-                    on = false;
+                    on = true;
                     DaytimeOBJ.GetComponent<Button>().enabled = false;
                     mask.transform.parent.gameObject.SetActive(true);
                     mask.GetComponent<Unmask>().m_FitTarget = DaytimeOBJ.transform.parent.gameObject.GetComponent<RectTransform>();
                     mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "这是日志栏，里面分别展示着你目前在哪一天处于哪个环节，点击下方按钮可以切换到下一环节";
                     line++;
-                    await Task.Delay(3000);
-                    _ = ShowText(true,ShowMask:true);
+                    
                     return;
 
                 case "techclose":
@@ -477,20 +473,26 @@ public class TalkSystem : MonoBehaviour
 
                 case "dead":
 
+                    
+
                     // 如果满足以下任一条件，则使用Option2
                     if ((DeadName.TxtLine.Count == 0 && UesdBody.TxtLine.Count == 0) ||
                         (DeadName.TxtLine.Count == 1 && DeadName.TxtLine[0] == "Leader" && UesdBody.TxtLine.Count == 0))
                     {
                         Talklines[Daytime] = Talklines[Daytime].Option2;
+                        line = 0;
+                        _ = ShowText(true);
                     }
                     // 如果DeadName至少有一条记录，则使用Option1
                     else if (DeadName.TxtLine.Count >= 1)
                     {
                         Talklines[Daytime] = Talklines[Daytime].Option1;
+                        line = 0;
+                        _ = ShowText(true);
                     }
 
 
-                    _ = ShowText(true);
+                    
                     return;
 
                 case "down":
@@ -687,8 +689,18 @@ public class TalkSystem : MonoBehaviour
                     if (BreakText)
                     {
                         line++;
-                        if(!_inshop)Character.text = dialogueContent;
-                        else ShopTextBar.GetComponent<TextMeshProUGUI>().text = dialogueContent;
+                        if(!_inshop)
+                        {
+                            Character.text = dialogueContent;
+                            Chara_Name.text = charaName;
+                        }
+                            
+                        else
+                        { 
+                            ShopTextBar.GetComponent<TextMeshProUGUI>().text = dialogueContent;
+                            if (ShowName)
+                                ShopName.text = "商人";
+                        }
                         _IsShowingText = false;
                         on = true;
                         BreakText = false;

@@ -15,6 +15,7 @@ MonoBehaviour:
   TxtLine:
   - /shop
   - c
+  - c
   - "\u4F60\u597D\uFF0C\u8FF7\u9014\u7684\u65C5\u4EBA\u3002"
   - p
   - "\u4F60\u662F\u8C01\uFF1F"
@@ -29,6 +30,9 @@ MonoBehaviour:
   Option1: {fileID: 11400000, guid: 0504eafaae9f6e44a952451298071c4d, type: 2}
   Option2: {fileID: 11400000, guid: 803e71446bdd29548a3cc222649f7d94, type: 2}
   Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
   Day1Eat: 0
+  GeneralBool: 0

@@ -279,6 +279,7 @@ public class Progress : MonoBehaviour
                 background.GetComponent<BackGroundMoving>().open = false;
                  // 调用 skip 的暗化方法
             }
+            DownBar.GetComponent<ObjectManager>().ResetEat();
         }
 
         // 3. 从【进食阶段】切换到【下一天的开始阶段】
@@ -384,7 +385,7 @@ public class Progress : MonoBehaviour
             ObjectManager.GetComponent<ObjectManager>().ReturnCarry();
             ObjectManager.GetComponent<ObjectManager>().RestTag();
             // 重置背景状态（调用 BackGroundMoving 的 Re_set 方法，还原背景初始位置）
-            DownBar.GetComponent<ObjectManager>().ResetEat();
+            
 
         }
     }

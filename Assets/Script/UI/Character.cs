@@ -81,7 +81,7 @@ public class Character : MonoBehaviour
     [Header("安抚对话控制")]
     public bool Special1,Special2,AfterSpecialTalk;
     public bool NotComfort;//用于判断安抚是否成功
-    private bool ClikDelay;
+    public bool ClikDelay = false;
     [Header("Day0用")]
     public Manager Day0_Talk;
 
@@ -310,7 +310,7 @@ public class Character : MonoBehaviour
     {
         // 【死亡状态判断】如果角色死亡，不执行对话触发
         if (Dead) return;
-        if (ClikDelay) return;
+        
         if (Special1)
         {
             Special1 = false;
@@ -328,15 +328,18 @@ public class Character : MonoBehaviour
         {
             Mask.gameObject.SetActive(false);
         }
-
+        
+        
+        Debug.Log("禁用按钮");
 
         // 判断当前游戏是否处于"对话阶段"（Progress中的talk状态为true）
-        if (progress.GetComponent<Progress>().talk)
+        if (progress.GetComponent<Progress>().talk && !ClikDelay)
         {
             TalkSystem talksys = TalkBar.GetComponent<TalkSystem>();
-            talksys.on = true;
+            talksys.on = false;
             ClikDelay = true;
-            Invoke("SetClik", 2.5f);
+            Debug.Log("触发对话");
+
             // 如果未触发过对话（have_talk为false）
             if (!have_talk)
             {
@@ -353,7 +356,7 @@ public class Character : MonoBehaviour
                 talksys.ShowBar();
                 // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
                 Invoke("DownAnim", Delay);
-                Invoke("SetTalk", 1.2f);
+                Invoke("SetTalk", 1.5f);
                 
             }
             else
@@ -364,15 +367,17 @@ public class Character : MonoBehaviour
                 // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
                 Invoke("DownAnim", Delay);
                 // 显示对话面板（调用TalkSystem的ShowBar方法，可能包含动画）
-                Invoke("SetTalk", 1.2f);
+                Invoke("SetTalk", 1.5f);
                 
             }
+            Invoke("SetClik", 15f);
         }
     }
 
     void SetClik()
     {
         ClikDelay = false;
+        gameObject.GetComponent<Button>().enabled = true;
         TalkBar.GetComponent<TalkSystem>().on = true;
     }
 
