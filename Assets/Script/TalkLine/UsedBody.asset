@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: UsedBody
   m_EditorClassIdentifier: 
   TxtLine:
-  - LeaderAbanded
-  - "\u6D1B\u5C14\u574EUesd"
+  - LeaderUesd
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

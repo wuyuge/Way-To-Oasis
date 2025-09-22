@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Main2
   m_EditorClassIdentifier: 
   TxtLine:
+  - closecharabar
   - /noname
   - p
   - "\u867D\u7136\u7ECF\u5386\u4E86\u6628\u5929\u7684\u4E8B\uFF0C\u4F60\u4F9D\u65E7\u8FCE\u6765\u4E86\u65B0\u7684\u65E9\u6668\u3002"
