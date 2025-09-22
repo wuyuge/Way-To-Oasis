@@ -89,10 +89,12 @@ public class TalkSystem : MonoBehaviour
     public int TextSpeedI = 100;
     public bool _IsShowingText = false; // 标记当前是否正在显示文本
     public bool BreakText = false; // 标记是否请求中断文本显示
-
+    [Header("玩家名字")]
+    public Manager PlayerName;
     private void Awake()
     {
         Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
+        PlayerNameText.text = PlayerName.TxtLine[0];
         if (Daytime == 0)
         {
             on = false;
@@ -667,7 +669,10 @@ public class TalkSystem : MonoBehaviour
                 bool charaOver = false;
                 string charaName = "";
                 string dialogueContent = "";
-
+                if (curText.Contains("{PlayerName}"))
+                {
+                    curText = curText.Replace("{PlayerName}", PlayerName.TxtLine[0]);
+                }
                 // 解析角色名和对话内容（中文冒号分隔）
                 foreach (char c in curText)
                 {
@@ -762,6 +767,7 @@ public class TalkSystem : MonoBehaviour
                 }
                 on = false;
                 _IsShowingText = true;
+                
                 foreach (char c in curText)
                 {
                     if (BreakText)
@@ -779,13 +785,13 @@ public class TalkSystem : MonoBehaviour
                     {
                         ShopTextBar.GetComponent<TextMeshProUGUI>().text += c;
                         if (ShowName)
-                            ShopName.text = "■■";
+                            ShopName.text = PlayerName.TxtLine[0];
                         else ShopName.text = "";
                     }
                     else
                     {
                         Player.text += c;
-                        PlayerNameText.text = "■■";
+                        PlayerNameText.text = PlayerName.TxtLine[0];
                     }
                     
                 }
