@@ -125,6 +125,8 @@ public class Progress : MonoBehaviour
     // 用于判断day0遮罩是否用过
     private bool Day0MaskUsed = false;
 
+    private bool TipsWeight = false;
+
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
     /// 1. 绑定UI文本组件 2. 设置初始阶段的文本颜色 3. 触发当天开始前的幕间对话
@@ -138,7 +140,7 @@ public class Progress : MonoBehaviour
         weight = gameObject.transform.parent.Find("Weight").GetComponent<TextMeshProUGUI>();
         talk_t = gameObject.transform.parent.Find("Talk").GetComponent<TextMeshProUGUI>();
         food_t = gameObject.transform.parent.Find("Food").GetComponent<TextMeshProUGUI>();
-        day = gameObject.transform.parent.Find("Day").GetComponent<TextMeshProUGUI>();
+        
 
         // 根据初始阶段设置文本颜色（高亮当前阶段，其他阶段半透明）
         if (start)
@@ -203,6 +205,23 @@ public class Progress : MonoBehaviour
         // 1. 从【开始阶段】切换到【对话阶段】
         if (start && CanSwitch)
         {
+            // 通知对象管理器更新道具携带数量（可能同步背包显示）
+            if (!TipsWeight)
+            {
+                bool allCarry = ObjectManager.GetComponent<ObjectManager>().SetCarryNum(true);
+                if (!allCarry)
+                {
+                    TipsWeight = true;
+                    Mask.GetComponent<Unmask>().fitTarget = DownBar.transform.Find("MaskLayer").GetComponent<RectTransform>();
+                    Mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "没有被分配的物品将会被丢弃";
+                    Mask.transform.parent.gameObject.SetActive(true);
+                    Invoke("ColseMask", 1.5f);
+                    return;
+                }
+            }
+            else
+                ObjectManager.GetComponent<ObjectManager>().SetCarryNum();
+
             if (DNSys.time < DNSys.Frist - 0.005f) return;
             Debug.Log("开启背景滚动");
             // 激活背景滚动（调用 BackGroundMoving 脚本的 open 状态）
@@ -212,8 +231,8 @@ public class Progress : MonoBehaviour
             weight.color = new Color32(0, 0, 0, 120);
             start = false;  // 退出开始阶段
 
-            // 通知对象管理器更新道具携带数量（可能同步背包显示）
-            ObjectManager.GetComponent<ObjectManager>().SetCarryNum();
+            
+            
 
             talk = true;  // 进入对话阶段
             talk_t.color = new Color32(0, 0, 0, 255);  // 对话文本高亮
