@@ -5,7 +5,7 @@ using UnityEngine;
 public class New_Game : MonoBehaviour
 {
     public bool is_New;
-    public Manager Final_Food, Final_Body,Have_Food,Have_Body;
+    public Manager Final_Food, Final_Body,Have_Food,Have_Body,TeachComfort;
     [Header("³õÊ¼ÊýÁ¿")]
     public int food, body;
     public Manager DeadName,UesdBody;
@@ -19,6 +19,7 @@ public class New_Game : MonoBehaviour
             Have_Body.Weight = 0;
             Have_Food.Weight = 0;
             UesdBody.TxtLine.Clear();
+            TeachComfort.GeneralBool = false;
 
         }
         DeadName.TxtLine.Clear();

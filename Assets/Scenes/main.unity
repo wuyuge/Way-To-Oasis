@@ -3236,8 +3236,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -303.29993, y: -484.77}
-  m_SizeDelta: {x: 1953.4, y: 470.45}
+  m_AnchoredPosition: {x: -300.30002, y: -484.77}
+  m_SizeDelta: {x: 1959.4, y: 470.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &209115451
 MonoBehaviour:
@@ -10477,6 +10477,7 @@ MonoBehaviour:
   mask: {fileID: 1691453963}
   DownBar: {fileID: 155937340}
   Day0_Talk: {fileID: 11400000, guid: 3f62f112da54b2742a840ec03351b42d, type: 2}
+  TeachComfort: {fileID: 0}
   Menu: {fileID: 594638068}
   inTech: 0
   CanSkip: 0
@@ -13084,7 +13085,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -221.19, y: 96.81}
-  m_SizeDelta: {x: 1369.27, y: 243.61}
+  m_SizeDelta: {x: 1370, y: 245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &892256074
 MonoBehaviour:
@@ -16125,8 +16126,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -254.75002, y: 0}
-  m_SizeDelta: {x: 2050.5, y: 165.67}
+  m_AnchoredPosition: {x: -279.09, y: 90.55}
+  m_SizeDelta: {x: 1777.84, y: 426.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1061244229
 MonoBehaviour:
@@ -16151,7 +16152,7 @@ MonoBehaviour:
   m_text: New Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 40e993202123175489b9531d969f63eb, type: 2}
-  m_sharedMaterial: {fileID: -692730845165502219, guid: 1b4ade03b2f3df948a1e564c96a7b390, type: 2}
+  m_sharedMaterial: {fileID: -3608342406340450679, guid: 40e993202123175489b9531d969f63eb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16214,7 +16215,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1061244230
@@ -29645,6 +29646,7 @@ MonoBehaviour:
   mask: {fileID: 209115449}
   DownBar: {fileID: 921392543}
   Day0_Talk: {fileID: 0}
+  TeachComfort: {fileID: 11400000, guid: 589dfb5f3c59d304eb85c03fb586bca3, type: 2}
   Menu: {fileID: 0}
   inTech: 0
   CanSkip: 0

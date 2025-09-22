@@ -74,7 +74,7 @@ public class TalkSystem : MonoBehaviour
     [Header("新手引导用对象")]
     public GameObject mask;
     public GameObject DownBar;
-    public Manager Day0_Talk;
+    public Manager Day0_Talk,TeachComfort;
     public GameObject Menu;
 
    
@@ -262,7 +262,8 @@ public class TalkSystem : MonoBehaviour
                         index++;
                         if(s == "博金森")
                         {
-                            DeadName.TxtLine[index] = DeadName.TxtLine[index] + "Uesd";
+                            UesdBody.TxtLine.Add("博金森Uesd");
+                            DeadName.TxtLine.RemoveAt(index);
                         }
 
                     }
@@ -337,10 +338,10 @@ public class TalkSystem : MonoBehaviour
                     return;
                 case "/closeshop":
                     ShopManager.SetActive(false);
-                    line = 0;                           // 重置对话行索引
+                    line ++;                           // 重置对话行索引
                     _inshop = false;                    // 标记退出商店场景
-                    on = false;                          // 强制开启交互（关键！修复无法点击）
-                    
+                    on = false;                          
+                    _ = ShowText(true);
                     return;
 
                 case "/shop":
@@ -354,6 +355,19 @@ public class TalkSystem : MonoBehaviour
                     mask.transform.parent.gameObject.SetActive(false);
                     line++;
                     _ = ShowText(true);
+                    return;
+                case "techcomfort":
+                    if(!TeachComfort.GeneralBool)
+                    {
+                        inTech = true;
+                        on = true;
+                        mask.transform.parent.gameObject.SetActive(true);
+                        mask.GetComponent<Unmask>().m_FitTarget = CharacterList[4].GetComponent<RectTransform>();
+                        mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "你的选择可能会导致一些人的不满，与他们对话安抚他们的情绪，未安抚的情绪可能会造成一些意想不到的结果";
+                        TeachComfort.GeneralBool = true;
+                    }
+                    line++;
+                    
                     return;
                 case "techmenu":
                     inTech = true;
@@ -596,7 +610,8 @@ public class TalkSystem : MonoBehaviour
                     DaytimeOBJ.GetComponent<Progress>().SwtichProgress();
                     return;
                 case "twicedeadchoice":
-                    if (DeadName.TxtLine.Count == 0)
+                    if ((DeadName.TxtLine.Count == 1 && DeadName.TxtLine[0] == "Leader" && UesdBody.TxtLine.Count == 0)|| 
+                        (DeadName.TxtLine.Count == 0 && UesdBody.TxtLine.Count == 1 && UesdBody.TxtLine[0] == "LeaderUesd"))
                     {
                         Talklines[Daytime] = Talklines[Daytime].Option1;
                     }

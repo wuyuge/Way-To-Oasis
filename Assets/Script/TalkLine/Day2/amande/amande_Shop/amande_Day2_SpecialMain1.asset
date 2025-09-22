@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: amande_Day2_SpecialMain1
   m_EditorClassIdentifier: 
   TxtLine:
+  - CloseMask
   - lock
   - c
   - "\u963F\u66FC\u5FB7\uFF1A\u2026\u2026"
