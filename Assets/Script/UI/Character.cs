@@ -311,16 +311,21 @@ public class Character : MonoBehaviour
         // 【死亡状态判断】如果角色死亡，不执行对话触发
         if (Dead) return;
         
-        if (Special1)
+        if (Special1 && !ClikDelay)
         {
+            ClikDelay = true;
             Special1 = false;
-            SetSpecialTalk1();
+            Invoke("SetSpecialTalk1", 0.2f);
+            
+            Invoke("SetClik", 5f);
             return;
         }
-        if (Special2)
+        if (Special2 && !ClikDelay)
         {
+            ClikDelay = true;
             Special2 = false;
-            SetSpecialTalk2();
+            Invoke("SetSpecialTalk2", 0.2f);
+            Invoke("SetClik", 5f);
             return;
         }
         // 用于d0的新手引导
@@ -370,7 +375,7 @@ public class Character : MonoBehaviour
                 Invoke("SetTalk", 1.5f);
                 
             }
-            Invoke("SetClik", 15f);
+            Invoke("SetClik", 5f);
         }
     }
 
