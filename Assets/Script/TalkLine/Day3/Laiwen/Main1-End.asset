@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
-  m_Name: Main3
+  m_Name: Main1-End
   m_EditorClassIdentifier: 
   TxtLine:
   - c
-  - "\u963F\u66FC\u5FB7\uFF1A\u2026\u2026"
-  - "\u963F\u66FC\u5FB7\uFF1A\u62B1\u6B49\u6211\u6709\u4E9B\u7D2F\u4E86\uFF0C\u4ECA\u5929\u5C31\u5148\u804A\u5230\u8FD9\u5427\u3002"
+  - "\u83B1\u6587\uFF1A\u4E0D\u8BF4\u8FD9\u4E2A\u4E86\uFF0C\u592A\u6C89\u91CD\u7684\u5FC3\u7406\u72B6\u51B5\u4E0D\u9002\u5408\u8352\u91CE\u6C42\u751F\u3002"
+  - "\u83B1\u6587\uFF1A\u65E9\u70B9\u4F11\u606F\u5427\u961F\u957F\uFF0C\u660E\u5929\u8FD8\u9700\u8981\u7EE7\u7EED\u8D76\u8DEF\u5462\u3002"
   - upcbar
   - down
   Option1: {fileID: 0}

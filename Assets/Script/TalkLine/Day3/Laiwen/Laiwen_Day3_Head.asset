@@ -10,17 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
-  m_Name: Main3
+  m_Name: Laiwen_Day3_Head
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
-  - "\u963F\u66FC\u5FB7\uFF1A\u2026\u2026"
-  - "\u963F\u66FC\u5FB7\uFF1A\u62B1\u6B49\u6211\u6709\u4E9B\u7D2F\u4E86\uFF0C\u4ECA\u5929\u5C31\u5148\u804A\u5230\u8FD9\u5427\u3002"
-  - upcbar
-  - down
-  Option1: {fileID: 0}
-  Option2: {fileID: 0}
-  Option3: {fileID: 0}
+  - /CheckShopEvent
+  Option1: {fileID: 11400000, guid: 0da12b33489030844baec2edb7e46131, type: 2}
+  Option2: {fileID: 11400000, guid: 08593d7fcad968c48b716b3ad1394d69, type: 2}
+  Option3: {fileID: 11400000, guid: d1b22aac6596fb54c8b7079b43918308, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0

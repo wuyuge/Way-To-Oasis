@@ -5051,6 +5051,10 @@ PrefabInstance:
       propertyPath: progress
       value: 
       objectReference: {fileID: 1185337237}
+    - target: {fileID: 3060705226796794365, guid: ea02790f66b63aa489dd2918a1318386, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3219933287417789448, guid: ea02790f66b63aa489dd2918a1318386, type: 3}
       propertyPath: TalkBar
       value: 
@@ -10703,6 +10707,7 @@ MonoBehaviour:
   BreakText: 0
   PlayerName: {fileID: 11400000, guid: 748c360d1bf29ef408e278ede50fb2b2, type: 2}
   amandeKillself: {fileID: 0}
+  Day2ShopEvent: {fileID: 0}
 --- !u!114 &719523452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21123,7 +21128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -226.51001, y: 0.000061035156}
+  m_AnchoredPosition: {x: -226.51001, y: 0}
   m_SizeDelta: {x: 453.03, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1312282176
@@ -25818,6 +25823,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 11400000, guid: 8ddff0a77bdfb6443bc332372823a9e0, type: 2}
   - {fileID: 11400000, guid: 65f8fd350f1e95645ba5be43a20db309, type: 2}
+  - {fileID: 11400000, guid: 7099c3641c0f11147893f2289e598d1c, type: 2}
   TalkBar: {fileID: 2039588927}
   have_talk: 0
   Dead: 0
@@ -29969,6 +29975,7 @@ MonoBehaviour:
   BreakText: 0
   PlayerName: {fileID: 11400000, guid: 748c360d1bf29ef408e278ede50fb2b2, type: 2}
   amandeKillself: {fileID: 11400000, guid: 2c832edcdb4c9ef4e8f2e46d84491f26, type: 2}
+  Day2ShopEvent: {fileID: 11400000, guid: 3ef43976c9b98e94f8ddba25905936d1, type: 2}
 --- !u!114 &2039588930
 MonoBehaviour:
   m_ObjectHideFlags: 0

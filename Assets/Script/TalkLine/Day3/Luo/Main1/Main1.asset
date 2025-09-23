@@ -10,16 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
-  m_Name: Main3
+  m_Name: Main1
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
-  - "\u963F\u66FC\u5FB7\uFF1A\u2026\u2026"
-  - "\u963F\u66FC\u5FB7\uFF1A\u62B1\u6B49\u6211\u6709\u4E9B\u7D2F\u4E86\uFF0C\u4ECA\u5929\u5C31\u5148\u804A\u5230\u8FD9\u5427\u3002"
-  - upcbar
-  - down
-  Option1: {fileID: 0}
-  Option2: {fileID: 0}
+  - /CheckAmandeKillself
+  Option1: {fileID: 11400000, guid: 1b7d93f94bed31848b891f0e277b013c, type: 2}
+  Option2: {fileID: 11400000, guid: ec87386a0130bb84294f7d20a4c2afc3, type: 2}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}

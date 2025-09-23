@@ -93,6 +93,8 @@ public class TalkSystem : MonoBehaviour
     public Manager PlayerName;
     [Header("°¢ÂüµÂ×ÔÉ±ÅÐ¶Ï")]
     public Manager amandeKillself;
+    [Header("ÉÌµêÊÂ¼þÅÐ¶Ï")]
+    public Manager Day2ShopEvent;
     private void Awake()
     {
         Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
@@ -241,12 +243,31 @@ public class TalkSystem : MonoBehaviour
                         _ = ShowText(true);
                     }
                     return;
+                case "/CheckShopEvent":
+
+                    if (Day2ShopEvent.GeneralBool)
+                    {
+                        Talklines[Daytime] = Talklines[Daytime].Option1;
+                        line = 0;
+                        _ = ShowText(true);
+                        return;
+                    }
+                    else
+                    {
+                        Talklines[Daytime] = Talklines[Daytime].Option2;
+                        line = 0;
+                        _ = ShowText(true);
+                        return;
+                    }
+
                 case "/CheckEveryOneLive":
                     foreach(GameObject g in CharacterList)
                     {
                         if (g.GetComponent<Character>().Dead)
                         {
-                            if (g.GetComponent<Character>().CharacterName == "°¢ÂüµÂ") continue;
+
+
+                            if (g.GetComponent<Character>().CharacterName == "°¢ÂüµÂ" && amandeKillself.GeneralBool) continue;
                             Talklines[Daytime] = Talklines[Daytime].Option2;
                             line = 0;
                             _ = ShowText(true);
@@ -975,6 +996,7 @@ public class TalkSystem : MonoBehaviour
         }
         if (Daytime == 2)
         {
+            Day2ShopEvent.GeneralBool = true;
             amandeKillself.GeneralBool = true;
             if (CharacterList[4].GetComponent<Character>().Special2) return;
 
@@ -999,6 +1021,7 @@ public class TalkSystem : MonoBehaviour
         }
         if (Daytime == 2)
         {
+            Day2ShopEvent.GeneralBool = true;
             amandeKillself.GeneralBool = true;
             CharacterList[4].GetComponent<Character>().Special2 = true;
             CharacterList[4].transform.Find("Attention").gameObject.SetActive(true);

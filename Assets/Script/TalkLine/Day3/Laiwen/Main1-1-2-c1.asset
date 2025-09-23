@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Name: Main1-1-2-c1
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u5979\u6E34\u671B\u4EFB\u4F55\u5F62\u5F0F\u7684\u89E3\u8131"
+  - p
+  - "\u5979\u6E34\u671B\u4EFB\u4F55\u5F62\u5F0F\u7684\u89E3\u8131\u3002"
+  - c
+  - "\u83B1\u6587\uFF1A\u5982\u679C\u771F\u7684\u5982\u5979\u6240\u613F\u7684\u8BDD\uFF0C\u4E5F\u7B97\u662F\u4E00\u79CD\u597D\u4E8B\u3002"
+  - "\u83B1\u6587\uFF1A\u81F3\u5C11\u6211\u4EEC\u53EA\u80FD\u8FD9\u4E48\u82E6\u4E2D\u4F5C\u4E50\u4E86\u3002"
+  - "\u83B1\u6587\uFF1A\u5979\u629B\u4E0B\u5BB6\u4E61\u7684\u4E00\u5207\u8DDF\u7740\u5546\u961F\u79BB\u5F00\uFF0C\u5982\u4ECA\u5979\u53C8\u4E00\u6B21\u4E0B\u5B9A\u4E86\u51B3\u5FC3\uFF0C\u90A3\u5C31\u6CA1\u4EBA\u80FD\u963B\u6B62\u3002"
+  - "\u83B1\u6587\uFF1A\u603B\u800C\u8A00\u4E4B\uFF0C\u6211\u4EEC\u5BF9\u5DF2\u7ECF\u53D1\u751F\u7684\u4E8B\u60C5\u65E0\u80FD\u4E3A\u529B\uFF0C\u73B0\u5728\u80FD\u505A\u7684\u53EA\u80FD\u662F\u6323\u624E\u7740\u6D3B\u4E0B\u53BB\u3002"
+  - "\u83B1\u6587\uFF1A\u6211\u4E0D\u5F97\u4E0D\u63D0\u51FA\u4E00\u4E2A\u7591\u95EE\uFF0C\u961F\u957F\u3002"
+  - "\u83B1\u6587\uFF1A\u8FD9\u6837\u7684\u4E8B\u60C5\u4F1A\u518D\u6B21\u53D1\u751F\u5417\uFF1F"
+  - choice
+  Option1: {fileID: 11400000, guid: 3cac7f38468928846bfcb0555d35c21a, type: 2}
+  Option2: {fileID: 11400000, guid: 312fd8d61f4d20b438233169f4e79a4f, type: 2}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0
