@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
-  m_Name: AmandeKillSelf
+  m_Name: Amande_Day3_Head
   m_EditorClassIdentifier: 
-  TxtLine: []
-  Option1: {fileID: 0}
+  TxtLine:
+  - /CheckEveryOneLive
+  Option1: {fileID: 11400000, guid: 9a8fa73763e6b124aa52f4a8e0138b49, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}

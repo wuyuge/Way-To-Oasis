@@ -51,15 +51,15 @@ public class FoodChoice : MonoBehaviour
                 Have_Food.Weight -= 1;
                 have = true;
                 gameObject.transform.parent.GetComponent<Character>().eat = true;
-                if(gameObject.transform.parent.GetComponent<Character>().end.GetComponent<Progress>().day_num == 1)
-                { this.gameObject.transform.parent.GetComponent<Character>().weight.Day1Eat = true; }
+                
+                this.gameObject.transform.parent.GetComponent<Character>().weight.Day1Eat = true; 
             }
             if (!choice && have)
             {
                 Have_Food.Weight += 1;
                 gameObject.transform.parent.GetComponent<Character>().eat = false;
-                if (gameObject.transform.parent.GetComponent<Character>().end.GetComponent<Progress>().day_num == 1)
-                { this.gameObject.transform.parent.GetComponent<Character>().weight.Day1Eat = false; }
+                
+                this.gameObject.transform.parent.GetComponent<Character>().weight.Day1Eat = false; 
                 have = false;
             }
             Food_Text.GetComponent<TextMeshProUGUI>().text = Have_Food.Weight.ToString();

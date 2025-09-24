@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
   m_Name: Twice1
   m_EditorClassIdentifier: 
-  TxtLine: []
+  TxtLine:
+  - /noname
+  - p
+  - "\u6D1B\u5C14\u574E\u62AC\u5934\u770B\u4E86\u770B\u4F60\uFF0C\u4F3C\u4E4E\u5728\u7B49\u4F60\u5F00\u53E3\u3002\u4F46\u4F60\u6CA1\u60F3\u5230\u6709\u4EC0\u4E48\u4E8B\u8981\u8BF4\u3002"
+  - upcbar
+  - /showname
+  - down
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

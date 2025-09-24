@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
-  m_Name: AmandeKillSelf
+  m_Name: Twice
   m_EditorClassIdentifier: 
-  TxtLine: []
-  Option1: {fileID: 0}
-  Option2: {fileID: 0}
+  TxtLine:
+  - deadfu
+  Option1: {fileID: 11400000, guid: 5870af34d87b47845804399068f3781a, type: 2}
+  Option2: {fileID: 11400000, guid: d13dd781ee268d34884fd17972f0a10a, type: 2}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}

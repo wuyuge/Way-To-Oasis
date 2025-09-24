@@ -17,7 +17,7 @@ public class TalkSystem : MonoBehaviour
     [Header("每天的文本线")]
     [Tooltip("存储每一天的对话数据列表")]
     public List<Manager> Talklines = new List<Manager>();
-    public Manager DeadName,UesdBody;
+    public Manager DeadName,UsedBody;
     [Header("管理时间,目前行数")]
     [Tooltip("关联到进度管理器对象，用于获取当前天数")]
     public GameObject DaytimeOBJ;
@@ -95,6 +95,8 @@ public class TalkSystem : MonoBehaviour
     public Manager amandeKillself;
     [Header("商店事件判断")]
     public Manager Day2ShopEvent;
+    [Header("博金森死亡时间判断")]
+    public Manager BoDeadTime;
     private void Awake()
     {
         Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
@@ -230,7 +232,7 @@ public class TalkSystem : MonoBehaviour
                     line++;
                     _ = ShowText(true);
                     return;
-                case "/CheckAmandeKillself":
+                case "/CheckAmandeKillself"://死了转分支1,没死分支2
                     if(amandeKillself.GeneralBool)
                     {
                         Talklines[Daytime] = Talklines[Daytime].Option1;
@@ -239,7 +241,8 @@ public class TalkSystem : MonoBehaviour
                     }
                     else
                     {
-                        line++;
+                        Talklines[Daytime] = Talklines[Daytime].Option2;
+                        line = 0;
                         _ = ShowText(true);
                     }
                     return;
@@ -303,7 +306,7 @@ public class TalkSystem : MonoBehaviour
 
                             return;
                         }
-                        else if(s == "博金森Uesd")
+                        else if(s == "博金森Used")
                         {
                             HandleChoice(ban:1);
                             return;
@@ -318,7 +321,7 @@ public class TalkSystem : MonoBehaviour
                         index++;
                         if(s == "博金森")
                         {
-                            UesdBody.TxtLine.Add("博金森Uesd");
+                            UsedBody.TxtLine.Add("博金森Used");
                             DeadName.TxtLine.RemoveAt(index);
                         }
 
@@ -495,7 +498,7 @@ public class TalkSystem : MonoBehaviour
                     _ = ShowText(true);
                     return;
 
-                case "deadfu":
+                case "deadfu"://没死分支1,死了转分支2
                     bool hasBokinson = false;
                     foreach (string s in DeadName.TxtLine)
                     {
@@ -505,11 +508,39 @@ public class TalkSystem : MonoBehaviour
                             break;
                         }
                     }
+                    if (!hasBokinson)
+                    {
+                        foreach (string s in UsedBody.TxtLine)
+                        {
+                            if (s.Contains("博金森"))
+                            {
+                                hasBokinson = true;
+                                break;
+                            }
+                        }
+                    }
                     Talklines[Daytime] = hasBokinson ? Talklines[Daytime].Option2 : Talklines[Daytime].Option1;
                     line = 0;
 
                     _ = ShowText(true);
                     return;
+                case "/CheckBoDeadTime"://博金森死超过一天转分支2，否则转分支1
+                    if(Daytime - BoDeadTime.Weight > 1)
+                    {
+                        Talklines[Daytime] = Talklines[Daytime].Option2;
+                        line = 0;
+                        _ = ShowText(true);
+                        return;
+                    }
+                    else
+                    {
+                        Talklines[Daytime] = Talklines[Daytime].Option1;
+                        line = 0;
+                        _ = ShowText();
+                        return;
+                    }
+
+
 
                 case "luo_peoplechoice":
                     if (DeadName.TxtLine.Count == 1)
@@ -541,29 +572,9 @@ public class TalkSystem : MonoBehaviour
                     _ = ShowText(true, showtext);
                     return;
 
-                case "dead":
-
-                    
-
-                    // 如果满足以下任一条件，则使用Option2
-                    if ((DeadName.TxtLine.Count == 0 && UesdBody.TxtLine.Count == 0) ||
-                        (DeadName.TxtLine.Count == 1 && DeadName.TxtLine[0] == "Leader" && UesdBody.TxtLine.Count == 0))
-                    {
-                        Talklines[Daytime] = Talklines[Daytime].Option2;
-                        line = 0;
-                        _ = ShowText(true);
-                    }
-                    // 如果DeadName至少有一条记录，则使用Option1
-                    else if (DeadName.TxtLine.Count >= 1)
-                    {
-                        Talklines[Daytime] = Talklines[Daytime].Option1;
-                        line = 0;
-                        _ = ShowText(true);
-                    }
+                
 
 
-                    
-                    return;
 
                 case "down":
                     anim.SetTrigger("down");
@@ -593,7 +604,37 @@ public class TalkSystem : MonoBehaviour
 
                     _ = ShowText(true);
                     return;
+                case "dead"://死了转分支1，没死分支2
 
+                    Debug.Log("判断之前是否死过人");
+                    if(DeadName.TxtLine.Count > 1 || UsedBody.TxtLine.Count > 1 || DeadName.TxtLine.Count + UsedBody.TxtLine.Count > 1)
+                    {
+                        Debug.Log("有死人");
+                        Talklines[Daytime] = Talklines[Daytime].Option1;
+                        line = 0;
+                        _ = ShowText(true);
+                        return;
+                    }
+                    else if (DeadName.TxtLine.Count == 1 && DeadName.TxtLine[0] == "Leader" && UsedBody.TxtLine.Count == 0)
+                    {
+                        Debug.Log("没有死人");
+                        Talklines[Daytime] = Talklines[Daytime].Option2;
+                        line = 0;
+                        _ = ShowText(true);
+                        return;
+                    }
+                    else if (DeadName.TxtLine.Count == 0 && UsedBody.TxtLine.Count == 1 && (UsedBody.TxtLine[0] == "LeaderUesd" || UsedBody.TxtLine[0] == "LeaderAbondoned"))
+                    {
+                        Debug.Log("没有死人");
+                        Talklines[Daytime] = Talklines[Daytime].Option2;
+                        line = 0;
+                        _ = ShowText(true);
+                        return;
+                    }
+
+                    return;
+
+                    
                 case "upcbar":
                     charaBar.GetComponent<Animator>().SetTrigger("Up");
                     line++;
@@ -666,8 +707,8 @@ public class TalkSystem : MonoBehaviour
                     DaytimeOBJ.GetComponent<Progress>().SwtichProgress();
                     return;
                 case "twicedeadchoice":
-                    if ((DeadName.TxtLine.Count == 1 && DeadName.TxtLine[0] == "Leader" && UesdBody.TxtLine.Count == 0)|| 
-                        (DeadName.TxtLine.Count == 0 && UesdBody.TxtLine.Count == 1 && UesdBody.TxtLine[0] == "LeaderUesd"))
+                    if ((DeadName.TxtLine.Count == 1 && DeadName.TxtLine[0] == "Leader" && UsedBody.TxtLine.Count == 0)|| 
+                        (DeadName.TxtLine.Count == 0 && UsedBody.TxtLine.Count == 1 && UsedBody.TxtLine[0] == "LeaderUesd"))
                     {
                         Talklines[Daytime] = Talklines[Daytime].Option1;
                     }

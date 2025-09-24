@@ -10,9 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
-  m_Name: AmandeKillSelf
+  m_Name: Main1-2
   m_EditorClassIdentifier: 
-  TxtLine: []
+  TxtLine:
+  - c
+  - "\u827E\u7C73\u8389\uFF1A\u672A\u63A5\u6536\u5230\u4FE1\u53F7\uFF0C\u65E0\u6CD5\u89C4\u5212\u8DEF\u7EBF\u3002"
+  - "\u827E\u7C73\u8389\uFF1A\u4F60\u8FD8\u6709\u4E8B\uFF1F\u8BC6\u76F8\u70B9\u6EDA\u5427\u3002"
+  - upcbar
+  - down
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

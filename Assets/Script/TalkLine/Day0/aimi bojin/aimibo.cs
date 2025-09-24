@@ -1,21 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Aimibo : MonoBehaviour
 {
+    public Character LinkObj;
+    private Character character;
+    private Progress progress;
 
-    public GameObject LinkObj;
+    void Start()
+    {
+        // 只获取一次组件引用
+        character = GetComponent<Character>();
+        if (character != null && character.end != null)
+        {
+            progress = character.end.GetComponent<Progress>();
+        }
+    }
 
-
-    
-
-    // Update is called once per frame
     void Update()
     {
-        if(LinkObj.GetComponent<Character>().have_talk == true)
+        if (LinkObj != null && character != null && progress != null)
         {
-            gameObject.GetComponent<Character>().have_talk = true;
+            if (LinkObj.have_talk && (progress.day_num == 0 || progress.day_num == 3))
+            {
+                character.have_talk = true;
+            }
         }
     }
 }

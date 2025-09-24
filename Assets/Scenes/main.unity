@@ -2902,6 +2902,7 @@ MonoBehaviour:
   aimi_obj: {fileID: 0}
   fu_obj: {fileID: 0}
   ending: {fileID: 1214482451}
+  BoDeadTime: {fileID: 0}
 --- !u!1 &175415580
 GameObject:
   m_ObjectHideFlags: 0
@@ -4755,7 +4756,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &342679171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10661,7 +10662,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 74850c4107de92447a3f455bbd1925da, type: 2}
   - {fileID: 0}
   DeadName: {fileID: 0}
-  UesdBody: {fileID: 0}
+  UsedBody: {fileID: 0}
   DaytimeOBJ: {fileID: 1185337235}
   Daytime: 0
   line: 0
@@ -14025,8 +14026,8 @@ MonoBehaviour:
   StartDown: 0
   Final_Food: {fileID: 0}
   Final_Body: {fileID: 0}
-  FoodText: {fileID: 0}
-  BodyText: {fileID: 0}
+  FoodText: {fileID: 560942171}
+  BodyText: {fileID: 152551311}
   SetText: 0
 --- !u!114 &921392549
 MonoBehaviour:
@@ -14068,6 +14069,7 @@ MonoBehaviour:
   aimi_obj: {fileID: 1061970914}
   fu_obj: {fileID: 88074887}
   ending: {fileID: 1214482451}
+  BoDeadTime: {fileID: 11400000, guid: f6d3be3475fa55548811b3ac7bdbcc51, type: 2}
 --- !u!1 &921940673
 GameObject:
   m_ObjectHideFlags: 0
@@ -26220,7 +26222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1763126682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29923,7 +29925,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   DeadName: {fileID: 11400000, guid: 1b5012e8af746534e809d078e4fdd8ad, type: 2}
-  UesdBody: {fileID: 11400000, guid: 3b2059a793a087e438fe397c7bf5ac3d, type: 2}
+  UsedBody: {fileID: 11400000, guid: 3b2059a793a087e438fe397c7bf5ac3d, type: 2}
   DaytimeOBJ: {fileID: 880794419}
   Daytime: 0
   line: 0
@@ -32388,6 +32390,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 1763126685}
     m_Modifications:
     - target: {fileID: 407227091536854674, guid: ea02790f66b63aa489dd2918a1318386, type: 3}
+      propertyPath: TalkBar
+      value: 
+      objectReference: {fileID: 2039588928}
+    - target: {fileID: 407227091536854674, guid: ea02790f66b63aa489dd2918a1318386, type: 3}
+      propertyPath: CharaBar
+      value: 
+      objectReference: {fileID: 921392547}
+    - target: {fileID: 407227091536854674, guid: ea02790f66b63aa489dd2918a1318386, type: 3}
       propertyPath: progress
       value: 
       objectReference: {fileID: 880794424}
@@ -32395,6 +32405,14 @@ PrefabInstance:
       propertyPath: progress
       value: 
       objectReference: {fileID: 1185337237}
+    - target: {fileID: 2144863206725577022, guid: ea02790f66b63aa489dd2918a1318386, type: 3}
+      propertyPath: TalkBar
+      value: 
+      objectReference: {fileID: 2039588928}
+    - target: {fileID: 2144863206725577022, guid: ea02790f66b63aa489dd2918a1318386, type: 3}
+      propertyPath: CharaBar
+      value: 
+      objectReference: {fileID: 921392547}
     - target: {fileID: 2144863206725577022, guid: ea02790f66b63aa489dd2918a1318386, type: 3}
       propertyPath: progress
       value: 
@@ -32511,6 +32529,10 @@ PrefabInstance:
       propertyPath: TalkBar
       value: 
       objectReference: {fileID: 2039588928}
+    - target: {fileID: 9170898527802956579, guid: ea02790f66b63aa489dd2918a1318386, type: 3}
+      propertyPath: Mask
+      value: 
+      objectReference: {fileID: 2116532947}
     - target: {fileID: 9213083556575666382, guid: ea02790f66b63aa489dd2918a1318386, type: 3}
       propertyPath: CharaBar
       value: 
