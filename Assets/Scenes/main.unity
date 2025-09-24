@@ -1746,6 +1746,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 11400000, guid: d92c00b94284853488a9d0687754fb0c, type: 2}
   - {fileID: 11400000, guid: fb81946a392a3c54cb751976eaed07bb, type: 2}
+  - {fileID: 11400000, guid: 29a8fd917707912458c26385105b0d8b, type: 2}
   TalkBar: {fileID: 2039588927}
   have_talk: 0
   Dead: 0
@@ -7127,6 +7128,7 @@ GameObject:
   - component: {fileID: 509211723}
   - component: {fileID: 509211725}
   - component: {fileID: 509211724}
+  - component: {fileID: 509211726}
   m_Layer: 5
   m_Name: back5
   m_TagString: Untagged
@@ -7173,7 +7175,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 04974b72b3fe0f342a0c4f92cac6f830, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ff165e0e660f3ab4a8801153152b68f5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7191,6 +7193,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509211722}
   m_CullTransparentMesh: 1
+--- !u!95 &509211726
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509211722}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c55c100941255194985af51fee9a6cf1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &514476419
 GameObject:
   m_ObjectHideFlags: 0
@@ -9862,7 +9885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 280, y: -445}
+  m_AnchoredPosition: {x: 280, y: -380}
   m_SizeDelta: {x: 877.25, y: 1982.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &654122347
@@ -10709,6 +10732,7 @@ MonoBehaviour:
   PlayerName: {fileID: 11400000, guid: 748c360d1bf29ef408e278ede50fb2b2, type: 2}
   amandeKillself: {fileID: 0}
   Day2ShopEvent: {fileID: 0}
+  BoDeadTime: {fileID: 0}
 --- !u!114 &719523452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13662,6 +13686,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 11400000, guid: 004a79ebd05c4864ca8eefd3395659d2, type: 2}
   - {fileID: 11400000, guid: 1119090c75eccfa4b88f3738ada7623b, type: 2}
+  - {fileID: 11400000, guid: 1bb9bc5d607125040b5ea6d3cc78651e, type: 2}
   TalkBar: {fileID: 2039588927}
   have_talk: 0
   Dead: 0
@@ -16017,6 +16042,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 11400000, guid: 4b19a69a5b28d1840ab8fda6775d23ab, type: 2}
   - {fileID: 11400000, guid: 92f5399ebb898784b998e97d9cd6c044, type: 2}
+  - {fileID: 11400000, guid: 2c213554b5652ad40bb03d5225c196ee, type: 2}
   TalkBar: {fileID: 2039588927}
   have_talk: 0
   Dead: 0
@@ -16630,6 +16656,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 11400000, guid: 2ede677c895a5ac4c8f27d27408eafb4, type: 2}
   - {fileID: 11400000, guid: bbbaab3e17968b34ba78366ce646018d, type: 2}
+  - {fileID: 11400000, guid: 29a8fd917707912458c26385105b0d8b, type: 2}
   TalkBar: {fileID: 2039588927}
   have_talk: 0
   Dead: 0
@@ -28396,6 +28423,7 @@ GameObject:
   - component: {fileID: 1938914680}
   - component: {fileID: 1938914682}
   - component: {fileID: 1938914681}
+  - component: {fileID: 1938914683}
   m_Layer: 5
   m_Name: back5
   m_TagString: Untagged
@@ -28442,7 +28470,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 04974b72b3fe0f342a0c4f92cac6f830, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ff165e0e660f3ab4a8801153152b68f5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28460,6 +28488,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938914679}
   m_CullTransparentMesh: 1
+--- !u!95 &1938914683
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938914679}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c55c100941255194985af51fee9a6cf1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1939549104
 GameObject:
   m_ObjectHideFlags: 0
@@ -29978,6 +30027,7 @@ MonoBehaviour:
   PlayerName: {fileID: 11400000, guid: 748c360d1bf29ef408e278ede50fb2b2, type: 2}
   amandeKillself: {fileID: 11400000, guid: 2c832edcdb4c9ef4e8f2e46d84491f26, type: 2}
   Day2ShopEvent: {fileID: 11400000, guid: 3ef43976c9b98e94f8ddba25905936d1, type: 2}
+  BoDeadTime: {fileID: 0}
 --- !u!114 &2039588930
 MonoBehaviour:
   m_ObjectHideFlags: 0

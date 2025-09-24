@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
   m_Name: Main2-c1
   m_EditorClassIdentifier: 
-  TxtLine: []
+  TxtLine:
+  - "\u8C22\u8C22\u4F60\u3002"
+  - p
+  - "\u8C22\u8C22\u4F60\u3002"
+  - upcbar
+  - down
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

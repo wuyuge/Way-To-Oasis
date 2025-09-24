@@ -15,8 +15,8 @@ MonoBehaviour:
   TxtLine:
   - /CheckEveryOneLive
   Option1: {fileID: 11400000, guid: 9a8fa73763e6b124aa52f4a8e0138b49, type: 2}
-  Option2: {fileID: 0}
-  Option3: {fileID: 0}
+  Option2: {fileID: 11400000, guid: 88617827e552dbb4597641f4d133b11a, type: 2}
+  Option3: {fileID: 11400000, guid: 68abec63a00cc4e4b8054dd14e8fdc6e, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0
