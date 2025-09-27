@@ -106,4 +106,45 @@ public class MenuManager : MonoBehaviour
         Error.SetFloat("_GlitchSpeed", 0.25f);
     }
 
+
+    public void SetFPS(int value)
+    {
+       
+        
+        switch (value)
+        {
+            case 0:
+                Application.targetFrameRate = 30;
+                Debug.Log("设置帧率 30");
+                break;
+            case 1:
+                Application.targetFrameRate = 60;
+                Debug.Log("设置帧率 60");
+                break;
+            case 2:
+                Application.targetFrameRate = 120;
+                Debug.Log("设置帧率 120");
+                break;
+            case 3:
+                Application.targetFrameRate = 240;
+                Debug.Log("设置帧率 240");
+                break;
+            case 4:
+                Application.targetFrameRate = -1;
+                Debug.Log("设置帧率 无限");
+                break;
+
+
+
+        }
+
+        
+
+
+    }
+
+
+
+    
+
 }
