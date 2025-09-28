@@ -61,7 +61,6 @@ public class MiniCharacterManager : MonoBehaviour
             SwitchCharacterPositions(); // 为存活角色重新分配位置
         }
     }
-
     /// <summary>
     /// 检测指定管理器中是否有新角色死亡
     /// </summary>
