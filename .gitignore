@@ -364,11 +364,10 @@ FodyWeavers.xsd
 
 /MemoryCaptures
 /Temp
-*.sln
 /Library
-/Temp
 /Obj
 /Builds
 /Build
 /Logs
 /UserSettings
+*.sln

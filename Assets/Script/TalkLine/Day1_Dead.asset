@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
   m_Name: Day1_Dead
   m_EditorClassIdentifier: 
-  TxtLine: []
+  TxtLine:
+  - Leader
+  - "\u83B1\u6587"
+  - "\u535A\u91D1\u68EE"
+  - "\u963F\u66FC\u5FB7"
+  - "\u83B1\u6587"
+  - "\u963F\u66FC\u5FB7Poison"
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

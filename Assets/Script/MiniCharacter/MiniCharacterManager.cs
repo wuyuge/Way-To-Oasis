@@ -62,7 +62,6 @@ public class MiniCharacterManager : MonoBehaviour
         }
     }
 
-
     /// <summary>
     /// 检测指定管理器中是否有新角色死亡
     /// </summary>
