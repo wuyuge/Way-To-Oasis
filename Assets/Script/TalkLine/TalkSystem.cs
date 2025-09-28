@@ -7,6 +7,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static TechTextList;
 
 /// <summary>
 /// 对话系统核心类：负责文本显示、角色切换、选择分支等对话逻辑
@@ -97,6 +98,12 @@ public class TalkSystem : MonoBehaviour
     public Manager Day2ShopEvent;
     [Header("博金森死亡时间判断")]
     public Manager BoDeadTime;
+
+    [Header("教程文本列表")]
+    [SerializeField]
+    private TechTextList TechTextList;
+
+
     private void Awake()
     {
         Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
@@ -135,7 +142,7 @@ public class TalkSystem : MonoBehaviour
         UpButton.gameObject.SetActive(false);
         DownButton.gameObject.SetActive(false);
         // 从第0行开始显示对话
-        line = 0;
+        ResetLine();
         // 从进度管理器获取当前天数
         
         if (on && DaytimeOBJ.GetComponent<Progress>().talk)
@@ -189,8 +196,8 @@ public class TalkSystem : MonoBehaviour
     /// </summary>
     public async Task ShowText(bool isroll = false, string addtiontext = null, bool ClearText = true,bool ShowMask = false)
     {
-        
 
+        
         // 清空文本框（原有逻辑保留）
         if (!PlayerTalking && ClearText)
         {
@@ -216,6 +223,7 @@ public class TalkSystem : MonoBehaviour
             inTech = false;
             switch (curText)
             {
+                
                 case "choice":
                     
                     HandleChoice();
@@ -224,25 +232,25 @@ public class TalkSystem : MonoBehaviour
                     return;
                 case "/Laiwensuccess"://安抚成功/失败预留
                     CharacterList[5].GetComponent<Character>().NotComfort = false;
-                    line++;
+                    PlusLine();
                     _ = ShowText(true);
                     return;
                 case "/Laiwenfail":
                     CharacterList[5].GetComponent<Character>().NotComfort = true;
-                    line++;
+                    PlusLine();
                     _ = ShowText(true);
                     return;
                 case "/CheckAmandeKillself"://死了转分支1,没死分支2
                     if(amandeKillself.GeneralBool)
                     {
-                        Talklines[Daytime] = Talklines[Daytime].Option1;
-                        line = 0;
+                        TurnOption1();
+                        ResetLine();
                         _ = ShowText(true);
                     }
                     else
                     {
-                        Talklines[Daytime] = Talklines[Daytime].Option2;
-                        line = 0;
+                        TurnOption2();
+                        ResetLine();
                         _ = ShowText(true);
                     }
                     return;
@@ -250,15 +258,15 @@ public class TalkSystem : MonoBehaviour
 
                     if (Day2ShopEvent.GeneralBool)
                     {
-                        Talklines[Daytime] = Talklines[Daytime].Option1;
-                        line = 0;
+                        TurnOption1();
+                        ResetLine();
                         _ = ShowText(true);
                         return;
                     }
                     else
                     {
-                        Talklines[Daytime] = Talklines[Daytime].Option2;
-                        line = 0;
+                        TurnOption2();
+                        ResetLine();
                         _ = ShowText(true);
                         return;
                     }
@@ -271,29 +279,29 @@ public class TalkSystem : MonoBehaviour
 
 
                             if (g.GetComponent<Character>().CharacterName == "阿曼德" && amandeKillself.GeneralBool) continue;
-                            Talklines[Daytime] = Talklines[Daytime].Option2;
-                            line = 0;
+                            TurnOption2();
+                            ResetLine();
                             _ = ShowText(true);
                             return;
 
                         }
                         
                     }
-                    Talklines[Daytime] = Talklines[Daytime].Option1;
-                    line = 0;
+                    TurnOption1();
+                    ResetLine();
                     _ = ShowText(true);
                     return;
                 case "/checktalk":
                     if (Day0_Talk.Weight == 3)
                     {
-                        line++;
+                        PlusLine();
                         _ = ShowText(true);
                         return;
                     }
                     else
                     {
-                        Talklines[Daytime] = Talklines[Daytime].Option3;
-                        line = 0;
+                        TurnOption3();
+                        ResetLine();
                         _ = ShowText(true);
                         return;
                     }
@@ -326,12 +334,12 @@ public class TalkSystem : MonoBehaviour
                         }
 
                     }
-                    line++;
+                    PlusLine();
                     _ = ShowText(true);
                     return;
                 case "/BanClik":
                     on = false;
-                    line++;
+                    PlusLine();
                     _ = ShowText(true);
                     return;
                 case "/specialchoice":
@@ -342,17 +350,17 @@ public class TalkSystem : MonoBehaviour
                     return;
                 case "/showname":
                     ShowName = true;
-                    line++;
+                    PlusLine();
                     _ = ShowText(true);
                     return;
                 case "/ResetTrigger":
                     this.CharacterImageManager.ResetTrigger();
-                    line++;
+                    PlusLine();
                     _ = ShowText(true);
                     return;
                 case "/noname":
                     ShowName = false;
-                    line++;
+                    PlusLine();
                     _ = ShowText(true);
                     return;
                 case "/KillSomeOne":
@@ -388,7 +396,7 @@ public class TalkSystem : MonoBehaviour
                     {
                         ShowExchangeTalk();
                         
-                        line++;
+                        PlusLine();
                         _ = ShowText(true);
 
                     }
@@ -406,98 +414,96 @@ public class TalkSystem : MonoBehaviour
                 case "/shop":
 
                     _inshop = true;
-                    line++;
+                    PlusLine();
 
                     _ = ShowText(true);
                     return;
                 case "CloseMask":
                     mask.transform.parent.gameObject.SetActive(false);
-                    line++;
+                    PlusLine();
                     _ = ShowText(true);
                     return;
+                //教程部分命令
                 case "techcomfort":
-                    if(!TeachComfort.GeneralBool)
+                    string Comforttext = SetTechText("Comfort");
+                    
+                    if (!TeachComfort.GeneralBool)
                     {
-                        inTech = true;
+                        GameObject ComfortObj = null;
+                        foreach (GameObject Character in CharacterList)
+                        {
+                            Character chara = Character.GetComponent<Character>();
+                            if (!chara.Dead && (chara.Special1 || chara.Special2))
+                            {
+                                ComfortObj = Character;
+                                break;
+                            }
+                        }
                         on = true;
-                        mask.transform.parent.gameObject.SetActive(true);
-                        mask.GetComponent<Unmask>().m_FitTarget = CharacterList[4].GetComponent<RectTransform>();
-                        mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "你的选择可能会导致一些人的不满，与他们对话安抚他们的情绪，未安抚的情绪可能会造成一些意想不到的结果";
+                        SetTechMode(ComfortObj,Comforttext);
                         TeachComfort.GeneralBool = true;
                     }
-                    line++;
+                    PlusLine();
                     
                     return;
                 case "techmenu":
-                    inTech = true;
+                    
+                    string Menutext = SetTechText("Menu");
+                    SetTechMode(Menu, Menutext);
                     on = true;
-                    mask.transform.parent.gameObject.SetActive(true);
-                    mask.GetComponent<Unmask>().m_FitTarget = Menu.GetComponent<RectTransform>();
-                    mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "点击这里或按下Esc开启菜单界面";
-                    line++;
+                    PlusLine();
                     
                     return;
                 case "techclik":
-                    
-                    
-                    mask.transform.parent.gameObject.SetActive(true);
-                    mask.GetComponent<Unmask>().m_FitTarget = gameObject.GetComponent<RectTransform>();
-                    mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "点击鼠标左键或按下空格键继续对话";
-                    line++;
+
+                    string Cliktext = SetTechText("Clik");
+                    SetTechMode(gameObject, Cliktext);
+                    PlusLine();
                     
                     
                     return;
 
                 case "techtalk":
-                    inTech = true;
+                    string Talktext = SetTechText("Talk");
+                    SetTechMode(DownBar.transform.Find("MaskLayer").gameObject,Talktext);
                     on = true;
-                    mask.transform.parent.gameObject.SetActive(true);
-                    mask.GetComponent<Unmask>().m_FitTarget = DownBar.transform.Find("MaskLayer").GetComponent<RectTransform>();
-                    mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "这是选择栏，里面分别展示着你和其他5位角色的状态，之后可以在这里分配负重与食物，现在请点击人物头像开始对话";
-                    line++;
+                    PlusLine();
                     DaytimeOBJ.GetComponent<Button>().enabled = true;
                     
                     return;
 
                 case "techright":
-                    inTech = true;
+                    string Righttext = SetTechText("Right");
+                    SetTechMode(DaytimeOBJ.transform.parent.gameObject, Righttext);
                     on = true;
                     DaytimeOBJ.GetComponent<Button>().enabled = false;
-                    mask.transform.parent.gameObject.SetActive(true);
-                    mask.GetComponent<Unmask>().m_FitTarget = DaytimeOBJ.transform.parent.gameObject.GetComponent<RectTransform>();
-                    mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "这是日志栏，里面分别展示着你目前在哪一天处于哪个环节，点击下方按钮可以切换到下一环节";
-                    line++;
+                    PlusLine();
                     
                     return;
 
                 case "techclose":
-                    inTech = true;
-                    mask.transform.parent.gameObject.SetActive(true);
-                    mask.GetComponent<Unmask>().m_FitTarget = DaytimeOBJ.GetComponent<RectTransform>();
-                    mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "点击按钮结束交谈环节";
-                    line++;
+                    string Closetext = SetTechText("Close");
+                    SetTechMode(DaytimeOBJ, Closetext);
+                    PlusLine();
                     _ = ShowText(true);
                     return;
                 case "techfood":
+                    string Foodtext = SetTechText("Food");
                     inTech = true;
-                    mask.transform.parent.gameObject.SetActive(true);
-                    mask.GetComponent<Unmask>().m_FitTarget = DownBar.transform.Find("MaskLayer").GetComponent<RectTransform>();
-                    mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "请勾选所有人物头像旁的按钮分配食物";
-                    line++;
+                    SetTechMode(DownBar.transform.Find("MaskLayer").gameObject, Foodtext);
+                    PlusLine();
                     Invoke("CloseMask", 2);
                     _ = ShowText(true);
                     return;
 
                 case "techweight":
-                    inTech = true;
-                    mask.transform.parent.gameObject.SetActive(true);
-                    mask.GetComponent<Unmask>().m_FitTarget = DownBar.transform.Find("MaskLayer").GetComponent<RectTransform>();
-                    mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "选择右侧的物品然后点击人物头像分配携带物品";
-                    line++;
+                    string Weighttext = SetTechText("Weight");
+                    SetTechMode(DownBar.transform.Find("MaskLayer").gameObject, Weighttext);
+                    PlusLine();
                     Invoke("CloseMask", 3);
                     _ = ShowText(true);
                     return;
-
+                //教程结束
                 case "deadfu"://没死分支1,死了转分支2
                     bool hasBokinson = false;
                     foreach (string s in DeadName.TxtLine)
@@ -520,22 +526,22 @@ public class TalkSystem : MonoBehaviour
                         }
                     }
                     Talklines[Daytime] = hasBokinson ? Talklines[Daytime].Option2 : Talklines[Daytime].Option1;
-                    line = 0;
+                    ResetLine();
 
                     _ = ShowText(true);
                     return;
                 case "/CheckBoDeadTime"://博金森死超过一天转分支2，否则转分支1
                     if(Daytime - BoDeadTime.Weight > 1)
                     {
-                        Talklines[Daytime] = Talklines[Daytime].Option2;
-                        line = 0;
+                        TurnOption2();
+                        ResetLine();
                         _ = ShowText(true);
                         return;
                     }
                     else
                     {
-                        Talklines[Daytime] = Talklines[Daytime].Option1;
-                        line = 0;
+                        TurnOption1();
+                        ResetLine();
                         _ = ShowText();
                         return;
                     }
@@ -547,15 +553,15 @@ public class TalkSystem : MonoBehaviour
                     {
                         string name = DeadName.TxtLine[0];
                         if (name == "莱文" || name == "博金森")
-                            Talklines[Daytime] = Talklines[Daytime].Option1;
+                            TurnOption1();
                         else if (name == "艾米莉" || name == "阿曼德")
-                            Talklines[Daytime] = Talklines[Daytime].Option2;
+                            TurnOption2();
                     }
                     else
                     {
-                        Talklines[Daytime] = Talklines[Daytime].Option3;
+                        TurnOption3();
                     }
-                    line = 0;
+                    ResetLine();
 
                     _ = ShowText(true);
                     return;
@@ -579,7 +585,7 @@ public class TalkSystem : MonoBehaviour
                 case "down":
                     anim.SetTrigger("down");
                     Invoke("SetCharBar", 1.5f);
-                    line++;
+                    PlusLine();
                     
                     
                     _ = ShowText(true);
@@ -587,19 +593,19 @@ public class TalkSystem : MonoBehaviour
                 case "aimieat":
                     if (aimi.Day1Eat)
                     {
-                        Talklines[Daytime] = Talklines[Daytime].Option1;
+                        TurnOption1();
                     }
                     else
                     {
-                        Talklines[Daytime] = Talklines[Daytime].Option2;
+                        TurnOption2();
                     }
-                    line = 0;
+                    ResetLine();
 
                     _ = ShowText(true);
                     return;
                 case "up":
                     anim.SetTrigger("up");
-                    line++;
+                    PlusLine();
                     transform.position = new Vector2(transform.position.x, -5000); // 简化gameObject访问
 
                     _ = ShowText(true);
@@ -610,24 +616,24 @@ public class TalkSystem : MonoBehaviour
                     if(DeadName.TxtLine.Count > 1 || UsedBody.TxtLine.Count > 1 || DeadName.TxtLine.Count + UsedBody.TxtLine.Count > 1)
                     {
                         Debug.Log("有死人");
-                        Talklines[Daytime] = Talklines[Daytime].Option1;
-                        line = 0;
+                        TurnOption1();
+                        ResetLine();
                         _ = ShowText(true);
                         return;
                     }
                     else if (DeadName.TxtLine.Count == 1 && DeadName.TxtLine[0] == "Leader" && UsedBody.TxtLine.Count == 0)
                     {
                         Debug.Log("没有死人");
-                        Talklines[Daytime] = Talklines[Daytime].Option2;
-                        line = 0;
+                        TurnOption2();
+                        ResetLine();
                         _ = ShowText(true);
                         return;
                     }
                     else if (DeadName.TxtLine.Count == 0 && UsedBody.TxtLine.Count == 1 && (UsedBody.TxtLine[0] == "LeaderUesd" || UsedBody.TxtLine[0] == "LeaderAbondoned"))
                     {
                         Debug.Log("没有死人");
-                        Talklines[Daytime] = Talklines[Daytime].Option2;
-                        line = 0;
+                        TurnOption2();
+                        ResetLine();
                         _ = ShowText(true);
                         return;
                     }
@@ -637,7 +643,7 @@ public class TalkSystem : MonoBehaviour
                     
                 case "upcbar":
                     charaBar.GetComponent<Animator>().SetTrigger("Up");
-                    line++;
+                    PlusLine();
                     if(!inTech)this.CharacterImageManager.CloseImage();
                     
                     await Task.Delay(800);
@@ -648,14 +654,14 @@ public class TalkSystem : MonoBehaviour
 
                 case "downcbar":
                     charaBar.GetComponent<Animator>().SetTrigger("Down");
-                    line++;
+                    PlusLine();
 
                     _ = ShowText(true);
                     return;
 
                 case "notover":
                     amande.GetComponent<Character>().have_talk = false;
-                    line++;
+                    PlusLine();
                     DaytimeOBJ.GetComponent<Progress>().CanSwitch = false;
 
                     _ = ShowText(true);
@@ -663,14 +669,14 @@ public class TalkSystem : MonoBehaviour
 
                 case "allover":
                     DaytimeOBJ.GetComponent<Progress>().CanSwitch = true;
-                    line++;
+                    PlusLine();
                     ShowName = true;
                     _ = ShowText(true);
                     return;
                 
                 case "showcharabar":
                     charabar.SetActive(true);
-                    line++;
+                    PlusLine();
 
                     Debug.Log("显示角色文本框");
                     _ = ShowText(true);
@@ -678,7 +684,7 @@ public class TalkSystem : MonoBehaviour
 
                 case "closecharabar":
                     charabar.SetActive(false);
-                    line++;
+                    PlusLine();
                     this.CharacterImageManager.CloseImage();
                     Debug.Log("关闭角色文本框");
                     _ = ShowText(true);
@@ -687,14 +693,14 @@ public class TalkSystem : MonoBehaviour
                 case "black":
                     black.SetActive(false);
                     black.SetActive(true);
-                    line++;
+                    PlusLine();
 
                     _ = ShowText(true);
                     return;
 
                 case "next":
                     Debug.Log("进入正常场景");
-                    line++;
+                    PlusLine();
 
                     _ = ShowText(true);
                     if (Daytime == 0)
@@ -702,7 +708,7 @@ public class TalkSystem : MonoBehaviour
                         MainCanvas.SetActive(true);
                         MainCTalkBar.SetActive(false);
                         transform.parent.gameObject.SetActive(false);
-                        line = 0;
+                        ResetLine();
                     }
                     DaytimeOBJ.GetComponent<Progress>().SwtichProgress();
                     return;
@@ -710,48 +716,48 @@ public class TalkSystem : MonoBehaviour
                     if ((DeadName.TxtLine.Count == 1 && DeadName.TxtLine[0] == "Leader" && UsedBody.TxtLine.Count == 0)|| 
                         (DeadName.TxtLine.Count == 0 && UsedBody.TxtLine.Count == 1 && UsedBody.TxtLine[0] == "LeaderUesd"))
                     {
-                        Talklines[Daytime] = Talklines[Daytime].Option1;
+                        TurnOption1();
                     }
                     else
                     {
-                        Talklines[Daytime] = Talklines[Daytime].Option2;
+                        TurnOption2();
                     }
-                    line = 0;
+                    ResetLine();
 
                     _ = ShowText(true);
                     return;
 
                 case "lock":
                     DaytimeOBJ.GetComponent<Progress>().CanSwitch = false;
-                    line++;
+                    PlusLine();
 
                     _ = ShowText(true);
                     return;
 
                 case "canskip":
                     DaytimeOBJ.GetComponent<Progress>().can_skip = true;
-                    line++;
+                    PlusLine();
 
                     _ = ShowText(true);
                     return;
 
                 case "p":
                     PlayerTalking = true;
-                    line++;
+                    PlusLine();
                     await Task.Yield();
                     _ = ShowText(true);
                     return;
 
                 case "c":
                     PlayerTalking = false;
-                    line++;
+                    PlusLine();
                     await Task.Yield();
                     _ = ShowText(true);
                     return;
 
                 case "end":
-                    Talklines[Daytime] = Talklines[Daytime].Option1;
-                    line = 0;
+                    TurnOption1();
+                    ResetLine();
 
                     _ = ShowText(true);
                     return;
@@ -803,7 +809,7 @@ public class TalkSystem : MonoBehaviour
 
                     if (BreakText)
                     {
-                        line++;
+                        PlusLine();
                         if(!_inshop)
                         {
                             Character.text = dialogueContent;
@@ -841,7 +847,7 @@ public class TalkSystem : MonoBehaviour
                 {
                     on = false;
                     await Task.Delay(500);
-                    line++;
+                    PlusLine();
                     _ = ShowText(true,ClearText:false);
                     Invoke("SetOn", 0.5f);
                 }
@@ -867,7 +873,7 @@ public class TalkSystem : MonoBehaviour
                 {
                     if (BreakText)
                     {
-                        line++;
+                        PlusLine();
                         if (!_inshop) Player.text = curText;
                         else ShopTextBar.GetComponent<TextMeshProUGUI>().text = curText;
                         if(ShowName) PlayerNameText.text = PlayerName.TxtLine[0];
@@ -900,7 +906,7 @@ public class TalkSystem : MonoBehaviour
 
             // 标记完成并准备下一行
             
-            line++;
+            PlusLine();
         }
         finally
         {
@@ -991,7 +997,7 @@ public class TalkSystem : MonoBehaviour
     {
 
         // 重置行数到0（从分支的第一行开始显示）
-        line = 0;
+        ResetLine();
         // 隐藏选择按钮
         if (!_inshop)
         {
@@ -1011,7 +1017,7 @@ public class TalkSystem : MonoBehaviour
         }
         // 切换当前天的对话数据为选择的分支
         Talklines[Daytime] = linebox;
-        line++;
+        PlusLine();
         // 重新开启交互
         on = true;
         // 开始显示选择分支的对话
@@ -1125,6 +1131,55 @@ public class TalkSystem : MonoBehaviour
     {
         charabar.SetActive(true);
 
+    }
+
+
+    void TurnOption1()
+    {
+        Talklines[Daytime] = Talklines[Daytime].Option1;
+    }
+    
+    void TurnOption2()
+    {
+        Talklines[Daytime] = Talklines[Daytime].Option2;
+    }
+
+    void TurnOption3()
+    {
+         Talklines[Daytime] = Talklines[Daytime].Option3;
+    }
+
+    void ResetLine()
+    {
+         line = 0;
+    }
+
+    void PlusLine()
+    {
+        line++;
+    }
+
+    private void SetTechMode(GameObject MaskGameObj ,string TechText)
+    {
+
+        inTech = true;
+        mask.transform.parent.gameObject.SetActive(true);
+        mask.GetComponent<Unmask>().m_FitTarget = MaskGameObj.GetComponent<RectTransform>();
+        mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = TechText;
+
+
+    }
+
+    private string SetTechText(string Comment)
+    {
+        foreach (TechTextList.TechText techText in TechTextList.TextList)
+        {
+            if (techText.name == Comment)
+            {
+                return techText.text;
+            }
+        }
+        return "";
     }
 
 }
