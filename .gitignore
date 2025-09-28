@@ -365,9 +365,10 @@ FodyWeavers.xsd
 /MemoryCaptures
 /Temp
 *.sln
-/Library/StateCache
-/Library/ShaderCache
-/Library/SplashScreenCache/e9
-/Library/PlayerDataCache/Win64
-/Library/PackageCache
-/Library/BurstCache
+/Library/
+/Temp/
+/Obj/
+/Builds/
+/Build/
+/Logs/
+/UserSettings/
