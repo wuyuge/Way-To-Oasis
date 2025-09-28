@@ -365,10 +365,10 @@ FodyWeavers.xsd
 /MemoryCaptures
 /Temp
 *.sln
-/Library/
-/Temp/
-/Obj/
-/Builds/
-/Build/
-/Logs/
-/UserSettings/
+/Library
+/Temp
+/Obj
+/Builds
+/Build
+/Logs
+/UserSettings
