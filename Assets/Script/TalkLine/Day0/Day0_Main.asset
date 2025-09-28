@@ -15,6 +15,7 @@ MonoBehaviour:
   TxtLine:
   - downcbar
   - showcharabar
+  - /showname
   - c
   - "\u963F\u66FC\u5FB7\uFF1A\u4F60\u6CA1\u4E8B\u5427\uFF0C{PlayerName}\uFF1F\u522B\u592A\u96BE\u8FC7\u4E86\u3002"
   - techclik

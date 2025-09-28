@@ -349,7 +349,7 @@ public class TalkSystem : MonoBehaviour
 
                     return;
                 case "/showname":
-                    ShowName = true;
+                    SetShowName();
                     PlusLine();
                     _ = ShowText(true);
                     return;
@@ -359,7 +359,7 @@ public class TalkSystem : MonoBehaviour
                     _ = ShowText(true);
                     return;
                 case "/noname":
-                    ShowName = false;
+                    SetNoName();
                     PlusLine();
                     _ = ShowText(true);
                     return;
@@ -405,7 +405,7 @@ public class TalkSystem : MonoBehaviour
                     return;
                 case "/closeshop":
                     ShopManager.SetActive(false);
-                    line ++;                           // 重置对话行索引
+                    PlusLine();                         // 重置对话行索引
                     _inshop = false;                    // 标记退出商店场景
                     on = false;                          
                     _ = ShowText(true);
@@ -1180,6 +1180,18 @@ public class TalkSystem : MonoBehaviour
             }
         }
         return "";
+    }
+
+    public void SetShowName()
+    {
+        ShowName = true;
+        PlayerNameText.text = PlayerName.TxtLine[0];
+    }
+
+    public void SetNoName()
+    {
+        ShowName = false;
+        PlayerNameText.text = "";
     }
 
 }

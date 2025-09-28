@@ -310,7 +310,8 @@ public class Character : MonoBehaviour
     {
         // 【死亡状态判断】如果角色死亡，不执行对话触发
         if (Dead) return;
-        
+        TalkSystem talksys = TalkBar.GetComponent<TalkSystem>();
+        talksys.SetShowName();
         if (Special1 && !ClikDelay)
         {
             ClikDelay = true;
@@ -340,7 +341,7 @@ public class Character : MonoBehaviour
         // 判断当前游戏是否处于"对话阶段"（Progress中的talk状态为true）
         if (progress.GetComponent<Progress>().talk && !ClikDelay)
         {
-            TalkSystem talksys = TalkBar.GetComponent<TalkSystem>();
+            
             talksys.on = false;
             ClikDelay = true;
             Debug.Log("触发对话");

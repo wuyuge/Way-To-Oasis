@@ -6540,6 +6540,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439850587}
   m_CullTransparentMesh: 1
+--- !u!1 &443092572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 443092574}
+  - component: {fileID: 443092573}
+  m_Layer: 0
+  m_Name: TechTextContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &443092573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443092572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1614b114a75924fbedc2255281e8b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextList:
+  - name: Comfort
+    text: "\u4F60\u7684\u9009\u62E9\u53EF\u80FD\u4F1A\u5BFC\u81F4\u4E00\u4E9B\u4EBA\u7684\u4E0D\u6EE1\uFF0C\u4E0E\u4ED6\u4EEC\u5BF9\u8BDD\u5B89\u629A\u4ED6\u4EEC\u7684\u60C5\u7EEA\uFF0C\u672A\u5B89\u629A\u7684\u60C5\u7EEA\u53EF\u80FD\u4F1A\u9020\u6210\u4E00\u4E9B\u610F\u60F3\u4E0D\u5230\u7684\u7ED3\u679C"
+  - name: Clik
+    text: "\u70B9\u51FB\u9F20\u6807\u5DE6\u952E\u6216\u6309\u4E0B\u7A7A\u683C\u952E\u7EE7\u7EED\u5BF9\u8BDD"
+  - name: Menu
+    text: "\u70B9\u51FB\u8FD9\u91CC\u6216\u6309\u4E0BEsc\u5F00\u542F\u83DC\u5355\u754C\u9762"
+  - name: Talk
+    text: "\u8FD9\u662F\u9009\u62E9\u680F\uFF0C\u91CC\u9762\u5206\u522B\u5C55\u793A\u7740\u4F60\u548C\u5176\u4ED65\u4F4D\u89D2\u8272\u7684\u72B6\u6001\uFF0C\u4E4B\u540E\u53EF\u4EE5\u5728\u8FD9\u91CC\u5206\u914D\u8D1F\u91CD\u4E0E\u98DF\u7269\uFF0C\u73B0\u5728\u8BF7\u70B9\u51FB\u4EBA\u7269\u5934\u50CF\u5F00\u59CB\u5BF9\u8BDD"
+  - name: Right
+    text: "\u8FD9\u662F\u65E5\u5FD7\u680F\uFF0C\u91CC\u9762\u5206\u522B\u5C55\u793A\u7740\u4F60\u76EE\u524D\u5728\u54EA\u4E00\u5929\u5904\u4E8E\u54EA\u4E2A\u73AF\u8282\uFF0C\u70B9\u51FB\u4E0B\u65B9\u6309\u94AE\u53EF\u4EE5\u5207\u6362\u5230\u4E0B\u4E00\u73AF\u8282"
+  - name: Close
+    text: "\u70B9\u51FB\u6309\u94AE\u7ED3\u675F\u4EA4\u8C08\u73AF\u8282"
+  - name: Food
+    text: "\u8BF7\u52FE\u9009\u6240\u6709\u4EBA\u7269\u5934\u50CF\u65C1\u7684\u6309\u94AE\u5206\u914D\u98DF\u7269"
+  - name: Weight
+    text: "\u9009\u62E9\u53F3\u4FA7\u7684\u7269\u54C1\u7136\u540E\u70B9\u51FB\u4EBA\u7269\u5934\u50CF\u5206\u914D\u643A\u5E26\u7269\u54C1"
+--- !u!4 &443092574
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443092572}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8232546, y: 3.08234, z: 1922.043}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &446631975
 GameObject:
   m_ObjectHideFlags: 0
@@ -11595,6 +11656,7 @@ MonoBehaviour:
   amandeKillself: {fileID: 0}
   Day2ShopEvent: {fileID: 0}
   BoDeadTime: {fileID: 0}
+  TechTextList: {fileID: 443092573}
 --- !u!114 &719523452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20425,7 +20487,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 732.1902, y: 103.55008}
+  m_AnchoredPosition: {x: 732.1902, y: 103.55005}
   m_SizeDelta: {x: -1569.5002, y: -922.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1220760945
@@ -31368,6 +31430,7 @@ MonoBehaviour:
   amandeKillself: {fileID: 11400000, guid: 2c832edcdb4c9ef4e8f2e46d84491f26, type: 2}
   Day2ShopEvent: {fileID: 11400000, guid: 3ef43976c9b98e94f8ddba25905936d1, type: 2}
   BoDeadTime: {fileID: 0}
+  TechTextList: {fileID: 443092573}
 --- !u!114 &2039588930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34218,3 +34281,4 @@ SceneRoots:
   - {fileID: 1763126685}
   - {fileID: 342679174}
   - {fileID: 572813506}
+  - {fileID: 443092574}
