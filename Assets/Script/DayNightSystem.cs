@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class DayNightSystem : MonoBehaviour
 {
     [Tooltip("控制昼夜变化的颜色渐变")]
-    public Gradient gradient;
+    public Gradient gradient,backGradient;
 
     [Tooltip("当前时间进度(0-1)，0表示最暗，1表示最亮")]
     [Range(0f, 1f)] public float time;
@@ -23,8 +24,12 @@ public class DayNightSystem : MonoBehaviour
     [Header("渐变滑块")]
     public float Frist, Second;
 
+    private Image BackImage,BackImage2;
+
     void Start()
     {
+        BackImage = BackGround.backgroundLayers[0].layerObject.GetComponent<Image>();
+        BackImage2 = BackGround.backgroundLayers[1].layerObject.GetComponent<Image>();
         // 获取Light2D组件并缓存，避免重复获取
         lightComponent = GetComponent<Light2D>();
 
@@ -71,6 +76,8 @@ public class DayNightSystem : MonoBehaviour
 
             // 应用颜色变化
             lightComponent.color = gradient.Evaluate(time);
+            BackImage.color = backGradient.Evaluate(time);
+            BackImage2.color = backGradient.Evaluate(time);
         }
     }
 

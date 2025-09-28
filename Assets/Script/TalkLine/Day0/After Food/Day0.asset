@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - lock
+  - /showname
   - c
   - "\u83B1\u6587\uFF1A\u2026\u2026"
   - "\u83B1\u6587\uFF1A\u6211\u4F1A\u6000\u5FF5\u4E9A\u6469\u65AF\u7684\u3002"
