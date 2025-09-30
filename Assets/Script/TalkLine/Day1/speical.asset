@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: speical
   m_EditorClassIdentifier: 
   TxtLine:
+  - /MiniModeOn
   - c
   - lock
   - "\u827E\u7C73\u8389\uFF1A\u4F60\u8FD8\u6709\u633A\u6709\u201C\u95F2\u60C5\u9038\u81F4\u201D\u7684\u3002"
@@ -20,9 +21,15 @@ MonoBehaviour:
   - "\u83B1\u6587\uFF1A\u670D\u4ECE\u4F60\u7684\u5B89\u6392\u3002"
   - "\u6D1B\u5C14\u574E\uFF1A\u8FD9\u6837\u4F1A\u4E0D\u4F1A\u4E0D\u592A\u597D\u2026\u2026\u4E0D\u4E0D\u4E0D\u6211\u6CA1\u6709\u610F\u89C1\uFF0C\u4F60\u6765\u51B3\u5B9A\u5C31\u597D\u3002"
   - "\u963F\u66FC\u5FB7\uFF1A\u8FD9\u6837\u5417\u3002"
+  - /MiniModeOff
   - upcbar
   - down
   Option1: {fileID: 0}
   Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

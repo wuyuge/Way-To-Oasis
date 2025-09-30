@@ -102,8 +102,9 @@ public class TalkSystem : MonoBehaviour
     [Header("教程文本列表")]
     [SerializeField]
     private TechTextList TechTextList;
-
-
+    [Header("小人对话管理")]
+    public MiniCharacterTalkSys MiniCharacterManager;
+    private bool MiniMode = false;
     private void Awake()
     {
         Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
@@ -229,6 +230,18 @@ public class TalkSystem : MonoBehaviour
                     HandleChoice();
                     
 
+                    return;
+                //管理小人对话
+                case "/MiniModeOn":
+                    MiniMode = true;
+                    PlusLine();
+                    _ = ShowText(true);
+                    return;
+                case "/MiniModeOff":
+                    MiniMode = false;
+                    MiniCharacterManager.CompleteTalk();
+                    PlusLine();
+                    _ = ShowText(true);
                     return;
                 case "/Laiwensuccess"://安抚成功/失败预留
                     CharacterList[5].GetComponent<Character>().NotComfort = false;
@@ -794,9 +807,10 @@ public class TalkSystem : MonoBehaviour
                     dialogueContent = addtiontext + dialogueContent;
                 }
 
-
                 
-                if (!_inshop && !inTech)
+
+
+                if (!_inshop && !inTech && !MiniMode)
                 { _ = ShowCharacter(charaName); }
                 Chara_Name.text = charaName;
 
@@ -812,8 +826,17 @@ public class TalkSystem : MonoBehaviour
                         PlusLine();
                         if(!_inshop)
                         {
-                            Character.text = dialogueContent;
-                            Chara_Name.text = charaName;
+                            if (MiniMode)
+                            {
+                                MiniCharacterManager.ShowText(charaName, dialogueContent);
+                                
+                                
+                            }
+                            else
+                            {
+                                Character.text = dialogueContent;
+                                Chara_Name.text = charaName;
+                            }
                         }
                             
                         else
@@ -838,8 +861,18 @@ public class TalkSystem : MonoBehaviour
                     }
                     else
                     {
-                        Chara_Name.text = charaName;
-                        Character.text += c;
+                        if (MiniMode)
+                        {
+                            Character.text += c;
+                            MiniCharacterManager.ShowText(charaName, Character.text);
+
+                            
+                        }
+                        else
+                        {
+                            Chara_Name.text = charaName;
+                            Character.text += c;
+                        }
                     }
                     
                 }
