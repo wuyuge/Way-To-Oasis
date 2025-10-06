@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: Shop_Day2_SpecialChoice3
   m_EditorClassIdentifier: 
   TxtLine:
@@ -22,9 +22,9 @@ MonoBehaviour:
   - "\u54C8\u54C8\u54C8\u54C8\uFF0C\u8FD9\u4EF6\u4E8B\u4ECE\u6765\u4E0D\u53D6\u51B3\u4E8E\u4F60\u6709\u4EC0\u4E48\uFF0C\u800C\u662F\u4F60\u60F3\u8981\u4EC0\u4E48\u3002"
   - "\u505A\u51FA\u9009\u62E9\u624D\u662F\u6700\u56F0\u96BE\u7684\u73AF\u8282\uFF0C\u6293\u7D27\u65F6\u95F4\u60F3\u60F3\u5427\u3002"
   - /specialchoice
-  Option1: {fileID: 11400000, guid: 3272093168395194aa4787213b99aa4b, type: 2}
-  Option2: {fileID: 11400000, guid: d18be212cc2a57c4993548f7f3ad752a, type: 2}
-  Option3: {fileID: 11400000, guid: 4d1dc7b4551e601408bb9ea124631c6f, type: 2}
+  Option1: {fileID: 11400000, guid: 1995ce667c11e51429c13093934364bd, type: 2}
+  Option2: {fileID: 11400000, guid: 7ca7884cb13eb314ebd04e1b87a2f680, type: 2}
+  Option3: {fileID: 11400000, guid: 09af0ecec74b33a41ab406d3187a6332, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0

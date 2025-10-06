@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: lai_Day1_choice2-1-2
   m_EditorClassIdentifier: 
   TxtLine:
@@ -23,7 +23,12 @@ MonoBehaviour:
   - "\u83B1\u6587\uFF1A\u73B0\u5728\u7684\u8FD9\u79CD\u65E5\u5B50\u6CA1\u4EC0\u4E48\u4E0D\u597D\u7684\u3002"
   - "\u83B1\u6587\uFF1A\u8FD8\u6709\u4EC0\u4E48\u8981\u95EE\u7684\u5417\u3002"
   - choice
-  Option1: {fileID: 11400000, guid: 87723678987b41641b39dfba2468e207, type: 2}
-  Option2: {fileID: 11400000, guid: c0b56bb586a655945a8afd1df06a5ffc, type: 2}
+  Option1: {fileID: 11400000, guid: f4b2dce82496d4d468eba4ccf67b6f9d, type: 2}
+  Option2: {fileID: 11400000, guid: f456dcceeda833949a601518428b0456, type: 2}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

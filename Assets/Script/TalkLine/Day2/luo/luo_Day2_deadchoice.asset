@@ -9,14 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: luo_Day2_deadchoice
   m_EditorClassIdentifier: 
   TxtLine:
   - dead
-  Option1: {fileID: 11400000, guid: 5fce9acd7d1f3ad4eaaab4c2d6b2ebc9, type: 2}
-  Option2: {fileID: 11400000, guid: 6f68c99ff4f328e479e80d65727acd51, type: 2}
-  Option3: {fileID: 11400000, guid: 29e3b6006a37a1f4cb095a45a9c1596c, type: 2}
+  Option1: {fileID: 11400000, guid: a147838ad242d914a81ff9bc9ab53312, type: 2}
+  Option2: {fileID: 11400000, guid: cae6878aac9afbf46828b4303cab6d76, type: 2}
+  Option3: {fileID: 11400000, guid: a9c140613cf8ee34a9dd9911b2aca675, type: 2}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
   Day1Eat: 0
+  GeneralBool: 0

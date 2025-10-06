@@ -9,15 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: Shop_Day2_Choice1-1
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u4F60\u80FD\u7ED9\u6211\u4EC0\u4E48\uFF1F"
   - end
-  Option1: {fileID: 11400000, guid: d4eb36c9f0fc24343a42499ea9776758, type: 2}
+  Option1: {fileID: 11400000, guid: b8e91ccdcae543b449907a65cf155c7b, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
   Day1Eat: 0
+  GeneralBool: 0

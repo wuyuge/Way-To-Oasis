@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: Main1
   m_EditorClassIdentifier: 
   TxtLine:
   - /CheckBoDeadTime
-  Option1: {fileID: 11400000, guid: 8d146981c17283b4a9cc3fcfa0d71352, type: 2}
-  Option2: {fileID: 11400000, guid: 7363968fc84cb544f92bcf8f8498cd6d, type: 2}
+  Option1: {fileID: 11400000, guid: fd23b1a20fc256246bf9f92343c2e75b, type: 2}
+  Option2: {fileID: 11400000, guid: 38997a1b6da9ed345b0883de9447591c, type: 2}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}

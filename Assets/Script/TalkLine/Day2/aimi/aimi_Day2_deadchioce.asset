@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: aimi_Day2_deadchioce
   m_EditorClassIdentifier: 
   TxtLine:
   - dead
-  Option1: {fileID: 11400000, guid: ce1f3454deef3cb4a9be0dc7be13e750, type: 2}
-  Option2: {fileID: 11400000, guid: 22eacfe71ab832e428a2848e369f34fd, type: 2}
-  Option3: {fileID: 11400000, guid: 19fc1c116b6ef08419444874ee93f750, type: 2}
+  Option1: {fileID: 11400000, guid: 1d71c27a3d2c27f4fae95d283360bc51, type: 2}
+  Option2: {fileID: 11400000, guid: 79a06455a5fdcfa42aca141d72903282, type: 2}
+  Option3: {fileID: 11400000, guid: 90362a3b5910cdd43b016cc2fba9a144, type: 2}
   SpecialTalk: {fileID: 0}
-  SpecialTalk2: {fileID: 11400000, guid: 80cc3820d4867a14d8ef8dbfbe885d45, type: 2}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
   Day1Eat: 0

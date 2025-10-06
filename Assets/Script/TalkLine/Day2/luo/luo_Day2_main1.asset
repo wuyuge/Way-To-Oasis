@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: luo_Day2_main1
   m_EditorClassIdentifier: 
   TxtLine:
@@ -17,8 +17,12 @@ MonoBehaviour:
   - "\u6D1B\u5C14\u574E\uFF1A\u2026\u2026\u4E3A\u4EC0\u4E48\u4F1A\u53D1\u751F\u8FD9\u79CD\u4E8B\uFF1F"
   - "\u6D1B\u5C14\u574E\uFF1A\u660E\u660E\u98DF\u7269\u8FD8\u6709\u5269\u4F59\u2026\u2026\u4E3A\u4EC0\u4E48\u8981\u727A\u7272\u540C\u4F34\uFF1F"
   - luo_peoplechoice
-  Option1: {fileID: 11400000, guid: d019b4e37038b864abde2d29609b6788, type: 2}
-  Option2: {fileID: 11400000, guid: eea0652b91230304caa096e1e520639b, type: 2}
-  Option3: {fileID: 11400000, guid: 13f0742d8f904b046b08d86ec4cd3d11, type: 2}
+  Option1: {fileID: 11400000, guid: 9f026056fa951164c9c07e1972182181, type: 2}
+  Option2: {fileID: 11400000, guid: 3c7937d433e31d644b5bbe3c65ddcf06, type: 2}
+  Option3: {fileID: 11400000, guid: ef536fb920a0e8e4794dd2023fce6476, type: 2}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

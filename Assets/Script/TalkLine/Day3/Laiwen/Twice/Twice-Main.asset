@@ -9,18 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
-  m_Name: Twice-2
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: Twice-Main
   m_EditorClassIdentifier: 
   TxtLine:
-  - /noname
-  - p
-  - "\u83B1\u6587\u5F00\u59CB\u5728\u901A\u8BAF\u5668\u4E0A\u6572\u6253\u4E9B\u4EC0\u4E48\u3002"
-  - upcbar
-  - /showname
-  - down
-  Option1: {fileID: 0}
-  Option2: {fileID: 0}
+  - /CheckShopEvent
+  Option1: {fileID: 11400000, guid: cf16919c33dd3e14e9d05f4536411e1b, type: 2}
+  Option2: {fileID: 11400000, guid: f82a1b00f56ca794588faf1e7e099ef5, type: 2}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}

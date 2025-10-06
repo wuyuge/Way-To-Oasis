@@ -20,6 +20,12 @@ public class DeveloperDebuger : MonoBehaviour
     [Header("引导遮罩管理")]
     public GameObject Mask;
 
+    private Camera mainCamera;
+    void Start()
+    {
+        mainCamera = Camera.main;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F12))
@@ -100,6 +106,6 @@ public class DeveloperDebuger : MonoBehaviour
         Mask.SetActive(false);
     }
 
-
+   
 
 }

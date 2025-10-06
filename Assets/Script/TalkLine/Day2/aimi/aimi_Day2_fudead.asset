@@ -9,14 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: aimi_Day2_fudead
   m_EditorClassIdentifier: 
   TxtLine:
   - aimieat
-  Option1: {fileID: 11400000, guid: 0fb713b9870de704b9ddf578d5de5687, type: 2}
-  Option2: {fileID: 11400000, guid: c1ae14c6d0738f1488cebb56caa87d9b, type: 2}
+  Option1: {fileID: 11400000, guid: c55cdfbab04fdca4c8e4c8e2cb278adb, type: 2}
+  Option2: {fileID: 11400000, guid: f848a5539e4427647a5ed9b61304433d, type: 2}
   Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day2Eat: 0
+  Day1Eat: 0
+  GeneralBool: 0

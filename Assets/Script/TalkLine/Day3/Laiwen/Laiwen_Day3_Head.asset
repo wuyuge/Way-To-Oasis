@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: Laiwen_Day3_Head
   m_EditorClassIdentifier: 
   TxtLine:
   - /CheckShopEvent
-  Option1: {fileID: 11400000, guid: 0da12b33489030844baec2edb7e46131, type: 2}
-  Option2: {fileID: 11400000, guid: 08593d7fcad968c48b716b3ad1394d69, type: 2}
-  Option3: {fileID: 11400000, guid: d1b22aac6596fb54c8b7079b43918308, type: 2}
+  Option1: {fileID: 11400000, guid: d134b5a56ee54fe4e8e14bbbdcc1cc62, type: 2}
+  Option2: {fileID: 11400000, guid: e0b0fd627dc14164aad0d4dc61715ddc, type: 2}
+  Option3: {fileID: 11400000, guid: b992d8ec0c2449a468b081b5692c0c02, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0

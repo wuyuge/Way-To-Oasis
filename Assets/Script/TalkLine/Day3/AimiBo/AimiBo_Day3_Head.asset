@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: AimiBo_Day3_Head
   m_EditorClassIdentifier: 
   TxtLine:
   - deadfu
-  Option1: {fileID: 11400000, guid: e539d2161f2f3c44594d80f060cb561f, type: 2}
-  Option2: {fileID: 11400000, guid: 7c4c24708acb18b4181113ff73ee4c2a, type: 2}
-  Option3: {fileID: 11400000, guid: ce3ca2be0875dbc4b873e1e5925018b4, type: 2}
+  Option1: {fileID: 11400000, guid: 89fc8fafa771d4b42908e3df092c1e8f, type: 2}
+  Option2: {fileID: 11400000, guid: bbc650061b5cea447a8ff5020bd9bf56, type: 2}
+  Option3: {fileID: 11400000, guid: 95c751fa740ad704d9a434ad1196e16d, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0

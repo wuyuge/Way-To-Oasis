@@ -9,14 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: aimi_Day2_twicechoice
   m_EditorClassIdentifier: 
   TxtLine:
   - twicedeadchoice
-  Option1: {fileID: 11400000, guid: ad520c2b3fb486d4d894413a8e1396a5, type: 2}
-  Option2: {fileID: 11400000, guid: acb3a11dac2455a42a6aa6be2d4b7d82, type: 2}
+  Option1: {fileID: 11400000, guid: 326690fe81fd0544d8d11b2eb9cacb30, type: 2}
+  Option2: {fileID: 11400000, guid: b940c07bfffa0614ca66ba71c6e8b02a, type: 2}
   Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
   Day1Eat: 0
+  GeneralBool: 0

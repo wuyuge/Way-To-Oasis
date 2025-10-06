@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: aimi_Shop_Day2_Choice1-4
   m_EditorClassIdentifier: 
   TxtLine:
@@ -20,7 +20,7 @@ MonoBehaviour:
   - "\u827E\u7C73\u8389\uFF1A\u8FD9\u4E00\u5207\u610F\u4E49\u4E0D\u8FC7\u662F\u4F60\u81EA\u8BF4\u81EA\u8BDD\u8D4B\u4E88\u7684\u3002"
   - "\u827E\u7C73\u8389\uFF1A\u4F60\u6C38\u8FDC\u4E0D\u4F1A\u7406\u89E3\u6211\u4EEC\u3002"
   - end
-  Option1: {fileID: 11400000, guid: ed737dcad898fbc4fa4988f40ae681d2, type: 2}
+  Option1: {fileID: 11400000, guid: 0da54080b77b64f46bd20a963f8d843b, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}

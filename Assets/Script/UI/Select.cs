@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Select : MonoBehaviour
 {
-    public GameObject obj;
+    public Toggle obj;
     public GameObject progress,TalkBar;
     public Manager Textline;
     public bool _isSpecial;
@@ -13,8 +13,10 @@ public class Select : MonoBehaviour
 
     public void Switch(bool i)
     {
-        
-        obj.GetComponent<Toggle>().isOn = i;
+        if (obj.isOn && i)
+        {
+            obj.isOn = false;
+        }
         
 
     }

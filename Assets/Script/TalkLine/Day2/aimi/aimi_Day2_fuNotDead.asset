@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: aimi_Day2_fuNotDead
   m_EditorClassIdentifier: 
   TxtLine:
@@ -22,8 +22,12 @@ MonoBehaviour:
   - "\u827E\u7C73\u8389\uFF1A\u5F53\u7136\uFF0C\u8FD9\u4E0D\u8FC7\u662F\u4E9B\u4E0E\u6211\u65E0\u5173\u65F6\u7684\u98CE\u51C9\u8BDD\u3002"
   - "\u827E\u7C73\u8389\uFF1A\u8981\u662F\u4F60\u60F3\u4E0D\u5F00\u628A\u77DB\u5934\u6307\u5411\u6211\uFF0C\u6211\u53EF\u4E0D\u4F1A\u50CF\u90A3\u5BB6\u4F19\u4E00\u6837\u7B49\u6B7B\u3002"
   - choice
-  Option1: {fileID: 11400000, guid: 097877306bf4aa54e9f4bebbad745d49, type: 2}
-  Option2: {fileID: 11400000, guid: cada99ad405dd2a469f31baada9187d7, type: 2}
+  Option1: {fileID: 11400000, guid: d8122e50f7033724f8f4a6d529e149ef, type: 2}
+  Option2: {fileID: 11400000, guid: 84dd5d7008502764d8f49b0fd0a208df, type: 2}
   Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

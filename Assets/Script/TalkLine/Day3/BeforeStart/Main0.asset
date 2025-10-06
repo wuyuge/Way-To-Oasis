@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: Main0
   m_EditorClassIdentifier: 
   TxtLine:
   - /CheckEveryOneLive
-  Option1: {fileID: 11400000, guid: f59b091aad652b84e9a7ebdd5c4d12e6, type: 2}
-  Option2: {fileID: 11400000, guid: f30656d6857258a438ed870ffbee2c70, type: 2}
+  Option1: {fileID: 11400000, guid: cfe216ea73c288d43bd6ec36e16a4fab, type: 2}
+  Option2: {fileID: 11400000, guid: c31e6249832948740b6c5072e54f1835, type: 2}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}

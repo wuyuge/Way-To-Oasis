@@ -9,13 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: luo_Day2_main1-1
   m_EditorClassIdentifier: 
   TxtLine:
   - choice
-  Option1: {fileID: 11400000, guid: ea0df31148076184183c5925094e3779, type: 2}
-  Option2: {fileID: 11400000, guid: 4ae0573480b61764983a4a2967922a88, type: 2}
+  Option1: {fileID: 11400000, guid: e051adb49ff7c17429d632c86c5fb5d4, type: 2}
+  Option2: {fileID: 11400000, guid: 6e76fdc40e81ede4e8a593446ee18854, type: 2}
   Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

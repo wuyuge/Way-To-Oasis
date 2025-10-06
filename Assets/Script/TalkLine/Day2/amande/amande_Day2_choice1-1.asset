@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: amande_Day2_choice1-1
   m_EditorClassIdentifier: 
   TxtLine:
@@ -20,8 +20,12 @@ MonoBehaviour:
   - "\u963F\u66FC\u5FB7\uFF1A\u2026\u2026\u6211\u77E5\u9053\u4E0D\u53EF\u80FD\u8BA9\u6240\u6709\u4EBA\u90FD\u6D3B\u4E0B\u6765\uFF0C\u6240\u6709\u4EBA\u90FD\u6E05\u695A\u8FD9\u4E00\u70B9\u3002"
   - "\u963F\u66FC\u5FB7\uFF1A\u6240\u4EE5\u5F53\u522B\u4EBA\u6B7B\u53BB\u65F6\uFF0C\u6211\u7ADF\u7136\u4F1A\u5E86\u5E78\u8FD9\u6837\u7684\u547D\u8FD0\u6CA1\u6709\u843D\u5728\u6211\u81EA\u5DF1\u7684\u8EAB\u4E0A\u3002"
   - end
-  Option1: {fileID: 11400000, guid: 0b0447408ba91b4438c9d18fc5465341, type: 2}
+  Option1: {fileID: 11400000, guid: e72d00ba11b92844a9c9f3de092ad1b1, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

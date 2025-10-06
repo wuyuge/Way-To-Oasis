@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: Day0-1
   m_EditorClassIdentifier: 
   TxtLine:
@@ -20,6 +20,7 @@ MonoBehaviour:
   - "\u963F\u66FC\u5FB7\uFF1A\u6700\u540E\u518D\u8BF4\u70B9\u4EC0\u4E48\u5427\uFF0C{PlayerName}\u3002"
   - p
   - "\u2026\u2026\u613F\u6B7B\u4EA1\u7ED3\u675F\u4F60\u7684\u75DB\u82E6\uFF0C\u7ED9\u4F60\u5E26\u6765\u6C38\u6052\u7684\u5B81\u9759\u3002"
+  - /MiniModeOff
   - "\u665A\u5B89\uFF0C\u961F\u957F\u3002\u665A\u5B89\uFF0C\u4E9A\u6469\u65AF\u3002"
   - "\u5DF2\u7ECF\u5F88\u665A\u4E86\uFF0C\u660E\u5929\u8FD8\u8981\u7EE7\u7EED\u8D76\u8DEF\u3002"
   - "\u665A\u5B89\uFF0C\u5404\u4F4D\u3002"

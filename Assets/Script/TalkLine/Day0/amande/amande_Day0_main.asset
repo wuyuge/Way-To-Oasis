@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: amande_Day0_main
   m_EditorClassIdentifier: 
   TxtLine:
@@ -17,7 +17,12 @@ MonoBehaviour:
   - lock
   - "\u963F\u66FC\u5FB7\uFF1A\u5DF2\u7ECF\u901A\u77E5\u6240\u6709\u4EBA\u4E86\u5417\uFF1F"
   - choice
-  Option1: {fileID: 11400000, guid: 56c660b092f337e42864c9216381c2e7, type: 2}
-  Option2: {fileID: 11400000, guid: b78db3cd925a1f74b8dbd14daba532e6, type: 2}
+  Option1: {fileID: 11400000, guid: 5bc4df577b666b94390d45e244191498, type: 2}
+  Option2: {fileID: 11400000, guid: 4a6ef54ab22631a4d8ac7e47d3cf6091, type: 2}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

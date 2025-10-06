@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: aimi_Day1_main
   m_EditorClassIdentifier: 
   TxtLine:
@@ -27,9 +27,12 @@ MonoBehaviour:
   - "\u827E\u7C73\u8389\uFF1A\u5DE5\u4F5C\u800C\u5DF2\u3002"
   - "\u827E\u7C73\u8389\uFF1A\u6211\u53EF\u4E0D\u60F3\u6B7B\u5728\u8FD9\u91CC\u3002"
   - choice
-  Option1: {fileID: 11400000, guid: b7e9071171e08154eafc069a1e1b4931, type: 2}
-  Option2: {fileID: 11400000, guid: d805b99cb31780e4a91f38957a4dc3b2, type: 2}
-  Option3: {fileID: 11400000, guid: a6f8a951d6e9b254b9cd62c55b8062df, type: 2}
+  Option1: {fileID: 11400000, guid: 81c03d5ff553e7148977db69327e1ff7, type: 2}
+  Option2: {fileID: 11400000, guid: 6784649806fbb5e4499b1fa862d73d2b, type: 2}
+  Option3: {fileID: 11400000, guid: 125c6d86da324cd4d89fc1462151d4cb, type: 2}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
   Day1Eat: 0
+  GeneralBool: 0

@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: speical2
   m_EditorClassIdentifier: 
   TxtLine:
   - lock
-  - /shoname
+  - /showname
+  - /MiniModeOn
   - c
   - "\u535A\u91D1\u68EE\uFF1A\u6700\u540E\u8B66\u544A\u4F60\u4E00\u904D\uFF0C\u5982\u679C\u4F60\u518D\u628A\u624B\u4F38\u8FDB\u6211\u7684\u53E3\u888B\uFF0C\u6211\u5C31\u8BA9\u4F60\u4EE5\u540E\u518D\u4E5F\u7528\u4E0D\u4E0A\u5B83\u3002"
   - "\u83B1\u6587\uFF1A\u522B\u90A3\u4E48\u8BF4\uFF0C\u6211\u4E0D\u662F\u6BCF\u6B21\u90FD\u8FD8\u7ED9\u4F60\u4E86\u3002"
@@ -32,6 +33,7 @@ MonoBehaviour:
   - "\u6D1B\u5C14\u574E\uFF1A\u5443\u2026\u4F60\u4EEC\u8BF4\u7684\u5BF9\u3002"
   - upcbar
   - down
+  - /MiniModeOff
   - next
   - allover
   Option1: {fileID: 0}

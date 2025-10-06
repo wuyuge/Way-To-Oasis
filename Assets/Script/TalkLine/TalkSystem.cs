@@ -102,8 +102,9 @@ public class TalkSystem : MonoBehaviour
     [Header("教程文本列表")]
     [SerializeField]
     private TechTextList TechTextList;
-
-
+    [Header("小人对话管理")]
+    public MiniCharacterTalkSys MiniCharacterManager;
+    private bool MiniMode = false;
     private void Awake()
     {
         Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
@@ -230,6 +231,18 @@ public class TalkSystem : MonoBehaviour
                     
 
                     return;
+                //管理小人对话
+                case "/MiniModeOn":
+                    MiniMode = true;
+                    PlusLine();
+                    _ = ShowText(true);
+                    return;
+                case "/MiniModeOff":
+                    MiniMode = false;
+                    MiniCharacterManager.CompleteTalk();
+                    PlusLine();
+                    _ = ShowText(true);
+                    return;
                 case "/Laiwensuccess"://安抚成功/失败预留
                     CharacterList[5].GetComponent<Character>().NotComfort = false;
                     PlusLine();
@@ -240,21 +253,8 @@ public class TalkSystem : MonoBehaviour
                     PlusLine();
                     _ = ShowText(true);
                     return;
-                case "/CheckAmandeKillself"://死了转分支1,没死分支2
-                    if(amandeKillself.GeneralBool)
-                    {
-                        TurnOption1();
-                        ResetLine();
-                        _ = ShowText(true);
-                    }
-                    else
-                    {
-                        TurnOption2();
-                        ResetLine();
-                        _ = ShowText(true);
-                    }
-                    return;
-                case "/CheckShopEvent":
+                
+                case "/CheckShopEvent"://杀人或换尸体后转分支1，否则转分支2
 
                     if (Day2ShopEvent.GeneralBool)
                     {
@@ -271,26 +271,7 @@ public class TalkSystem : MonoBehaviour
                         return;
                     }
 
-                case "/CheckEveryOneLive":
-                    foreach(GameObject g in CharacterList)
-                    {
-                        if (g.GetComponent<Character>().Dead)
-                        {
-
-
-                            if (g.GetComponent<Character>().CharacterName == "阿曼德" && amandeKillself.GeneralBool) continue;
-                            TurnOption2();
-                            ResetLine();
-                            _ = ShowText(true);
-                            return;
-
-                        }
-                        
-                    }
-                    TurnOption1();
-                    ResetLine();
-                    _ = ShowText(true);
-                    return;
+                
                 case "/checktalk":
                     if (Day0_Talk.Weight == 3)
                     {
@@ -504,6 +485,98 @@ public class TalkSystem : MonoBehaviour
                     _ = ShowText(true);
                     return;
                 //教程结束
+                
+                
+
+
+
+                
+
+                case "showdeadname":
+                    
+                    string showtext = string.Concat(DeadName.TxtLine); // 简化字符串拼接
+                    if (showtext.Contains("Leader"))
+                    {
+                        showtext = showtext.Replace("Leader", string.Empty);
+                    }
+                    line += 1;
+
+                    _ = ShowText(true, showtext);
+                    return;
+
+                
+
+
+
+                case "down":
+                    anim.SetTrigger("down");
+                    if(MiniMode)Invoke("SetCharBar", 1.5f);
+                    PlusLine();
+                    
+                    
+                    _ = ShowText(true);
+                    return;
+                case "aimieat":
+                    if (aimi.Day1Eat)
+                    {
+                        TurnOption1();
+                    }
+                    else
+                    {
+                        TurnOption2();
+                    }
+                    ResetLine();
+
+                    _ = ShowText(true);
+                    return;
+                case "up":
+                    anim.SetTrigger("up");
+                    PlusLine();
+                    transform.position = new Vector2(transform.position.x, -5000); // 简化gameObject访问
+
+                    _ = ShowText(true);
+                    return;
+                //死亡判断分支
+
+                case "/CheckEveryOneLive"://全部存活 转分支1，有人死转分支2
+                    foreach (GameObject g in CharacterList)
+                    {
+                        if (g.GetComponent<Character>().Dead)
+                        {
+
+
+                            if (g.GetComponent<Character>().CharacterName == "阿曼德" && amandeKillself.GeneralBool) continue;
+                            TurnOption2();
+                            ResetLine();
+                            _ = ShowText(true);
+                            return;
+
+                        }
+
+                    }
+                    TurnOption1();
+                    ResetLine();
+                    _ = ShowText(true);
+                    return;
+
+                case "luo_peoplechoice"://洛尔坎判断死人性别 单人死亡 男性转分支1 女性转分支2 多人转分支3
+                    if (DeadName.TxtLine.Count == 1)
+                    {
+                        string name = DeadName.TxtLine[0];
+                        if (name == "莱文" || name == "博金森")
+                            TurnOption1();
+                        else if (name == "艾米莉" || name == "阿曼德")
+                            TurnOption2();
+                    }
+                    else
+                    {
+                        TurnOption3();
+                    }
+                    ResetLine();
+
+                    _ = ShowText(true);
+                    return;
+
                 case "deadfu"://没死分支1,死了转分支2
                     bool hasBokinson = false;
                     foreach (string s in DeadName.TxtLine)
@@ -530,8 +603,9 @@ public class TalkSystem : MonoBehaviour
 
                     _ = ShowText(true);
                     return;
+
                 case "/CheckBoDeadTime"://博金森死超过一天转分支2，否则转分支1
-                    if(Daytime - BoDeadTime.Weight > 1)
+                    if (Daytime - BoDeadTime.Weight > 1)
                     {
                         TurnOption2();
                         ResetLine();
@@ -546,70 +620,6 @@ public class TalkSystem : MonoBehaviour
                         return;
                     }
 
-
-
-                case "luo_peoplechoice":
-                    if (DeadName.TxtLine.Count == 1)
-                    {
-                        string name = DeadName.TxtLine[0];
-                        if (name == "莱文" || name == "博金森")
-                            TurnOption1();
-                        else if (name == "艾米莉" || name == "阿曼德")
-                            TurnOption2();
-                    }
-                    else
-                    {
-                        TurnOption3();
-                    }
-                    ResetLine();
-
-                    _ = ShowText(true);
-                    return;
-
-                case "showdeadname":
-                    
-                    string showtext = string.Concat(DeadName.TxtLine); // 简化字符串拼接
-                    if (showtext.Contains("Leader"))
-                    {
-                        showtext = showtext.Replace("Leader", string.Empty);
-                    }
-                    line += 1;
-
-                    _ = ShowText(true, showtext);
-                    return;
-
-                
-
-
-
-                case "down":
-                    anim.SetTrigger("down");
-                    Invoke("SetCharBar", 1.5f);
-                    PlusLine();
-                    
-                    
-                    _ = ShowText(true);
-                    return;
-                case "aimieat":
-                    if (aimi.Day1Eat)
-                    {
-                        TurnOption1();
-                    }
-                    else
-                    {
-                        TurnOption2();
-                    }
-                    ResetLine();
-
-                    _ = ShowText(true);
-                    return;
-                case "up":
-                    anim.SetTrigger("up");
-                    PlusLine();
-                    transform.position = new Vector2(transform.position.x, -5000); // 简化gameObject访问
-
-                    _ = ShowText(true);
-                    return;
                 case "dead"://死了转分支1，没死分支2
 
                     Debug.Log("判断之前是否死过人");
@@ -639,8 +649,37 @@ public class TalkSystem : MonoBehaviour
                     }
 
                     return;
+                case "twicedeadchoice"://死了转分支2，没死分支1
+                    if ((DeadName.TxtLine.Count == 1 && DeadName.TxtLine[0] == "Leader" && UsedBody.TxtLine.Count == 0) ||
+                        (DeadName.TxtLine.Count == 0 && UsedBody.TxtLine.Count == 1 && UsedBody.TxtLine[0] == "LeaderUesd"))
+                    {
+                        TurnOption1();
+                    }
+                    else
+                    {
+                        TurnOption2();
+                    }
+                    ResetLine();
 
-                    
+                    _ = ShowText(true);
+                    return;
+
+                case "/CheckAmandeKillself"://死了转分支1,没死分支2
+                    if (amandeKillself.GeneralBool)
+                    {
+                        TurnOption1();
+                        ResetLine();
+                        _ = ShowText(true);
+                    }
+                    else
+                    {
+                        TurnOption2();
+                        ResetLine();
+                        _ = ShowText(true);
+                    }
+                    return;
+                //死亡判断分支结束
+
                 case "upcbar":
                     charaBar.GetComponent<Animator>().SetTrigger("Up");
                     PlusLine();
@@ -712,20 +751,7 @@ public class TalkSystem : MonoBehaviour
                     }
                     DaytimeOBJ.GetComponent<Progress>().SwtichProgress();
                     return;
-                case "twicedeadchoice":
-                    if ((DeadName.TxtLine.Count == 1 && DeadName.TxtLine[0] == "Leader" && UsedBody.TxtLine.Count == 0)|| 
-                        (DeadName.TxtLine.Count == 0 && UsedBody.TxtLine.Count == 1 && UsedBody.TxtLine[0] == "LeaderUesd"))
-                    {
-                        TurnOption1();
-                    }
-                    else
-                    {
-                        TurnOption2();
-                    }
-                    ResetLine();
-
-                    _ = ShowText(true);
-                    return;
+                
 
                 case "lock":
                     DaytimeOBJ.GetComponent<Progress>().CanSwitch = false;
@@ -794,9 +820,10 @@ public class TalkSystem : MonoBehaviour
                     dialogueContent = addtiontext + dialogueContent;
                 }
 
-
                 
-                if (!_inshop && !inTech)
+
+
+                if (!_inshop && !inTech && !MiniMode)
                 { _ = ShowCharacter(charaName); }
                 Chara_Name.text = charaName;
 
@@ -812,8 +839,17 @@ public class TalkSystem : MonoBehaviour
                         PlusLine();
                         if(!_inshop)
                         {
-                            Character.text = dialogueContent;
-                            Chara_Name.text = charaName;
+                            if (MiniMode)
+                            {
+                                MiniCharacterManager.ShowText(charaName, dialogueContent);
+                                
+                                
+                            }
+                            else
+                            {
+                                Character.text = dialogueContent;
+                                Chara_Name.text = charaName;
+                            }
                         }
                             
                         else
@@ -838,8 +874,18 @@ public class TalkSystem : MonoBehaviour
                     }
                     else
                     {
-                        Chara_Name.text = charaName;
-                        Character.text += c;
+                        if (MiniMode)
+                        {
+                            Character.text += c;
+                            MiniCharacterManager.ShowText(charaName, Character.text);
+
+                            
+                        }
+                        else
+                        {
+                            Chara_Name.text = charaName;
+                            Character.text += c;
+                        }
                     }
                     
                 }

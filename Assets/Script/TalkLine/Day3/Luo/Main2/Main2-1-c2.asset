@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: Main2-1-c2
   m_EditorClassIdentifier: 
   TxtLine:
@@ -21,7 +21,7 @@ MonoBehaviour:
   - "\u6D1B\u5C14\u574E\uFF1A\u8FD9\u5C31\u662F\u6B7B\u524D\u7684\u611F\u89C9\u5417\uFF1F"
   - "\u6D1B\u5C14\u574E\uFF1A\u9759\u9759\u5730\u770B\u7740\u592A\u9633\u843D\u4E0B\u53BB\uFF0C\u4F3C\u4E4E\u548C\u6628\u5929\u4E5F\u6CA1\u4EC0\u4E48\u4E0D\u4E00\u6837\u3002"
   - end
-  Option1: {fileID: 11400000, guid: cfac809e9f6c06748b8758f623c78a19, type: 2}
+  Option1: {fileID: 11400000, guid: 28888f6a6ad859e49b89e0178a57df47, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}

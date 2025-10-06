@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: aimi_Shop_Day2_Main3
   m_EditorClassIdentifier: 
   TxtLine:
   - c
   - "\u827E\u7C73\u8389\uFF1A\u628A\u535A\u91D1\u68EE\u7684\u5C38\u4F53\u4EA4\u7ED9\u6211\u3002"
   - /CheckBoBody
-  Option1: {fileID: 11400000, guid: 45c0199ffb7878c4eaeb21337e338471, type: 2}
-  Option2: {fileID: 11400000, guid: 3f84d91be40493342898c59e98555d76, type: 2}
+  Option1: {fileID: 11400000, guid: 10bfb44799490c04e9bd9b34d441df0f, type: 2}
+  Option2: {fileID: 11400000, guid: 6223842f60ba8634c871ff2d816c4726, type: 2}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}

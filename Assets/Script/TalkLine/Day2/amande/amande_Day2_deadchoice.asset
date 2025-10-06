@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: amande_Day2_deadchoice
   m_EditorClassIdentifier: 
   TxtLine:
   - dead
-  Option1: {fileID: 11400000, guid: c75e8aa18b840724599db3c5ba547401, type: 2}
-  Option2: {fileID: 11400000, guid: 437de06d2f1bed24bb882a3133415e54, type: 2}
-  Option3: {fileID: 11400000, guid: 0e4400b27f8157e45bb384f79218b2d2, type: 2}
-  SpecialTalk: {fileID: 11400000, guid: 3fe9b1830fd804f4f812df13944a05ea, type: 2}
-  SpecialTalk2: {fileID: 11400000, guid: 11b2db68b9f2ae44c951064603260652, type: 2}
+  Option1: {fileID: 11400000, guid: 97434b8c31681ae4cbb6273cd68f9121, type: 2}
+  Option2: {fileID: 11400000, guid: 8e2e61ddf70d9154b9aa26047476d4d4, type: 2}
+  Option3: {fileID: 11400000, guid: e10e55d51938bc0409d6d35b66ed0e5c, type: 2}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
   Day1Eat: 0

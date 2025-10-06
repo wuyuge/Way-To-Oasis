@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: fu_Day2_Shop_Main3
   m_EditorClassIdentifier: 
   TxtLine:
@@ -18,8 +18,8 @@ MonoBehaviour:
   - upcbar
   - allover
   - down
-  Option1: {fileID: 11400000, guid: 763777a7cb6cddc4093e8b639fc3a894, type: 2}
-  Option2: {fileID: 11400000, guid: 4418ac3879b8bf14cba1c949cc99f1c8, type: 2}
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}

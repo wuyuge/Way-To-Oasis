@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3f52b8622ba144899a2d690c58bfef, type: 3}
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: Amande_Day3_Head
   m_EditorClassIdentifier: 
   TxtLine:
   - /CheckEveryOneLive
-  Option1: {fileID: 11400000, guid: 9a8fa73763e6b124aa52f4a8e0138b49, type: 2}
-  Option2: {fileID: 11400000, guid: 88617827e552dbb4597641f4d133b11a, type: 2}
-  Option3: {fileID: 11400000, guid: 68abec63a00cc4e4b8054dd14e8fdc6e, type: 2}
+  Option1: {fileID: 11400000, guid: 4d0bb181b3f149b4e9fff3d61531e9be, type: 2}
+  Option2: {fileID: 11400000, guid: 25f836e4a71a6e241830076fe5bd4c1e, type: 2}
+  Option3: {fileID: 11400000, guid: 403e5cd3f979cbf43b6a72edb2269b0d, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0
