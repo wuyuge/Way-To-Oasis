@@ -7,12 +7,9 @@ using UnityEngine.UI;
 public class SetFPS : MonoBehaviour
 {
     public TMP_Dropdown UI;
-    private bool VSyncMode;
+    
 
-    private void OnEnable()
-    {
-        VSyncMode = false;
-    }
+    
 
     public void SetFps(int value)
     {
@@ -70,7 +67,7 @@ public class SetFPS : MonoBehaviour
         gameObject.GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f, 1);
         UI.enabled = false;
         UI.captionText.text = "ÒÑ½ûÓÃ";
-        VSyncMode = true;
+        
     }
 
     void Opened()
@@ -78,7 +75,7 @@ public class SetFPS : MonoBehaviour
         gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
         UI.enabled = true;
         UI.captionText.text = UI.options[UI.value].text;
-        VSyncMode = false;
+        
     }
 
 
