@@ -64,6 +64,7 @@
     <Compile Include="Assets\Script\UI\DownBar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\Script\Setting\Video\VSyncSetting.cs" />
     <Compile Include="Assets\Script\New_Game.cs" />
     <Compile Include="Assets\Script\ResetAll.cs" />
     <Compile Include="Assets\Script\CharacterImageManager.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Assets\Script\UI\Character.cs" />
     <Compile Include="Assets\Script\UI\Menu\MenuManager.cs" />
     <Compile Include="Assets\Script\Shop\ShopManager.cs" />
+    <Compile Include="Assets\Script\Setting\Video\ShowFPSInGame.cs" />
     <Compile Include="Assets\Script\Skip.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\Script\CharacterExpression.cs" />
@@ -105,7 +107,6 @@
     <Compile Include="Assets\Script\UI\Manager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\Script\UI\AssResources.cs" />
-    <Compile Include="Assets\Script\Setting\SetFPS.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Script\UI\Menu\TextSpeedManager.cs" />
@@ -118,7 +119,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Script\UI\FoodChoice.cs" />
     <Compile Include="Assets\Script\DeveloperSetting\DeveloperDebuger.cs" />
-    <Compile Include="Assets\Script\Setting\VSyncSetting.cs" />
     <Compile Include="Assets\Script\Progress.cs" />
     <Compile Include="Assets\Script\MiniCharacter\MiniCharacterTalkSys.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
@@ -127,6 +127,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Script\UI\Menu\FpsCalculator.cs" />
+    <Compile Include="Assets\Script\Setting\Video\SetFPS.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Script\TalkLine\ButtonSelect.cs" />
   </ItemGroup>

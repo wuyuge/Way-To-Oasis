@@ -8,6 +8,12 @@ public class SetFPS : MonoBehaviour
 {
     public TMP_Dropdown UI;
     private bool VSyncMode;
+
+    private void OnEnable()
+    {
+        VSyncMode = false;
+    }
+
     public void SetFps(int value)
     {
 
@@ -45,13 +51,13 @@ public class SetFPS : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (QualitySettings.vSyncCount != 0 && !VSyncMode)
+        if (QualitySettings.vSyncCount != 0)
         {
             Baned();
         }
-        else if (QualitySettings.vSyncCount == 0 && VSyncMode)
+        else if (QualitySettings.vSyncCount == 0)
         {
             Opened();
         }
