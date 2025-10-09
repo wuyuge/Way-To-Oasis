@@ -309,6 +309,7 @@ public class Progress : MonoBehaviour
         else if (food && CanSwitch)
         {
             if (DNSys.on) return;
+            bool allEat = false;
             // 特殊逻辑：第0天（可能是教程天）的进食完成判断
             if (day_num == 0)
             {
@@ -324,8 +325,9 @@ public class Progress : MonoBehaviour
                 Final_Body.Weight = 0;
                 Final_Food.Weight = 0;
             }
-            bool allEat = DownBar.GetComponent<ObjectManager>().CheckEat(true); // 判断哪个角色没有进食并将其状态设为死亡
-            Debug.Log($"Day{day_num},全吃{allEat}");
+            else
+            { allEat = DownBar.GetComponent<ObjectManager>().CheckEat(true); } // 判断哪个角色没有进食并将其状态设为死亡}
+            
             // 触发进食后的幕间对话（若存在对应天数的对话数据）
             if (afterFood[day_num] != null)
             {

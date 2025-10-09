@@ -334,14 +334,15 @@ public class CharacterImageManager : MonoBehaviour
     {
         foreach(GameObject g in RightImage)
         {
-            if(g.activeSelf)
+            if(g.activeSelf && !g.GetComponent<Animator>().GetBool("close"))
             g.GetComponent<Animator>().SetTrigger("close");
         }
         foreach(GameObject g in LeftImage)
         {
-            if (g.activeSelf)
+            if (g.activeSelf && !g.GetComponent<Animator>().GetBool("close"))
                 g.GetComponent<Animator>().SetTrigger("close");
         }
+        if(!anim.GetBool("Down"))
         anim.SetTrigger("Down");
         Invoke("SetGameObj",0.5f);
     }
