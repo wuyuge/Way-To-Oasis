@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7721154
 RectTransform:
   m_ObjectHideFlags: 0
@@ -971,6 +971,7 @@ MonoBehaviour:
   NotComfort: 0
   ClikDelay: 0
   Day0_Talk: {fileID: 0}
+  Background: {fileID: 0}
 --- !u!114 &68942826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1626,6 +1627,7 @@ MonoBehaviour:
   NotComfort: 0
   ClikDelay: 0
   Day0_Talk: {fileID: 0}
+  Background: {fileID: 0}
 --- !u!1 &89321879
 GameObject:
   m_ObjectHideFlags: 0
@@ -4465,7 +4467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &342679171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5375,6 +5377,7 @@ MonoBehaviour:
   NotComfort: 0
   ClikDelay: 0
   Day0_Talk: {fileID: 11400000, guid: a4172c4c1510fd44ea5088aa17e0fab2, type: 2}
+  Background: {fileID: 0}
 --- !u!114 &418109941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5515,7 +5518,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -212.74, y: 0.070004}
+  m_AnchoredPosition: {x: -212.73999, y: 0.070004}
   m_SizeDelta: {x: 74.51, y: 499.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &426191379
@@ -11885,6 +11888,7 @@ GameObject:
   - component: {fileID: 880794422}
   - component: {fileID: 880794421}
   - component: {fileID: 880794424}
+  - component: {fileID: 880794425}
   m_Layer: 5
   m_Name: End
   m_TagString: Untagged
@@ -12039,9 +12043,9 @@ MonoBehaviour:
   Delay: 0.9
   beforeStart:
   - {fileID: 0}
-  - {fileID: 11400000, guid: c13a6f7f21698404399d3313a4c58de1, type: 2}
   - {fileID: 0}
-  - {fileID: 11400000, guid: 0e25c903982b5c040b1985f4400278dc, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -12057,7 +12061,7 @@ MonoBehaviour:
   - {fileID: 0}
   afterFood:
   - {fileID: 0}
-  - {fileID: 11400000, guid: 4ba4c7d74e1391b45a9ac5f4e744c753, type: 2}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -12071,6 +12075,46 @@ MonoBehaviour:
   Mask: {fileID: 209115449}
   DNSys: {fileID: 499791838}
   AmandeKillSelf: {fileID: 11400000, guid: 6f2bf792957157d4c96649a154742a11, type: 2}
+--- !u!114 &880794425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880794419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f6e9250b2b0c9448bdfe5e4f026475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lines:
+  - Day: 1
+    Text: {fileID: 11400000, guid: c13a6f7f21698404399d3313a4c58de1, type: 2}
+    Stage: BeforeStart
+    Have_Condition: 0
+    Have_Show: 0
+  - Day: 1
+    Text: {fileID: 11400000, guid: 4ba4c7d74e1391b45a9ac5f4e744c753, type: 2}
+    Stage: AfterFood
+    Have_Condition: 0
+    Have_Show: 0
+  - Day: 3
+    Text: {fileID: 11400000, guid: 0e25c903982b5c040b1985f4400278dc, type: 2}
+    Stage: BeforeStart
+    Have_Condition: 1
+    Have_Show: 0
+  - Day: 3
+    Text: {fileID: 11400000, guid: e9e8cad8862019144bd800b2bb5a0791, type: 2}
+    Stage: AfterFood
+    Have_Condition: 1
+    Have_Show: 0
+  AmandeKillSelf: {fileID: 11400000, guid: 6f2bf792957157d4c96649a154742a11, type: 2}
+  characters:
+  - {fileID: 1061970919}
+  - {fileID: 899909684}
+  - {fileID: 88074892}
+  - {fileID: 1048910607}
+  - {fileID: 1734621186}
 --- !u!1 &881720963
 GameObject:
   m_ObjectHideFlags: 0
@@ -12757,6 +12801,7 @@ MonoBehaviour:
   NotComfort: 0
   ClikDelay: 0
   Day0_Talk: {fileID: 0}
+  Background: {fileID: 0}
 --- !u!114 &900494142 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4124345993672193701, guid: 2e674e62ead814e4388144bae1a2973f, type: 3}
@@ -13939,6 +13984,7 @@ MonoBehaviour:
   NotComfort: 0
   ClikDelay: 0
   Day0_Talk: {fileID: 11400000, guid: a4172c4c1510fd44ea5088aa17e0fab2, type: 2}
+  Background: {fileID: 0}
 --- !u!114 &984468084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14956,6 +15002,7 @@ MonoBehaviour:
   NotComfort: 0
   ClikDelay: 0
   Day0_Talk: {fileID: 0}
+  Background: {fileID: 0}
 --- !u!1 &1053723033
 GameObject:
   m_ObjectHideFlags: 0
@@ -15570,6 +15617,7 @@ MonoBehaviour:
   NotComfort: 0
   ClikDelay: 0
   Day0_Talk: {fileID: 0}
+  Background: {fileID: 0}
 --- !u!1 &1067497623
 GameObject:
   m_ObjectHideFlags: 0
@@ -16121,6 +16169,7 @@ MonoBehaviour:
   NotComfort: 0
   ClikDelay: 0
   Day0_Talk: {fileID: 0}
+  Background: {fileID: 0}
 --- !u!1 &1103929361
 GameObject:
   m_ObjectHideFlags: 0
@@ -18361,6 +18410,7 @@ MonoBehaviour:
   NotComfort: 0
   ClikDelay: 0
   Day0_Talk: {fileID: 11400000, guid: a4172c4c1510fd44ea5088aa17e0fab2, type: 2}
+  Background: {fileID: 0}
 --- !u!114 &1214813400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19226,7 +19276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1254931150
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22802,7 +22852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1588983797
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24762,6 +24812,7 @@ MonoBehaviour:
   NotComfort: 0
   ClikDelay: 0
   Day0_Talk: {fileID: 0}
+  Background: {fileID: 0}
 --- !u!1 &1734647521
 GameObject:
   m_ObjectHideFlags: 0
@@ -25127,7 +25178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1763126682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27609,6 +27660,7 @@ MonoBehaviour:
   NotComfort: 0
   ClikDelay: 0
   Day0_Talk: {fileID: 11400000, guid: a4172c4c1510fd44ea5088aa17e0fab2, type: 2}
+  Background: {fileID: 0}
 --- !u!114 &1977804956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28905,6 +28957,7 @@ MonoBehaviour:
   NotComfort: 0
   ClikDelay: 0
   Day0_Talk: {fileID: 11400000, guid: a4172c4c1510fd44ea5088aa17e0fab2, type: 2}
+  Background: {fileID: 0}
 --- !u!114 &2055327924
 MonoBehaviour:
   m_ObjectHideFlags: 0
