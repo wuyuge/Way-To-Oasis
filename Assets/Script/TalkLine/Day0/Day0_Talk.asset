@@ -18,7 +18,7 @@ MonoBehaviour:
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
-  Weight: 0
+  Weight: 3
   Weight_tag: 0
   Day1Eat: 0
   GeneralBool: 0

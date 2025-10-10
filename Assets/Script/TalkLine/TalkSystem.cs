@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 using static TechTextList;
 
@@ -219,7 +220,7 @@ public class TalkSystem : MonoBehaviour
         try
         {
             string curText = Talklines[Daytime].TxtLine[line];
-            
+            Debug.Log($"当前文本：{curText}");
             CanSkip = false;
             inTech = false;
             switch (curText)
@@ -667,6 +668,7 @@ public class TalkSystem : MonoBehaviour
                 case "/CheckAmandeKillself"://死了转分支1,没死分支2
                     if (amandeKillself.GeneralBool)
                     {
+                        Debug.Log("阿曼德自杀");
                         TurnOption1();
                         ResetLine();
                         _ = ShowText(true);
@@ -751,7 +753,10 @@ public class TalkSystem : MonoBehaviour
                     }
                     DaytimeOBJ.GetComponent<Progress>().SwtichProgress();
                     return;
-                
+
+                case "/ToDemoEnd":
+                    GameObject.Find("EndingsManager").GetComponent<EndingsManager>().ToEnd("Demo-End");
+                    return;
 
                 case "lock":
                     DaytimeOBJ.GetComponent<Progress>().CanSwitch = false;
@@ -800,6 +805,13 @@ public class TalkSystem : MonoBehaviour
                 {
                     curText = curText.Replace("{PlayerName}", PlayerName.TxtLine[0]);
                 }
+
+                if(!_inshop && !MiniMode && !charabar.activeSelf)
+                {
+                    charabar.SetActive(true);
+                }
+
+
                 // 解析角色名和对话内容（中文冒号分隔）
                 foreach (char c in curText)
                 {

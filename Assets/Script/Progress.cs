@@ -164,7 +164,8 @@ public class Progress : MonoBehaviour
             talk_t.color = new Color32(0, 0, 0, 120);  // 对话文本半透明
             food_t.color = new Color32(0, 0, 0, 255);  // 进食阶段高亮
         }
-
+        if (day_num != 0)
+            beforeStart[day_num] = GetComponent<IntermissionManager>().AddTextLine("BeforeStart");
         // 触发当天开始前的幕间对话（若存在对应天数的对话数据）
         if (beforeStart[day_num] != null)
         {
@@ -273,6 +274,8 @@ public class Progress : MonoBehaviour
             {
                 Invoke("ColseMask", 0.5f);
             }
+            if(day_num != 0)
+            beforeFood[day_num] = GetComponent<IntermissionManager>().AddTextLine("BeforeFood");
             // 触发进食前的幕间对话（若存在对应天数的对话数据）
             if (beforeFood[day_num] != null)
             {
@@ -327,7 +330,9 @@ public class Progress : MonoBehaviour
             }
             else
             { allEat = DownBar.GetComponent<ObjectManager>().CheckEat(true); } // 判断哪个角色没有进食并将其状态设为死亡}
-            
+            if (day_num != 0)
+                afterFood[day_num] = GetComponent<IntermissionManager>().AddTextLine("AfterFood");
+
             // 触发进食后的幕间对话（若存在对应天数的对话数据）
             if (afterFood[day_num] != null)
             {
@@ -366,6 +371,13 @@ public class Progress : MonoBehaviour
                 }
                 
             }
+            else
+            {
+                if (day_num > 3)
+                {
+                    GameObject.Find("EndingsManager").GetComponent<EndingsManager>().ToEnd("Demo-End");
+                }
+            }
             if (day_num != 0)
             {
 
@@ -388,23 +400,6 @@ public class Progress : MonoBehaviour
             }
 
             // 非第0天的特殊处理：场景明暗切换（先暗后亮，模拟昼夜交替）
-
-            
-            // 触发下一天开始前的幕间对话（若存在对应天数的对话数据）
-            if (beforeStart[day_num] != null)
-            {
-                CanTalk = true;  // 允许触发对话
-                // 赋值对话数据到对话系统
-                talkSys.Talklines[day_num] = beforeStart[day_num];
-                talkSys.line = 0;  // 重置对话行数
-                _ = talkSys.ShowText();  // 启动对话显示
-                TalkBar.GetComponent<Animator>().SetTrigger("up");  // 对话栏显示动画
-                if (TalkBar.transform.position.y == 0)
-                {
-                    DownAnim();
-                }
-
-            }
             if (AmandeKillSelf.GeneralBool)
             {
                 Final_Body.Weight += 1;
@@ -412,12 +407,42 @@ public class Progress : MonoBehaviour
                 talkSys.CharacterList[4].GetComponent<Character>().Dead = true;
                 talkSys.CharacterList[4].transform.Find("Toggle").gameObject.SetActive(false);
             }
+            if (day_num != 0)
+                beforeStart[day_num] = GetComponent<IntermissionManager>().AddTextLine("BeforeStart");
 
+            // 触发下一天开始前的幕间对话（若存在对应天数的对话数据）
+            if (beforeStart[day_num] != null)
+            {
+                CanTalk = true;  // 允许触发对话
+                // 赋值对话数据到对话系统
+                talkSys.Talklines[day_num] = beforeStart[day_num];
+                talkSys.line = 0;// 重置对话行数
+                Invoke("Talk", 0.2f);
+                  
+                
+                // 启动对话显示
+                TalkBar.GetComponent<Animator>().SetTrigger("up");  // 对话栏显示动画
+                if (TalkBar.transform.position.y == 0)
+                {
+                    DownAnim();
+                }
+                
+
+            }
+            else
+            {
+                TalkBar.GetComponent<Animator>().SetTrigger("down");
+            }
+            
+            
             // 通知对象管理器重置道具携带状态（可能将携带道具放回背包）
             ObjectManager.GetComponent<ObjectManager>().ReturnCarry();
             ObjectManager.GetComponent<ObjectManager>().RestTag();
             // 重置背景状态（调用 BackGroundMoving 的 Re_set 方法，还原背景初始位置）
             
+
+            
+
 
         }
     }
@@ -441,7 +466,10 @@ public class Progress : MonoBehaviour
         Mask.transform.parent.gameObject.SetActive(false);
     }
 
-
+    void Talk()
+    {
+        _ = talkSys.ShowText();
+    }
     void DownAnim()
     {
         //DownBar.GetComponent<Animator>().SetTrigger("Down");  // 底部栏隐藏动画

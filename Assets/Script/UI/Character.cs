@@ -85,7 +85,7 @@ public class Character : MonoBehaviour
     [Header("Day0用")]
     public Manager Day0_Talk;
 
-    
+    public GameObject Background;
 
 
     /// <summary>
@@ -119,6 +119,7 @@ public class Character : MonoBehaviour
         weight3 = gameObject.transform.Find("Weight1").gameObject;
         // 初始化显示角色持有的食物数量（更新UI文本）
         gameObject.transform.parent.Find("Have_Food").GetComponent<TextMeshProUGUI>().text = food.Weight.ToString();
+        Background = gameObject.transform.parent.parent.Find("Main").Find("Background").gameObject;
     }
 
     // Update is called once per frame
@@ -310,6 +311,7 @@ public class Character : MonoBehaviour
     {
         // 【死亡状态判断】如果角色死亡，不执行对话触发
         if (Dead) return;
+        if (Background.GetComponent<BackGroundMoving>().open) return;
         TalkSystem talksys = TalkBar.GetComponent<TalkSystem>();
         talksys.SetShowName();
         if (Special1 && !ClikDelay)

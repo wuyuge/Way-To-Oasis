@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Be/Be7.unity
     guid: aeb57a9aeab80e64bbebe89c4740c27d
+  - enabled: 1
+    path: Assets/Scenes/Demo-End.unity
+    guid: 4267c2a6c8db0174d925eebc682c4533
   m_configObjects: {}

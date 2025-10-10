@@ -16,7 +16,7 @@ MonoBehaviour:
   - /CheckShopEvent
   Option1: {fileID: 11400000, guid: 9fff11446669e004eabd2fb97670c21f, type: 2}
   Option2: {fileID: 11400000, guid: b7ee374ba8ead67479d9c581df1e2be9, type: 2}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: a1f8d5d529c10f34c9c4d6d20807e66c, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0

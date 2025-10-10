@@ -9,7 +9,7 @@ public class EndingsManager : MonoBehaviour
     public GameObject MainCharacter;
     public List<GameObject> AllCharacter = new List<GameObject>();
 
-    void ToEnd(string SceneName)
+    public void ToEnd(string SceneName)
     {
         SceneManager.LoadScene(SceneName);
 
@@ -25,6 +25,7 @@ public class EndingsManager : MonoBehaviour
         int EatNum = CheckEatNum();
         int NotEatNum = CurrentNotDeadNum - EatNum;
         bool MainCharacterEat = CheckMainCharacterEat();
+        int NotComfort = CheckNotComfort();
 
         if(MainCharacterEat && EatNum <= NotEatNum)//得到食物的人数（包括主角）（两人以上）小于等于没有得到食物的人
         {
@@ -35,6 +36,13 @@ public class EndingsManager : MonoBehaviour
         {
             ToEnd("Be2");
         }
+
+        if(NotComfort >= 2) // 玩家被反对杀死（一天结束时，拥有反抗心理的人大于等于两个）
+        {
+            ToEnd("Be3");
+        }
+
+
 
         if(!MainCharacterEat && CurrentNotDeadNum != 0)//be4玩家被饿死
         {
@@ -79,7 +87,19 @@ public class EndingsManager : MonoBehaviour
         return Value;
     }
 
+    int CheckNotComfort()
+    {
+        int Value = 0;
+        foreach (GameObject g in AllCharacter)
+        {
+            if (g.GetComponent<Character>().NotComfort)
+            {
+                Value++;
 
+            }
+        }
+        return Value;
+    }
 
 
     int CheckEatNum()
