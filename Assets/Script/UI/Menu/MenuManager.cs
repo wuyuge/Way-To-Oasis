@@ -84,9 +84,14 @@ public class MenuManager : MonoBehaviour
 
     public void BackToStart()
     {
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().AudioPlayer("Click");
+        
         Time.timeScale = 1;
         SceneManager.LoadScene("Start");
+        GameObject AudioManager = GameObject.Find("AudioManager");
+        if(AudioManager != null)
+        {
+            AudioManager.GetComponent<AudioManager>().AudioPlayer("Click");
+        }
     }
 
 

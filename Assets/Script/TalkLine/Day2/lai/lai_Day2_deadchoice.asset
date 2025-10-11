@@ -17,8 +17,8 @@ MonoBehaviour:
   Option1: {fileID: 11400000, guid: 877eae5340191764f899d9f4c1b62c8a, type: 2}
   Option2: {fileID: 11400000, guid: 8e2f435265b0ec04091005c48284a91c, type: 2}
   Option3: {fileID: 11400000, guid: e3fd65f1bb3a35e4495bc2461df3c1b4, type: 2}
-  SpecialTalk: {fileID: 0}
-  SpecialTalk2: {fileID: 0}
+  SpecialTalk: {fileID: 11400000, guid: 1e1068982cccc634ebff1eefdf6a6863, type: 2}
+  SpecialTalk2: {fileID: 11400000, guid: 1e1068982cccc634ebff1eefdf6a6863, type: 2}
   Weight: 0
   Weight_tag: 0
   Day1Eat: 0
