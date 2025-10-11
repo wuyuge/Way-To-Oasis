@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerName
   m_EditorClassIdentifier: 
   TxtLine:
-  - WUYUGE
+  - "\u25A0\u25A0"
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

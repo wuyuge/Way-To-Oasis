@@ -129,12 +129,17 @@ public class Progress : MonoBehaviour
     private TalkSystem talkSys;
     [Header("阿曼德自杀判断")]
     public Manager AmandeKillSelf;
+
+
+    private AudioManager AudioManager;
+
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
     /// 1. 绑定UI文本组件 2. 设置初始阶段的文本颜色 3. 触发当天开始前的幕间对话
     /// </summary>
     void Start()
     {
+        AudioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         talkSys = TalkBar.GetComponent<TalkSystem>();
         // 初始化日期显示（格式：Day X）
         day.text = "Day " + day_num;
@@ -206,7 +211,11 @@ public class Progress : MonoBehaviour
     /// </summary>
     public void SwtichProgress()
     {
-        
+        AudioManager.AudioPlayer("Click");
+        if(day_num > 3)
+        {
+            GameObject.Find("EndingsManager").GetComponent<EndingsManager>().ToEnd("Demo-End");
+        }
         // 1. 从【开始阶段】切换到【对话阶段】
         if (start && CanSwitch)
         {
@@ -319,6 +328,7 @@ public class Progress : MonoBehaviour
                 // 检查是否满足进食条件（若未满足，不执行阶段切换）
                 if (!DownBar.GetComponent<ObjectManager>().CheckEat(false))
                 {
+                    talkSys.Mask(DownBar.transform.Find("MaskLayer").gameObject,"AllEat");
                     return;  // 退出方法，不切换阶段
                 }
 
@@ -429,10 +439,10 @@ public class Progress : MonoBehaviour
                 
 
             }
-            else
-            {
-                TalkBar.GetComponent<Animator>().SetTrigger("down");
-            }
+            //else
+            //{
+            //    TalkBar.GetComponent<Animator>().SetTrigger("down");
+            //}
             
             
             // 通知对象管理器重置道具携带状态（可能将携带道具放回背包）

@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour
     public Material Error;
     public Animator Black;
 
+
     private void Awake()
     {
         if(Setmaterial)
@@ -48,6 +49,7 @@ public class MenuManager : MonoBehaviour
 
     public void OpenMenu()
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().AudioPlayer("Click");
         Menu.SetActive(true);
         Time.timeScale = 0;
         MainTalk.GetComponent<TalkSystem>().on = false;
@@ -57,6 +59,7 @@ public class MenuManager : MonoBehaviour
 
     public void BackToGame()
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().AudioPlayer("Click");
         Menu.SetActive(false);
         Time.timeScale = 1;
         MainTalk.GetComponent<TalkSystem>().on = true;
@@ -72,7 +75,7 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
-
+        //GameObject.Find("AudioManager").GetComponent<AudioManager>().AudioPlayer("Click");
         SceneManager.LoadScene("Main");
 
 
@@ -81,7 +84,7 @@ public class MenuManager : MonoBehaviour
 
     public void BackToStart()
     {
-         
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().AudioPlayer("Click");
         Time.timeScale = 1;
         SceneManager.LoadScene("Start");
     }

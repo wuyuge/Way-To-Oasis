@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: aimi_Day1_main
   m_EditorClassIdentifier: 
   TxtLine:
+  - lock
   - c
   - "\u827E\u7C73\u8389\uFF1A\u6709\u4E8B\uFF1F"
   - p

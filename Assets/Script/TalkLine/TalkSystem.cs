@@ -103,9 +103,11 @@ public class TalkSystem : MonoBehaviour
     [Header("教程文本列表")]
     [SerializeField]
     private TechTextList TechTextList;
+    public Manager ShowTech;
     [Header("小人对话管理")]
     public MiniCharacterTalkSys MiniCharacterManager;
     private bool MiniMode = false;
+    private bool ClickMask = false;
     private void Awake()
     {
         Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
@@ -171,6 +173,11 @@ public class TalkSystem : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
             // 点击条件：鼠标左键按下 + 交互开启（on） + 超过点击间隔
             {
+                if (ClickMask)
+                {
+                    ClickMask = false;
+                    mask.transform.parent.gameObject.SetActive(false);
+                }
                 if ( on && timeSinceLastClick >= ClickInterval && !_IsShowingText)
                 {
                     // 更新上次点击时间戳为当前时间
@@ -220,7 +227,7 @@ public class TalkSystem : MonoBehaviour
         try
         {
             string curText = Talklines[Daytime].TxtLine[line];
-            Debug.Log($"当前文本：{curText}");
+            
             CanSkip = false;
             inTech = false;
             switch (curText)
@@ -439,7 +446,7 @@ public class TalkSystem : MonoBehaviour
                 case "techclik":
 
                     string Cliktext = SetTechText("Clik");
-                    SetTechMode(gameObject, Cliktext);
+                    SetTechMode(transform.Find("MaskLayer").gameObject, Cliktext);
                     PlusLine();
                     
                     
@@ -510,6 +517,7 @@ public class TalkSystem : MonoBehaviour
 
 
                 case "down":
+                    DaytimeOBJ.GetComponent<Progress>().CanSwitch = true;
                     anim.SetTrigger("down");
                     if(MiniMode)Invoke("SetCharBar", 1.5f);
                     PlusLine();
@@ -1219,7 +1227,7 @@ public class TalkSystem : MonoBehaviour
 
     private void SetTechMode(GameObject MaskGameObj ,string TechText)
     {
-
+        if (!ShowTech.GeneralBool) return;
         inTech = true;
         mask.transform.parent.gameObject.SetActive(true);
         mask.GetComponent<Unmask>().m_FitTarget = MaskGameObj.GetComponent<RectTransform>();
@@ -1239,6 +1247,16 @@ public class TalkSystem : MonoBehaviour
         }
         return "";
     }
+
+    public void Mask(GameObject MaskGameObj, string Comment)
+    {
+        string ShowText = SetTechText(Comment);
+        SetTechMode(MaskGameObj, ShowText);
+
+        ClickMask = true;
+
+    }
+
 
     public void SetShowName()
     {

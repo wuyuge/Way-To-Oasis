@@ -33,6 +33,7 @@ public class SetScreenResolution : MonoBehaviour
             }
             TMP_Dropdown.options.Add(new TMP_Dropdown.OptionData(r.width + "x" + r.height + " @" + Hz + " Hz"));
         }
+        TMP_Dropdown.RefreshShownValue();
     }
 
 
