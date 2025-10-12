@@ -315,6 +315,7 @@ public class Progress : MonoBehaviour
                  // 调用 skip 的暗化方法
             }
             DownBar.GetComponent<ObjectManager>().ResetEat();
+            SetComfort();
         }
 
         // 3. 从【进食阶段】切换到【下一天的开始阶段】
@@ -412,10 +413,7 @@ public class Progress : MonoBehaviour
             // 非第0天的特殊处理：场景明暗切换（先暗后亮，模拟昼夜交替）
             if (AmandeKillSelf.GeneralBool)
             {
-                Final_Body.Weight += 1;
-                talkSys.DeadName.TxtLine.Add("阿曼德Poison");
-                talkSys.CharacterList[4].GetComponent<Character>().Dead = true;
-                talkSys.CharacterList[4].transform.Find("Toggle").gameObject.SetActive(false);
+                KillAmande();
             }
             if (day_num != 0)
                 beforeStart[day_num] = GetComponent<IntermissionManager>().AddTextLine("BeforeStart");
@@ -431,7 +429,7 @@ public class Progress : MonoBehaviour
                   
                 
                 // 启动对话显示
-                TalkBar.GetComponent<Animator>().SetTrigger("up");  // 对话栏显示动画
+                TalkBar.GetComponent<Animator>().SetTrigger("start");  // 对话栏显示动画
                 if (TalkBar.transform.position.y == 0)
                 {
                     DownAnim();
@@ -450,10 +448,35 @@ public class Progress : MonoBehaviour
             ObjectManager.GetComponent<ObjectManager>().RestTag();
             // 重置背景状态（调用 BackGroundMoving 的 Re_set 方法，还原背景初始位置）
             
+            foreach(GameObject g in DownBar.GetComponent<ObjectManager>().Character_List)
+            {
+                g.GetComponent<Character>().EnableTalk();
+            }
 
-            
 
 
+        }
+    }
+
+
+    private void KillAmande()
+    {
+        Final_Body.Weight += 1;
+        talkSys.DeadName.TxtLine.Add("阿曼德Poison");
+        talkSys.CharacterList[4].GetComponent<Character>().Dead = true;
+        talkSys.CharacterList[4].transform.Find("Toggle").gameObject.SetActive(false);
+    }
+
+    void SetComfort()
+    {
+        foreach (GameObject g in DownBar.GetComponent<ObjectManager>().Character_List)
+        {
+            if(!g.GetComponent<Character>().AfterSpecialTalk && (g.GetComponent<Character>().Special1 || g.GetComponent<Character>().Special2))
+            {
+                g.GetComponent<Character>().NotComfort = true;
+                g.transform.Find("Attention").gameObject.SetActive(false);
+                g.transform.Find("Attention2").gameObject.SetActive(true);
+            }
         }
     }
 

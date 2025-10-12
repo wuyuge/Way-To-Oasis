@@ -15,6 +15,7 @@ MonoBehaviour:
   TxtLine:
   - c
   - "\u4E0D\u7B97\u516C\u6B63\uFF0C\u4F46\u6548\u7387\u5F88\u9AD8\u3002"
+  - /exchangeBody
   - /closeshop
   Option1: {fileID: 0}
   Option2: {fileID: 0}

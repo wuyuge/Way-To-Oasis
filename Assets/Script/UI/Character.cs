@@ -86,7 +86,18 @@ public class Character : MonoBehaviour
     public Manager Day0_Talk;
 
     public GameObject Background;
+    /// <summary>
+    /// 用于商店后限制对话触发
+    /// </summary>
 
+    public bool CanTalk = true;
+
+
+    /// <summary>
+    /// 是否无法负重（true：无法负重，禁用负重操作；false：可正常负重）
+    /// </summary>
+
+    public bool CantWeight = false;
 
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
@@ -182,6 +193,13 @@ public class Character : MonoBehaviour
             // 刷新负重进度条UI（重置为初始绿色）
             Refresh();
         }
+        if (CantWeight)
+        {
+            weight.Weight = 3;
+            weight1.GetComponent<Image>().color = Color.red;
+            weight2.GetComponent<Image>().color = Color.red;
+            weight3.GetComponent<Image>().color = Color.red;
+        }
     }
 
     /// <summary>
@@ -192,6 +210,7 @@ public class Character : MonoBehaviour
     {
         // 【死亡状态判断】如果角色死亡，不执行任何负重操作
         if (Dead) return;
+        if (CantWeight) return;
 
         // 获取资源选择面板（SelectBar）的状态，判断是否处于"食物选择"模式
         if (!gameObject.transform.parent.Find("SelectBar").GetComponent<AssResources>().Food)
@@ -311,6 +330,7 @@ public class Character : MonoBehaviour
     {
         // 【死亡状态判断】如果角色死亡，不执行对话触发
         if (Dead) return;
+        if (!CanTalk) return;
         TalkSystem talksys = TalkBar.GetComponent<TalkSystem>();
         if (talksys.Daytime != 0)
         { if (Background.GetComponent<BackGroundMoving>().open) return; }
@@ -450,7 +470,21 @@ public class Character : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// 管理角色对话触发权限
+    /// </summary>
+    public void DisableTalk()
+    {
+        CanTalk = false;
 
+    }
+    /// <summary>
+    /// 管理角色对话触发权限
+    /// </summary>
+    public void EnableTalk()
+    {
+        CanTalk = true;
+    }
 
 
 

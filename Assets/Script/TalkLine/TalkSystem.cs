@@ -108,6 +108,8 @@ public class TalkSystem : MonoBehaviour
     public MiniCharacterTalkSys MiniCharacterManager;
     private bool MiniMode = false;
     private bool ClickMask = false;
+
+
     private void Awake()
     {
         Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
@@ -294,16 +296,17 @@ public class TalkSystem : MonoBehaviour
                         _ = ShowText(true);
                         return;
                     }
+                //艾米莉特殊指令
                 case "/CheckBoBody":
                     foreach(string s in DeadName.TxtLine)
                     {
-                        if(s == "博金森")
+                        if(s.Contains("博金森"))
                         {
                             HandleChoice();
 
                             return;
                         }
-                        else if(s == "博金森Used")
+                        else
                         {
                             HandleChoice(ban:1);
                             return;
@@ -323,9 +326,18 @@ public class TalkSystem : MonoBehaviour
                         }
 
                     }
+                    CharacterList[1].GetComponent<Character>().CantWeight = true;
                     PlusLine();
                     _ = ShowText(true);
                     return;
+
+                case "/aimifail":
+                    CharacterList[1].GetComponent<Character>().NotComfort = true;
+                    PlusLine();
+                    _ = ShowText(true);
+                    return;
+
+
                 case "/BanClik":
                     on = false;
                     PlusLine();
@@ -429,7 +441,7 @@ public class TalkSystem : MonoBehaviour
                             }
                         }
                         on = true;
-                        SetTechMode(ComfortObj,Comforttext);
+                        if(ComfortObj != null)SetTechMode(ComfortObj,Comforttext);
                         TeachComfort.GeneralBool = true;
                     }
                     PlusLine();
@@ -1103,10 +1115,9 @@ public class TalkSystem : MonoBehaviour
     public void ShowExchangeTalk()
     {
         
-        foreach (GameObject g in CharacterList)
-        {
-            g.GetComponent<Character>().have_talk = true;
-        }
+        
+            
+        
         if (Daytime == 2)
         {
             Day2ShopEvent.GeneralBool = true;
@@ -1114,10 +1125,16 @@ public class TalkSystem : MonoBehaviour
             if (CharacterList[4].GetComponent<Character>().Special2) return;
 
             CharacterList[4].GetComponent<Character>().Special1 = true;
+            CharacterList[4].GetComponent<Character>().EnableTalk();
             CharacterList[4].transform.Find("Attention").gameObject.SetActive(true);
         }
 
+        foreach (GameObject g in CharacterList)
+        {
+            if (!g.GetComponent<Character>().Special1 && !g.GetComponent<Character>().Special2)
+                g.GetComponent<Character>().DisableTalk();
 
+        }
 
 
 
@@ -1126,24 +1143,25 @@ public class TalkSystem : MonoBehaviour
 
     public void ShowKillTalk()
     {
+        
 
-
-        foreach (GameObject g in CharacterList)
-        {
-            g.GetComponent<Character>().have_talk = true;
-        }
+        
         if (Daytime == 2)
         {
             Day2ShopEvent.GeneralBool = true;
             amandeKillself.GeneralBool = true;
             CharacterList[4].GetComponent<Character>().Special2 = true;
+            CharacterList[4].GetComponent<Character>().EnableTalk();
             CharacterList[4].transform.Find("Attention").gameObject.SetActive(true);
             CharacterList[5].GetComponent<Character>().Special2 = true;
+            CharacterList[5].GetComponent<Character>().EnableTalk();
             CharacterList[5].transform.Find("Attention").gameObject.SetActive(true);
             if (DeadName.TxtLine[DeadName.TxtLine.Count - 1] == "博金森")
             {
                 Debug.Log("第一次商店杀死博金森");
                 CharacterList[1].GetComponent<Character>().Special2 = true;
+                
+                CharacterList[1].GetComponent<Character>().EnableTalk();
                 CharacterList[1].transform.Find("Attention").gameObject.SetActive(true);
 
             }
@@ -1151,6 +1169,8 @@ public class TalkSystem : MonoBehaviour
             {
                 Debug.Log("第一次商店杀死艾米莉");
                 CharacterList[3].GetComponent<Character>().Special2 = true;
+                CharacterList[3].GetComponent<Character>().NotComfort = true;
+                CharacterList[3].GetComponent<Character>().EnableTalk();
                 CharacterList[3].transform.Find("Attention").gameObject.SetActive(true);
 
             }
@@ -1158,7 +1178,11 @@ public class TalkSystem : MonoBehaviour
 
 
         }
-
+        foreach (GameObject g in CharacterList)
+        {
+            if (!g.GetComponent<Character>().Special1 && !g.GetComponent<Character>().Special2)
+            g.GetComponent<Character>().DisableTalk();
+        }
 
     }
 
