@@ -197,7 +197,7 @@ public class Progress : MonoBehaviour
                 Mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "点击按钮结束分配食物环节";
                 Mask.GetComponent<Unmask>().fitTarget = gameObject.GetComponent<RectTransform>();
                 Mask.transform.parent.gameObject.SetActive(true);
-                Invoke("ColseMask", 1.5f);
+                
 
             }
         }
@@ -229,7 +229,7 @@ public class Progress : MonoBehaviour
                     Mask.GetComponent<Unmask>().fitTarget = DownBar.transform.Find("MaskLayer").GetComponent<RectTransform>();
                     Mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "没有被分配的物品将会被丢弃";
                     Mask.transform.parent.gameObject.SetActive(true);
-                    Invoke("ColseMask", 1.5f);
+                    
                     return;
                 }
             }
@@ -275,14 +275,11 @@ public class Progress : MonoBehaviour
 
                 Mask.transform.parent.gameObject.SetActive(true);
                 Mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "请与所有人的对话一次";
-                Invoke("ColseMask", 0.5f);
+                
                 return;
 
             }
-            else if(day_num == 0 && can_skip)
-            {
-                Invoke("ColseMask", 0.5f);
-            }
+            
             if(day_num != 0)
             beforeFood[day_num] = GetComponent<IntermissionManager>().AddTextLine("BeforeFood");
             // 触发进食前的幕间对话（若存在对应天数的对话数据）

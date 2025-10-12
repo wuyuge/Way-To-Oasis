@@ -175,11 +175,7 @@ public class TalkSystem : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
             // 点击条件：鼠标左键按下 + 交互开启（on） + 超过点击间隔
             {
-                if (ClickMask)
-                {
-                    ClickMask = false;
-                    mask.transform.parent.gameObject.SetActive(false);
-                }
+                
                 if ( on && timeSinceLastClick >= ClickInterval && !_IsShowingText)
                 {
                     // 更新上次点击时间戳为当前时间
@@ -471,6 +467,12 @@ public class TalkSystem : MonoBehaviour
                     PlusLine();
                     DaytimeOBJ.GetComponent<Button>().enabled = true;
                     
+
+                    return;
+                case "techover":
+                    mask.transform.parent.gameObject.GetComponent<MaskManager>().SetClik(true);
+                    PlusLine();
+                    _ = ShowText(true);
                     return;
 
                 case "techright":
@@ -479,7 +481,7 @@ public class TalkSystem : MonoBehaviour
                     on = true;
                     DaytimeOBJ.GetComponent<Button>().enabled = false;
                     PlusLine();
-                    
+                    mask.transform.parent.gameObject.GetComponent<MaskManager>().SetClik(false);
                     return;
 
                 case "techclose":
@@ -493,7 +495,7 @@ public class TalkSystem : MonoBehaviour
                     inTech = true;
                     SetTechMode(DownBar.transform.Find("MaskLayer").gameObject, Foodtext);
                     PlusLine();
-                    Invoke("CloseMask", 2);
+                    
                     _ = ShowText(true);
                     return;
 
@@ -501,7 +503,7 @@ public class TalkSystem : MonoBehaviour
                     string Weighttext = SetTechText("Weight");
                     SetTechMode(DownBar.transform.Find("MaskLayer").gameObject, Weighttext);
                     PlusLine();
-                    Invoke("CloseMask", 3);
+                    
                     _ = ShowText(true);
                     return;
                 //教程结束
@@ -1211,11 +1213,7 @@ public class TalkSystem : MonoBehaviour
 
     }
 
-    private void CloseMask()
-    {
-        mask.transform.parent.gameObject.SetActive(false);
-
-    }
+    
 
     private void SetCharBar()
     {

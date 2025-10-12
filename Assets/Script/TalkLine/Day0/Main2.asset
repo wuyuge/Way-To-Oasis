@@ -21,6 +21,7 @@ MonoBehaviour:
   - techright
   - techmenu
   - techtalk
+  - techover
   - showcharabar
   Option1: {fileID: 0}
   Option2: {fileID: 0}

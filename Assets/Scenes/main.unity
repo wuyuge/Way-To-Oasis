@@ -931,7 +931,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -776, y: 95.99999}
+  m_AnchoredPosition: {x: -776, y: 95.999985}
   m_SizeDelta: {x: 190, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &68942825
@@ -972,6 +972,8 @@ MonoBehaviour:
   ClikDelay: 0
   Day0_Talk: {fileID: 0}
   Background: {fileID: 0}
+  CanTalk: 1
+  CantWeight: 0
 --- !u!114 &68942826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1628,6 +1630,8 @@ MonoBehaviour:
   ClikDelay: 0
   Day0_Talk: {fileID: 0}
   Background: {fileID: 0}
+  CanTalk: 1
+  CantWeight: 0
 --- !u!1 &89321879
 GameObject:
   m_ObjectHideFlags: 0
@@ -5194,7 +5198,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -315, y: 95.99999}
+  m_AnchoredPosition: {x: -315, y: 95.999985}
   m_SizeDelta: {x: 190, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418109940
@@ -5236,6 +5240,8 @@ MonoBehaviour:
   ClikDelay: 0
   Day0_Talk: {fileID: 11400000, guid: a4172c4c1510fd44ea5088aa17e0fab2, type: 2}
   Background: {fileID: 0}
+  CanTalk: 1
+  CantWeight: 0
 --- !u!114 &418109941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5661,7 +5667,7 @@ MonoBehaviour:
   - name: Clik
     text: "\u70B9\u51FB\u9F20\u6807\u5DE6\u952E\u6216\u6309\u4E0B\u7A7A\u683C\u952E\u5F00\u59CB\u5BF9\u8BDD"
   - name: Menu
-    text: "\u70B9\u51FB\u8FD9\u91CC\u6216\u6309\u4E0BEsc\u5F00\u542F\u83DC\u5355\u754C\u9762"
+    text: "\u70B9\u51FB\u53F3\u4E0A\u89D2\u6309\u4E0BEsc\u5F00\u542F\u83DC\u5355\u754C\u9762"
   - name: Talk
     text: "\u8FD9\u662F\u9009\u62E9\u680F\uFF0C\u91CC\u9762\u5206\u522B\u5C55\u793A\u7740\u4F60\u548C\u5176\u4ED65\u4F4D\u89D2\u8272\u7684\u72B6\u6001\uFF0C\u4E4B\u540E\u53EF\u4EE5\u5728\u8FD9\u91CC\u5206\u914D\u8D1F\u91CD\u4E0E\u98DF\u7269\uFF0C\u73B0\u5728\u8BF7\u70B9\u51FB\u4EBA\u7269\u5934\u50CF\u5F00\u59CB\u5BF9\u8BDD"
   - name: Right
@@ -11919,14 +11925,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b650ae23b27da074fa5cffb1cf3ea739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  day_num: 2
+  day_num: 1
   start: 1
   talk: 0
   food: 0
   can_skip: 0
   CanSwitch: 1
   CanTalk: 0
-  ShopTalk: 1
+  ShopTalk: 0
   weight: {fileID: 0}
   talk_t: {fileID: 0}
   food_t: {fileID: 0}
@@ -12699,6 +12705,8 @@ MonoBehaviour:
   ClikDelay: 0
   Day0_Talk: {fileID: 0}
   Background: {fileID: 0}
+  CanTalk: 1
+  CantWeight: 0
 --- !u!114 &900494142 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4124345993672193701, guid: 2e674e62ead814e4388144bae1a2973f, type: 3}
@@ -12833,7 +12841,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.76500005, y: 0.34722227}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 0}
+  m_SizeDelta: {x: 14, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &921392545
 MonoBehaviour:
@@ -13840,7 +13848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 133.00006, y: 95.99999}
+  m_AnchoredPosition: {x: 133.00006, y: 95.999985}
   m_SizeDelta: {x: 190, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &984468083
@@ -13882,6 +13890,8 @@ MonoBehaviour:
   ClikDelay: 0
   Day0_Talk: {fileID: 11400000, guid: a4172c4c1510fd44ea5088aa17e0fab2, type: 2}
   Background: {fileID: 0}
+  CanTalk: 1
+  CantWeight: 0
 --- !u!114 &984468084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14956,6 +14966,8 @@ MonoBehaviour:
   ClikDelay: 0
   Day0_Talk: {fileID: 0}
   Background: {fileID: 0}
+  CanTalk: 1
+  CantWeight: 0
 --- !u!1 &1053723033
 GameObject:
   m_ObjectHideFlags: 0
@@ -15571,6 +15583,8 @@ MonoBehaviour:
   ClikDelay: 0
   Day0_Talk: {fileID: 0}
   Background: {fileID: 0}
+  CanTalk: 1
+  CantWeight: 0
 --- !u!1 &1067497623
 GameObject:
   m_ObjectHideFlags: 0
@@ -16123,6 +16137,8 @@ MonoBehaviour:
   ClikDelay: 0
   Day0_Talk: {fileID: 0}
   Background: {fileID: 0}
+  CanTalk: 1
+  CantWeight: 0
 --- !u!1 &1103929361
 GameObject:
   m_ObjectHideFlags: 0
@@ -16441,7 +16457,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 685.00006, y: 90.49999}
+  m_AnchoredPosition: {x: 685.00006, y: 90.499985}
   m_SizeDelta: {x: 53.599976, y: -437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1124700788
@@ -18364,6 +18380,8 @@ MonoBehaviour:
   ClikDelay: 0
   Day0_Talk: {fileID: 11400000, guid: a4172c4c1510fd44ea5088aa17e0fab2, type: 2}
   Background: {fileID: 0}
+  CanTalk: 1
+  CantWeight: 0
 --- !u!114 &1214813400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25057,6 +25075,8 @@ MonoBehaviour:
   ClikDelay: 0
   Day0_Talk: {fileID: 0}
   Background: {fileID: 0}
+  CanTalk: 1
+  CantWeight: 0
 --- !u!1 &1734647521
 GameObject:
   m_ObjectHideFlags: 0
@@ -26282,6 +26302,7 @@ GameObject:
   - component: {fileID: 1825048674}
   - component: {fileID: 1825048673}
   - component: {fileID: 1825048672}
+  - component: {fileID: 1825048676}
   m_Layer: 5
   m_Name: Unmasked Panel
   m_TagString: Untagged
@@ -26375,6 +26396,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825048670}
   m_CullTransparentMesh: 1
+--- !u!114 &1825048676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825048670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f59e4924185cd4eb202f3b5e5968d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickClose: 1
 --- !u!1 &1848665806
 GameObject:
   m_ObjectHideFlags: 0
@@ -27943,6 +27977,8 @@ MonoBehaviour:
   ClikDelay: 0
   Day0_Talk: {fileID: 11400000, guid: a4172c4c1510fd44ea5088aa17e0fab2, type: 2}
   Background: {fileID: 0}
+  CanTalk: 1
+  CantWeight: 0
 --- !u!114 &1977804956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29081,7 +29117,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.76500005, y: 0.34722227}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -2, y: 0}
+  m_SizeDelta: {x: 14, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &2054626015
 GameObject:
@@ -29241,6 +29277,8 @@ MonoBehaviour:
   ClikDelay: 0
   Day0_Talk: {fileID: 11400000, guid: a4172c4c1510fd44ea5088aa17e0fab2, type: 2}
   Background: {fileID: 0}
+  CanTalk: 1
+  CantWeight: 0
 --- !u!114 &2055327924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30321,6 +30359,7 @@ GameObject:
   - component: {fileID: 2116532951}
   - component: {fileID: 2116532950}
   - component: {fileID: 2116532949}
+  - component: {fileID: 2116532953}
   m_Layer: 5
   m_Name: Unmasked Panel
   m_TagString: Untagged
@@ -30414,6 +30453,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116532947}
   m_CullTransparentMesh: 1
+--- !u!114 &2116532953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116532947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f59e4924185cd4eb202f3b5e5968d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickClose: 1
 --- !u!1 &2118462410
 GameObject:
   m_ObjectHideFlags: 0
