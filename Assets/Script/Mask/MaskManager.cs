@@ -13,7 +13,7 @@ public class MaskManager : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) && ClickClose && !ClickDelay)
         {
             ClickDelay = true;
-            Invoke("SetMask", 0.8f);
+            Invoke("SetMask", 0.5f);
 
         }
     }
@@ -30,7 +30,11 @@ public class MaskManager : MonoBehaviour
     }
 
 
-
+    private void OnDisable()
+    {
+        ClickDelay = false;
+        ClickClose = true;
+    }
 
 
 }

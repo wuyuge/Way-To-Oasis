@@ -814,6 +814,29 @@ public class TalkSystem : MonoBehaviour
 
                     _ = ShowText(true);
                     return;
+
+                //day0用toggle判断
+                case "/locktoggle":
+                    foreach (GameObject g in CharacterList)
+                    {
+                        g.transform.Find("Toggle").gameObject.GetComponent<Toggle>().enabled = false;
+                        g.transform.Find("Toggle").Find("Background").Find("Checkmark").gameObject.SetActive(false);
+                    }
+                    PlusLine();
+                    _ = ShowText(true);
+                    return;
+                case "/unlocktoggle":
+                    foreach (GameObject g in CharacterList)
+                    {
+                        g.transform.Find("Toggle").gameObject.GetComponent<Toggle>().enabled = true;
+                        g.transform.Find("Toggle").Find("Background").Find("Checkmark").gameObject.SetActive(true);
+                    }
+                    PlusLine();
+                    _ = ShowText(true);
+                    return;
+
+
+
             }
 
             // 处理正常对话文本（角色说话）
@@ -1291,5 +1314,7 @@ public class TalkSystem : MonoBehaviour
         ShowName = false;
         PlayerNameText.text = "";
     }
+
+
 
 }

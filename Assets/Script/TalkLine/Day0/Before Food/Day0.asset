@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Day0
   m_EditorClassIdentifier: 
   TxtLine:
+  - /locktoggle
   - lock
   - closecharabar
   - /noname
@@ -22,6 +23,7 @@ MonoBehaviour:
   - "\u8981\u6CE8\u610F\u5982\u679C\u6CA1\u6709\u5F97\u5230\u98DF\u7269\u7684\u4EBA\u592A\u591A\uFF0C\u8BF4\u4E0D\u5B9A\u4F1A\u5F15\u53D1\u4EC0\u4E48\u4E0D\u597D\u7684\u540E\u679C\u3002"
   - upcbar
   - techfood
+  - /unlocktoggle
   - /ResetTrigger
   - down
   Option1: {fileID: 0}

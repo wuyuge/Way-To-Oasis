@@ -313,6 +313,7 @@ public class Progress : MonoBehaviour
             }
             DownBar.GetComponent<ObjectManager>().ResetEat();
             SetComfort();
+            
         }
 
         // 3. 从【进食阶段】切换到【下一天的开始阶段】
