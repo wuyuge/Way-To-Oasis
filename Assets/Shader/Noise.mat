@@ -41,12 +41,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _EdgeScale: 0.58
+    - _EdgeScale: 0.576
     - _MaxRange: 0
-    - _NoiseScale: 2635
+    - _NoiseScale: 1473
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RollSpeed: 0.002
+    - _RollSpeed: 0.0008
     m_Colors:
     - _Color: {r: 0.57232696, g: 0.57232696, b: 0.57232696, a: 0}
   m_BuildTextureStacks: []

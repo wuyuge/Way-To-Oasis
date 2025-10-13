@@ -107,7 +107,7 @@ public class TalkSystem : MonoBehaviour
     [Header("小人对话管理")]
     public MiniCharacterTalkSys MiniCharacterManager;
     private bool MiniMode = false;
-    private bool ClickMask = false;
+    
 
 
     private void Awake()
@@ -208,8 +208,8 @@ public class TalkSystem : MonoBehaviour
         // 清空文本框（原有逻辑保留）
         if (!PlayerTalking && ClearText)
         {
-            Character.text = "";
-            Chara_Name.text = "";
+            //Character.text = "";
+            //Chara_Name.text = "";
         }
         else
         {
@@ -851,6 +851,10 @@ public class TalkSystem : MonoBehaviour
                 bool charaOver = false;
                 string charaName = "";
                 string dialogueContent = "";
+
+                Character.text = "";
+                Chara_Name.text = "";
+
                 if (curText.Contains("{PlayerName}"))
                 {
                     curText = curText.Replace("{PlayerName}", PlayerName.TxtLine[0]);
@@ -967,7 +971,7 @@ public class TalkSystem : MonoBehaviour
             else
             {
                 CanSkip = true;
-                
+                Player.text = "";
                 if (curText.Contains("："))
                 {
                     line--;
@@ -1303,7 +1307,7 @@ public class TalkSystem : MonoBehaviour
         string ShowText = SetTechText(Comment);
         SetTechMode(MaskGameObj, ShowText);
 
-        ClickMask = true;
+        
 
     }
 

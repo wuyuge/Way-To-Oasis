@@ -99,7 +99,7 @@ public class Character : MonoBehaviour
 
     public bool CantWeight = false;
 
-    private List<GameObject> Child;
+    public List<GameObject> Child;
 
 
     /// <summary>
