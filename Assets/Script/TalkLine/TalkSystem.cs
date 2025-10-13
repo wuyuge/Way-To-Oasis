@@ -512,12 +512,23 @@ public class TalkSystem : MonoBehaviour
                     _ = ShowText(true);
                     return;
                 //教程结束
-                
-                
 
 
 
-                
+                //小人图像控制
+                case "/OffMiniCharacter":
+                    gameObject.transform.parent.Find("MiniCharacter").GetComponent<MiniCharacterManager>().CloseMiniCharacter();
+                    PlusLine();
+                    _= ShowText(true);
+                    return;
+
+                case "/OnMiniCharacter":
+                    gameObject.transform.parent.Find("MiniCharacter").GetComponent<MiniCharacterManager>().ShowMiniCharacter();
+                    PlusLine();
+                    _ = ShowText(true);
+                    return;
+
+
 
                 case "showdeadname":
                     

@@ -28,6 +28,7 @@ public class MiniCharacterManager : MonoBehaviour
 
     private int previousDeadCount = 0; // 记录上一帧的死亡角色数量（用于检测死亡状态变化）
 
+    private Animator anim;
 
     private void Awake()
     {
@@ -43,6 +44,9 @@ public class MiniCharacterManager : MonoBehaviour
         }
         previousDeadCount = 0;
         usedPositions.Clear(); // 初始化已占用位置列表
+
+        anim = GetComponent<Animator>();
+
     }
 
 
@@ -191,4 +195,24 @@ public class MiniCharacterManager : MonoBehaviour
     {
         usedPositions.Clear();
     }
+
+
+
+    public void ShowMiniCharacter()
+    {
+
+        anim.SetTrigger("Show");
+
+    }
+
+
+    public void CloseMiniCharacter()
+    {
+        anim.SetTrigger("Close");
+    }
+
+
+
+
+
 }

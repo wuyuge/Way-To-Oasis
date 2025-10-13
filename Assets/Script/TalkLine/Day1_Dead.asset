@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - Leader
-  - "\u963F\u66FC\u5FB7Poison"
-  - "\u827E\u7C73\u8389"
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

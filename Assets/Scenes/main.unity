@@ -931,7 +931,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -776, y: 95.999985}
+  m_AnchoredPosition: {x: -776, y: 95.99997}
   m_SizeDelta: {x: 190, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &68942825
@@ -974,6 +974,7 @@ MonoBehaviour:
   Background: {fileID: 0}
   CanTalk: 1
   CantWeight: 0
+  Child: []
 --- !u!114 &68942826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1632,6 +1633,7 @@ MonoBehaviour:
   Background: {fileID: 0}
   CanTalk: 1
   CantWeight: 0
+  Child: []
 --- !u!1 &89321879
 GameObject:
   m_ObjectHideFlags: 0
@@ -5273,7 +5275,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -315, y: 95.999985}
+  m_AnchoredPosition: {x: -315, y: 95.99997}
   m_SizeDelta: {x: 190, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418109940
@@ -5317,6 +5319,7 @@ MonoBehaviour:
   Background: {fileID: 0}
   CanTalk: 1
   CantWeight: 0
+  Child: []
 --- !u!114 &418109941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12006,7 +12009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b650ae23b27da074fa5cffb1cf3ea739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  day_num: 2
+  day_num: 1
   start: 1
   talk: 0
   food: 0
@@ -12788,6 +12791,7 @@ MonoBehaviour:
   Background: {fileID: 0}
   CanTalk: 1
   CantWeight: 0
+  Child: []
 --- !u!114 &900494142 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4124345993672193701, guid: 2e674e62ead814e4388144bae1a2973f, type: 3}
@@ -13929,7 +13933,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 133.00006, y: 95.999985}
+  m_AnchoredPosition: {x: 133.00012, y: 95.99997}
   m_SizeDelta: {x: 190, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &984468083
@@ -13973,6 +13977,7 @@ MonoBehaviour:
   Background: {fileID: 0}
   CanTalk: 1
   CantWeight: 0
+  Child: []
 --- !u!114 &984468084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15049,6 +15054,7 @@ MonoBehaviour:
   Background: {fileID: 0}
   CanTalk: 1
   CantWeight: 0
+  Child: []
 --- !u!1 &1053723033
 GameObject:
   m_ObjectHideFlags: 0
@@ -15666,6 +15672,7 @@ MonoBehaviour:
   Background: {fileID: 0}
   CanTalk: 1
   CantWeight: 0
+  Child: []
 --- !u!1 &1067497623
 GameObject:
   m_ObjectHideFlags: 0
@@ -16220,6 +16227,7 @@ MonoBehaviour:
   Background: {fileID: 0}
   CanTalk: 1
   CantWeight: 0
+  Child: []
 --- !u!1 &1103929361
 GameObject:
   m_ObjectHideFlags: 0
@@ -16538,7 +16546,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 685.00006, y: 90.499985}
+  m_AnchoredPosition: {x: 685.0001, y: 90.49997}
   m_SizeDelta: {x: 53.599976, y: -437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1124700788
@@ -18419,7 +18427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 133.00006, y: -123}
+  m_AnchoredPosition: {x: 133.00012, y: -123}
   m_SizeDelta: {x: 190, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1214813399
@@ -18463,6 +18471,7 @@ MonoBehaviour:
   Background: {fileID: 0}
   CanTalk: 1
   CantWeight: 0
+  Child: []
 --- !u!114 &1214813400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25158,6 +25167,7 @@ MonoBehaviour:
   Background: {fileID: 0}
   CanTalk: 1
   CantWeight: 0
+  Child: []
 --- !u!1 &1734647521
 GameObject:
   m_ObjectHideFlags: 0
@@ -27226,7 +27236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 693.00006, y: -147.5}
+  m_AnchoredPosition: {x: 693.0001, y: -147.5}
   m_SizeDelta: {x: 56.5, y: -437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1916222170
@@ -28061,6 +28071,7 @@ MonoBehaviour:
   Background: {fileID: 0}
   CanTalk: 1
   CantWeight: 0
+  Child: []
 --- !u!114 &1977804956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29361,6 +29372,7 @@ MonoBehaviour:
   Background: {fileID: 0}
   CanTalk: 1
   CantWeight: 0
+  Child: []
 --- !u!114 &2055327924
 MonoBehaviour:
   m_ObjectHideFlags: 0
