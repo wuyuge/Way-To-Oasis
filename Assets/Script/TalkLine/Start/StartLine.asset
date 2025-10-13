@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: StartLine
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u4E9A\u6469\u65AF\u961F\u957F\u6B7B\u540E5\u5206\u949F"
+  - "\u5546\u961F\u8FF7\u5931\u7B2C\u25A0\u5929"
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0
