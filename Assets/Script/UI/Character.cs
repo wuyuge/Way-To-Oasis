@@ -99,6 +99,9 @@ public class Character : MonoBehaviour
 
     public bool CantWeight = false;
 
+    private List<GameObject> Child;
+
+
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
     /// 1. 绑定UI组件 2. 初始化角色数据 3. 刷新初始UI显示
@@ -131,6 +134,10 @@ public class Character : MonoBehaviour
         // 初始化显示角色持有的食物数量（更新UI文本）
         gameObject.transform.parent.Find("Have_Food").GetComponent<TextMeshProUGUI>().text = food.Weight.ToString();
         Background = gameObject.transform.parent.parent.Find("Main").Find("Background").gameObject;
+        for (int i = 0; i < transform.childCount;i++)
+        {
+            Child.Add(transform.GetChild(i).gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -146,8 +153,10 @@ public class Character : MonoBehaviour
         {
             Sprite NewSprite = Sprite.Create(DeadImage, new Rect(0, 0, DeadImage.width, DeadImage.height),new Vector2(0.5f,0.5f));
             gameObject.GetComponent<Image>().sprite = NewSprite;
-            Attention.SetActive(false);
-            Attention2.SetActive(false);
+            foreach (GameObject child in Child)
+            {
+                child.SetActive(false);
+            }
             return; 
         }
         if(AfterSpecialTalk && NotComfort)

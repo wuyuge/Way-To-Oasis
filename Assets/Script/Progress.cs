@@ -409,10 +409,7 @@ public class Progress : MonoBehaviour
             }
 
             // 非第0天的特殊处理：场景明暗切换（先暗后亮，模拟昼夜交替）
-            if (AmandeKillSelf.GeneralBool)
-            {
-                KillAmande();
-            }
+            
             if (day_num != 0)
                 beforeStart[day_num] = GetComponent<IntermissionManager>().AddTextLine("BeforeStart");
 
@@ -452,6 +449,32 @@ public class Progress : MonoBehaviour
             }
 
 
+            if (AmandeKillSelf.GeneralBool)
+            {
+                KillAmande();
+            }
+            int notcomfort = 0;
+            foreach (GameObject g in talkSys.CharacterList)
+            {
+                if (g.GetComponent<Character>().NotComfort)
+                {
+                    notcomfort += 1;
+                }
+            }
+
+            if (notcomfort == 1)
+            {
+                foreach (GameObject g in talkSys.CharacterList)
+                {
+                    if (g.GetComponent<Character>().NotComfort && (g.GetComponent<Character>().CharacterName == "艾米莉" || g.GetComponent<Character>().CharacterName == "博金森"))
+                    {
+                        g.GetComponent<Character>().Dead = true;
+                        talkSys.DeadName.TxtLine.Add(g.GetComponent<Character>().CharacterName);
+                    }
+                }
+            }
+
+
 
         }
     }
@@ -471,9 +494,17 @@ public class Progress : MonoBehaviour
         {
             if(!g.GetComponent<Character>().AfterSpecialTalk && (g.GetComponent<Character>().Special1 || g.GetComponent<Character>().Special2))
             {
-                g.GetComponent<Character>().NotComfort = true;
-                g.transform.Find("Attention").gameObject.SetActive(false);
-                g.transform.Find("Attention2").gameObject.SetActive(true);
+                if(g.GetComponent<Character>().CharacterName != "阿曼德")
+                {
+                    g.GetComponent<Character>().NotComfort = true;
+                    g.transform.Find("Attention").gameObject.SetActive(false);
+                    g.transform.Find("Attention2").gameObject.SetActive(true);
+                }
+                else
+                {
+                    g.transform.Find("Attention").gameObject.SetActive(false);
+                    g.transform.Find("Attention2").gameObject.SetActive(false);
+                }
             }
         }
     }

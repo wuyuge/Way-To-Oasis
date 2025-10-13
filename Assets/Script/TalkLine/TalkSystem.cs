@@ -294,6 +294,11 @@ public class TalkSystem : MonoBehaviour
                     }
                 //艾米莉特殊指令
                 case "/CheckBoBody":
+                    if(DeadName.TxtLine == null)
+                    {
+                        HandleChoice(ban: 1);
+                        return;
+                    }
                     foreach(string s in DeadName.TxtLine)
                     {
                         if(s.Contains("博金森"))
