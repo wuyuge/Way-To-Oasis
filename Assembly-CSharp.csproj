@@ -141,6 +141,7 @@
     <Compile Include="Assets\Script\UI\Menu\FpsCalculator.cs" />
     <Compile Include="Assets\Script\Mask\MaskManager.cs" />
     <Compile Include="Assets\Script\Setting\Video\SetScreenMode.cs" />
+    <Compile Include="Assets\Script\CharacterInfo\CharacterInfoManager.cs" />
     <Compile Include="Assets\Script\Setting\Video\SetFPS.cs" />
     <Compile Include="Assets\Script\Audio\AudioManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />

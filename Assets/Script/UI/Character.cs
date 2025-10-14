@@ -101,6 +101,9 @@ public class Character : MonoBehaviour
 
     public List<GameObject> Child;
 
+    private bool ShowInfo = false;
+    private bool Have_ShowInfo = false;
+
 
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
@@ -209,6 +212,18 @@ public class Character : MonoBehaviour
             weight2.GetComponent<Image>().color = Color.red;
             weight3.GetComponent<Image>().color = Color.red;
         }
+
+        //关闭角色资料逻辑
+        if(ShowInfo && (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) && !Have_ShowInfo)
+        {
+            TalkBar.GetComponent<TalkSystem>().on = true;
+            ShowInfo = false;
+            Have_ShowInfo = true;
+            GameObject.Find("CharacterInfo").GetComponent<CharacterInfoManager>().CloseInfo();
+
+        }
+
+
     }
 
     /// <summary>
@@ -368,7 +383,18 @@ public class Character : MonoBehaviour
             Mask.gameObject.SetActive(false);
         }
         
-        
+
+        //day0角色资料显示逻辑
+        if(end.GetComponent<Progress>().day_num == 0)
+        {
+            talksys.on = false;
+            GameObject.Find("CharacterInfo").GetComponent<CharacterInfoManager>().ShowInfo(CharacterName);
+            ShowInfo = true;
+
+
+        }
+
+
         Debug.Log("禁用按钮");
 
         // 判断当前游戏是否处于"对话阶段"（Progress中的talk状态为true）
