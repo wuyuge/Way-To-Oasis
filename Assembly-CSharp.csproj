@@ -86,6 +86,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Script\Shop\ShopCharacterSelect.cs" />
+    <Compile Include="Assets\Script\Start\CancelName.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Script\Setting\Video\SetScreenResolution.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Assets\Script\Setting\Tech\ShowTech.cs" />
     <Compile Include="Assets\Script\SetPlayerName.cs" />
     <Compile Include="Assets\Script\UI\BackGroundMove\BackGroundMoving.cs" />
+    <Compile Include="Assets\Script\Start\StartImport.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Script\UI\Obj\ObjectManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />

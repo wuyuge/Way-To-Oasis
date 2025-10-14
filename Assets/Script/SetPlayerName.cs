@@ -8,7 +8,7 @@ public class SetPlayerName : MonoBehaviour
     public Manager PlayerName;
     public TextMeshProUGUI TextBack;
 
-    private void Awake()
+    private void Start()
     {
         if (PlayerName.TxtLine[0] != "¡ö¡ö"  && !string.IsNullOrEmpty( PlayerName.TxtLine[0]))
         {
@@ -31,4 +31,12 @@ public class SetPlayerName : MonoBehaviour
             TextBack.text = "ÊäÈëÄãµÄÃû×Ö...";
         }
     }
+
+    public void Import()
+    {
+        _ = transform.parent.gameObject.GetComponent<StartImportLine>().StartImport();
+    }
+
+
+
 }

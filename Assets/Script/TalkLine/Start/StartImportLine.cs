@@ -16,6 +16,7 @@ public class StartImportLine : MonoBehaviour
     public GameObject Tips;
     public bool SwitchScence = false;
     public string Scence;
+    public GameObject PlayerNameBar;
 
 
     public async Task StartImport()
@@ -77,6 +78,20 @@ public class StartImportLine : MonoBehaviour
             }
         }
     }
+
+
+
+
+    public void InputPlayerName()
+    {
+
+        PlayerNameBar.SetActive(true);
+
+
+
+    }
+
+
 
 
 
