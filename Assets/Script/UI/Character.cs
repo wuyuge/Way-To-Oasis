@@ -101,7 +101,7 @@ public class Character : MonoBehaviour
 
     public List<GameObject> Child;
 
-    private bool ShowInfo = false;
+    public bool ShowInfo = false;
     private bool Have_ShowInfo = false;
 
 
@@ -220,6 +220,7 @@ public class Character : MonoBehaviour
             ShowInfo = false;
             Have_ShowInfo = true;
             GameObject.Find("CharacterInfo").GetComponent<CharacterInfoManager>().CloseInfo();
+            OnTalk();
 
         }
 
@@ -356,6 +357,7 @@ public class Character : MonoBehaviour
         if (Dead) return;
         if (!CanTalk) return;
         TalkSystem talksys = TalkBar.GetComponent<TalkSystem>();
+        
         if (talksys.Daytime != 0)
         { if (Background.GetComponent<BackGroundMoving>().open) return; }
         
@@ -382,17 +384,24 @@ public class Character : MonoBehaviour
         {
             Mask.gameObject.SetActive(false);
         }
-        
 
         //day0角色资料显示逻辑
-        if(end.GetComponent<Progress>().day_num == 0)
+        if (end.GetComponent<Progress>().day_num == 0 && !Have_ShowInfo)
         {
-            talksys.on = false;
+
+            if(CharacterName == "艾米莉" || CharacterName == "博金森")
+            {
+                gameObject.GetComponent<Aimibo>().ShowInfo("艾米莉");
+                return;
+            }
+
+
             GameObject.Find("CharacterInfo").GetComponent<CharacterInfoManager>().ShowInfo(CharacterName);
             ShowInfo = true;
-
+            return;
 
         }
+
 
 
         Debug.Log("禁用按钮");
@@ -408,7 +417,8 @@ public class Character : MonoBehaviour
             // 如果未触发过对话（have_talk为false）
             if (!have_talk)
             {
-                if(progress.GetComponent<Progress>().day_num == 0 && CharacterName != "阿曼德")
+                
+                if (progress.GetComponent<Progress>().day_num == 0 && CharacterName != "阿曼德")
                 {
                     Day0_Talk.Weight += 1;
                 }
@@ -437,6 +447,7 @@ public class Character : MonoBehaviour
             }
             Invoke("SetClik", 5f);
         }
+        
     }
 
     void SetClik()

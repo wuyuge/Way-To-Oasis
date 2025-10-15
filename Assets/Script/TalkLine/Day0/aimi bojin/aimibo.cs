@@ -5,6 +5,8 @@ public class Aimibo : MonoBehaviour
     public Character LinkObj;
     private Character character;
     private Progress progress;
+    private bool InfoIsOn = false;
+    private bool ShowBo = false;
 
     void Start()
     {
@@ -25,5 +27,40 @@ public class Aimibo : MonoBehaviour
                 character.have_talk = true;
             }
         }
+
+        if (InfoIsOn && (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))) 
+        {
+            if(!ShowBo)
+            {
+                GameObject.Find("CharacterInfo").GetComponent<CharacterInfoManager>().CloseInfo();
+                ShowInfo("²©½ðÉ­");
+                ShowBo = true;
+            }
+            
+            else
+            {
+                gameObject.GetComponent<Character>().ShowInfo = true;
+                InfoIsOn = false;
+            }
+
+        }
+
+
+
     }
+
+
+    public void ShowInfo(string Name)
+    {
+
+        GameObject.Find("CharacterInfo").GetComponent<CharacterInfoManager>().ShowInfo(Name);
+        InfoIsOn = true;
+
+
+
+    }
+
+
+
+
 }

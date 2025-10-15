@@ -67,7 +67,7 @@ public class TalkSystem : MonoBehaviour
     [Header("各个游戏对象")]
     private GameObject charaBar;
     public GameObject amande;
-    public GameObject charabar, black, MainCanvas, MainCTalkBar;
+    public GameObject charabar, black, MainCanvas;
     public List<GameObject> CharacterList;
     public Manager aimi;
     [Header("角色立绘控制器")]
@@ -785,7 +785,7 @@ public class TalkSystem : MonoBehaviour
                     if (Daytime == 0)
                     {
                         MainCanvas.SetActive(true);
-                        MainCTalkBar.SetActive(false);
+                        charabar.SetActive(false);
                         transform.parent.gameObject.SetActive(false);
                         ResetLine();
                     }
@@ -1327,6 +1327,9 @@ public class TalkSystem : MonoBehaviour
     {
         ShowName = true;
         PlayerNameText.text = PlayerName.TxtLine[0];
+        
+        
+        
     }
 
     public void SetNoName()

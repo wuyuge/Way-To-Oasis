@@ -13,6 +13,7 @@ public class CharacterInfoManager : MonoBehaviour
 
         public string Name;
         public GameObject Info;
+        public GameObject Image;
 
 
     }
@@ -28,6 +29,7 @@ public class CharacterInfoManager : MonoBehaviour
             if(Info.Name == Name)
             {
                 Info.Info.SetActive(true);
+                Info.Image.SetActive(true);
 
             }
         }
@@ -43,6 +45,7 @@ public class CharacterInfoManager : MonoBehaviour
             if (Info.Info.activeSelf)
             {
                 Info.Info.GetComponent<Animator>().SetTrigger("Close");
+                Info.Image.GetComponent<Animator>().SetTrigger("close");
             }
         }
     }
