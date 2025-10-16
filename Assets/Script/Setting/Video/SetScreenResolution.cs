@@ -17,10 +17,10 @@ public class SetScreenResolution : MonoBehaviour
         supportedResolutions = Screen.resolutions;
         // 倒序排序（从高到低）
         System.Array.Reverse(supportedResolutions);
-        foreach (Resolution r in supportedResolutions)
-        {
-            Debug.Log("支持的分辨率: " + r.width + "x" + r.height + " @" + r.refreshRateRatio + "Hz");
-        }
+        //foreach (Resolution r in supportedResolutions)
+        //{
+        //    Debug.Log("支持的分辨率: " + r.width + "x" + r.height + " @" + r.refreshRateRatio + "Hz");
+        //}
 
         TMP_Dropdown.ClearOptions();
         foreach (Resolution r in supportedResolutions)

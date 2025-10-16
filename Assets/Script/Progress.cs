@@ -133,6 +133,10 @@ public class Progress : MonoBehaviour
 
     private AudioManager AudioManager;
 
+    [Header("转换阶段提示条")]
+    public GameObject SwitchStageBar;
+
+
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
     /// 1. 绑定UI文本组件 2. 设置初始阶段的文本颜色 3. 触发当天开始前的幕间对话
@@ -250,6 +254,8 @@ public class Progress : MonoBehaviour
 
             talk = true;  // 进入对话阶段
             talk_t.color = new Color32(0, 0, 0, 255);  // 对话文本高亮
+            SwitchStageBar.SetActive(true);
+            SwitchStageBar.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "交谈阶段";
         }
 
         // 2. 从【对话阶段】切换到【进食阶段】
@@ -314,6 +320,10 @@ public class Progress : MonoBehaviour
             DownBar.GetComponent<ObjectManager>().ResetEat();
             SetComfort();
             
+            SwitchStageBar.SetActive(true);
+            SwitchStageBar.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "分配食物阶段";
+
+
         }
 
         // 3. 从【进食阶段】切换到【下一天的开始阶段】
@@ -474,7 +484,8 @@ public class Progress : MonoBehaviour
                 }
             }
 
-
+            SwitchStageBar.SetActive(true);
+            SwitchStageBar.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "分配负重阶段";
 
         }
     }

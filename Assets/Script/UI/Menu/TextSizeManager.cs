@@ -20,7 +20,6 @@ public class TextSizeManager : MonoBehaviour
     public List<TextSize> TextSizes = new List<TextSize>();
     public Slider OtherSlider;
 
-
     public void SetTextSize(float size)
     {
         OtherSlider.value = size;

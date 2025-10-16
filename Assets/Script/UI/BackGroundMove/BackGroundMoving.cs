@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BackGroundMoving : MonoBehaviour
 {
@@ -41,10 +42,13 @@ public class BackGroundMoving : MonoBehaviour
     // 存储各背景层的初始位置
     public  List<Vector3> initialLayerPositions = new List<Vector3>();
 
+    public Sprite Day, Dusk, Night;
 
+    private DayNightSystem LightSystem;
 
     private void Start()
     {
+        LightSystem = LightSys.GetComponent<DayNightSystem>();
         // 记录初始位置
         RecordInitialPositions();
     }
@@ -72,13 +76,26 @@ public class BackGroundMoving : MonoBehaviour
     {
         if (open && BackImage.GetComponent<RectTransform>().position.x > initialLayerPositions[9].x)
         { MoveAllLayers(); }
-        if (LightSys.GetComponent<DayNightSystem>().complete)
+        if (LightSystem.complete)
         {
             //Skip.GetComponent<Skip>().TurnDark();
-            LightSys.GetComponent<DayNightSystem>().complete = false;
+            LightSystem.complete = false;
 
-            LightSys.GetComponent<DayNightSystem>().enabled = false;
+            LightSystem.enabled = false;
             open = false;
+        }
+        if(LightSystem.time < LightSystem.Second && LightSystem.time >= 0.5)
+        {
+            backgroundLayers[0].layerObject.transform.Find("Image").GetComponent<Image>().sprite = Dusk;
+            backgroundLayers[1].layerObject.transform.Find("Image").GetComponent<Image>().sprite = Dusk;
+            backgroundLayers[0].layerObject.GetComponent<Animator>().SetTrigger("Turn");
+        }
+        else if(LightSystem.time > LightSystem.Second)
+        {
+            backgroundLayers[0].layerObject.transform.Find("Image").GetComponent<Image>().sprite = Night;
+            backgroundLayers[1].layerObject.transform.Find("Image").GetComponent<Image>().sprite = Night;
+            backgroundLayers[1].layerObject.GetComponent<Animator>().SetTrigger("Turn");
+            backgroundLayers[1].layerObject.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
         }
 
         
@@ -149,13 +166,13 @@ public class BackGroundMoving : MonoBehaviour
         }
 
         // 重置日夜系统状态
-        if (LightSys != null && LightSys.GetComponent<DayNightSystem>() != null)
+        if (LightSys != null && LightSystem != null)
         {
-            LightSys.GetComponent<DayNightSystem>().time = 0;
-            LightSys.GetComponent<DayNightSystem>().Reset_Color();
-            LightSys.GetComponent<DayNightSystem>().enabled = true;
-            LightSys.GetComponent<DayNightSystem>().complete = false;
-            LightSys.GetComponent<DayNightSystem>().on = true;
+            LightSystem.time = 0;
+            LightSystem.Reset_Color();
+            LightSystem.enabled = true;
+            LightSystem.complete = false;
+            LightSystem.on = true;
         }
 
         open = false;

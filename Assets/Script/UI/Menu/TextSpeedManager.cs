@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class TextSpeedManager : MonoBehaviour
+public class TextSpeedManager : MonoBehaviour, IPointerUpHandler
 {
     public TalkSystem talkSystem,sys2;
     public int MinSpeed,DefultSpeed,MaxSpeed;
     public Slider OtherSlider;
+    public TextPreview Preview;
+    private int PreviewSpeed;
     
 
     public void SetTextSpeed(float speed)
@@ -17,9 +20,16 @@ public class TextSpeedManager : MonoBehaviour
         Difference = (int)(Difference * speed);
         talkSystem.TextSpeedI = MinSpeed + Difference;
         sys2.TextSpeedI = MinSpeed + Difference;
+        PreviewSpeed = MinSpeed + Difference;
 
 
 
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        Debug.Log("UI元素上鼠标抬起");
+        _ = Preview.ResetSpeed(PreviewSpeed);
     }
 
 

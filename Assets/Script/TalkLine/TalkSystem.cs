@@ -107,7 +107,9 @@ public class TalkSystem : MonoBehaviour
     [Header("小人对话管理")]
     public MiniCharacterTalkSys MiniCharacterManager;
     private bool MiniMode = false;
-    
+
+    [Header("噪点遮罩")]
+    public GameObject NoiseMask;
 
 
     private void Awake()
@@ -724,7 +726,7 @@ public class TalkSystem : MonoBehaviour
                     charaBar.GetComponent<Animator>().SetTrigger("Up");
                     PlusLine();
                     if(!inTech)this.CharacterImageManager.CloseImage();
-                    
+                    NoiseMask.SetActive(false);
                     await Task.Delay(800);
 
                     _ = ShowText(true);
@@ -865,6 +867,9 @@ public class TalkSystem : MonoBehaviour
 
                 Character.text = "";
                 Chara_Name.text = "";
+
+                if (!NoiseMask.activeSelf && !_inshop && !MiniMode) NoiseMask.SetActive(true);
+
 
                 if (curText.Contains("{PlayerName}"))
                 {

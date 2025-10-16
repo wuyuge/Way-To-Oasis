@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class SettingSwitch : MonoBehaviour
 {
+    public GameObject LinkObj;
     public void Click()
     {
-        gameObject.transform.parent.SetAsLastSibling();
+        LinkObj.transform.SetAsLastSibling();
+        LinkObj.SetActive(true);
+        gameObject.transform.parent.parent.gameObject.SetActive(false);
     }
 }

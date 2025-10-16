@@ -76,8 +76,6 @@ public class DayNightSystem : MonoBehaviour
 
             // 应用颜色变化
             lightComponent.color = gradient.Evaluate(time);
-            BackImage.color = backGradient.Evaluate(time);
-            BackImage2.color = backGradient.Evaluate(time);
         }
     }
 

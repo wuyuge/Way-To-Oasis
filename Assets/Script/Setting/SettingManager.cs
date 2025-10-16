@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class SettingManager : MonoBehaviour
 {
@@ -13,8 +14,9 @@ public class SettingManager : MonoBehaviour
         foreach (var item in SettingObj)
         {
             item.SetActive(true);
+            item.transform.SetAsLastSibling();
         }
-        SettingObj[3].transform.SetAsLastSibling();
+        
     }
 
     public void CloseSetting()

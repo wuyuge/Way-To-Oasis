@@ -29,9 +29,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ColorShift: 0.015
-    - _GlitchIntensity: 0.006
-    - _GlitchSpeed: 0.25
-    - _NoiseIntensity: 0.01
+    - _ColorShift: 0
+    - _GlitchIntensity: 0
+    - _GlitchSpeed: 0
+    - _NoiseIntensity: 0
     m_Colors: []
   m_BuildTextureStacks: []
