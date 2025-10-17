@@ -20,58 +20,66 @@ public class EndingsManager : MonoBehaviour
 
     public void CheckEnding()
     {
+        // 一次性获取所有需要的统计数据
+        int currentNotDeadNum = CheckNotDeadNum();
+        int eatNum = CheckEatNum();
+        bool mainCharacterEat = CheckMainCharacterEat();
+        int notComfort = CheckNotComfort();
 
-        int CurrentNotDeadNum = CheckNotDeadNum(); 
-        int EatNum = CheckEatNum();
-        int NotEatNum = CurrentNotDeadNum - EatNum;
-        bool MainCharacterEat = CheckMainCharacterEat();
-        int NotComfort = CheckNotComfort();
+        // 计算派生数据
+        int notEatNum = currentNotDeadNum - eatNum;
 
-        if(MainCharacterEat && EatNum <= NotEatNum)//得到食物的人数（包括主角）（两人以上）小于等于没有得到食物的人
-        {
-            ToEnd("Be1");
-        }
-
-        if(MainCharacterEat && EatNum == 1)//玩家被叛乱杀死（只有主角得到食物，且没得到食物的人大于等于两个）
-        {
-            ToEnd("Be2");
-        }
-
-        if(NotComfort >= 2) // 玩家被反对杀死（一天结束时，拥有反抗心理的人大于等于两个）
+        // 优先检查反抗条件，可能更紧急
+        if (notComfort >= 2)
         {
             ToEnd("Be3");
+            return; // 触发此结局后直接返回，避免后续判断
         }
 
-
-
-        if(!MainCharacterEat && CurrentNotDeadNum != 0)//be4玩家被饿死
+        // 主角是否进食的分支处理
+        if (mainCharacterEat)
         {
-            if(CurrentNotDeadNum == 3)
+            // 处理主角进食的情况
+            if (eatNum <= notEatNum)
             {
-                ToEnd("Be4-1");
-
+                ToEnd("Be1");
             }
-            else if(CurrentNotDeadNum > 3)
+            else if (eatNum == 1)
             {
-                ToEnd("Be4-2");
+                ToEnd("Be2");
+            }
+        }
+        else
+        {
+            // 处理主角未进食的情况
+            if (currentNotDeadNum == 0)
+            {
+                return; // 没有存活角色，无需处理
             }
 
-
+            // 检查全员未进食的特殊情况
+            if (eatNum == 0 && currentNotDeadNum == 6)
+            {
+                ToEnd("Be7");
+            }
+            // 检查只有主角存活的情况
+            else if (currentNotDeadNum == 1)
+            {
+                ToEnd("Be5");
+            }
+            // 其他主角饿死的情况
+            else
+            {
+                if (currentNotDeadNum == 3)
+                {
+                    ToEnd("Be4-1");
+                }
+                else if (currentNotDeadNum > 3)
+                {
+                    ToEnd("Be4-2");
+                }
+            }
         }
-
-        if(!MainCharacterEat && CurrentNotDeadNum == 1)//玩家被饿死（没有其他队友存活）
-        {
-            ToEnd("Be5");
-        }
-
-
-        if(!MainCharacterEat && EatNum == 0 && CurrentNotDeadNum == 6)//玩家一个食物也不分配大家一起饿死
-        {
-            ToEnd("Be7");
-        }
-
-
-
     }
 
     int CheckNotDeadNum()

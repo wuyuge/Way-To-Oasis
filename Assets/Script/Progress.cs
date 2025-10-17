@@ -136,6 +136,10 @@ public class Progress : MonoBehaviour
     [Header("转换阶段提示条")]
     public GameObject SwitchStageBar;
 
+    [Header("黑幕")]
+    public Manager CurrentDead;
+
+
 
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
@@ -331,6 +335,7 @@ public class Progress : MonoBehaviour
         {
             if (DNSys.on) return;
             bool allEat = false;
+            CurrentDead.TxtLine.Clear();
             // 特殊逻辑：第0天（可能是教程天）的进食完成判断
             if (day_num == 0)
             {
@@ -397,13 +402,7 @@ public class Progress : MonoBehaviour
                     GameObject.Find("EndingsManager").GetComponent<EndingsManager>().ToEnd("Demo-End");
                 }
             }
-            if (day_num != 0)
-            {
-
-                skip.GetComponent<Skip>().TurnDark();  // 若未暗化，执行暗化
-                Invoke("ResetBack",0.4f);
-                Invoke("TurnLight", 0.8f);  // 延迟1秒后执行亮化（Invoke 用于延迟调用方法）
-            }
+            
 
             // 更新UI文本颜色（开始阶段高亮，进食阶段半透明）
             food_t.color = new Color32(0, 0, 0, 120);
@@ -442,22 +441,6 @@ public class Progress : MonoBehaviour
                 
 
             }
-            //else
-            //{
-            //    TalkBar.GetComponent<Animator>().SetTrigger("down");
-            //}
-            
-            
-            // 通知对象管理器重置道具携带状态（可能将携带道具放回背包）
-            ObjectManager.GetComponent<ObjectManager>().ReturnCarry();
-            ObjectManager.GetComponent<ObjectManager>().RestTag();
-            // 重置背景状态（调用 BackGroundMoving 的 Re_set 方法，还原背景初始位置）
-            
-            foreach(GameObject g in DownBar.GetComponent<ObjectManager>().Character_List)
-            {
-                g.GetComponent<Character>().EnableTalk();
-            }
-
 
             if (AmandeKillSelf.GeneralBool)
             {
@@ -484,8 +467,25 @@ public class Progress : MonoBehaviour
                 }
             }
 
-            SwitchStageBar.SetActive(true);
-            SwitchStageBar.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "分配负重阶段";
+            // 通知对象管理器重置道具携带状态（可能将携带道具放回背包）
+            ObjectManager.GetComponent<ObjectManager>().ReturnCarry();
+            ObjectManager.GetComponent<ObjectManager>().RestTag();
+            // 重置背景状态（调用 BackGroundMoving 的 Re_set 方法，还原背景初始位置）
+            
+            foreach(GameObject g in DownBar.GetComponent<ObjectManager>().Character_List)
+            {
+                g.GetComponent<Character>().EnableTalk();
+            }
+
+
+
+            if (day_num != 0)
+            {
+
+                skip.GetComponent<Skip>().TurnDark();  // 若未暗化，执行暗化
+                Invoke("ResetBack", 0.4f);
+                Invoke("TurnLight", 1.8f);  // 延迟1秒后执行亮化（Invoke 用于延迟调用方法）
+            }
 
         }
     }
@@ -495,6 +495,7 @@ public class Progress : MonoBehaviour
     {
         Final_Body.Weight += 1;
         talkSys.DeadName.TxtLine.Add("阿曼德Poison");
+        CurrentDead.TxtLine.Add("阿曼德");
         talkSys.CharacterList[4].GetComponent<Character>().Dead = true;
         talkSys.CharacterList[4].transform.Find("Toggle").gameObject.SetActive(false);
     }

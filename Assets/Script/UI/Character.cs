@@ -214,7 +214,7 @@ public class Character : MonoBehaviour
         }
 
         //关闭角色资料逻辑
-        if(ShowInfo && (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) && !Have_ShowInfo)
+        if(ShowInfo && (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) && !Have_ShowInfo && progress.GetComponent<Progress>().day_num != 0)
         {
             TalkBar.GetComponent<TalkSystem>().on = true;
             ShowInfo = false;
