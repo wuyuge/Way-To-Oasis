@@ -284,6 +284,7 @@ public class Progress : MonoBehaviour
             {
 
                 Mask.transform.parent.gameObject.SetActive(true);
+                Mask.GetComponent<Unmask>().fitTarget = DownBar.transform.Find("MaskLayer").GetComponent<RectTransform>();
                 Mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "请与所有人的对话一次";
                 
                 return;

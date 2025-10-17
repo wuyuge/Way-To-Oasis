@@ -17,12 +17,13 @@ public class StartImportLine : MonoBehaviour
     public bool SwitchScence = false;
     public string Scence;
     public GameObject PlayerNameBar;
+    private bool Import;
 
 
     public async Task StartImport()
     {
         int index = 0;
-
+        Import = true;
         foreach (string s in TextLine.TxtLine)
         {
 
@@ -70,15 +71,25 @@ public class StartImportLine : MonoBehaviour
 
     private void Update()
     {
-        if (Input.anyKey)
+        if (Input.anyKey && Import)
         {
             if (SwitchScence)
             {
                 SceneManager.LoadScene(Scence);
             }
+            else
+            {
+                Tips.SetActive(true);
+                Invoke("SetStage", 0.2f) ;
+            }
         }
     }
 
+
+    void SetStage()
+    {
+        SwitchScence = true;
+    }
 
 
 

@@ -46,6 +46,9 @@ public class BackGroundMoving : MonoBehaviour
 
     private DayNightSystem LightSystem;
 
+
+    private bool TurnDusk, TurnNight;
+
     private void Start()
     {
         LightSystem = LightSys.GetComponent<DayNightSystem>();
@@ -88,13 +91,24 @@ public class BackGroundMoving : MonoBehaviour
         {
             backgroundLayers[0].layerObject.transform.Find("Image").GetComponent<Image>().sprite = Dusk;
             backgroundLayers[1].layerObject.transform.Find("Image").GetComponent<Image>().sprite = Dusk;
-            backgroundLayers[0].layerObject.GetComponent<Animator>().SetTrigger("Turn");
+            backgroundLayers[1].layerObject.GetComponent<RectTransform>().localScale = new Vector3(-1, 1, 1);
+            if(!TurnDusk)
+            {
+                backgroundLayers[0].layerObject.GetComponent<Animator>().SetTrigger("Turn");
+                backgroundLayers[1].layerObject.GetComponent<Animator>().SetTrigger("Turn");
+                TurnDusk = true;
+            }
         }
         else if(LightSystem.time > LightSystem.Second)
         {
             backgroundLayers[0].layerObject.transform.Find("Image").GetComponent<Image>().sprite = Night;
             backgroundLayers[1].layerObject.transform.Find("Image").GetComponent<Image>().sprite = Night;
-            backgroundLayers[1].layerObject.GetComponent<Animator>().SetTrigger("Turn");
+            if(!TurnNight)
+            {
+                backgroundLayers[1].layerObject.GetComponent<Animator>().SetTrigger("Turn");
+                backgroundLayers[0].layerObject.GetComponent<Animator>().SetTrigger("Turn");
+                TurnNight = true;
+            }
             backgroundLayers[1].layerObject.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
         }
 
@@ -176,5 +190,12 @@ public class BackGroundMoving : MonoBehaviour
         }
 
         open = false;
+
+        backgroundLayers[0].layerObject.transform.Find("Image").GetComponent<Image>().sprite = Day;
+        backgroundLayers[1].layerObject.transform.Find("Image").GetComponent<Image>().sprite = Day;
+
+        TurnDusk = false;
+        TurnNight = false;
+
     }
 }

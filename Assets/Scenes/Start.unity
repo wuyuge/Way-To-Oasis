@@ -769,10 +769,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eaf0dbe560d4233409637dcfc8602957, type: 2}
   - {fileID: 11400000, guid: 6f2bf792957157d4c96649a154742a11, type: 2}
   - {fileID: 11400000, guid: 3674f871f72018047945058e9e089c58, type: 2}
+  ResetTextManager:
+  - {fileID: 11400000, guid: 723d01c626f2adf449dac6e05d48bcc0, type: 2}
+  - {fileID: 11400000, guid: 397236de125e5f34c956a412164f5a2d, type: 2}
   food: 21
   body: 1
   DeadName: {fileID: 11400000, guid: c8ab95b3287d57a4bb4d8f73e4f5c66b, type: 2}
-  UesdBody: {fileID: 11400000, guid: 723d01c626f2adf449dac6e05d48bcc0, type: 2}
   Day0_Talk: {fileID: 11400000, guid: a4172c4c1510fd44ea5088aa17e0fab2, type: 2}
 --- !u!95 &331195890
 Animator:

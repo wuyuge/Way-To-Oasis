@@ -429,6 +429,12 @@ public class TalkSystem : MonoBehaviour
                     return;
                 //教程部分命令
                 case "techcomfort":
+                    if (!ShowTech.GeneralBool)
+                    {
+                        PlusLine();
+                        _ = ShowText(true);
+                        return;
+                    }
                     string Comforttext = SetTechText("Comfort");
                     
                     if (!TeachComfort.GeneralBool)
@@ -446,19 +452,33 @@ public class TalkSystem : MonoBehaviour
                         on = true;
                         if(ComfortObj != null)SetTechMode(ComfortObj,Comforttext);
                         TeachComfort.GeneralBool = true;
+                        
                     }
                     PlusLine();
-                    
+
                     return;
                 case "techmenu":
-                    
+                    if (!ShowTech.GeneralBool)
+                    {
+                        PlusLine();
+                        _ = ShowText(true);
+                        return;
+                    }
+
                     string Menutext = SetTechText("Menu");
                     SetTechMode(Menu, Menutext);
                     on = true;
+
                     PlusLine();
                     
                     return;
                 case "techclik":
+                    if (!ShowTech.GeneralBool)
+                    {
+                        PlusLine();
+                        _ = ShowText(true);
+                        return;
+                    }
 
                     string Cliktext = SetTechText("Clik");
                     SetTechMode(transform.Find("MaskLayer").gameObject, Cliktext);
@@ -468,6 +488,12 @@ public class TalkSystem : MonoBehaviour
                     return;
 
                 case "techtalk":
+                    if (!ShowTech.GeneralBool)
+                    {
+                        PlusLine();
+                        _ = ShowText(true);
+                        return;
+                    }
                     string Talktext = SetTechText("Talk");
                     SetTechMode(DownBar.transform.Find("MaskLayer").gameObject,Talktext);
                     on = true;
@@ -477,27 +503,53 @@ public class TalkSystem : MonoBehaviour
 
                     return;
                 case "techover":
+                    if (!ShowTech.GeneralBool)
+                    {
+                        PlusLine();
+                        _ = ShowText(true);
+                        return;
+                    }
                     mask.transform.parent.gameObject.GetComponent<MaskManager>().SetClik(true);
                     PlusLine();
                     _ = ShowText(true);
                     return;
 
                 case "techright":
+                    if (!ShowTech.GeneralBool)
+                    {
+                        PlusLine();
+                        _ = ShowText(true);
+                        return;
+                    }
+
                     string Righttext = SetTechText("Right");
                     SetTechMode(DaytimeOBJ.transform.parent.gameObject, Righttext);
                     on = true;
                     DaytimeOBJ.GetComponent<Button>().enabled = false;
                     PlusLine();
                     mask.transform.parent.gameObject.GetComponent<MaskManager>().SetClik(false);
+                    
                     return;
 
                 case "techclose":
+                    if (!ShowTech.GeneralBool)
+                    {
+                        PlusLine();
+                        _ = ShowText(true);
+                        return;
+                    }
                     string Closetext = SetTechText("Close");
                     SetTechMode(DaytimeOBJ, Closetext);
                     PlusLine();
                     _ = ShowText(true);
                     return;
                 case "techfood":
+                    if (!ShowTech.GeneralBool)
+                    {
+                        PlusLine();
+                        _ = ShowText(true);
+                        return;
+                    }
                     string Foodtext = SetTechText("Food");
                     inTech = true;
                     SetTechMode(DownBar.transform.Find("MaskLayer").gameObject, Foodtext);
@@ -507,6 +559,12 @@ public class TalkSystem : MonoBehaviour
                     return;
 
                 case "techweight":
+                    if (!ShowTech.GeneralBool)
+                    {
+                        PlusLine();
+                        _ = ShowText(true);
+                        return;
+                    }
                     string Weighttext = SetTechText("Weight");
                     SetTechMode(DownBar.transform.Find("MaskLayer").gameObject, Weighttext);
                     PlusLine();
@@ -1297,7 +1355,12 @@ public class TalkSystem : MonoBehaviour
 
     private void SetTechMode(GameObject MaskGameObj ,string TechText)
     {
-        if (!ShowTech.GeneralBool) return;
+        if (!ShowTech.GeneralBool)
+        {
+            //PlusLine();
+            //_ = ShowText(true);
+            return;
+        }
         inTech = true;
         mask.transform.parent.gameObject.SetActive(true);
         mask.GetComponent<Unmask>().m_FitTarget = MaskGameObj.GetComponent<RectTransform>();
