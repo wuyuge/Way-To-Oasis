@@ -37,5 +37,5 @@ Material:
     - _NoiseScale: 11.5
     - _NoiseSpeed: 0.000001
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.3584906, g: 0.35100704, b: 0.33650768, a: 1}
   m_BuildTextureStacks: []

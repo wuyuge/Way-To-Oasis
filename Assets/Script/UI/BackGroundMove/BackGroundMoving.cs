@@ -49,6 +49,9 @@ public class BackGroundMoving : MonoBehaviour
 
     private bool TurnDusk, TurnNight;
 
+
+
+
     private void Start()
     {
         LightSystem = LightSys.GetComponent<DayNightSystem>();
@@ -81,7 +84,9 @@ public class BackGroundMoving : MonoBehaviour
         { MoveAllLayers(); }
         if (LightSystem.complete)
         {
-            //Skip.GetComponent<Skip>().TurnDark();
+            
+
+
             LightSystem.complete = false;
 
             LightSystem.enabled = false;

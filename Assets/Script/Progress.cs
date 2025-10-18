@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 /// <summary>
 /// 游戏进度管理器
@@ -139,6 +140,11 @@ public class Progress : MonoBehaviour
     [Header("黑幕")]
     public Manager CurrentDead;
 
+    public VideoPlayer ShopSwitch;
+    private bool SwitchPlaying;
+
+
+    private bool Shake; //震动管理
 
 
     /// <summary>
@@ -209,6 +215,19 @@ public class Progress : MonoBehaviour
 
             }
         }
+
+        if(SwitchPlaying)
+        {
+            
+            if (ShopSwitch.frame == (long)ShopSwitch.clip.frameCount - 1)
+            {
+                Debug.Log("视频播放完成");
+                SwitchPlaying = false;
+                ShopSwitch.gameObject.SetActive(false);
+
+            }
+        }
+
     }
 
 
@@ -258,8 +277,7 @@ public class Progress : MonoBehaviour
 
             talk = true;  // 进入对话阶段
             talk_t.color = new Color32(0, 0, 0, 255);  // 对话文本高亮
-            SwitchStageBar.SetActive(true);
-            SwitchStageBar.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "交谈阶段";
+            
         }
 
         // 2. 从【对话阶段】切换到【进食阶段】
@@ -271,8 +289,18 @@ public class Progress : MonoBehaviour
             {
                 if(ShopTalk)
                 {
-                    ShopTalk = false;
-                    Shop.gameObject.SetActive(true);
+                    if(!Shake)
+                    {
+                        Shake = true;
+                        GetComponent<UIshake>().StartShake(); 
+                    }
+                    else
+                    {
+                        ShopSwitch.Play();
+                        SwitchPlaying = true;
+                        Invoke("SetShop", 5.5f);
+                    }
+
                     return;
                 }
             }
@@ -403,7 +431,33 @@ public class Progress : MonoBehaviour
                     GameObject.Find("EndingsManager").GetComponent<EndingsManager>().ToEnd("Demo-End");
                 }
             }
-            
+
+            if (AmandeKillSelf.GeneralBool)
+            {
+                KillAmande();
+            }
+            int notcomfort = 0;
+            foreach (GameObject g in talkSys.CharacterList)
+            {
+                if (g.GetComponent<Character>().NotComfort)
+                {
+                    notcomfort += 1;
+                }
+            }
+
+            if (notcomfort == 1)
+            {
+                //艾米莉 博金森反抗死亡
+                foreach (GameObject g in talkSys.CharacterList)
+                {
+                    if (g.GetComponent<Character>().NotComfort && (g.GetComponent<Character>().CharacterName == "艾米莉" || g.GetComponent<Character>().CharacterName == "博金森"))
+                    {
+                        g.GetComponent<Character>().Dead = true;
+                        talkSys.DeadName.TxtLine.Add(g.GetComponent<Character>().CharacterName);
+                        CurrentDead.TxtLine.Add(g.GetComponent<Character>().CharacterName);
+                    }
+                }
+            }
 
             // 更新UI文本颜色（开始阶段高亮，进食阶段半透明）
             food_t.color = new Color32(0, 0, 0, 120);
@@ -423,50 +477,10 @@ public class Progress : MonoBehaviour
             if (day_num != 0)
                 beforeStart[day_num] = GetComponent<IntermissionManager>().AddTextLine("BeforeStart");
 
-            // 触发下一天开始前的幕间对话（若存在对应天数的对话数据）
-            if (beforeStart[day_num] != null)
-            {
-                CanTalk = true;  // 允许触发对话
-                // 赋值对话数据到对话系统
-                talkSys.Talklines[day_num] = beforeStart[day_num];
-                talkSys.line = 0;// 重置对话行数
-                Invoke("Talk", 0.2f);
-                  
-                
-                // 启动对话显示
-                TalkBar.GetComponent<Animator>().SetTrigger("start");  // 对话栏显示动画
-                if (TalkBar.transform.position.y == 0)
-                {
-                    DownAnim();
-                }
-                
+           
 
-            }
-
-            if (AmandeKillSelf.GeneralBool)
-            {
-                KillAmande();
-            }
-            int notcomfort = 0;
-            foreach (GameObject g in talkSys.CharacterList)
-            {
-                if (g.GetComponent<Character>().NotComfort)
-                {
-                    notcomfort += 1;
-                }
-            }
-
-            if (notcomfort == 1)
-            {
-                foreach (GameObject g in talkSys.CharacterList)
-                {
-                    if (g.GetComponent<Character>().NotComfort && (g.GetComponent<Character>().CharacterName == "艾米莉" || g.GetComponent<Character>().CharacterName == "博金森"))
-                    {
-                        g.GetComponent<Character>().Dead = true;
-                        talkSys.DeadName.TxtLine.Add(g.GetComponent<Character>().CharacterName);
-                    }
-                }
-            }
+            
+            
 
             // 通知对象管理器重置道具携带状态（可能将携带道具放回背包）
             ObjectManager.GetComponent<ObjectManager>().ReturnCarry();
@@ -478,15 +492,38 @@ public class Progress : MonoBehaviour
                 g.GetComponent<Character>().EnableTalk();
             }
 
+            // 触发下一天开始前的幕间对话（若存在对应天数的对话数据）
+            if (beforeStart[day_num] != null)
+            {
+                CanTalk = true;  // 允许触发对话
+                // 赋值对话数据到对话系统
+                talkSys.Talklines[day_num] = beforeStart[day_num];
+                talkSys.line = 0;// 重置对话行数
+                Invoke("Talk", 0.2f);
 
+
+                // 启动对话显示
+                TalkBar.GetComponent<Animator>().SetTrigger("start");  // 对话栏显示动画
+                if (TalkBar.transform.position.y == 0)
+                {
+                    DownAnim();
+                }
+
+
+            }
 
             if (day_num != 0)
             {
-
+                if(skip.GetComponent<Image>().color.a == 0)
                 skip.GetComponent<Skip>().TurnDark();  // 若未暗化，执行暗化
+                skip.transform.Find("Report").GetComponent<Report>().ShowText();
+                skip.transform.Find("Report").gameObject.SetActive(true);
+                
                 Invoke("ResetBack", 0.4f);
                 Invoke("TurnLight", 1.8f);  // 延迟1秒后执行亮化（Invoke 用于延迟调用方法）
             }
+
+            
 
         }
     }
@@ -548,6 +585,19 @@ public class Progress : MonoBehaviour
     void DownAnim()
     {
         //DownBar.GetComponent<Animator>().SetTrigger("Down");  // 底部栏隐藏动画
+    }
+
+    void SetShop()
+    {
+        SwitchPlaying = true;
+        ShopTalk = false;
+        Shop.gameObject.SetActive(true);
+    }
+
+    public void TalkStage()
+    {
+        SwitchStageBar.SetActive(true);
+        SwitchStageBar.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "交谈阶段";
     }
 
 }

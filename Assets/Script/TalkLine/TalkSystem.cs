@@ -110,8 +110,8 @@ public class TalkSystem : MonoBehaviour
 
     [Header("噪点遮罩")]
     public GameObject NoiseMask;
-
-
+    //一起黑屏控制
+    private bool TogetherClose;
     private void Awake()
     {
         Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
@@ -783,8 +783,9 @@ public class TalkSystem : MonoBehaviour
                 case "upcbar":
                     charaBar.GetComponent<Animator>().SetTrigger("Up");
                     PlusLine();
-                    if(!inTech)this.CharacterImageManager.CloseImage();
+                    if(!inTech && !TogetherClose) this.CharacterImageManager.CloseImage();
                     NoiseMask.SetActive(false);
+                    if (TogetherClose) TogetherClose = false;
                     await Task.Delay(800);
 
                     _ = ShowText(true);
@@ -830,10 +831,8 @@ public class TalkSystem : MonoBehaviour
                     return;
 
                 case "black":
-                    black.SetActive(false);
-                    black.SetActive(true);
+                    black.GetComponent<Animator>().SetTrigger("Black");
                     PlusLine();
-
                     _ = ShowText(true);
                     return;
 
@@ -852,6 +851,16 @@ public class TalkSystem : MonoBehaviour
                     DaytimeOBJ.GetComponent<Progress>().SwtichProgress();
                     return;
 
+                case "/TogetherDark":
+                    this.CharacterImageManager.CloseImage();
+                    DaytimeOBJ.GetComponent<Progress>().skip.transform.Find("Report").gameObject.SetActive(false);
+                    DaytimeOBJ.GetComponent<Progress>().skip.GetComponent<Animator>().SetTrigger("dark");
+                    PlusLine();
+                    TogetherClose = true;
+                    _ = ShowText(true);
+                    return;
+
+
                 case "/ToDemoEnd":
                     GameObject.Find("EndingsManager").GetComponent<EndingsManager>().ToEnd("Demo-End");
                     return;
@@ -862,6 +871,19 @@ public class TalkSystem : MonoBehaviour
 
                     _ = ShowText(true);
                     return;
+
+                case "/TalkLock":
+                    if( DaytimeOBJ.GetComponent<Progress>().skip.GetComponent<Image>().color.a != 0)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        PlusLine();
+
+                        _ = ShowText(true);
+                        return;
+                    }
 
                 case "canskip":
                     DaytimeOBJ.GetComponent<Progress>().can_skip = true;

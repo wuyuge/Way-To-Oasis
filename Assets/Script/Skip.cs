@@ -11,10 +11,13 @@ public class Skip : MonoBehaviour
     private Animator anim;
     public GameObject Report;
     public GameObject SwitchStageBar;
+    public TalkSystem TalkSystem;
     void Start()
     {
         anim = GetComponent<Animator>();
-        
+        ShowText();
+
+
     }
 
     public void TurnDark()//只变黑
@@ -40,5 +43,14 @@ public class Skip : MonoBehaviour
         SwitchStageBar.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "分配负重阶段";
     }
 
+    public void SetOn()
+    {
+        TalkSystem.on = true;
+    }
+
+    public void SetOff()
+    {
+        TalkSystem.on = false;
+    }
 
 }

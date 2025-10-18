@@ -31,7 +31,6 @@ MonoBehaviour:
   - upcbar
   - black
   - down
-  - next
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

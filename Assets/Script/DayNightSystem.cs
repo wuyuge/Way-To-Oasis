@@ -26,6 +26,9 @@ public class DayNightSystem : MonoBehaviour
 
     private Image BackImage,BackImage2;
 
+    private bool ShowStage;
+
+
     void Start()
     {
         BackImage = BackGround.backgroundLayers[0].layerObject.GetComponent<Image>();
@@ -59,9 +62,17 @@ public class DayNightSystem : MonoBehaviour
             time += timeIncrementPerFixedUpdate;
 
             if (progress.start && time > Frist)//Çå³¿
-            { time = Frist; BackGround.open = false; }
+            { time = Frist; BackGround.open = false; ShowStage = false; }
             else if (progress.talk && time > Second)//»Æ»è
-            { time = Second; BackGround.open = false; }
+            { 
+                time = Second; 
+                BackGround.open = false;
+                if (!ShowStage)
+                {
+                    progress.TalkStage();
+                    ShowStage = true;
+                }
+            }
             else if (!progress.start¡¡&& !progress.food) BackGround.open = on;
             else if(progress.food) { BackGround.open = false; }
 

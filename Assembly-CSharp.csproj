@@ -73,6 +73,7 @@
     <Compile Include="Assets\Script\UI\ShowText.cs" />
     <Compile Include="Assets\Script\TalkLine\TalkSystem.cs" />
     <Compile Include="Assets\Script\TalkLine\Day0\aimi bojin\aimibo.cs" />
+    <Compile Include="Assets\Script\UI\UIshake.cs" />
     <Compile Include="Assets\Script\UI\Select.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Script\UI\Menu\ShowFPS.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Assets\Script\DayNightSystem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Script\Setting\Audio\AudioSettingManager.cs" />
+    <Compile Include="Assets\Script\Day0\Day0SwicthMain.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Script\Shop\ShopCharacterSelect.cs" />
