@@ -20,7 +20,7 @@ public class Report : MonoBehaviour
     public void ShowText()
     {
         Text.text = DefultText;
-        string showdead = DeadText + " ";
+        string showdead = string.Empty;
         Text.text = Text.text.Replace("{food}",Food.Weight.ToString() + "\n");
         Text.text = Text.text.Replace("{body}",Body.Weight.ToString());
         Text.text = Text.text.Replace("{day}",Day.day_num.ToString() + "\n");
@@ -29,10 +29,14 @@ public class Report : MonoBehaviour
 
             foreach (string s in CurrentDead.TxtLine)
             {
-                showdead += s + " ";
+                if (s.Contains("艾米莉") || s.Contains("博金森"))
+                {
+                    showdead += "你杀死了" + s + "\n";
+                }
+                else showdead += s + "饿死了\n";
 
             }
-            showdead += "\n";
+            
 
             Text.text = Text.text.Replace("{dead}", showdead);
             Debug.Log("有人死亡报告" + $"{showdead}死亡");
