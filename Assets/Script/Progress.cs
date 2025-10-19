@@ -145,6 +145,9 @@ public class Progress : MonoBehaviour
 
 
     private bool Shake; //震动管理
+    [Header("抛弃物品提示")]
+    public AbandonTips abandon;
+    public Manager AbandonBool;
 
 
     /// <summary>
@@ -247,16 +250,13 @@ public class Progress : MonoBehaviour
         if (start && CanSwitch)
         {
             // 通知对象管理器更新道具携带数量（可能同步背包显示）
-            if (!TipsWeight)
+            if (!TipsWeight && !AbandonBool.GeneralBool)
             {
                 bool allCarry = ObjectManager.GetComponent<ObjectManager>().SetCarryNum(true);
                 if (!allCarry)
                 {
+                    abandon.gameObject.SetActive(true);
                     TipsWeight = true;
-                    Mask.GetComponent<Unmask>().fitTarget = DownBar.transform.Find("MaskLayer").GetComponent<RectTransform>();
-                    Mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = "没有被分配的物品将会被丢弃";
-                    Mask.transform.parent.gameObject.SetActive(true);
-                    
                     return;
                 }
             }
@@ -284,7 +284,7 @@ public class Progress : MonoBehaviour
         else if (talk && CanSwitch)
         {
             if (DNSys.time < DNSys.Second - 0.005f) return;
-            // 商店页面调用 还会加上转场效果（待做）
+            // 商店页面调用 还会加上转场效果
             if (day_num == 2 || day_num == 5 || day_num == 7)
             {
                 if(ShopTalk)
