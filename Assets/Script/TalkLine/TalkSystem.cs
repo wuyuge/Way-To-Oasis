@@ -990,7 +990,7 @@ public class TalkSystem : MonoBehaviour
                 Chara_Name.text = charaName;
 
                 //如果句尾没有。加。
-                if (dialogueContent[dialogueContent.Length - 1] != '。' || dialogueContent[dialogueContent.Length - 1] != '…' || dialogueContent[dialogueContent.Length - 1] != '?'|| dialogueContent[dialogueContent.Length - 1] != '!')
+                if (dialogueContent[dialogueContent.Length - 1] != '。' && dialogueContent[dialogueContent.Length - 1] != '…' && dialogueContent[dialogueContent.Length - 1] != '?' && dialogueContent[dialogueContent.Length - 1] != '!')
                 {
                     dialogueContent += '。';
                 }
@@ -1086,7 +1086,7 @@ public class TalkSystem : MonoBehaviour
 
 
                 //如果句尾没有。加。
-                if (curText[curText.Length - 1] != '。' || curText[curText.Length - 1] != '…'|| curText[curText.Length - 1] != '?'|| curText[curText.Length - 1] != '!')
+                if (curText[curText.Length - 1] != '。' && curText[curText.Length - 1] != '…' && curText[curText.Length - 1] != '?' && curText[curText.Length - 1] != '!')
                 {
                     curText += '。';
                 }

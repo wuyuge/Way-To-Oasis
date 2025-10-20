@@ -48,13 +48,14 @@ public class Report : MonoBehaviour
             }
 
             showdead += "</color>";
-            Text.text = Text.text.Replace("{dead}", showdead);
+            Text.text = Text.text.Replace("{dead}", showdead + "\n");
             Debug.Log("有人死亡报告" + $"{showdead}死亡");
         }
         else
         {
             Debug.Log("无人死亡报告");
             Text.text = Text.text.Replace("{dead}", string.Empty);
+            
         }
         Text.text = Text.text.Replace("{food}", "<color=#00ff00ff>" + Food.Weight.ToString() + "</color>");
         if(Food.Weight > 9)
