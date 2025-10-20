@@ -1,6 +1,7 @@
 using Coffee.UIExtensions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Threading;
 using System.Threading.Tasks;
 using TMPro;
@@ -112,6 +113,15 @@ public class TalkSystem : MonoBehaviour
     public GameObject NoiseMask;
     //一起黑屏控制
     private bool TogetherClose;
+
+
+    [Header("立绘表情控制")]
+    public List<string> Expressions = new List<string>();
+    private CharacterExpression expression;
+    
+
+
+
     private void Awake()
     {
         Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
@@ -161,6 +171,7 @@ public class TalkSystem : MonoBehaviour
 
            
         }
+        expression = CharacterImageManager.gameObject.GetComponent<CharacterExpression>();
     }
 
     /// <summary>
@@ -995,7 +1006,18 @@ public class TalkSystem : MonoBehaviour
                     dialogueContent += '。';
                 }
 
+                foreach(string e in Expressions)
+                {
 
+                    if (dialogueContent.Contains('{' + $"{e}" + '}'))
+                    {
+                        dialogueContent = dialogueContent.Replace('{'+$"{e}"+'}', string.Empty);
+                        SwitchExpression(charaName, e);
+                    }
+
+
+                }
+                
 
                 on = false;
                 _IsShowingText = true;
@@ -1441,6 +1463,14 @@ public class TalkSystem : MonoBehaviour
         ShowName = false;
         PlayerNameText.text = "";
     }
+
+
+    public void SwitchExpression(string CharaName,string Expression)
+    {
+
+        expression.SetExpression(CharaName,Expression);
+    }
+
 
 
 
