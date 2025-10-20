@@ -8,12 +8,12 @@ public class Report : MonoBehaviour
     public Manager Food,Body,CurrentDead;
     public Progress Day;
     private TextMeshProUGUI Text;
-    public string DeadText;
     public string DefultText;
 
     private void Start()
     {
         Text = GetComponent<TextMeshProUGUI>();
+        DefultText = Text.text;
     }
 
 
@@ -21,31 +21,50 @@ public class Report : MonoBehaviour
     {
         Text.text = DefultText;
         string showdead = string.Empty;
-        Text.text = Text.text.Replace("{food}",Food.Weight.ToString() + "\n");
-        Text.text = Text.text.Replace("{body}",Body.Weight.ToString());
-        Text.text = Text.text.Replace("{day}",Day.day_num.ToString() + "\n");
-        if(CurrentDead.TxtLine.Count != 0)
+        Text.text = Text.text.Replace("{day}", Day.day_num.ToString());
+        
+        if (CurrentDead.TxtLine.Count != 0)
         {
-
+            showdead += "<color=#ff0000ff>";
             foreach (string s in CurrentDead.TxtLine)
             {
+                
                 if (s.Contains("艾米莉") || s.Contains("博金森"))
                 {
+                    if(s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
                     showdead += "你杀死了" + s + "\n";
+                    else
+                        showdead += "你杀死了" + s;
                 }
-                else showdead += s + "饿死了\n";
+                else
+                {
+                    if (s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
+                        showdead += "你饿死了" + s + '\n'; 
+                    else showdead += "你饿死了" + s;
+
+
+                }
 
             }
-            
 
+            showdead += "</color>";
             Text.text = Text.text.Replace("{dead}", showdead);
             Debug.Log("有人死亡报告" + $"{showdead}死亡");
         }
         else
         {
             Debug.Log("无人死亡报告");
-            Text.text = Text.text.Replace("{dead}", "");
+            Text.text = Text.text.Replace("{dead}", string.Empty);
         }
+        Text.text = Text.text.Replace("{food}", "<color=#00ff00ff>" + Food.Weight.ToString() + "</color>");
+        if(Food.Weight > 9)
+        {
+            Text.text = Text.text.Replace("{body}", " " + Body.Weight.ToString());
+        }
+        else Text.text = Text.text.Replace("{body}", Body.Weight.ToString());
+
+
+
 
 
     }

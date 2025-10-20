@@ -15,6 +15,26 @@ public class MiniCharacterManager : MonoBehaviour
         public float CharacterPositionY = 0f;
     }
 
+    /// <summary>
+    /// 管理迷你角色图像
+    /// </summary>
+    [System.Serializable]
+    public class MiniCharacterImageManager
+    {
+        public string Name;
+        public string Tag;
+        public GameObject CharaObj;
+        public float Location;
+        public Sprite sprite;
+        public Vector2 Position;
+        
+    }
+
+    [Header("迷你角色图像控制列表")]
+    public List<MiniCharacterImageManager> ImageManagers;
+
+
+
     [Header("角色设置")]
     public List<MiniCharacter> miniCharacterList = new List<MiniCharacter>(); // 迷你角色列表（命名更统一）
 

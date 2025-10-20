@@ -989,6 +989,13 @@ public class TalkSystem : MonoBehaviour
                 { _ = ShowCharacter(charaName); }
                 Chara_Name.text = charaName;
 
+                //如果句尾没有。加。
+                if (dialogueContent[dialogueContent.Length - 1] != '。' || dialogueContent[dialogueContent.Length - 1] != '…' || dialogueContent[dialogueContent.Length - 1] != '?'|| dialogueContent[dialogueContent.Length - 1] != '!')
+                {
+                    dialogueContent += '。';
+                }
+
+
 
                 on = false;
                 _IsShowingText = true;
@@ -1076,7 +1083,14 @@ public class TalkSystem : MonoBehaviour
                 }
                 on = false;
                 _IsShowingText = true;
-                
+
+
+                //如果句尾没有。加。
+                if (curText[curText.Length - 1] != '。' || curText[curText.Length - 1] != '…'|| curText[curText.Length - 1] != '?'|| curText[curText.Length - 1] != '!')
+                {
+                    curText += '。';
+                }
+
                 foreach (char c in curText)
                 {
                     if (BreakText)

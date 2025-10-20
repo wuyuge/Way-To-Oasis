@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
   m_Name: CurrentDead
   m_EditorClassIdentifier: 
-  TxtLine: []
+  TxtLine:
+  - "\u83B1\u6587"
+  - "\u535A\u91D1\u68EE"
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
