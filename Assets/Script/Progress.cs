@@ -566,6 +566,7 @@ public class Progress : MonoBehaviour
     void TurnLight()
     {
         skip.GetComponent<Skip>().TurnBright();
+        talkSys.MiniCharacterManager.gameObject.GetComponent<MiniCharacterManager>().SetStand();
     }
 
     void ResetBack()

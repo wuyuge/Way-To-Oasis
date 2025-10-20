@@ -233,6 +233,36 @@ public class MiniCharacterManager : MonoBehaviour
 
 
 
+    public void SetSit()
+    {
+        GetComponent<Animator>().enabled = false;
+        foreach (MiniCharacter character in miniCharacterList)
+        {
+            Animator anim = character.characterObject.GetComponent<Animator>();
+
+            anim.SetTrigger("Sit");
+        }
+        Invoke("OpenAnimator", 1f);
+    }
+    
+    public void SetStand()
+    {
+        GetComponent<Animator>().enabled = false;
+        foreach (MiniCharacter character in miniCharacterList)
+        {
+            Animator anim = character.characterObject.GetComponent<Animator>();
+
+            anim.SetTrigger("Stand");
+        }
+        Invoke("OpenAnimator", 1f);
+    }
+
+    void OpenAnimator()
+    {
+        GetComponent<Animator>().enabled = false;
+    }
+
+
 
 
 }

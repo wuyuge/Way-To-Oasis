@@ -945,6 +945,21 @@ public class TalkSystem : MonoBehaviour
                     return;
 
 
+                //Ð¡ÈË×øÏÂ×´Ì¬
+                case "/SetSit":
+                    MiniCharacterManager.gameObject.GetComponent<MiniCharacterManager>().SetSit();
+                    PlusLine();
+                    _ = ShowText();
+                    return;
+
+                case "/SetStand":
+                    MiniCharacterManager.gameObject.GetComponent<MiniCharacterManager>().SetStand();
+                    PlusLine();
+                    _ = ShowText();
+                    return;
+
+
+
 
             }
 
