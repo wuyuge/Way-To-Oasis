@@ -588,13 +588,14 @@ public class TalkSystem : MonoBehaviour
 
                 //Ð¡ÈËÍ¼Ïñ¿ØÖÆ
                 case "/OffMiniCharacter":
-                    gameObject.transform.parent.Find("MiniCharacter").GetComponent<MiniCharacterManager>().CloseMiniCharacter();
+                    MiniCharacterManager.gameObject.GetComponent<Animator>().enabled = true;
+                    MiniCharacterManager.gameObject.GetComponent<MiniCharacterManager>().CloseMiniCharacter();
                     PlusLine();
                     _= ShowText(true);
                     return;
 
                 case "/OnMiniCharacter":
-                    gameObject.transform.parent.Find("MiniCharacter").GetComponent<MiniCharacterManager>().ShowMiniCharacter();
+                    MiniCharacterManager.gameObject.GetComponent<MiniCharacterManager>().ShowMiniCharacter();
                     PlusLine();
                     _ = ShowText(true);
                     return;

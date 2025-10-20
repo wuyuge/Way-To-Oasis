@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - /shop
-  - c
+  - /showname
   - c
   - "\u4F60\u597D\uFF0C\u8FF7\u9014\u7684\u65C5\u4EBA\u3002"
   - p
