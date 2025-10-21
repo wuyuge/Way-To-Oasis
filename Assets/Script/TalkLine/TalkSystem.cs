@@ -307,27 +307,39 @@ public class TalkSystem : MonoBehaviour
                     }
                 //艾米莉特殊指令
                 case "/CheckBoBody":
-                    if(DeadName.TxtLine == null)
+                    if (DeadName.TxtLine == null)
                     {
                         HandleChoice(ban: 1);
                         return;
                     }
-                    foreach(string s in DeadName.TxtLine)
+                    bool Have_BoBody = false;
+                    foreach (string s in DeadName.TxtLine)
                     {
                         if(s.Contains("博金森"))
                         {
-                            HandleChoice();
-
-                            return;
+                            Have_BoBody = true;
+                            break;
+                            
                         }
                         else
                         {
-                            HandleChoice(ban:1);
-                            return;
+                            Have_BoBody = false;
                         }
                         
                     }
-                    return;
+
+                    if (Have_BoBody)
+                    {
+                        HandleChoice();
+                        return;
+                    }
+                    else
+                    {
+                        HandleChoice(ban: 1);
+                        return;
+                    }
+
+
                 case "/UseBo":
                     int index = -1;
                     foreach(string s in DeadName.TxtLine)
@@ -1016,23 +1028,39 @@ public class TalkSystem : MonoBehaviour
                 { _ = ShowCharacter(charaName); }
                 Chara_Name.text = charaName;
 
-                //如果句尾没有。加。
-                if (dialogueContent[dialogueContent.Length - 1] != '。' && dialogueContent[dialogueContent.Length - 1] != '…' && dialogueContent[dialogueContent.Length - 1] != '?' && dialogueContent[dialogueContent.Length - 1] != '!')
-                {
-                    dialogueContent += '。';
-                }
-
-                foreach(string e in Expressions)
+                foreach (string e in Expressions)
                 {
 
                     if (dialogueContent.Contains('{' + $"{e}" + '}'))
                     {
-                        dialogueContent = dialogueContent.Replace('{'+$"{e}"+'}', string.Empty);
+                        dialogueContent = dialogueContent.Replace('{' + $"{e}" + '}', string.Empty);
                         SwitchExpression(charaName, e);
                     }
 
 
                 }
+
+                //如果句尾没有。加。
+                //if (!string.IsNullOrEmpty(dialogueContent))
+                //{
+                //    // 获取最后一个字符（只计算一次，提升效率）
+                //    char lastChar = dialogueContent[dialogueContent.Length - 1];
+
+                //    // 定义不需要补句号的结尾字符集合
+                //    HashSet<char> endChars = new HashSet<char> { '。', '…', '?', '!', '？', '}' , '{' };
+
+                //    // 如果最后一个字符不在集合中，则补句号
+                //    if (!endChars.Contains(lastChar))
+                //    {
+                //        dialogueContent += '。';
+                //    }
+                //}
+
+                //if (dialogueContent[dialogueContent.Length - 1] == '。')
+                //{
+                //    dialogueContent = dialogueContent.Substring(0, dialogueContent.Length - 2);
+                //    Debug.Log("多余句号");
+                //}
                 
 
                 on = false;
@@ -1124,9 +1152,19 @@ public class TalkSystem : MonoBehaviour
 
 
                 //如果句尾没有。加。
-                if (curText[curText.Length - 1] != '。' && curText[curText.Length - 1] != '…' && curText[curText.Length - 1] != '?' && curText[curText.Length - 1] != '!')
+                if (!string.IsNullOrEmpty(curText))
                 {
-                    curText += '。';
+                    // 获取最后一个字符（只计算一次，提升效率）
+                    char lastChar = curText[curText.Length - 1];
+
+                    // 定义不需要补句号的结尾字符集合
+                    HashSet<char> endChars = new HashSet<char> { '。', '…', '?', '!', '？', '}', '{' };
+
+                    // 如果最后一个字符不在集合中，则补句号
+                    if (!endChars.Contains(lastChar))
+                    {
+                        curText += '。';
+                    }
                 }
 
                 foreach (char c in curText)

@@ -2,267 +2,290 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// 管理迷你角色的激活、禁用与位置分配
+/// <summary>
+/// 迷你角色管理器：负责角色激活/禁用、死亡状态检测和位置自动补位
+/// </summary>
 public class MiniCharacterManager : MonoBehaviour
 {
-    // 可序列化类：关联角色的数据、游戏对象与对话栏
     [System.Serializable]
     public class MiniCharacter
     {
-        public string characterName; // 重命名以提高清晰度（避免与系统关键字"name"冲突）
-        public GameObject characterObject; // 角色实体对象
-        public GameObject characterTalkBar; // 角色对话栏对象
-        public float CharacterPositionY = 0f;
+        [Tooltip("角色唯一名称（用于死亡检测匹配）")]
+        public string characterName;
+        [Tooltip("角色实体对象（控制显示/隐藏）")]
+        public GameObject characterObject;
+        [Tooltip("角色对应的对话栏")]
+        public GameObject characterTalkBar;
+        [Tooltip("角色Y轴固定位置（X轴由位置列表决定）")]
+        public float fixedYPosition = 0f;
     }
 
-    /// <summary>
-    /// 管理迷你角色图像
-    /// </summary>
-    [System.Serializable]
-    public class MiniCharacterImageManager
-    {
-        public string Name;
-        public string Tag;
-        public GameObject CharaObj;
-        public float Location;
-        public Sprite sprite;
-        public Vector2 Position;
-        
-    }
+    [Header("角色配置")]
+    [Tooltip("所有迷你角色的列表")]
+    public List<MiniCharacter> miniCharacters = new List<MiniCharacter>();
 
-    [Header("迷你角色图像控制列表")]
-    public List<MiniCharacterImageManager> ImageManagers;
+    [Header("位置配置")]
+    [Tooltip("角色可占用的位置列表（按顺序分配）")]
+    public List<RectTransform> positionSlots = new List<RectTransform>();
 
+    [Header("死亡数据源")]
+    [Tooltip("存储死亡角色名称的管理器1")]
+    public Manager deadNameManager;
+    [Tooltip("存储死亡角色名称的管理器2")]
+    public Manager usedBodyManager;
 
+    [Header("调试选项")]
+    [Tooltip("是否启用调试日志")]
+    public bool enableDebugLogs = false;
 
-    [Header("角色设置")]
-    public List<MiniCharacter> miniCharacterList = new List<MiniCharacter>(); // 迷你角色列表（命名更统一）
+    // 死亡状态跟踪
+    private HashSet<string> deadCharacters = new HashSet<string>(); // 当前死亡角色集合
+    private int previousDeadCount1 = 0; // 管理器1上一帧死亡数量
+    private int previousDeadCount2 = 0; // 管理器2上一帧死亡数量
 
-    [Header("位置设置")]
-    public List<RectTransform> positionList = new List<RectTransform>(); // 用于存放存活角色的位置列表
-    private List<RectTransform> usedPositions = new List<RectTransform>(); // 跟踪已占用的位置（防止角色重叠）
-
-    [Header("死亡数据来源")]
-    public Manager deadNameManager; // 存储死亡角色名称的管理器
-    public Manager usedBodyManager; // 另一个存储死亡角色的管理器（与你原始逻辑一致）
-
-    private int previousDeadCount = 0; // 记录上一帧的死亡角色数量（用于检测死亡状态变化）
-
-    private Animator anim;
+    // 缓存组件
+    private Animator _animator;
+    private List<RectTransform> _availablePositions = new List<RectTransform>(); // 可用位置缓存
 
     private void Awake()
     {
+        InitializeComponents();
+        InitializeCharacters();
+    }
 
-        // 初始化：默认隐藏所有角色的对话栏
-        foreach (MiniCharacter character in miniCharacterList)
+    private void Start()
+    {
+        // 初始分配一次位置
+        UpdateCharacterPositions();
+    }
+
+    private void Update()
+    {
+        CheckDeathStatusChanges();
+    }
+
+    /// <summary>
+    /// 初始化组件和缓存
+    /// </summary>
+    private void InitializeComponents()
+    {
+        _animator = GetComponent<Animator>();
+        if (_animator == null)
         {
-            if (character.characterTalkBar != null) // 增加空值判断，避免空引用错误
+            Debug.LogWarning("当前对象上未找到Animator组件，动画相关功能将失效");
+        }
+
+        // 过滤位置列表中的空引用
+        _availablePositions.Clear();
+        foreach (var pos in positionSlots)
+        {
+            if (pos != null)
+            {
+                _availablePositions.Add(pos);
+            }
+            else
+            {
+                Debug.LogWarning("位置列表中存在空引用，已自动过滤");
+            }
+        }
+    }
+
+    /// <summary>
+    /// 初始化角色状态
+    /// </summary>
+    private void InitializeCharacters()
+    {
+        foreach (var character in miniCharacters)
+        {
+            if (character.characterObject == null)
+            {
+                Debug.LogWarning($"角色 {character.characterName} 未指定实体对象");
+                continue;
+            }
+
+            // 初始隐藏对话栏
+            if (character.characterTalkBar != null)
             {
                 character.characterTalkBar.SetActive(false);
             }
-            character.CharacterPositionY = character.characterObject.transform.position.y;
-        }
-        previousDeadCount = 0;
-        usedPositions.Clear(); // 初始化已占用位置列表
 
-        anim = GetComponent<Animator>();
-
-    }
-
-
-    // 每帧更新
-    void Update()
-    {
-        // 检测两个管理器中是否有新角色死亡，有则重新分配位置
-        if (CheckNewDeathOccurred(deadNameManager))
-        {
-            ResetUsedPositions(); // 重置已占用位置记录
-            SwitchCharacterPositions(); // 为存活角色重新分配位置
-        }
-        else if (CheckNewDeathOccurred(usedBodyManager))
-        {
-            ResetUsedPositions(); // 重置已占用位置记录
-            SwitchCharacterPositions(); // 为存活角色重新分配位置
+            // 初始激活所有角色（死亡检测会自动禁用死亡角色）
+            character.characterObject.SetActive(true);
         }
     }
+
     /// <summary>
-    /// 检测指定管理器中是否有新角色死亡
+    /// 检测两个管理器的死亡状态变化
     /// </summary>
-    /// <param name="deathDataManager">存储死亡数据的管理器</param>
-    /// <returns>有新死亡返回true，否则返回false</returns>
-    bool CheckNewDeathOccurred(Manager deathDataManager)
+    private void CheckDeathStatusChanges()
     {
-        int currentDeadCount = 0;
-        List<string> currentDeadList = new List<string>(); // 存储当前帧检测到的死亡角色名称
+        bool hasChange1 = CheckManagerDeathChanges(deadNameManager, ref previousDeadCount1);
+        bool hasChange2 = CheckManagerDeathChanges(usedBodyManager, ref previousDeadCount2);
 
-        // 若管理器的文本列表不为空，才进行死亡角色检测
-        if (deathDataManager != null && deathDataManager.TxtLine != null && deathDataManager.TxtLine.Count > 0)
+        if (hasChange1 || hasChange2)
         {
-            foreach (string textLine in deathDataManager.TxtLine)
-            {
-                // 跳过包含"Leader"（领导者）的文本行（与你原始逻辑一致）
-                if (textLine.Contains("Leader"))
-                {
-                    continue;
-                }
+            if (enableDebugLogs)
+                Debug.Log($"检测到死亡状态变化，当前死亡角色数：{deadCharacters.Count}");
 
-                // 遍历所有角色，判断当前文本行是否包含该角色名称（即角色是否死亡）
-                foreach (MiniCharacter character in miniCharacterList)
+            UpdateCharacterPositions(); // 重新分配位置
+        }
+    }
+
+    /// <summary>
+    /// 检测单个管理器的死亡角色变化
+    /// </summary>
+    private bool CheckManagerDeathChanges(Manager manager, ref int previousCount)
+    {
+        if (manager == null || manager.TxtLine == null)
+            return false;
+
+        HashSet<string> currentDead = new HashSet<string>();
+
+        // 提取当前管理器中的死亡角色
+        foreach (var line in manager.TxtLine)
+        {
+            string cleanLine = line.Trim();
+            if (cleanLine.Contains("Leader")) // 忽略领导者
+                continue;
+
+            // 精确匹配角色名称
+            foreach (var character in miniCharacters)
+            {
+                if (string.Equals(cleanLine, character.characterName, System.StringComparison.OrdinalIgnoreCase))
                 {
-                    if (!string.IsNullOrEmpty(character.characterName) && textLine.Contains(character.characterName))
-                    {
-                        // 避免重复添加同一死亡角色
-                        if (!currentDeadList.Contains(character.characterName))
-                        {
-                            currentDeadList.Add(character.characterName);
-                            currentDeadCount++;
-                        }
-                    }
+                    currentDead.Add(character.characterName);
                 }
             }
         }
 
-        // 若当前死亡数量与上一帧不同，说明有新角色死亡，更新记录并返回true
-        if (currentDeadCount != previousDeadCount)
+        // 检测是否有变化
+        if (currentDead.Count != previousCount)
         {
-            previousDeadCount = currentDeadCount;
-            // 禁用所有死亡角色的实体与对话栏
-            DisableDeadCharacters(currentDeadList);
+            previousCount = currentDead.Count;
+            // 更新全局死亡集合（合并新死亡角色）
+            foreach (var dead in currentDead)
+            {
+                deadCharacters.Add(dead);
+            }
             return true;
         }
 
         return false;
     }
 
-
     /// <summary>
-    /// 禁用所有死亡角色的实体对象与对话栏
+    /// 更新所有角色的位置（死亡角色禁用，存活角色补位）
     /// </summary>
-    /// <param name="deadCharacterNames">死亡角色名称列表</param>
-    void DisableDeadCharacters(List<string> deadCharacterNames)
+    private void UpdateCharacterPositions()
     {
-        foreach (MiniCharacter character in miniCharacterList)
+        // 1. 处理死亡角色（禁用）
+        foreach (var character in miniCharacters)
         {
-            if (deadCharacterNames.Contains(character.characterName))
+            if (character.characterObject == null)
+                continue;
+
+            bool isDead = deadCharacters.Contains(character.characterName);
+            character.characterObject.SetActive(!isDead);
+
+            // 同步隐藏对话栏
+            if (character.characterTalkBar != null)
             {
-                if (character.characterObject != null)
-                {
-                    character.characterObject.SetActive(false);
-                }
-                if (character.characterTalkBar != null)
-                {
-                    character.characterTalkBar.SetActive(false);
-                }
-            }
-            
-        }
-    }
-
-
-    /// <summary>
-    /// 为所有存活角色重新分配位置
-    /// </summary>
-    void SwitchCharacterPositions()
-    {
-        foreach (MiniCharacter character in miniCharacterList)
-        {
-            // 只给激活状态的存活角色分配位置
-            if (character.characterObject != null && character.characterObject.activeSelf)
-            {
-                RectTransform availablePos = GetAvailablePosition(); // 获取一个可用位置
-                if (availablePos != null)
-                {
-                    // 将角色位置设置为可用位置的世界坐标（适配UI RectTransform）
-                    character.characterObject.transform.position = new Vector3(availablePos.position.x,character.CharacterPositionY);
-                    // 若需要让角色与位置的层级保持一致，可添加以下代码：
-                    // character.characterObject.transform.SetParent(availablePos.parent, false);
-                }
-                else
-                {
-                    Debug.LogWarning($"没有足够的可用位置分配给角色：{character.characterName}");
-                }
-            }
-        }
-    }
-
-
-    /// <summary>
-    /// 获取一个未被占用的位置
-    /// </summary>
-    /// <returns>可用的位置RectTransform，若无则返回null</returns>
-    RectTransform GetAvailablePosition()
-    {
-        // 遍历所有预设位置，找到第一个未被占用的位置
-        foreach (RectTransform pos in positionList)
-        {
-            if (pos != null && !usedPositions.Contains(pos))
-            {
-                usedPositions.Add(pos); // 标记该位置为已占用
-                return pos;
+                character.characterTalkBar.SetActive(false);
             }
         }
 
-        // 若所有位置都被占用，打印警告（方便调试）
-        Debug.LogWarning("预设的位置数量不足，无法分配新位置！");
-        return null;
+        // 2. 收集存活角色
+        List<MiniCharacter> aliveCharacters = new List<MiniCharacter>();
+        foreach (var character in miniCharacters)
+        {
+            if (character.characterObject != null &&
+                character.characterObject.activeSelf &&
+                !deadCharacters.Contains(character.characterName))
+            {
+                aliveCharacters.Add(character);
+            }
+        }
+
+        // 3. 检查位置是否充足
+        if (aliveCharacters.Count > _availablePositions.Count)
+        {
+            Debug.LogError($"存活角色数量（{aliveCharacters.Count}）超过可用位置数量（{_availablePositions.Count}），部分角色将无法显示");
+        }
+
+        // 4. 为存活角色分配位置（按顺序补位）
+        for (int i = 0; i < aliveCharacters.Count; i++)
+        {
+            if (i >= _availablePositions.Count)
+                break; // 位置不足时停止分配
+
+            var character = aliveCharacters[i];
+            var targetPos = _availablePositions[i];
+
+            // 设置位置（使用世界坐标，若为UI建议用anchoredPosition）
+            character.characterObject.transform.position = new Vector3(
+                targetPos.position.x,
+                character.fixedYPosition,
+                character.characterObject.transform.position.z
+            );
+
+            if (enableDebugLogs)
+                Debug.Log($"角色 {character.characterName} 已移动到位置 {i}");
+        }
     }
 
-
-    /// <summary>
-    /// 重置已占用位置的记录（重新分配位置前调用）
-    /// </summary>
-    void ResetUsedPositions()
-    {
-        usedPositions.Clear();
-    }
-
-
-
+    #region 动画控制方法
     public void ShowMiniCharacter()
     {
-
-        anim.SetTrigger("Show");
-
+        if (_animator != null)
+            _animator.SetTrigger("Show");
     }
-
 
     public void CloseMiniCharacter()
     {
-        anim.SetTrigger("Close");
+        if (_animator != null)
+            _animator.SetTrigger("Close");
     }
-
-
 
     public void SetSit()
     {
-        GetComponent<Animator>().enabled = false;
-        foreach (MiniCharacter character in miniCharacterList)
-        {
-            Animator anim = character.characterObject.GetComponent<Animator>();
+        if (_animator != null)
+            _animator.enabled = false;
 
-            anim.SetTrigger("Sit");
+        foreach (var character in miniCharacters)
+        {
+            if (character.characterObject == null)
+                continue;
+
+            var anim = character.characterObject.GetComponent<Animator>();
+            if (anim != null)
+                anim.SetTrigger("Sit");
         }
-        Invoke("OpenAnimator", 1f);
+
+        Invoke(nameof(EnableAnimator), 1f);
     }
-    
+
     public void SetStand()
     {
-        GetComponent<Animator>().enabled = false;
-        foreach (MiniCharacter character in miniCharacterList)
+        if (_animator != null)
+            _animator.enabled = false;
+
+        foreach (var character in miniCharacters)
         {
-            Animator anim = character.characterObject.GetComponent<Animator>();
+            if (character.characterObject == null)
+                continue;
 
-            anim.SetTrigger("Stand");
+            var anim = character.characterObject.GetComponent<Animator>();
+            if (anim != null)
+                anim.SetTrigger("Stand");
         }
-        Invoke("OpenAnimator", 1f);
+
+        Invoke(nameof(EnableAnimator), 1f);
     }
 
-    void OpenAnimator()
+    private void EnableAnimator()
     {
-        GetComponent<Animator>().enabled = false;
+        if (_animator != null)
+            _animator.enabled = true;
     }
-
-
-
-
+    #endregion
 }

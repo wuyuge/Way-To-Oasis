@@ -9,7 +9,7 @@ public class Report : MonoBehaviour
     public Progress Day;
     private TextMeshProUGUI Text;
     public string DefultText;
-
+    public Manager AmandeKillSelf;
     private void Start()
     {
         Text = GetComponent<TextMeshProUGUI>();
@@ -35,6 +35,21 @@ public class Report : MonoBehaviour
                     showdead += "你杀死了" + s + "\n";
                     else
                         showdead += "你杀死了" + s;
+                }
+                else if (s.Contains("阿曼德"))
+                {
+                    if (AmandeKillSelf.GeneralBool)
+                    {
+                        if (s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
+                            showdead +=  s + "自杀了";
+                        else showdead += s + "自杀了";
+                    }
+                    else
+                    {
+                        if (s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
+                            showdead += "你饿死了" + s + '\n';
+                        else showdead += "你饿死了" + s;
+                    }
                 }
                 else
                 {

@@ -56,8 +56,11 @@ public class StartImportLine : MonoBehaviour
             index++;
 
         }
-        Tips.SetActive(true);
-        SwitchScence = true;
+        if(DelayTime != 0)
+        {
+            Tips.SetActive(true);
+            SwitchScence = true;
+        }
         while (true)
         {
             if (TextUI.text[TextUI.text.Length - 1] == '¨€') TextUI.text = TextUI.text.Remove(TextUI.text.Length - 1);
@@ -80,6 +83,8 @@ public class StartImportLine : MonoBehaviour
             else
             {
                 Tips.SetActive(true);
+                DelayTime = 0;
+                BlockDelayTime = 0;
                 Invoke("SetStage", 0.2f) ;
             }
         }

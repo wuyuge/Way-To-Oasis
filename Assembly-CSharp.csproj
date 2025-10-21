@@ -106,6 +106,7 @@
     <Compile Include="Assets\Script\UI\Obj\ObjectManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Script\UI\Character.cs" />
+    <Compile Include="Assets\Script\MiniCharacter\TalkBarLinker.cs" />
     <Compile Include="Assets\Script\Text\Report.cs" />
     <Compile Include="Assets\Script\UI\Menu\MenuManager.cs" />
     <Compile Include="Assets\Script\Shop\ShopManager.cs" />

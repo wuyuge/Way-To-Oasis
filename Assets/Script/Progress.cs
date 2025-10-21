@@ -597,6 +597,9 @@ public class Progress : MonoBehaviour
 
     public void TalkStage()
     {
+        if(day_num == 0)
+            return;
+
         SwitchStageBar.SetActive(true);
         SwitchStageBar.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "½»Ì¸½×¶Î";
     }

@@ -100,11 +100,12 @@ public class Character : MonoBehaviour
     public bool CantWeight = false;
 
     public List<GameObject> Child;
+    public List<GameObject> CharacterList;
 
     public bool ShowInfo = false;
     private bool Have_ShowInfo = false;
 
-
+    private int InfoClick = 0;
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
     /// 1. 绑定UI组件 2. 初始化角色数据 3. 刷新初始UI显示
@@ -141,6 +142,7 @@ public class Character : MonoBehaviour
         {
             Child.Add(transform.GetChild(i).gameObject);
         }
+        CharacterList = gameObject.transform.parent.gameObject.GetComponent<ObjectManager>().Character_List;
     }
 
     // Update is called once per frame
@@ -184,8 +186,19 @@ public class Character : MonoBehaviour
         // 获取资源选择面板（SelectBar）的状态，判断是否处于"食物选择"模式
         if (!progress.GetComponent<Progress>().food)
         {
+            bool InfoOn = false;
             // 非食物选择模式：启用角色按钮，隐藏ToggleUI
+            foreach (GameObject g in CharacterList)
+            {
+                if (g.GetComponent<Character>().ShowInfo)
+                {
+                    InfoOn = true;
+                    break;
+                }
+            }
+            if (!InfoOn) 
             gameObject.GetComponent<Button>().enabled = true;
+            else gameObject.GetComponent<Button>().enabled = false;
             toggle.SetActive(false);
         }
         else
@@ -213,19 +226,54 @@ public class Character : MonoBehaviour
             weight3.GetComponent<Image>().color = Color.red;
         }
 
+        
+
+
         //关闭角色资料逻辑
         if(ShowInfo && (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) && !Have_ShowInfo && progress.GetComponent<Progress>().day_num == 0)
         {
-            TalkBar.GetComponent<TalkSystem>().on = true;
-            ShowInfo = false;
-            Have_ShowInfo = true;
-            GameObject.Find("CharacterInfo").GetComponent<CharacterInfoManager>().CloseInfo();
-            OnTalk();
+            if(CharacterName == "博金森" || CharacterName == "艾米莉")
+            {
+                if (InfoClick == 0)
+                {
+                    InfoClick = 1;
+                    return;
+                }
+                else
+                {
+                    GameObject.Find("CharacterInfo").GetComponent<CharacterInfoManager>().CloseInfo();
+                    TalkBar.GetComponent<TalkSystem>().on = true;
+
+                    Have_ShowInfo = true;
+
+                    OnTalk();
+
+                    Invoke("SetBool", 1.5f);
+                }
+            }
+            else
+            {
+                GameObject.Find("CharacterInfo").GetComponent<CharacterInfoManager>().CloseInfo();
+                TalkBar.GetComponent<TalkSystem>().on = true;
+            
+                Have_ShowInfo = true;
+            
+                OnTalk();
+
+                Invoke("SetBool", 1.5f);
+            }
 
         }
 
 
     }
+
+    void SetBool()
+    {
+        ShowInfo = false;
+    }
+
+
 
     /// <summary>
     /// 负重分配/取消分配核心方法
@@ -331,6 +379,7 @@ public class Character : MonoBehaviour
     {
         // 【死亡状态判断】如果角色死亡，不执行UI刷新
         if (Dead) return;
+        
 
         // 重置3个负重进度条颜色为绿色（表示未占用）
         weight1.GetComponent<Image>().color = Color.green;
@@ -356,6 +405,8 @@ public class Character : MonoBehaviour
         // 【死亡状态判断】如果角色死亡，不执行对话触发
         if (Dead) return;
         if (!CanTalk) return;
+        if (AfterSpecialTalk) return;
+        
         TalkSystem talksys = TalkBar.GetComponent<TalkSystem>();
         
         if (talksys.Daytime != 0)
@@ -392,6 +443,7 @@ public class Character : MonoBehaviour
             if(CharacterName == "艾米莉" || CharacterName == "博金森")
             {
                 gameObject.GetComponent<Aimibo>().ShowInfo("艾米莉");
+                ShowInfo = true;
                 return;
             }
 

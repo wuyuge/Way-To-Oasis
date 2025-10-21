@@ -5,7 +5,7 @@ public class Aimibo : MonoBehaviour
     public Character LinkObj;
     private Character character;
     private Progress progress;
-    private bool InfoIsOn = false;
+    public bool InfoIsOn = false;
     private bool ShowBo = false;
 
     void Start()

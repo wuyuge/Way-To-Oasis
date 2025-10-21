@@ -28,6 +28,7 @@ public class Anti : MonoBehaviour
         else if(Value == 1)
         {
             SetQuality.SetActive(true);
+            transform.Find("SetAntiQuality").gameObject.GetComponent<AntiQuality>().SetQuality(2);
             
         }
         
