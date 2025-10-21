@@ -185,11 +185,13 @@ public class TalkSystem : MonoBehaviour
 
             // 计算当前时间与上次点击的间隔（转换为毫秒便于比较）
             float timeSinceLastClick = (Time.time - _lastClickTime) * 1000f;
-            if(Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
-            // 点击条件：鼠标左键按下 + 交互开启（on） + 超过点击间隔
+
+            // 点击条件：鼠标左键按下 或 空格键按下 + 交互开启（on） + 超过点击间隔
+
+            if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
             {
                 
-                if ( on && timeSinceLastClick >= ClickInterval && !_IsShowingText)
+                if (on && timeSinceLastClick >= ClickInterval && !_IsShowingText)
                 {
                     // 更新上次点击时间戳为当前时间
                     _lastClickTime = Time.time;
@@ -198,7 +200,6 @@ public class TalkSystem : MonoBehaviour
                     DownButton.gameObject.SetActive(false);
                     _ = ShowText();
                     // 仅当不在显示文本时，才开始新的文本显示
-                    
                 }
                 else if (_IsShowingText && !BreakText)
                 {
@@ -208,8 +209,8 @@ public class TalkSystem : MonoBehaviour
         }
     }
 
-    
-   
+
+
 
     /// <summary>
     /// 异步显示文本（支持逐字显示和中途取消）
