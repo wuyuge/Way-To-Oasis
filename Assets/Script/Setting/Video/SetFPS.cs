@@ -4,21 +4,34 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SetFPS : MonoBehaviour
+public class SetFPS : MonoBehaviour,SettingInitialize
 {
     public TMP_Dropdown UI;
+    private SettingDataManager Manager;
     
+    public void Initialize(SettingDataManager manager)
+    {
+        Manager = manager;
+
+        SetFps(manager.setting.RefreshFPS);
+        GetComponent<TMP_Dropdown>().value = manager.setting.RefreshFPS;
+
+
+
+    }
+
 
     
 
     public void SetFps(int value)
     {
-
+        Manager.setting.RefreshFPS = value;
 
         switch (value)
         {
             case 0:
                 Application.targetFrameRate = 30;
+                
                 Debug.Log("…Ë÷√÷°¬  30");
                 break;
             case 1:

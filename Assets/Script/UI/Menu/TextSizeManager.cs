@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TextSizeManager : MonoBehaviour
+public class TextSizeManager : MonoBehaviour , SettingInitialize
 {
     [System.Serializable]
     public class TextSize
@@ -18,11 +18,28 @@ public class TextSizeManager : MonoBehaviour
 
     
     public List<TextSize> TextSizes = new List<TextSize>();
-    public Slider OtherSlider;
+    private SettingDataManager Manager;
+
+    public void Initialize(SettingDataManager manager)
+    {
+        Manager = manager;
+
+        SetTextSize(manager.setting.TextSize);
+        GetComponent<Slider>().value = manager.setting.TextSize;
+        Debug.Log("文字大小初始化");
+
+
+    }
+
+
 
     public void SetTextSize(float size)
     {
-        OtherSlider.value = size;
+        GetComponent<Slider>().value = size;
+        Manager.setting.TextSize = size;
+
+
+
         foreach (var Text in TextSizes)
         {
             float CurrentSize;

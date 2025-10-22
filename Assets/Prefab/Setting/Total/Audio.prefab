@@ -483,6 +483,7 @@ GameObject:
   - component: {fileID: 5008148585181452190}
   - component: {fileID: 5255940552314252863}
   - component: {fileID: 2791488376906563118}
+  - component: {fileID: 1167621395877800254}
   m_Layer: 5
   m_Name: CloseSwitch
   m_TagString: Untagged
@@ -603,6 +604,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1167621395877800254}
+        m_TargetAssemblyTypeName: SettingSave, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2791488376906563118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,6 +633,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 1738537199324568729}
   - {fileID: 0}
+--- !u!114 &1167621395877800254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237518862553417287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e015559d1d066640b70c7a66dd240d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SettingManager: {fileID: 0}
 --- !u!1 &1243866489638965109
 GameObject:
   m_ObjectHideFlags: 0

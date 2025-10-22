@@ -3,14 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class TextSpeedManager : MonoBehaviour, IPointerUpHandler
+public class TextSpeedManager : MonoBehaviour, IPointerUpHandler,SettingInitialize
 {
     public TalkSystem talkSystem,sys2;
     public int MinSpeed,DefultSpeed,MaxSpeed;
     public Slider OtherSlider;
     public TextPreview Preview;
     private int PreviewSpeed;
+    private SettingDataManager Manager;
+
+
+    public void Initialize(SettingDataManager manager)
+    {
+        
+        Manager = manager;
+        if (SceneManager.GetActiveScene().name != "Start")
+        {    
+            talkSystem.TextSpeedI = (int)manager.setting.TextSpeed;
+
+            sys2.TextSpeedI = (int)manager.setting.TextSpeed;
+        }
+
+        GetComponent<Slider>().value = (float)manager.setting.TextSpeed;
+
+    }
+
+
     
 
     public void SetTextSpeed(float speed)
@@ -24,7 +44,7 @@ public class TextSpeedManager : MonoBehaviour, IPointerUpHandler
         sys2.TextSpeedI = MinSpeed + Difference;
         PreviewSpeed = MinSpeed + Difference;
 
-
+        Manager.setting.TextSpeed = speed;
 
     }
 

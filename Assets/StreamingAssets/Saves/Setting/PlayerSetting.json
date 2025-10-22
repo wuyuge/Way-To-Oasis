@@ -1,0 +1,12 @@
+{
+    "ScreenMode": 0,
+    "ShowFPS": false,
+    "Anti": 0,
+    "Vsync": 0,
+    "RefreshFPS": 1,
+    "TextSpeed": 0.5,
+    "TextSize": 0.5,
+    "MainVolume": -10,
+    "AudioVolume": -10,
+    "EffectVolume": -10
+}

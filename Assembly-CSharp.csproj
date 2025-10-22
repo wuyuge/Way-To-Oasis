@@ -122,6 +122,7 @@
     <Compile Include="Assets\Script\Setting\Text\Preview\TextPreview.cs" />
     <Compile Include="Assets\Script\UI\AssResources.cs" />
     <Compile Include="Assets\Script\Character\CharacterExpression.cs" />
+    <Compile Include="Assets\Script\DataManager\SettingSave.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Script\Setting\SettingSwitch.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Script\UI\FoodChoice.cs" />
     <Compile Include="Assets\Script\DeveloperSetting\DeveloperDebuger.cs" />
+    <Compile Include="Assets\Script\DataManager\SettingDataManager.cs" />
     <Compile Include="Assets\Script\Progress.cs" />
     <Compile Include="Assets\Script\MiniCharacter\MiniCharacterTalkSys.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
@@ -147,6 +149,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Script\UI\Menu\FpsCalculator.cs" />
     <Compile Include="Assets\Script\Mask\MaskManager.cs" />
+    <Compile Include="Assets\Script\DataManager\Setting\SettingInitialize.cs" />
     <Compile Include="Assets\Script\Setting\Video\SetScreenMode.cs" />
     <Compile Include="Assets\Script\CharacterInfo\CharacterInfoManager.cs" />
     <Compile Include="Assets\Script\Setting\Video\SetFPS.cs" />
@@ -526,6 +529,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
