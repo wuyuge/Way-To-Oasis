@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Main2-c2
   m_EditorClassIdentifier: 
   TxtLine:
-  - "\u6211\u4F1A\u7684\u3002"
+  - "\u6211\u4F1A\u7684"
   - p
   - "\u6211\u4F1A\u7684\u3002"
   - upcbar

@@ -20,10 +20,8 @@ public class TextSpeedManager : MonoBehaviour, IPointerUpHandler,SettingInitiali
         
         Manager = manager;
         if (SceneManager.GetActiveScene().name != "Start")
-        {    
-            talkSystem.TextSpeedI = (int)manager.setting.TextSpeed;
-
-            sys2.TextSpeedI = (int)manager.setting.TextSpeed;
+        {
+            SetTextSpeed(manager.setting.TextSpeed);
         }
 
         GetComponent<Slider>().value = (float)manager.setting.TextSpeed;

@@ -151,7 +151,7 @@ public class MiniCharacterManager : MonoBehaviour
             // 精确匹配角色名称
             foreach (var character in miniCharacters)
             {
-                if (string.Equals(cleanLine, character.characterName, System.StringComparison.OrdinalIgnoreCase))
+                if (cleanLine.Contains(character.characterName))
                 {
                     currentDead.Add(character.characterName);
                 }
@@ -281,6 +281,26 @@ public class MiniCharacterManager : MonoBehaviour
 
         Invoke(nameof(EnableAnimator), 1f);
     }
+
+    public void SetWalk()
+    {
+        if (_animator != null)
+            _animator.enabled = false;
+
+        foreach (var character in miniCharacters)
+        {
+            if (character.characterObject == null)
+                continue;
+
+            var anim = character.characterObject.GetComponent<Animator>();
+            if (anim != null)
+                anim.SetTrigger("Walk");
+        }
+
+        Invoke(nameof(EnableAnimator), 1f);
+    }
+
+
 
     private void EnableAnimator()
     {

@@ -6,7 +6,7 @@
     "RefreshFPS": 1,
     "TextSpeed": 0.5,
     "TextSize": 0.5,
-    "MainVolume": -10,
+    "MainVolume": -1,
     "AudioVolume": -10,
-    "EffectVolume": -10
+    "EffectVolume": -32
 }

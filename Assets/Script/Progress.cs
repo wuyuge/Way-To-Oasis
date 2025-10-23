@@ -149,6 +149,12 @@ public class Progress : MonoBehaviour
     public AbandonTips abandon;
     public Manager AbandonBool;
 
+    public MiniCharacterManager MiniCharacter;
+
+
+    [Header("跳过对话提示")]
+    public GameObject TalkTips;
+    public bool TalkTipsBool;
 
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
@@ -267,7 +273,8 @@ public class Progress : MonoBehaviour
             Debug.Log("开启背景滚动");
             // 激活背景滚动（调用 BackGroundMoving 脚本的 open 状态）
             background.GetComponent<BackGroundMoving>().open = true;
-
+            if(day_num != 0)
+            MiniCharacter.SetWalk();
             // 更新UI文本颜色（对话阶段高亮，开始阶段半透明）
             weight.color = new Color32(0, 0, 0, 120);
             start = false;  // 退出开始阶段
@@ -284,6 +291,16 @@ public class Progress : MonoBehaviour
         else if (talk && CanSwitch)
         {
             if (DNSys.time < DNSys.Second - 0.005f) return;
+
+            if (!DownBar.GetComponent<ObjectManager>().CheckTalk() && day_num != 0 && !TalkTipsBool)
+            {
+                TalkTips.SetActive(true);
+                TalkTipsBool = true;
+
+            }
+
+
+
             // 商店页面调用 还会加上转场效果
             if (day_num == 2 || day_num == 5 || day_num == 7)
             {
@@ -565,7 +582,6 @@ public class Progress : MonoBehaviour
     /// </summary>
     void TurnLight()
     {
-        skip.GetComponent<Skip>().TurnBright();
         talkSys.MiniCharacterManager.gameObject.GetComponent<MiniCharacterManager>().SetStand();
     }
 

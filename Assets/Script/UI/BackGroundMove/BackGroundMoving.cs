@@ -49,8 +49,8 @@ public class BackGroundMoving : MonoBehaviour
 
     private bool TurnDusk, TurnNight;
 
-
-
+    public MiniCharacterManager MiniCharacter;
+    private bool MiniCharacterStand;
 
     private void Start()
     {
@@ -84,15 +84,20 @@ public class BackGroundMoving : MonoBehaviour
         { MoveAllLayers(); }
         if (LightSystem.complete)
         {
+
+
             
-
-
             LightSystem.complete = false;
 
             LightSystem.enabled = false;
             open = false;
         }
-        if(LightSystem.time < LightSystem.Second && LightSystem.time >= 0.5)
+        if(TurnDusk && !open && !MiniCharacterStand)
+        {
+            MiniCharacter.SetStand();
+            MiniCharacterStand = true;
+        }
+        if (LightSystem.time < LightSystem.Second && LightSystem.time >= 0.5)
         {
             backgroundLayers[0].layerObject.transform.Find("Image").GetComponent<Image>().sprite = Dusk;
             backgroundLayers[1].layerObject.transform.Find("Image").GetComponent<Image>().sprite = Dusk;
@@ -101,6 +106,7 @@ public class BackGroundMoving : MonoBehaviour
             {
                 backgroundLayers[0].layerObject.GetComponent<Animator>().SetTrigger("Turn");
                 backgroundLayers[1].layerObject.GetComponent<Animator>().SetTrigger("Turn");
+                
                 TurnDusk = true;
             }
         }
@@ -201,6 +207,6 @@ public class BackGroundMoving : MonoBehaviour
 
         TurnDusk = false;
         TurnNight = false;
-
+        MiniCharacterStand = false;
     }
 }

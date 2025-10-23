@@ -12,12 +12,23 @@ public class Skip : MonoBehaviour
     public GameObject Report;
     public GameObject SwitchStageBar;
     public TalkSystem TalkSystem;
+    private bool Turn;
+    public Manager CurrentDead;
+    public List<AudioClip> Clips;
     void Start()
     {
         anim = GetComponent<Animator>();
         ShowText();
+        Turn = true;
 
-
+    }
+    private void Update()
+    {
+        if((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))&& Turn)
+        {
+            Turn = false;
+            TurnBright();
+        }
     }
 
     public void TurnDark()//Ö»±äºÚ
@@ -52,5 +63,27 @@ public class Skip : MonoBehaviour
     {
         TalkSystem.on = false;
     }
+
+    public void PlayAudio()
+    {
+        if(CurrentDead.TxtLine.Count != 0)
+        {
+            GetComponent<AudioSource>().clip = Clips[1];
+        }
+        else
+        {
+            GetComponent<AudioSource>().clip = Clips[0];
+        }
+
+
+        GetComponent<AudioSource>().Play();
+    }
+
+    public void SetTurn()
+    {
+        Turn = true;
+    }
+
+
 
 }

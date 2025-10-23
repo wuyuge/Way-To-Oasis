@@ -29,7 +29,7 @@ public class Report : MonoBehaviour
             foreach (string s in CurrentDead.TxtLine)
             {
                 
-                if (s.Contains("艾米莉") || s.Contains("博金森"))
+                if (s.Contains("博金森"))
                 {
                     if(s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
                     showdead += "你杀死了" + s + "\n";
@@ -41,21 +41,21 @@ public class Report : MonoBehaviour
                     if (AmandeKillSelf.GeneralBool)
                     {
                         if (s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
-                            showdead +=  s + "自杀了";
-                        else showdead += s + "自杀了";
+                            showdead +=  s + "死亡了";
+                        else showdead += s + "死亡了";
                     }
                     else
                     {
                         if (s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
-                            showdead += "你饿死了" + s + '\n';
-                        else showdead += "你饿死了" + s;
+                            showdead += s + "被你饿死了\n";
+                        else showdead += s + "被你饿死了";
                     }
                 }
                 else
                 {
                     if (s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
-                        showdead += "你饿死了" + s + '\n'; 
-                    else showdead += "你饿死了" + s;
+                        showdead += s + "被你饿死了\n"; 
+                    else showdead += s + "被你饿死了";
 
 
                 }

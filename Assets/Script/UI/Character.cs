@@ -164,14 +164,18 @@ public class Character : MonoBehaviour
             }
             return; 
         }
-        if(AfterSpecialTalk && NotComfort)
+        if(NotComfort && progress.GetComponent<Progress>().day_num == 2)
         {
             Attention2.SetActive(true);
         }
-        if (AfterSpecialTalk && !NotComfort)
+        else if (AfterSpecialTalk && !NotComfort)
         {
             Attention2.SetActive(false);
             
+        }
+        else if (progress.GetComponent <Progress>().day_num != 0)
+        {
+            Attention2.SetActive(false);
         }
         if(progress.GetComponent<Progress>().talk && CharacterName == "Ö÷½Ç")
         {

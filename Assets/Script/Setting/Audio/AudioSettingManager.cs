@@ -16,15 +16,19 @@ public class AudioSettingManager : MonoBehaviour,SettingInitialize
     {
         Manager = manager;
         float Volume = 0;
-        if(VolumeParameter == "Master") Volume = manager.setting.MainVolume;
-        else if(VolumeParameter == "Audio") Volume = manager.setting.AudioVolume;
-        else if(VolumeParameter == "Effect") Volume = manager.setting.EffectVolume;
-
-        AudioMixer.SetFloat(VolumeParameter, Volume);
         GetComponent<Slider>().value = (int)Volume;
-        
+        Invoke("Set", 0.0001f);
     }
 
+    void Set()
+    {
+        float Volume = 0;
+        if (VolumeParameter == "Master") Volume = Manager.setting.MainVolume;
+        else if (VolumeParameter == "Audio") Volume = Manager.setting.AudioVolume;
+        else if (VolumeParameter == "Effect") Volume = Manager.setting.EffectVolume;
+        GetComponent<Slider>().value = Volume;
+        SetVolume(Volume);
+    }
 
 
     public void SetVolume(float volume)
