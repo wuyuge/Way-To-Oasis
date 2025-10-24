@@ -47,6 +47,8 @@ public class MiniCharacterManager : MonoBehaviour
     private Animator _animator;
     private List<RectTransform> _availablePositions = new List<RectTransform>(); // ø…”√Œª÷√ª∫¥Ê
 
+    public GameObject CampLight;
+
     private void Awake()
     {
         InitializeComponents();
@@ -261,6 +263,8 @@ public class MiniCharacterManager : MonoBehaviour
                 anim.SetTrigger("Sit");
         }
 
+        CampLight.SetActive(true);
+
         Invoke(nameof(EnableAnimator), 1f);
     }
 
@@ -278,7 +282,7 @@ public class MiniCharacterManager : MonoBehaviour
             if (anim != null)
                 anim.SetTrigger("Stand");
         }
-
+        CampLight.SetActive(false);
         Invoke(nameof(EnableAnimator), 1f);
     }
 
