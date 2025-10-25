@@ -54,6 +54,9 @@ public class MiniCharacterManager : MonoBehaviour
 
     public GameObject CampLight;
 
+    public AudioSource WalkingSound;
+
+
     private void Awake()
     {
         InitializeComponents();
@@ -299,13 +302,17 @@ public class MiniCharacterManager : MonoBehaviour
         UpdateCharacterPositions();
         CampLight.SetActive(false);
         Invoke(nameof(EnableAnimator), 1f);
+        if(WalkingSound.isPlaying)         
+        {
+            WalkingSound.Stop();
+        }
     }
 
     public void SetWalk()
     {
         if (_animator != null)
             _animator.enabled = false;
-
+        WalkingSound.Play();
         foreach (var character in miniCharacters)
         {
             if (character.characterObject == null)
