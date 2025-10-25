@@ -296,6 +296,7 @@ public class Progress : MonoBehaviour
             {
                 TalkTips.SetActive(true);
                 TalkTipsBool = true;
+                return;
 
             }
 
