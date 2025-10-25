@@ -60,8 +60,9 @@ public class ShopCharacterSelect : MonoBehaviour
             UsedBody.TxtLine.Add(DeadName.TxtLine[index] += "Uesd");
             DeadName.TxtLine.RemoveAt(index);
 
-            
+            FinalBody.Weight -= 1;
             TalkSys.GetComponent<TalkSystem>().DownBar.GetComponent<ObjectManager>().Food_Text.text = FinalFood.Weight.ToString();
+            TalkSys.GetComponent<TalkSystem>().DownBar.GetComponent<ObjectManager>().Body_Text.text = FinalBody.Weight.ToString();
             _ = SetAnimation();
 
         }

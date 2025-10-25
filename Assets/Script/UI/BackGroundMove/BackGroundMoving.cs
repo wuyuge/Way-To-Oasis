@@ -81,7 +81,10 @@ public class BackGroundMoving : MonoBehaviour
     private void FixedUpdate()
     {
         if (open && BackImage.GetComponent<RectTransform>().position.x > initialLayerPositions[9].x)
-        { MoveAllLayers(); }
+        { MoveAllLayers();
+            
+        }
+        else open = false;
         if (LightSystem.complete)
         {
 
@@ -97,6 +100,7 @@ public class BackGroundMoving : MonoBehaviour
             MiniCharacter.SetStand();
             MiniCharacterStand = true;
         }
+        
         if (LightSystem.time < LightSystem.Second && LightSystem.time >= 0.5)
         {
             backgroundLayers[0].layerObject.transform.Find("Image").GetComponent<Image>().sprite = Dusk;

@@ -18,6 +18,7 @@ public class StartImportLine : MonoBehaviour
     public string Scence;
     public GameObject PlayerNameBar;
     private bool Import;
+    public AudioSource Type;
 
 
     public async Task StartImport()
@@ -40,11 +41,12 @@ public class StartImportLine : MonoBehaviour
                 {
                     if (TextUI.text[TextUI.text.Length - 1] == '¨€') TextUI.text = TextUI.text.Remove(TextUI.text.Length - 1);
                     await Task.Delay(BlockDelayTime);
+                    Type.Play();
                     TextUI.text += SpecialChar;
                     await Task.Delay(BlockDelayTime);
                 }
                 await Task.Delay(DelayTime);
-                
+                Type.Play();
 
             }
             if (TextUI.text[TextUI.text.Length - 1] == '¨€')
@@ -66,8 +68,11 @@ public class StartImportLine : MonoBehaviour
             if (TextUI.text[TextUI.text.Length - 1] == '¨€') TextUI.text = TextUI.text.Remove(TextUI.text.Length - 1);
             await Task.Delay(EndDelay);
             TextUI.text += SpecialChar;
+            Type.Play();
             await Task.Delay(EndDelay);
+            Type.Stop();
         }
+        
 
     }
 

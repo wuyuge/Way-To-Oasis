@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     }
     public List<AudioLine> AudioLines;
     private AudioSource AudioSource;
+    public AudioSource HeavyClick;
     void Start()
     {
         AudioSource = GetComponent<AudioSource>();
@@ -33,7 +34,17 @@ public class AudioManager : MonoBehaviour
 
     }
 
-
-
-
+    public void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if(HeavyClick.isPlaying) HeavyClick.Stop();
+            HeavyClick.Play();
+        }
+    }
 }
+
+
+
+
+

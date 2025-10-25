@@ -118,8 +118,8 @@ public class TalkSystem : MonoBehaviour
     [Header("立绘表情控制")]
     public List<string> Expressions = new List<string>();
     private CharacterExpression expression;
-    
 
+    public AudioSource Type;
 
 
     private void Awake()
@@ -132,6 +132,7 @@ public class TalkSystem : MonoBehaviour
             Invoke("SetStartTalk", 1.5f);
 
         }
+        Type = gameObject.GetComponent<AudioSource>();
     }
 
     void SetStartTalk()
@@ -260,6 +261,11 @@ public class TalkSystem : MonoBehaviour
                 case "/MiniModeOff":
                     MiniMode = false;
                     MiniCharacterManager.CompleteTalk();
+                    PlusLine();
+                    _ = ShowText(true);
+                    return;
+                case "/OffLight":
+                    MiniCharacterManager.gameObject.GetComponent<MiniCharacterManager>().OffLight();
                     PlusLine();
                     _ = ShowText(true);
                     return;
@@ -399,8 +405,6 @@ public class TalkSystem : MonoBehaviour
                     ShopCharaBar.GetComponent<ShopCharacterManager>().KillSB();
 
                     on = false;
-                    await Task.Delay(200);
-                    ShopTextBar.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Down");
                     return;
 
                 case "/exchangeBody":
@@ -415,8 +419,7 @@ public class TalkSystem : MonoBehaviour
                         ShopCharaBar.GetComponent<Animator>().SetTrigger("Up");
                         ShopCharaBar.GetComponent<ShopCharacterManager>().SelectBody();
                         on = false;
-                        await Task.Delay(200);
-                        ShopTextBar.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Down");
+                        
 
 
                     }
@@ -1041,29 +1044,6 @@ public class TalkSystem : MonoBehaviour
 
                 }
 
-                //如果句尾没有。加。
-                //if (!string.IsNullOrEmpty(dialogueContent))
-                //{
-                //    // 获取最后一个字符（只计算一次，提升效率）
-                //    char lastChar = dialogueContent[dialogueContent.Length - 1];
-
-                //    // 定义不需要补句号的结尾字符集合
-                //    HashSet<char> endChars = new HashSet<char> { '。', '…', '?', '!', '？', '}' , '{' };
-
-                //    // 如果最后一个字符不在集合中，则补句号
-                //    if (!endChars.Contains(lastChar))
-                //    {
-                //        dialogueContent += '。';
-                //    }
-                //}
-
-                //if (dialogueContent[dialogueContent.Length - 1] == '。')
-                //{
-                //    dialogueContent = dialogueContent.Substring(0, dialogueContent.Length - 2);
-                //    Debug.Log("多余句号");
-                //}
-                
-
                 on = false;
                 _IsShowingText = true;
                 // 逐字显示对话
@@ -1101,6 +1081,7 @@ public class TalkSystem : MonoBehaviour
                     }
 
                     await Task.Delay(TextSpeedI);
+                    Type.Play();
                     if (_inshop)
                     {
                         ShopTextBar.GetComponent<TextMeshProUGUI>().text += c;
@@ -1133,6 +1114,7 @@ public class TalkSystem : MonoBehaviour
                     _ = ShowText(true,ClearText:false);
                     Invoke("SetOn", 0.5f);
                 }
+                Type.Stop();
                 on = true;
                 BreakText = false;
                 _IsShowingText = false;
@@ -1183,6 +1165,7 @@ public class TalkSystem : MonoBehaviour
                         return;
                     }
                     await Task.Delay(TextSpeedI);
+                    Type.Play();
                     if (_inshop)
                     {
                         ShopTextBar.GetComponent<TextMeshProUGUI>().text += c;
@@ -1198,6 +1181,7 @@ public class TalkSystem : MonoBehaviour
                     }
                     
                 }
+                Type.Stop();
                 on = true;
                 BreakText = false;
                 _IsShowingText = false;
@@ -1336,13 +1320,30 @@ public class TalkSystem : MonoBehaviour
     public void ShowExchangeTalk()
     {
         
-        
-            
-        
+        bool AmandeDead = false;
+
+
         if (Daytime == 2)
         {
             Day2ShopEvent.GeneralBool = true;
-            amandeKillself.GeneralBool = true;
+            foreach (string s in DeadName.TxtLine)
+            {
+                if (s.Contains("阿曼德"))
+                {
+                    AmandeDead=true;
+                    break;
+                }
+            }
+            foreach (string s in UsedBody.TxtLine)
+            {
+                if (s.Contains("阿曼德"))
+                {
+                    AmandeDead = true;
+                    break;
+                }
+            }
+            if (!AmandeDead)
+                amandeKillself.GeneralBool = true;
             if (CharacterList[4].GetComponent<Character>().Special2) return;
 
             CharacterList[4].GetComponent<Character>().Special1 = true;
@@ -1364,13 +1365,30 @@ public class TalkSystem : MonoBehaviour
 
     public void ShowKillTalk()
     {
-        
 
-        
+        bool AmandeDead = false;
+
         if (Daytime == 2)
         {
             Day2ShopEvent.GeneralBool = true;
-            amandeKillself.GeneralBool = true;
+            foreach (string s in DeadName.TxtLine)
+            {
+                if (s.Contains("阿曼德"))
+                {
+                    AmandeDead = true;
+                    break;
+                }
+            }
+            foreach (string s in UsedBody.TxtLine)
+            {
+                if (s.Contains("阿曼德"))
+                {
+                    AmandeDead = true;
+                    break;
+                }
+            }
+            if (!AmandeDead)
+                amandeKillself.GeneralBool = true;
             CharacterList[4].GetComponent<Character>().Special2 = true;
             CharacterList[4].GetComponent<Character>().EnableTalk();
             CharacterList[4].transform.Find("Attention").gameObject.SetActive(true);

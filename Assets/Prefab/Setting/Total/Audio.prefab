@@ -484,6 +484,7 @@ GameObject:
   - component: {fileID: 5255940552314252863}
   - component: {fileID: 2791488376906563118}
   - component: {fileID: 1167621395877800254}
+  - component: {fileID: 347337952214311473}
   m_Layer: 5
   m_Name: CloseSwitch
   m_TagString: Untagged
@@ -616,6 +617,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 347337952214311473}
+        m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2791488376906563118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,6 +659,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SettingManager: {fileID: 0}
+--- !u!114 &347337952214311473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237518862553417287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52eb4e554bcb02446ad93109a3ea6321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioManager: {fileID: 0}
 --- !u!1 &1243866489638965109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,6 +1121,7 @@ GameObject:
   - component: {fileID: 5200576939511957214}
   - component: {fileID: 8054731082587855329}
   - component: {fileID: 4881471927700341317}
+  - component: {fileID: 4866220256888016922}
   m_Layer: 5
   m_Name: GeneralSwitch
   m_TagString: Untagged
@@ -1217,6 +1244,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4866220256888016922}
+        m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8054731082587855329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1280,6 +1319,19 @@ PolygonCollider2D:
       - {x: -158.26015, y: 74.392426}
       - {x: 175.08057, y: 73.097626}
   m_UseDelaunayMesh: 0
+--- !u!114 &4866220256888016922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656585321205335777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52eb4e554bcb02446ad93109a3ea6321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioManager: {fileID: 0}
 --- !u!1 &1738537199324568729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,6 +1860,7 @@ GameObject:
   - component: {fileID: 1785865198502502141}
   - component: {fileID: 7508522559830499785}
   - component: {fileID: 2555338837544361735}
+  - component: {fileID: 8385418803285257911}
   m_Layer: 5
   m_Name: VideoSwitch
   m_TagString: Untagged
@@ -1929,6 +1982,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8385418803285257911}
+        m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2555338837544361735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1942,6 +2007,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LinkObj: {fileID: 0}
+--- !u!114 &8385418803285257911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3791640688172973735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52eb4e554bcb02446ad93109a3ea6321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioManager: {fileID: 0}
 --- !u!1 &3845958149575731685
 GameObject:
   m_ObjectHideFlags: 0
@@ -3372,6 +3450,7 @@ GameObject:
   - component: {fileID: 5770703711119008905}
   - component: {fileID: 7907174452147612205}
   - component: {fileID: 5793328721001106926}
+  - component: {fileID: 5591229559912187201}
   m_Layer: 5
   m_Name: TextSwitch
   m_TagString: Untagged
@@ -3506,6 +3585,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5591229559912187201}
+        m_TargetAssemblyTypeName: ClickSound, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5591229559912187201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6727585129446014838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52eb4e554bcb02446ad93109a3ea6321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioManager: {fileID: 0}
 --- !u!1 &6738555391447935287
 GameObject:
   m_ObjectHideFlags: 0

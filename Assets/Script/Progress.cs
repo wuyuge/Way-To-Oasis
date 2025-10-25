@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
@@ -236,6 +237,9 @@ public class Progress : MonoBehaviour
 
             }
         }
+
+        
+
 
     }
 
@@ -541,7 +545,10 @@ public class Progress : MonoBehaviour
                 Invoke("TurnLight", 1.8f);  // 延迟1秒后执行亮化（Invoke 用于延迟调用方法）
             }
 
-            
+            if (day_num == 4)
+            {
+                SceneManager.LoadScene("Demo-End");
+            }
 
         }
     }

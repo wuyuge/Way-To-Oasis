@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class Skip : MonoBehaviour
 {
@@ -15,19 +16,26 @@ public class Skip : MonoBehaviour
     private bool Turn;
     public Manager CurrentDead;
     public List<AudioClip> Clips;
+    public GameObject Tips;
+    private Image image;
     void Start()
     {
         anim = GetComponent<Animator>();
+        image = GetComponent<Image>();
         ShowText();
         Turn = true;
 
     }
     private void Update()
     {
-        if((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))&& Turn)
+        if(Input.anyKeyDown && Turn)
         {
             Turn = false;
             TurnBright();
+        }
+        if(image.color.a == 0 && Tips.activeSelf)
+        {
+            Tips.SetActive(false);
         }
     }
 
@@ -47,6 +55,16 @@ public class Skip : MonoBehaviour
         Report.GetComponent<Report>().ShowText();
     }
 
+
+    public void ShowTips()
+    {
+        Tips.SetActive(true);
+    }
+
+    public void HideTips()
+    {
+        Tips.SetActive(false);
+    }
 
     public void SwitchWeight()
     {

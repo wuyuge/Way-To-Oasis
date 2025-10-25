@@ -18,6 +18,8 @@ public class MiniCharacterManager : MonoBehaviour
         public GameObject characterTalkBar;
         [Tooltip("角色Y轴固定位置（X轴由位置列表决定）")]
         public float fixedYPosition = 0f;
+
+        public RectTransform SitPosition;
     }
 
     [Header("角色配置")]
@@ -47,6 +49,9 @@ public class MiniCharacterManager : MonoBehaviour
     private Animator _animator;
     private List<RectTransform> _availablePositions = new List<RectTransform>(); // 可用位置缓存
 
+    private Animator LightAnim;
+
+
     public GameObject CampLight;
 
     private void Awake()
@@ -59,6 +64,7 @@ public class MiniCharacterManager : MonoBehaviour
     {
         // 初始分配一次位置
         UpdateCharacterPositions();
+        LightAnim = CampLight.GetComponent<Animator>();
     }
 
     private void Update()
@@ -246,6 +252,7 @@ public class MiniCharacterManager : MonoBehaviour
     {
         if (_animator != null)
             _animator.SetTrigger("Close");
+        LightAnim.SetTrigger("Close");
     }
 
     public void SetSit()
@@ -261,7 +268,14 @@ public class MiniCharacterManager : MonoBehaviour
             var anim = character.characterObject.GetComponent<Animator>();
             if (anim != null)
                 anim.SetTrigger("Sit");
+
+            character.characterObject.GetComponent<RectTransform>().position = character.SitPosition.position;
+
         }
+
+        
+
+
 
         CampLight.SetActive(true);
 
@@ -282,6 +296,7 @@ public class MiniCharacterManager : MonoBehaviour
             if (anim != null)
                 anim.SetTrigger("Stand");
         }
+        UpdateCharacterPositions();
         CampLight.SetActive(false);
         Invoke(nameof(EnableAnimator), 1f);
     }
@@ -297,8 +312,12 @@ public class MiniCharacterManager : MonoBehaviour
                 continue;
 
             var anim = character.characterObject.GetComponent<Animator>();
-            if (anim != null)
-                anim.SetTrigger("Walk");
+            if (anim.GetBool("Stand"))
+            {
+                anim.ResetTrigger("Stand");
+            }
+            
+            anim.SetTrigger("Walk");
         }
 
         Invoke(nameof(EnableAnimator), 1f);
@@ -312,4 +331,11 @@ public class MiniCharacterManager : MonoBehaviour
             _animator.enabled = true;
     }
     #endregion
+
+
+    public void OffLight()
+    {
+        LightAnim.SetTrigger("Close");
+    }
+
 }

@@ -12,6 +12,7 @@ public class New_Game : MonoBehaviour
     public int food, body;
     public Manager DeadName;
     public Manager Day0_Talk;
+    public AudioSource Start_Audio;
     public void Clik()
     {
         if (is_New)
@@ -31,7 +32,7 @@ public class New_Game : MonoBehaviour
         {
             m.GeneralBool = false;
         }
-        
+        Start_Audio.Play();
         Day0_Talk.Weight = 0;
     }
 

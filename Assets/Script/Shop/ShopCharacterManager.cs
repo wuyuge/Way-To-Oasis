@@ -102,6 +102,10 @@ public class ShopCharacterManager : MonoBehaviour
                     CharacterList[0].GetComponent<Image>().color = Color.gray;
 
                     break;
+                case "Leader":
+                    CharacterList[5].GetComponent<Button>().enabled = false;
+                    CharacterList[5].GetComponent<Image>().color = Color.gray;
+                    break;
 
             }
 

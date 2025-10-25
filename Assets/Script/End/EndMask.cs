@@ -12,7 +12,7 @@ public class EndMask : MonoBehaviour
     public GameObject Text;
     private bool Breaking;
     public float AddAmount;
-
+    public AudioSource audio;
     private void Start()
     {
         material = GetComponent<Image>().material;
@@ -24,7 +24,8 @@ public class EndMask : MonoBehaviour
     public void Click()
     {
         Breaking = true;
-        
+        audio.Play();
+
     }
 
     public void FixedUpdate()
