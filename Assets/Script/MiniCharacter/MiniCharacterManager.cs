@@ -56,6 +56,9 @@ public class MiniCharacterManager : MonoBehaviour
 
     public AudioSource WalkingSound;
 
+    public GameObject CampFire;
+
+
 
     private void Awake()
     {
@@ -276,7 +279,7 @@ public class MiniCharacterManager : MonoBehaviour
 
         }
 
-        
+        CampFire.SetActive(true);
 
 
 
@@ -306,6 +309,7 @@ public class MiniCharacterManager : MonoBehaviour
         {
             WalkingSound.Stop();
         }
+        CampFire.SetActive(false);
     }
 
     public void SetWalk()
@@ -326,7 +330,7 @@ public class MiniCharacterManager : MonoBehaviour
             
             anim.SetTrigger("Walk");
         }
-
+        CampFire.SetActive(false);
         Invoke(nameof(EnableAnimator), 1f);
     }
 

@@ -547,11 +547,16 @@ public class Progress : MonoBehaviour
 
             if (day_num == 4)
             {
+                if(! GameObject.Find("EndingsManager").GetComponent<EndingsManager>().CheckEnding())
                 SceneManager.LoadScene("Demo-End");
             }
 
         }
     }
+
+
+
+
 
 
     private void KillAmande()

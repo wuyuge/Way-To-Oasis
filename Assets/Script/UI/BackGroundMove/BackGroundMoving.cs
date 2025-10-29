@@ -141,7 +141,7 @@ public class BackGroundMoving : MonoBehaviour
                 float layerSpeed = baseSpeed * layer.speedFactor;
 
                 // ÒÆ¶¯±³¾°²ã
-                Vector2 newPosition = layer.layerObject.transform.position;
+                Vector3 newPosition = layer.layerObject.transform.position;
                 newPosition.x -= layerSpeed;
                 layer.layerObject.transform.position = newPosition;
 

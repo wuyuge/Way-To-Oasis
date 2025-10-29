@@ -120,6 +120,7 @@ public class TalkSystem : MonoBehaviour
     private CharacterExpression expression;
 
     public AudioSource Type;
+    private bool CharaBarShow = true;
 
 
     private void Awake()
@@ -809,15 +810,16 @@ public class TalkSystem : MonoBehaviour
                 //死亡判断分支结束
 
                 case "upcbar":
-                    charaBar.GetComponent<Animator>().SetTrigger("Up");
+                    //charaBar.GetComponent<Animator>().SetTrigger("Up");
                     PlusLine();
-                    if(!inTech && !TogetherClose) this.CharacterImageManager.CloseImage();
+                    if(!inTech && !TogetherClose && CharaBarShow) this.CharacterImageManager.CloseImage();
                     NoiseMask.SetActive(false);
                     if (TogetherClose) TogetherClose = false;
                     await Task.Delay(800);
 
                     _ = ShowText(true);
                     DaytimeOBJ.GetComponent<Progress>().CanSwitch = true;
+                    CharaBarShow = true;
                     return;
 
                 case "downcbar":
@@ -845,7 +847,7 @@ public class TalkSystem : MonoBehaviour
                 case "showcharabar":
                     charabar.SetActive(true);
                     PlusLine();
-
+                    CharaBarShow = true;
                     Debug.Log("显示角色文本框");
                     _ = ShowText(true);
                     return;
@@ -854,6 +856,7 @@ public class TalkSystem : MonoBehaviour
                     charabar.SetActive(false);
                     PlusLine();
                     this.CharacterImageManager.CloseImage();
+                    CharaBarShow = false;
                     Debug.Log("关闭角色文本框");
                     _ = ShowText(true);
                     return;

@@ -18,7 +18,7 @@ public class EndingsManager : MonoBehaviour
     }
 
 
-    public void CheckEnding()
+    public bool CheckEnding()
     {
         // 一次性获取所有需要的统计数据
         int currentNotDeadNum = CheckNotDeadNum();
@@ -33,7 +33,7 @@ public class EndingsManager : MonoBehaviour
         if (notComfort >= 2)
         {
             ToEnd("Be3");
-            return; // 触发此结局后直接返回，避免后续判断
+            return true; // 触发此结局后直接返回，避免后续判断
         }
 
         // 主角是否进食的分支处理
@@ -43,10 +43,12 @@ public class EndingsManager : MonoBehaviour
             if (eatNum <= notEatNum)
             {
                 ToEnd("Be1");
+                return true;
             }
             else if (eatNum == 1)
             {
                 ToEnd("Be2");
+                return true;
             }
         }
         else
@@ -54,18 +56,20 @@ public class EndingsManager : MonoBehaviour
             // 处理主角未进食的情况
             if (currentNotDeadNum == 0)
             {
-                return; // 没有存活角色，无需处理
+                return true; // 没有死亡角色，无需处理
             }
 
             // 检查全员未进食的特殊情况
             if (eatNum == 0 && currentNotDeadNum == 6)
             {
                 ToEnd("Be7");
+                return true;
             }
             // 检查只有主角存活的情况
             else if (currentNotDeadNum == 1)
             {
                 ToEnd("Be5");
+                return true;
             }
             // 其他主角饿死的情况
             else
@@ -73,13 +77,16 @@ public class EndingsManager : MonoBehaviour
                 if (currentNotDeadNum == 3)
                 {
                     ToEnd("Be4-1");
+                    return true;
                 }
                 else if (currentNotDeadNum > 3)
                 {
                     ToEnd("Be4-2");
+                    return true;
                 }
             }
         }
+        return false;
     }
 
     int CheckNotDeadNum()

@@ -37,7 +37,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BreakAmount: 6.000005
+    - _BreakAmount: 5.550003
     - _DepthOffset: -0.226
     - _DissolveThreshold: 0.36
     - _EdgeIntensity: 5

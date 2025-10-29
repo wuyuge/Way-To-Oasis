@@ -72,12 +72,14 @@ public class ShopCharacterSelect : MonoBehaviour
     async Task SetAnimation()
     {
         TalkSys.GetComponent<TalkSystem>().line++;
-        
-        ShopTextBar.GetComponent<Animator>().SetTrigger("Up");
+
+        //ShopTextBar.GetComponent<Animator>().SetTrigger("Up");
         await Task.Delay(200);
+        
+        //_ = TalkSys.GetComponent<TalkSystem>().ShowText();
         TalkSys.GetComponent<TalkSystem>().on = true;
         ShopManager.GetComponent<Animator>().SetTrigger("Down");
-        await Task.Delay(200);
+        await Task.Delay(1000);
         ShopManager.SetActive(false);
     }
 
