@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour
     public GameObject MainTalk, LearnTalk;
     public Material Error;
     public Animator Black;
+    private SettingDataManager SettingManager;
 
 
     private void Awake()
@@ -23,6 +24,7 @@ public class MenuManager : MonoBehaviour
             Error.SetFloat("_ColorShift", 0);
             Error.SetFloat("_GlitchSpeed", 0);
         }
+        SettingManager = GameObject.Find("SaveManager").GetComponent<SettingDataManager>();
     }
 
     void Update()
@@ -60,7 +62,12 @@ public class MenuManager : MonoBehaviour
     public void BackToGame()
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().AudioPlayer("Click");
+        Menu.transform.Find("General").gameObject.SetActive(false);
+        Menu.transform.Find("Text").gameObject.SetActive(false);
+        Menu.transform.Find("Video").gameObject.SetActive(false);
+        Menu.transform.Find("Audio").gameObject.SetActive(false);
         Menu.SetActive(false);
+        SaveSetting();
         Time.timeScale = 1;
         MainTalk.GetComponent<TalkSystem>().on = true;
         LearnTalk.GetComponent<TalkSystem>().on = true;
@@ -116,7 +123,10 @@ public class MenuManager : MonoBehaviour
 
 
     
-
+    void SaveSetting()
+    {
+        SettingManager.Save();
+    }
 
 
     
