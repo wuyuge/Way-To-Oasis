@@ -137,6 +137,7 @@ public class Character : MonoBehaviour
         weight3 = gameObject.transform.Find("Weight1").gameObject;
         // 初始化显示角色持有的食物数量（更新UI文本）
         gameObject.transform.parent.Find("Have_Food").GetComponent<TextMeshProUGUI>().text = food.Weight.ToString();
+        if(end.GetComponent<Progress>().day_num != 0)
         Background = GameObject.Find("BackgroundContainer").gameObject;
         for (int i = 0; i < transform.childCount;i++)
         {

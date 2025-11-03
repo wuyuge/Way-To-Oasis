@@ -19,6 +19,11 @@ public class Report : MonoBehaviour
 
     public void ShowText()
     {
+        if(Text == null)
+        {
+            Text = GetComponent<TextMeshProUGUI>();
+            DefultText = Text.text;
+        }
         Text.text = DefultText;
         string showdead = string.Empty;
         Text.text = Text.text.Replace("{day}", Day.day_num.ToString());

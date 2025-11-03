@@ -102,6 +102,7 @@
     <Compile Include="Assets\Script\Setting\Tech\ShowTech.cs" />
     <Compile Include="Assets\Script\SetPlayerName.cs" />
     <Compile Include="Assets\Script\UI\BackGroundMove\BackGroundMoving.cs" />
+    <Compile Include="Assets\Script\DataManager\SavingManager.cs" />
     <Compile Include="Assets\Script\Start\StartImport.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Script\UI\Obj\ObjectManager.cs" />
