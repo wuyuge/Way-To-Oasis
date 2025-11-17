@@ -157,6 +157,8 @@ public class Progress : MonoBehaviour
     public GameObject TalkTips;
     public bool TalkTipsBool;
 
+    
+
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
     /// 1. 绑定UI文本组件 2. 设置初始阶段的文本颜色 3. 触发当天开始前的幕间对话
@@ -205,6 +207,12 @@ public class Progress : MonoBehaviour
             _ = talkSys.ShowText();  // 启动对话显示（异步执行）
             DownBar.GetComponent<Animator>().SetTrigger("Down");  // 底部栏播放"向下"动画（可能隐藏底部栏）
         }
+
+        
+
+        
+        
+
 
     }
 
@@ -289,6 +297,7 @@ public class Progress : MonoBehaviour
             talk = true;  // 进入对话阶段
             talk_t.color = new Color32(0, 0, 0, 255);  // 对话文本高亮
             
+
         }
 
         // 2. 从【对话阶段】切换到【进食阶段】
@@ -377,7 +386,7 @@ public class Progress : MonoBehaviour
             
             SwitchStageBar.SetActive(true);
             SwitchStageBar.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "分配食物阶段";
-
+            
 
         }
 
@@ -507,9 +516,12 @@ public class Progress : MonoBehaviour
             // 通知对象管理器重置道具携带状态（可能将携带道具放回背包）
             ObjectManager.GetComponent<ObjectManager>().ReturnCarry();
             ObjectManager.GetComponent<ObjectManager>().RestTag();
-            // 重置背景状态（调用 BackGroundMoving 的 Re_set 方法，还原背景初始位置）
+
             
-            foreach(GameObject g in DownBar.GetComponent<ObjectManager>().Character_List)
+
+            // 重置背景状态（调用 BackGroundMoving 的 Re_set 方法，还原背景初始位置）
+
+            foreach (GameObject g in DownBar.GetComponent<ObjectManager>().Character_List)
             {
                 g.GetComponent<Character>().EnableTalk();
             }

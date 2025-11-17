@@ -1,15 +1,10 @@
 using Coffee.UIExtensions;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Threading;
 using System.Threading.Tasks;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
-using static TechTextList;
+
 
 /// <summary>
 /// 对话系统核心类：负责文本显示、角色切换、选择分支等对话逻辑
@@ -122,6 +117,15 @@ public class TalkSystem : MonoBehaviour
     public AudioSource Type;
     private bool CharaBarShow = true;
 
+    /// <summary>
+    /// 用于存档加载时暂时停止对话系统调用
+    /// </summary>
+    public bool Ban
+    {
+        get;
+        set;
+    }
+
 
     private void Awake()
     {
@@ -219,8 +223,8 @@ public class TalkSystem : MonoBehaviour
     /// </summary>
     public async Task ShowText(bool isroll = false, string addtiontext = null, bool ClearText = true,bool ShowMask = false)
     {
+        if(Ban) return;
 
-        
         // 清空文本框（原有逻辑保留）
         if (!PlayerTalking && ClearText)
         {
@@ -1322,10 +1326,10 @@ public class TalkSystem : MonoBehaviour
 
     public void ShowExchangeTalk()
     {
-        
+        Debug.Log("杀死角色对话");
         bool AmandeDead = false;
 
-
+        Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
         if (Daytime == 2)
         {
             Day2ShopEvent.GeneralBool = true;
@@ -1351,7 +1355,8 @@ public class TalkSystem : MonoBehaviour
 
             CharacterList[4].GetComponent<Character>().Special1 = true;
             CharacterList[4].GetComponent<Character>().EnableTalk();
-            CharacterList[4].transform.Find("Attention").gameObject.SetActive(true);
+            CharacterList[4].GetComponent<Character>().Attention.SetActive(true);
+            Debug.Log("Done");
         }
 
         foreach (GameObject g in CharacterList)
@@ -1370,7 +1375,7 @@ public class TalkSystem : MonoBehaviour
     {
 
         bool AmandeDead = false;
-
+        Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
         if (Daytime == 2)
         {
             Day2ShopEvent.GeneralBool = true;
@@ -1394,27 +1399,30 @@ public class TalkSystem : MonoBehaviour
                 amandeKillself.GeneralBool = true;
             CharacterList[4].GetComponent<Character>().Special2 = true;
             CharacterList[4].GetComponent<Character>().EnableTalk();
-            CharacterList[4].transform.Find("Attention").gameObject.SetActive(true);
+            CharacterList[4].GetComponent<Character>().Attention.SetActive(true);
             CharacterList[5].GetComponent<Character>().Special2 = true;
             CharacterList[5].GetComponent<Character>().EnableTalk();
-            CharacterList[5].transform.Find("Attention").gameObject.SetActive(true);
-            if (DeadName.TxtLine[DeadName.TxtLine.Count - 1] == "博金森")
-            {
-                Debug.Log("第一次商店杀死博金森");
-                CharacterList[1].GetComponent<Character>().Special2 = true;
+            CharacterList[5].GetComponent<Character>().Attention.SetActive(true);
+            if(DeadName.TxtLine != null)
+            {   
+                if (DeadName.TxtLine[DeadName.TxtLine.Count - 1] == "博金森")
+                {
+                    Debug.Log("第一次商店杀死博金森");
+                    CharacterList[1].GetComponent<Character>().Special2 = true;
                 
-                CharacterList[1].GetComponent<Character>().EnableTalk();
-                CharacterList[1].transform.Find("Attention").gameObject.SetActive(true);
+                    CharacterList[1].GetComponent<Character>().EnableTalk();
+                    CharacterList[1].GetComponent<Character>().Attention.SetActive(true);
 
-            }
-            if (DeadName.TxtLine[DeadName.TxtLine.Count - 1] == "艾米莉")
-            {
-                Debug.Log("第一次商店杀死艾米莉");
-                CharacterList[3].GetComponent<Character>().Special2 = true;
-                CharacterList[3].GetComponent<Character>().NotComfort = true;
-                CharacterList[3].GetComponent<Character>().EnableTalk();
-                CharacterList[3].transform.Find("Attention").gameObject.SetActive(true);
+                }
+                if (DeadName.TxtLine[DeadName.TxtLine.Count - 1] == "艾米莉")
+                {
+                        Debug.Log("第一次商店杀死艾米莉");
+                        CharacterList[3].GetComponent<Character>().Special2 = true;
+                        CharacterList[3].GetComponent<Character>().NotComfort = true;
+                        CharacterList[3].GetComponent<Character>().EnableTalk();
+                        CharacterList[3].GetComponent<Character>().Attention.SetActive(true);
 
+                }
             }
 
 
@@ -1546,6 +1554,11 @@ public class TalkSystem : MonoBehaviour
 
         expression.SetExpression(CharaName,Expression);
     }
+
+
+
+
+    
 
 
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Report : MonoBehaviour
 {
-    public Manager Food,Body,CurrentDead;
+    public Manager Food,Body,Food2,Body2,CurrentDead;
     public Progress Day;
     private TextMeshProUGUI Text;
     public string DefultText;
@@ -77,12 +77,16 @@ public class Report : MonoBehaviour
             Text.text = Text.text.Replace("{dead}", string.Empty);
             
         }
-        Text.text = Text.text.Replace("{food}", "<color=#00ff00ff>" + Food.Weight.ToString() + "</color>");
-        if(Food.Weight > 9)
+
+        string FoodText = Mathf.Max(Food.Weight, Food2.Weight).ToString();
+        string BodyText = Mathf.Max(Body.Weight, Body2.Weight).ToString();
+
+        Text.text = Text.text.Replace("{food}", "<color=#00ff00ff>" + FoodText + "</color>");
+        if(Mathf.Max(Food.Weight, Food2.Weight) > 9)
         {
-            Text.text = Text.text.Replace("{body}", " " + Body.Weight.ToString());
+            Text.text = Text.text.Replace("{body}", " " + BodyText);
         }
-        else Text.text = Text.text.Replace("{body}", Body.Weight.ToString());
+        else Text.text = Text.text.Replace("{body}", BodyText);
 
 
 

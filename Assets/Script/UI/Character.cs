@@ -44,7 +44,7 @@ public class Character : MonoBehaviour
     /// <summary>
     /// 游戏进度管理对象（Progress脚本挂载对象，用于判断当前游戏阶段）
     /// </summary>
-    public GameObject progress;
+    public Progress progress;
 
     [Header("对话列表 - 角色专属对话数据")]
     /// <summary>
@@ -77,7 +77,7 @@ public class Character : MonoBehaviour
     public float Delay = 1;
     public GameObject Mask;
     [Tooltip("安抚提示")]
-    private GameObject Attention,Attention2;
+    public GameObject Attention,Attention2;
     [Header("安抚对话控制")]
     public bool Special1,Special2,AfterSpecialTalk;
     public bool NotComfort;//用于判断安抚是否成功
@@ -106,6 +106,26 @@ public class Character : MonoBehaviour
     private bool Have_ShowInfo = false;
 
     private int InfoClick = 0;
+
+
+    private void Awake()
+    {
+        Attention = gameObject.transform.Find("Attention").gameObject;
+        Attention2 = gameObject.transform.Find("Attention2").gameObject;
+        //在初始加载且不是重新加载存档的场景刷新负重等状态
+        if (GameObject.Find("SaveManager").GetComponent<SaveManager>().Reload.GeneralBool)
+        {
+            weight.Weight = 0;
+            weight.Weight_tag = 0;
+            weight.Day1Eat = false;
+
+            Attention.SetActive(false);
+            Attention2.SetActive(false);
+        }
+    }
+
+
+
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
     /// 1. 绑定UI组件 2. 初始化角色数据 3. 刷新初始UI显示
@@ -119,18 +139,13 @@ public class Character : MonoBehaviour
         end = GameObject.Find("End");
         // 记录初始天数（与Progress中的day_num同步）
         curr_num = end.GetComponent<Progress>().day_num;
-        if (curr_num != 0)
-        {
-            Attention = gameObject.transform.Find("Attention").gameObject;
-            Attention2 = gameObject.transform.Find("Attention2").gameObject;
-            Attention.SetActive(false);
-            Attention2.SetActive(false);
-        }
+
         
         // 初始化显示角色持有的尸体数量（更新UI文本）
         gameObject.transform.parent.Find("Have_Body").GetComponent<TextMeshProUGUI>().text = body.Weight.ToString();
-        // 初始化角色负重为0（初始无负重）
-        weight.Weight = 0;
+        
+        
+        
         // 绑定角色子对象中的3个负重进度条UI
         weight1 = gameObject.transform.Find("Weight3").gameObject;
         weight2 = gameObject.transform.Find("Weight2").gameObject;
@@ -144,6 +159,13 @@ public class Character : MonoBehaviour
             Child.Add(transform.GetChild(i).gameObject);
         }
         CharacterList = gameObject.transform.parent.gameObject.GetComponent<ObjectManager>().Character_List;
+        StartRestWeightImage();
+
+
+        
+
+
+
     }
 
     // Update is called once per frame
@@ -165,7 +187,7 @@ public class Character : MonoBehaviour
             }
             return; 
         }
-        if(NotComfort && progress.GetComponent<Progress>().day_num == 2)
+        if(NotComfort && progress.day_num == 2)
         {
             Attention2.SetActive(true);
         }
@@ -174,11 +196,11 @@ public class Character : MonoBehaviour
             Attention2.SetActive(false);
             
         }
-        else if (progress.GetComponent <Progress>().day_num != 0)
+        else if (progress.day_num != 0)
         {
             Attention2.SetActive(false);
         }
-        if(progress.GetComponent<Progress>().talk && CharacterName == "主角")
+        if(progress.talk && CharacterName == "主角")
         {
             gameObject.GetComponent<Image>().color = Color.gray;
         }
@@ -189,7 +211,7 @@ public class Character : MonoBehaviour
 
 
         // 获取资源选择面板（SelectBar）的状态，判断是否处于"食物选择"模式
-        if (!progress.GetComponent<Progress>().food)
+        if (!progress.food)
         {
             bool InfoOn = false;
             // 非食物选择模式：启用角色按钮，隐藏ToggleUI
@@ -289,7 +311,7 @@ public class Character : MonoBehaviour
         // 【死亡状态判断】如果角色死亡，不执行任何负重操作
         if (Dead) return;
         if (CantWeight) return;
-
+        if (!progress.start) return;
         // 获取资源选择面板（SelectBar）的状态，判断是否处于"食物选择"模式
         if (!gameObject.transform.parent.Find("SelectBar").GetComponent<AssResources>().Food)
         {
@@ -588,6 +610,41 @@ public class Character : MonoBehaviour
     {
         CanTalk = true;
     }
+
+
+
+    void StartRestWeightImage()
+    {
+
+        switch(weight.Weight)
+        {
+            case 0:
+                weight1.GetComponent<Image>().color = Color.green;
+                weight2.GetComponent<Image>().color = Color.green;
+                weight3.GetComponent<Image>().color = Color.green;
+                break;
+            case 1:
+                weight1.GetComponent<Image>().color = Color.red;
+                weight2.GetComponent<Image>().color = Color.green;
+                weight3.GetComponent<Image>().color = Color.green;
+                break;
+            case 2:
+                weight1.GetComponent<Image>().color = Color.red;
+                weight2.GetComponent<Image>().color = Color.red;
+                weight3.GetComponent<Image>().color = Color.green;
+                break;
+            case 3:
+                weight1.GetComponent<Image>().color = Color.red;
+                weight2.GetComponent<Image>().color = Color.red;
+                weight3.GetComponent<Image>().color = Color.red;
+                break;
+
+
+
+        }
+
+    }
+
 
 
 

@@ -13,9 +13,13 @@ public class ShopManager : MonoBehaviour
     public ObjectManager ObjManager;
     [Header("∂“ªª ¨ÃÂπ‹¿Ì")]
     public Manager Body,Food,DeadName,UesdBody;
+    public Manager Kill, Exchange;
 
     private void OnEnable()
     {
+        Kill.GeneralBool = false;
+        Exchange.GeneralBool = false;
+
         int day_num = DayTime.GetComponent<Progress>().day_num;
 
         if (day_num == 2) Talksys.GetComponent<TalkSystem>().Talklines[day_num] = TextLine[0];

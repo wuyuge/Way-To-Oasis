@@ -6,17 +6,20 @@ using UnityEngine.UI;
 
 public class FoodChoice : MonoBehaviour
 {
-    private GameObject End;
+    public GameObject End;
     public Manager Have_Food;
     public bool have;
     public GameObject Food_Text;
-    
-    void Start()
-    {
-        End = GameObject.Find("End");
+    private Character Character;
+    private bool Ban;
 
+
+    void Awake()
+    {
         
 
+        Invoke("open",0.8f);
+        Character = this.gameObject.transform.parent.gameObject.GetComponent<Character>();
     }
 
     // Update is called once per frame
@@ -29,6 +32,17 @@ public class FoodChoice : MonoBehaviour
             gameObject.GetComponent<Toggle>().isOn = false;
             
         }
+        else
+        {
+            gameObject.GetComponent<Toggle>().enabled = true;
+        }
+
+        if (Character.weight.Day1Eat)
+        {
+            have = true;
+            gameObject.GetComponent<Toggle>().isOn = true;
+        }
+
 
 
     }
@@ -36,6 +50,7 @@ public class FoodChoice : MonoBehaviour
 
     public void OnClik(bool choice)
     {
+        if (Ban) return;
         
         if(End.GetComponent<Progress>().food)
         {
@@ -67,7 +82,10 @@ public class FoodChoice : MonoBehaviour
 
     }
 
-
+    void open()
+    {
+        Ban = false;
+    }
 
 
 }

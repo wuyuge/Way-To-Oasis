@@ -51,6 +51,30 @@ public class IntermissionManager : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// 用于删除某天的某个对话项
+    /// 需要参数 字符串类型 阶段 整数类型 天数
+    /// </summary>
+    public void DeleteLine(string Stage ,int Day)
+    {
+        int index = 0;
+        foreach (TextLine textLine in Lines)
+        {
+            if(textLine.Day == Day && textLine.Stage == Stage)
+            {
+                Lines.RemoveAt(index);
+                return;
+            }
+            index++;
+        }
+
+        Debug.LogError("加载存档删除前置对话失败 没有对应对话数据");
+
+    }
+
+
+
+
     Manager CheckCondition(TextLine textLine)
     {
 
