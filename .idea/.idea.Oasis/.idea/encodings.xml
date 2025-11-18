@@ -8,6 +8,7 @@
     <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/SaveManager/PlayerSaveData.cs" charset="GB18030" />
     <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/SaveManager/RestoreSence.cs" charset="GB18030" />
     <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/SaveManager/SaveConstants.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/SaveManager/SaveManager.cs" charset="GB18030" />
     <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/SaveManager/SavingManager.cs" charset="GB18030" />
     <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/SaveMenu/SaveMenu.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/SettingDataManager.cs" charset="GB18030" />

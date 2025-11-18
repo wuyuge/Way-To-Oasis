@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoadFileButton : MonoBehaviour
 {
     private SaveManager _saveManager;
     public int saveIndex;
-    
+    public GameObject linkObj;
 
     private void Awake()
     {
@@ -19,8 +20,18 @@ public class LoadFileButton : MonoBehaviour
         _saveManager.LoadData(saveIndex);
     }
 
+    public void UpLinkObj()
+    {
+        linkObj.SetActive(true);
+        gameObject.GetComponent<Button>().enabled = false;
+    }
 
 
+    public void Cancel()
+    {
+        linkObj.SetActive(false);
+        gameObject.GetComponent<Button>().enabled = true;
+    }
 
 
 

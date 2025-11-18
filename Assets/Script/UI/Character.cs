@@ -113,7 +113,7 @@ public class Character : MonoBehaviour
         Attention = gameObject.transform.Find("Attention").gameObject;
         Attention2 = gameObject.transform.Find("Attention2").gameObject;
         //在初始加载且不是重新加载存档的场景刷新负重等状态
-        if (GameObject.Find("SaveManager").GetComponent<SaveManager>().Reload.GeneralBool)
+        if (GameObject.Find("SaveManager").GetComponent<SaveManager>().reload.GeneralBool)
         {
             weight.Weight = 0;
             weight.Weight_tag = 0;

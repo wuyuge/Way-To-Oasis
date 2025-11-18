@@ -3,6 +3,7 @@ using System.IO;
 using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// 负责存档数据的保存、加载、删除
@@ -11,8 +12,8 @@ public class SaveManager : MonoBehaviour
 {
     public RestoreSence restoreSence; // 场景同步管理器引用
     private PlayerSaveData _currentSaveData; // 当前存档数据对象
-    public bool EnableEncrypt = true; // 是否启用加密
-    public Manager Reload;
+    public bool enableEncrypt = true; // 是否启用加密
+    [FormerlySerializedAs("Reload")] public Manager reload;
     
     private string _xorEncryptionKey = SaveConstants.EncryptionKey;
 
@@ -21,19 +22,19 @@ public class SaveManager : MonoBehaviour
     /// </summary>
     void Awake()
     {
-        if (Reload.GeneralBool)
+        if (reload.GeneralBool)
         {
             Debug.Log("检测到需要加载存档数据，正在加载...");
-            LoadData(Reload.Weight);
+            LoadData(reload.Weight);
             restoreSence.ApplyData(_currentSaveData);
             Invoke("SetReloadBool", 0.5f);
-            Reload.Weight = 0;
+            reload.Weight = 0;
         }
     }
 
     void SetReloadBool()
     {
-        Reload.GeneralBool = false;
+        reload.GeneralBool = false;
     }
 
 
@@ -73,7 +74,7 @@ public class SaveManager : MonoBehaviour
         {
             string jsonData = JsonUtility.ToJson(_currentSaveData, prettyPrint: true);
 
-            if (EnableEncrypt)
+            if (enableEncrypt)
             {
                 jsonData = XOREncrypt(jsonData);
             }
@@ -95,10 +96,10 @@ public class SaveManager : MonoBehaviour
     public bool LoadData(int num)
     {
 
-        if(!Reload.GeneralBool)
+        if(!reload.GeneralBool)
         {
-            Reload.GeneralBool = true;
-            Reload.Weight = num;
+            reload.GeneralBool = true;
+            reload.Weight = num;
             Time.timeScale = 1f;
             SceneManager.LoadScene("main");
             return false;
@@ -119,7 +120,7 @@ public class SaveManager : MonoBehaviour
         {
             string fileContent = File.ReadAllText(filePath);
 
-            if (EnableEncrypt)
+            if (enableEncrypt)
             {
                 fileContent = XORDecrypt(fileContent);
                 if (string.IsNullOrEmpty(fileContent))
@@ -165,6 +166,9 @@ public class SaveManager : MonoBehaviour
         {
             try
             {
+                File.Delete(filePath);
+                //删除对应的meta文件
+                filePath += ".meta";
                 File.Delete(filePath);
                 Debug.Log($"存档 {num} 已删除。");
                 return true;
@@ -250,4 +254,60 @@ public class SaveManager : MonoBehaviour
         }
         return resultBytes;
     }
+    
+    /// <summary>
+    /// 这个方法的主要功能是从指定的文件中读取玩家的存档数据，并进行必要的解密和反序列化操作。
+    /// 如果过程中有任何问题（如文件不存在、解密失败、反序列化失败等），都会记录相应的日志并返回 null。
+    /// 如果一切顺利，则返回反序列化后的 PlayerSaveData 对象。
+    /// </summary>
+    /// <param name="index">是一个字符串，表示存档文件的索引。</param>
+    /// <param name="reportWarning">是否报告存档文件不存在问题</param>
+    /// <returns></returns>
+    public PlayerSaveData GetDataFormFile(string index,bool reportWarning = true)
+    {
+        string fileName = SaveConstants.SaveFileNameTemplate.Replace("{Field}", index); // 生成存档文件名
+        string filePath = Path.Combine(SaveConstants.SaveFolderPath, fileName); // 生成存档文件路径
+
+        if (!File.Exists(filePath))
+        {
+            if (reportWarning) Debug.LogWarning($"GetDataFormFile: 存档文件 {filePath} 不存在。"); // 如果文件不存在，记录警告并返回 null
+            return null;
+        }
+
+        try
+        {
+            string fileContent = File.ReadAllText(filePath); // 读取存档文件内容
+
+            if (enableEncrypt)
+            {
+                fileContent = XORDecrypt(fileContent); // 如果启用加密，解密文件内容
+                if (string.IsNullOrEmpty(fileContent))
+                {
+                    Debug.LogError($"GetDataFormFile: 存档 {index} 解密失败。"); // 如果解密失败，记录错误并返回 null
+                    return null;
+                }
+            }
+
+            PlayerSaveData loadedData = JsonUtility.FromJson<PlayerSaveData>(fileContent); // 反序列化文件内容
+
+            if (loadedData != null)
+            {
+                Debug.Log($"存档 {index} 加载成功！"); // 如果反序列化成功，记录日志并返回数据
+                return loadedData;
+            }
+            else
+            {
+                Debug.LogError($"GetDataFormFile: 存档 {index} 反序列化失败。"); // 如果反序列化失败，记录错误并返回 null
+                return null;
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"GetDataFormFile: 加载存档 {index} 时发生错误: {e.Message}"); // 如果加载过程中发生异常，记录错误并返回 null
+            return null;
+        }
+    }
+    
+    //TODO:自动存档
+    
 }

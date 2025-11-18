@@ -53,7 +53,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Script\Setting\Video\VSyncSetting.cs" />
     <Compile Include="Assets\Script\New_Game.cs" />
-    <Compile Include="Assets\Script\DataManager\SaveMenu\SaveMenu.cs" />
+    <Compile Include="Assets\Script\DataManager\SaveLoadMenu\LoadFileButton.cs" />
     <Compile Include="Assets\Script\CharacterImageManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Script\UI\ShowText.cs" />
@@ -72,11 +72,14 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Script\Setting\Audio\AudioSettingManager.cs" />
     <Compile Include="Assets\Script\Day0\Day0SwicthMain.cs" />
+    <Compile Include="Assets\Script\DataManager\SaveLoadMenu\SaveMenuInterface.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets\Script\DataManager\SaveLoadMenu\SaveFileButton.cs" />
     <Compile Include="Assets\Script\DataManager\SaveManager\SaveConstants.cs" />
     <Compile Include="Assets\Script\Shop\ShopCharacterSelect.cs" />
     <Compile Include="Assets\Script\Start\CancelName.cs" />
+    <Compile Include="Assets\Script\DataManager\SaveLoadMenu\ChildObj\SaveChildObjManager.cs" />
     <Compile Include="Assets\Script\Be7\Be7Text.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
@@ -89,8 +92,10 @@
     <Compile Include="Assets\Script\Setting\Tech\ShowTech.cs" />
     <Compile Include="Assets\Script\SetPlayerName.cs" />
     <Compile Include="Assets\Script\UI\BackGroundMove\BackGroundMoving.cs" />
+    <Compile Include="Assets\Script\DataManager\SaveLoadMenu\ChildObj\DeleteChild.cs" />
     <Compile Include="Assets\Script\Start\StartImport.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Script\Setting\CloseSetting.cs" />
     <Compile Include="Assets\Script\UI\Obj\ObjectManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Script\UI\Character.cs" />
@@ -98,8 +103,8 @@
     <Compile Include="Assets\Script\MiniCharacter\TalkBarLinker.cs" />
     <Compile Include="Assets\Script\DataManager\SaveManager\PlayerSaveData.cs" />
     <Compile Include="Assets\Script\Text\Report.cs" />
-    <Compile Include="Assets\Script\DataManager\SaveMenu\LoadFileButton.cs" />
     <Compile Include="Assets\Script\UI\Menu\MenuManager.cs" />
+    <Compile Include="Assets\Script\DataManager\SaveLoadMenu\SaveMenu.cs" />
     <Compile Include="Assets\Script\Shop\ShopManager.cs" />
     <Compile Include="Assets\Script\Setting\Video\ShowFPSInGame.cs" />
     <Compile Include="Assets\Script\Skip.cs" />
@@ -110,7 +115,9 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\Script\UI\Manager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
+    <Compile Include="Assets\Script\DataManager\SaveLoadMenu\ChildObj\LoadChildObjManager.cs" />
     <Compile Include="Assets\Script\Setting\Text\Preview\TextPreview.cs" />
+    <Compile Include="Assets\Script\DataManager\SaveManager\SaveManager.cs" />
     <Compile Include="Assets\Script\UI\AssResources.cs" />
     <Compile Include="Assets\Script\Character\CharacterExpression.cs" />
     <Compile Include="Assets\Script\DataManager\SettingSave.cs" />
@@ -118,9 +125,11 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Script\Setting\SettingSwitch.cs" />
     <Compile Include="Assets\Script\UI\Menu\TextSpeedManager.cs" />
+    <Compile Include="Assets\Script\DataManager\SaveLoadMenu\DeleteSave.cs" />
     <Compile Include="Assets\Script\DataManager\Saves\SaveDataManager.cs" />
     <Compile Include="Assets\Script\Rain\RandomRain.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+    <Compile Include="Assets\Script\DataManager\SaveLoadMenu\LoadMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Script\Shop\ShopCharacterManager.cs" />
@@ -148,10 +157,10 @@
     <Compile Include="Assets\Script\CharacterInfo\CharacterInfoManager.cs" />
     <Compile Include="Assets\Script\DataManager\SaveManager\RestoreSence.cs" />
     <Compile Include="Assets\Script\Setting\Video\SetFPS.cs" />
+    <Compile Include="Assets\Script\DataManager\SaveLoadMenu\FileButtonRefresh.cs" />
     <Compile Include="Assets\Script\End\BackToStart.cs" />
     <Compile Include="Assets\Script\Audio\AudioManager.cs" />
     <Compile Include="Assets\Script\End\EndMask.cs" />
-    <Compile Include="Assets\Script\DataManager\SaveManager\SavingManager.cs" />
     <Compile Include="Assets\Script\AnimCloseGameObj.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Script\TalkLine\ButtonSelect.cs" />
@@ -187,6 +196,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Shader\RainGlass.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <Reference Include="UnityEngine">
@@ -965,6 +975,9 @@
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>C:\Users\wuyug\Oasis\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
+    </Reference>
+    <Reference Include="TechCosmos.Serialization.Runtime">
+      <HintPath>C:\Users\wuyug\Oasis\Library\ScriptAssemblies\TechCosmos.Serialization.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
       <HintPath>C:\Users\wuyug\Oasis\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>

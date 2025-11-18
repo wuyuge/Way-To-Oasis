@@ -6,18 +6,24 @@ using System.IO;
 /// <summary>
 /// 存档菜单管理器：检测存档文件并控制对应按钮的激活状态
 /// </summary>
-public class SaveMenu : MonoBehaviour
+public class LoadMenu : MonoBehaviour,ISaveMenuInterface
 {
     [Header("存档按钮配置")]
     [Tooltip("存储所有存档按钮的列表（自动填充，无需手动赋值）")]
     public List<GameObject> saveFileButtons = new List<GameObject>();
     
-    [Tooltip("存档按钮的父容器（必须包含名为 S_0 ~ S_5 的子物体）")]
+    [Tooltip("存档按钮的父容器（必须包含名为 L_0 ~ L_5 的子物体）")]
     public GameObject fileContainer;
 
     [Header("存档配置（与 SaveConstants 同步）")]
     [Tooltip("最大存档槽数量")]
     public int maxSaveSlots = 6;
+
+    public void UpdateSaveMenu()
+    {
+        UpdateSaveButtonStates();
+    }
+
 
     private void OnEnable()
     {
@@ -38,20 +44,20 @@ public class SaveMenu : MonoBehaviour
         // 容错检查：父容器为空时提示错误
         if (fileContainer == null)
         {
-            Debug.LogError($"[{nameof(SaveMenu)}] 存档按钮父容器未赋值！请在Inspector面板中指定");
+            Debug.LogError($"[{nameof(LoadMenu)}] 存档按钮父容器未赋值！请在Inspector面板中指定");
             return;
         }
 
         // 遍历所有存档槽，查找对应的按钮
         for (int i = 0; i < maxSaveSlots; i++)
         {
-            string buttonName = $"S_{i}";
+            string buttonName = $"L_{i}";
             Transform buttonTransform = fileContainer.transform.Find(buttonName);
 
             // 容错检查：找不到对应按钮时提示警告
             if (buttonTransform == null)
             {
-                Debug.LogWarning($"[{nameof(SaveMenu)}] 在父容器中未找到名为 {buttonName} 的存档按钮");
+                Debug.LogWarning($"[{nameof(LoadMenu)}] 在父容器中未找到名为 {buttonName} 的存档按钮");
                 continue;
             }
 
@@ -67,7 +73,7 @@ public class SaveMenu : MonoBehaviour
         // 容错检查：存档文件夹路径未配置时提示错误
         if (string.IsNullOrEmpty(SaveConstants.SaveFolderPath))
         {
-            Debug.LogError($"[{nameof(SaveMenu)}] 存档文件夹路径未配置！请检查 SaveConstants 类");
+            Debug.LogError($"[{nameof(LoadMenu)}] 存档文件夹路径未配置！请检查 SaveConstants 类");
             return;
         }
 
@@ -75,7 +81,7 @@ public class SaveMenu : MonoBehaviour
         if (!Directory.Exists(SaveConstants.SaveFolderPath))
         {
             Directory.CreateDirectory(SaveConstants.SaveFolderPath);
-            Debug.Log($"[{nameof(SaveMenu)}] 已创建存档文件夹：{SaveConstants.SaveFolderPath}");
+            Debug.Log($"[{nameof(LoadMenu)}] 已创建存档文件夹：{SaveConstants.SaveFolderPath}");
         }
 
         // 遍历所有存档按钮，检测对应存档文件
@@ -100,4 +106,10 @@ public class SaveMenu : MonoBehaviour
     {
         UpdateSaveButtonStates();
     }
+    
+    //TODO :莱文特殊存档结局
+    
+    
+    
+    
 }
