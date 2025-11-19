@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,8 @@ public class LoadMenu : MonoBehaviour,ISaveMenuInterface
     [Header("存档配置（与 SaveConstants 同步）")]
     [Tooltip("最大存档槽数量")]
     public int maxSaveSlots = 6;
+
+    public Manager autoSaveIsOn;
 
     public void UpdateSaveMenu()
     {
@@ -108,8 +111,10 @@ public class LoadMenu : MonoBehaviour,ISaveMenuInterface
     }
     
     //TODO :莱文特殊存档结局
-    
-    
-    
-    
+
+
+    private void OnDisable()
+    {
+        autoSaveIsOn.GeneralBool = true;
+    }
 }

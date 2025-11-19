@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ using UnityEngine;
 public class SaveMenu : MonoBehaviour,ISaveMenuInterface
 {
     public List<FileButtonRefresh> Buttons;
-    
+    public Manager autoSaveIsOn;
     
     public void UpdateSaveMenu()
     {
@@ -20,5 +21,10 @@ public class SaveMenu : MonoBehaviour,ISaveMenuInterface
             
             
         }
+    }
+
+    private void OnDisable()
+    {
+        autoSaveIsOn.GeneralBool = true;
     }
 }

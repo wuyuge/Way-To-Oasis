@@ -15,16 +15,20 @@ public class SaveFileButton : MonoBehaviour
     private SaveManager _saveManager;
     public FileButtonRefresh refresher;
     public GameObject coverTips,saveTips;
+    public Manager autoSaveIsOn;
 
     /// <summary>
-    /// 当存档界面打开时启用挂载这个脚本的按钮组件,
-    /// 并且关闭是否覆盖选项提示,确认存档选项
+    /// 当游戏对象被启用时调用。此方法激活当前存档按钮，隐藏覆盖和保存提示，并根据自动保存管理器的状态调整其设置。
     /// </summary>
     private void OnEnable()
     {
         gameObject.GetComponent<Button>().enabled = true;
         coverTips.SetActive(false);
         saveTips.SetActive(false);
+        if (autoSaveIsOn.GeneralBool)
+        {
+            autoSaveIsOn.GeneralBool = false;
+        }
     }
 
     /// <summary>
@@ -80,6 +84,10 @@ public class SaveFileButton : MonoBehaviour
         
     }
 
+
+    /// <summary>
+    /// 更新存档按钮的状态。如果检测到已有存档文件，则显示覆盖文件提示；否则，激活保存存档提示，并禁用当前按钮及其子对象"Delete"按钮。
+    /// </summary>
     public void UpLinkObj()
     {
         if (FileExists())
@@ -89,6 +97,7 @@ public class SaveFileButton : MonoBehaviour
                 
         }
         saveTips.SetActive(true);
+        gameObject.transform.Find("Delete").GetComponent<Button>().enabled = false;
         gameObject.GetComponent<Button>().enabled = false;
     }
     
@@ -105,6 +114,7 @@ public class SaveFileButton : MonoBehaviour
             Save();
             refresher.Refresh();
             gameObject.GetComponent<Button>().enabled = true;
+            gameObject.transform.Find("Delete").GetComponent<Button>().enabled = true;
             saveTips.SetActive(false);
         }
         catch (Exception e)
@@ -122,14 +132,16 @@ public class SaveFileButton : MonoBehaviour
         {
             _saveManager.SaveData(fileNum);
             refresher.Refresh();
-            gameObject.GetComponent<Button>().enabled = true;
-            coverTips.SetActive(false);
+            
         }
         catch (Exception e)
         {
             Debug.LogError($"保存存档发生错误:{e}");
             throw;
         }
+        gameObject.GetComponent<Button>().enabled = true;
+        gameObject.transform.Find("Delete").GetComponent<Button>().enabled = true;
+        coverTips.SetActive(false);
     }
     /// <summary>
     /// 由子对象调用取消
@@ -137,6 +149,7 @@ public class SaveFileButton : MonoBehaviour
     public void Cancel()
     {
         gameObject.GetComponent<Button>().enabled = true;
+        gameObject.transform.Find("Delete").GetComponent<Button>().enabled = true;
         coverTips.SetActive(false);
         saveTips.SetActive(false);
     }
@@ -151,6 +164,7 @@ public class SaveFileButton : MonoBehaviour
     public void ShowCoverFileTips()
     {
         gameObject.GetComponent<Button>().enabled = false;
+        gameObject.transform.Find("Delete").GetComponent<Button>().enabled = false;
         coverTips.SetActive(true);
         Debug.Log("存在文件,询问覆盖并返回");
         

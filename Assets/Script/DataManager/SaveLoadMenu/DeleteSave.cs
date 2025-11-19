@@ -37,12 +37,14 @@ public class DeleteSave : MonoBehaviour
     {
         linkObj.SetActive(true);
         gameObject.GetComponent<Button>().enabled = false;
+        gameObject.transform.parent.GetComponent<Button>().enabled = false;
     }
     
     public void Cancel()
     {
         linkObj.SetActive(false);
         gameObject.GetComponent<Button>().enabled = true;
+        gameObject.transform.parent.GetComponent<Button>().enabled = true;
     }
 
     #endregion
