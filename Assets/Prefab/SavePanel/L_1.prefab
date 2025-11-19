@@ -288,6 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saveIndex: 0
   linkObj: {fileID: 6622411929309844684}
+  autoSaveIsOn: {fileID: 11400000, guid: ed134a364d869654d8789a9500132f98, type: 2}
 --- !u!114 &5850936265750623051
 MonoBehaviour:
   m_ObjectHideFlags: 0

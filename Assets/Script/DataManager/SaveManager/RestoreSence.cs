@@ -1,11 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
-using static IntermissionManager;
 
 /// <summary>
 /// 仅负责将存档数据同步到游戏对象，或从游戏对象读取数据
@@ -57,8 +54,8 @@ public class RestoreSence : MonoBehaviour
 
         #region 通用数据获取
 
-        data.DeadName = DeadName.TxtLine ?? new List<string>();
-        data.UsedName = UsedBody.TxtLine ?? new List<string>();
+        data.DeadName = DeadName.TxtLine = new List<string>();
+        data.UsedName = UsedBody.TxtLine = new List<string>();
         data.AmandeKillSelf = AmandeKillSelf.GeneralBool;
         data.PlayerName = PlayerName.TxtLine[0];
         data.CarryBo = CarryBo.CantWeight;

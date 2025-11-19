@@ -2762,3 +2762,4 @@ MonoBehaviour:
   refresher: {fileID: 2406609972595215567}
   coverTips: {fileID: 2057118162544273879}
   saveTips: {fileID: 6544531991710808840}
+  autoSaveIsOn: {fileID: 11400000, guid: ed134a364d869654d8789a9500132f98, type: 2}

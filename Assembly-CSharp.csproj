@@ -153,6 +153,7 @@
     <Compile Include="Assets\Script\UI\Menu\FpsCalculator.cs" />
     <Compile Include="Assets\Script\Mask\MaskManager.cs" />
     <Compile Include="Assets\Script\DataManager\Setting\SettingInitialize.cs" />
+    <Compile Include="Assets\Script\DataManager\Saves\AutoSave.cs" />
     <Compile Include="Assets\Script\Setting\Video\SetScreenMode.cs" />
     <Compile Include="Assets\Script\CharacterInfo\CharacterInfoManager.cs" />
     <Compile Include="Assets\Script\DataManager\SaveManager\RestoreSence.cs" />
