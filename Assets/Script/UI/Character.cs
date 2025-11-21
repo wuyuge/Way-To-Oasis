@@ -35,27 +35,19 @@ public class Character : MonoBehaviour
     public int curr_num;
 
     [Header("UI - 角色相关UI组件")]
-    /// <summary>
-    /// 切换状态标记UI（可能用于标记角色是否被选中/处于特殊状态）
-    /// </summary>
+    // 切换状态标记UI（可能用于标记角色是否被选中/处于特殊状态）
     public GameObject toggle;
 
     [Header("状态 - 关联游戏进度管理器")]
-    /// <summary>
-    /// 游戏进度管理对象（Progress脚本挂载对象，用于判断当前游戏阶段）
-    /// </summary>
+    // 游戏进度管理对象（Progress脚本挂载对象，用于判断当前游戏阶段）
     public Progress progress;
 
     [Header("对话列表 - 角色专属对话数据")]
-    /// <summary>
-    /// 角色按天数对应的对话列表（索引对应天数，存储每天的对话数据）
-    /// </summary>
+    // 角色按天数对应的对话列表（索引对应天数，存储每天的对话数据）
     public List<Manager> textline = new List<Manager>();
 
     [Tooltip("挂载的对话Bar - 角色触发对话时使用的对话面板")]
-    /// <summary>
-    /// 对话面板对象（挂载TalkSystem脚本，用于显示角色对话）
-    /// </summary>
+    // 对话面板对象（挂载TalkSystem脚本，用于显示角色对话）
     public GameObject TalkBar;
 
     /// <summary>
@@ -113,14 +105,13 @@ public class Character : MonoBehaviour
         Attention = gameObject.transform.Find("Attention").gameObject;
         Attention2 = gameObject.transform.Find("Attention2").gameObject;
         //在初始加载且不是重新加载存档的场景刷新负重等状态
-        if (GameObject.Find("SaveManager").GetComponent<SaveManager>().reload.GeneralBool)
+        if (!GameObject.Find("SaveManager").GetComponent<SaveManager>().reload.GeneralBool)
         {
             weight.Weight = 0;
             weight.Weight_tag = 0;
             weight.Day1Eat = false;
 
-            Attention.SetActive(false);
-            Attention2.SetActive(false);
+            
         }
     }
 
@@ -161,7 +152,8 @@ public class Character : MonoBehaviour
         CharacterList = gameObject.transform.parent.gameObject.GetComponent<ObjectManager>().Character_List;
         StartRestWeightImage();
 
-
+        Attention.SetActive(false);
+        Attention2.SetActive(false);
         
 
 

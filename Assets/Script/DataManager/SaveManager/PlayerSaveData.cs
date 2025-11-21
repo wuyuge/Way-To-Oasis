@@ -18,8 +18,8 @@ public class PlayerSaveData
     public bool AmandeKillSelf;      // Amande角色是否自杀的剧情标记
     public bool CarryBo;             // 是否携带Bo角色的状态标记（影响剧情/玩法）
     public int Stage;                // 当前游戏阶段（0:分配负重 1:对话阶段 2:分配食物）
-    public List<string> DeadName;    // 已死亡角色名称列表（用于恢复剧情状态）
-    public List<string> UsedName;    // 已使用（消耗）的角色名称列表（可能关联资源消耗）
+    public List<string> DeadName = new List<string>();    // 已死亡角色名称列表（用于恢复剧情状态）
+    public List<string> UsedName = new List<string>();    // 已使用（消耗）的角色名称列表（可能关联资源消耗）
     public bool InMain;              // 是否在主场景（区分主场景和教学场景的状态恢复）
 
     public int[] CharacterWeight = new int[6]; // 6个角色的负重标记数组（索引对应具体角色）

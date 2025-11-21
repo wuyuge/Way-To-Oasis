@@ -1,6 +1,6 @@
 {
     "SaveID": 0,
-    "SaveTime": "2025-11-19 08:47:50",
+    "SaveTime": "2025-11-21 17:23:02",
     "PlayerName": "■■",
     "Day": 1,
     "Body": 1,
@@ -8,9 +8,7 @@
     "AmandeKillSelf": false,
     "CarryBo": false,
     "Stage": 0,
-    "DeadName": [
-        "Leader"
-    ],
+    "DeadName": [],
     "UsedName": [],
     "InMain": true,
     "CharacterWeight": [
@@ -26,7 +24,7 @@
         false,
         false,
         false,
-        true,
+        false,
         false
     ],
     "IsRaining": false,
@@ -39,5 +37,5 @@
         0
     ],
     "InShop": false,
-    "ShopEvent": 1
+    "ShopEvent": 0
 }

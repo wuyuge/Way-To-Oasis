@@ -142,8 +142,16 @@ public class RestoreSence : MonoBehaviour
                 break;
             case 1:
             case 2:
-                data.Food = FinalFood.Weight;
-                data.Body = FinalBody.Weight;
+                if (data.Day == 0)
+                {
+                    data.Food = Mathf.Max(HaveFood.Weight, FinalFood.Weight);
+                    data.Body = Mathf.Max(HaveBody.Weight, FinalBody.Weight);
+                }
+                else
+                {
+                    data.Food = FinalFood.Weight;
+                    data.Body = FinalBody.Weight;
+                }
                 break;
         }
         #endregion
@@ -154,16 +162,17 @@ public class RestoreSence : MonoBehaviour
             case 2:
             case 5:
             case 7:
-                if (Shop.activeSelf) data.InShop = true; 
+                if (Shop.activeSelf) data.InShop = true;
+                if (ShopExchange.GeneralBool) data.ShopEvent = 1;
+                else if (ShopKill.GeneralBool) data.ShopEvent = 2;
+                else data.ShopEvent = 0;
                 break;
             default:
                 data.InShop = false;
                 break;
         }
 
-        if (ShopExchange.GeneralBool) data.ShopEvent = 1;
-        else if (ShopKill.GeneralBool) data.ShopEvent = 2;
-        else data.ShopEvent = 0;
+        
         #endregion
 
         //获取当前时间
@@ -398,6 +407,7 @@ public class RestoreSence : MonoBehaviour
             #endregion
             case 2:
                 //Day1食物阶段特殊逻辑
+                DayNightSystem.time = DayNightSystem.Second;
                 break;
         }
 

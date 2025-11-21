@@ -22,14 +22,18 @@ public class SaveManager : MonoBehaviour
     /// </summary>
     void Awake()
     {
-        if (reload.GeneralBool)
+        if (reload != null)
         {
-            Debug.Log("检测到需要加载存档数据，正在加载...");
-            LoadData(reload.Weight);
-            restoreSence.ApplyData(_currentSaveData);
-            Invoke("SetReloadBool", 0.5f);
-            reload.Weight = 0;
+            if (reload.GeneralBool)
+            {
+                Debug.Log("检测到需要加载存档数据，正在加载...");
+                LoadData(reload.Weight);
+                restoreSence.ApplyData(_currentSaveData);
+                Invoke("SetReloadBool", 0.5f);
+                reload.Weight = 0;
+            }
         }
+        
     }
 
     void SetReloadBool()
@@ -307,6 +311,45 @@ public class SaveManager : MonoBehaviour
             return null;
         }
     }
+
+    /// <summary>
+    /// 用于开发者手动保存玩家数据到指定编号的存档文件中。
+    /// </summary>
+    /// <param name="num">要保存的存档编号。</param>
+    /// <param name="data">待保存的玩家数据对象。</param>
+    public void DeveloperSaveData(int num, PlayerSaveData data)
+    {
+        if (data == null)
+        {
+            Debug.LogError("SaveData: _currentSaveData 为 null，无法保存。");
+            return;
+        }
+
+        string fileName = SaveConstants.SaveFileNameTemplate.Replace("{Field}", num.ToString());
+        string filePath = Path.Combine(SaveConstants.SaveFolderPath, fileName);
+
+        try
+        {
+            string jsonData = JsonUtility.ToJson(data, prettyPrint: true);
+
+            if (enableEncrypt)
+            {
+                jsonData = XOREncrypt(jsonData);
+            }
+
+            Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+            File.WriteAllText(filePath, jsonData);
+
+            Debug.Log($"存档 {num} 保存成功！路径: {filePath}");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"SaveData: 保存存档 {num} 时发生错误: {e.Message}");
+        }
+    }
+    
+    
+    
     
     
     

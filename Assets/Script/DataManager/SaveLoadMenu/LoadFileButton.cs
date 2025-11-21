@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,7 +35,7 @@ public class LoadFileButton : MonoBehaviour
     {
         linkObj.SetActive(true);
         gameObject.GetComponent<Button>().enabled = false;
-        gameObject.transform.Find("Delete").GetComponent<Button>().enabled = false;
+        if(saveIndex != 0) gameObject.transform.Find("Delete").GetComponent<Button>().enabled = false;
     }
 
 
@@ -44,7 +43,7 @@ public class LoadFileButton : MonoBehaviour
     {
         linkObj.SetActive(false);
         gameObject.GetComponent<Button>().enabled = true;
-        gameObject.transform.Find("Delete").GetComponent<Button>().enabled = true;
+        if(saveIndex != 0) gameObject.transform.Find("Delete").GetComponent<Button>().enabled = true;
     }
 
 
