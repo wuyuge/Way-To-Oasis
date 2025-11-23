@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 /// <summary>
@@ -10,8 +11,8 @@ using UnityEngine.UI;
 /// </summary>
 public class RestoreSence : MonoBehaviour
 {
-    [Header("通用引用")]
-    public Manager DeadName;         // 已死亡角色名称管理器
+    [FormerlySerializedAs("DeadName")] [Header("通用引用")]
+    public Manager deadName;         // 已死亡角色名称管理器
     public Manager UsedBody;         // 已使用角色名称管理器
     public Manager AmandeKillSelf;   // Amande自杀状态管理器
     public Manager PlayerName;       // 玩家名称管理器
@@ -54,7 +55,7 @@ public class RestoreSence : MonoBehaviour
 
         #region 通用数据获取
 
-        data.DeadName = DeadName.TxtLine = new List<string>();
+        data.DeadName = deadName.TxtLine = new List<string>();
         data.UsedName = UsedBody.TxtLine = new List<string>();
         data.AmandeKillSelf = AmandeKillSelf.GeneralBool;
         data.PlayerName = PlayerName.TxtLine[0];
@@ -252,7 +253,7 @@ public class RestoreSence : MonoBehaviour
 
         #region 恢复食物尸体等数据
 
-        DeadName.TxtLine = data.DeadName;
+        deadName.TxtLine = data.DeadName;
         UsedBody.TxtLine = data.UsedName;
         HaveFood.Weight = 0;
         HaveBody.Weight = 0;

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 /// <summary>
 /// 挂载在存档管理器的子对象实现自动存档
@@ -11,13 +12,24 @@ public class AutoSave : MonoBehaviour
     public Manager autoSaveIsOn;
     private SaveManager _saveManager;
     private Coroutine _coroutine;
+    public GameObject saveText;
 
     private void Awake()
     {
+        autoSaveIsOn.GeneralBool = false;
         _saveManager = gameObject.transform.parent.GetComponent<SaveManager>();
         _coroutine = StartCoroutine(AutoSaveFile());
-        
+        _ = UnlockAutoSave();
     }
+
+    private async Task UnlockAutoSave()
+    {
+        await Task.Delay(500);
+        autoSaveIsOn.GeneralBool = true;
+
+
+    }
+    
 
     // ReSharper disable Unity.PerformanceAnalysis
     /// <summary>
@@ -32,7 +44,9 @@ public class AutoSave : MonoBehaviour
             {
                 try
                 {
+                    saveText.SetActive(true);
                     _saveManager.SaveData(0);
+                    Invoke(nameof(OffTextAnim),3f);
                     Debug.Log("自动保存成功");
                 }
                 catch (Exception e)
@@ -61,8 +75,12 @@ public class AutoSave : MonoBehaviour
             _coroutine = null;
         }
     }
-    
-    
+
+    void OffTextAnim()
+    {
+        saveText.SetActive(false);
+        
+    }
     
     
     
