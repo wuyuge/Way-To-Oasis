@@ -91,6 +91,7 @@
     <Compile Include="Assets\Script\MiniCharacter\MiniCharacterManager.cs" />
     <Compile Include="Assets\Script\Setting\Video\AntiQuality.cs" />
     <Compile Include="Assets\Script\Setting\Tech\ShowTech.cs" />
+    <Compile Include="Assets\Script\QTE\QteButtonManager.cs" />
     <Compile Include="Assets\Script\SetPlayerName.cs" />
     <Compile Include="Assets\Script\UI\BackGroundMove\BackGroundMoving.cs" />
     <Compile Include="Assets\Script\SwitchStageBar\SetSwitchText.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Assets\Script\DataManager\Developer\DevSaveSendInt.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\LoadMenu.cs" />
+    <Compile Include="Assets\Script\QTE\QteSliderManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\Script\Shop\ShopEventReseter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
