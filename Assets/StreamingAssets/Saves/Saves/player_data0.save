@@ -1,23 +1,25 @@
 {
     "SaveID": 0,
-    "SaveTime": "2025-11-23 12:20:20",
+    "SaveTime": "2025-11-24 18:28:20",
     "PlayerName": "■■",
-    "Day": 0,
+    "Day": 2,
     "Body": 1,
     "Food": 9,
     "AmandeKillSelf": false,
     "CarryBo": false,
     "Stage": 1,
-    "DeadName": [],
+    "DeadName": [
+        "Leader"
+    ],
     "UsedName": [],
-    "InMain": false,
+    "InMain": true,
     "CharacterWeight": [
+        3,
         0,
+        3,
         0,
-        0,
-        0,
-        0,
-        0
+        3,
+        3
     ],
     "CharacterEat": [
         false,
@@ -36,6 +38,6 @@
         0,
         0
     ],
-    "InShop": false,
+    "InShop": true,
     "ShopEvent": 0
 }

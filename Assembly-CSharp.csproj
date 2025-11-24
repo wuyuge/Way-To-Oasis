@@ -93,6 +93,7 @@
     <Compile Include="Assets\Script\Setting\Tech\ShowTech.cs" />
     <Compile Include="Assets\Script\SetPlayerName.cs" />
     <Compile Include="Assets\Script\UI\BackGroundMove\BackGroundMoving.cs" />
+    <Compile Include="Assets\Script\SwitchStageBar\SetSwitchText.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\ChildObj\DeleteChild.cs" />
     <Compile Include="Assets\Script\Start\StartImport.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\LoadMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
+    <Compile Include="Assets\Script\Shop\ShopEventReseter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Script\Shop\ShopCharacterManager.cs" />
     <Compile Include="Assets\Script\DataManager\Developer\DeveloperSaveChanger.cs" />

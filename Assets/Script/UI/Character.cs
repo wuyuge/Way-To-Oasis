@@ -110,7 +110,7 @@ public class Character : MonoBehaviour
             weight.Weight = 0;
             weight.Weight_tag = 0;
             weight.Day1Eat = false;
-
+            
             
         }
     }
@@ -152,9 +152,8 @@ public class Character : MonoBehaviour
         CharacterList = gameObject.transform.parent.gameObject.GetComponent<ObjectManager>().Character_List;
         StartRestWeightImage();
 
-        Attention.SetActive(false);
         Attention2.SetActive(false);
-        
+        Attention.SetActive(false);
 
 
 
@@ -179,6 +178,10 @@ public class Character : MonoBehaviour
             }
             return; 
         }
+        
+        if((Special1 || Special2) && !AfterSpecialTalk) Attention.SetActive(true);
+        
+        
         if(NotComfort && progress.day_num == 2)
         {
             Attention2.SetActive(true);

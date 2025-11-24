@@ -9,31 +9,33 @@ public class Skip : MonoBehaviour
 {
 
 
-    private Animator anim;
+    private Animator _anim;
     public GameObject Report;
     public GameObject SwitchStageBar;
     public TalkSystem TalkSystem;
-    private bool Turn;
+    private bool _turn;
     public Manager CurrentDead;
     public List<AudioClip> Clips;
     public GameObject Tips;
-    private Image image;
+    private Image _image;
+    private Progress _progress;
     void Start()
     {
-        anim = GetComponent<Animator>();
-        image = GetComponent<Image>();
+        _anim = GetComponent<Animator>();
+        _image = GetComponent<Image>();
         ShowText();
-        Turn = true;
+        _turn = true;
+        _progress = TalkSystem.DaytimeOBJ.GetComponent<Progress>();
 
     }
     private void Update()
     {
-        if(Input.anyKeyDown && Turn)
+        if(Input.anyKeyDown && _turn)
         {
-            Turn = false;
+            _turn = false;
             TurnBright();
         }
-        if(image.color.a == 0 && Tips.activeSelf)
+        if(_image.color.a == 0 && Tips.activeSelf)
         {
             Tips.SetActive(false);
         }
@@ -41,13 +43,13 @@ public class Skip : MonoBehaviour
 
     public void TurnDark()//只变黑
     {
-         anim.SetTrigger("dark"); 
+         _anim.SetTrigger("dark"); 
         
     }
 
     public void TurnBright()
     {
-        anim.SetTrigger("bright");
+        _anim.SetTrigger("bright");
     }
 
     public void ShowText()
@@ -66,10 +68,14 @@ public class Skip : MonoBehaviour
         Tips.SetActive(false);
     }
 
+    
+    /// <summary>
+    /// 设置不同阶段的提示文字
+    /// </summary>
     public void SwitchWeight()
     {
+        
         SwitchStageBar.SetActive(true);
-        SwitchStageBar.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "分配负重阶段";
     }
 
     public void SetOn()
@@ -99,7 +105,7 @@ public class Skip : MonoBehaviour
 
     public void SetTurn()
     {
-        Turn = true;
+        _turn = true;
     }
 
 

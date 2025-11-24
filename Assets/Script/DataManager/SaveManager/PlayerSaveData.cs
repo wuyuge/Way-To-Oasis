@@ -26,7 +26,10 @@ public class PlayerSaveData
     public bool[] CharacterEat = new bool[6];  // 6个角色是否进食的标记数组（索引对应具体角色）
     public bool IsRaining;          // 当前是否下雨的环境状态标记
     public int[] CharacterWeightTag = new int[6]; // 角色负重标签列表（可能用于调试或显示）
-    public bool InShop; //用于判断是否在商店场景
-    public int ShopEvent; //判断商店是否发生事件
+    public bool afterShop; //用于判断是否在商店场景
+
+    public bool[] characterSpecial1 = new bool[6];
+    public bool[] characterSpecial2 = new bool[6];
+
 
 }

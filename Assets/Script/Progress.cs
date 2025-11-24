@@ -20,9 +20,7 @@ public class Progress : MonoBehaviour
     public int day_num = 1;
 
     [Header("判断状态 - 游戏当前所处阶段标记")]
-    /// <summary>
-    /// 是否处于【开始阶段】（初始阶段，未进入对话/进食）
-    /// </summary>
+    // 是否处于【开始阶段】（初始阶段，未进入对话/进食）
     public bool start;
     /// <summary>
     /// 是否处于【对话阶段】
@@ -46,9 +44,7 @@ public class Progress : MonoBehaviour
     public bool ShopTalk;
 
     [Tooltip("文字描述 - 关联UI文本组件，显示重量、对话、进食、日期信息")]
-    /// <summary>
-    /// 重量显示文本（UI组件）
-    /// </summary>
+    // 重量显示文本（UI组件）
     public TextMeshProUGUI weight;
     /// <summary>
     /// 对话阶段提示文本（UI组件）
@@ -64,9 +60,7 @@ public class Progress : MonoBehaviour
     public TextMeshProUGUI day;
 
     [Header("游戏对象 - 关联核心功能预制体/组件")]
-    /// <summary>
-    /// 跳过按钮/明暗控制对象（用于切换场景明暗状态）
-    /// </summary>
+    // 跳过按钮/明暗控制对象（用于切换场景明暗状态）
     public GameObject skip;
     /// <summary>
     /// 底部功能栏（可能包含背包、道具管理等UI）
@@ -90,9 +84,9 @@ public class Progress : MonoBehaviour
     public float Delay;
 
     [Header("插在各个阶段的幕间 - 不同阶段触发的对话数据列表")]
-    /// <summary>
-    /// 【开始阶段前】的幕间对话列表（按天数索引，对应每天开始前的对话）
-    /// </summary>
+
+    //【开始阶段前】的幕间对话列表（按天数索引，对应每天开始前的对话）
+
     public List<Manager> beforeStart;
     /// <summary>
     /// 【进食阶段前】的幕间对话列表（按天数索引，对应每天进入进食前的对话）
@@ -104,9 +98,7 @@ public class Progress : MonoBehaviour
     public List<Manager> afterFood;
 
     [Header("背包 - 道具重量管理相关")]
-    /// <summary>
-    /// 最终达到的食物重量
-    /// </summary>
+    // 最终达到的食物重量
     public Manager Final_Food;
     /// <summary>
     /// 最终达到的尸体重量
@@ -158,6 +150,8 @@ public class Progress : MonoBehaviour
     public bool TalkTipsBool;
 
     
+    //重置每天的商店事件
+    public ShopEventReseter shopEventReseter;
 
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
@@ -385,7 +379,7 @@ public class Progress : MonoBehaviour
             SetComfort();
             
             SwitchStageBar.SetActive(true);
-            SwitchStageBar.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "分配食物阶段";
+            
             
 
         }
@@ -503,6 +497,11 @@ public class Progress : MonoBehaviour
                 ShopTalk = true;
             }
 
+            if (shopEventReseter != null)
+            {
+                shopEventReseter.ResetEvent();
+            }
+            
             // 非第0天的特殊处理：场景明暗切换（先暗后亮，模拟昼夜交替）
             
             if (day_num != 0)
@@ -642,7 +641,7 @@ public class Progress : MonoBehaviour
             return;
 
         SwitchStageBar.SetActive(true);
-        SwitchStageBar.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "交谈阶段";
+        
     }
 
 }

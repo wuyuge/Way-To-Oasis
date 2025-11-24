@@ -13,6 +13,7 @@ public class AutoSave : MonoBehaviour
     private SaveManager _saveManager;
     private Coroutine _coroutine;
     public GameObject saveText;
+    public GameObject shop;
 
     private void Awake()
     {
@@ -40,26 +41,31 @@ public class AutoSave : MonoBehaviour
     {
         while (true)
         {
-            if (autoSaveIsOn.GeneralBool)
+            if (shop != null)
             {
-                try
+                if (autoSaveIsOn.GeneralBool || !shop.activeSelf)
                 {
-                    saveText.SetActive(true);
-                    _saveManager.SaveData(0);
-                    Invoke(nameof(OffTextAnim),3f);
-                    Debug.Log("自动保存成功");
-                }
-                catch (Exception e)
-                {
-                    Debug.LogError($"自动保存存档失败 错误:{e}");
-                    throw;
-                }
                 
+                    try
+                    {
+                        saveText.SetActive(true);
+                        _saveManager.SaveData(0);
+                        Invoke(nameof(OffTextAnim),3f);
+                        Debug.Log("自动保存成功");
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"自动保存存档失败 错误:{e}");
+                        throw;
+                    }
+                
+                }
+                else
+                {
+                    Debug.Log("自动保存已禁用");
+                }
             }
-            else
-            {
-                Debug.Log("自动保存已禁用");
-            }
+            
             yield return new WaitForSecondsRealtime(saveDelayTime);
         }
     }

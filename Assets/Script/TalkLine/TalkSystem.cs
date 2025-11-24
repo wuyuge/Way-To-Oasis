@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 
@@ -91,8 +92,8 @@ public class TalkSystem : MonoBehaviour
     public Manager PlayerName;
     [Header("阿曼德自杀判断")]
     public Manager amandeKillself;
-    [Header("商店事件判断")]
-    public Manager Day2ShopEvent;
+    [FormerlySerializedAs("Day2ShopEvent")] [Header("商店事件判断")]
+    public Manager shopEvent;
     [Header("博金森死亡时间判断")]
     public Manager BoDeadTime;
 
@@ -287,7 +288,7 @@ public class TalkSystem : MonoBehaviour
                 
                 case "/CheckShopEvent"://杀人或换尸体后转分支1，否则转分支2
 
-                    if (Day2ShopEvent.GeneralBool)
+                    if (shopEvent.GeneralBool)
                     {
                         TurnOption1();
                         ResetLine();
@@ -1332,7 +1333,7 @@ public class TalkSystem : MonoBehaviour
         Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
         if (Daytime == 2)
         {
-            Day2ShopEvent.GeneralBool = true;
+            shopEvent.GeneralBool = true;
             foreach (string s in DeadName.TxtLine)
             {
                 if (s.Contains("阿曼德"))
@@ -1378,7 +1379,7 @@ public class TalkSystem : MonoBehaviour
         Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
         if (Daytime == 2)
         {
-            Day2ShopEvent.GeneralBool = true;
+            shopEvent.GeneralBool = true;
             foreach (string s in DeadName.TxtLine)
             {
                 if (s.Contains("阿曼德"))

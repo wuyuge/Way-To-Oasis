@@ -36,6 +36,7 @@ public class RestoreSence : MonoBehaviour
     public GameObject MainTalkBar; // 主场景对话信息栏
     //public GameObject MainBackground; // 主场景背景
     public GameObject Shop;
+    public Manager shopEvent;
 
     [Header("教学场景引用")]
     public GameObject TechCanvas;    // 教学场景UI画布
@@ -55,8 +56,8 @@ public class RestoreSence : MonoBehaviour
 
         #region 通用数据获取
 
-        data.DeadName = deadName.TxtLine = new List<string>();
-        data.UsedName = UsedBody.TxtLine = new List<string>();
+        data.DeadName = deadName.TxtLine;
+        data.UsedName = UsedBody.TxtLine;
         data.AmandeKillSelf = AmandeKillSelf.GeneralBool;
         data.PlayerName = PlayerName.TxtLine[0];
         data.CarryBo = CarryBo.CantWeight;
@@ -95,30 +96,25 @@ public class RestoreSence : MonoBehaviour
                 Debug.Log("非负重阶段检测负重值");
                 foreach (GameObject g in MainCharacters)
                 {
-                    if (g.GetComponent<Character>().weight3.GetComponent<Image>().color == Color.red)
+                    Character gChara = g.GetComponent<Character>();
+                    if (gChara.weight3.GetComponent<Image>().color == Color.red)
                     {
                         data.CharacterWeight[index] = 3;
                         index++;
                         continue;
                     }
-                    else if (g.GetComponent<Character>().weight2.GetComponent<Image>().color == Color.red)
+                    if (gChara.weight2.GetComponent<Image>().color == Color.red)
                     {
                         data.CharacterWeight[index] = 2;
                         index++;
                         continue;
                     }
-                    else if (g.GetComponent<Character>().weight1.GetComponent<Image>().color == Color.red)
+                    if (gChara.weight1.GetComponent<Image>().color == Color.red)
                     {
                         data.CharacterWeight[index] = 1;
-                        index++;
-                        continue;
                     }
                     index++;
-
                 }
-
-
-
             }
 
             #endregion
@@ -157,24 +153,35 @@ public class RestoreSence : MonoBehaviour
         }
         #endregion
 
-        #region 商店数据获取
+        #region 获取安抚阶段数据
+
         switch (data.Day)
         {
-            case 2:
-            case 5:
             case 7:
-                if (Shop.activeSelf) data.InShop = true;
-                if (ShopExchange.GeneralBool) data.ShopEvent = 1;
-                else if (ShopKill.GeneralBool) data.ShopEvent = 2;
-                else data.ShopEvent = 0;
-                break;
-            default:
-                data.InShop = false;
+            case 5:
+            case 2:
+                if (shopEvent.GeneralBool)
+                {
+                    data.afterShop = true;
+                    for (int i = 0; i < 6; i++)
+                    {
+                        data.characterSpecial1[i] = MainCharacters[i].GetComponent<Character>().Special1;
+                        data.characterSpecial2[i] = MainCharacters[i].GetComponent<Character>().Special2;
+
+                    }
+                    
+                    
+                }
+                
+                
                 break;
         }
 
-        
         #endregion
+        
+        
+
+        
 
         //获取当前时间
         data.SaveTime = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
@@ -199,14 +206,14 @@ public class RestoreSence : MonoBehaviour
         }
 
         #region 恢复Progress脚本相关数据
-        Progress TempProgress;
+        Progress tempProgress;
         //设置使用的progress脚本
-        if(data.InMain) TempProgress = MainProgress;
-        else TempProgress = TechProgress;
+        if(data.InMain) tempProgress = MainProgress;
+        else tempProgress = TechProgress;
 
 
         //执行Day0后特殊逻辑
-        if(data.InMain) AfterDay0SpecialSet(data,TempProgress);
+        if(data.InMain) AfterDay0SpecialSet(data,tempProgress);
 
         //启用商店对话
         switch (data.Day)
@@ -223,26 +230,26 @@ public class RestoreSence : MonoBehaviour
 
 
         //恢复数据
-        TempProgress.day_num = data.Day;
+        tempProgress.day_num = data.Day;
         switch (data.Stage)
         {
             case 0:
-                TempProgress.start = true;
-                TempProgress.talk = false;
-                TempProgress.food = false;
+                tempProgress.start = true;
+                tempProgress.talk = false;
+                tempProgress.food = false;
                 StageSpecialSet(data);
                 break;
             case 1:
-                TempProgress.start = false;
-                TempProgress.talk = true;
-                TempProgress.food = false;
+                tempProgress.start = false;
+                tempProgress.talk = true;
+                tempProgress.food = false;
                 StageSpecialSet(data);
                 break;
             case 2:
-                TempProgress.start = false;
-                TempProgress.talk = false;
-                TempProgress.food = true;
-                TempProgress.CanSwitch = true;
+                tempProgress.start = false;
+                tempProgress.talk = false;
+                tempProgress.food = true;
+                tempProgress.CanSwitch = true;
                 StageSpecialSet(data);
                 break;
         }
@@ -253,13 +260,13 @@ public class RestoreSence : MonoBehaviour
 
         #region 恢复食物尸体等数据
 
-        deadName.TxtLine = data.DeadName;
-        UsedBody.TxtLine = data.UsedName;
+        
         HaveFood.Weight = 0;
         HaveBody.Weight = 0;
+        
         FinalFood.Weight = 0;
         FinalBody.Weight = 0;
-
+        
         switch (data.Stage)
         {
             case 0:
@@ -287,6 +294,12 @@ public class RestoreSence : MonoBehaviour
                 break;
         }
 
+        deadName.TxtLine = new List<string>();
+        UsedBody.TxtLine = new List<string>();
+        
+        deadName.TxtLine = data.DeadName;
+        UsedBody.TxtLine = data.UsedName;
+        
         if(data.InMain)
         {
             MainDownBar.GetComponent<ObjectManager>().Food_Text.text = data.Food.ToString();
@@ -297,8 +310,6 @@ public class RestoreSence : MonoBehaviour
             TechDownBar.GetComponent<ObjectManager>().Food_Text.text = data.Food.ToString();
             TechDownBar.GetComponent<ObjectManager>().Body_Text.text = data.Body.ToString();
         }
-
-
         #endregion
 
         #region 恢复角色负重状态
@@ -310,25 +321,29 @@ public class RestoreSence : MonoBehaviour
         }
         #endregion
 
-
-        switch (data.ShopEvent)
+        if (data.afterShop)
         {
-            case 0:
-                break;
-            case 1:
-                MainTalkBar.GetComponent<TalkSystem>().ShowExchangeTalk();
-                break;
-            case 2:
-                MainTalkBar.GetComponent<TalkSystem>().ShowKillTalk();
-                break;
-        }
 
-        #region 恢复商店场景
-        if (data.InShop)
-        {
-            Shop.SetActive(true);
+            for (int i = 0; i < 6; i++)
+            {
+                Character tempChara = MainCharacters[i].GetComponent<Character>();
+                tempChara.Special1 = data.characterSpecial1[i];
+                tempChara.Special2 = data.characterSpecial2[i];
+                if (data.characterSpecial2[i] || data.characterSpecial1[i])
+                {
+                    MainProgress.ShopTalk = false;
+                }
+                else
+                {
+                    tempChara.CanTalk = false;
+                }
+            }
+            
+            
         }
-        #endregion
+        
+
+        
     }
 
     /// <summary>
@@ -357,7 +372,7 @@ public class RestoreSence : MonoBehaviour
     }
 
 
-    //TODO：Day1加载各阶段时的特殊逻辑
+    
 
     void AfterDay0SpecialSet(PlayerSaveData data, Progress progress)
     {
@@ -377,10 +392,16 @@ public class RestoreSence : MonoBehaviour
 
 
         }
-        if(data.Day == 2)
+
+        switch (data.Day)
         {
-            MainTalkBar.GetComponent<Animator>().SetTrigger("down");
+            case 3:
+            case 2:
+                MainTalkBar.GetComponent<Animator>().SetTrigger("down");
+                break;
+            
         }
+        
 
         
 
