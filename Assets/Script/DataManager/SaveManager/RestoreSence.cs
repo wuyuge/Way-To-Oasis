@@ -37,6 +37,7 @@ public class RestoreSence : MonoBehaviour
     //public GameObject MainBackground; // 主场景背景
     public GameObject Shop;
     public Manager shopEvent;
+    public Manager currentDead;//加载时显示的昨日死亡人名
 
     [Header("教学场景引用")]
     public GameObject TechCanvas;    // 教学场景UI画布
@@ -63,6 +64,7 @@ public class RestoreSence : MonoBehaviour
         data.CarryBo = CarryBo.CantWeight;
         data.IsRaining = RainSystem.isRaining;
         data.InMain = MainCanvas.activeSelf;
+        data.currentDead = currentDead.TxtLine;
 
         //保存角色进食数据
         for (int i = 0; i < 6; i++)
@@ -165,8 +167,10 @@ public class RestoreSence : MonoBehaviour
                     data.afterShop = true;
                     for (int i = 0; i < 6; i++)
                     {
-                        data.characterSpecial1[i] = MainCharacters[i].GetComponent<Character>().Special1;
-                        data.characterSpecial2[i] = MainCharacters[i].GetComponent<Character>().Special2;
+                        var tempChara = MainCharacters[i].GetComponent<Character>();
+                        data.characterSpecial1[i] = tempChara.Special1;
+                        data.characterSpecial2[i] = tempChara.Special2;
+                        data.unComfort[i] = tempChara.NotComfort;
 
                     }
                     
@@ -225,9 +229,9 @@ public class RestoreSence : MonoBehaviour
                 break;
         }
 
+        AmandeKillSelf.GeneralBool = data.AmandeKillSelf;
 
-        
-
+        currentDead.TxtLine = data.currentDead;
 
         //恢复数据
         tempProgress.day_num = data.Day;
@@ -294,11 +298,54 @@ public class RestoreSence : MonoBehaviour
                 break;
         }
 
+
+        #region 角色死亡判断逻辑
+
         deadName.TxtLine = new List<string>();
         UsedBody.TxtLine = new List<string>();
         
         deadName.TxtLine = data.DeadName;
         UsedBody.TxtLine = data.UsedName;
+
+        
+        foreach (var charaName in deadName.TxtLine)
+        {
+
+            foreach (var charaObj in MainCharacters)
+            {
+                Character character = charaObj.GetComponent<Character>();
+
+                if (character.CharacterName.Contains(charaName))
+                {
+
+                    character.Dead = true;
+                    break;
+                }
+            }
+            
+            
+        }
+
+        foreach (var charaName in UsedBody.TxtLine)
+        {
+            foreach (var charaObj in MainCharacters)
+            {
+                Character character = charaObj.GetComponent<Character>();
+
+                if (character.CharacterName.Contains(charaName))
+                {
+
+                    character.Dead = true;
+                    break;
+                }
+            }
+        }
+        
+
+        #endregion
+        
+        
+        
         
         if(data.InMain)
         {
@@ -337,6 +384,9 @@ public class RestoreSence : MonoBehaviour
                 {
                     tempChara.CanTalk = false;
                 }
+
+                tempChara.NotComfort = data.unComfort[i];
+
             }
             
             

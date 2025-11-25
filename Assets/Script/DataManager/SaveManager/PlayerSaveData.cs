@@ -31,5 +31,7 @@ public class PlayerSaveData
     public bool[] characterSpecial1 = new bool[6];
     public bool[] characterSpecial2 = new bool[6];
 
+    public List<string> currentDead = new List<string>();////加载时显示的昨日死亡人名
 
+    public bool[] unComfort = new bool[6];
 }

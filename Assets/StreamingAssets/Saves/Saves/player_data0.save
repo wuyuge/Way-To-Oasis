@@ -1,6 +1,6 @@
 {
     "SaveID": 0,
-    "SaveTime": "2025-11-24 18:28:20",
+    "SaveTime": "2025-11-25 19:25:59",
     "PlayerName": "■■",
     "Day": 2,
     "Body": 1,
@@ -38,6 +38,30 @@
         0,
         0
     ],
-    "InShop": true,
-    "ShopEvent": 0
+    "afterShop": true,
+    "characterSpecial1": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ],
+    "characterSpecial2": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ],
+    "currentDead": [],
+    "unComfort": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ]
 }

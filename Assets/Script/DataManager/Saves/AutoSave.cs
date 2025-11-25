@@ -25,7 +25,7 @@ public class AutoSave : MonoBehaviour
 
     private async Task UnlockAutoSave()
     {
-        await Task.Delay(500);
+        await Task.Delay(1500);
         autoSaveIsOn.GeneralBool = true;
 
 
@@ -43,7 +43,7 @@ public class AutoSave : MonoBehaviour
         {
             if (shop != null)
             {
-                if (autoSaveIsOn.GeneralBool || !shop.activeSelf)
+                if (autoSaveIsOn.GeneralBool && !shop.activeSelf)
                 {
                 
                     try
