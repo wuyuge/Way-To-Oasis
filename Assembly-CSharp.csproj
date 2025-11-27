@@ -154,6 +154,7 @@
     <Compile Include="Assets\Script\DataManager\Developer\DevSaveSendToggle.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Script\Setting\Video\Anti.cs" />
+    <Compile Include="Assets\Script\QTE\QTEButtonSpawn.cs" />
     <Compile Include="Assets\Script\Text\AddPlayerName.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />

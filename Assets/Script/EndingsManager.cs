@@ -39,17 +39,18 @@ public class EndingsManager : MonoBehaviour
         // 主角是否进食的分支处理
         if (mainCharacterEat)
         {
+            if (eatNum == 1)
+            {
+                ToEnd("Be2");
+                return true;
+            }
             // 处理主角进食的情况
             if (eatNum <= notEatNum)
             {
                 ToEnd("Be1");
                 return true;
             }
-            else if (eatNum == 1)
-            {
-                ToEnd("Be2");
-                return true;
-            }
+            
         }
         else
         {
