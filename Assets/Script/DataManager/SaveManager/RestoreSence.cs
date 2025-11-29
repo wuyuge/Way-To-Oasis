@@ -95,7 +95,7 @@ public class RestoreSence : MonoBehaviour
             else
             {
                 int index = 0;
-                Debug.Log("非负重阶段检测负重值");
+                
                 foreach (GameObject g in MainCharacters)
                 {
                     Character gChara = g.GetComponent<Character>();
@@ -413,18 +413,12 @@ public class RestoreSence : MonoBehaviour
         _ = Task.Delay(1000);
         TechTalkBar.GetComponent<TalkSystem>().Ban = false;
         Debug.Log("Day0特殊设置完成");
-        return;
-
-
-
-
-
     }
 
 
     
 
-    void AfterDay0SpecialSet(PlayerSaveData data, Progress progress)
+    private void AfterDay0SpecialSet(PlayerSaveData data, Progress progress)
     {
 
         if (data.Stage == 1 || data.Stage == 2)
@@ -436,11 +430,8 @@ public class RestoreSence : MonoBehaviour
                 {
                     intermission.Lines.RemoveAt(i);
                     MainTalkBar.GetComponent<Animator>().SetTrigger("down");
-
                 }
             }
-
-
         }
 
         switch (data.Day)

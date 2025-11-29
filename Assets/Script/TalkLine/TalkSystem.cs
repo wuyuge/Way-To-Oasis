@@ -755,10 +755,10 @@ public class TalkSystem : MonoBehaviour
 
                 case "dead"://死了转分支1，没死分支2
 
-                    Debug.Log("判断之前是否死过人");
+                    
                     if(DeadName.TxtLine.Count > 1 || UsedBody.TxtLine.Count > 1 || DeadName.TxtLine.Count + UsedBody.TxtLine.Count > 1)
                     {
-                        Debug.Log("有死人");
+                        
                         TurnOption1();
                         ResetLine();
                         _ = ShowText(true);
@@ -766,7 +766,7 @@ public class TalkSystem : MonoBehaviour
                     }
                     else if (DeadName.TxtLine.Count == 1 && DeadName.TxtLine[0] == "Leader" && UsedBody.TxtLine.Count == 0)
                     {
-                        Debug.Log("没有死人");
+                        
                         TurnOption2();
                         ResetLine();
                         _ = ShowText(true);
@@ -774,7 +774,7 @@ public class TalkSystem : MonoBehaviour
                     }
                     else if (DeadName.TxtLine.Count == 0 && UsedBody.TxtLine.Count == 1 && (UsedBody.TxtLine[0] == "LeaderUesd" || UsedBody.TxtLine[0] == "LeaderAbondoned"))
                     {
-                        Debug.Log("没有死人");
+                        
                         TurnOption2();
                         ResetLine();
                         _ = ShowText(true);
@@ -800,7 +800,7 @@ public class TalkSystem : MonoBehaviour
                 case "/CheckAmandeKillself"://死了转分支1,没死分支2
                     if (amandeKillself.GeneralBool)
                     {
-                        Debug.Log("阿曼德自杀");
+                        
                         TurnOption1();
                         ResetLine();
                         _ = ShowText(true);
@@ -853,7 +853,7 @@ public class TalkSystem : MonoBehaviour
                     charabar.SetActive(true);
                     PlusLine();
                     CharaBarShow = true;
-                    Debug.Log("显示角色文本框");
+                    
                     _ = ShowText(true);
                     return;
 
@@ -862,7 +862,7 @@ public class TalkSystem : MonoBehaviour
                     PlusLine();
                     this.CharacterImageManager.CloseImage();
                     CharaBarShow = false;
-                    Debug.Log("关闭角色文本框");
+                    
                     _ = ShowText(true);
                     return;
 
@@ -873,7 +873,7 @@ public class TalkSystem : MonoBehaviour
                     return;
 
                 case "next":
-                    Debug.Log("进入正常场景");
+                    
                     PlusLine();
 
                     _ = ShowText(true);
@@ -1327,7 +1327,7 @@ public class TalkSystem : MonoBehaviour
 
     public void ShowExchangeTalk()
     {
-        Debug.Log("杀死角色对话");
+        
         bool AmandeDead = false;
 
         Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
@@ -1470,6 +1470,21 @@ public class TalkSystem : MonoBehaviour
 
     }
 
+    void TurnOption(int option)
+    {
+        switch (option)
+        {
+            case 1:
+                Talklines[Daytime] = Talklines[Daytime].Option1;
+                break;
+            case 2:
+                Talklines[Daytime] = Talklines[Daytime].Option2;
+                break;
+            case 3:
+                Talklines[Daytime] = Talklines[Daytime].Option3;
+                break;
+        }
+    }
 
     void TurnOption1()
     {

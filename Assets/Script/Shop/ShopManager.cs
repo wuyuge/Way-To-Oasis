@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,41 +11,50 @@ public class ShopManager : MonoBehaviour
     public GameObject DayTime;
     public GameObject TextBar;
     public GameObject Talksys;
+    private TalkSystem _talkSysScript;
     public ObjectManager ObjManager;
     [Header("∂“ªª ¨ÃÂπ‹¿Ì")]
     public Manager Body,Food,DeadName,UesdBody;
     public Manager Kill, Exchange;
 
+    private void Awake()
+    {
+        _talkSysScript =  Talksys.GetComponent<TalkSystem>();
+        
+    }
+
+
     private void OnEnable()
     {
+        
         Kill.GeneralBool = false;
         Exchange.GeneralBool = false;
 
         int day_num = DayTime.GetComponent<Progress>().day_num;
 
-        if (day_num == 2) Talksys.GetComponent<TalkSystem>().Talklines[day_num] = TextLine[0];
-        else if (day_num == 5) Talksys.GetComponent<TalkSystem>().Talklines[day_num] = TextLine[1];
-        else if (day_num == 7) Talksys.GetComponent<TalkSystem>().Talklines[day_num] = TextLine[2];
-        Talksys.GetComponent<TalkSystem>()._inshop = true;
-        Talksys.GetComponent<TalkSystem>().line = 0;
-        _ = Talksys.GetComponent<TalkSystem>().ShowText();
+        if (day_num == 2) _talkSysScript.Talklines[day_num] = TextLine[0];
+        else if (day_num == 5) _talkSysScript.Talklines[day_num] = TextLine[1];
+        else if (day_num == 7) _talkSysScript.Talklines[day_num] = TextLine[2];
+        _talkSysScript._inshop = true;
+        _talkSysScript.line = 0;
+        _ = _talkSysScript.ShowText();
     }
 
     public bool ExchangeFood()
     {
 
-        int CanUseBody = 0;
+        int canUseBody = 0;
         foreach(string s in DeadName.TxtLine)
         {
             if (!s.Contains("Uesd"))
             {
-                CanUseBody += 1;
+                canUseBody += 1;
             }
         }
 
 
 
-        if(CanUseBody == 1)
+        if(canUseBody == 1)
         {
             Body.Weight -= 1;
             Food.Weight += 7 - DeadName.TxtLine.Count;
@@ -55,7 +65,7 @@ public class ShopManager : MonoBehaviour
             return true;
 
         }
-        else if(CanUseBody > 1)
+        else if(canUseBody > 1)
         {
             return false;
         }

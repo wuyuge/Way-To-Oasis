@@ -42,7 +42,7 @@ public class SetScreenResolution : MonoBehaviour
     {
         Resolution resolution = supportedResolutions[Value];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode,resolution.refreshRateRatio);
-        Debug.Log("设置分辨率为: " + resolution.width + "x" + resolution.height);
+        
         return;
     }
 

@@ -48,7 +48,7 @@ public class TextSpeedManager : MonoBehaviour, IPointerUpHandler,SettingInitiali
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("UI元素上鼠标抬起");
+        
         _ = Preview.ResetSpeed(PreviewSpeed);
     }
 

@@ -17,12 +17,12 @@ public class SetScreenMode : MonoBehaviour,SettingInitialize
             case 0:
                 Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
                 GetComponent<TMP_Dropdown>().value = 0;
-                Debug.Log("设置为 全屏");
+               
                 break;
             case 1:
                 Screen.fullScreenMode = FullScreenMode.Windowed;
                 GetComponent<TMP_Dropdown>().value = 1;
-                Debug.Log("设置为 窗口模式");
+                
                 break;
         }
         return;
@@ -39,14 +39,14 @@ public class SetScreenMode : MonoBehaviour,SettingInitialize
             case 0:
                 Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
                 SaveManager.setting.ScreenMode = 0;
-                Debug.Log("设置为 全屏");
+                
                 break;
             case 1:
                 Screen.fullScreenMode = FullScreenMode.Windowed;
                 SaveManager.setting.ScreenMode = 1;
-                Debug.Log("设置为 窗口模式");
+                
                 break;
         }
-        return;
+        
     }
 }

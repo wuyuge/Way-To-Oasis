@@ -478,7 +478,7 @@ public class Character : MonoBehaviour
 
 
 
-        Debug.Log("禁用按钮");
+        
 
         // 判断当前游戏是否处于"对话阶段"（Progress中的talk状态为true）
         if (progress.GetComponent<Progress>().talk && !ClikDelay)
@@ -486,7 +486,7 @@ public class Character : MonoBehaviour
             progress.GetComponent<Progress>().CanSwitch = false;
             talksys.on = false;
             ClikDelay = true;
-            Debug.Log("触发对话");
+            
 
             // 如果未触发过对话（have_talk为false）
             if (!have_talk)

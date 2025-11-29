@@ -157,6 +157,6 @@ public class CharacterExpression : MonoBehaviour
     public void RefreshConfiguration()
     {
         InitializeDictionaries();
-        Debug.Log("角色表情配置已刷新");
+        
     }
 }

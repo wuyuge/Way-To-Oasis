@@ -182,7 +182,7 @@ public class BackGroundMoving : MonoBehaviour
 
     public void Re_set()
     {
-        Debug.Log("重置背景");
+        
 
         // 还原所有背景层到初始记录的位置
         for (int i = 0; i < backgroundLayers.Count; i++)

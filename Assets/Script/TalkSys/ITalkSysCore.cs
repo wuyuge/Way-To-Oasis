@@ -1,0 +1,18 @@
+public interface ITalkSysCore
+{
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}

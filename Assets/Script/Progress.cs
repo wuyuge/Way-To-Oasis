@@ -233,7 +233,7 @@ public class Progress : MonoBehaviour
             
             if (ShopSwitch.frame == (long)ShopSwitch.clip.frameCount - 1)
             {
-                Debug.Log("视频播放完成");
+                
                 SwitchPlaying = false;
                 ShopSwitch.gameObject.SetActive(false);
 
@@ -276,7 +276,7 @@ public class Progress : MonoBehaviour
                 ObjectManager.GetComponent<ObjectManager>().SetCarryNum();
 
             if (DNSys.time < DNSys.Frist - 0.005f) return;
-            Debug.Log("开启背景滚动");
+            
             // 激活背景滚动（调用 BackGroundMoving 脚本的 open 状态）
             background.GetComponent<BackGroundMoving>().open = true;
             if(day_num != 0)
