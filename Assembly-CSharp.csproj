@@ -81,6 +81,7 @@
     <Compile Include="Assets\Script\Shop\ShopCharacterSelect.cs" />
     <Compile Include="Assets\Script\Start\CancelName.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\ChildObj\SaveChildObjManager.cs" />
+    <Compile Include="Assets\Script\TalkSys\TalkSysShowText.cs" />
     <Compile Include="Assets\Script\Be7\Be7Text.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="Assets\Script\Shop\ShopCharacterManager.cs" />
     <Compile Include="Assets\Script\DataManager\Developer\DeveloperSaveChanger.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
+    <Compile Include="Assets\Script\TalkSys\TalkSysUIButtonFunc.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Script\DataManager\LoadingSwitch.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
@@ -993,9 +995,6 @@
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>C:\Users\wuyug\Oasis\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="TechCosmos.Serialization.Runtime">
-      <HintPath>C:\Users\wuyug\Oasis\Library\ScriptAssemblies\TechCosmos.Serialization.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
       <HintPath>C:\Users\wuyug\Oasis\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>

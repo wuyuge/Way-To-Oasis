@@ -103,7 +103,8 @@ public class TalkSystem : MonoBehaviour
     public Manager ShowTech;
     [Header("小人对话管理")]
     public MiniCharacterTalkSys MiniCharacterManager;
-    private bool MiniMode = false;
+    [HideInInspector]
+    public bool MiniMode = false;
 
     [Header("噪点遮罩")]
     public GameObject NoiseMask;
@@ -117,6 +118,12 @@ public class TalkSystem : MonoBehaviour
 
     public AudioSource Type;
     private bool CharaBarShow = true;
+
+
+    [Header("子脚本")] 
+    public TalkSysSwitch switchManager;
+
+    public TalkSysUIButtonFunc buttonFunc;
 
     /// <summary>
     /// 用于存档加载时暂时停止对话系统调用
@@ -179,6 +186,10 @@ public class TalkSystem : MonoBehaviour
            
         }
         expression = CharacterImageManager.gameObject.GetComponent<CharacterExpression>();
+        
+        buttonFunc.Init(this);
+        switchManager.Init(this);
+        
     }
 
     /// <summary>

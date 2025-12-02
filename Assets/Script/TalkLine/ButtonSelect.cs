@@ -5,7 +5,7 @@ using UnityEngine;
 public class ButtonSelect : MonoBehaviour
 {
     public TalkSystem TalkSystem;
-    public Manager textbox;
+    public Manager textbox { get; set; }
 
 
     public void Clik()

@@ -43,6 +43,28 @@ public class MiniCharacterTalkSys : MonoBehaviour
 
     }
 
+    public void ShowText(string charaName, char text)
+    {
+        foreach (CharacterTalk character in characterTalks)
+        {
+
+            if (character.characterName == charaName)
+            {
+                character.characterTalkBar.text += text;
+                character.characterTalkBar.transform.parent.gameObject.SetActive(true);
+
+            }
+            else
+            {
+                character.characterTalkBar.text = "";
+                character.characterTalkBar.transform.parent.gameObject.SetActive(false);
+                
+            }
+
+
+        }
+    }
+
 
     public void CompleteTalk()
     {
