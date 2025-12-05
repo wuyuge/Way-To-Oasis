@@ -84,8 +84,7 @@ public class TalkSystem : MonoBehaviour
     [Tooltip("点击后允许再次点击的间隔时间（毫秒），建议设置200-500ms")]
     public float ClickInterval = 300f; // 默认300毫秒，可根据体验调整
     private float _lastClickTime; // 记录上次有效点击的时间戳（单位：秒）
-    [Header("文字显示速度（毫秒）")]
-    public int TextSpeedI = 100;
+    [Header("文字显示速度（秒）")] public float TextSpeedI;
     public bool _IsShowingText = false; // 标记当前是否正在显示文本
     public bool BreakText = false; // 标记是否请求中断文本显示
     [Header("玩家名字")]
@@ -122,7 +121,7 @@ public class TalkSystem : MonoBehaviour
 
     [Header("子脚本")] 
     public TalkSysSwitch switchManager;
-
+    public TalkSysShowText showText;
     public TalkSysUIButtonFunc buttonFunc;
 
     /// <summary>
@@ -189,6 +188,7 @@ public class TalkSystem : MonoBehaviour
         
         buttonFunc.Init(this);
         switchManager.Init(this);
+        showText.Init(this);
         
     }
 
@@ -228,7 +228,13 @@ public class TalkSystem : MonoBehaviour
     }
 
 
+    public int ShowText()
+    {
+        showText.ShowText();
 
+
+        return 0;
+    }
 
     /// <summary>
     /// 异步显示文本（支持逐字显示和中途取消）
@@ -1099,7 +1105,7 @@ public class TalkSystem : MonoBehaviour
                         return;
                     }
 
-                    await Task.Delay(TextSpeedI);
+                    /*await Task.Delay(TextSpeedI);*/
                     Type.Play();
                     if (_inshop)
                     {
@@ -1183,7 +1189,7 @@ public class TalkSystem : MonoBehaviour
                         BreakText = false;
                         return;
                     }
-                    await Task.Delay(TextSpeedI);
+                    /*await Task.Delay(TextSpeedI);*/
                     Type.Play();
                     if (_inshop)
                     {
@@ -1223,10 +1229,12 @@ public class TalkSystem : MonoBehaviour
     /// </summary>
     private void HandleChoice(bool _isSpecial = false,int ban = 0)
     {
-
+        
         if (!_inshop)//正常状态
         // 设置按钮文本（显示选项内容）
         {
+            
+            
             UpButton.GetComponent<Image>().color = Color.white;
             UpButton.GetComponent<Button>().enabled = true;
             DownButton.GetComponent<Image>().color = Color.white;

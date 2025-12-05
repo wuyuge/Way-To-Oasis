@@ -37,7 +37,7 @@ public class TextSpeedManager : MonoBehaviour, IPointerUpHandler,SettingInitiali
         OtherSlider.value = speed;
         Difference = (int)(Difference * speed);
         if (talkSystem != null)
-        talkSystem.TextSpeedI = MinSpeed + Difference;
+        talkSystem.TextSpeedI = (MinSpeed + Difference)*0.001f;
         if (sys2 != null)
         sys2.TextSpeedI = MinSpeed + Difference;
         PreviewSpeed = MinSpeed + Difference;

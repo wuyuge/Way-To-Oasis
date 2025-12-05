@@ -32,10 +32,12 @@ public class Progress : MonoBehaviour
     public bool food;
     //教学关是否可以跳过阶段
     public bool can_skip;
+
     /// <summary>
     /// 是否允许切换游戏阶段（用于控制阶段切换的触发条件）
     /// </summary>
-    public bool CanSwitch;
+    public bool CanSwitch { get; set; }
+
     /// <summary>
     /// 是否允许触发对话（控制对话系统的激活状态）
     /// </summary>
@@ -198,7 +200,7 @@ public class Progress : MonoBehaviour
             // 将当前天数的对话数据赋值给对话系统
             talkSys.Talklines[day_num] = beforeStart[day_num];
             talkSys.line = 0;  // 重置对话行数到第一行
-            _ = talkSys.ShowText();  // 启动对话显示（异步执行）
+            /*_ = talkSys.ShowText();  // 启动对话显示（异步执行）*/
             DownBar.GetComponent<Animator>().SetTrigger("Down");  // 底部栏播放"向下"动画（可能隐藏底部栏）
         }
 

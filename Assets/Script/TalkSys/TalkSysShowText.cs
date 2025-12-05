@@ -10,7 +10,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     private List<Manager> _talkLines;
     private int LineIndex => _talkSys.line;
     private int DayNum => _talkSys.Daytime;
-    private int _intervalTime;
+    private float _intervalTime;
     private bool _isPlayerTalking;
     private bool InShop => _talkSys._inshop;
     private bool MiniMode => _talkSys.MiniMode;
@@ -42,33 +42,44 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     /// </summary>
     public void ShowText()
     {
-        string curText = _talkLines[DayNum].TxtLine[LineIndex];
-
-        if (curText.Contains("$"))
+        if (_currentCoroutine!=null)
         {
-            _switchManager.DoSwitchCode();
+            StopOutputText();
+            _talkSys.line++;
             return;
+        }
+        while (true)
+        {
+            string curText = _talkLines[DayNum].TxtLine[LineIndex];
+            
+            //固定转换说话人标识
+            if (curText == "->p")
+            {
+                _isPlayerTalking = true;
+                _talkSys.line++;
+                continue;
+            }
+            if (curText == "->c")
+            {
+                _isPlayerTalking = false;
+                _talkSys.line++;
+                continue;
+            }
+            
+            if (curText.Contains("$"))
+            {
+                _switchManager.DoSwitchCode();
+                _talkSys.line++;
+                continue;
+            }
+        
+            
+            CheckTextUI();
+            TextUI.text = string.Empty;
+            _currentCoroutine = StartCoroutine(OutPutText(MiniMode));
+            break;
         }
         
-        //固定转换说话人标识
-        if (curText == "->p")
-        {
-            _isPlayerTalking = true;
-            _talkSys.line++;
-            ShowText();
-            return;
-        }
-        if (curText == "->c")
-        {
-            _isPlayerTalking = false;
-            _talkSys.line++;
-            ShowText();
-            return;
-        }
-
-        TextUI.text = string.Empty;
-        CheckTextUI();
-        _currentCoroutine = StartCoroutine(OutPutText(MiniMode));
     }
 
     /// <summary>
@@ -144,6 +155,9 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
             yield return new WaitForSeconds(_intervalTime);
             
         }
+
+        _talkSys.line++;
+        _currentCoroutine = null;
 
     }
 

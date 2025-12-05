@@ -320,8 +320,7 @@ public class CharacterImageManager : MonoBehaviour
 
 
     }
-
-
+    
 
     public void ResetTrigger()
     {

@@ -52,6 +52,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Script\Setting\Video\VSyncSetting.cs" />
+    <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchToggle.cs" />
+    <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchChoice.cs" />
     <Compile Include="Assets\Script\New_Game.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\LoadFileButton.cs" />
     <Compile Include="Assets\Script\CharacterImageManager.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="Assets\Script\TalkLine\Day0\aimi bojin\aimibo.cs" />
     <Compile Include="Assets\Script\UI\UIshake.cs" />
     <Compile Include="Assets\Script\DataManager\SaveManager\SaveLoadManager.cs" />
+    <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchTech.cs" />
     <Compile Include="Assets\Script\UI\Select.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Script\UI\Menu\ShowFPS.cs" />
@@ -151,6 +154,7 @@
     <Compile Include="Assets\Script\DataManager\LoadingSwitch.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Script\UI\FoodChoice.cs" />
+    <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchCheck.cs" />
     <Compile Include="Assets\Script\DeveloperSetting\DeveloperDebuger.cs" />
     <Compile Include="Assets\Script\DataManager\SettingDataManager.cs" />
     <Compile Include="Assets\Script\Progress.cs" />
@@ -164,6 +168,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Script\Start\LoadOnStart.cs" />
+    <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchCommand.cs" />
     <Compile Include="Assets\Script\DataManager\Developer\DevBody\DevBodyList.cs" />
     <Compile Include="Assets\Script\TalkLine\Start\StartImportLine.cs" />
     <Compile Include="Assets\Script\DataManager\Developer\DevBody\DevBodyManager.cs" />
@@ -173,10 +178,12 @@
     <Compile Include="Assets\Script\Mask\MaskManager.cs" />
     <Compile Include="Assets\Script\DataManager\Setting\SettingInitialize.cs" />
     <Compile Include="Assets\Script\DataManager\Saves\AutoSave.cs" />
+    <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchShop.cs" />
     <Compile Include="Assets\Script\Setting\Video\SetScreenMode.cs" />
     <Compile Include="Assets\Script\CharacterInfo\CharacterInfoManager.cs" />
     <Compile Include="Assets\Script\DataManager\SaveManager\RestoreSence.cs" />
     <Compile Include="Assets\Script\Setting\Video\SetFPS.cs" />
+    <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchSet.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\FileButtonRefresh.cs" />
     <Compile Include="Assets\Script\End\BackToStart.cs" />
     <Compile Include="Assets\Script\Audio\AudioManager.cs" />
@@ -950,9 +957,6 @@
     </Reference>
     <Reference Include="Unity.Burst">
       <HintPath>C:\Users\wuyug\Oasis\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
-    </Reference>
-    <Reference Include="jeffjadulco.guidregenerator">
-      <HintPath>C:\Users\wuyug\Oasis\Library\ScriptAssemblies\jeffjadulco.guidregenerator.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:\Users\wuyug\Oasis\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
