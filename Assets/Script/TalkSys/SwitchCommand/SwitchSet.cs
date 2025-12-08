@@ -5,11 +5,14 @@ using UnityEngine;
 public class SwitchSet : SwitchCommand
 {
     private TalkSystem _talkSys;
-    
+    private MiniCharacterManager _miniCharacterManager;
+    private Progress _progress;
     
     public override void Init(TalkSystem talkSys)
     {
         _talkSys = talkSys;
+        _miniCharacterManager = _talkSys.MiniCharacterManager.gameObject.GetComponent<MiniCharacterManager>();
+        _progress = _talkSys.DaytimeOBJ.GetComponent<Progress>();
     }
 
     public override void Execute(FunctionCode.Function function)
@@ -17,34 +20,72 @@ public class SwitchSet : SwitchCommand
         switch (function)
         {
             case FunctionCode.Function.A:
-                //TODO:设定迷你角色动画为站立
+                //设定迷你角色动画为站立
+                _miniCharacterManager.SetStand();
                 break;
             case FunctionCode.Function.B:
-                //TODO:设定迷你角色动画为坐
+                //设定迷你角色动画为坐
+                _miniCharacterManager.SetSit();
                 break;
             case FunctionCode.Function.C:
                 //TODO:在角色对话中添加已经死亡角色的名称(可能要重载函数返回值)
                 break;
             case FunctionCode.Function.D:
-                //TODO:禁止/开启切换阶段
+                //禁止/开启切换阶段
+                break;
+            case FunctionCode.Function.Da://开启
+                _progress.CanSwitch = true;
+                break;
+            case FunctionCode.Function.Db://关闭
+                _progress.CanSwitch = false;
                 break;
             case FunctionCode.Function.E:
                 //TODO:控制角色安抚状态
                 break;
             case FunctionCode.Function.F:
-                //TODO:开/关 显示角色名称
+                //开/关 显示角色名称
+                break;
+            case FunctionCode.Function.Fa://开启
+                _talkSys.SetShowName();
+                break;
+            case FunctionCode.Function.Fb://关闭
+                _talkSys.SetNoName();
                 break;
             case FunctionCode.Function.G:
-                //TODO:重置角色对话立绘状态
+                //重置角色对话立绘状态
+                _talkSys.CharacterImageManager.ResetTrigger();
                 break;
             case FunctionCode.Function.H:
-                //TODO:所有对象一起黑掉
+                //所有对象一起黑掉
+                _talkSys.CharacterImageManager.CloseImage();
+                _progress.skip.transform.Find("Report").gameObject.SetActive(false);
+                _progress.skip.GetComponent<Animator>().SetTrigger("dark");
                 break;
             case FunctionCode.Function.I:
-                //TODO:单独用于阿曼德二次对话
+                //单独用于阿曼德二次对话
+                break;
+            case FunctionCode.Function.Ia:
+                _talkSys.amande.GetComponent<Character>().have_talk = false;
+                Execute(FunctionCode.Function.Db);
+                break;
+            case FunctionCode.Function.Ib:
+                _talkSys.amande.GetComponent<Character>().have_talk = true;
+                Execute(FunctionCode.Function.Da);
                 break;
             case FunctionCode.Function.J:
-                //TODO:消耗博金森尸体并且设定艾米莉不可负重
+                //消耗博金森尸体并且设定艾米莉不可负重
+                int index = -1;
+                foreach(string s in _talkSys.DeadName.TxtLine)
+                {
+                    index++;
+                    if(s == "博金森")
+                    {
+                        _talkSys.UsedBody.TxtLine.Add("博金森Used");
+                        _talkSys.DeadName.TxtLine.RemoveAt(index);
+                    }
+
+                }
+                _talkSys.CharacterList[1].GetComponent<Character>().CantWeight = true;
                 break;
         }
     }

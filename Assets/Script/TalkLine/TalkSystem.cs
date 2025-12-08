@@ -98,12 +98,12 @@ public class TalkSystem : MonoBehaviour
 
     [Header("教程文本列表")]
     [SerializeField]
-    private TechTextList TechTextList;
+    public TechTextList TechTextList;
     public Manager ShowTech;
     [Header("小人对话管理")]
     public MiniCharacterTalkSys MiniCharacterManager;
-    [HideInInspector]
-    public bool MiniMode = false;
+    
+    public bool MiniMode { get; set; }
 
     [Header("噪点遮罩")]
     public GameObject NoiseMask;
@@ -394,7 +394,7 @@ public class TalkSystem : MonoBehaviour
                     return;
 
 
-                case "/BanClik":
+                case "/BanClick":
                     on = false;
                     PlusLine();
                     _ = ShowText(true);
@@ -1520,7 +1520,7 @@ public class TalkSystem : MonoBehaviour
          Talklines[Daytime] = Talklines[Daytime].Option3;
     }
 
-    void ResetLine()
+    public void ResetLine()
     {
          line = 0;
     }
@@ -1591,11 +1591,37 @@ public class TalkSystem : MonoBehaviour
     }
 
 
+    public void SwitchLine(TalkLine switchLine)
+    {
 
-
+        switch (switchLine)
+        {
+            case  TalkLine.Line1:
+                Talklines[Daytime] = Talklines[Daytime].Option1;
+                break;
+            case TalkLine.Line2:
+                Talklines[Daytime] = Talklines[Daytime].Option2;
+                break;
+            case TalkLine.Line3:
+                Talklines[Daytime] = Talklines[Daytime].Option3;
+                break;
+            default:
+                Debug.Log("预期外的line");
+                break;
+        }
+        
+    }
+    
     
 
 
 
 
+}
+
+
+
+public enum TalkLine
+{
+    Line1,Line2,Line3
 }

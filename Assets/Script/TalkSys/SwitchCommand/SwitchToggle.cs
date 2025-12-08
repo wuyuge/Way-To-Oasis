@@ -1,66 +1,125 @@
-using System.Collections;
-using System.Collections.Generic;
+//
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SwitchToggle : SwitchCommand
 {
     private TalkSystem _talkSys;
     #region 对话栏与角色栏引用
-
     private GameObject TalkPanel => _talkSys.gameObject;
     private GameObject CharacterPanel => _talkSys.charabar;
-
     #endregion
     
+    private bool MiniMode
+    {
+        get => _talkSys.MiniMode; 
+        set => _talkSys.MiniMode = value;
+    }
+
+
+    /// <summary>
+    /// 初始化SwitchToggle实例，设置TalkSystem引用。
+    /// </summary>
+    /// <param name="talkSys">用于对话管理的TalkSystem实例。</param>
     public override void Init(TalkSystem talkSys)
     {
         _talkSys = talkSys;
     }
 
+    /// <summary>
+    /// 执行指定功能代码对应的操作。
+    /// </summary>
+    /// <param name="function">要执行的功能枚举值。</param>
     public override void Execute(FunctionCode.Function function)
     {
         switch (function)
         {
             case FunctionCode.Function.A:
-                //TODO:迷你对话模式布尔值
+                //迷你对话模式布尔值
+                MiniMode = !MiniMode;
                 break;
             case FunctionCode.Function.B:
-                //TODO:对话框动画控制
+                //对话框动画控制
+                Debug.LogWarning("枚举值设置方法为空,请选择子枚举",this);
                 break;
+            case FunctionCode.Function.Ba://上升
+                MoveUI(UIElement.Talk, UIMovement.Up);
+                break;
+            case FunctionCode.Function.Bb://下降
+                MoveUI(UIElement.Talk,UIMovement.Down);
+                break;
+            
             case FunctionCode.Function.C:
-                //TODO:角色框动画控制
+                //角色框动画控制
+                Debug.LogWarning("枚举值设置方法为空,请选择子枚举",this);
                 break;
+            case FunctionCode.Function.Ca://上升
+                MoveUI(UIElement.Character, UIMovement.Up);
+                break;
+            case FunctionCode.Function.Cb://下降
+                MoveUI(UIElement.Character, UIMovement.Down);
+                break;
+            
             case FunctionCode.Function.D:
-                //TODO:切换下一个对话数据
+                //切换下一个对话数据
+                _talkSys.Talklines[_talkSys.Daytime] = _talkSys.Talklines[_talkSys.Daytime].Option1;
                 break;
             case FunctionCode.Function.E:
-                //TODO:开关角色分配食物按钮
+                //开关角色分配食物按钮
+                Debug.LogWarning("枚举值设置方法为空,请选择子枚举",this);
                 break;
+            case FunctionCode.Function.Ea://开
+                foreach (var g in _talkSys.CharacterList)
+                {
+                    g.transform.Find("Toggle").gameObject.GetComponent<Toggle>().interactable = true;
+                }
+                break;
+            case FunctionCode.Function.Eb://关
+                foreach (var g in _talkSys.CharacterList)
+                {
+                    g.transform.Find("Toggle").gameObject.GetComponent<Toggle>().interactable = false;
+                }
+                break;
+            
             case FunctionCode.Function.F:
-                //TODO:开关营火动画
+                //关营火动画
+                _talkSys.MiniCharacterManager.gameObject.GetComponent<MiniCharacterManager>().OffLight();
                 break;
             case FunctionCode.Function.G:
-                //TODO:禁止点击继续对话
+                //禁止点击继续对话
+                _talkSys.on = false;
                 break;
             case FunctionCode.Function.H:
-                //TODO:开关迷你角色图像
+                //开关迷你角色图像
+                Debug.LogWarning("枚举值设置方法为空,请选择子枚举",this);
                 break;
+            case FunctionCode.Function.Ha://开
+                _talkSys.MiniCharacterManager.gameObject.GetComponent<MiniCharacterManager>().ShowMiniCharacter();
+                break;
+            case FunctionCode.Function.Hb://关
+                _talkSys.MiniCharacterManager.gameObject.GetComponent<MiniCharacterManager>().CloseMiniCharacter();
+                break;
+            
             case FunctionCode.Function.I:
-                //TODO:关闭遮罩
+                //关闭遮罩
+                _talkSys.mask.transform.parent.gameObject.SetActive(false);
                 break;
             case FunctionCode.Function.J:
-                //TODO:全屏黑屏    
+                //全屏黑屏   
+                _talkSys.black.GetComponent<Animator>().SetTrigger("Black");
                 break;
             case FunctionCode.Function.K:
-                //TODO:Demo结束
+                //Demo结束
+                GameObject.Find("EndingsManager").GetComponent<EndingsManager>().ToEnd("Demo-End");
                 break;
             case FunctionCode.Function.L:
-                //TODO:从教学场景切换到主场景
+                //从教学场景切换到主场景
+                _talkSys.MainCanvas.SetActive(true);
+                _talkSys.transform.parent.gameObject.SetActive(false);
                 break;
         }
     }
-    
-    
+
     
     #region UI移动逻辑
 
@@ -79,15 +138,15 @@ public class SwitchToggle : SwitchCommand
     private void MoveUI(UIElement element,UIMovement moveValue)
     {
         GameObject temp = element == UIElement.Talk ? TalkPanel : CharacterPanel;
-        
+        Animator anim = temp.GetComponent<Animator>();
         
         switch (moveValue)
         {
             case UIMovement.Up:
-                temp.GetComponent<Animator>().SetTrigger(0);
+                anim.SetTrigger(0);
                 break;
             case UIMovement.Down:
-                temp.GetComponent<Animator>().SetTrigger(1);
+                anim.SetTrigger(1);
                 break;
             
         }
