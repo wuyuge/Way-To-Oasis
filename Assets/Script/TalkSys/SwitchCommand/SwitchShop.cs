@@ -5,6 +5,7 @@ using UnityEngine;
 public class SwitchShop : SwitchCommand
 {
     private TalkSystem _talkSys;
+    private TalkSysShowText _showText;
 
     private bool InShop
     {
@@ -15,6 +16,7 @@ public class SwitchShop : SwitchCommand
     public override void Init(TalkSystem talkSys)
     {
         _talkSys = talkSys;
+        _showText = talkSys.showText;
     }
 
     public override void Execute(FunctionCode.Function function)
@@ -24,10 +26,12 @@ public class SwitchShop : SwitchCommand
             case FunctionCode.Function.A:
                 //开启商店场景
                 InShop = true;
+                _showText.CanShowText = true;
                 break;
             case FunctionCode.Function.B:
                 //关闭商店场景
                 InShop = false;
+                _showText.CanShowText = false;
                 _talkSys.ShopManager.SetActive(false);
                 break;
             case FunctionCode.Function.C:

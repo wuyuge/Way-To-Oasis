@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Main2
   m_EditorClassIdentifier: 
   TxtLine:
-  - p
+  - ->p
   - "\u2026\u2026"
-  - c
+  - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u804A\u70B9\u522B\u7684\u5427\uFF0C\u73B0\u5728\u7684\u6C14\u6C1B\u6709\u4E9B\u592A\u6C89\u91CD\u4E86\u3002"
-  - choice
+  - ${Choice}
   Option1: {fileID: 11400000, guid: df69983515eea4b41bb1e7d38d9ea997, type: 2}
   Option2: {fileID: 11400000, guid: ef2bb9b411918af4bb4695e5ecb82a69, type: 2}
   Option3: {fileID: 0}

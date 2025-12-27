@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,7 +8,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
 {
     private TalkSystem _talkSys;
     private TalkSysSwitch _switchManager;
-    private List<Manager> _talkLines;
+    private List<Manager> TalkLines => _talkSys.Talklines;
     private int LineIndex => _talkSys.line;
     private int DayNum => _talkSys.Daytime;
     private float _intervalTime;
@@ -20,11 +21,18 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     private TextMeshProUGUI _playerName,_characterName,_shopGeneralName;
     private Coroutine _currentCoroutine;
     private string PlayerNameBox => _talkSys.PlayerName.TxtLine[0];
-    
+    //一次性开关用于阻止指令执行完毕后继续读取下一条
+    private int _stopCommend = 0;
+    public bool CanShowText { get; set; }
+
+    private void Awake()
+    {
+        CanShowText = true;
+    }
+
     public void Init(TalkSystem talkSys)
     {
         _talkSys = talkSys;
-        _talkLines = talkSys.Talklines;
         _intervalTime = talkSys.TextSpeedI;
         _switchManager = talkSys.switchManager;
         _miniCharacterTalkSys = talkSys.MiniCharacterManager;
@@ -42,15 +50,40 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     /// </summary>
     public void ShowText()
     {
-        if (_currentCoroutine!=null)
-        {
-            StopOutputText();
-            _talkSys.line++;
-            return;
-        }
+        
+        if(!CanShowText) return;
+        
         while (true)
         {
-            string curText = _talkLines[DayNum].TxtLine[LineIndex];
+            if (_stopCommend > 0)
+            {
+                _stopCommend--;
+                Debug.Log("停止执行下条命令");
+                return;
+            }
+            string curText;
+            try
+            {
+                curText = TalkLines?[DayNum]?.TxtLine?[LineIndex] ?? string.Empty;
+                if (TalkLines[DayNum].TxtLine[LineIndex].Contains("{PlayerName}"))
+                {
+                    TalkLines[DayNum].TxtLine[LineIndex] = TalkLines[DayNum].TxtLine[LineIndex].Replace("{PlayerName}", PlayerNameBox);
+                    Debug.Log("替换玩家姓名");
+                }
+                
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                Console.WriteLine($"索引越界:{e}");
+                return;
+            }
+            
+            if (_currentCoroutine!=null)
+            {
+                StopOutputText();
+                _talkSys.line++;
+                return;
+            }
             
             //固定转换说话人标识
             if (curText == "->p")
@@ -75,7 +108,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
         
             
             CheckTextUI();
-            TextUI.text = string.Empty;
+            _currentTextUI.text = string.Empty;
             _currentCoroutine = StartCoroutine(OutPutText(MiniMode));
             break;
         }
@@ -111,12 +144,18 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     private IEnumerator OutPutText(bool onMiniMode = false)
     {
         
-        var tempString = _talkLines[DayNum].TxtLine[LineIndex];
+        var tempString = TalkLines[DayNum].TxtLine[LineIndex];
+        
         var charaName = string.Empty;
+        if (tempString.Contains("："))//如果文本分类错误即转换说话人
+        {
+            _isPlayerTalking = false;
+            CheckTextUI();
+        }
+        
         if (!_isPlayerTalking)
         {
-            string[] tempTextBox;
-            tempTextBox = HandleCharacterName(tempString);
+            string[] tempTextBox = HandleCharacterName(tempString);
             charaName = tempTextBox[0];
             tempString = tempTextBox[1];
             if (InShop)
@@ -126,6 +165,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
             else
             {
                 _characterName.text = charaName;
+                if (!onMiniMode)_talkSys.CharacterImageManager.SetImage(charaName);
             }
         }
         else
@@ -139,23 +179,31 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
                 _playerName.text = PlayerNameBox;
             }
         }
-        
 
+        if (onMiniMode)_miniCharacterTalkSys.ShowText(charaName, string.Empty);
+        
         foreach (var stringValue in tempString)
         {
+            
+            _talkSys.Type.Play();
             if (!onMiniMode)
             {
-                TextUI.text += stringValue;
+                _currentTextUI.text += stringValue;
             }
             else
             {
+                if (_isPlayerTalking)
+                {
+                    _currentTextUI.text += stringValue;
+                }
                 _miniCharacterTalkSys.ShowText(charaName, stringValue);
             }
             
             yield return new WaitForSeconds(_intervalTime);
             
         }
-
+        
+        _talkSys.Type.Stop();
         _talkSys.line++;
         _currentCoroutine = null;
 
@@ -172,15 +220,15 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
         textBox[1] = initialText;
         foreach (var nameString in initialText)
         {
-            if (nameString == ':')
+            if (nameString == '：')
             {
                 break;
             }
             textBox[0] += nameString;
         }
 
-        textBox[1] = textBox[1].Replace($"{textBox[0]}:", "");
-
+        textBox[1] = textBox[1].Replace($"{textBox[0]}：", "");
+        
         return textBox;
     }
 
@@ -203,11 +251,36 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     {
         if (!_isPlayerTalking)
         {
-            _currentTextUI.text = HandleCharacterName(_talkLines[DayNum].TxtLine[LineIndex])[1];
+            if (MiniMode)
+            {
+                string[] text;
+                text = HandleCharacterName(TalkLines[DayNum].TxtLine[LineIndex]);
+                _miniCharacterTalkSys.ShowText(text[0], string.Empty);
+                _miniCharacterTalkSys.ShowText(text[0], text[1]);
+                return;
+            }
+            _currentTextUI.text = string.Empty;
+            _currentTextUI.text = HandleCharacterName(TalkLines[DayNum].TxtLine[LineIndex])[1];
+            return;
         }
-        _currentTextUI.text = _talkLines[DayNum].TxtLine[LineIndex];
+        _currentTextUI.text = string.Empty;
+        _currentTextUI.text = TalkLines[DayNum].TxtLine[LineIndex];
         
     }
+
+    public void SetEmptyText()
+    {
+        _talkSys.Character.text = string.Empty;
+        _talkSys.Player.text = string.Empty;
+        _talkSys.ShopTextBar.GetComponent<TextMeshProUGUI>().text = string.Empty;
+    }
+
+
+    public void StopNextCommend()
+    {
+        Debug.Log("开始禁止下条指令");
+        _stopCommend++;
+    }
     
-    
+
 }

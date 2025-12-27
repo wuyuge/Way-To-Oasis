@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: fu_Day1_main
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
+  - ${${ShowCharacterTalkBox}}
+  - ->c
   - "\u535A\u91D1\u68EE\uFF1A\u2026\u2026"
   - "\u535A\u91D1\u68EE\uFF1A\u4ECA\u5929\u4F9D\u65E7\u6CA1\u6709\u6536\u83B7\u3002"
   - "\u535A\u91D1\u68EE\uFF1A\u8FD9\u662F\u7EAF\u7CB9\u7684\u8352\u6F20\uFF0C\u6CA1\u6709\u751F\u7269\u6CA1\u6709\u8D44\u6E90\u3002"
   - "\u535A\u91D1\u68EE\uFF1A\u522B\u60F3\u5728\u8FD9\u5F97\u5230\u8865\u7ED9\u4E86\u3002"
   - "\u535A\u91D1\u68EE\uFF1A\u8FD8\u6709\u522B\u7684\u4E8B\u5417\uFF1F"
-  - choice
+  - ${Choice}
   Option1: {fileID: 11400000, guid: 0f45809e6565551478b6e7cdb636a014, type: 2}
   Option2: {fileID: 11400000, guid: 7bb2fc0e03f8e374487ed17d98c56fda, type: 2}
   Option3: {fileID: 11400000, guid: 3a944a12f6a17a14684a74b336a36a4a, type: 2}

@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: luo_Day0_main2
   m_EditorClassIdentifier: 
   TxtLine:
-  - upcbar
-  - down
+  - ${CloseCharacterTalkBox}
+  - ${CloseCharacterTalkBox}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

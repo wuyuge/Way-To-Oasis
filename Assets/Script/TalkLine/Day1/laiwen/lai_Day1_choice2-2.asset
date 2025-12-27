@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u4E0D\u7528\u4E86"
-  - p
+  - ->p
   - "\u4E0D\u7528\u4E86\u3002"
-  - c
+  - ->c
   - "\u83B1\u6587\uFF1A\u8FD9\u6837\u554A\uFF0C\u54C8\u54C8\u770B\u6765\u4F60\u5174\u81F4\u4E0D\u9AD8\u3002"
   - "\u83B1\u6587\uFF1A\u8FD8\u662F\u65E9\u70B9\u4F11\u606F\u5427\u3002"
-  - upcbar
-  - down
+  - ${CloseCharacterTalkBox}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

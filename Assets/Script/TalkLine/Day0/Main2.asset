@@ -13,16 +13,19 @@ MonoBehaviour:
   m_Name: Main2
   m_EditorClassIdentifier: 
   TxtLine:
-  - p
+  - ${OpenSwitchStage}
+  - ${OpenSwitchStage}
+  - ->p
   - "\u63A5\u4E0B\u6765\uFF0C\u53BB\u901A\u77E5\u522B\u4EBA\u5427\u3002"
-  - /BanClik
-  - upcbar
-  - down
-  - techright
-  - techmenu
-  - techtalk
-  - techover
-  - showcharabar
+  - ${ClickCloseMaskOff}
+  - ${TechRight}
+  - ->p
+  - ${TechMenu}
+  - ->p
+  - ${DownTalkBox}
+  - ${TechTalk}
+  - ->p
+  - ${ClickCloseMaskOn}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

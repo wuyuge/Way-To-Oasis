@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: luo_Day0_twice
   m_EditorClassIdentifier: 
   TxtLine:
-  - closecharabar
-  - p
+  - ->p
   - "\u4F60\u770B\u89C1\u4ED6\u62B1\u4F4F\u4E86\u5934\uFF0C\u8FD8\u662F\u4E0D\u8981\u6253\u6270\u4ED6\u4E86\u3002"
-  - upcbar
-  - down
+  - ${DownTalkBox}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

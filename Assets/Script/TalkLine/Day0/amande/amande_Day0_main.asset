@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: amande_Day0_main
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
-  - lock
+  - ${ShowCharacterTalkBox}
+  - ${LockSwitchStage}
+  - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u5DF2\u7ECF\u901A\u77E5\u6240\u6709\u4EBA\u4E86\u5417\uFF1F"
-  - choice
+  - ${Choice}
   Option1: {fileID: 11400000, guid: 5bc4df577b666b94390d45e244191498, type: 2}
   Option2: {fileID: 11400000, guid: 4a6ef54ab22631a4d8ac7e47d3cf6091, type: 2}
   Option3: {fileID: 0}

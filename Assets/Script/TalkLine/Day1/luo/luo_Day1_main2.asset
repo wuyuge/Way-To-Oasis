@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: luo_Day1_main2
   m_EditorClassIdentifier: 
   TxtLine:
-  - p
+  - ->p
   - "\u6D1B\u5C14\u574E\u4F3C\u4E4E\u8FD8\u6709\u4EC0\u4E48\u8BDD\u60F3\u8BF4\uFF0C\u4ED6\u8868\u73B0\u51FA\u4E00\u526F\u72B9\u8C6B\u7684\u6837\u5B50\u3002"
-  - choice
+  - ${Choice}
   Option1: {fileID: 11400000, guid: 5d0ee5e9b7d66ce48bce21765fff7ed0, type: 2}
   Option2: {fileID: 11400000, guid: d527156dfe54e12489cb29d8aef58ab5, type: 2}
   Option3: {fileID: 0}

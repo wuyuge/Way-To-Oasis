@@ -500,6 +500,7 @@ public class Character : MonoBehaviour
                 TalkBar.SetActive(true);
                 
                 talksys.Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num];
+                talksys.showText.CanShowText = true;
                 // 标记为已触发对话（避免重复触发）
                 have_talk = true;
                 talksys.ShowBar();
@@ -513,6 +514,7 @@ public class Character : MonoBehaviour
                 TalkBar.SetActive(true);
                 talksys.Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num].Option3;
                 talksys.ShowBar();
+                talksys.showText.CanShowText = true;
                 // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
                 Invoke("DownAnim", Delay);
                 // 显示对话面板（调用TalkSystem的ShowBar方法，可能包含动画）

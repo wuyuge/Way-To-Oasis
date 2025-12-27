@@ -45,22 +45,28 @@ public class SwitchTech : SwitchCommand
             case FunctionCode.Function.A:
                 //教学菜单
                 EnableMask("Menu",_talkSys.Menu);
+                _talkSys.showText.StopNextCommend();
                 break;
             case FunctionCode.Function.B:
                 //点击进行对话
                 EnableMask("Click",_talkSys.transform.Find("MaskLayer").gameObject);
+                _talkSys.showText.StopNextCommend();
                 break;
             case FunctionCode.Function.C:
                 //点击人物头像
                 EnableMask("Talk",_talkSys.DownBar.transform.Find("MaskLayer").gameObject);
+                _talkSys.showText.StopNextCommend();
+                _talkSys.showText.CanShowText = true;
                 break;
             case FunctionCode.Function.D:
                 //结束教学
                 _techMask.transform.parent.gameObject.GetComponent<MaskManager>().SetClik(true);
+                _talkSys.showText.StopNextCommend();
                 break;
             case FunctionCode.Function.E:
                 //右侧栏
                 EnableMask("Right",_talkSys.DaytimeOBJ.transform.parent.gameObject);
+                _talkSys.showText.StopNextCommend();
                 break;
             case FunctionCode.Function.F:
                 //切换下阶段
@@ -78,12 +84,19 @@ public class SwitchTech : SwitchCommand
                 //负重分配
                 EnableMask("Weight",_talkSys.DownBar.transform.Find("MaskLayer").gameObject);
                 break;
+            case FunctionCode.Function.J:
+                //使遮罩可以被鼠标点击关闭
+                _maskTarget.gameObject.transform.parent.gameObject.GetComponent<MaskManager>().ClickClose = true;
+                break;
+            case FunctionCode.Function.K:
+                //使遮罩不可以被鼠标点击关闭
+                _maskTarget.gameObject.transform.parent.gameObject.GetComponent<MaskManager>().ClickClose = false;
+                break;
+                
             default:
                 Debug.LogError("命令对应枚举值错误",this.gameObject);
                 break;
         }
-
-        _talkSys.line++;
     }
 
 

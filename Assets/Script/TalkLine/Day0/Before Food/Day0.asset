@@ -13,19 +13,15 @@ MonoBehaviour:
   m_Name: Day0
   m_EditorClassIdentifier: 
   TxtLine:
-  - /locktoggle
-  - lock
-  - closecharabar
-  - /noname
-  - p
+  - ${LockSwitchStage}
+  - ${CloseCharacterTalkBox}
+  - ->p
   - "\u5728\u4E00\u5929\u7ED3\u675F\u4E4B\u524D\u6211\u9700\u8981\u5206\u914D\u98DF\u7269\u7ED9\u961F\u53CB\u3002"
   - "\u5982\u679C\u4EFB\u4F55\u4EBA\u6CA1\u6709\u5206\u914D\u5F97\u5230\u98DF\u7269\uFF0C\u4ED6\u90FD\u4F1A\u5728\u4E00\u5929\u7ED3\u675F\u540E\u6B7B\u53BB\u3002"
   - "\u8981\u6CE8\u610F\u5982\u679C\u6CA1\u6709\u5F97\u5230\u98DF\u7269\u7684\u4EBA\u592A\u591A\uFF0C\u8BF4\u4E0D\u5B9A\u4F1A\u5F15\u53D1\u4EC0\u4E48\u4E0D\u597D\u7684\u540E\u679C\u3002"
-  - upcbar
-  - techfood
-  - /unlocktoggle
-  - /ResetTrigger
-  - down
+  - ${TechFood}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

@@ -64,12 +64,12 @@ public class SwitchSet : SwitchCommand
             case FunctionCode.Function.I:
                 //单独用于阿曼德二次对话
                 break;
-            case FunctionCode.Function.Ia:
-                _talkSys.amande.GetComponent<Character>().have_talk = false;
+            case FunctionCode.Function.Ia://开
+                _talkSys.amande.GetComponent<Character>().have_talk = true;
                 Execute(FunctionCode.Function.Db);
                 break;
-            case FunctionCode.Function.Ib:
-                _talkSys.amande.GetComponent<Character>().have_talk = true;
+            case FunctionCode.Function.Ib://关
+                _talkSys.amande.GetComponent<Character>().have_talk = false;
                 Execute(FunctionCode.Function.Da);
                 break;
             case FunctionCode.Function.J:
@@ -86,6 +86,10 @@ public class SwitchSet : SwitchCommand
 
                 }
                 _talkSys.CharacterList[1].GetComponent<Character>().CantWeight = true;
+                break;
+            case FunctionCode.Function.K:
+                //Day0开启切换阶段
+                _talkSys.DaytimeOBJ.GetComponent<Progress>().can_skip = true;
                 break;
         }
     }

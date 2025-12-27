@@ -1,3 +1,4 @@
+using System;
 using Coffee.UIExtensions;
 using System.Collections;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ public class Progress : MonoBehaviour
     /// <summary>
     /// 是否允许切换游戏阶段（用于控制阶段切换的触发条件）
     /// </summary>
-    public bool CanSwitch { get; set; }
+    public bool CanSwitch;
 
     /// <summary>
     /// 是否允许触发对话（控制对话系统的激活状态）
@@ -155,12 +156,15 @@ public class Progress : MonoBehaviour
     //重置每天的商店事件
     public ShopEventReseter shopEventReseter;
 
+    private Button _thisButton;
+
     /// <summary>
     /// 初始化方法 - 游戏启动时执行
     /// 1. 绑定UI文本组件 2. 设置初始阶段的文本颜色 3. 触发当天开始前的幕间对话
     /// </summary>
     void Start()
     {
+        _thisButton = this.GetComponent<Button>();
         AudioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         talkSys = TalkBar.GetComponent<TalkSystem>();
         // 初始化日期显示（格式：Day X）
@@ -212,6 +216,10 @@ public class Progress : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        _thisButton.interactable = CanSwitch;
+    }
 
 
     public void FixedUpdate()
@@ -355,8 +363,9 @@ public class Progress : MonoBehaviour
                 // 赋值对话数据到对话系统
                 talkSys.Talklines[day_num] = beforeFood[day_num];
                 talkSys.line = 0;  // 重置对话行数
+                talkSys.showText.CanShowText = true;
                 _ = talkSys.ShowText();  // 启动对话显示
-                TalkBar.GetComponent<Animator>().SetTrigger("up");
+                TalkBar.GetComponent<Animator>().SetTrigger("Up");
                 if (TalkBar.transform.position.y == 0)
                 {
                     DownAnim();
@@ -424,13 +433,9 @@ public class Progress : MonoBehaviour
                     {
                         talkSys.Talklines[day_num] = afterFood[day_num];
                         talkSys.line = 0;  // 重置对话行数
+                        talkSys.showText.CanShowText = true;
                         _ = talkSys.ShowText();  // 启动对话显示
-                        TalkBar.GetComponent<Animator>().SetTrigger("up");// 对话栏显示动画
-                        //if (TalkBar.transform.position.y == 0)
-                        //{
-                        //    DownAnim();
-                        //}  // 底部栏隐藏动画
-
+                        TalkBar.GetComponent<Animator>().SetTrigger("Up");// 对话栏显示动画
                         afterFood[day_num] = null;  // 清空当前天数的对话数据（避免重复触发）
                         return;  // 先显示对话，暂不执行后续阶段切换（对话结束后需重新触发切换）
                     }
@@ -440,8 +445,9 @@ public class Progress : MonoBehaviour
                 {
                     talkSys.Talklines[day_num] = afterFood[day_num];
                     talkSys.line = 0;  // 重置对话行数
+                    talkSys.showText.CanShowText = true;
                     _ = talkSys.ShowText();  // 启动对话显示
-                    TalkBar.GetComponent<Animator>().SetTrigger("up");  // 对话栏显示动画
+                    TalkBar.GetComponent<Animator>().SetTrigger("Up");  // 对话栏显示动画
                     if (TalkBar.transform.position.y == 0)
                     {
                         DownAnim();
@@ -534,6 +540,7 @@ public class Progress : MonoBehaviour
                 // 赋值对话数据到对话系统
                 talkSys.Talklines[day_num] = beforeStart[day_num];
                 talkSys.line = 0;// 重置对话行数
+                talkSys.showText.CanShowText = true;
                 Invoke("Talk", 0.2f);
 
 

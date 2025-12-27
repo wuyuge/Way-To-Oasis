@@ -42,7 +42,8 @@ public class TalkSystem : MonoBehaviour
     public TextMeshProUGUI ShopName;
     public GameObject ShopLButton, ShopRButton, ShopMButton;
     public Manager Day2_Shop_Exchange, Day2_Shop_KillSomeOne;
-    private bool ShowName;
+    #pragma warning disable CS0414
+    public bool ShowName = true;
     [Tooltip("判断是否是商店场景")]
     public bool _inshop;
 
@@ -116,7 +117,7 @@ public class TalkSystem : MonoBehaviour
     private CharacterExpression expression;
 
     public AudioSource Type;
-    private bool CharaBarShow = true;
+    /*private bool CharaBarShow = true;*/
 
 
     [Header("子脚本")] 
@@ -140,9 +141,7 @@ public class TalkSystem : MonoBehaviour
         PlayerNameText.text = PlayerName.TxtLine[0];
         if (Daytime == 0)
         {
-            on = false;
-            Invoke("SetStartTalk", 1.5f);
-
+            Invoke(nameof(SetStartTalk),1f);
         }
         Type = gameObject.GetComponent<AudioSource>();
     }
@@ -150,7 +149,7 @@ public class TalkSystem : MonoBehaviour
     void SetStartTalk()
     {
         Invoke("SetOn", 1f);
-        _ = ShowText(true);
+        _ = ShowText();
         
     }
 
@@ -176,6 +175,13 @@ public class TalkSystem : MonoBehaviour
         ResetLine();
         // 从进度管理器获取当前天数
         
+        
+        expression = CharacterImageManager.gameObject.GetComponent<CharacterExpression>();
+        
+        buttonFunc.Init(this);
+        switchManager.Init(this);
+        showText.Init(this);
+        
         if (on && DaytimeOBJ.GetComponent<Progress>().talk)
         {
             // 隐藏选择按钮（点击文本时关闭选择界面）
@@ -184,12 +190,6 @@ public class TalkSystem : MonoBehaviour
 
            
         }
-        expression = CharacterImageManager.gameObject.GetComponent<CharacterExpression>();
-        
-        buttonFunc.Init(this);
-        switchManager.Init(this);
-        showText.Init(this);
-        
     }
 
     /// <summary>
@@ -211,11 +211,9 @@ public class TalkSystem : MonoBehaviour
                 
                 if (on && timeSinceLastClick >= ClickInterval && !_IsShowingText)
                 {
+                    
                     // 更新上次点击时间戳为当前时间
                     _lastClickTime = Time.time;
-
-                    UpButton.gameObject.SetActive(false);
-                    DownButton.gameObject.SetActive(false);
                     _ = ShowText();
                     // 仅当不在显示文本时，才开始新的文本显示
                 }
@@ -235,11 +233,9 @@ public class TalkSystem : MonoBehaviour
 
         return 0;
     }
-
-    /// <summary>
-    /// 异步显示文本（支持逐字显示和中途取消）
-    /// </summary>
-    public async Task ShowText(bool isroll = false, string addtiontext = null, bool ClearText = true,bool ShowMask = false)
+    
+    #region 原显示文本逻辑
+    /*public async Task ShowText(bool isroll = false, string addtiontext = null, bool ClearText = true,bool ShowMask = false)
     {
         if(Ban) return;
 
@@ -1105,7 +1101,7 @@ public class TalkSystem : MonoBehaviour
                         return;
                     }
 
-                    /*await Task.Delay(TextSpeedI);*/
+                    /*await Task.Delay(TextSpeedI);#1#
                     Type.Play();
                     if (_inshop)
                     {
@@ -1189,7 +1185,7 @@ public class TalkSystem : MonoBehaviour
                         BreakText = false;
                         return;
                     }
-                    /*await Task.Delay(TextSpeedI);*/
+                    /*await Task.Delay(TextSpeedI);#1#
                     Type.Play();
                     if (_inshop)
                     {
@@ -1221,8 +1217,8 @@ public class TalkSystem : MonoBehaviour
             
             
         }
-    }
-
+        }*/
+    #endregion
 
     /// <summary>
     /// 处理选择分支逻辑
@@ -1331,7 +1327,7 @@ public class TalkSystem : MonoBehaviour
         // 重新开启交互
         on = true;
         // 开始显示选择分支的对话
-        _ = ShowText(true);
+        _ = ShowText();
     }
 
     /// <summary>
@@ -1475,7 +1471,7 @@ public class TalkSystem : MonoBehaviour
     public void ShowBar()
     {
 
-        anim.SetTrigger("up");
+        anim.SetTrigger("Up");
 
 
 
@@ -1611,8 +1607,12 @@ public class TalkSystem : MonoBehaviour
         }
         
     }
-    
-    
+
+    public void SetTextBox(Manager textBox)
+    {
+        Talklines[Daytime] = textBox;
+        showText.CanShowText = true;
+    }
 
 
 

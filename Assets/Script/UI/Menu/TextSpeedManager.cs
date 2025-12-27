@@ -39,7 +39,7 @@ public class TextSpeedManager : MonoBehaviour, IPointerUpHandler,SettingInitiali
         if (talkSystem != null)
         talkSystem.TextSpeedI = (MinSpeed + Difference)*0.001f;
         if (sys2 != null)
-        sys2.TextSpeedI = MinSpeed + Difference;
+        sys2.TextSpeedI = (MinSpeed + Difference)*0.001f;
         PreviewSpeed = MinSpeed + Difference;
 
         Manager.setting.TextSpeed = speed;

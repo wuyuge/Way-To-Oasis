@@ -82,6 +82,7 @@ public class TalkSysUIButtonFunc : MonoBehaviour, ITalkSysCore
 
     public void Init(TalkSystem talkSys)
     {
+        
         _talkSys = talkSys;
         // 初始化组件缓存（一次性获取，后续直接使用）
         CacheAllButtons();
@@ -163,9 +164,9 @@ public class TalkSysUIButtonFunc : MonoBehaviour, ITalkSysCore
         switch (action)
         {
             case ButtonAction.Enable:
-                tempImage.gameObject.SetActive(true);
                 tempBotton.interactable = true;
                 SetTextBox(textBox,tempTextBox);
+                tempImage.gameObject.SetActive(true);
                 break;
             case ButtonAction.Disable:
                 tempImage.gameObject.SetActive(true);
@@ -181,8 +182,8 @@ public class TalkSysUIButtonFunc : MonoBehaviour, ITalkSysCore
 
     private void SetTextBox(Manager textBox,ButtonSelect buttonSelect)
     {
-        buttonSelect.textbox = textBox;
-        
+        buttonSelect.SetTextBox(textBox);
+
     }
     
     
@@ -195,7 +196,11 @@ public class TalkSysUIButtonFunc : MonoBehaviour, ITalkSysCore
     private void CacheAllButtons()
     {
         CacheNormalSceneButtons();
-        CacheShopSceneButtons();
+        if (_talkSys.Daytime != 0)
+        {
+            CacheShopSceneButtons();
+        }
+        
     }
 
     /// <summary>

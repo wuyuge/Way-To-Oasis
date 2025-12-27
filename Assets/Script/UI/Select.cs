@@ -32,7 +32,7 @@ public class Select : MonoBehaviour
                 TalkBar.GetComponent<TalkSystem>().line = 0;
                 _ = TalkBar.GetComponent<TalkSystem>().ShowText();
 
-                TalkBar.GetComponent<Animator>().SetTrigger("up");
+                TalkBar.GetComponent<Animator>().SetTrigger("Up");
                 _isSpecial = false;
 
             }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Serialization;
+using TMPro;
 
 [System.Serializable]
 public class SwitchChoice :SwitchCommand
@@ -46,6 +47,9 @@ public class SwitchChoice :SwitchCommand
     /// <param name="middleOn">当处于商店场景时，指示是否启用中间的按钮，默认为false。</param>
     private void SwitchChoiceScence(bool inShop = false,bool middleOn = false)
     {
+        _talkSys.Player.text = string.Empty;
+        if (_talkSys.Daytime != 0)_talkSys.ShopTextBar.GetComponent<TextMeshProUGUI>().text = string.Empty;
+        _talkSys.showText.CanShowText = false;
         if (!inShop)
         {
             _buttonManager.SwitchButtonState(ButtonName.Left,ButtonAction.Enable,_talkLines[DayNum].Option1);
@@ -61,7 +65,7 @@ public class SwitchChoice :SwitchCommand
             return;
         }
         _buttonManager.SwitchButtonState(ButtonName.ShopRight, ButtonAction.Enable, _talkLines[DayNum].Option2);
-
+        
     }
     /// <summary>
     ///用于外部按钮调用传入文本

@@ -1,6 +1,6 @@
 {
     "SaveID": 0,
-    "SaveTime": "2025-12-02 11:50:14",
+    "SaveTime": "2025-12-27 14:21:34",
     "PlayerName": "■■",
     "Day": 1,
     "Body": 1,
@@ -29,7 +29,7 @@
         false,
         false
     ],
-    "IsRaining": false,
+    "IsRaining": true,
     "CharacterWeightTag": [
         0,
         0,

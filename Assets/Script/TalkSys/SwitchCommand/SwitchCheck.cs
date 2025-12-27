@@ -1,22 +1,30 @@
+using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 public class SwitchCheck : SwitchCommand
 {
     private TalkSystem _talkSys;
-    [SerializeField]
     private Manager ShopEventBox => _talkSys.shopEvent;
     private bool ShopEvent => ShopEventBox.GeneralBool;
-    private List<Character> _characters;
+    private List<Character> _characters = new List<Character>();
     private Manager Aimi => _talkSys.aimi;
     public bool haveBoBody;
 
     public override void Init(TalkSystem talkSys)
     {
         _talkSys = talkSys;
-        foreach (var g in _talkSys.CharacterList)
+        foreach (var g in talkSys.CharacterList)
         {
-            _characters.Add(g.GetComponent<Character>());
+            try
+            {
+                _characters.Add(g.GetComponent<Character>());
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"错误{e}");
+            }
+            
         }
 
     }
@@ -117,10 +125,10 @@ public class SwitchCheck : SwitchCommand
                 if (_talkSys.Day0_Talk.Weight != 3)
                 {
                     _talkSys.SwitchLine(TalkLine.Line3);
-                    return;
+                    _talkSys.line = 0;
+                    break;
                 }
-
-                _talkSys.line = ++curLine;
+                _talkSys.line=5;
                 break;
             case FunctionCode.Function.H:
                 //检查是否持有博金森尸体

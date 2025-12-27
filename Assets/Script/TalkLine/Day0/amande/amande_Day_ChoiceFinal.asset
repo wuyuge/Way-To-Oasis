@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
-  m_Name: lai_Day1_twice
+  m_Name: amande_Day_ChoiceFinal
   m_EditorClassIdentifier: 
   TxtLine:
-  - ->p
-  - "\u83B1\u6587\u6B63\u5728\u65E0\u804A\u5730\u6570\u6C99\u5B50\u3002"
-  - ${OpenSwitchStage}
-  - ${DownTalkBox}
-  Option1: {fileID: 0}
-  Option2: {fileID: 0}
+  - ->c
+  - ->c
+  - "\u963F\u66FC\u5FB7\uFF1A\u8F9B\u82E6\u4F60\u4E86\u3002\u5927\u5BB6\u5BF9\u8FD9\u4EF6\u4E8B\u7684\u53CD\u5E94\u5982\u4F55\uFF1F"
+  - ${Choice}
+  Option1: {fileID: 11400000, guid: 0e208d6bf5891e44ab3e90eb1e37e70b, type: 2}
+  Option2: {fileID: 11400000, guid: 5979aad6fc73b9d4ebf02f09f6295d8e, type: 2}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}

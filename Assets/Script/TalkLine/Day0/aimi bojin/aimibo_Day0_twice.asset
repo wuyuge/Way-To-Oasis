@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: aimibo_Day0_twice
   m_EditorClassIdentifier: 
   TxtLine:
-  - closecharabar
-  - p
+  - ${LockSwitchStage}
+  - ->p
   - "\u4ED6\u4EEC\u4E24\u4E2A\u6709\u4E9B\u8BDD\u8981\u8C08\uFF0C\u8FD8\u662F\u4E0D\u8981\u6253\u6270\u4ED6\u4EEC\u4E86\u3002"
-  - upcbar
-  - down
+  - ${CloseCharacterTalkBox}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

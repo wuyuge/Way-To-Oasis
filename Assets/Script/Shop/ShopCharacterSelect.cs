@@ -35,7 +35,7 @@ public class ShopCharacterSelect : MonoBehaviour
                 ts.Talklines[ts.Daytime] = SpecialTalk;
                 ts._inshop = true;
                 ts.line = 0;
-                _ = ts.ShowText(true);
+                _ = ts.ShowText();
             }
             FinalBody.Weight += 1;
             TalkSys.GetComponent<TalkSystem>();

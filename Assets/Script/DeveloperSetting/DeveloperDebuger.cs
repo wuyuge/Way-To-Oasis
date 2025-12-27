@@ -72,7 +72,7 @@ public class DeveloperDebuger : MonoBehaviour
 
     public void UpTalkBar()
     {
-        TalkBar.SetTrigger("up");
+        TalkBar.SetTrigger("Up");
     }
 
     public void DownTalkBar()

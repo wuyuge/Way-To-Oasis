@@ -9,6 +9,8 @@ public class SwitchToggle : SwitchCommand
     private GameObject TalkPanel => _talkSys.gameObject;
     private GameObject CharacterPanel => _talkSys.charabar;
     #endregion
+
+    private TalkSysShowText _showText;
     
     private bool MiniMode
     {
@@ -24,6 +26,7 @@ public class SwitchToggle : SwitchCommand
     public override void Init(TalkSystem talkSys)
     {
         _talkSys = talkSys;
+        _showText = talkSys.showText;
     }
 
     /// <summary>
@@ -44,9 +47,13 @@ public class SwitchToggle : SwitchCommand
                 break;
             case FunctionCode.Function.Ba://上升
                 MoveUI(UIElement.Talk, UIMovement.Up);
+                _showText.CanShowText = true;
+                _showText.SetEmptyText();
                 break;
             case FunctionCode.Function.Bb://下降
                 MoveUI(UIElement.Talk,UIMovement.Down);
+                _showText.CanShowText = false;
+                _showText.SetEmptyText();
                 break;
             
             case FunctionCode.Function.C:
@@ -63,6 +70,7 @@ public class SwitchToggle : SwitchCommand
             case FunctionCode.Function.D:
                 //切换下一个对话数据
                 _talkSys.Talklines[_talkSys.Daytime] = _talkSys.Talklines[_talkSys.Daytime].Option1;
+                _talkSys.line = 0;
                 break;
             case FunctionCode.Function.E:
                 //开关角色分配食物按钮
@@ -117,6 +125,22 @@ public class SwitchToggle : SwitchCommand
                 _talkSys.MainCanvas.SetActive(true);
                 _talkSys.transform.parent.gameObject.SetActive(false);
                 break;
+            case FunctionCode.Function.M:
+                //开启关闭角色立绘对话框
+                break;
+            case FunctionCode.Function.Ma://开
+                _talkSys.charabar.SetActive(true);
+                break;
+            case FunctionCode.Function.Mb://关
+                _talkSys.charabar.SetActive(false);
+                _talkSys.CharacterImageManager.CloseImage();
+                break;
+            case FunctionCode.Function.N:
+                //自动切换下一天
+                Progress tempProgress = _talkSys.DaytimeOBJ.GetComponent<Progress>();
+                tempProgress.CanSwitch = true;
+                tempProgress.SwtichProgress();
+                break;
         }
     }
 
@@ -143,10 +167,10 @@ public class SwitchToggle : SwitchCommand
         switch (moveValue)
         {
             case UIMovement.Up:
-                anim.SetTrigger(0);
+                anim.SetTrigger("Up");
                 break;
             case UIMovement.Down:
-                anim.SetTrigger(1);
+                anim.SetTrigger("Down");
                 break;
             
         }

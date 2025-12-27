@@ -5,9 +5,12 @@ using UnityEngine;
 [System.Serializable]
 public class CommandCode
 {
+    [Tooltip("命令名")]
     public string command;
     [SerializeReference]
+    [Tooltip("执行的子分支列表")]
     public List<SwitchCommand> actions;
+    [Tooltip("执行的对应函数")]
     public List<FunctionCode.Function> functions;
 }
 
@@ -19,10 +22,20 @@ public class TalkSysSwitch : MonoBehaviour,ITalkSysCore
     private int DayNum => _talkSys?.Daytime ?? 0;
     private int Line => _talkSys.line;
     [SerializeField]
+    [Header("命令列表")]
     private List<CommandCode> switchCodes;
-    
-    
-    
+    [SerializeField]
+    [Header("挂载的子命令分支")]
+    private List<SwitchCommand> functionList;
+
+    private void Start()
+    {
+        for (int i = 0; i < gameObject.transform.childCount; i++)
+        {
+            functionList.Add(gameObject.transform.GetChild(i).GetComponent<SwitchCommand>());
+        }
+    }
+
     /// <summary>
     /// 初始化TalkSysSwitch对象，设置对话系统和对话行列表，并重置当前行索引。
     /// </summary>
@@ -37,9 +50,26 @@ public class TalkSysSwitch : MonoBehaviour,ITalkSysCore
            {
                foreach (var code in value.actions)
                {
-                   code.Init(_talkSys);
+                   try
+                   {
+                       code.Init(_talkSys);
+                   }
+                   catch (Exception e)
+                   {
+                       Debug.LogError($"actions脚本为空 错误类型{e}");
+                   }
+                   
                }
            } 
+       }
+
+       foreach (var VARIABLE in functionList)
+       {
+           if (talkSys != null)
+           {
+               VARIABLE.Init(talkSys);
+           }
+           
        }
        
     }
@@ -71,7 +101,7 @@ public class TalkSysSwitch : MonoBehaviour,ITalkSysCore
                         }
                         catch (Exception e)
                         {
-                            Debug.LogError($"挂载脚本与对应枚举数量不一致 错误类型{e}");
+                            Debug.LogError($"挂载脚本与对应枚举数量不一致 错误指令{curText}  索引{i} 错误类型{e}");
                             return;
                         }
                     }
