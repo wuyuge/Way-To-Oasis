@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: her
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
+  - ->c
   - "\u6D1B\u5C14\u574E\uFF1A\u6628\u5929\u6211\u4EEC\u8FD8\u5728\u4E00\u8D77\u4F11\u606F\uFF0C\u95F2\u804A\uFF0C\u4ECA\u5929\u5C31\u53EA\u80FD\u89C1\u5230\u5979\u7684\u5C38\u4F53\u3002"
-  - end
+  - ${End}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

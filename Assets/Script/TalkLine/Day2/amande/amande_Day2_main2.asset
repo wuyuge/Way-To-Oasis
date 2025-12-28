@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: amande_Day2_main2
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
-  - "\u963F\u66FC\u5FB7\uFF1A\u2026\u2026{Calm}"
-  - p
+  - ->c
+  - "\u963F\u66FC\u5FB7\uFF1A\u2026\u2026@{Calm}"
+  - ->p
   - "\u600E\u4E48\u4E86\uFF1F"
-  - c
+  - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u6211\u6CA1\u6709\u529E\u6CD5\u4E0D\u53BB\u60F3\u4E00\u4E9B\u4E0D\u597D\u7684\u4E8B\u3002"
   - "\u963F\u66FC\u5FB7\uFF1A\u6700\u8FDF\u660E\u5929\u5C31\u4F1A\u6709\u4EBA\u56E0\u9965\u997F\u800C\u6B7B\u53BB\u3002"
-  - choice
+  - ${Choice}
   Option1: {fileID: 11400000, guid: 207c9147fee38174bba15e6821671f05, type: 2}
   Option2: {fileID: 11400000, guid: 43f44afdd341d784b826326eefd7408a, type: 2}
   Option3: {fileID: 0}

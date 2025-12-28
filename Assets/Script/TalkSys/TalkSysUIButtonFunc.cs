@@ -246,6 +246,24 @@ public class TalkSysUIButtonFunc : MonoBehaviour, ITalkSysCore
     }
 
     #endregion
+
+    public void SetBoBodySpecialChoice(bool have)
+    {
+        SwitchButtonState
+        (
+            ButtonName.Left,
+            have? ButtonAction.Enable:ButtonAction.Disable,
+            _talkSys.Talklines[_talkSys.Daytime].Option1
+        );
+        SwitchButtonState
+        (
+            ButtonName.Right,
+            ButtonAction.Enable,
+            _talkSys.Talklines[_talkSys.Daytime].Option2
+        );
+    }
+    
+    
     
     
 }

@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u6211\u505A\u4E0D\u5230\u3002"
-  - c
+  - ->c
   - "\u827E\u7C73\u8389\uFF1A\u90A3\u5C31\u514D\u8C08\u3002\u6211\u4EEC\u4E4B\u95F4\u6CE8\u5B9A\u4F1A\u6709\u4EBA\u5728\u4ECA\u5929\u6B7B\u53BB\u3002"
-  - p
+  - ->p
   - "\u4F60\u505A\u4E0D\u5230\u3002"
-  - c
+  - ->c
   - "\u827E\u7C73\u8389\uFF1A\u8BD5\u8BD5\u5C31\u77E5\u9053\u4E86\u3002"
-  - /aimifail
-  - upcbar
-  - allover
-  - down
+  - '#Aimi'
+  - ${CloseCharacterTalkBox}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: lai_Day2_twice2
   m_EditorClassIdentifier: 
   TxtLine:
-  - closecharabar
-  - p
+  - ->p
   - "\u83B1\u6587\u56DE\u5E94\u4E86\u4F60\uFF0C\u4F46\u4F60\u770B\u5F97\u51FA\u4ED6\u4F3C\u4E4E\u4E0D\u60F3\u804A\u5929\u4E86\u3002"
-  - upcbar
-  - down
+  - ${OpenSwitchStage}
+  - ${CloseCharacterTalkBox}
+  - ${DownTalkBox}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

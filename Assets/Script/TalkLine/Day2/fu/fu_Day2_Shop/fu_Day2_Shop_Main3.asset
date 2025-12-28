@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: fu_Day2_Shop_Main3
   m_EditorClassIdentifier: 
   TxtLine:
-  - p
+  - ->p
   - "\u5982\u679C\u4F60\u6267\u610F\u5982\u6B64\uFF0C\u6211\u4E0D\u4F1A\u963B\u6B62\u4F60\u3002"
-  - upcbar
-  - allover
-  - down
+  - '#Bo'
+  - ${OpenSwitchStage}
+  - ${CloseCharacterTalkBox}
+  - ${DownTalkBox}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

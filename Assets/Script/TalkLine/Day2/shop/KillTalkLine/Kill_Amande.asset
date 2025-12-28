@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Kill_Amande
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
+  - ->c
   - "\u5979\u660E\u660E\u5BF9\u4F60\u90A3\u4E48\u597D\uFF0C\u4F60\u5374\u60F3\u63D0\u524D\u7ED3\u675F\u5979\u7684\u75DB\u82E6\u5417\u3002"
   - "\u5979\u660E\u660E\u5BF9\u4F60\u90A3\u4E48\u597D\uFF0C\u4F60\u5374\u60F3\u63D0\u524D\u7ED3\u675F\u5979\u7684\u75DB\u82E6\u5417\u3002"
-  - /noname
   - "\u4F60\u5728\u6240\u6709\u4EBA\u90FD\u6CA1\u6709\u6765\u7684\u53CA\u9632\u5907\u7684\u60C5\u51B5\u4E0B\uFF0C\u7528\u6700\u5FEB\u7684\u901F\u5EA6\u6740\u6B7B\u4E86\u963F\u66FC\u5FB7"
-  - end
+  - ${End}
   Option1: {fileID: 11400000, guid: 809cfbfa1454deb438b26fa81d2b57f4, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

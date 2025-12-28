@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: aimi_Day2_fudead
   m_EditorClassIdentifier: 
   TxtLine:
-  - aimieat
+  - ${CheckAimiEat}
   Option1: {fileID: 11400000, guid: c55cdfbab04fdca4c8e4c8e2cb278adb, type: 2}
   Option2: {fileID: 11400000, guid: f848a5539e4427647a5ed9b61304433d, type: 2}
   Option3: {fileID: 0}

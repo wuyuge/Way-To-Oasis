@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: amade_Day1_Main
   m_EditorClassIdentifier: 
   TxtLine:
-  - ${${ShowCharacterTalkBox}}
+  - ${ShowCharacterTalkBox}
+  - ${LockSwitchStage}
   - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u55E8\uFF0C\u4F60\u6765\u4E86\u3002"
   - "\u963F\u66FC\u5FB7\uFF1A\u7B2C\u4E00\u5929\u5F53\u961F\u957F\u7684\u611F\u89C9\u8FD8\u597D\u5417\uFF1F"

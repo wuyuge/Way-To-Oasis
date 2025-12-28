@@ -9,7 +9,6 @@ public class SwitchCheck : SwitchCommand
     private bool ShopEvent => ShopEventBox.GeneralBool;
     private List<Character> _characters = new List<Character>();
     private Manager Aimi => _talkSys.aimi;
-    public bool haveBoBody;
 
     public override void Init(TalkSystem talkSys)
     {
@@ -51,7 +50,7 @@ public class SwitchCheck : SwitchCommand
                 {
                     if (c.Dead)
                     {
-                        _talkSys.SwitchLine(TalkLine.Line2);
+                        _talkSys.SwitchLine(TalkLine.Line2);//有人死亡转2号对话分支,否则1号
                         return;
                     }
                 }
@@ -139,12 +138,11 @@ public class SwitchCheck : SwitchCommand
                     {
                         if (s.Contains("博金森"))
                         {
-                            haveBoBody = true;
+                            _talkSys.buttonFunc.SetBoBodySpecialChoice(true);
                             return;
                         }
                     }
-
-                    haveBoBody = false;
+                    _talkSys.buttonFunc.SetBoBodySpecialChoice(false);
                 }
                 
                 break;

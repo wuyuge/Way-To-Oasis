@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: amande_Day2_deadchoice
   m_EditorClassIdentifier: 
   TxtLine:
-  - dead
+  - ${ShowCharacterTalkBox}
+  - ${LockSwitchStage}
+  - ${CheckSomeBodyDead}
   Option1: {fileID: 11400000, guid: 97434b8c31681ae4cbb6273cd68f9121, type: 2}
   Option2: {fileID: 11400000, guid: 8e2e61ddf70d9154b9aa26047476d4d4, type: 2}
   Option3: {fileID: 11400000, guid: e10e55d51938bc0409d6d35b66ed0e5c, type: 2}

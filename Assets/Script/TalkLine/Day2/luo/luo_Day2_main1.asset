@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: luo_Day2_main1
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
+  - ->c
   - "\u6D1B\u5C14\u574E\uFF1A\u2026\u2026\u4E3A\u4EC0\u4E48\u4F1A\u53D1\u751F\u8FD9\u79CD\u4E8B\uFF1F"
   - "\u6D1B\u5C14\u574E\uFF1A\u660E\u660E\u98DF\u7269\u8FD8\u6709\u5269\u4F59\u2026\u2026\u4E3A\u4EC0\u4E48\u8981\u727A\u7272\u540C\u4F34\uFF1F"
-  - luo_peoplechoice
+  - ${CheckDeadSex}
   Option1: {fileID: 11400000, guid: 9f026056fa951164c9c07e1972182181, type: 2}
   Option2: {fileID: 11400000, guid: 3c7937d433e31d644b5bbe3c65ddcf06, type: 2}
   Option3: {fileID: 11400000, guid: ef536fb920a0e8e4794dd2023fce6476, type: 2}

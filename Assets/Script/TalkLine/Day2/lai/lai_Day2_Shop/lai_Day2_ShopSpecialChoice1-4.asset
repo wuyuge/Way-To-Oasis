@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u7FA4\u4F53\u7684\u667A\u6167\u4E0D\u4E00\u5B9A\u6B63\u786E"
-  - p
+  - ->p
   - "\u7FA4\u4F53\u7684\u667A\u6167\u5E76\u4E0D\u4E00\u5B9A\u80FD\u5BFC\u5411\u6B63\u786E\u3002"
-  - c
+  - ->c
   - "\u83B1\u6587\uFF1A\u4F60\u81EA\u4FE1\u81EA\u5DF1\u4E00\u5B9A\u6B63\u786E\u5417\uFF1F"
   - "\u83B1\u6587\uFF1A\u5982\u679C\u8BD5\u9519\u7684\u6210\u672C\u662F\u6211\u4EEC\u7684\u751F\u547D\uFF0C\u6211\u66F4\u5E0C\u671B\u81EA\u5DF1\u638C\u63E1\u547D\u8FD0\u3002"
-  - choice
+  - ${Choice}
   Option1: {fileID: 11400000, guid: e3d8543be2b46bd4f9e77cc78e0c5557, type: 2}
   Option2: {fileID: 11400000, guid: 5f638adebcad52c40a3a9a2e5e059b5b, type: 2}
   Option3: {fileID: 0}

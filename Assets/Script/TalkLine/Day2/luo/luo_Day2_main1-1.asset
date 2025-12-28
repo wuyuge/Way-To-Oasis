@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: luo_Day2_main1-1
   m_EditorClassIdentifier: 
   TxtLine:
-  - choice
+  - ${Choice}
   Option1: {fileID: 11400000, guid: e051adb49ff7c17429d632c86c5fb5d4, type: 2}
   Option2: {fileID: 11400000, guid: 6e76fdc40e81ede4e8a593446ee18854, type: 2}
   Option3: {fileID: 0}

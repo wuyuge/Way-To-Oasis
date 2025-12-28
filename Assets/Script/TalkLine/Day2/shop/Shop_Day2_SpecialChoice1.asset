@@ -14,14 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u6362\u5C38\u4F53"
-  - c
-  - /exchangeBody
+  - ->c
+  - ${ExchangeBody}
   - "\u660E\u667A\u7684\u9009\u62E9\u3002"
   - "\u4E3A\u4E86\u6D3B\u4E0B\u53BB\uFF0C\u4F60\u53EF\u505A\u51FA\u4E86\u4E0D\u5C11\u727A\u7272\u3002"
   - "\u533A\u533A\u4E00\u5177\u5C38\u4F53\u53C8\u7B97\u5F97\u4E86\u4EC0\u4E48\u5462\u3002"
-  - /closeshop
-  - techcomfort
-  - CloseMask
+  - ${OffShop}
+  - ${TechComfort}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

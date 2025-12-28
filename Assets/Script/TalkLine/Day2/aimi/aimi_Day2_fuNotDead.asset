@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: aimi_Day2_fuNotDead
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
+  - ->c
   - "\u827E\u7C73\u8389\uFF1A\u6211\u8FD8\u4EE5\u4E3A\u4F60\u4E0D\u4F1A\u8FD9\u4E48\u5E72\u5462\u3002"
-  - p
+  - ->p
   - "\u4F60\u4F3C\u4E4E\u5F88\u5403\u60CA\u3002"
-  - c
+  - ->c
   - "\u827E\u7C73\u8389\uFF1A\u7B97\u4E0D\u4E0A\uFF0C\u6362\u53E5\u8BDD\u8BF4\u6211\u4E0D\u89C9\u5F97\u8FD9\u662F\u4E00\u4EF6\u574F\u4E8B\u3002"
   - "\u827E\u7C73\u8389\uFF1A\u5F53\u7136\uFF0C\u8FD9\u4E0D\u8FC7\u662F\u4E9B\u4E0E\u6211\u65E0\u5173\u65F6\u7684\u98CE\u51C9\u8BDD\u3002"
   - "\u827E\u7C73\u8389\uFF1A\u8981\u662F\u4F60\u60F3\u4E0D\u5F00\u628A\u77DB\u5934\u6307\u5411\u6211\uFF0C\u6211\u53EF\u4E0D\u4F1A\u50CF\u90A3\u5BB6\u4F19\u4E00\u6837\u7B49\u6B7B\u3002"
-  - choice
+  - ${Choice)
   Option1: {fileID: 11400000, guid: d8122e50f7033724f8f4a6d529e149ef, type: 2}
   Option2: {fileID: 11400000, guid: 84dd5d7008502764d8f49b0fd0a208df, type: 2}
   Option3: {fileID: 0}

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u6240\u4EE5\u4F60\u4E3A\u4EC0\u4E48\u73B0\u5728\u63D0\u51FA\u53CD\u5BF9\uFF1F"
-  - p
+  - ->p
   - "\u6240\u4EE5\u4F60\u4E3A\u4EC0\u4E48\u73B0\u5728\u63D0\u51FA\u53CD\u5BF9\uFF1F\u4F60\u8BA4\u4E3A\u88AB\u9009\u4E2D\u997F\u6B7B\u4E0E\u88AB\u6740\u6B7B\u662F\u4E0D\u540C\u7684\u5417\uFF1F"
-  - end
+  - ${End}
   Option1: {fileID: 11400000, guid: 6bc668775a778854b9f38cfc492d932f, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

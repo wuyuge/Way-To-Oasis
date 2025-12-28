@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: luo_Day2_deadchoice
   m_EditorClassIdentifier: 
   TxtLine:
-  - dead
+  - ${ShowCharacterTalkBox}
+  - ${LockSwitchStage}
+  - ${CheckSomeBodyDead}
   Option1: {fileID: 11400000, guid: a147838ad242d914a81ff9bc9ab53312, type: 2}
   Option2: {fileID: 11400000, guid: cae6878aac9afbf46828b4303cab6d76, type: 2}
   Option3: {fileID: 11400000, guid: a9c140613cf8ee34a9dd9911b2aca675, type: 2}

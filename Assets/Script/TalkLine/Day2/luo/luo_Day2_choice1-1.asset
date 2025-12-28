@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u4F60\u4E0D\u5F97\u4E0D\u63A5\u53D7\u8FD9\u4EF6\u4E8B"
-  - p
+  - ->p
   - "\u4F60\u4E0D\u5F97\u4E0D\u63A5\u53D7\u8FD9\u4EF6\u4E8B\u3002"
   - "\u8FD9\u4E0D\u4F1A\u662F\u6700\u540E\u4E00\u6B21\u3002"
-  - c
+  - ->c
   - "\u6D1B\u5C14\u574E\uFF1A\u6211\u77E5\u9053\u2026\u2026\u6211\u77E5\u9053\uFF0C\u961F\u957F\u3002"
-  - end
+  - ${End}
   Option1: {fileID: 11400000, guid: 36ccc573359d66742add27e5d5b73c47, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

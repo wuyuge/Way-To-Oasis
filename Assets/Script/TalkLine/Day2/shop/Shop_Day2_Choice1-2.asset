@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u4F60\u60F3\u8981\u4EC0\u4E48\uFF1F"
-  - end
+  - ${End}
   Option1: {fileID: 11400000, guid: b8e91ccdcae543b449907a65cf155c7b, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

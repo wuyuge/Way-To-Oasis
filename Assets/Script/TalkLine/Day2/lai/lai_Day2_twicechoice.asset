@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: lai_Day2_twicechoice
   m_EditorClassIdentifier: 
   TxtLine:
-  - twicedeadchoice
+  - ${CheckSomeBodyDead}
   Option1: {fileID: 11400000, guid: 6d3fc7f3d255eb543837332488e92f07, type: 2}
   Option2: {fileID: 11400000, guid: aa1644658abada74cb4c53496886d7e0, type: 2}
   Option3: {fileID: 0}

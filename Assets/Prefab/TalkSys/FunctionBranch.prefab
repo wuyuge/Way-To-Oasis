@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e7fc3acbaf3a54438f849c52c50c6d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showDebug: 0
 --- !u!1 &3402700161156925720
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +745,54 @@ MonoBehaviour:
     actions:
     - {fileID: 2551249483796046366}
     functions: 06000000
+  - command: CheckSomeBodyDead
+    actions:
+    - {fileID: 6079799807752870375}
+    functions: 01000000
+  - command: CheckAimiEat
+    actions:
+    - {fileID: 6079799807752870375}
+    functions: 02000000
+  - command: CheckBoDead
+    actions:
+    - {fileID: 6079799807752870375}
+    functions: 04000000
+  - command: CheckHaveBoBody
+    actions:
+    - {fileID: 6079799807752870375}
+    functions: 07000000
+  - command: ${UseBoBody}
+    actions:
+    - {fileID: 7969461058781348794}
+    functions: 09000000
+  - command: CheckDeadSex
+    actions:
+    - {fileID: 6079799807752870375}
+    functions: 05000000
+  - command: OnShop
+    actions:
+    - {fileID: 6830617485111195375}
+    functions: 00000000
+  - command: SpecialChoice
+    actions:
+    - {fileID: 7227461864645033651}
+    functions: 02000000
+  - command: ExchangeBody
+    actions:
+    - {fileID: 6830617485111195375}
+    functions: 03000000
+  - command: OffShop
+    actions:
+    - {fileID: 6830617485111195375}
+    functions: 01000000
+  - command: TechComfort
+    actions:
+    - {fileID: 2551249483796046366}
+    functions: 07000000
+  - command: KillSomeBody
+    actions:
+    - {fileID: 6830617485111195375}
+    functions: 02000000
   functionList: []
 --- !u!1 &5565000326094856922
 GameObject:
@@ -876,7 +925,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc204de942691214a8417be83f55a69d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  haveBoBody: 0
 --- !u!1 &7079499628955331618
 GameObject:
   m_ObjectHideFlags: 0

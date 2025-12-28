@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: lai_Day2_fudeadchoice
   m_EditorClassIdentifier: 
   TxtLine:
-  - deadfu
+  - ${CheckBoDead}
   Option1: {fileID: 11400000, guid: 1802d38ceb21aee41b4935525412adca, type: 2}
   Option2: {fileID: 11400000, guid: dbe7a2506b73fe648adda951c36703a9, type: 2}
   Option3: {fileID: 0}
