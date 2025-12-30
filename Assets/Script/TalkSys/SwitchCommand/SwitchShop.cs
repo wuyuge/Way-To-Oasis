@@ -7,11 +7,7 @@ public class SwitchShop : SwitchCommand
     private TalkSystem _talkSys;
     private TalkSysShowText _showText;
 
-    private bool InShop
-    {
-        get => _talkSys._inshop;
-        set => _talkSys._inshop = value;
-    }
+    
     
     public override void Init(TalkSystem talkSys)
     {
@@ -25,12 +21,12 @@ public class SwitchShop : SwitchCommand
         {
             case FunctionCode.Function.A:
                 //开启商店场景
-                InShop = true;
+                _talkSys._inshop = true;
                 _showText.CanShowText = true;
                 break;
             case FunctionCode.Function.B:
                 //关闭商店场景
-                InShop = false;
+                _talkSys._inshop = false;
                 _showText.CanShowText = false;
                 _talkSys.ShopManager.SetActive(false);
                 break;
@@ -45,7 +41,7 @@ public class SwitchShop : SwitchCommand
             case FunctionCode.Function.D:
                 //换尸体接口
                 _talkSys.Day2_Shop_Exchange.GeneralBool = true;
-                InShop = true;
+                _talkSys._inshop = true;
 
                 if (!_talkSys.ShopManager.GetComponent<ShopManager>().ExchangeFood())
                 {

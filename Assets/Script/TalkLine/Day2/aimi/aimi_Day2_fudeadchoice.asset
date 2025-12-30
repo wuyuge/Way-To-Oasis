@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - ${CheckBoDead}
-  Option1: {fileID: 11400000, guid: 7c9de284ec32045498494d283cdd4913, type: 2}
-  Option2: {fileID: 11400000, guid: d0cb19f138b9032449a8591ca9770b0e, type: 2}
+  - ${CheckBoDead}
+  - ${CheckBoDead}
+  - ${CheckBoDead}
+  Option1: {fileID: 11400000, guid: d0cb19f138b9032449a8591ca9770b0e, type: 2}
+  Option2: {fileID: 11400000, guid: 7c9de284ec32045498494d283cdd4913, type: 2}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}

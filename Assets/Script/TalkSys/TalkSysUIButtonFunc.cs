@@ -96,6 +96,11 @@ public class TalkSysUIButtonFunc : MonoBehaviour, ITalkSysCore
     /// <param name="textBox">传入已经转换好选项分支的manager</param>
     public void SwitchButtonState(ButtonName buttonName, ButtonAction action,Manager textBox = null)
     {
+        if (textBox == null)
+        {
+            Debug.LogError("传入文本为空");
+            return;
+        }
         Button tempBotton;
         Image tempImage;
         TextMeshProUGUI tempText;

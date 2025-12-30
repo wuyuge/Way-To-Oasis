@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Twice2
   m_EditorClassIdentifier: 
   TxtLine:
-  - /CheckBoDeadTime
+  - ${CheckBoDeadTime}
   Option1: {fileID: 11400000, guid: 460c3b456a71fdf4c82268cc355a491b, type: 2}
   Option2: {fileID: 11400000, guid: 53fe09d6307d30b46a780c05b036ff35, type: 2}
   Option3: {fileID: 0}

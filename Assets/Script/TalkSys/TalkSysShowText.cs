@@ -16,7 +16,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     private bool InShop => _talkSys._inshop;
     private bool MiniMode => _talkSys.MiniMode;
     private MiniCharacterTalkSys _miniCharacterTalkSys;
-    private TextMeshProUGUI _currentTextUI;
+    public TextMeshProUGUI _currentTextUI;
     private TextMeshProUGUI TextUI => _currentTextUI;
     private TextMeshProUGUI _playerName,_characterName,_shopGeneralName;
     private Coroutine _currentCoroutine;
@@ -68,14 +68,20 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
                 curText = TalkLines?[DayNum]?.TxtLine?[LineIndex] ?? string.Empty;
                 if (TalkLines[DayNum].TxtLine[LineIndex].Contains("{PlayerName}"))
                 {
-                    TalkLines[DayNum].TxtLine[LineIndex] = TalkLines[DayNum].TxtLine[LineIndex].Replace("{PlayerName}", PlayerNameBox);
+                    TalkLines[DayNum].TxtLine[LineIndex] =
+                        TalkLines[DayNum].TxtLine[LineIndex].Replace("{PlayerName}", PlayerNameBox);
                     Debug.Log("替换玩家姓名");
                 }
-                
+
             }
             catch (ArgumentOutOfRangeException e)
             {
                 Console.WriteLine($"索引越界:{e}");
+                return;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
                 return;
             }
             
@@ -160,9 +166,9 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
         if (tempString.Contains("："))//如果文本分类错误即转换说话人
         {
             _isPlayerTalking = false;
-            CheckTextUI();
+            
         }
-        
+        CheckTextUI();
         if (!_isPlayerTalking)
         {
             string[] tempTextBox = HandleCharacterName(tempString);
@@ -174,7 +180,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
             }
             if (InShop)
             {
-                _shopGeneralName.text = charaName;
+                _shopGeneralName.text = "商人";
             }
             else
             {

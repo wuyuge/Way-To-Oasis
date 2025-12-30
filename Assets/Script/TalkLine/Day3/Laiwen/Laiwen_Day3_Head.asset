@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Laiwen_Day3_Head
   m_EditorClassIdentifier: 
   TxtLine:
-  - /CheckShopEvent
+  - ${CheckShopEvent}
   Option1: {fileID: 11400000, guid: d134b5a56ee54fe4e8e14bbbdcc1cc62, type: 2}
   Option2: {fileID: 11400000, guid: e0b0fd627dc14164aad0d4dc61715ddc, type: 2}
   Option3: {fileID: 11400000, guid: b992d8ec0c2449a468b081b5692c0c02, type: 2}

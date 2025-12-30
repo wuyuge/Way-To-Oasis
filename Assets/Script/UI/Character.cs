@@ -505,7 +505,7 @@ public class Character : MonoBehaviour
                 have_talk = true;
                 talksys.ShowBar();
                 // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
-                Invoke("DownAnim", Delay);
+                
                 Invoke("SetTalk", 1.5f);
                 
             }
@@ -515,8 +515,7 @@ public class Character : MonoBehaviour
                 talksys.Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num].Option3;
                 talksys.ShowBar();
                 talksys.showText.CanShowText = true;
-                // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
-                Invoke("DownAnim", Delay);
+                
                 // 显示对话面板（调用TalkSystem的ShowBar方法，可能包含动画）
                 Invoke("SetTalk", 1.5f);
                 
@@ -543,15 +542,10 @@ public class Character : MonoBehaviour
         // 重置对话行数到第一行
         talksys.line = 0;
         // 启动对话文本显示（异步执行，避免UI卡顿）
-        
+        talksys.showText.CanShowText = true;
         _ = talksys.ShowText();
     }
-
-
-    void DownAnim()
-    {
-        gameObject.transform.parent.GetComponent<Animator>().SetTrigger("Down");
-    }
+    
 
     public void SetSpecialTalk1()
     {
@@ -566,7 +560,7 @@ public class Character : MonoBehaviour
         
         // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
         AfterSpecialTalk = true;
-        Invoke("DownAnim", Delay);
+        
         Invoke("SetTalk", 1.2f);
 
     }
@@ -584,7 +578,6 @@ public class Character : MonoBehaviour
         
         // 父对象播放"向下"动画（可能隐藏父对象UI，突出对话面板）
         AfterSpecialTalk = true;
-        Invoke("DownAnim", Delay);
         Invoke("SetTalk", 1.2f);
 
 

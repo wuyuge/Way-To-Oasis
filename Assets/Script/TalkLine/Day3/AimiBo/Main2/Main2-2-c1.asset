@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u6CA1\u6709\u4EC0\u4E48\u6BD4\u53D8\u5316\u66F4\u597D"
-  - p
+  - ->p
   - "\u6CA1\u6709\u4EC0\u4E48\u6BD4\u53D8\u5316\u66F4\u597D\u3002"
-  - c
+  - ->c
   - "\u827E\u7C73\u8389\uFF1A\u5F88\u4E50\u89C2\u7684\u60F3\u6CD5\uFF0C\u961F\u4F0D\u9700\u8981\u8FD9\u6837\u7684\u6C1B\u56F4\u3002"
-  - end
+  - ${End}
   Option1: {fileID: 11400000, guid: 6d8823de712e844418c188c246fedb41, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

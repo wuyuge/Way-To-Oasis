@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Twice
   m_EditorClassIdentifier: 
   TxtLine:
-  - deadfu
+  - ${CheckBoDead}
   Option1: {fileID: 11400000, guid: f3557d9c8021dc347baf7668932b16c3, type: 2}
   Option2: {fileID: 11400000, guid: 91c747905b31bf64da514352376ffc06, type: 2}
   Option3: {fileID: 0}

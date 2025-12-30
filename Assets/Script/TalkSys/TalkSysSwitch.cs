@@ -101,7 +101,7 @@ public class TalkSysSwitch : MonoBehaviour,ITalkSysCore
                         }
                         catch (Exception e)
                         {
-                            Debug.LogError($"挂载脚本与对应枚举数量不一致 错误指令{curText}  索引{i} 错误类型{e}");
+                            Debug.LogError($"错误指令{curText}  索引{i} 错误类型{e}");
                             return;
                         }
                     }

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: End
   m_EditorClassIdentifier: 
   TxtLine:
-  - upcbar
-  - down
+  - ${OpenSwitchStage}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

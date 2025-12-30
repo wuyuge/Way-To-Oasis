@@ -77,7 +77,7 @@ public class DeveloperDebuger : MonoBehaviour
 
     public void DownTalkBar()
     {
-        TalkBar.SetTrigger("down");
+        TalkBar.SetTrigger("Down");
     }
 
     public void UpCharaBar()

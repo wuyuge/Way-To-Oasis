@@ -1,18 +1,20 @@
 {
     "SaveID": 0,
-    "SaveTime": "2025-12-27 15:07:00",
+    "SaveTime": "2025-12-30 14:53:00",
     "PlayerName": "■■",
-    "Day": 0,
+    "Day": 3,
     "Body": 1,
     "Food": 9,
-    "AmandeKillSelf": false,
+    "AmandeKillSelf": true,
     "CarryBo": false,
-    "Stage": 1,
+    "Stage": 0,
     "DeadName": [
-        "Leader"
+        "阿曼德Poison"
     ],
-    "UsedName": [],
-    "InMain": false,
+    "UsedName": [
+        "LeaderUesd"
+    ],
+    "InMain": true,
     "CharacterWeight": [
         0,
         0,
@@ -22,14 +24,14 @@
         0
     ],
     "CharacterEat": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
     ],
-    "IsRaining": false,
+    "IsRaining": true,
     "CharacterWeightTag": [
         0,
         0,
@@ -55,7 +57,9 @@
         false,
         false
     ],
-    "currentDead": [],
+    "currentDead": [
+        "阿曼德"
+    ],
     "unComfort": [
         false,
         false,

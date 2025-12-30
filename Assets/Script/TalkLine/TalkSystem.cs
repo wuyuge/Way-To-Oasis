@@ -103,8 +103,8 @@ public class TalkSystem : MonoBehaviour
     public Manager ShowTech;
     [Header("小人对话管理")]
     public MiniCharacterTalkSys MiniCharacterManager;
-    
-    public bool MiniMode { get; set; }
+
+    public bool MiniMode;
 
     [Header("噪点遮罩")]
     public GameObject NoiseMask;
@@ -1605,7 +1605,8 @@ public class TalkSystem : MonoBehaviour
                 Debug.Log("预期外的line");
                 break;
         }
-        
+
+        line = 0;
     }
 
     public void SetTextBox(Manager textBox)

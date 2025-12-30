@@ -8,7 +8,9 @@ public class RandomRain : MonoBehaviour
 {
     public bool isRaining = false;          // 当前是否在下雨
     public GameObject rainSystem;          // 雨系统物体
+    [Tooltip("下雨持续时间范围（秒）")]
     public Vector2 rainDurationRange = new Vector2(10f, 30f);  // 下雨持续时间范围（秒）
+    [Tooltip("雨停后下次可能下雨的间隔范围（秒）")]
     public Vector2 rainIntervalRange = new Vector2(60f, 180f); // 雨停后下次可能下雨的间隔范围（秒）
 
     private Coroutine rainCoroutine;       // 随机下雨协程引用

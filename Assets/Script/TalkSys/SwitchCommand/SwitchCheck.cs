@@ -45,7 +45,6 @@ public class SwitchCheck : SwitchCommand
                 break;
             case FunctionCode.Function.B://原命令:/CheckEveryOneLive,dead,twicedeadchoice
                 //是否有人死亡
-                //TODO:原指令转向不一致
                 foreach (var c in _characters)
                 {
                     if (c.Dead)

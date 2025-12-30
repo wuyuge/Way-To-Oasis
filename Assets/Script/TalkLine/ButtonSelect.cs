@@ -3,15 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ButtonSelect : MonoBehaviour
 {
     public TalkSystem TalkSystem;
     public Manager textbox { get; set; }
-    private TextMeshProUGUI _buttonText;
+    public TextMeshProUGUI buttonText;
     private void Awake()
     {
-        _buttonText = GetComponentInChildren<TextMeshProUGUI>();
+        if (buttonText == null)
+        {
+            buttonText = GetComponentInChildren<TextMeshProUGUI>();
+        }
+        
     }
 
 
@@ -31,8 +36,16 @@ public class ButtonSelect : MonoBehaviour
 
     public void SetTextBox(Manager textBox)
     {
-        textbox = textBox;
-        _buttonText.text = textbox.TxtLine[0];
+        try
+        {
+            textbox = textBox;
+            buttonText.text = textbox.TxtLine[0];
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"按钮错误 错误类型{e}");
+        }
+        
     }
 
 

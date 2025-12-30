@@ -354,8 +354,7 @@ public class Progress : MonoBehaviour
 
             }
             
-            if(day_num != 0)
-            beforeFood[day_num] = GetComponent<IntermissionManager>().AddTextLine("BeforeFood");
+            if(day_num != 0) beforeFood[day_num] = GetComponent<IntermissionManager>().AddTextLine("BeforeFood");
             // 触发进食前的幕间对话（若存在对应天数的对话数据）
             if (beforeFood[day_num] != null)
             {
@@ -540,24 +539,16 @@ public class Progress : MonoBehaviour
                 // 赋值对话数据到对话系统
                 talkSys.Talklines[day_num] = beforeStart[day_num];
                 talkSys.line = 0;// 重置对话行数
+                talkSys.on = true;
                 talkSys.showText.CanShowText = true;
-                Invoke("Talk", 0.2f);
-
-
+                talkSys.ShowText();
                 // 启动对话显示
                 TalkBar.GetComponent<Animator>().SetTrigger("start");  // 对话栏显示动画
-                if (TalkBar.transform.position.y == 0)
-                {
-                    DownAnim();
-                }
-
-
             }
 
             if (day_num != 0)
             {
-                if(skip.GetComponent<Image>().color.a == 0)
-                skip.GetComponent<Skip>().TurnDark();  // 若未暗化，执行暗化
+                if(skip.GetComponent<Image>().color.a == 0) skip.GetComponent<Skip>().TurnDark();  // 若未暗化，执行暗化
                 skip.transform.Find("Report").GetComponent<Report>().ShowText();
                 skip.transform.Find("Report").gameObject.SetActive(true);
                 
@@ -627,11 +618,7 @@ public class Progress : MonoBehaviour
     {
         Mask.transform.parent.gameObject.SetActive(false);
     }
-
-    void Talk()
-    {
-        _ = talkSys.ShowText();
-    }
+    
     void DownAnim()
     {
         //DownBar.GetComponent<Animator>().SetTrigger("Down");  // 底部栏隐藏动画
@@ -641,6 +628,8 @@ public class Progress : MonoBehaviour
     {
         SwitchPlaying = true;
         ShopTalk = false;
+        talkSys.showText.CanShowText = true;
+        
         Shop.gameObject.SetActive(true);
     }
 

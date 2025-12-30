@@ -429,7 +429,7 @@ public class RestoreSence : MonoBehaviour
                 if (intermission.Lines[i].Day == data.Day && intermission.Lines[i].Stage == "BeforeStart")
                 {
                     intermission.Lines.RemoveAt(i);
-                    MainTalkBar.GetComponent<Animator>().SetTrigger("down");
+                    MainTalkBar.GetComponent<Animator>().SetTrigger("Down");
                 }
             }
         }
@@ -438,7 +438,7 @@ public class RestoreSence : MonoBehaviour
         {
             case 3:
             case 2:
-                MainTalkBar.GetComponent<Animator>().SetTrigger("down");
+                MainTalkBar.GetComponent<Animator>().SetTrigger("Down");
                 break;
             
         }

@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Main2-1-End
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
+  - ->c
   - "\u83B1\u6587\uFF1A\u5443\uFF0C\u4F60\u8BF4\u7684\u4E5F\u6709\u9053\u7406\u3002"
   - "\u83B1\u6587\uFF1A\u81F3\u5C11\u6211\u4EEC\u53EF\u4EE5\u544A\u8BEB\u4ED6\u4EEC\uFF1A\u4E0D\u8981\u6D6A\u8D39\u98DF\u7269\u3002"
-  - upcbar
-  - down
+  - ${OpenSwitchStage}
+  - ${CloseCharacterTalkBox}
+  - ${DownTalkBox}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

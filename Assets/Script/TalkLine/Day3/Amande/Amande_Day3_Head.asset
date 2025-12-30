@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Amande_Day3_Head
   m_EditorClassIdentifier: 
   TxtLine:
-  - /CheckEveryOneLive
+  - ${CheckSomeBodyDead}
   Option1: {fileID: 11400000, guid: 4d0bb181b3f149b4e9fff3d61531e9be, type: 2}
   Option2: {fileID: 11400000, guid: 25f836e4a71a6e241830076fe5bd4c1e, type: 2}
   Option3: {fileID: 11400000, guid: 403e5cd3f979cbf43b6a72edb2269b0d, type: 2}

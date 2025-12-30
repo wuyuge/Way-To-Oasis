@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Main2-2-ce
   m_EditorClassIdentifier: 
   TxtLine:
-  - upcbar
-  - down
+  - ${OpenSwitchStage}
+  - ${OpenSwitchStage}
+  - ${CloseCharacterTalkBox}
+  - ${DownTalkBox}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

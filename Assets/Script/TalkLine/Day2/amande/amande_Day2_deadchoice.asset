@@ -16,8 +16,8 @@ MonoBehaviour:
   - ${ShowCharacterTalkBox}
   - ${LockSwitchStage}
   - ${CheckSomeBodyDead}
-  Option1: {fileID: 11400000, guid: 97434b8c31681ae4cbb6273cd68f9121, type: 2}
-  Option2: {fileID: 11400000, guid: 8e2e61ddf70d9154b9aa26047476d4d4, type: 2}
+  Option1: {fileID: 11400000, guid: 8e2e61ddf70d9154b9aa26047476d4d4, type: 2}
+  Option2: {fileID: 11400000, guid: 97434b8c31681ae4cbb6273cd68f9121, type: 2}
   Option3: {fileID: 11400000, guid: e10e55d51938bc0409d6d35b66ed0e5c, type: 2}
   SpecialTalk: {fileID: 11400000, guid: af39ce882a6986c44904c28561d0290b, type: 2}
   SpecialTalk2: {fileID: 11400000, guid: 62cd2db1332447a4786386794b747f77, type: 2}

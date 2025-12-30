@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: AimiBo_Day3_Head
   m_EditorClassIdentifier: 
   TxtLine:
-  - deadfu
+  - ${ShowCharacterTalkBox}
+  - ${LockSwitchStage}
+  - ${CheckBoDead}
   Option1: {fileID: 11400000, guid: 89fc8fafa771d4b42908e3df092c1e8f, type: 2}
   Option2: {fileID: 11400000, guid: bbc650061b5cea447a8ff5020bd9bf56, type: 2}
   Option3: {fileID: 11400000, guid: 95c751fa740ad704d9a434ad1196e16d, type: 2}

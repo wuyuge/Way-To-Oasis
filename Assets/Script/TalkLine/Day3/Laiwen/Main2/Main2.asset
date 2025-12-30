@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Main2
   m_EditorClassIdentifier: 
   TxtLine:
-  - /CheckEveryOneLive
+  - ${CheckSomeBodyDead}
   Option1: {fileID: 11400000, guid: ee98095c1ce43fa4bacb6caa6db78df0, type: 2}
   Option2: {fileID: 11400000, guid: f33f73bd778055941b9ad52888211475, type: 2}
   Option3: {fileID: 0}

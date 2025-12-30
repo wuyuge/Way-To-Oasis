@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Main2
   m_EditorClassIdentifier: 
   TxtLine:
-  - /CheckAmandeKillself
+  - ${CheckAmandeKillSelf}
   Option1: {fileID: 11400000, guid: acb43928e39c49849b41759ab6ca6e73, type: 2}
   Option2: {fileID: 11400000, guid: e8f86febb7d54ed46b142f789ba3923a, type: 2}
   Option3: {fileID: 0}
