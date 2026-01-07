@@ -54,6 +54,7 @@
     <Compile Include="Assets\Script\Setting\Video\VSyncSetting.cs" />
     <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchToggle.cs" />
     <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchChoice.cs" />
+    <Compile Include="Assets\Script\UI\UIGeneralFunction.cs" />
     <Compile Include="Assets\Script\New_Game.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\LoadFileButton.cs" />
     <Compile Include="Assets\Script\CharacterImageManager.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Script\UI\Menu\ShowFPS.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
+    <Compile Include="Assets\Script\ConversationHistroy\ConversationHistory.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Script\EndingsManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
@@ -114,6 +116,7 @@
     <Compile Include="Assets\Script\DataManager\SaveManager\PlayerSaveData.cs" />
     <Compile Include="Assets\Script\Text\Report.cs" />
     <Compile Include="Assets\Script\UI\Menu\MenuManager.cs" />
+    <Compile Include="Assets\Script\ConversationHistroy\HistoryManager.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\SaveMenu.cs" />
     <Compile Include="Assets\Script\Shop\ShopManager.cs" />
     <Compile Include="Assets\Script\Setting\Video\ShowFPSInGame.cs" />

@@ -16,7 +16,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     private bool InShop => _talkSys._inshop;
     private bool MiniMode => _talkSys.MiniMode;
     private MiniCharacterTalkSys _miniCharacterTalkSys;
-    public TextMeshProUGUI _currentTextUI;
+    private TextMeshProUGUI _currentTextUI;
     private TextMeshProUGUI TextUI => _currentTextUI;
     private TextMeshProUGUI _playerName,_characterName,_shopGeneralName;
     private Coroutine _currentCoroutine;
@@ -25,7 +25,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     private int _stopCommend = 0;
     public bool CanShowText { get; set; }
     [Header("是否显示Debug")] public bool showDebug;
-
+    [Header("历史对话")] public HistoryManager historyManager;
     private void Awake()
     {
         CanShowText = true;
@@ -108,6 +108,11 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
             
             if (curText.Contains("$"))//通用命令
             {
+                if (curText.Contains("DownTalkBox"))
+                {
+                    Debug.Log("重置对话历史");
+                    historyManager.Refresh();
+                }
                 _switchManager.DoSwitchCode();
                 _talkSys.line++;
                 continue;
@@ -161,7 +166,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     {
         
         var tempString = TalkLines[DayNum].TxtLine[LineIndex];
-        
+        var tempHistory = new TextHistory();
         var charaName = string.Empty;
         if (tempString.Contains("："))//如果文本分类错误即转换说话人
         {
@@ -174,6 +179,8 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
             string[] tempTextBox = HandleCharacterName(tempString);
             charaName = tempTextBox[0];
             tempString = tempTextBox[1];
+            tempHistory.IsPlayer = false;
+            tempHistory.CharacterName = charaName;
             if (tempString.Contains("@"))
             {
                 tempString = SetExpression(tempString,charaName);
@@ -190,6 +197,8 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
         }
         else
         {
+            tempHistory.IsPlayer = true;
+            tempHistory.CharacterName = string.Empty;
             if (InShop)
             {
                 _shopGeneralName.text = PlayerNameBox;
@@ -201,7 +210,9 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
         }
 
         if (onMiniMode)_miniCharacterTalkSys.ShowText(charaName, string.Empty);
-        
+
+        tempHistory.Text = tempString;
+        historyManager.SetHistory(tempHistory);
         foreach (var stringValue in tempString)
         {
             

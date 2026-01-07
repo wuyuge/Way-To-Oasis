@@ -40,7 +40,7 @@ public class SwitchSet : SwitchCommand
                 _progress.CanSwitch = false;
                 break;
             case FunctionCode.Function.E:
-                //TODO:控制角色安抚状态
+                //控制角色安抚状态 (已转换为其他特殊标记)
                 break;
             case FunctionCode.Function.F:
                 //开/关 显示角色名称

@@ -83,6 +83,10 @@ public class TalkSysSwitch : MonoBehaviour,ITalkSysCore
         try
         {
             string curText = _talkLines[DayNum].TxtLine[Line];
+            if (curText.Contains("DownTalkBox"))
+            {
+                _talkSys.showText.historyManager.Refresh();
+            }
             curText = curText.Replace("$", "");
             curText = curText.Replace("{", "");
             curText = curText.Replace("}", "");
@@ -117,6 +121,7 @@ public class TalkSysSwitch : MonoBehaviour,ITalkSysCore
             if (_talkSys.line < _talkLines[DayNum].TxtLine.Count && 
                 _talkLines[DayNum].TxtLine[_talkSys.line].Contains("$"))
             {
+                
                 DoSwitchCode();
             }
 
