@@ -1,10 +1,7 @@
-using System;
 using Coffee.UIExtensions;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -48,15 +45,7 @@ public class Progress : MonoBehaviour
 
     [Tooltip("文字描述 - 关联UI文本组件，显示重量、对话、进食、日期信息")]
     // 重量显示文本（UI组件）
-    public TextMeshProUGUI weight;
-    /// <summary>
-    /// 对话阶段提示文本（UI组件）
-    /// </summary>
-    public TextMeshProUGUI talk_t;
-    /// <summary>
-    /// 进食阶段提示文本（UI组件）
-    /// </summary>
-    public TextMeshProUGUI food_t;
+    public Animator state;
     /// <summary>
     /// 日期显示文本（UI组件，格式：Day X）
     /// </summary>
@@ -169,34 +158,13 @@ public class Progress : MonoBehaviour
         talkSys = TalkBar.GetComponent<TalkSystem>();
         // 初始化日期显示（格式：Day X）
         day.text = "Day " + day_num;
-
-        // 动态绑定父对象下的UI文本组件（避免手动拖拽丢失，增强鲁棒性）
-        weight = gameObject.transform.parent.Find("Weight").GetComponent<TextMeshProUGUI>();
-        talk_t = gameObject.transform.parent.Find("Talk").GetComponent<TextMeshProUGUI>();
-        food_t = gameObject.transform.parent.Find("Food").GetComponent<TextMeshProUGUI>();
         
-
-        // 根据初始阶段设置文本颜色（高亮当前阶段，其他阶段半透明）
-        if (start)
-        {
-            weight.color = new Color32(0, 0, 0, 255);   // 开始阶段（重量文本）高亮
-            talk_t.color = new Color32(0, 0, 0, 120);  // 对话文本半透明
-            food_t.color = new Color32(0, 0, 0, 120);  // 进食文本半透明
-        }
-        else if (talk)
-        {
-            weight.color = new Color32(0, 0, 0, 120);  // 重量文本半透明
-            talk_t.color = new Color32(0, 0, 0, 255);  // 对话阶段高亮
-            food_t.color = new Color32(0, 0, 0, 120);  // 进食文本半透明
-        }
-        else if (food)
-        {
-            weight.color = new Color32(0, 0, 0, 120);  // 重量文本半透明
-            talk_t.color = new Color32(0, 0, 0, 120);  // 对话文本半透明
-            food_t.color = new Color32(0, 0, 0, 255);  // 进食阶段高亮
-        }
         if (day_num != 0)
             beforeStart[day_num] = GetComponent<IntermissionManager>().AddTextLine("BeforeStart");
+        else
+        {
+            state.SetTrigger("Switch");
+        }
         // 触发当天开始前的幕间对话（若存在对应天数的对话数据）
         if (beforeStart[day_num] != null)
         {
@@ -292,14 +260,9 @@ public class Progress : MonoBehaviour
             if(day_num != 0)
             MiniCharacter.SetWalk();
             // 更新UI文本颜色（对话阶段高亮，开始阶段半透明）
-            weight.color = new Color32(0, 0, 0, 120);
             start = false;  // 退出开始阶段
-
-            
-            
-
             talk = true;  // 进入对话阶段
-            talk_t.color = new Color32(0, 0, 0, 255);  // 对话文本高亮
+            state.SetTrigger("Switch");
             
 
         }
@@ -374,8 +337,7 @@ public class Progress : MonoBehaviour
             
 
             // 更新UI文本颜色（进食阶段高亮，对话阶段半透明）
-            talk_t.color = new Color32(0, 0, 0, 120);
-            food_t.color = new Color32(0, 0, 0, 255);
+            state.SetTrigger("Switch");
             talk = false;  // 退出对话阶段
             food = true;   // 进入进食阶段
 
@@ -492,8 +454,7 @@ public class Progress : MonoBehaviour
             }
 
             // 更新UI文本颜色（开始阶段高亮，进食阶段半透明）
-            food_t.color = new Color32(0, 0, 0, 120);
-            weight.color = new Color32(0, 0, 0, 255);
+            state.SetTrigger("Switch");
             start = true;  // 进入下一天的开始阶段
             talk = false;  // 退出对话阶段
             food = false;  // 退出进食阶段

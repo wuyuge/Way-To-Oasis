@@ -290,8 +290,8 @@ RectTransform:
   m_GameObject: {fileID: 3978994144448622788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1739049814491104562}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d7abaffdeab374549921b62423a7f082, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84f53297485790147920ca969688ef95, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -537,8 +537,8 @@ RectTransform:
   m_GameObject: {fileID: 5815763545508707034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4550034755810746374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -575,7 +575,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ce5281123623f3b4f8a63aa4b9d43bf9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57e6b5bedb030e240b03f63667cd4619, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -637,11 +637,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSprites:
-  - {fileID: 21300000, guid: 70008479090881645b75645efab0a7a3, type: 3}
-  - {fileID: 21300000, guid: b2f4c427e808fb247a5d29bc16fadad2, type: 3}
-  - {fileID: 21300000, guid: d5218dc6d16918449afb5a8dd1a522f4, type: 3}
-  - {fileID: 21300000, guid: d7abaffdeab374549921b62423a7f082, type: 3}
-  - {fileID: 21300000, guid: d86f6d993568434459c51a76506bea01, type: 3}
+  - {fileID: 21300000, guid: 960fde3c02cc43e4ba6f5f69a0275ad8, type: 3}
+  - {fileID: 21300000, guid: 631bf6d423b316147b59e9c543fc7005, type: 3}
+  - {fileID: 21300000, guid: 418977f1464c2ce49803c307f39c2a97, type: 3}
+  - {fileID: 21300000, guid: 84f53297485790147920ca969688ef95, type: 3}
+  - {fileID: 21300000, guid: d50157a0d8fbdab4a83ff9eda17b3ad7, type: 3}
   playerContainer: {fileID: 620309283599418084}
   characterContainer: {fileID: 4216911926764417414}
   pText: {fileID: 6677970182594017425}

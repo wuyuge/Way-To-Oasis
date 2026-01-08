@@ -41,23 +41,23 @@ public class ConversationHistory : MonoBehaviour
         {
             case "艾米莉":
                 characterImage.sprite = characterSprites[0];
-                imageBack.color = new Color32(244, 198, 100, 255);
+                imageBack.color = new Color32(238, 192, 144, 255);
                 break;
             case "洛尔坎":
                 characterImage.sprite = characterSprites[1];
-                imageBack.color = new Color32(253, 143, 141, 255);
+                imageBack.color = new Color32(220, 149, 131, 255);
                 break;
             case "博金森":
                 characterImage.sprite = characterSprites[2];
-                imageBack.color = new Color32(241, 178, 79, 255);
+                imageBack.color = new Color32(227, 171, 96, 255);
                 break;
             case "阿曼德":
                 characterImage.sprite = characterSprites[3];
-                imageBack.color = new Color32(216, 190, 254, 255);
+                imageBack.color = new Color32(222, 183, 204, 255);
                 break;
             case "莱文":
                 characterImage.sprite = characterSprites[4];
-                imageBack.color = new Color32(148, 205, 185, 255);
+                imageBack.color = new Color32(163, 196, 172, 255);
                 break;
             default:
                 Debug.LogError("历史对话设定角色图片错误");

@@ -6,14 +6,11 @@ using UnityEngine.UI;
 public class AssResources : MonoBehaviour
 {
     public GameObject End;
-    public GameObject Food_Ban, Body_Ban;
     public bool Food;
     public bool Body,Weight_Food;
     private Toggle Food_Toogle, Body_Toogle;
     void Start()
     {
-        Food_Toogle = Food_Ban.transform.parent.GetComponent<Toggle>();
-        Body_Toogle = Body_Ban.transform.parent.GetComponent<Toggle>();
         End = GameObject.Find("End");
     }
 

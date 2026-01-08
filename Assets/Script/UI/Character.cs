@@ -130,19 +130,10 @@ public class Character : MonoBehaviour
         end = GameObject.Find("End");
         // 记录初始天数（与Progress中的day_num同步）
         curr_num = end.GetComponent<Progress>().day_num;
-
-        
-        // 初始化显示角色持有的尸体数量（更新UI文本）
-        gameObject.transform.parent.Find("Have_Body").GetComponent<TextMeshProUGUI>().text = body.Weight.ToString();
-        
-        
-        
         // 绑定角色子对象中的3个负重进度条UI
         weight1 = gameObject.transform.Find("Weight3").gameObject;
         weight2 = gameObject.transform.Find("Weight2").gameObject;
         weight3 = gameObject.transform.Find("Weight1").gameObject;
-        // 初始化显示角色持有的食物数量（更新UI文本）
-        gameObject.transform.parent.Find("Have_Food").GetComponent<TextMeshProUGUI>().text = food.Weight.ToString();
         if(end.GetComponent<Progress>().day_num != 0)
         Background = GameObject.Find("BackgroundContainer").gameObject;
         for (int i = 0; i < transform.childCount;i++)
