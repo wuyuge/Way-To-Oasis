@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u8FD8\u6CA1\u6709"
+  - ->p
+  - "\u8FD8\u6CA1\u6709\u3002"
   - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u6CA1\u6709\u7684\u8BDD\u5C31\u5148\u53BB\u5427\u3002\u6211\u4E00\u4E2A\u4EBA\u7F13\u4E00\u7F13\u5C31\u597D\u3002 "
   - ${SetAmanadeTwiceTalkOff}

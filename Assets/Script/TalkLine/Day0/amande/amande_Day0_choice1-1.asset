@@ -15,7 +15,7 @@ MonoBehaviour:
   TxtLine:
   - "\u901A\u77E5\u5B8C\u4E86"
   - ->p
-  - "\u901A\u77E5\u5B8C\u4E86"
+  - "\u901A\u77E5\u5B8C\u4E86\u3002"
   - ->c
   - ${CheckDay0Talk}
   - ->c

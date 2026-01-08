@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u597D\u554A"
+  - ->p
+  - "\u597D\u554A\u3002"
   - ->c
   - "\u83B1\u6587\uFF1A\u6709\u4EC0\u4E48\u611F\u5174\u8DA3\u7684\u8BDD\u9898\u5417\uFF1F"
   - ${Choice}
