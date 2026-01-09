@@ -99,6 +99,8 @@ public class Character : MonoBehaviour
 
     private int InfoClick = 0;
 
+    private Image _weight1Image,_weight2Image,_weight3Image;
+
 
     private void Awake()
     {
@@ -134,6 +136,9 @@ public class Character : MonoBehaviour
         weight1 = gameObject.transform.Find("Weight3").gameObject;
         weight2 = gameObject.transform.Find("Weight2").gameObject;
         weight3 = gameObject.transform.Find("Weight1").gameObject;
+        _weight1Image = weight1.GetComponent<Image>();
+        _weight2Image = weight2.GetComponent<Image>();
+        _weight3Image = weight3.GetComponent<Image>();
         if(end.GetComponent<Progress>().day_num != 0)
         Background = GameObject.Find("BackgroundContainer").gameObject;
         for (int i = 0; i < transform.childCount;i++)
@@ -228,15 +233,15 @@ public class Character : MonoBehaviour
             weight.Weight = 0;
             // 更新当前天数记录（与Progress同步）
             curr_num = end.GetComponent<Progress>().day_num;
-            // 刷新负重进度条UI（重置为初始绿色）
+            // 刷新负重进度条UI（重置为初始白色）
             Refresh();
         }
         if (CantWeight)
         {
             weight.Weight = 3;
-            weight1.GetComponent<Image>().color = Color.red;
-            weight2.GetComponent<Image>().color = Color.red;
-            weight3.GetComponent<Image>().color = Color.red;
+            _weight1Image.color = new Color32(95,47,54,255);;
+            _weight2Image.color = new Color32(95,47,54,255);;
+            _weight3Image.color = new Color32(95,47,54,255);;
         }
 
         
@@ -317,14 +322,12 @@ public class Character : MonoBehaviour
                 weight.Weight_tag = 0;
 
                 // 根据当前负重数，更新负重进度条颜色（红色表示已占用）
-                if (weight.Weight >= 1) weight1.GetComponent<Image>().color = Color.red;
-                if (weight.Weight >= 2) weight2.GetComponent<Image>().color = Color.red;
-                if (weight.Weight == 3) weight3.GetComponent<Image>().color = Color.red;
+                if (weight.Weight >= 1) _weight1Image.color = new Color32(95,47,54,255);;
+                if (weight.Weight >= 2) _weight2Image.color = new Color32(95,47,54,255);;
+                if (weight.Weight == 3) _weight3Image.color = new Color32(95,47,54,255);;
 
                 // 减少角色持有的食物数量（分配1个食物到负重）
                 food.Weight -= 1;
-                // 刷新UI显示当前剩余食物数量
-                gameObject.transform.parent.Find("Have_Food").GetComponent<TextMeshProUGUI>().text = food.Weight.ToString();
             }
 
             // 2. 【分配尸体到负重】：判断是否处于"尸体分配"阶段，且满足分配条件
@@ -335,16 +338,14 @@ public class Character : MonoBehaviour
                 // 标记负重类型为"尸体"（0=食物，1=尸体）
                 weight.Weight_tag = 1;
                 // 尸体占满3格负重，直接将3个进度条设为红色
-                weight1.GetComponent<Image>().color = Color.red;
-                weight2.GetComponent<Image>().color = Color.red;
-                weight3.GetComponent<Image>().color = Color.red;
+                _weight1Image.color = new Color32(95,47,54,255);;
+                _weight2Image.color = new Color32(95,47,54,255);;
+                _weight3Image.color = new Color32(95,47,54,255);;
 
                 // 负重设为3（尸体固定占3格）
                 weight.Weight = 3;
                 // 减少角色持有的尸体数量（分配1个尸体到负重）
                 body.Weight -= 1;
-                // 刷新UI显示当前剩余尸体数量
-                gameObject.transform.parent.Find("Have_Body").GetComponent<TextMeshProUGUI>().text = body.Weight.ToString();
             }
 
             // 3. 【取消负重分配】：判断是否处于"非分配阶段"，且当前有负重
@@ -358,19 +359,19 @@ public class Character : MonoBehaviour
                     // 负重类型为食物：归还1个食物到持有数量，减少1格负重
                     food.Weight += 1;
                     weight.Weight -= 1;
-                    // 刷新负重进度条UI（重置未占用的格子为绿色）
+                    // 刷新负重进度条UI（重置未占用的格子为白色）
                     Refresh();
-                    // 重新设置已占用的格子为红色（避免刷新后全部变绿）
-                    if (weight.Weight >= 1) weight1.GetComponent<Image>().color = Color.red;
-                    if (weight.Weight >= 2) weight2.GetComponent<Image>().color = Color.red;
-                    if (weight.Weight == 3) weight3.GetComponent<Image>().color = Color.red;
+                    // 重新设置已占用的格子为红色（避免刷新后全部变白）
+                    if (weight.Weight >= 1) _weight1Image.color = new Color32(95,47,54,255);;
+                    if (weight.Weight >= 2) _weight2Image.color = new Color32(95,47,54,255);;
+                    if (weight.Weight == 3) _weight3Image.color = new Color32(95,47,54,255);;
                 }
                 if (weight.Weight_tag == 1)
                 {
                     // 负重类型为尸体：归还1个尸体到持有数量，负重清零（尸体占3格，直接减3）
                     body.Weight += 1;
                     weight.Weight -= 3;
-                    // 刷新负重进度条UI（全部重置为绿色）
+                    // 刷新负重进度条UI（全部重置为白色）
                     Refresh();
                 }
             }
@@ -385,7 +386,7 @@ public class Character : MonoBehaviour
 
     /// <summary>
     /// 负重UI刷新方法
-    /// 1. 重置所有负重进度条为绿色（未占用状态）
+    /// 1. 重置所有负重进度条为白色（未占用状态）
     /// 2. 同步更新持有食物/尸体的UI文本
     /// </summary>
     void Refresh()
@@ -394,15 +395,11 @@ public class Character : MonoBehaviour
         if (Dead) return;
         
 
-        // 重置3个负重进度条颜色为绿色（表示未占用）
-        weight1.GetComponent<Image>().color = Color.green;
-        weight2.GetComponent<Image>().color = Color.green;
-        weight3.GetComponent<Image>().color = Color.green;
+        // 重置3个负重进度条颜色为白色（表示未占用）
+        _weight1Image.color = Color.white;
+        _weight2Image.color = Color.white;
+        _weight3Image.color = Color.white;
 
-        // 同步更新UI显示当前持有食物数量
-        gameObject.transform.parent.Find("Have_Food").GetComponent<TextMeshProUGUI>().text = food.Weight.ToString();
-        // 同步更新UI显示当前持有尸体数量
-        gameObject.transform.parent.Find("Have_Body").GetComponent<TextMeshProUGUI>().text = body.Weight.ToString();
 
         AfterSpecialTalk = false;
         toggle.GetComponent<Toggle>().isOn = false;
@@ -600,24 +597,24 @@ public class Character : MonoBehaviour
         switch(weight.Weight)
         {
             case 0:
-                weight1.GetComponent<Image>().color = Color.green;
-                weight2.GetComponent<Image>().color = Color.green;
-                weight3.GetComponent<Image>().color = Color.green;
+                _weight1Image.color = Color.white;
+                _weight2Image.color = Color.white;
+                _weight3Image.color = Color.white;
                 break;
             case 1:
-                weight1.GetComponent<Image>().color = Color.red;
-                weight2.GetComponent<Image>().color = Color.green;
-                weight3.GetComponent<Image>().color = Color.green;
+                _weight1Image.color = new Color32(95,47,54,255);
+                _weight2Image.color = Color.white;
+                _weight3Image.color = Color.white;
                 break;
             case 2:
-                weight1.GetComponent<Image>().color = Color.red;
-                weight2.GetComponent<Image>().color = Color.red;
-                weight3.GetComponent<Image>().color = Color.green;
+                _weight1Image.color = new Color32(95,47,54,255);;
+                _weight2Image.color = new Color32(95,47,54,255);;
+                _weight3Image.color = Color.white;
                 break;
             case 3:
-                weight1.GetComponent<Image>().color = Color.red;
-                weight2.GetComponent<Image>().color = Color.red;
-                weight3.GetComponent<Image>().color = Color.red;
+                _weight1Image.color = new Color32(95,47,54,255);;
+                _weight2Image.color = new Color32(95,47,54,255);;
+                _weight3Image.color = new Color32(95,47,54,255);;
                 break;
 
 

@@ -60,7 +60,7 @@ public class ConversationHistory : MonoBehaviour
                 imageBack.color = new Color32(163, 196, 172, 255);
                 break;
             default:
-                Debug.LogError("历史对话设定角色图片错误");
+                Debug.LogError($"历史对话设定角色图片错误 传入参数{characterName}");
                 break;
                 
         }

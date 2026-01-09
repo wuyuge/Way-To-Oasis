@@ -1,44 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Select : MonoBehaviour
 {
-    public Toggle obj;
-    public GameObject progress,TalkBar;
-    public Manager Textline;
-    public bool _isSpecial;
+    [FormerlySerializedAs("obj")] public Toggle toggle;
+    private Image _image;
+    public Toggle linkToggle;
+
+    private void Awake()
+    {
+        _image = GetComponent<Image>();
+    }
     
-
-    public void Switch(bool i)
+    public void OnValueChanged(bool value)
     {
-        if (obj.isOn && i)
+        if (value)
         {
-            obj.isOn = false;
+            _image.color = new Color32(200, 200, 200,255);
+            
         }
-        
-
-    }
-
-    public void Clik()
-    {
-        if (_isSpecial)
+        else
         {
-            int day_num = progress.GetComponent<Progress>().day_num;
-            if (day_num == 1)
-            {
-                TalkBar.GetComponent<TalkSystem>().Talklines[day_num] = Textline;
-                TalkBar.GetComponent<TalkSystem>().line = 0;
-                _ = TalkBar.GetComponent<TalkSystem>().ShowText();
+            _image.color = Color.white;
+        }
 
-                TalkBar.GetComponent<Animator>().SetTrigger("Up");
-                _isSpecial = false;
-
-            }
+        if (linkToggle.isOn)
+        {
+            linkToggle.isOn = false;
+            toggle.isOn = value;
         }
     }
-
 
 
 
