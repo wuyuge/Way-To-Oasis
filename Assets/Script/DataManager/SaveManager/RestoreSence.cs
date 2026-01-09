@@ -408,7 +408,7 @@ public class RestoreSence : MonoBehaviour
 
         TechMask.SetActive(false);
         TechTalkBar.GetComponent<Animator>().SetTrigger("down");
-        TechTalkBar.GetComponent<TalkSystem>().Talklines[0] = null;
+        /*TechTalkBar.GetComponent<TalkSystem>().Talklines[0] = null;*/
         TechTalkBar.GetComponent<TalkSystem>().Ban = true;
         _ = Task.Delay(1000);
         TechTalkBar.GetComponent<TalkSystem>().Ban = false;

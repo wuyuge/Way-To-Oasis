@@ -26,6 +26,8 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     public bool CanShowText { get; set; }
     [Header("是否显示Debug")] public bool showDebug;
     [Header("历史对话")] public HistoryManager historyManager;
+    [Header("自动播放")] public Manager autoplay;
+    [Header("自动播放延迟")] public float autoPlayDelay;
     private void Awake()
     {
         CanShowText = true;
@@ -237,6 +239,10 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
         _talkSys.Type.Stop();
         _talkSys.line++;
         _currentCoroutine = null;
+        if (autoplay.GeneralBool && TalkLines[DayNum].TxtLine[LineIndex] is not null)
+        {
+            Invoke(nameof(ShowText),autoPlayDelay);
+        }
 
     }
 
