@@ -11,7 +11,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     private List<Manager> TalkLines => _talkSys.Talklines;
     private int LineIndex => _talkSys.line;
     private int DayNum => _talkSys.Daytime;
-    private float _intervalTime;
+    private float IntervalTime => _talkSys.TextSpeedI;
     private bool _isPlayerTalking;
     private bool InShop => _talkSys._inshop;
     private bool MiniMode => _talkSys.MiniMode;
@@ -36,7 +36,6 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     public void Init(TalkSystem talkSys)
     {
         _talkSys = talkSys;
-        _intervalTime = talkSys.TextSpeedI;
         _switchManager = talkSys.switchManager;
         _miniCharacterTalkSys = talkSys.MiniCharacterManager;
         _playerName = talkSys.PlayerNameText;
@@ -232,7 +231,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
                 _miniCharacterTalkSys.ShowText(charaName, stringValue);
             }
             
-            yield return new WaitForSeconds(_intervalTime);
+            yield return new WaitForSeconds(IntervalTime);
             
         }
         

@@ -405,13 +405,13 @@ public class RestoreSence : MonoBehaviour
     {
 
         if (data.Day != 0) return;
-
+        var tempTalkSys = TechTalkBar.GetComponent<TalkSystem>();
         TechMask.SetActive(false);
-        TechTalkBar.GetComponent<Animator>().SetTrigger("down");
-        /*TechTalkBar.GetComponent<TalkSystem>().Talklines[0] = null;*/
-        TechTalkBar.GetComponent<TalkSystem>().Ban = true;
+        TechTalkBar.GetComponent<Animator>().SetTrigger("Down");
+        tempTalkSys.showText.CanShowText = true;
+        tempTalkSys.Ban = true;
         _ = Task.Delay(1000);
-        TechTalkBar.GetComponent<TalkSystem>().Ban = false;
+        tempTalkSys.Ban = false;
         Debug.Log("Day0特殊设置完成");
     }
 
