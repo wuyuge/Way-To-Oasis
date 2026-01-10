@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class TalkSysShowText : MonoBehaviour,ITalkSysCore
@@ -23,11 +24,14 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     private string PlayerNameBox => _talkSys.PlayerName.TxtLine[0];
     //一次性开关用于阻止指令执行完毕后继续读取下一条
     private int _stopCommend = 0;
+    private bool _isShowCg;
+    private const string CgPattern = @"[C][G]\d+";
     public bool CanShowText { get; set; }
     [Header("是否显示Debug")] public bool showDebug;
     [Header("历史对话")] public HistoryManager historyManager;
     [Header("自动播放")] public Manager autoplay;
     [Header("自动播放延迟")] public float autoPlayDelay;
+    [Header("CG管理器")] public CgManager cgManager;
     private void Awake()
     {
         CanShowText = true;
@@ -54,6 +58,14 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     {
         
         if(!CanShowText) return;
+
+        if (_isShowCg)
+        {
+            cgManager.HideCg();
+            _isShowCg = false;
+            return;
+        }
+        
         
         while (true)
         {
@@ -124,6 +136,13 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
                 SetUnComfort(curText);
                 _talkSys.line++;
                 continue;
+            }
+
+            if (Regex.IsMatch(curText,CgPattern))
+            {
+                ShowCg(curText);
+                _talkSys.line++;
+                return;
             }
 
             
@@ -400,6 +419,23 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
         }
         
     }
-    
+
+    public void ShowCg(string text)
+    {
+        text = text.Replace("CG", "");
+        try
+        {
+            var index = int.Parse(text);
+            cgManager.gameObject.SetActive(true);
+            _isShowCg = cgManager.ShowCg(index);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+            throw;
+        }
+        
+        
+    }
 
 }
