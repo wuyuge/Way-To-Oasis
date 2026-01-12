@@ -6,6 +6,7 @@ public class AutoPlay : MonoBehaviour
 {
     public Manager autoPlayManager;
     private Image _image;
+    public Sprite before, after;
 
     private void Awake()
     {
@@ -13,10 +14,11 @@ public class AutoPlay : MonoBehaviour
         gameObject.GetComponent<Toggle>().isOn = autoPlayManager.GeneralBool;
         if (autoPlayManager.GeneralBool)
         {
-            _image.color = Color.green;
+            _image.sprite = after;
             return;
         }
-        _image.color = new Color32(221,196,165,255);
+        _image.sprite = before;
+        
     }
 
     public void SetValue(bool value)
@@ -24,9 +26,9 @@ public class AutoPlay : MonoBehaviour
         autoPlayManager.GeneralBool = value;
         if (value)
         {
-            _image.color = Color.green;
+            _image.sprite = after;
             return;
         }
-        _image.color = new Color32(221,196,165,255);
+        _image.sprite = before;
     }
 }
