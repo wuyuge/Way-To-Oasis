@@ -8,8 +8,10 @@ public class CgManager : MonoBehaviour
 {
     public List<Sprite> cgList;
     public Image cgContainer;
+    public GameObject initialTransForm,fullModeTransForm,frame;
+    public TalkSysShowText talkSysShowText;
     private Animator _animator;
-
+    private bool _fullMode;
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -30,10 +32,29 @@ public class CgManager : MonoBehaviour
     public void HideCg()
     {
         _animator.SetTrigger("Close");
+        talkSysShowText.CloseCg();
     }
 
     public void SetFalse()
     {
         gameObject.SetActive(false);
     }
+
+    public void SetFullMode(bool fullMode)
+    {
+        _animator.SetBool("FullMode", fullMode);
+        _fullMode = fullMode;
+    }
+
+    public void SwitchTransForm()
+    {
+        if (!_fullMode)
+        {
+            frame.transform.SetParent(fullModeTransForm.transform);
+            return;
+        }
+        frame.transform.SetParent(initialTransForm.transform);
+    }
+    
+    
 }

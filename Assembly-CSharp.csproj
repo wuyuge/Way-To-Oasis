@@ -102,6 +102,7 @@
     <Compile Include="Assets\Script\SetPlayerName.cs" />
     <Compile Include="Assets\Script\UI\BackGroundMove\BackGroundMoving.cs" />
     <Compile Include="Assets\Script\SwitchStageBar\SetSwitchText.cs" />
+    <Compile Include="Assets\Script\CG\FullMode.cs" />
     <Compile Include="Assets\Script\TalkSys\TalkSysSwitch.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\ChildObj\DeleteChild.cs" />
     <Compile Include="Assets\Script\Start\StartImport.cs" />

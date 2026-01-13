@@ -61,8 +61,6 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
 
         if (_isShowCg)
         {
-            cgManager.HideCg();
-            _isShowCg = false;
             return;
         }
         
@@ -437,5 +435,12 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
         
         
     }
+
+    public void CloseCg()
+    {
+        _isShowCg = false;
+    }
+    
+    
 
 }
