@@ -58,4 +58,5 @@ public class TextHistory
     public bool IsPlayer;
     public string Text;
     public string CharacterName;
+    public bool IsASide;
 }

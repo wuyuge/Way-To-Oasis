@@ -25,7 +25,8 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     //一次性开关用于阻止指令执行完毕后继续读取下一条
     private int _stopCommend = 0;
     private bool _isShowCg;
-    private const string CgPattern = @"[C][G]\d+";
+    private const string CgPattern = @"[C][G]\d+";//CG标记 CG+数字
+    private const string AsidePattern = @"[A][_]";//旁白标记 A_
     public bool CanShowText { get; set; }
     [Header("是否显示Debug")] public bool showDebug;
     [Header("历史对话")] public HistoryManager historyManager;
@@ -228,7 +229,16 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
         }
 
         if (onMiniMode)_miniCharacterTalkSys.ShowText(charaName, string.Empty);
-
+        
+        if (Regex.IsMatch(tempString, AsidePattern))
+        {
+            tempHistory.IsASide = true;
+            tempString = tempString.Replace("A_", string.Empty);
+        }
+        else
+        {
+            tempHistory.IsASide = false;
+        }
         tempHistory.Text = tempString;
         historyManager.SetHistory(tempHistory);
         foreach (var stringValue in tempString)

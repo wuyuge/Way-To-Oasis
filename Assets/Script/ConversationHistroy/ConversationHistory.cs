@@ -6,20 +6,29 @@ using UnityEngine.UI;
 public class ConversationHistory : MonoBehaviour
 {
     public Sprite[] characterSprites = new Sprite[5];
-    public GameObject playerContainer,characterContainer;
+    public GameObject playerContainer,characterContainer,asideContainer;
     public TextMeshProUGUI pText;
     public TextMeshProUGUI cText;
+    public TextMeshProUGUI aText;
     public Image characterImage;
     public Image imageBack;
 
     /// <summary>
-    /// 根据提供的对话历史设置玩家或角色的文本和图片。
+    /// 设置对话历史记录，根据是否为玩家发言以及是否为旁白调整显示内容。
     /// </summary>
-    /// <param name="history">包含对话历史信息的对象，包括是否为玩家、对话文本以及角色名称。</param>
+    /// <param name="history">包含对话信息的历史对象。</param>
+    /// <param name="isAside">指示该条目是否为旁白，默认值为false。</param>
     public void SetHistory(TextHistory history)
     {
+        if (history.IsASide)
+        {
+            asideContainer.SetActive(true);
+            aText.text = history.Text;
+            return;
+        }
         playerContainer.SetActive(history.IsPlayer);
         characterContainer.SetActive(!history.IsPlayer);
+        asideContainer.SetActive(false);
         if (history.IsPlayer)
         {
             pText.text = history.Text;
@@ -74,6 +83,7 @@ public class ConversationHistory : MonoBehaviour
         pText.text = string.Empty;
         cText.text = string.Empty;
         characterImage.sprite = null;
+        aText.text = string.Empty;
     }
     
 }

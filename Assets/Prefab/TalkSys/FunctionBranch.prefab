@@ -68,9 +68,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 28dc85be72869984d8b7bbcf35189aba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bdd7866be6441f04fba6f534d1693111, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -200,6 +200,7 @@ MonoBehaviour:
   historyManager: {fileID: 0}
   autoplay: {fileID: 11400000, guid: 01e9442f63fffef43ac48e491938f56a, type: 2}
   autoPlayDelay: 1
+  cgManager: {fileID: 0}
 --- !u!1 &3402700161156925720
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +374,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 44.877563, y: 0, z: 53.578247, w: 0}
+  m_margin: {x: 44.877563, y: 0, z: 53.578247, w: 14.085503}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -447,9 +448,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 28dc85be72869984d8b7bbcf35189aba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bdd7866be6441f04fba6f534d1693111, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1082,7 +1083,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 44.348785, y: 0, z: 53.685364, w: 0}
+  m_margin: {x: 44.348785, y: 0, z: 53.685364, w: 14.648106}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
