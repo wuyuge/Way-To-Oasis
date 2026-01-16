@@ -1568,6 +1568,7 @@ GameObject:
   - component: {fileID: 1797862727}
   - component: {fileID: 1797862729}
   - component: {fileID: 1797862728}
+  - component: {fileID: 1797862730}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -1648,6 +1649,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!114 &1797862730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797862726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a43a10984a55e409dc614d099ff129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1822652298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2332,6 +2345,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7326593494384679470, guid: 78600ae7f6531164e8684dff6441499f, type: 3}
       propertyPath: isStartPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326593494384679470, guid: 78600ae7f6531164e8684dff6441499f, type: 3}
+      propertyPath: startIsVertical
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9051980007745745658, guid: 78600ae7f6531164e8684dff6441499f, type: 3}
