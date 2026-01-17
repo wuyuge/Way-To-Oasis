@@ -5,54 +5,9 @@ using UnityEngine.UI;
 
 public class StraightPipe : Pipe
 {
-    public bool startIsVertical;
+    
     public bool isVertical = true;
-    private Coroutine _coroutine;
-
-    public override void Start()
-    {
-        base.Start();
-        if (isStartPoint)
-        {
-            if (startIsVertical)
-            {
-                if (above is null)
-                {
-                    startTowards = PipeTowards.Above;
-                }
-                else if (below is null)
-                {
-                    startTowards = PipeTowards.Below;
-                }
-               
-            }
-            else if (!startIsVertical)
-            {
-                if (left is null)
-                {
-                    startTowards = PipeTowards.Left;
-                }
-
-                if (right is null)
-                {
-                    startTowards = PipeTowards.Right;
-                }
-            }
-
-            CheckStartConnection();
-            CheckConnectivity();
-            
-        }
-    }
-
-    private void Update()
-    {
-        if (isStartPoint)
-        {
-            CheckStartConnection();
-        }
-        ObjectImage.color = isConnected ? Color.green : Color.red;
-    }
+    
 
 
     public override void SetState()
@@ -65,13 +20,7 @@ public class StraightPipe : Pipe
         }
         base.SetState();
         
-    }
-
-    public override void CheckConnectivity()
-    {
-        base.CheckConnectivity();
-        
-    }
+    }    
 
     public override bool HaveInterface(PipeTowards towards)
     {
@@ -88,7 +37,7 @@ public class StraightPipe : Pipe
         }
     }
 
-    private void CheckStartConnection()
+    public override void CheckStartConnection()
     {
         switch (startTowards)
         {

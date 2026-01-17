@@ -21,6 +21,7 @@ public abstract class Pipe : MonoBehaviour
     protected static List<GameObject> ReachPipeList = new List<GameObject>();
     protected static GameObject StartPoint;
     protected static Pipe StartPipe;
+    public bool startIsVertical;
     private void Awake()
     {
         ObjectImage = GetComponent<Image>();
@@ -84,6 +85,46 @@ public abstract class Pipe : MonoBehaviour
             ObjectImage.color = Color.red;
         }
         
+        if (isStartPoint)
+        {
+            if (startIsVertical)
+            {
+                if (above is null)
+                {
+                    startTowards = PipeTowards.Above;
+                }
+                else if (below is null)
+                {
+                    startTowards = PipeTowards.Below;
+                }
+               
+            }
+            else if (!startIsVertical)
+            {
+                if (left is null)
+                {
+                    startTowards = PipeTowards.Left;
+                }
+
+                if (right is null)
+                {
+                    startTowards = PipeTowards.Right;
+                }
+            }
+
+            CheckStartConnection();
+            CheckConnectivity();
+            
+        }
+    }
+    
+    private void Update()
+    {
+        if (isStartPoint)
+        {
+            CheckStartConnection();
+        }
+        ObjectImage.color = isConnected ? Color.green : Color.red;
     }
     
     
@@ -158,11 +199,29 @@ public abstract class Pipe : MonoBehaviour
         DepthFSearch(PipeTowards.Below);
         DepthFSearch(PipeTowards.Left);
         DepthFSearch(PipeTowards.Right);
+        foreach (var pipe in ReachPipeList)
+        {
+            if (pipe.GetComponent<Pipe>().isDestination)
+            {
+                Debug.Log("检测到终点");
+            }
+        }
 
     }
 
+    /// <summary>
+    /// 检查管道在指定方向上是否有接口。
+    /// </summary>
+    /// <param name="towards">传入方为基准，接受方相对的方向 例如传入方在接受方上面,则传入Below</param>
+    /// <returns>如果在指定方向上有接口，则返回true；否则返回false。</returns>
     public abstract bool HaveInterface(PipeTowards towards);
 
+    public abstract void CheckStartConnection();
+
+    /// <summary>
+    /// 使用深度优先搜索算法检查并连接管道。该方法根据传入的方向尝试链接当前管道与相邻管道，如果相邻管道存在且尚未被访问过，并且两者之间有接口可以连接，则将相邻管道标记为已连接，并继续从该相邻管道开始进行深度优先搜索。
+    /// </summary>
+    /// <param name="towards">指定要检查和连接的相对方向（上、下、左、右）。</param>
     private void DepthFSearch(PipeTowards towards)
     {
         GameObject tempPipe;
@@ -170,24 +229,28 @@ public abstract class Pipe : MonoBehaviour
         PipeTowards tempTowards,tempSelfTowards;
         switch (towards)
         {
+            //传入方在接受方下面
             case PipeTowards.Above:
                 tempPipe = above;
                 tempComponent = AboveComponent;
                 tempTowards = PipeTowards.Below;
                 tempSelfTowards = PipeTowards.Above;
                 break;
+            //传入方在接收方上面
             case PipeTowards.Below:
                 tempPipe = below;
                 tempComponent = BelowComponent;
                 tempTowards = PipeTowards.Above;
                 tempSelfTowards = PipeTowards.Below;
                 break;
+            //传入方在接收方右边
             case PipeTowards.Left:
                 tempPipe = left;
                 tempComponent = LeftComponent;
                 tempTowards = PipeTowards.Right;
                 tempSelfTowards = PipeTowards.Left;
                 break;
+            //传入方在接收方左边
             case PipeTowards.Right:
                 tempPipe = right;
                 tempComponent = RightComponent;

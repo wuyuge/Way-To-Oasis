@@ -50,6 +50,7 @@
     <Compile Include="Assets\Script\Mask\AbandonTips\AbandonTips.cs" />
     <Compile Include="Assets\Script\UI\DownBar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\Script\MiniGame\Luo\PipeManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Script\Setting\Video\VSyncSetting.cs" />
     <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchToggle.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Assets\Script\DataManager\SaveManager\SaveConstants.cs" />
     <Compile Include="Assets\Script\Shop\ShopCharacterSelect.cs" />
     <Compile Include="Assets\Script\Start\CancelName.cs" />
+    <Compile Include="Assets\Script\MiniGame\Luo\AnglePipe.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\ChildObj\SaveChildObjManager.cs" />
     <Compile Include="Assets\Script\TalkSys\TalkSysShowText.cs" />
     <Compile Include="Assets\Script\Be7\Be7Text.cs" />
@@ -100,6 +102,7 @@
     <Compile Include="Assets\Script\Setting\Video\AntiQuality.cs" />
     <Compile Include="Assets\Script\Setting\Tech\ShowTech.cs" />
     <Compile Include="Assets\Script\QTE\QteButtonManager.cs" />
+    <Compile Include="Assets\Script\MiniGame\Luo\TShapePipe.cs" />
     <Compile Include="Assets\Script\SetPlayerName.cs" />
     <Compile Include="Assets\Script\UI\BackGroundMove\BackGroundMoving.cs" />
     <Compile Include="Assets\Script\CG\FullMode.cs" />

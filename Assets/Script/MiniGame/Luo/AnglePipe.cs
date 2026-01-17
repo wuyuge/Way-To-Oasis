@@ -1,0 +1,76 @@
+using UnityEngine;
+
+public class AnglePipe : Pipe
+{
+    public enum AnglePipeState
+    {
+        LeftAndUp,
+        RightAndUp,
+        RightAndDown,
+        LeftAndDown,
+        
+    }
+    
+    public AnglePipeState state;
+
+    public override void SetState()
+    {
+        switch (state)
+        {
+            case AnglePipeState.LeftAndUp:
+                state = AnglePipeState.RightAndUp;
+                break;
+            case AnglePipeState.RightAndUp:
+                state = AnglePipeState.RightAndDown;
+                break;
+            case AnglePipeState.RightAndDown:
+                state = AnglePipeState.LeftAndDown;
+                break;
+            case AnglePipeState.LeftAndDown:
+                state = AnglePipeState.LeftAndUp;
+                break;
+        }
+        if (isStartPoint)
+        {
+            CheckStartConnection();
+        }
+        base.SetState();
+    }
+
+
+    public override bool HaveInterface(PipeTowards towards)
+    {
+        switch (towards)
+        {
+            case PipeTowards.Above:
+                return state is AnglePipeState.LeftAndUp or AnglePipeState.RightAndUp;
+            case PipeTowards.Below:
+                return state is AnglePipeState.LeftAndDown or AnglePipeState.RightAndDown;
+            case PipeTowards.Left:
+                return state is AnglePipeState.LeftAndUp or AnglePipeState.LeftAndDown;
+            case PipeTowards.Right:
+                return state is AnglePipeState.RightAndDown or AnglePipeState.RightAndUp;
+            default:
+                return false;
+        }
+    }
+
+    public override void CheckStartConnection()
+    {
+        switch (startTowards)
+        {
+            case PipeTowards.Above:
+                isConnected = state is AnglePipeState.RightAndUp or  AnglePipeState.LeftAndUp;
+                return;
+            case PipeTowards.Below:
+                isConnected = state is AnglePipeState.LeftAndDown or AnglePipeState.RightAndDown;
+                break;
+            case PipeTowards.Left:
+                isConnected = state is AnglePipeState.LeftAndUp or AnglePipeState.LeftAndDown;
+                break;
+            case PipeTowards.Right:
+                isConnected = state is AnglePipeState.RightAndUp or AnglePipeState.RightAndDown;
+                break;
+        }
+    }
+}
