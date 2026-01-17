@@ -26,8 +26,8 @@ public abstract class Pipe : MonoBehaviour
         ObjectImage = GetComponent<Image>();
         SearchList = transform.parent.gameObject.GetComponent<PipeSearchList>();
         pipeNumber = transform.GetSiblingIndex();
-        above = pipeNumber - 4 >= 0  ? transform.parent.GetChild(pipeNumber - 4).gameObject : null;
-        below = pipeNumber + 4 < transform.parent.childCount ? gameObject.transform.parent.GetChild(pipeNumber + 4).gameObject : null;
+        below = pipeNumber - 4 >= 0  ? transform.parent.GetChild(pipeNumber - 4).gameObject : null;
+        above = pipeNumber + 4 < transform.parent.childCount ? gameObject.transform.parent.GetChild(pipeNumber + 4).gameObject : null;
         var rightIndex = pipeNumber + 1;
         right = (rightIndex < transform.parent.childCount) && (pipeNumber % 4 != 3) 
             ? transform.parent.GetChild(rightIndex).gameObject 
@@ -199,7 +199,7 @@ public abstract class Pipe : MonoBehaviour
         }
         if (tempPipe is not null && !ReachPipeList.Contains(tempPipe))
         {
-            if(RightComponent.HaveInterface(tempTowards) && HaveInterface(tempSelfTowards))
+            if(tempComponent.HaveInterface(tempTowards) && HaveInterface(tempSelfTowards))
             {
                 ReachPipeList.Add(tempPipe);
                 tempComponent.isConnected = true;

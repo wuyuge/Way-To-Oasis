@@ -38,8 +38,10 @@ public class StraightPipe : Pipe
                     startTowards = PipeTowards.Right;
                 }
             }
-            
+
+            CheckStartConnection();
             CheckConnectivity();
+            
         }
     }
 
