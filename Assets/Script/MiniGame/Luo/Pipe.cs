@@ -12,11 +12,9 @@ public abstract class Pipe : MonoBehaviour
     [SerializeField]
     protected GameObject above,below,left,right;
     public int pipeNumber;
-    protected Coroutine CurrentCoroutine;
     protected Pipe AboveComponent, LeftComponent,BelowComponent,RightComponent;
     private Animator _animator;
     protected Image ObjectImage;
-    protected PipeSearchList SearchList;
     public PipeTowards startTowards;
     protected static List<GameObject> ReachPipeList = new List<GameObject>();
     protected static GameObject StartPoint;
@@ -25,7 +23,6 @@ public abstract class Pipe : MonoBehaviour
     private void Awake()
     {
         ObjectImage = GetComponent<Image>();
-        SearchList = transform.parent.gameObject.GetComponent<PipeSearchList>();
         pipeNumber = transform.GetSiblingIndex();
         below = pipeNumber - 4 >= 0  ? transform.parent.GetChild(pipeNumber - 4).gameObject : null;
         above = pipeNumber + 4 < transform.parent.childCount ? gameObject.transform.parent.GetChild(pipeNumber + 4).gameObject : null;
@@ -118,14 +115,6 @@ public abstract class Pipe : MonoBehaviour
         }
     }
     
-    private void Update()
-    {
-        if (isStartPoint)
-        {
-            CheckStartConnection();
-        }
-        ObjectImage.color = isConnected ? Color.green : Color.red;
-    }
     
     
     public enum PipeTowards
@@ -182,13 +171,17 @@ public abstract class Pipe : MonoBehaviour
     public virtual void SetState()
     {
         RestConnection();
-        if (isStartPoint && isConnected)
+        if (isStartPoint)
         {
-            CheckConnectivity();
+            CheckStartConnection();
+            if (isStartPoint && isConnected)
+            {
+                CheckConnectivity();
+            }
         }
         else
         {
-            StartPoint.GetComponent<Pipe>().CheckConnectivity();
+            StartPipe.CheckConnectivity();
         }
     }
 

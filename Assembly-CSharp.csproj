@@ -73,6 +73,7 @@
     <Compile Include="Assets\Script\UI\Menu\ShowFPS.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\Script\ConversationHistroy\ConversationHistory.cs" />
+    <Compile Include="Assets\Script\MiniGame\Luo\BlindPipe.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Script\EndingsManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
@@ -127,7 +128,7 @@
     <Compile Include="Assets\Script\Shop\ShopManager.cs" />
     <Compile Include="Assets\Script\Setting\Video\ShowFPSInGame.cs" />
     <Compile Include="Assets\Script\Skip.cs" />
-    <Compile Include="Assets\Script\MiniGame\Luo\PipeSearchList.cs" />
+    <Compile Include="Assets\Script\MiniGame\Luo\LuoGameLoader.cs" />
     <Compile Include="Assets\Script\UI\AutoPlay\AutoPlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
@@ -136,12 +137,16 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\Script\UI\Manager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
+    <Compile Include="Assets\Script\MiniGame\Luo\LuoLevelFile.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\ChildObj\LoadChildObjManager.cs" />
+    <Compile Include="Assets\Script\MiniGame\Luo\LuoDraggable.cs" />
     <Compile Include="Assets\Script\Setting\Text\Preview\TextPreview.cs" />
     <Compile Include="Assets\Script\DataManager\SaveManager\SaveManager.cs" />
     <Compile Include="Assets\Script\UI\AssResources.cs" />
+    <Compile Include="Assets\Script\MiniGame\Draggable.cs" />
     <Compile Include="Assets\Script\Character\CharacterExpression.cs" />
     <Compile Include="Assets\Script\DataManager\SettingSave.cs" />
+    <Compile Include="Assets\Script\MiniGame\Luo\Pipe4Way.cs" />
     <Compile Include="Assets\Script\TalkSys\ITalkSysCore.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
