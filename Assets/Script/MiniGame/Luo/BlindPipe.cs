@@ -14,6 +14,15 @@ public class BlindPipe : Pipe
         }
         base.SetState();
     }
+    public override void SetState(int state)
+    {
+        if (isStartPoint)
+        {
+            CheckStartConnection();
+        }
+        base.SetState();
+        
+    }
 
     private void OnEnable()
     {

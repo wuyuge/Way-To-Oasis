@@ -20,7 +20,28 @@ public class StraightPipe : Pipe
         }
         base.SetState();
         
-    }    
+    } 
+    public override void SetState(int state)
+    {
+
+        switch (state)
+        {
+            case 2:
+            case 0:
+                isVertical = true;
+                break;
+            case 3:
+            case 1:
+                isVertical = false; 
+                break;
+        }
+        if (isStartPoint)
+        {
+            CheckStartConnection();
+        }
+        base.SetState();
+        
+    }
 
     public override bool HaveInterface(PipeTowards towards)
     {

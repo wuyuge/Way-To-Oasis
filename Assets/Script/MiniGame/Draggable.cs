@@ -19,7 +19,7 @@ public abstract class Draggable : MonoBehaviour, IDragHandler
         startPosition = GetComponent<RectTransform>().position;
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public virtual void OnDrag(PointerEventData eventData)
     {
         if (RectTransformUtility.ScreenPointToWorldPointInRectangle(
                 _rectTransform, eventData.position, eventData.pressEventCamera, out Vector3 worldPos))

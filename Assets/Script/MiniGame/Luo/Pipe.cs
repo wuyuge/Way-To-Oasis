@@ -19,7 +19,8 @@ public abstract class Pipe : MonoBehaviour
     protected static List<GameObject> ReachPipeList = new List<GameObject>();
     protected static GameObject StartPoint;
     protected static Pipe StartPipe;
-    public bool startIsVertical;
+    public bool startIsVertical,destinationIsVertical;
+    public Sprite pipeSprite;
     private void Awake()
     {
         ObjectImage = GetComponent<Image>();
@@ -71,6 +72,7 @@ public abstract class Pipe : MonoBehaviour
     /// </summary>
     public virtual void Start()
     {
+        ObjectImage.sprite = pipeSprite;
         if (isStartPoint)
         {
             ObjectImage.color = Color.blue;
@@ -181,9 +183,16 @@ public abstract class Pipe : MonoBehaviour
         }
         else
         {
-            StartPipe.CheckConnectivity();
+            if (StartPipe is not null) StartPipe.CheckConnectivity();
+            else
+            {
+                Debug.LogWarning("起始点空");
+                
+            }
         }
     }
+
+    public abstract void SetState(int stateIndex);
 
     public virtual void CheckConnectivity()
     {

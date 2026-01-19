@@ -9,6 +9,7 @@ public class LuoDraggable : Draggable,IPointerUpHandler,IPointerDownHandler
 {
     [SerializeField]
     private bool canRelease;
+    public PipeType itemType;
     public override void Awake()
     {
         base.Awake();
@@ -20,14 +21,14 @@ public class LuoDraggable : Draggable,IPointerUpHandler,IPointerDownHandler
         canRelease = true;
     }
 
-    private void OnCollisionExit2D(Collision2D other)
+    public override void OnDrag(PointerEventData eventData)
     {
-        canRelease = false;
+        base.OnDrag(eventData);
+        if (canRelease) canRelease = false;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("OnPointerUp");
         if (!canRelease)
         {
             gameObject.GetComponent<RectTransform>().position = startPosition;

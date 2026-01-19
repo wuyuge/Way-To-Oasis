@@ -37,6 +37,29 @@ public class AnglePipe : Pipe
         base.SetState();
     }
 
+    public override void SetState(int stateIndex)
+    {
+        switch (stateIndex)
+        {
+            case 1:
+                state = AnglePipeState.RightAndUp;
+                break;
+            case 2:
+                state = AnglePipeState.RightAndDown;
+                break;
+            case 3:
+                state = AnglePipeState.LeftAndDown;
+                break;
+            case 0:
+                state = AnglePipeState.LeftAndUp;
+                break;
+        }
+        if (isStartPoint)
+        {
+            CheckStartConnection();
+        }
+        base.SetState();
+    }
 
     public override bool HaveInterface(PipeTowards towards)
     {

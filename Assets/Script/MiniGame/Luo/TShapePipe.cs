@@ -36,6 +36,30 @@ public class TShapePipe : Pipe
         }
         base.SetState();
     }
+    
+    public override void SetState(int stateIndex)
+    {
+        switch (stateIndex)
+        {
+            case 1:
+                state = TShapePipeState.UpRightDown;
+                break;
+            case 2:
+                state = TShapePipeState.RightDownLeft;
+                break;
+            case 3:
+                state = TShapePipeState.DownLeftUp;
+                break;
+            case 0:
+                state = TShapePipeState.LeftUpRight;
+                break;
+        }
+        if (isStartPoint)
+        {
+            CheckStartConnection();
+        }
+        base.SetState();
+    }
 
 
     public override bool HaveInterface(PipeTowards towards)

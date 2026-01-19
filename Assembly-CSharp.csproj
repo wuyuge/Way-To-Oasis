@@ -53,6 +53,7 @@
     <Compile Include="Assets\Script\MiniGame\Luo\PipeManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Script\Setting\Video\VSyncSetting.cs" />
+    <Compile Include="Assets\Script\MiniGame\UICollision\UiCollider.cs" />
     <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchToggle.cs" />
     <Compile Include="Assets\Script\MiniGame\Luo\StraightPipe.cs" />
     <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchChoice.cs" />

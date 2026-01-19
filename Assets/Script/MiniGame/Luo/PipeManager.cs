@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public enum PipeType
 {
-    StraightPipe,AnglePipe,Pipe4Way,BlindPipe,TShapePipe
+    StraightPipe,AnglePipe,Pipe4Way,BlindPipe,TShapePipe,ReplacePipe
 }
 
 public class PipeManager : MonoBehaviour
@@ -17,15 +18,44 @@ public class PipeManager : MonoBehaviour
     public BlindPipe blindPipe;
     public TShapePipe tShapePipe;
     private Button _button;
-    public bool isStartPoint,startIsVertical,isDestination;
-    
-    
+    public bool canReplace;
+    public Transform itemBox;
+    [SerializeField]
+    private List<RectTransform> _items = new List<RectTransform>();
+    private RectTransform _rectTransform;
+    private PipeType _replaceType;
+    private bool _isCollision;
+    private GameObject _replaceItem;
 
+    
     private void Awake()
     {
+        itemBox = gameObject.transform.parent.parent.GetChild(transform.parent.parent.childCount - 1);
+        for (int i = 0; i < itemBox.childCount; i++)
+        {
+            _items.Add(itemBox.GetChild(i).GetComponent<RectTransform>());
+        }
+        _rectTransform = GetComponent<RectTransform>();
         _button = GetComponent<Button>();
         SetOff();
         
+    }
+
+    private void Update()
+    {
+        DetectCollision();
+        if (Input.GetMouseButtonUp(0))
+        {
+            OnPointerUp();
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (Input.GetMouseButtonUp(0))
+        {
+            OnPointerUp();
+        }
     }
 
 
@@ -64,7 +94,8 @@ public class PipeManager : MonoBehaviour
         }
     }
 
-    public void SetOpen(PipeType type)
+    public void SetOpen(PipeType type,int state = 0,bool isStartPoint = false,bool startIsVertical = false,
+        bool isDestination = false,bool destinationIsVertical = false)
     {
         SetOff();
         _button.enabled = true;
@@ -91,6 +122,9 @@ public class PipeManager : MonoBehaviour
                 blindPipe.enabled = true;
                 tempPipe = blindPipe;
                 break;
+            case PipeType.ReplacePipe:
+                canReplace = true;
+                return;
             default:
                 return;
         }
@@ -98,7 +132,39 @@ public class PipeManager : MonoBehaviour
         tempPipe.isStartPoint = isStartPoint;
         tempPipe.startIsVertical = startIsVertical;
         tempPipe.isDestination = isDestination;
-        
-        
+        tempPipe.destinationIsVertical = destinationIsVertical;
+        tempPipe.SetState(state);
     }
+
+    protected void DetectCollision()
+    {
+        if (canReplace)
+        {
+            foreach (var rect in _items)
+            {
+                if (UiCollider.IsCollision(_rectTransform, rect))
+                {
+                    var temp = rect.GetComponent<LuoDraggable>();
+                    temp.CollisionEnter();
+                    _isCollision = true;
+                    _replaceType = temp.itemType;
+                    _replaceItem = rect.gameObject;
+                    return;
+                }
+            }
+        }
+    }
+
+    public void OnPointerUp()
+    {
+        if (_isCollision)
+        {
+            _replaceItem.SetActive(false);
+            _isCollision = false;
+            canReplace = false;
+            SetOpen(_replaceType);
+        }
+    }
+    
+    
 }

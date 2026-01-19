@@ -1,7 +1,24 @@
+using System;
 using UnityEngine;
 
 
 public class LuoGameLoader : MonoBehaviour
 {
+    public LuoLevelFile levelFile;
     
+    public void LoadLevel()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            var typeList = levelFile.pipeTypeList[i];
+            transform.GetChild(i).gameObject.GetComponent<PipeManager>().SetOpen(typeList.type,typeList.state,typeList.isStartPoint,
+                typeList.startIsVertical,typeList.isDestination,typeList.destinationIsVertical);
+        }
+    }
+
+
+    private void Start()
+    {
+        LoadLevel();
+    }
 }

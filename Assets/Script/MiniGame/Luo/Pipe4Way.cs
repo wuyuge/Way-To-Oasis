@@ -9,6 +9,14 @@ public class Pipe4Way : Pipe
         }
         base.SetState();
     }
+    public override void SetState(int stateIndex)
+    {
+        if (isStartPoint)
+        {
+            CheckStartConnection();
+        }
+        base.SetState();
+    }
 
     public override bool HaveInterface(PipeTowards towards)
     {
