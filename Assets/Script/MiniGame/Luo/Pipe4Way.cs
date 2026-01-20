@@ -7,6 +7,10 @@ public class Pipe4Way : Pipe
         {
             CheckStartConnection();
         }
+        if (isDestination)
+        {
+            CheckDestinationConnection();
+        }
         base.SetState();
     }
     public override void SetState(int stateIndex)
@@ -14,6 +18,10 @@ public class Pipe4Way : Pipe
         if (isStartPoint)
         {
             CheckStartConnection();
+        }
+        if (isDestination)
+        {
+            CheckDestinationConnection();
         }
         base.SetState(stateIndex);
     }
@@ -26,5 +34,10 @@ public class Pipe4Way : Pipe
     public override void CheckStartConnection()
     {
         isConnected = true;
+    }
+
+    public override void CheckDestinationConnection()
+    {
+        Manager.destinationConnected = true;
     }
 }

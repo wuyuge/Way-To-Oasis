@@ -18,6 +18,10 @@ public class StraightPipe : Pipe
         {
             CheckStartConnection();
         }
+        if (isDestination)
+        {
+            CheckDestinationConnection();
+        }
         base.SetState();
         
     } 
@@ -38,6 +42,10 @@ public class StraightPipe : Pipe
         if (isStartPoint)
         {
             CheckStartConnection();
+        }
+        if (isDestination)
+        {
+            CheckDestinationConnection();
         }
         base.SetState(state);
         
@@ -73,5 +81,18 @@ public class StraightPipe : Pipe
         }
     }
     
-    
+    public override void CheckDestinationConnection()
+    {
+        switch (endTowards)
+        {
+            case PipeTowards.Below:
+            case PipeTowards.Above:
+                Manager.destinationConnected = isVertical;
+                break;
+            case PipeTowards.Left:
+            case PipeTowards.Right:
+                Manager.destinationConnected = !isVertical;
+                break;
+        }
+    }
 }

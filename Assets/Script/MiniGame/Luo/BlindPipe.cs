@@ -12,6 +12,11 @@ public class BlindPipe : Pipe
         {
             CheckStartConnection();
         }
+        
+        if (isDestination)
+        {
+            CheckDestinationConnection();
+        }
         base.SetState();
     }
     public override void SetState(int state)
@@ -19,6 +24,11 @@ public class BlindPipe : Pipe
         if (isStartPoint)
         {
             CheckStartConnection();
+        }
+
+        if (isDestination)
+        {
+            CheckDestinationConnection();
         }
         base.SetState();
         
@@ -37,5 +47,10 @@ public class BlindPipe : Pipe
     public override void CheckStartConnection()
     {
         isConnected = false;
+    }
+    
+    public override void CheckDestinationConnection()
+    {
+        Manager.SetDestinationConnect(false);
     }
 }

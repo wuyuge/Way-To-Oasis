@@ -34,6 +34,10 @@ public class AnglePipe : Pipe
         {
             CheckStartConnection();
         }
+        if (isDestination)
+        {
+            CheckDestinationConnection();
+        }
         base.SetState();
     }
 
@@ -57,6 +61,10 @@ public class AnglePipe : Pipe
         if (isStartPoint)
         {
             CheckStartConnection();
+        }
+        if (isDestination)
+        {
+            CheckDestinationConnection();
         }
         base.SetState(stateIndex);
     }
@@ -93,6 +101,25 @@ public class AnglePipe : Pipe
                 break;
             case PipeTowards.Right:
                 isConnected = state is AnglePipeState.RightAndUp or AnglePipeState.RightAndDown;
+                break;
+        }
+    }
+    
+    public override void CheckDestinationConnection()
+    {
+        switch (endTowards)
+        {
+            case PipeTowards.Above:
+                Manager.destinationConnected = state is AnglePipeState.RightAndUp or  AnglePipeState.LeftAndUp;
+                return;
+            case PipeTowards.Below:
+                Manager.destinationConnected = state is AnglePipeState.LeftAndDown or AnglePipeState.RightAndDown;
+                break;
+            case PipeTowards.Left:
+                Manager.destinationConnected = state is AnglePipeState.LeftAndUp or AnglePipeState.LeftAndDown;
+                break;
+            case PipeTowards.Right:
+                Manager.destinationConnected = state is AnglePipeState.RightAndUp or AnglePipeState.RightAndDown;
                 break;
         }
     }

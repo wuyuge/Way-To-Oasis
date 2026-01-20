@@ -34,6 +34,10 @@ public class TShapePipe : Pipe
         {
             CheckStartConnection();
         }
+        if (isDestination)
+        {
+            CheckDestinationConnection();
+        }
         base.SetState();
     }
     
@@ -57,6 +61,10 @@ public class TShapePipe : Pipe
         if (isStartPoint)
         {
             CheckStartConnection();
+        }
+        if (isDestination)
+        {
+            CheckDestinationConnection();
         }
         base.SetState(stateIndex);
     }
@@ -102,6 +110,29 @@ public class TShapePipe : Pipe
                 break;
             case PipeTowards.Right:
                 isConnected = state is TShapePipeState.RightDownLeft or TShapePipeState.LeftUpRight 
+                    or TShapePipeState.UpRightDown;
+                break;
+        }
+    }
+    
+    public override void CheckDestinationConnection()
+    {
+        switch (endTowards)
+        {
+            case PipeTowards.Above:
+                Manager.destinationConnected = state is TShapePipeState.DownLeftUp or TShapePipeState.LeftUpRight
+                    or TShapePipeState.UpRightDown;
+                return;
+            case PipeTowards.Below:
+                Manager.destinationConnected = state is TShapePipeState.DownLeftUp or TShapePipeState.RightDownLeft 
+                    or TShapePipeState.UpRightDown;
+                break;
+            case PipeTowards.Left:
+                Manager.destinationConnected = state is TShapePipeState.DownLeftUp or TShapePipeState.LeftUpRight 
+                    or TShapePipeState.RightDownLeft;
+                break;
+            case PipeTowards.Right:
+                Manager.destinationConnected = state is TShapePipeState.RightDownLeft or TShapePipeState.LeftUpRight 
                     or TShapePipeState.UpRightDown;
                 break;
         }

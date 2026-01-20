@@ -27,6 +27,7 @@ public class PipeManager : MonoBehaviour
     private bool _isCollision;
     private GameObject _replaceItem;
     public bool isDestination,isStartPoint;
+    public bool destinationConnected;
     private Pipe _activePipe;
     private Animator _anim;
     //TODO:拖拽物品逻辑优化
@@ -201,6 +202,10 @@ public class PipeManager : MonoBehaviour
     {
         _anim.SetInteger("State",0);
     }
-    
-    
+
+    public void SetDestinationConnect(bool value)
+    {
+        destinationConnected = value;
+    }
+
 }

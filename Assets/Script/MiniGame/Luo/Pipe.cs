@@ -15,17 +15,19 @@ public abstract class Pipe : MonoBehaviour
     protected PipeManager AboveComponent, LeftComponent,BelowComponent,RightComponent;
     private Animator _animator;
     protected Image ObjectImage;
-    public PipeTowards startTowards;
+    public PipeTowards startTowards,endTowards;
     protected static List<GameObject> ReachPipeList = new List<GameObject>();
     protected static GameObject StartPoint;
     protected static PipeManager StartPipe;
     public bool startIsVertical,destinationIsVertical;
     public Sprite pipeSprite;
+    protected PipeManager Manager;
     
-    //TODO:终点方向判断
+    
     private void Awake()
     {
         ObjectImage = GetComponent<Image>();
+        Manager = GetComponent<PipeManager>();
         pipeNumber = transform.GetSiblingIndex();
         below = pipeNumber - 4 >= 0  ? transform.parent.GetChild(pipeNumber - 4).gameObject : null;
         above = pipeNumber + 4 < transform.parent.childCount ? gameObject.transform.parent.GetChild(pipeNumber + 4).gameObject : null;
@@ -112,10 +114,37 @@ public abstract class Pipe : MonoBehaviour
                     startTowards = PipeTowards.Right;
                 }
             }
-
+            
             CheckStartConnection();
             CheckConnectivity();
             
+        }
+        if (isDestination)
+        {
+            if (destinationIsVertical)
+            {
+                if (above is null)
+                {
+                    endTowards = PipeTowards.Above;
+                }
+                else if (below is null)
+                {
+                    endTowards = PipeTowards.Below;
+                }
+
+            }
+            else if (!destinationIsVertical)
+            {
+                if (left is null)
+                {
+                    endTowards = PipeTowards.Left;
+                }
+
+                if (right is null)
+                {
+                    endTowards = PipeTowards.Right;
+                }
+            }
         }
     }
 
@@ -239,9 +268,10 @@ public abstract class Pipe : MonoBehaviour
         DepthFSearch(PipeTowards.Right);
         foreach (var pipe in ReachPipeList)
         {
-            if (pipe.GetComponent<PipeManager>().isDestination)
+            var manager = pipe.GetComponent<PipeManager>();
+            if (manager.isDestination && manager.destinationConnected)
             {
-                Debug.Log("检测到终点");
+                //TODO:检测到终点后的逻辑
             }
         }
 
@@ -255,6 +285,8 @@ public abstract class Pipe : MonoBehaviour
     public abstract bool HaveInterface(PipeTowards towards);
 
     public abstract void CheckStartConnection();
+    
+    public abstract void CheckDestinationConnection();
 
     /// <summary>
     /// 使用深度优先搜索算法检查并连接管道。该方法根据传入的方向尝试链接当前管道与相邻管道，如果相邻管道存在且尚未被访问过，并且两者之间有接口可以连接，则将相邻管道标记为已连接，并继续从该相邻管道开始进行深度优先搜索。
