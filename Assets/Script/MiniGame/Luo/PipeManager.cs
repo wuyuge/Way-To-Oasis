@@ -26,8 +26,10 @@ public class PipeManager : MonoBehaviour
     private PipeType _replaceType;
     private bool _isCollision;
     private GameObject _replaceItem;
-
-    
+    public bool isDestination,isStartPoint;
+    private Pipe _activePipe;
+    private Animator _anim;
+    //TODO:拖拽物品逻辑优化
     private void Awake()
     {
         itemBox = gameObject.transform.parent.parent.GetChild(transform.parent.parent.childCount - 1);
@@ -38,7 +40,7 @@ public class PipeManager : MonoBehaviour
         _rectTransform = GetComponent<RectTransform>();
         _button = GetComponent<Button>();
         SetOff();
-        
+        _anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -128,11 +130,15 @@ public class PipeManager : MonoBehaviour
             default:
                 return;
         }
-        
+
+        _activePipe = tempPipe;
+        this.isDestination = isDestination;
+        this.isStartPoint = isStartPoint;
         tempPipe.isStartPoint = isStartPoint;
         tempPipe.startIsVertical = startIsVertical;
         tempPipe.isDestination = isDestination;
         tempPipe.destinationIsVertical = destinationIsVertical;
+        _anim.SetInteger("State",state);
         tempPipe.SetState(state);
     }
 
@@ -149,6 +155,7 @@ public class PipeManager : MonoBehaviour
                     _isCollision = true;
                     _replaceType = temp.itemType;
                     _replaceItem = rect.gameObject;
+                    
                     return;
                 }
             }
@@ -164,6 +171,35 @@ public class PipeManager : MonoBehaviour
             canReplace = false;
             SetOpen(_replaceType);
         }
+    }
+
+    public void CheckConnectivity()
+    {
+        _activePipe.CheckConnectivity();
+    }
+
+    public bool HaveInterface(Pipe.PipeTowards towards)
+    {
+        if (_activePipe is null)
+        {
+            return false;
+            
+        }
+        return _activePipe.HaveInterface(towards);
+    }
+
+    public void SetConnect(bool value)
+    {
+        if (_activePipe is null)
+        {
+            return;
+        }
+        _activePipe.isConnected = value;
+    }
+
+    public void StateSetOver()
+    {
+        _anim.SetInteger("State",0);
     }
     
     

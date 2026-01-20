@@ -58,7 +58,7 @@ public class TShapePipe : Pipe
         {
             CheckStartConnection();
         }
-        base.SetState();
+        base.SetState(stateIndex);
     }
 
 

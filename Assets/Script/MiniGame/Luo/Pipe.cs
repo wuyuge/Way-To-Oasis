@@ -12,15 +12,17 @@ public abstract class Pipe : MonoBehaviour
     [SerializeField]
     protected GameObject above,below,left,right;
     public int pipeNumber;
-    protected Pipe AboveComponent, LeftComponent,BelowComponent,RightComponent;
+    protected PipeManager AboveComponent, LeftComponent,BelowComponent,RightComponent;
     private Animator _animator;
     protected Image ObjectImage;
     public PipeTowards startTowards;
     protected static List<GameObject> ReachPipeList = new List<GameObject>();
     protected static GameObject StartPoint;
-    protected static Pipe StartPipe;
+    protected static PipeManager StartPipe;
     public bool startIsVertical,destinationIsVertical;
     public Sprite pipeSprite;
+    
+    //TODO:终点方向判断
     private void Awake()
     {
         ObjectImage = GetComponent<Image>();
@@ -39,22 +41,22 @@ public abstract class Pipe : MonoBehaviour
         {
             if (above is not null)
             {
-                AboveComponent = above.GetComponent<Pipe>();
+                AboveComponent = above.GetComponent<PipeManager>();
                 
             }
             if (below is not null)
             {
-                BelowComponent = below.GetComponent<Pipe>();
+                BelowComponent = below.GetComponent<PipeManager>();
                 
             }
             if (left is not null)
             {
-                LeftComponent = left.GetComponent<Pipe>();
+                LeftComponent = left.GetComponent<PipeManager>();
                 
             }
             if (right is not null)
             {
-                RightComponent = right.GetComponent<Pipe>();
+                RightComponent = right.GetComponent<PipeManager>();
                 
             }
         }
@@ -77,7 +79,7 @@ public abstract class Pipe : MonoBehaviour
         {
             ObjectImage.color = Color.blue;
             StartPoint = gameObject;
-            StartPipe = StartPoint.GetComponent<Pipe>();
+            StartPipe = StartPoint.GetComponent<PipeManager>();
         }   
         if (isDestination)
         {
@@ -116,9 +118,21 @@ public abstract class Pipe : MonoBehaviour
             
         }
     }
-    
-    
-    
+
+    private void Update()
+    {
+        if (!isStartPoint && !isDestination)
+        {
+            if (isConnected)
+            {
+                ObjectImage.color = Color.green;
+                return;
+            }
+            ObjectImage.color = Color.red;
+        }
+    }
+
+
     public enum PipeTowards
     {
         Above,
@@ -142,16 +156,16 @@ public abstract class Pipe : MonoBehaviour
         switch (towards)
         {
             case PipeTowards.Above:
-                AboveComponent = above.GetComponent<Pipe>();
+                AboveComponent = above.GetComponent<PipeManager>();
                 break;
             case PipeTowards.Below:
-                BelowComponent = below.GetComponent<Pipe>();
+                BelowComponent = below.GetComponent<PipeManager>();
                 break;
             case PipeTowards.Right:
-                RightComponent = right.GetComponent<Pipe>();
+                RightComponent = right.GetComponent<PipeManager>();
                 break;
             case PipeTowards.Left:
-                LeftComponent = left.GetComponent<Pipe>();
+                LeftComponent = left.GetComponent<PipeManager>();
                 break;
         }
     }
@@ -160,10 +174,10 @@ public abstract class Pipe : MonoBehaviour
     {
         for (int index = 0; index < transform.parent.childCount; index++)
         {
-            Pipe tempPipe = transform.parent.GetChild(index).gameObject.GetComponent<Pipe>();
+            PipeManager tempPipe = transform.parent.GetChild(index).gameObject.GetComponent<PipeManager>();
             if (!tempPipe.isStartPoint)
             {
-                tempPipe.isConnected = false;
+                tempPipe.SetConnect(false);
             }
             
         }
@@ -186,13 +200,35 @@ public abstract class Pipe : MonoBehaviour
             if (StartPipe is not null) StartPipe.CheckConnectivity();
             else
             {
-                Debug.LogWarning("起始点空");
-                
+                Debug.LogWarning("起始点空,重新链接起点");
+                StartPoint = gameObject.transform.parent.GetChild(LuoGameStartPoint.GetStartPointIndex()).gameObject;
+                StartPipe = StartPoint.GetComponent<PipeManager>();
             }
         }
     }
 
-    public abstract void SetState(int stateIndex);
+    public virtual void SetState(int stateIndex)
+    {
+        RestConnection();
+        if (isStartPoint)
+        {
+            CheckStartConnection();
+            if (isStartPoint && isConnected)
+            {
+                CheckConnectivity();
+            }
+        }
+        else
+        {
+            if (StartPipe is not null) StartPipe.CheckConnectivity();
+            else
+            {
+                Debug.LogWarning("起始点空,重新链接起点");
+                StartPoint = gameObject.transform.parent.GetChild(LuoGameStartPoint.GetStartPointIndex()).gameObject;
+                StartPipe = StartPoint.GetComponent<PipeManager>();
+            }
+        }
+    }
 
     public virtual void CheckConnectivity()
     {
@@ -203,7 +239,7 @@ public abstract class Pipe : MonoBehaviour
         DepthFSearch(PipeTowards.Right);
         foreach (var pipe in ReachPipeList)
         {
-            if (pipe.GetComponent<Pipe>().isDestination)
+            if (pipe.GetComponent<PipeManager>().isDestination)
             {
                 Debug.Log("检测到终点");
             }
@@ -227,7 +263,7 @@ public abstract class Pipe : MonoBehaviour
     private void DepthFSearch(PipeTowards towards)
     {
         GameObject tempPipe;
-        Pipe tempComponent;
+        PipeManager tempComponent;
         PipeTowards tempTowards,tempSelfTowards;
         switch (towards)
         {
@@ -267,7 +303,7 @@ public abstract class Pipe : MonoBehaviour
             if(tempComponent.HaveInterface(tempTowards) && HaveInterface(tempSelfTowards))
             {
                 ReachPipeList.Add(tempPipe);
-                tempComponent.isConnected = true;
+                tempComponent.SetConnect(true);
                 tempComponent.CheckConnectivity();
             }
         }

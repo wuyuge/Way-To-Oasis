@@ -39,7 +39,7 @@ public class StraightPipe : Pipe
         {
             CheckStartConnection();
         }
-        base.SetState();
+        base.SetState(state);
         
     }
 

@@ -8,7 +8,7 @@ using UnityEngine.Serialization;
 public class LuoDraggable : Draggable,IPointerUpHandler,IPointerDownHandler
 {
     [SerializeField]
-    private bool canRelease;
+    public bool canRelease;
     public PipeType itemType;
     public override void Awake()
     {
@@ -19,6 +19,10 @@ public class LuoDraggable : Draggable,IPointerUpHandler,IPointerDownHandler
     public void CollisionEnter()
     {
         canRelease = true;
+    }
+    public void OnCollisionExit()
+    {
+        canRelease = false;
     }
 
     public override void OnDrag(PointerEventData eventData)
