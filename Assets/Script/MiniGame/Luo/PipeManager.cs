@@ -30,7 +30,9 @@ public class PipeManager : MonoBehaviour
     public bool destinationConnected;
     private Pipe _activePipe;
     private Animator _anim;
-    //TODO:拖拽物品逻辑优化
+
+    public static GameObject Collision;
+    
     private void Awake()
     {
         itemBox = gameObject.transform.parent.parent.GetChild(transform.parent.parent.childCount - 1);
@@ -46,16 +48,19 @@ public class PipeManager : MonoBehaviour
 
     private void Update()
     {
-        DetectCollision();
-        if (Input.GetMouseButtonUp(0))
+        if (!canReplace) return;
+        if (Collision is null)
         {
-            OnPointerUp();
+            DetectCollision();
         }
+        
+        
     }
 
     private void LateUpdate()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (!canReplace) return;
+        if (Input.GetMouseButtonUp(0) && Collision == gameObject)
         {
             OnPointerUp();
         }
@@ -127,6 +132,7 @@ public class PipeManager : MonoBehaviour
                 break;
             case PipeType.ReplacePipe:
                 canReplace = true;
+                GetComponent<Button>().enabled = false;
                 return;
             default:
                 return;
@@ -156,7 +162,7 @@ public class PipeManager : MonoBehaviour
                     _isCollision = true;
                     _replaceType = temp.itemType;
                     _replaceItem = rect.gameObject;
-                    
+                    Collision = gameObject;
                     return;
                 }
             }
@@ -170,12 +176,15 @@ public class PipeManager : MonoBehaviour
             _replaceItem.SetActive(false);
             _isCollision = false;
             canReplace = false;
+            Collision = null;
+            GetComponent<Button>().enabled = true;
             SetOpen(_replaceType);
         }
     }
 
     public void CheckConnectivity()
     {
+        if(_activePipe is null) return;
         _activePipe.CheckConnectivity();
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class LuoGameLoader : MonoBehaviour
 {
     public LuoLevelFile levelFile;
+    public GameObject replaceBox;
     
     
     public void LoadLevel()
@@ -18,6 +19,11 @@ public class LuoGameLoader : MonoBehaviour
             }
             transform.GetChild(i).gameObject.GetComponent<PipeManager>().SetOpen(typeList.type,typeList.state,typeList.isStartPoint,
                 typeList.startIsVertical,typeList.isDestination,typeList.destinationIsVertical);
+        }
+
+        foreach (var items in levelFile.replaceItems)
+        {
+            Instantiate(items, replaceBox.transform);
         }
     }
 

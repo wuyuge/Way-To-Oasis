@@ -11,4 +11,5 @@ public class LuoLevelFile : ScriptableObject
         public bool isStartPoint,startIsVertical,isDestination,destinationIsVertical;
     }
     public PipeTypeC[] pipeTypeList = new PipeTypeC[16];
+    public List<GameObject> replaceItems;
 }
