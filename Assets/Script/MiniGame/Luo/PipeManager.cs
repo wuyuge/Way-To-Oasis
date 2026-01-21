@@ -30,7 +30,7 @@ public class PipeManager : MonoBehaviour
     public bool destinationConnected;
     private Pipe _activePipe;
     private Animator _anim;
-
+    private RectTransform _replaceRectTransform;
     public static GameObject Collision;
     
     private void Awake()
@@ -49,13 +49,26 @@ public class PipeManager : MonoBehaviour
     private void Update()
     {
         if (!canReplace) return;
-        if (Collision is null)
+        DetectCollision();
+
+        if (_items.Count == 0)
         {
-            DetectCollision();
+            SearchItem();
         }
         
         
     }
+
+    void SearchItem()
+    {
+        itemBox = gameObject.transform.parent.parent.GetChild(transform.parent.parent.childCount - 1);
+        for (int i = 0; i < itemBox.childCount; i++)
+        {
+            _items.Add(itemBox.GetChild(i).GetComponent<RectTransform>());
+        }
+    }
+    
+    
 
     private void LateUpdate()
     {
@@ -153,6 +166,14 @@ public class PipeManager : MonoBehaviour
     {
         if (canReplace)
         {
+            if (Collision == gameObject && !UiCollider.IsCollision(_rectTransform,_replaceRectTransform))
+            {
+                _isCollision = false;
+                _replaceItem.GetComponent<LuoDraggable>().CollisionExit();
+                Collision = null;
+                _replaceItem = null;
+            }
+            
             foreach (var rect in _items)
             {
                 if (UiCollider.IsCollision(_rectTransform, rect))
@@ -162,6 +183,7 @@ public class PipeManager : MonoBehaviour
                     _isCollision = true;
                     _replaceType = temp.itemType;
                     _replaceItem = rect.gameObject;
+                    _replaceRectTransform = rect;
                     Collision = gameObject;
                     return;
                 }

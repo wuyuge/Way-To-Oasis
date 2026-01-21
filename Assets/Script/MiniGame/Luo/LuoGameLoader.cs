@@ -10,6 +10,16 @@ public class LuoGameLoader : MonoBehaviour
     
     public void LoadLevel()
     {
+        while (replaceBox.transform.childCount > 0)
+        {
+            Destroy(replaceBox.transform.GetChild(0).gameObject);
+        }
+
+        foreach (var items in levelFile.replaceItems)
+        {
+            Instantiate(items, replaceBox.transform);
+        }
+        
         for (int i = 0; i < transform.childCount; i++)
         {
             var typeList = levelFile.pipeTypeList[i];
@@ -21,10 +31,7 @@ public class LuoGameLoader : MonoBehaviour
                 typeList.startIsVertical,typeList.isDestination,typeList.destinationIsVertical);
         }
 
-        foreach (var items in levelFile.replaceItems)
-        {
-            Instantiate(items, replaceBox.transform);
-        }
+        
     }
 
 
@@ -32,6 +39,13 @@ public class LuoGameLoader : MonoBehaviour
     {
         LoadLevel();
     }
+
+    public void Restart()
+    {
+        LoadLevel();
+    }
+    
+    
 }
 
 public static class LuoGameStartPoint

@@ -20,7 +20,7 @@ public class LuoDraggable : Draggable,IPointerUpHandler,IPointerDownHandler
     {
         canRelease = true;
     }
-    public void OnCollisionExit()
+    public void CollisionExit()
     {
         canRelease = false;
     }
