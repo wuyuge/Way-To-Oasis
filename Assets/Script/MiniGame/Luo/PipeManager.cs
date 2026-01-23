@@ -29,12 +29,16 @@ public class PipeManager : MonoBehaviour
     public bool isDestination,isStartPoint;
     public bool destinationConnected;
     private Pipe _activePipe;
-    private Animator _anim;
+    public Animator anim;
     private RectTransform _replaceRectTransform;
     public static GameObject Collision;
+    private Image _objImage;
+    private Sprite _initSprite;
     
     private void Awake()
     {
+        _objImage = gameObject.GetComponent<Image>();
+        _initSprite = _objImage.sprite;
         itemBox = gameObject.transform.parent.parent.GetChild(transform.parent.parent.childCount - 1);
         for (int i = 0; i < itemBox.childCount; i++)
         {
@@ -43,7 +47,7 @@ public class PipeManager : MonoBehaviour
         _rectTransform = GetComponent<RectTransform>();
         _button = GetComponent<Button>();
         SetOff();
-        _anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -145,6 +149,8 @@ public class PipeManager : MonoBehaviour
                 break;
             case PipeType.ReplacePipe:
                 canReplace = true;
+                _objImage.sprite = _initSprite;
+                _objImage.color = Color.white;
                 GetComponent<Button>().enabled = false;
                 return;
             default:
@@ -158,7 +164,7 @@ public class PipeManager : MonoBehaviour
         tempPipe.startIsVertical = startIsVertical;
         tempPipe.isDestination = isDestination;
         tempPipe.destinationIsVertical = destinationIsVertical;
-        _anim.SetInteger("State",state);
+        anim.SetInteger("State",state);
         tempPipe.SetState(state);
     }
 
@@ -166,7 +172,7 @@ public class PipeManager : MonoBehaviour
     {
         if (canReplace)
         {
-            if (Collision == gameObject && !UiCollider.IsCollision(_rectTransform,_replaceRectTransform))
+            if (Collision == gameObject && !UiCollider.IsCollision(_rectTransform,_replaceRectTransform) && _replaceRectTransform.gameObject.activeSelf)
             {
                 _isCollision = false;
                 _replaceItem.GetComponent<LuoDraggable>().CollisionExit();
@@ -176,17 +182,27 @@ public class PipeManager : MonoBehaviour
             
             foreach (var rect in _items)
             {
-                if (UiCollider.IsCollision(_rectTransform, rect))
+                try
                 {
-                    var temp = rect.GetComponent<LuoDraggable>();
-                    temp.CollisionEnter();
-                    _isCollision = true;
-                    _replaceType = temp.itemType;
-                    _replaceItem = rect.gameObject;
-                    _replaceRectTransform = rect;
-                    Collision = gameObject;
+                    if (UiCollider.IsCollision(_rectTransform, rect) && rect.gameObject.activeSelf)
+                    {
+                        var temp = rect.GetComponent<LuoDraggable>();
+                        temp.CollisionEnter();
+                        _isCollision = true;
+                        _replaceType = temp.itemType;
+                        _replaceItem = rect.gameObject;
+                        _replaceRectTransform = rect;
+                        Collision = gameObject;
+                        return;
+                    }
+                }
+                catch (MissingReferenceException e)
+                {
+                    UpdateItemList();
+                    Console.WriteLine(e);
                     return;
                 }
+                
             }
         }
     }
@@ -231,12 +247,30 @@ public class PipeManager : MonoBehaviour
 
     public void StateSetOver()
     {
-        _anim.SetInteger("State",0);
+        anim.SetInteger("State",0);
     }
 
     public void SetDestinationConnect(bool value)
     {
         destinationConnected = value;
+    }
+
+    public void UpdateItemList()
+    {
+        _items.Clear();
+        for (int i = 0; i < itemBox.childCount; i++)
+        {
+            _items.Add(itemBox.GetChild(i).GetComponent<RectTransform>());
+        }
+    }
+
+    public void ResetConnection()
+    {
+        if (_activePipe == null)
+        {
+            return;
+        }
+        _activePipe.RestConnection();
     }
 
 }

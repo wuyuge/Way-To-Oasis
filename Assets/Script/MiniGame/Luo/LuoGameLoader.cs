@@ -8,11 +8,11 @@ public class LuoGameLoader : MonoBehaviour
     public GameObject replaceBox;
     
     
-    public void LoadLevel()
+    public void LoadLevel(bool reset = false)
     {
-        while (replaceBox.transform.childCount > 0)
+        foreach (Transform obj in replaceBox.transform)
         {
-            Destroy(replaceBox.transform.GetChild(0).gameObject);
+            Destroy(obj.gameObject);
         }
 
         foreach (var items in levelFile.replaceItems)
@@ -27,11 +27,21 @@ public class LuoGameLoader : MonoBehaviour
             {
                 LuoGameStartPoint.SetStartPointIndex(i);
             }
-            transform.GetChild(i).gameObject.GetComponent<PipeManager>().SetOpen(typeList.type,typeList.state,typeList.isStartPoint,
-                typeList.startIsVertical,typeList.isDestination,typeList.destinationIsVertical);
-        }
 
-        
+            PipeManager tempManager = transform.GetChild(i).gameObject.GetComponent<PipeManager>();
+            tempManager.UpdateItemList();
+            tempManager.SetOpen(typeList.type,typeList.state,typeList.isStartPoint,
+                typeList.startIsVertical,typeList.isDestination,typeList.destinationIsVertical);
+            if (reset)
+            {
+                ResetAnimator(tempManager); 
+            }
+            
+        }
+        PipeManager manager = transform.GetChild(0).gameObject.GetComponent<PipeManager>();
+        manager.ResetConnection();
+
+
     }
 
 
@@ -42,9 +52,14 @@ public class LuoGameLoader : MonoBehaviour
 
     public void Restart()
     {
-        LoadLevel();
+        LoadLevel(true);
     }
-    
+
+
+    private void ResetAnimator(PipeManager manager)
+    {
+        manager.anim.SetTrigger("Reset");
+    }
     
 }
 

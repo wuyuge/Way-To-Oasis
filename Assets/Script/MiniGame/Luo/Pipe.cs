@@ -148,6 +148,131 @@ public abstract class Pipe : MonoBehaviour
         }
     }
 
+    #region 重置用
+
+    
+
+    
+    private void OnEnable()
+    {
+        ObjectImage.sprite = pipeSprite;
+        RelinkOther();
+    }
+
+    void RelinkOther()
+    {
+        below = pipeNumber - 4 >= 0  ? transform.parent.GetChild(pipeNumber - 4).gameObject : null;
+        above = pipeNumber + 4 < transform.parent.childCount ? gameObject.transform.parent.GetChild(pipeNumber + 4).gameObject : null;
+        var rightIndex = pipeNumber + 1;
+        right = (rightIndex < transform.parent.childCount) && (pipeNumber % 4 != 3) 
+            ? transform.parent.GetChild(rightIndex).gameObject 
+            : null;
+        var leftIndex = pipeNumber - 1;
+        left = (leftIndex >= 0) && (pipeNumber % 4 != 0) 
+            ? transform.parent.GetChild(leftIndex).gameObject 
+            : null;
+        try
+        {
+            if (above is not null)
+            {
+                AboveComponent = above.GetComponent<PipeManager>();
+                
+            }
+            if (below is not null)
+            {
+                BelowComponent = below.GetComponent<PipeManager>();
+                
+            }
+            if (left is not null)
+            {
+                LeftComponent = left.GetComponent<PipeManager>();
+                
+            }
+            if (right is not null)
+            {
+                RightComponent = right.GetComponent<PipeManager>();
+                
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e,this);
+            throw;
+        }
+        if (isStartPoint)
+        {
+            ObjectImage.color = Color.blue;
+            StartPoint = gameObject;
+            StartPipe = StartPoint.GetComponent<PipeManager>();
+        }   
+        if (isDestination)
+        {
+            ObjectImage.color = Color.red;
+        }
+        
+        if (isStartPoint)
+        {
+            if (startIsVertical)
+            {
+                if (above is null)
+                {
+                    startTowards = PipeTowards.Above;
+                }
+                else if (below is null)
+                {
+                    startTowards = PipeTowards.Below;
+                }
+               
+            }
+            else if (!startIsVertical)
+            {
+                if (left is null)
+                {
+                    startTowards = PipeTowards.Left;
+                }
+
+                if (right is null)
+                {
+                    startTowards = PipeTowards.Right;
+                }
+            }
+            
+            CheckStartConnection();
+            CheckConnectivity();
+            
+        }
+        if (isDestination)
+        {
+            if (destinationIsVertical)
+            {
+                if (above is null)
+                {
+                    endTowards = PipeTowards.Above;
+                }
+                else if (below is null)
+                {
+                    endTowards = PipeTowards.Below;
+                }
+
+            }
+            else if (!destinationIsVertical)
+            {
+                if (left is null)
+                {
+                    endTowards = PipeTowards.Left;
+                }
+
+                if (right is null)
+                {
+                    endTowards = PipeTowards.Right;
+                }
+            }
+        }
+    }
+    
+    #endregion
+    
+
     private void Update()
     {
         if (!isStartPoint && !isDestination)
@@ -261,7 +386,11 @@ public abstract class Pipe : MonoBehaviour
 
     public virtual void CheckConnectivity()
     {
-        if (!isConnected && isStartPoint) return;
+        if (!isConnected && isStartPoint)
+        {
+            RestConnection();
+            return;
+        }
         DepthFSearch(PipeTowards.Above);
         DepthFSearch(PipeTowards.Below);
         DepthFSearch(PipeTowards.Left);
