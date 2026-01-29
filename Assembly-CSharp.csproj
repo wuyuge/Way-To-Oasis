@@ -50,6 +50,7 @@
     <Compile Include="Assets\Script\Mask\AbandonTips\AbandonTips.cs" />
     <Compile Include="Assets\Script\UI\DownBar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\Script\TalkSys\TalkSysFullMode.cs" />
     <Compile Include="Assets\Script\MiniGame\Luo\PipeManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Script\Setting\Video\VSyncSetting.cs" />

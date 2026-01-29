@@ -1,13 +1,13 @@
 {
     "SaveID": 0,
-    "SaveTime": "2026-01-14 12:11:00",
+    "SaveTime": "2026-01-29 12:02:42",
     "PlayerName": "■■",
     "Day": 0,
     "Body": 1,
-    "Food": 21,
+    "Food": 15,
     "AmandeKillSelf": false,
     "CarryBo": false,
-    "Stage": 1,
+    "Stage": 2,
     "DeadName": [
         "Leader"
     ],
@@ -22,12 +22,12 @@
         0
     ],
     "CharacterEat": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
     ],
     "IsRaining": false,
     "CharacterWeightTag": [

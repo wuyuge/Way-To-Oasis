@@ -60,7 +60,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
         
         if(!CanShowText) return;
 
-        if (_isShowCg)
+        if (FullModeState.GetValue(isFullMode:true))
         {
             return;
         }
@@ -337,8 +337,14 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
             
             return;
         }
+
+        var temp = TalkLines[DayNum].TxtLine[LineIndex];
+        if (Regex.IsMatch(temp, AsidePattern))
+        {
+            temp = temp.Replace("A_", string.Empty);
+        }
         _currentTextUI.text = string.Empty;
-        _currentTextUI.text = TalkLines[DayNum].TxtLine[LineIndex];
+        _currentTextUI.text = temp;
         
     }
 
@@ -428,14 +434,16 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
         
     }
 
-    public void ShowCg(string text)
+    private void ShowCg(string text)
     {
+        FullModeState.SetValue(true);
         text = text.Replace("CG", "");
         try
         {
             var index = int.Parse(text);
             cgManager.gameObject.SetActive(true);
             _isShowCg = cgManager.ShowCg(index);
+            
         }
         catch (Exception e)
         {
