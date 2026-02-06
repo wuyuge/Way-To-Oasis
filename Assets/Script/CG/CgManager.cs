@@ -6,7 +6,7 @@ public class CgManager : MonoBehaviour
 {
     public List<Sprite> cgList;
     public Image cgContainer;
-    public GameObject initialTransForm,fullModeTransForm,frame;
+    public GameObject initialTransForm,fullModeTransForm,frame,playerName,playerNameBox;
     public TalkSysShowText talkSysShowText;
     private Animator _animator;
     private bool _fullMode;
@@ -23,6 +23,8 @@ public class CgManager : MonoBehaviour
             return false;
         }
         cgContainer.sprite = cgList[index];
+        playerName.SetActive(false);
+        playerNameBox.SetActive(false);
         return true;
         
     }
@@ -30,11 +32,12 @@ public class CgManager : MonoBehaviour
     public void HideCg()
     {
         _animator.SetTrigger("Close");
-        talkSysShowText.CloseCg();
     }
 
     public void SetFalse()
     {
+        playerName.SetActive(true);
+        playerNameBox.SetActive(true);
         gameObject.SetActive(false);
     }
 

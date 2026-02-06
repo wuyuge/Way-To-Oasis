@@ -201,6 +201,7 @@ MonoBehaviour:
   autoplay: {fileID: 11400000, guid: 01e9442f63fffef43ac48e491938f56a, type: 2}
   autoPlayDelay: 1
   cgManager: {fileID: 0}
+  skipManager: {fileID: 11400000, guid: fe1f8465401e29e46823b95ffbe8976e, type: 2}
 --- !u!1 &3402700161156925720
 GameObject:
   m_ObjectHideFlags: 0

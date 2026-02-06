@@ -24,7 +24,6 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     private string PlayerNameBox => _talkSys.PlayerName.TxtLine[0];
     //一次性开关用于阻止指令执行完毕后继续读取下一条
     private int _stopCommend = 0;
-    private bool _isShowCg;
     private const string CgPattern = @"[C][G]\d+";//CG标记 CG+数字
     private const string AsidePattern = @"[A][_]";//旁白标记 A_
     public bool CanShowText { get; set; }
@@ -33,6 +32,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     [Header("自动播放")] public Manager autoplay;
     [Header("自动播放延迟")] public float autoPlayDelay;
     [Header("CG管理器")] public CgManager cgManager;
+    [Header("通用跳过文本管理器")] public Manager skipManager;
     private void Awake()
     {
         CanShowText = true;
@@ -144,7 +144,12 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
                 return;
             }
 
-            
+            if (curText == "HideCg")//安抚标记
+            {
+                CloseCg();
+                _talkSys.line++;
+                continue;
+            }
         
             
             CheckTextUI();
@@ -258,7 +263,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
                 _miniCharacterTalkSys.ShowText(charaName, stringValue);
             }
             
-            yield return new WaitForSeconds(IntervalTime);
+            yield return new WaitForSeconds(IntervalTime - (IntervalTime * ((autoplay.Weight - 1) * 0.1f)));
             
         }
         
@@ -267,7 +272,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
         _currentCoroutine = null;
         if (autoplay.GeneralBool && TalkLines[DayNum].TxtLine[LineIndex] is not null)
         {
-            Invoke(nameof(ShowText),autoPlayDelay);
+            Invoke(nameof(ShowText),autoPlayDelay/ autoplay.Weight);
         }
 
     }
@@ -442,7 +447,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
         {
             var index = int.Parse(text);
             cgManager.gameObject.SetActive(true);
-            _isShowCg = cgManager.ShowCg(index);
+            cgManager.ShowCg(index);
             
         }
         catch (Exception e)
@@ -456,9 +461,14 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
 
     public void CloseCg()
     {
-        _isShowCg = false;
+        cgManager.HideCg();
     }
-    
-    
+
+    public void Skip()
+    {
+        _talkSys.Talklines[DayNum] = skipManager;
+        _talkSys.line = 0;
+        ShowText();
+    }
 
 }

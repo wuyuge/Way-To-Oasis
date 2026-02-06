@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -190,6 +190,14 @@ MonoBehaviour:
   cgList:
   - {fileID: 21300000, guid: a7b4b340f938351498b8dbe77430804e, type: 3}
   - {fileID: 21300000, guid: a7b4b340f938351498b8dbe77430804e, type: 3}
+  - {fileID: -1630239467, guid: 59313010eba5ca145840c4ef9572c6b4, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: -396444009, guid: c7ef6f41924913245a6ce47277bfbbfa, type: 3}
+  - {fileID: -1773878044, guid: b985422d55d10d342aeb2c455eaa862d, type: 3}
   cgContainer: {fileID: 1062621470551944296}
   initialTransForm: {fileID: 0}
   fullModeTransForm: {fileID: 0}

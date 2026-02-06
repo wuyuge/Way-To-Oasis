@@ -43,10 +43,6 @@ public class SetFPS : MonoBehaviour,SettingInitialize
                 
                 break;
             case 3:
-                Application.targetFrameRate = 240;
-                
-                break;
-            case 4:
                 Application.targetFrameRate = -1;
                 
                 break;

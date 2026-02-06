@@ -37,7 +37,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -75,8 +75,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -178,12 +178,13 @@ MonoBehaviour:
   pipe4Way: {fileID: 6600579999729865917}
   blindPipe: {fileID: 5524564986437455166}
   tShapePipe: {fileID: 4693028933817377371}
-  isStartPoint: 0
-  startIsVertical: 0
-  isDestination: 0
   canReplace: 0
   itemBox: {fileID: 0}
   _items: []
+  isDestination: 0
+  isStartPoint: 0
+  destinationConnected: 0
+  anim: {fileID: 0}
 --- !u!114 &7326593494384679470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,8 +206,10 @@ MonoBehaviour:
   right: {fileID: 0}
   pipeNumber: 0
   startTowards: 0
+  endTowards: 0
   startIsVertical: 0
-  pipeSprite: {fileID: 21300000, guid: 36caa987c4fc02c4e9c2433c17bc8045, type: 3}
+  destinationIsVertical: 0
+  pipeSprite: {fileID: 983413791, guid: a8f685ccd3025734d918d31ff3368ae9, type: 3}
   isVertical: 1
 --- !u!114 &6600579999729865917
 MonoBehaviour:
@@ -229,8 +232,10 @@ MonoBehaviour:
   right: {fileID: 0}
   pipeNumber: 0
   startTowards: 0
+  endTowards: 0
   startIsVertical: 0
-  pipeSprite: {fileID: 21300000, guid: d9502e3535b2a134fb1f0b0ea6e90dbf, type: 3}
+  destinationIsVertical: 0
+  pipeSprite: {fileID: 1266809037, guid: 3572bf82aaa4c4b4c9478771ded90a0d, type: 3}
 --- !u!114 &5524564986437455166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +257,9 @@ MonoBehaviour:
   right: {fileID: 0}
   pipeNumber: 0
   startTowards: 0
+  endTowards: 0
   startIsVertical: 0
+  destinationIsVertical: 0
   pipeSprite: {fileID: 21300000, guid: 2bd4f5fea009c984d95aafa7e7e5eb50, type: 3}
 --- !u!114 &6759532128563792225
 MonoBehaviour:
@@ -275,8 +282,10 @@ MonoBehaviour:
   right: {fileID: 0}
   pipeNumber: 0
   startTowards: 0
+  endTowards: 0
   startIsVertical: 0
-  pipeSprite: {fileID: 21300000, guid: d22d3a783f53cbd4db76db3e5774c762, type: 3}
+  destinationIsVertical: 0
+  pipeSprite: {fileID: 21300000, guid: 0966f2728774c4c448317a0c04364671, type: 3}
   state: 0
 --- !u!114 &4693028933817377371
 MonoBehaviour:
@@ -299,8 +308,10 @@ MonoBehaviour:
   right: {fileID: 0}
   pipeNumber: 0
   startTowards: 0
+  endTowards: 0
   startIsVertical: 0
-  pipeSprite: {fileID: 21300000, guid: 097df3416f0bd70498b3da660bc3e659, type: 3}
+  destinationIsVertical: 0
+  pipeSprite: {fileID: 21300000, guid: b432767df99518c48a82d7ca53d34702, type: 3}
   state: 0
 --- !u!61 &929528436917284875
 BoxCollider2D:

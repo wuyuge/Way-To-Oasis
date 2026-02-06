@@ -79,14 +79,10 @@ public abstract class Pipe : MonoBehaviour
         ObjectImage.sprite = pipeSprite;
         if (isStartPoint)
         {
-            ObjectImage.color = Color.blue;
             StartPoint = gameObject;
             StartPipe = StartPoint.GetComponent<PipeManager>();
         }   
-        if (isDestination)
-        {
-            ObjectImage.color = Color.red;
-        }
+
         
         if (isStartPoint)
         {
@@ -201,14 +197,9 @@ public abstract class Pipe : MonoBehaviour
         }
         if (isStartPoint)
         {
-            ObjectImage.color = Color.blue;
             StartPoint = gameObject;
             StartPipe = StartPoint.GetComponent<PipeManager>();
         }   
-        if (isDestination)
-        {
-            ObjectImage.color = Color.red;
-        }
         
         if (isStartPoint)
         {
@@ -273,18 +264,6 @@ public abstract class Pipe : MonoBehaviour
     #endregion
     
 
-    private void Update()
-    {
-        if (!isStartPoint && !isDestination)
-        {
-            if (isConnected)
-            {
-                ObjectImage.color = Color.green;
-                return;
-            }
-            ObjectImage.color = Color.red;
-        }
-    }
 
 
     public enum PipeTowards

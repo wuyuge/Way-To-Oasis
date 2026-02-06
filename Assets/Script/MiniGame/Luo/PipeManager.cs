@@ -21,7 +21,7 @@ public class PipeManager : MonoBehaviour
     public bool canReplace;
     public Transform itemBox;
     [SerializeField]
-    private List<RectTransform> _items = new List<RectTransform>();
+    public List<RectTransform> _items = new List<RectTransform>();
     private RectTransform _rectTransform;
     private PipeType _replaceType;
     private bool _isCollision;

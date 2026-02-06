@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1874eadde2fc9a048a1f115dfd5747f4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b624cac23effe204bbe1e415a863c730, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2222,6 +2222,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5418744577709053878}
     m_Modifications:
+    - target: {fileID: 379239228875616221, guid: c0715a49cc6e22347be38880b43db20c, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 515467196551516539, guid: c0715a49cc6e22347be38880b43db20c, type: 3}
       propertyPath: graphic
       value: 
@@ -2444,6 +2448,10 @@ PrefabInstance:
     - target: {fileID: 536726777374302186, guid: 7fc13d25c574e204ca74e66429ded3fd, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 928910044074074049, guid: 7fc13d25c574e204ca74e66429ded3fd, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1356657607772249649, guid: 7fc13d25c574e204ca74e66429ded3fd, type: 3}
       propertyPath: m_IsActive
@@ -2690,6 +2698,14 @@ PrefabInstance:
       propertyPath: graphic
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4842381701073759625, guid: 72c08f9a1f7a773449ef704d882d4b2c, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842381701073759625, guid: 72c08f9a1f7a773449ef704d882d4b2c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 17500dc174fd7bb48a1f048dab3bcbfd, type: 3}
     - target: {fileID: 5589998293560574183, guid: 72c08f9a1f7a773449ef704d882d4b2c, type: 3}
       propertyPath: m_Name
       value: ShowFPS
@@ -2813,6 +2829,10 @@ PrefabInstance:
     - target: {fileID: 7486536072539101245, guid: 72c08f9a1f7a773449ef704d882d4b2c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311051300301231547, guid: 72c08f9a1f7a773449ef704d882d4b2c, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9058380757867293615, guid: 72c08f9a1f7a773449ef704d882d4b2c, type: 3}
       propertyPath: m_Sprite
