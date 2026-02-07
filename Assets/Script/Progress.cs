@@ -153,6 +153,7 @@ public class Progress : MonoBehaviour
     /// </summary>
     void Start()
     {
+        GlobalData.Day = day_num;
         _thisButton = this.GetComponent<Button>();
         AudioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         talkSys = TalkBar.GetComponent<TalkSystem>();
@@ -478,7 +479,7 @@ public class Progress : MonoBehaviour
            
 
             
-            
+            GlobalData.Day = day_num;
 
             // 通知对象管理器重置道具携带状态（可能将携带道具放回背包）
             ObjectManager.GetComponent<ObjectManager>().ReturnCarry();
@@ -604,3 +605,11 @@ public class Progress : MonoBehaviour
     }
 
 }
+
+public static class GlobalData
+{
+
+    public static int Day { get; set; }
+
+}
+

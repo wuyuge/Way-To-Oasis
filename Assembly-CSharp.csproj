@@ -108,6 +108,7 @@
     <Compile Include="Assets\Script\QTE\QteButtonManager.cs" />
     <Compile Include="Assets\Script\MiniGame\Luo\TShapePipe.cs" />
     <Compile Include="Assets\Script\SetPlayerName.cs" />
+    <Compile Include="Assets\Script\TalkLine\WalkingTalk\WalkingTalk.cs" />
     <Compile Include="Assets\Script\UI\BackGroundMove\BackGroundMoving.cs" />
     <Compile Include="Assets\Script\CG\FullMode.cs" />
     <Compile Include="Assets\Script\SwitchStageBar\SetSwitchText.cs" />

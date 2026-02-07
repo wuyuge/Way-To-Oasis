@@ -667,6 +667,7 @@ GameObject:
   - component: {fileID: 4821426798022909600}
   - component: {fileID: 3084521243975858150}
   - component: {fileID: 8152848415210783011}
+  - component: {fileID: 349752054921547263}
   m_Layer: 5
   m_Name: MiniCharacter
   m_TagString: Untagged
@@ -756,6 +757,7 @@ MonoBehaviour:
   CampLight: {fileID: 5496976462299121777}
   WalkingSound: {fileID: 8152848415210783011}
   CampFire: {fileID: 7739576797897496268}
+  isWalking: 0
 --- !u!114 &4821426798022909600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,6 +898,57 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &349752054921547263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3046588282403891410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c9fb9c2a82bee943b219b56ab5394bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talkListD13:
+  - textContainer: {fileID: 11400000, guid: d713ba843360bc347936bdd84443f050, type: 2}
+    isRaining: 0
+    isContinuous: 0
+    speaker: 00000000
+  - textContainer: {fileID: 11400000, guid: 2137967f7cc48f5499450019ebdb36d1, type: 2}
+    isRaining: 0
+    isContinuous: 0
+    speaker: 01000000
+  - textContainer: {fileID: 11400000, guid: d7e290b0b98b2914ba8f8f735799b2ce, type: 2}
+    isRaining: 0
+    isContinuous: 0
+    speaker: 02000000
+  - textContainer: {fileID: 11400000, guid: fa3e6898900de8f4f9573a6559d18f6b, type: 2}
+    isRaining: 0
+    isContinuous: 0
+    speaker: 04000000
+  - textContainer: {fileID: 11400000, guid: 67aa57f24bd00ed459e1b1020cd945f2, type: 2}
+    isRaining: 0
+    isContinuous: 0
+    speaker: 03000000
+  - textContainer: {fileID: 11400000, guid: 8f14625ff54577b48a313419d93022c8, type: 2}
+    isRaining: 0
+    isContinuous: 1
+    speaker: 0400000002000000
+  - textContainer: {fileID: 11400000, guid: c7eab5859058c3b459e8b7734f67e045, type: 2}
+    isRaining: 1
+    isContinuous: 0
+    speaker: 05000000
+  rain: {fileID: 0}
+  state: {fileID: 5479206781262853986}
+  talkSys: {fileID: 4821426798022909600}
+  waitTime: 1.5
+  textWaitTime: 1
+  aimi: {fileID: 0}
+  amande: {fileID: 0}
+  bo: {fileID: 0}
+  lai: {fileID: 0}
+  luo: {fileID: 0}
 --- !u!1 &3192351112741073731
 GameObject:
   m_ObjectHideFlags: 0

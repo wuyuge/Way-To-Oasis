@@ -58,7 +58,7 @@ public class MiniCharacterManager : MonoBehaviour
 
     public GameObject CampFire;
 
-
+    public bool isWalking;
 
     private void Awake()
     {
@@ -282,7 +282,7 @@ public class MiniCharacterManager : MonoBehaviour
         CampFire.SetActive(true);
 
 
-
+        isWalking = false;
         CampLight.SetActive(true);
 
         Invoke(nameof(EnableAnimator), 1f);
@@ -309,6 +309,7 @@ public class MiniCharacterManager : MonoBehaviour
         {
             WalkingSound.Stop();
         }
+        isWalking = false;
         CampFire.SetActive(false);
     }
 
@@ -330,6 +331,8 @@ public class MiniCharacterManager : MonoBehaviour
             
             anim.SetTrigger("Walk");
         }
+
+        isWalking = true;
         CampFire.SetActive(false);
         Invoke(nameof(EnableAnimator), 1f);
     }
