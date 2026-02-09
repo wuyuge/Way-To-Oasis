@@ -50,23 +50,21 @@ public class ConversationHistory : MonoBehaviour
         {
             case "艾米莉":
                 characterImage.sprite = characterSprites[0];
-                
                 break;
             case "洛尔坎":
                 characterImage.sprite = characterSprites[1];
-                
                 break;
             case "博金森":
                 characterImage.sprite = characterSprites[2];
-                
                 break;
             case "阿曼德":
                 characterImage.sprite = characterSprites[3];
-                
                 break;
             case "莱文":
                 characterImage.sprite = characterSprites[4];
-                
+                break;
+            case "商人":
+                characterImage.sprite = characterSprites[5];
                 break;
             default:
                 Debug.LogError($"历史对话设定角色图片错误 传入参数{characterName}");

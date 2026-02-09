@@ -8,7 +8,11 @@ public class ClickSound : MonoBehaviour
 
     public void Start()
     {
-        AudioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        if (AudioManager is null)
+        {
+            AudioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        }
+        
     }
 
 

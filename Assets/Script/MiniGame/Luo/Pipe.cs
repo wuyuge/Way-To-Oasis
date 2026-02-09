@@ -278,6 +278,15 @@ public abstract class Pipe : MonoBehaviour
     public void Click()
     {
         _animator.SetTrigger("rotate");
+        if (LuoStaticData.CurrentPipe == gameObject)
+        {
+            LuoStaticData.RollTime++;
+        }
+        else
+        {
+            LuoStaticData.CurrentPipe = gameObject;
+            LuoStaticData.RollTime = 0;
+        }
     }
 
     /// <summary>
@@ -379,7 +388,7 @@ public abstract class Pipe : MonoBehaviour
             var manager = pipe.GetComponent<PipeManager>();
             if (manager.isDestination && manager.destinationConnected)
             {
-                //TODO:检测到终点后的逻辑
+                LuoStaticData.Success = true;
             }
         }
 
@@ -447,6 +456,9 @@ public abstract class Pipe : MonoBehaviour
                 tempComponent.CheckConnectivity();
             }
         }
+
+        LuoStaticData.MaxReach = Mathf.Max(LuoStaticData.MaxReach, ReachPipeList.Count);
+        LuoStaticData.CurrentReach = ReachPipeList.Count;
     }
     
 

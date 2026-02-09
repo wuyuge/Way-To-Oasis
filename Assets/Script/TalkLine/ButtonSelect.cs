@@ -43,7 +43,11 @@ public class ButtonSelect : MonoBehaviour
         {
             textbox = textBox;
             buttonText.text = textbox.TxtLine[0];
-            playerTalkBack.SetActive(false);
+            if (playerTalkBack is not null)
+            {
+                playerTalkBack.SetActive(false);
+            }
+            
         }
         catch (Exception e)
         {

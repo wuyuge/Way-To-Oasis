@@ -117,6 +117,10 @@ public class PipeManager : MonoBehaviour
         {
             tShapePipe.Click();
         }
+        
+        System.DateTime now = System.DateTime.Now;
+        int hourMinute = now.Hour * 100 + now.Minute;
+        LuoStaticData.Time = hourMinute;
     }
 
     public void SetOpen(PipeType type,int state = 0,bool isStartPoint = false,bool startIsVertical = false,

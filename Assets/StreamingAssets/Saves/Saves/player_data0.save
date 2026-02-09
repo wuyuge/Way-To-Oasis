@@ -1,10 +1,10 @@
 {
     "SaveID": 0,
-    "SaveTime": "2026-02-07 13:09:51",
+    "SaveTime": "2026-02-09 11:09:40",
     "PlayerName": "■■",
-    "Day": 1,
-    "Body": 2,
-    "Food": 36,
+    "Day": 2,
+    "Body": 1,
+    "Food": 15,
     "AmandeKillSelf": false,
     "CarryBo": false,
     "Stage": 1,
@@ -22,12 +22,12 @@
         0
     ],
     "CharacterEat": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
     ],
     "IsRaining": false,
     "CharacterWeightTag": [

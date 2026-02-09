@@ -9,7 +9,11 @@ public class SettingSave : MonoBehaviour
 
     private void Awake()
     {
-        SettingManager = GameObject.Find("SaveManager").GetComponent<SettingDataManager>();
+        if (SettingManager is null)
+        {
+            SettingManager = GameObject.Find("SaveManager").GetComponent<SettingDataManager>();
+        }
+        
     }
 
     public void Save()

@@ -212,6 +212,7 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
             if (InShop)
             {
                 _shopGeneralName.text = "商人";
+                tempHistory.CharacterName = "商人";
             }
             else
             {

@@ -81,6 +81,7 @@
     <Compile Include="Assets\Script\EndingsManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Script\DayNightSystem.cs" />
+    <Compile Include="Assets\Script\MiniGame\Luo\Talk\MiniLuoTalk.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Script\Setting\Audio\AudioSettingManager.cs" />
     <Compile Include="Assets\Script\Day0\Day0SwicthMain.cs" />

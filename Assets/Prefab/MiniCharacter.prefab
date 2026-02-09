@@ -408,7 +408,7 @@ MonoBehaviour:
   - {x: -128.15538, y: -454.69122, z: 0.116859734}
   m_ShapePathHash: -741257358
   m_Mesh: {fileID: 0}
-  m_InstanceId: -34524
+  m_InstanceId: 45742
   m_LocalBounds:
     m_Center: {x: 32.17531, y: -230.99501, z: 0}
     m_Extent: {x: 160.33069, y: 239.13689, z: 0}
@@ -650,7 +650,7 @@ MonoBehaviour:
   - {x: -140.68915, y: -183.27817, z: -0.000030517578}
   m_ShapePathHash: -1218395553
   m_Mesh: {fileID: 0}
-  m_InstanceId: -34536
+  m_InstanceId: 45734
   m_LocalBounds:
     m_Center: {x: -23.881874, y: -266.65558, z: 0}
     m_Extent: {x: 116.807274, y: 234.99016, z: 0}
@@ -935,14 +935,30 @@ MonoBehaviour:
     isRaining: 0
     isContinuous: 1
     speaker: 0400000002000000
-  - textContainer: {fileID: 11400000, guid: c7eab5859058c3b459e8b7734f67e045, type: 2}
+  - textContainer: {fileID: 11400000, guid: b5ba11bba575a0e479c92d77ee5131da, type: 2}
     isRaining: 1
     isContinuous: 0
-    speaker: 05000000
+    speaker: 00000000
+  - textContainer: {fileID: 11400000, guid: 975d20f0b66f3bd42914814a45ea75bf, type: 2}
+    isRaining: 1
+    isContinuous: 0
+    speaker: 01000000
+  - textContainer: {fileID: 11400000, guid: 2bb16d0afd0d0f943b2a8ff1a5de175f, type: 2}
+    isRaining: 1
+    isContinuous: 0
+    speaker: 02000000
+  - textContainer: {fileID: 11400000, guid: 0b49e4e8b1b50ed4c9f06928ae1fab10, type: 2}
+    isRaining: 1
+    isContinuous: 0
+    speaker: 04000000
+  - textContainer: {fileID: 11400000, guid: 18500a135e49a54409a07d997e4ec7eb, type: 2}
+    isRaining: 1
+    isContinuous: 0
+    speaker: 03000000
   rain: {fileID: 0}
   state: {fileID: 5479206781262853986}
   talkSys: {fileID: 4821426798022909600}
-  waitTime: 1.5
+  waitTime: 3
   textWaitTime: 1
   aimi: {fileID: 0}
   amande: {fileID: 0}
@@ -1381,7 +1397,7 @@ MonoBehaviour:
   - {x: 12.941795, y: -1281.1093, z: 0}
   m_ShapePathHash: -1631194660
   m_Mesh: {fileID: 0}
-  m_InstanceId: -34548
+  m_InstanceId: 45496
   m_LocalBounds:
     m_Center: {x: -11.613403, y: -1178.903, z: 0}
     m_Extent: {x: 266.99814, y: 102.2063, z: 0}
@@ -2742,7 +2758,7 @@ MonoBehaviour:
   - {x: -216.83897, y: -669.3368, z: 0.00048828125}
   m_ShapePathHash: 726556585
   m_Mesh: {fileID: 0}
-  m_InstanceId: -34512
+  m_InstanceId: 45630
   m_LocalBounds:
     m_Center: {x: -28.44313, y: -672.01807, z: 0}
     m_Extent: {x: 188.39584, y: 76.5101, z: 0}
