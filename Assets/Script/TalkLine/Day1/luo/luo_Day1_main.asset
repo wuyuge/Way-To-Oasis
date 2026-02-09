@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: luo_Day1_main
   m_EditorClassIdentifier: 
   TxtLine:
-  - ${${ShowCharacterTalkBox}}
+  - ${ShowCharacterTalkBox}
   - ->c
   - "\u6D1B\u5C14\u574E\uFF1A\u961F\uFF0C\u961F\u957F\uFF0C\u627E\u6211\u6709\u4EC0\u4E48\u4E8B\u5417\uFF1F"
   - "\u6D1B\u5C14\u574E\uFF1A\u5982\u679C\u662F\u6C47\u62A5\u60C5\u51B5\u7684\u8BDD\u2026\u2026"

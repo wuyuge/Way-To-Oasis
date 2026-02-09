@@ -22,8 +22,8 @@ public abstract class Pipe : MonoBehaviour
     public bool startIsVertical,destinationIsVertical;
     public Sprite pipeSprite;
     protected PipeManager Manager;
-    
-    
+    private static GameObject _startPipe, _endPipe;
+    public GameObject upP, downP, leftP, rightP;
     private void Awake()
     {
         ObjectImage = GetComponent<Image>();
@@ -69,10 +69,23 @@ public abstract class Pipe : MonoBehaviour
         }
         
         _animator = GetComponent<Animator>();
+        if (_startPipe is null)
+        {
+            _startPipe = gameObject.transform.parent.parent.parent.Find("StartPipe").gameObject;
+        }
+        if (_endPipe is null)
+        {
+            _endPipe = gameObject.transform.parent.parent.parent.Find("EndPipe").gameObject;
+        }
+
+        upP = transform.Find("Up").gameObject;
+        downP = transform.Find("Down").gameObject;
+        rightP = transform.Find("Right").gameObject;
+        leftP = transform.Find("Left").gameObject;
     }
 
     /// <summary>
-    /// 初始化管道组件。如果该管道是起点，则将其颜色设置为蓝色，并开始尝试链接其他管道形成通路；如果该管道是终点，则将其颜色设置为红色。
+    /// 初始化管道组件。如果该管道是起点，开始尝试链接其他管道形成通路
     /// </summary>
     public virtual void Start()
     {
@@ -110,7 +123,7 @@ public abstract class Pipe : MonoBehaviour
                     startTowards = PipeTowards.Right;
                 }
             }
-            
+            SwitchPipePosition(_startPipe,startTowards);
             CheckStartConnection();
             CheckConnectivity();
             
@@ -141,6 +154,7 @@ public abstract class Pipe : MonoBehaviour
                     endTowards = PipeTowards.Right;
                 }
             }
+            SwitchPipePosition(_endPipe,endTowards);
         }
     }
 
@@ -460,6 +474,34 @@ public abstract class Pipe : MonoBehaviour
         LuoStaticData.MaxReach = Mathf.Max(LuoStaticData.MaxReach, ReachPipeList.Count);
         LuoStaticData.CurrentReach = ReachPipeList.Count;
     }
+
+    public void SwitchPipePosition(GameObject pipe,PipeTowards towards)
+    {
+        switch (towards)
+        {
+            case PipeTowards.Above:
+                pipe.transform.position = upP.transform.position;
+                // 欧拉角(0,0,0) → 无旋转
+                pipe.transform.rotation = Quaternion.Euler(0, 0, 0);
+                break;
+            case PipeTowards.Below:
+                pipe.transform.position = downP.transform.position;
+                // 欧拉角(0,0,180) 等价于 -180，旋转效果一致
+                pipe.transform.rotation = Quaternion.Euler(0, 0, 180);
+                break;
+            case PipeTowards.Right:
+                pipe.transform.position = rightP.transform.position;
+                // Z轴顺时针旋转90度（对应-90度）
+                pipe.transform.rotation = Quaternion.Euler(0, 0, -90);
+                break;
+            case PipeTowards.Left:
+                pipe.transform.position = leftP.transform.position;
+                // Z轴逆时针旋转90度
+                pipe.transform.rotation = Quaternion.Euler(0, 0, 90);
+                break;
+        }
+    }
+    
     
 
 }
