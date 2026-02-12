@@ -127,60 +127,64 @@ public class WalkingTalk : MonoBehaviour
             return false;
         }
 
-        // 过滤：仅保留Day≤3的有效对话组（有文本、角色存活）
-        List<TalkList> validTalkGroups = new List<TalkList>();
-        foreach (var talkGroup in talkListD13)
+        // 过滤：仅保留Day≤3且角色存活的对话组
+        List<TalkList> baseValidGroups = talkListD13.Where(talkGroup => 
+            GlobalData.Day <= 3 &&
+            talkGroup.textContainer != null && 
+            talkGroup.textContainer.TxtLine != null && 
+            talkGroup.textContainer.TxtLine.Count > 0 &&
+            IsSpeakerAlive(talkGroup.speaker)
+        ).ToList();
+
+        // 无基础有效对话组 → 返回
+        if (baseValidGroups.Count == 0)
         {
-            // 基础校验：文本容器非空且有文本
-            if (talkGroup.textContainer == null || talkGroup.textContainer.TxtLine == null || talkGroup.textContainer.TxtLine.Count == 0)
-            {
-                continue;
-            }
-
-            // 角色存活校验
-            if (!IsSpeakerAlive(talkGroup.speaker))
-            {
-                continue;
-            }
-
-            validTalkGroups.Add(talkGroup);
-        }
-
-        // 无有效对话组 → 返回
-        if (validTalkGroups.Count == 0)
-        {
-            Debug.LogWarning("无有效对话组（角色死亡/无文本）", this);
+            Debug.LogWarning("无有效对话组（角色死亡/无文本/天数超限）", this);
             return false;
         }
 
-        // 雨天逻辑：70%概率优先选雨天专属对话
-        if (rain != null && rain.isRaining && GlobalData.Day <= 3)
+        // 天气筛选逻辑
+        bool isCurrentRaining = rain != null && rain.isRaining;
+        List<TalkList> finalValidGroups = new List<TalkList>();
+
+        if (isCurrentRaining)
         {
+            // 雨天逻辑：70%概率选雨天专属对话，30%选非雨天对话
             int randomValue = Random.Range(1, 101);
             if (randomValue <= 70)
             {
-                // 筛选雨天专属对话组
-                List<TalkList> rainTalkGroups = validTalkGroups.Where(t => t.isRaining).ToList();
-                if (rainTalkGroups.Count > 0)
+                // 筛选雨天专属对话
+                finalValidGroups = baseValidGroups.Where(t => t.isRaining).ToList();
+                // 如果没有雨天专属对话，降级到非雨天对话
+                if (finalValidGroups.Count == 0)
                 {
-                    var selected = rainTalkGroups[Random.Range(0, rainTalkGroups.Count)];
-                    _currentIndex = talkListD13.IndexOf(selected);
-                    _showingManager = selected.textContainer;
-                    return true;
+                    finalValidGroups = baseValidGroups.Where(t => !t.isRaining).ToList();
                 }
             }
+            else
+            {
+                // 30%概率选非雨天对话
+                finalValidGroups = baseValidGroups.Where(t => !t.isRaining).ToList();
+            }
         }
-
-        // 普通逻辑：随机选有效对话组（Day≤3）
-        if (GlobalData.Day <= 3)
+        else
         {
-            var selected = validTalkGroups[Random.Range(0, validTalkGroups.Count)];
-            _currentIndex = talkListD13.IndexOf(selected);
-            _showingManager = selected.textContainer;
-            return true;
+            // 非雨天：只选非雨天对话
+            finalValidGroups = baseValidGroups.Where(t => !t.isRaining).ToList();
         }
 
-        return false;
+        // 最终无有效对话 → 返回
+        if (finalValidGroups.Count == 0)
+        {
+            Debug.LogWarning("无符合天气条件的有效对话组", this);
+            return false;
+        }
+
+        // 随机选择最终有效对话组
+        var selected = finalValidGroups[Random.Range(0, finalValidGroups.Count)];
+        _currentIndex = talkListD13.IndexOf(selected);
+        _showingManager = selected.textContainer;
+        return true;
     }
 
     /// <summary>

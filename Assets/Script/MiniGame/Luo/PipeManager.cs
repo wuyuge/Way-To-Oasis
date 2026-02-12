@@ -40,6 +40,7 @@ public class PipeManager : MonoBehaviour
         _objImage = gameObject.GetComponent<Image>();
         _initSprite = _objImage.sprite;
         itemBox = gameObject.transform.parent.parent.GetChild(transform.parent.parent.childCount - 1);
+        
         for (int i = 0; i < itemBox.childCount; i++)
         {
             _items.Add(itemBox.GetChild(i).GetComponent<RectTransform>());
@@ -65,6 +66,7 @@ public class PipeManager : MonoBehaviour
 
     void SearchItem()
     {
+        _items.Clear();
         itemBox = gameObject.transform.parent.parent.GetChild(transform.parent.parent.childCount - 1);
         for (int i = 0; i < itemBox.childCount; i++)
         {

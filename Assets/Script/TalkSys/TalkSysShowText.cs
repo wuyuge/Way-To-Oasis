@@ -1,11 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class TalkSysShowText : MonoBehaviour,ITalkSysCore
+// 新增：角色名映射配置（替代硬编码）
+[Serializable]
+public class CharacterNameMapping
+{
+    public string EnglishName;
+    public string ChineseName;
+}
+
+public class TalkSysShowText : MonoBehaviour, ITalkSysCore
 {
     private TalkSystem _talkSys;
     private TalkSysSwitch _switchManager;
@@ -19,20 +29,34 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
     private MiniCharacterTalkSys _miniCharacterTalkSys;
     private TextMeshProUGUI _currentTextUI;
     private TextMeshProUGUI TextUI => _currentTextUI;
-    private TextMeshProUGUI _playerName,_characterName,_shopGeneralName;
+    private TextMeshProUGUI _playerName, _characterName, _shopGeneralName;
     private Coroutine _currentCoroutine;
+    private Coroutine _autoPlayCoroutine; // 新增：管理自动播放协程
     private string PlayerNameBox => _talkSys.PlayerName.TxtLine[0];
-    //一次性开关用于阻止指令执行完毕后继续读取下一条
     private int _stopCommend = 0;
-    private const string CgPattern = @"[C][G]\d+";//CG标记 CG+数字
-    private const string AsidePattern = @"[A][_]";//旁白标记 A_
+    private const string CgPattern = @"CG\d+"; // 简化正则表达式
+    private const string AsidePattern = @"A_";
+    private const string ExpressionPattern = @"@\{(.+?)\}"; // 新增：表情解析正则
+    private const string MiniPattern = @"^MINI\d{1}$";
     public bool CanShowText { get; set; }
-    [Header("是否显示Debug")] public bool showDebug;
-    [Header("历史对话")] public HistoryManager historyManager;
-    [Header("自动播放")] public Manager autoplay;
-    [Header("自动播放延迟")] public float autoPlayDelay;
-    [Header("CG管理器")] public CgManager cgManager;
-    [Header("通用跳过文本管理器")] public Manager skipManager;
+
+    [Header("调试配置")]
+    public bool showDebug;
+
+    [Header("功能依赖")]
+    public HistoryManager historyManager;
+    public Manager autoplay;
+    public float autoPlayDelay;
+    public CgManager cgManager;
+    public Manager skipManager;
+    public GameObject aimiGame, amandeGame, boGame, luoGame;
+    public GameObject laiWenGame,playerTalkBack;
+
+    [Header("角色名映射（替代硬编码）")] // 新增：可视化配置角色名
+    public List<CharacterNameMapping> characterNameMappings;
+
+    #region 初始化注入
+
     private void Awake()
     {
         CanShowText = true;
@@ -46,65 +70,64 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
         _playerName = talkSys.PlayerNameText;
         _shopGeneralName = talkSys.ShopName;
         _characterName = talkSys.Chara_Name;
-
+        // 初始化检查：角色名映射不能为空
+        if (characterNameMappings == null || characterNameMappings.Count == 0)
+        {
+            Debug.LogWarning("角色名映射列表为空，请在Inspector中配置！");
+        }
     }
+    private void OnEnable()
+    {
+        TalkSysStaticData.TalkSysShowText = this;
+    }
+    #endregion
+    #region 主逻辑循环
 
-
-    /// <summary>
-    /// 显示当前对话行的文本到UI。该方法首先检查当前文本是否包含特殊命令（以"$"开头），如果包含则调用开关管理器执行相应的代码切换。
-    /// 对于指示说话者变化的特定字符串（如"->p"表示玩家开始说话，"->c"表示角色开始说话），会更新说话者状态并递归调用自身以显示下一个对话行。
-    /// 最后，清空当前文本UI的内容，并根据当前场景和说话者状态选择合适的UI组件后，通过协程逐字符输出文本。
-    /// </summary>
     public void ShowText()
     {
-        
-        if(!CanShowText) return;
-
-        if (FullModeState.GetValue(isFullMode:true))
-        {
+        if (!CanShowText || FullModeState.GetValue(isFullMode: true))
             return;
-        }
-        
-        
+
         while (true)
         {
+            // 指令阻断逻辑
             if (_stopCommend > 0)
             {
                 _stopCommend--;
                 Debug.Log("停止执行下条命令");
                 return;
             }
+
             string curText;
             try
             {
-                curText = TalkLines?[DayNum]?.TxtLine?[LineIndex] ?? string.Empty;
-                if (TalkLines[DayNum].TxtLine[LineIndex].Contains("{PlayerName}"))
+                // 核心优化：增加多层空值+长度检查，避免索引越界
+                if (TalkLines == null || DayNum < 0 || DayNum >= TalkLines.Count ||
+                    TalkLines[DayNum]?.TxtLine == null || LineIndex < 0 || LineIndex >= TalkLines[DayNum].TxtLine.Count)
                 {
-                    TalkLines[DayNum].TxtLine[LineIndex] =
-                        TalkLines[DayNum].TxtLine[LineIndex].Replace("{PlayerName}", PlayerNameBox);
-                    Debug.Log("替换玩家姓名");
+                    Debug.Log("对话数据已遍历完毕");
+                    return;
                 }
 
-            }
-            catch (ArgumentOutOfRangeException e)
-            {
-                Console.WriteLine($"索引越界:{e}");
-                return;
+                curText = TalkLines[DayNum].TxtLine[LineIndex];
+                // 玩家名替换（仅修改临时变量）
+                curText = curText.Replace("{PlayerName}", PlayerNameBox);
             }
             catch (Exception e)
             {
-                Debug.LogError(e);
+                Debug.LogError($"读取对话文本失败：{e.Message}");
                 return;
             }
-            
-            if (_currentCoroutine!=null)
+
+            // 停止当前协程（快速跳过逻辑）
+            if (_currentCoroutine != null)
             {
                 StopOutputText();
                 _talkSys.line++;
                 return;
             }
-            
-            //固定转换说话人标识
+
+            // 说话人切换指令
             if (curText == "->p")
             {
                 _isPlayerTalking = true;
@@ -117,98 +140,136 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
                 _talkSys.line++;
                 continue;
             }
-            
-            if (curText.Contains("$"))//通用命令
+
+            // 通用命令处理
+            if (curText.Contains("$"))
             {
                 if (curText.Contains("DownTalkBox"))
                 {
                     Debug.Log("重置对话历史");
-                    historyManager.Refresh();
+                    historyManager?.Refresh(); // 空值保护
                 }
-                _switchManager.DoSwitchCode();
+                _switchManager?.DoSwitchCode(); // 空值保护
                 _talkSys.line++;
                 continue;
             }
 
-            if (curText.Contains("#"))//安抚标记
+            // 安抚标记处理
+            if (curText.Contains("#"))
             {
                 SetUnComfort(curText);
                 _talkSys.line++;
                 continue;
             }
 
-            if (Regex.IsMatch(curText,CgPattern))
+            // CG指令处理
+            if (Regex.IsMatch(curText, CgPattern))
             {
                 ShowCg(curText);
                 _talkSys.line++;
                 return;
             }
-
-            if (curText == "HideCg")//安抚标记
+            if (curText == "HideCg")
             {
                 CloseCg();
                 _talkSys.line++;
                 continue;
             }
-        
             
+            //迷你游戏指令处理
+            if (Regex.IsMatch(curText,MiniPattern))
+            {
+                _talkSys.line++;
+                CanShowText = false;
+                if (SwitchMiniGame(curText))
+                {
+                    return;
+                }
+                continue;
+            }
+
+            // 显示文本逻辑
             CheckTextUI();
             _currentTextUI.text = string.Empty;
             _currentCoroutine = StartCoroutine(OutPutText(MiniMode));
             break;
         }
-        
     }
 
-    /// <summary>
-    /// 确定当前应使用的文本UI元素。根据是否在商店场景中，或者当前说话者是玩家还是角色来选择正确的UI组件。
-    /// </summary>
+    #endregion
+    #region UI依赖
+
     private void CheckTextUI()
     {
         if (InShop)
         {
-            _currentTextUI = _talkSys.ShopTextBar.GetComponent<TextMeshProUGUI>();
-            return;
+            _currentTextUI = _talkSys.ShopTextBar?.GetComponent<TextMeshProUGUI>();
         }
-
-        if (_isPlayerTalking)
+        else if (_isPlayerTalking)
         {
             _currentTextUI = _talkSys.Player;
-            return;
+        }
+        else
+        {
+            _currentTextUI = _talkSys.Character;
         }
 
-        _currentTextUI = _talkSys.Character;
+        // 空值保护：防止UI未赋值导致空引用
+        if (_currentTextUI == null)
+        {
+            Debug.LogError("当前文本UI组件未找到！");
+            _currentTextUI = GetComponent<TextMeshProUGUI>(); // 降级处理
+        }
     }
 
+    #endregion
+    #region 对话管理
 
     /// <summary>
-    /// 逐字符输出文本到UI，支持迷你模式显示。
+    /// 核心优化：
+    /// 1. 自动播放改用协程管理，避免Invoke的多次调用问题
+    /// 2. 所有外部调用增加空值检查
+    /// 3. 简化文本处理逻辑
     /// </summary>
-    /// <param name="onMiniMode">是否启用迷你模式，默认为false。</param>
-    /// <returns>返回一个IEnumerator，用于Unity的协程处理。</returns>
     private IEnumerator OutPutText(bool onMiniMode = false)
     {
-        
-        var tempString = TalkLines[DayNum].TxtLine[LineIndex];
+        // 前置检查：确保对话数据有效
+        if (!IsTalkDataValid())
+        {
+            _currentCoroutine = null;
+            yield break;
+        }
+
+        string originalText = TalkLines[DayNum].TxtLine[LineIndex];
         var tempHistory = new TextHistory();
-        var charaName = string.Empty;
-        if (tempString.Contains("："))//如果文本分类错误即转换说话人
+        string charaName = string.Empty;
+        string displayText = originalText;
+
+        // 说话人校正
+        if (displayText.Contains("："))
         {
             _isPlayerTalking = false;
-            
         }
+
         CheckTextUI();
+
+        // 角色说话逻辑
         if (!_isPlayerTalking)
         {
-            string[] tempTextBox = HandleCharacterName(tempString);
-            charaName = tempTextBox[0];
-            tempString = tempTextBox[1];
+            var nameAndText = HandleCharacterName(displayText);
+            charaName = nameAndText.Item1;
+            displayText = nameAndText.Item2;
+
             tempHistory.IsPlayer = false;
             tempHistory.CharacterName = charaName;
-            if (tempString.Contains("@"))
+
+            // 表情解析（改用正则，简化逻辑）
+            if (displayText.Contains("@"))
             {
-                tempString = SetExpression(tempString,charaName);
+                displayText = SetExpression(displayText, charaName);
             }
+
+            // 商店模式处理
             if (InShop)
             {
                 _shopGeneralName.text = "商人";
@@ -217,13 +278,18 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
             else
             {
                 _characterName.text = charaName;
-                if (!onMiniMode)_talkSys.CharacterImageManager.SetImage(charaName);
+                if (!onMiniMode)
+                {
+                    _talkSys.CharacterImageManager?.SetImage(charaName); // 空值保护
+                }
             }
         }
+        // 玩家说话逻辑
         else
         {
             tempHistory.IsPlayer = true;
             tempHistory.CharacterName = string.Empty;
+
             if (InShop)
             {
                 _shopGeneralName.text = PlayerNameBox;
@@ -234,242 +300,383 @@ public class TalkSysShowText : MonoBehaviour,ITalkSysCore
             }
         }
 
-        if (onMiniMode)_miniCharacterTalkSys.ShowText(charaName, string.Empty);
-        
-        if (Regex.IsMatch(tempString, AsidePattern))
+        // 迷你模式初始化
+        if (onMiniMode)
+        {
+            _miniCharacterTalkSys?.ShowText(charaName, string.Empty); // 空值保护
+        }
+
+        // 旁白处理
+        if (Regex.IsMatch(displayText, AsidePattern))
         {
             tempHistory.IsASide = true;
-            tempString = tempString.Replace("A_", string.Empty);
+            displayText = displayText.Replace("A_", string.Empty);
         }
         else
         {
             tempHistory.IsASide = false;
         }
-        tempHistory.Text = tempString;
-        historyManager.SetHistory(tempHistory);
-        foreach (var stringValue in tempString)
+
+        // 历史记录存储
+        tempHistory.Text = displayText;
+        if (!string.IsNullOrWhiteSpace(tempHistory.Text))
         {
-            
-            _talkSys.Type.Play();
+            historyManager?.SetHistory(tempHistory); // 空值保护
+        }
+
+        // 打字机效果
+        float actualInterval = IntervalTime - (IntervalTime * ((autoplay.Weight - 1) * 0.1f));
+        actualInterval = Mathf.Max(0.01f, actualInterval); // 防止间隔为0
+
+        foreach (var c in displayText)
+        {
+            _talkSys.Type?.Play(); // 空值保护
+
             if (!onMiniMode)
             {
-                _currentTextUI.text += stringValue;
+                _currentTextUI.text += c;
             }
             else
             {
                 if (_isPlayerTalking)
                 {
-                    _currentTextUI.text += stringValue;
+                    _currentTextUI.text += c;
                 }
-                _miniCharacterTalkSys.ShowText(charaName, stringValue);
+                _miniCharacterTalkSys?.ShowText(charaName, c.ToString()); // 空值保护
             }
-            
-            yield return new WaitForSeconds(IntervalTime - (IntervalTime * ((autoplay.Weight - 1) * 0.1f)));
-            
+
+            yield return new WaitForSeconds(actualInterval);
         }
-        
-        _talkSys.Type.Stop();
+
+        // 播放结束清理
+        _talkSys.Type?.Stop(); // 空值保护
         _talkSys.line++;
         _currentCoroutine = null;
-        if (autoplay.GeneralBool && TalkLines[DayNum].TxtLine[LineIndex] is not null)
-        {
-            Invoke(nameof(ShowText),autoPlayDelay/ autoplay.Weight);
-        }
 
-    }
-
-    /// <summary>
-    /// 处理初始文本以分离角色名称和实际对话内容。
-    /// </summary>
-    /// <param name="initialText">包含角色名称和对话内容的原始字符串。</param>
-    /// <returns>一个字符串数组，其中第一个元素是角色名称，第二个元素是去除角色名称后的对话内容。</returns>
-    string[] HandleCharacterName(string initialText)
-    {
-        string[] textBox = new string[2];
-        textBox[1] = initialText;
-        foreach (var nameString in initialText)
+        // 核心优化：自动播放改用协程，可取消
+        if (autoplay.GeneralBool && IsTalkDataValid())
         {
-            if (nameString == '：')
+            if (_autoPlayCoroutine != null)
             {
-                break;
+                StopCoroutine(_autoPlayCoroutine);
             }
-            textBox[0] += nameString;
+            _autoPlayCoroutine = StartCoroutine(AutoPlayNextLine(autoPlayDelay / autoplay.Weight));
         }
-
-        textBox[1] = textBox[1].Replace($"{textBox[0]}：", "");
-        
-        return textBox;
     }
 
+    /// <summary>
+    /// 新增：自动播放协程（替代Invoke）
+    /// </summary>
+    private IEnumerator AutoPlayNextLine(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ShowText();
+        _autoPlayCoroutine = null;
+    }
 
     /// <summary>
-    /// 停止当前正在输出的文本。如果存在正在进行的文本输出协程，则停止该协程，并将当前协程引用设置为null。
+    /// 核心优化：
+    /// 1. 改用Tuple返回值，更清晰
+    /// 2. 支持全角/半角冒号
+    /// 3. 简化拆分逻辑
     /// </summary>
+    private (string Name, string Text) HandleCharacterName(string initialText)
+    {
+        string charaName = string.Empty;
+        string text = initialText;
+
+        // 支持全角：和半角:
+        int colonIndex = initialText.IndexOf('：');
+        if (colonIndex == -1)
+        {
+            colonIndex = initialText.IndexOf(':');
+        }
+
+        if (colonIndex > 0)
+        {
+            charaName = initialText.Substring(0, colonIndex);
+            text = initialText.Substring(colonIndex + 1);
+        }
+
+        return (charaName, text);
+    }
+
     public void StopOutputText()
     {
         if (_currentCoroutine != null)
         {
-            
             StopCoroutine(_currentCoroutine);
             _currentCoroutine = null;
-            ShowAllText();
         }
+
+        // 停止自动播放协程
+        if (_autoPlayCoroutine != null)
+        {
+            StopCoroutine(_autoPlayCoroutine);
+            _autoPlayCoroutine = null;
+        }
+
+        ShowAllText();
     }
 
     /// <summary>
-    /// 显示当前对话行的全部文本到UI。根据是否处于迷你模式以及当前说话者状态，该方法会处理并显示相应的文本。
-    /// 如果当前不是玩家在说话且处于迷你模式，则调用迷你角色对话系统显示经过处理后的文本。
-    /// 否则，直接将处理后的文本（包括可能的表情设置）或原始文本显示到当前文本UI上。
+    /// 核心优化：
+    /// 1. 增加数据有效性检查
+    /// 2. 复用HandleCharacterName方法，减少冗余
     /// </summary>
     private void ShowAllText()
     {
+        if (!IsTalkDataValid() || _currentTextUI == null)
+            return;
+
+        _currentTextUI.text = string.Empty;
+        string originalText = TalkLines[DayNum].TxtLine[LineIndex];
+        string displayText = originalText;
+
         if (!_isPlayerTalking)
         {
+            var nameAndText = HandleCharacterName(originalText);
+            displayText = nameAndText.Text;
+
+            // 表情解析
+            if (displayText.Contains("@"))
+            {
+                displayText = SetExpression(displayText, nameAndText.Name);
+            }
+
+            // 迷你模式处理
             if (MiniMode)
             {
-                string[] text;
-                text = HandleCharacterName(TalkLines[DayNum].TxtLine[LineIndex]);
-                _miniCharacterTalkSys.ShowText(text[0], string.Empty);
-                _miniCharacterTalkSys.ShowText(text[0], text[1]);
+                _miniCharacterTalkSys?.ShowText(nameAndText.Name, string.Empty);
+                _miniCharacterTalkSys?.ShowText(nameAndText.Name, displayText);
                 return;
             }
-            _currentTextUI.text = string.Empty;
-            string[] tempString = HandleCharacterName(TalkLines[DayNum].TxtLine[LineIndex]);
-            if (tempString[1].Contains("@"))
+        }
+        else
+        {
+            // 旁白处理
+            if (Regex.IsMatch(displayText, AsidePattern))
             {
-                tempString[1] = SetExpression(tempString[1],tempString[0]);
+                displayText = displayText.Replace("A_", string.Empty);
             }
-            _currentTextUI.text = tempString[1];
-            
-            return;
         }
 
-        var temp = TalkLines[DayNum].TxtLine[LineIndex];
-        if (Regex.IsMatch(temp, AsidePattern))
-        {
-            temp = temp.Replace("A_", string.Empty);
-        }
-        _currentTextUI.text = string.Empty;
-        _currentTextUI.text = temp;
-        
+        _currentTextUI.text = displayText;
     }
 
     public void SetEmptyText()
     {
-        _talkSys.Character.text = string.Empty;
-        _talkSys.Player.text = string.Empty;
-        _talkSys.ShopTextBar.GetComponent<TextMeshProUGUI>().text = string.Empty;
+        if (_talkSys != null)
+        {
+            _talkSys.Character.text = string.Empty;
+            _talkSys.Player.text = string.Empty;
+            if (_talkSys.ShopTextBar != null)
+            {
+                _talkSys.ShopTextBar.GetComponent<TextMeshProUGUI>().text = string.Empty;
+            }
+        }
+    }
+    
+    public void Skip()
+    {
+        // 空值保护
+        if (TalkLines == null || DayNum < 0 || DayNum >= TalkLines.Count)
+        {
+            Debug.LogError("跳过对话失败：对话数据无效");
+            return;
+        }
+
+        _talkSys.Talklines[DayNum] = skipManager;
+        _talkSys.line = 0;
+
+        // 停止所有协程，避免冲突
+        StopOutputText();
+        ShowText();
+    }
+    /// <summary>
+    /// 新增：通用对话数据有效性检查
+    /// 避免重复写检查逻辑
+    /// </summary>
+    private bool IsTalkDataValid()
+    {
+        return TalkLines != null && DayNum >= 0 && DayNum < TalkLines.Count &&
+               TalkLines[DayNum]?.TxtLine != null && LineIndex >= 0 && LineIndex < TalkLines[DayNum].TxtLine.Count;
+    }
+    #endregion
+    #region 人物状态管理
+    /// <summary>
+    /// 核心优化：
+    /// 1. 改用正则解析表情标记，逻辑简化90%
+    /// 2. 增加异常处理
+    /// </summary>
+    private string SetExpression(string text, string characterName)
+    {
+        try
+        {
+            var match = Regex.Match(text, ExpressionPattern);
+            if (match.Success)
+            {
+                string expression = match.Groups[1].Value;
+                text = Regex.Replace(text, ExpressionPattern, string.Empty);
+
+                if (showDebug)
+                {
+                    Debug.Log($"表情:{expression} , 输出文本:{text}");
+                }
+
+                _talkSys?.SwitchExpression(characterName, expression); // 空值保护
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"解析表情标记失败：{e.Message}");
+        }
+
+        return text;
     }
 
+    /// <summary>
+    /// 核心优化：
+    /// 1. 移除硬编码，改用配置表映射角色名
+    /// 2. 优化查找逻辑，提升效率
+    /// </summary>
+    private void SetUnComfort(string text)
+    {
+        try
+        {
+            string englishName = text.Replace("#", "").Trim();
+            if (string.IsNullOrEmpty(englishName))
+            {
+                Debug.LogError("安抚角色名不能为空");
+                return;
+            }
 
+            // 从配置表查找中文名
+            var mapping = characterNameMappings.FirstOrDefault(m => m.EnglishName == englishName);
+            if (mapping == null)
+            {
+                Debug.LogError($"未找到角色名映射：{englishName}，请在Inspector中配置");
+                return;
+            }
+
+            string chineseName = mapping.ChineseName;
+
+            // 查找角色并设置状态
+            if (_talkSys?.CharacterList != null)
+            {
+                foreach (var obj in _talkSys.CharacterList)
+                {
+                    Character character = obj?.GetComponent<Character>();
+                    if (character != null && character.CharacterName == chineseName)
+                    {
+                        character.NotComfort = true;
+                        return;
+                    }
+                }
+            }
+
+            Debug.LogError($"未找到角色：{chineseName}");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"设置角色不安状态失败：{e.Message}");
+        }
+    }
+    #endregion
+    #region Cg管理
+    /// <summary>
+    /// 核心优化：
+    /// 1. 移除throw，改为优雅的错误处理
+    /// 2. 增加参数校验
+    /// </summary>
+    private void ShowCg(string text)
+    {
+        try
+        {
+            FullModeState.SetValue(true);
+            string indexStr = Regex.Replace(text, "CG", string.Empty);
+
+            if (int.TryParse(indexStr, out int index))
+            {
+                if (cgManager != null)
+                {
+                    cgManager.gameObject.SetActive(true);
+                    cgManager.ShowCg(index);
+                }
+                else
+                {
+                    Debug.LogError("CG管理器未赋值！");
+                }
+            }
+            else
+            {
+                Debug.LogError($"CG索引格式错误：{text}，正确格式应为CG+数字（如CG1）");
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"显示CG失败：{e.Message}");
+        }
+    }
+
+    public void CloseCg()
+    {
+        cgManager?.HideCg(); // 空值保护
+        FullModeState.SetValue(false); // 新增：关闭CG时退出全屏模式
+    }
+    #endregion
+    #region 迷你游戏管理
+    private bool SwitchMiniGame(string curText)
+    {
+        
+        if (!int.TryParse(curText.Last().ToString(),out var result) || result == 0 || result > 5)
+        {
+            Debug.LogError($"迷你游戏转换文本错误{curText}",this);
+            CanShowText = true;
+            return false;
+        }
+        switch (result)
+        {
+            case 1:
+                aimiGame.SetActive(true);
+                break;
+            case 2:
+                luoGame.SetActive(true);
+                break;
+            case 3:
+                boGame.SetActive(true);
+                break;
+            case 4:
+                amandeGame.SetActive(true);
+                break;
+            case 5:
+                laiWenGame.SetActive(true);
+                break;
+            
+        }
+        return true;
+    }
+
+    public void CompleteMiniGame()
+    {
+        CanShowText = true;
+        ShowText();
+    }
+    
+    #endregion
+    private void OnDestroy()
+    {
+        StopOutputText();
+        if (_autoPlayCoroutine != null)
+        {
+            StopCoroutine(_autoPlayCoroutine);
+        }
+    }
+    
     public void StopNextCommend()
     {
         Debug.Log("开始禁止下条指令");
         _stopCommend++;
     }
-
-    private string SetExpression(string text,string characterName)
-    {
-        //固定表情标记格式 @{内容}
-        int startIndex = 0, endIndex = 0;
-        bool startFound = false;
-        foreach (var value in text)
-        {
-            if (value == '@')
-            {
-                startFound = true;
-            }
-
-            if (value == '}')
-            {
-                break;
-            }
-
-            if (!startFound) startIndex++;
-            endIndex++;
-        }
-
-        var expression = text.Substring(startIndex + 2, endIndex - startIndex - 2);
-        text = text.Replace("@{" + $"{expression}" + "}", "");
-        if (showDebug)Debug.Log($"表情{expression} , 输出文本:{text}");
-        _talkSys.SwitchExpression(characterName,expression);
-        return text;
-    }
-
-    /// <summary>
-    /// 设置指定角色为不安状态。此方法首先移除文本中的特殊字符（"#")，然后根据提供的角色英文名转换为中文名。
-    /// 如果角色名匹配成功，则在角色列表中查找该角色，并将其不安状态设置为true。
-    /// 若未找到对应的角色或传入的角色名不正确，则记录错误信息。
-    /// </summary>
-    /// <param name="text">需要被安抚的角色的英文名，例如"Aimi"代表艾米莉。</param>
-    private void SetUnComfort(string text)
-    {
-        text = text.Replace("#", "");
-        string comfortCharaName;
-        switch (text)
-        {
-            case "Aimi":
-                comfortCharaName = "艾米莉";
-                break;
-            case "Laiwen":
-                comfortCharaName = "莱文";
-                break;
-            case "Luo":
-                comfortCharaName = "洛尔坎";
-                break;
-            case "Bo":
-                comfortCharaName = "博金森";
-                break;
-            case "Amande":
-                comfortCharaName = "阿曼德";
-                break;
-            default:
-                Debug.LogError($"安抚角色名错误 错误字段:{text}");
-                return;
-        }
-
-        foreach (var value in _talkSys.CharacterList)
-        {
-            Character temp = value.GetComponent<Character>();
-            if (temp.CharacterName == comfortCharaName)
-            {
-                temp.NotComfort = true;
-                return;
-            }
-        }
-        
-    }
-
-    private void ShowCg(string text)
-    {
-        FullModeState.SetValue(true);
-        text = text.Replace("CG", "");
-        try
-        {
-            var index = int.Parse(text);
-            cgManager.gameObject.SetActive(true);
-            cgManager.ShowCg(index);
-            
-        }
-        catch (Exception e)
-        {
-            Debug.LogError(e);
-            throw;
-        }
-        
-        
-    }
-
-    public void CloseCg()
-    {
-        cgManager.HideCg();
-    }
-
-    public void Skip()
-    {
-        _talkSys.Talklines[DayNum] = skipManager;
-        _talkSys.line = 0;
-        ShowText();
-    }
-
+    
 }

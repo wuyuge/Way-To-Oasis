@@ -958,7 +958,7 @@ MonoBehaviour:
   rain: {fileID: 0}
   state: {fileID: 5479206781262853986}
   talkSys: {fileID: 4821426798022909600}
-  waitTime: 3
+  waitTime: 5
   textWaitTime: 1
   aimi: {fileID: 0}
   amande: {fileID: 0}

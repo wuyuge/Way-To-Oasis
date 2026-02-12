@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TalkSystem: {fileID: 0}
   buttonText: {fileID: 0}
+  playerTalkBack: {fileID: 0}
 --- !u!1 &2513316307099313808
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +203,17 @@ MonoBehaviour:
   autoPlayDelay: 1
   cgManager: {fileID: 0}
   skipManager: {fileID: 11400000, guid: fe1f8465401e29e46823b95ffbe8976e, type: 2}
+  characterNameMappings:
+  - EnglishName: 
+    ChineseName: "\u827E\u7C73\u8389"
+  - EnglishName: 
+    ChineseName: "\u6D1B\u5C14\u574E"
+  - EnglishName: 
+    ChineseName: "\u535A\u91D1\u68EE"
+  - EnglishName: 
+    ChineseName: "\u963F\u66FC\u5FB7"
+  - EnglishName: 
+    ChineseName: "\u83B1\u6587"
 --- !u!1 &3402700161156925720
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TalkSystem: {fileID: 0}
   buttonText: {fileID: 0}
+  playerTalkBack: {fileID: 0}
 --- !u!1 &4618523218855683238
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 
 public abstract class Draggable : MonoBehaviour, IDragHandler
 {
@@ -16,27 +15,28 @@ public abstract class Draggable : MonoBehaviour, IDragHandler
     public virtual void Awake()
     {
         _rectTransform = transform as RectTransform;
-        startPosition = GetComponent<RectTransform>().position;
+        startPosition = _rectTransform.anchoredPosition; // 改用锚点坐标更稳定
     }
 
     public virtual void OnDrag(PointerEventData eventData)
     {
-        if (RectTransformUtility.ScreenPointToWorldPointInRectangle(
-                _rectTransform, eventData.position, eventData.pressEventCamera, out Vector3 worldPos))
+        // 核心修正：直接将屏幕触摸点转换为限制区域的局部坐标（跳过世界坐标转换）
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                limitArea, eventData.position, eventData.pressEventCamera, out Vector2 localPoint))
         {
-            // 计算 UI 在限制区域内的局部坐标
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                limitArea, worldPos, eventData.pressEventCamera, out Vector2 localPoint);
+            // 限制局部坐标在限制区域内（确保拖拽对象不会超出边界）
+            // 计算限制区域的有效范围（扣除拖拽对象自身的尺寸）
+            float minX = -limitArea.rect.width / 2 + _rectTransform.rect.width / 2;
+            float maxX = limitArea.rect.width / 2 - _rectTransform.rect.width / 2;
+            float minY = -limitArea.rect.height / 2 + _rectTransform.rect.height / 2;
+            float maxY = limitArea.rect.height / 2 - _rectTransform.rect.height / 2;
 
-            // 限制局部坐标在限制区域的尺寸范围内
-            // Clamp 函数确保数值在 min 和 max 之间
-            localPoint.x = Mathf.Clamp(localPoint.x, -limitArea.rect.width / 2 + _rectTransform.rect.width / 2, limitArea.rect.width / 2 - _rectTransform.rect.width / 2);
-            localPoint.y = Mathf.Clamp(localPoint.y, -limitArea.rect.height / 2 + _rectTransform.rect.height / 2, limitArea.rect.height / 2 - _rectTransform.rect.height / 2);
+            // 修正坐标范围（适配limitArea的锚点和偏移）
+            localPoint.x = Mathf.Clamp(localPoint.x - limitArea.anchoredPosition.x, minX, maxX);
+            localPoint.y = Mathf.Clamp(localPoint.y - limitArea.anchoredPosition.y, minY, maxY);
 
-            // 更新位置
+            // 关键：将限制后的局部坐标赋值给拖拽对象的锚点位置
             _rectTransform.anchoredPosition = localPoint;
         }
     }
-    
 }
-

@@ -249,6 +249,7 @@ MonoBehaviour:
   startIsVertical: 0
   destinationIsVertical: 0
   pipeSprite: {fileID: 21300000, guid: d6877e92124f95e47a068ea984e66ecf, type: 3}
+  pipeSpriteRed: {fileID: 21300000, guid: 231f29a3a3716a64a8634becaf344e8d, type: 3}
   upP: {fileID: 0}
   downP: {fileID: 0}
   leftP: {fileID: 0}
@@ -279,6 +280,7 @@ MonoBehaviour:
   startIsVertical: 0
   destinationIsVertical: 0
   pipeSprite: {fileID: 21300000, guid: 06d6884e6b158494cb77a3cafdd756ae, type: 3}
+  pipeSpriteRed: {fileID: 21300000, guid: 08abe9ac44238734a88453291fd2db9a, type: 3}
   upP: {fileID: 0}
   downP: {fileID: 0}
   leftP: {fileID: 0}
@@ -308,6 +310,7 @@ MonoBehaviour:
   startIsVertical: 0
   destinationIsVertical: 0
   pipeSprite: {fileID: 21300000, guid: 2bd4f5fea009c984d95aafa7e7e5eb50, type: 3}
+  pipeSpriteRed: {fileID: 21300000, guid: 2bd4f5fea009c984d95aafa7e7e5eb50, type: 3}
   upP: {fileID: 0}
   downP: {fileID: 0}
   leftP: {fileID: 0}
@@ -337,6 +340,7 @@ MonoBehaviour:
   startIsVertical: 0
   destinationIsVertical: 0
   pipeSprite: {fileID: 21300000, guid: 0966f2728774c4c448317a0c04364671, type: 3}
+  pipeSpriteRed: {fileID: 21300000, guid: aa48880457580fc43ae67bb18b35a4e5, type: 3}
   upP: {fileID: 0}
   downP: {fileID: 0}
   leftP: {fileID: 0}
@@ -367,6 +371,7 @@ MonoBehaviour:
   startIsVertical: 0
   destinationIsVertical: 0
   pipeSprite: {fileID: 21300000, guid: b432767df99518c48a82d7ca53d34702, type: 3}
+  pipeSpriteRed: {fileID: 21300000, guid: aa951eee3dd526e48bde82c954efcc3a, type: 3}
   upP: {fileID: 0}
   downP: {fileID: 0}
   leftP: {fileID: 0}

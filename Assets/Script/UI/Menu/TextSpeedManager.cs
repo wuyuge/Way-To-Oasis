@@ -12,13 +12,13 @@ public class TextSpeedManager : MonoBehaviour, IPointerUpHandler,SettingInitiali
     public Slider OtherSlider;
     public TextPreview Preview;
     private int PreviewSpeed;
-    private SettingDataManager Manager;
+    public SettingDataManager manager;
 
 
     public void Initialize(SettingDataManager manager)
     {
         
-        Manager = manager;
+        this.manager = manager;
         if (SceneManager.GetActiveScene().name != "Start")
         {
             SetTextSpeed(manager.setting.TextSpeed);
@@ -42,7 +42,7 @@ public class TextSpeedManager : MonoBehaviour, IPointerUpHandler,SettingInitiali
         sys2.TextSpeedI = (MinSpeed + Difference)*0.001f;
         PreviewSpeed = MinSpeed + Difference;
 
-        Manager.setting.TextSpeed = speed;
+        manager.setting.TextSpeed = speed;
 
     }
 

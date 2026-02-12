@@ -10,16 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
-  m_Name: luo_Day1_choice2-2
+  m_Name: Luo_Day1_MiniOff
   m_EditorClassIdentifier: 
   TxtLine:
-  - "\u4E0D\u6253\u6270\u4ED6"
-  - ->p
-  - "\u8FD8\u662F\u4E0D\u6253\u6270\u4ED6\u4E86\u3002"
-  - ->c
-  - "\u6D1B\u5C14\u574E\uFF1A\u54E6\u597D\u2026\u2026\u8F9B\u82E6\u4E86\u961F\u957F\u3002"
-  - ${End}
-  Option1: {fileID: 11400000, guid: 05d851f3e26fe5d4aa8c0464b14460fd, type: 2}
+  - "\u4E0D\u73A9"
+  - ${CloseCharacterTalkBox}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
+  Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}

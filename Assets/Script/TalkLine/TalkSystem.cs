@@ -1,3 +1,4 @@
+using System;
 using Coffee.UIExtensions;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -157,6 +158,12 @@ public class TalkSystem : MonoBehaviour
     {
         on = true;
     }
+
+    private void OnEnable()
+    {
+        TalkSysStaticData.TalkSys = this;
+    }
+
 
     /// <summary>
     /// 初始化对话系统
@@ -342,37 +349,22 @@ public class TalkSystem : MonoBehaviour
                         CharacterList[3].GetComponent<Character>().NotComfort = true;
                         CharacterList[3].GetComponent<Character>().EnableTalk();
                         CharacterList[3].GetComponent<Character>().Attention.SetActive(true);
-
                 }
             }
-
-
-
         }
         foreach (GameObject g in CharacterList)
         {
-            if (!g.GetComponent<Character>().Special1 && !g.GetComponent<Character>().Special2)
-            g.GetComponent<Character>().DisableTalk();
+            if (!g.GetComponent<Character>().Special1 && !g.GetComponent<Character>().Special2) g.GetComponent<Character>().DisableTalk();
         }
-
     }
-    
     public void ShowBar()
     {
         anim.SetTrigger("Up");
-
     }
-    
     public void ResetLine()
     {
          line = 0;
     }
-
-    void PlusLine()
-    {
-        line++;
-    }
-
     private void SetTechMode(GameObject MaskGameObj ,string TechText)
     {
         if (!ShowTech.GeneralBool)
@@ -385,10 +377,7 @@ public class TalkSystem : MonoBehaviour
         mask.transform.parent.gameObject.SetActive(true);
         mask.GetComponent<Unmask>().m_FitTarget = MaskGameObj.GetComponent<RectTransform>();
         mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = TechText;
-
-
     }
-
     private string SetTechText(string Comment)
     {
         foreach (TechTextList.TechText techText in TechTextList.TextList)
@@ -400,40 +389,26 @@ public class TalkSystem : MonoBehaviour
         }
         return "";
     }
-
     public void Mask(GameObject MaskGameObj, string Comment)
     {
         string ShowText = SetTechText(Comment);
         SetTechMode(MaskGameObj, ShowText);
-
-        
-
     }
-
-
     public void SetShowName()
     {
         ShowName = true;
         PlayerNameText.text = PlayerName.TxtLine[0];
-        
-        
-        
     }
-
     public void SetNoName()
     {
         ShowName = false;
         PlayerNameText.text = "";
     }
-
-
     public void SwitchExpression(string CharaName,string Expression)
     {
 
         expression.SetExpression(CharaName,Expression);
     }
-
-
     public void SwitchLine(TalkLine switchLine)
     {
 
@@ -455,16 +430,11 @@ public class TalkSystem : MonoBehaviour
 
         line = 0;
     }
-
     public void SetTextBox(Manager textBox)
     {
         Talklines[Daytime] = textBox;
         showText.CanShowText = true;
     }
-
-
-
-
 }
 
 
@@ -473,3 +443,11 @@ public enum TalkLine
 {
     Line1,Line2,Line3
 }
+
+public static class TalkSysStaticData
+{
+    public static TalkSystem TalkSys;
+    public static TalkSysShowText TalkSysShowText;
+}
+
+

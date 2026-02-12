@@ -12,6 +12,65 @@ public class TShapePipe : Pipe
     }
     
     public TShapePipeState state;
+    
+    private void SetTowards()
+    {
+        if (isStartPoint)
+        {
+            if (startIsVertical)
+            {
+                if (above is null)
+                {
+                    startTowards = PipeTowards.Above;
+                }
+                else if (below is null)
+                {
+                    startTowards = PipeTowards.Below;
+                }
+
+            }
+            else
+            {
+                if (left is null)
+                {
+                    startTowards = PipeTowards.Left;
+                }
+
+                if (right is null)
+                {
+                    startTowards = PipeTowards.Right;
+                }
+            }
+        }
+
+        if (isDestination)
+        {
+            if (destinationIsVertical)
+            {
+                if (above is null)
+                {
+                    endTowards = PipeTowards.Above;
+                }
+                else if (below is null)
+                {
+                    endTowards = PipeTowards.Below;
+                }
+
+            }
+            else
+            {
+                if (left is null)
+                {
+                    endTowards = PipeTowards.Left;
+                }
+
+                if (right is null)
+                {
+                    endTowards = PipeTowards.Right;
+                }
+            }
+        }
+    }
 
     public override void SetState()
     {
@@ -30,6 +89,7 @@ public class TShapePipe : Pipe
                 state = TShapePipeState.LeftUpRight;
                 break;
         }
+        SetTowards();
         if (isStartPoint)
         {
             CheckStartConnection();
@@ -58,6 +118,7 @@ public class TShapePipe : Pipe
                 state = TShapePipeState.LeftUpRight;
                 break;
         }
+        SetTowards();
         if (isStartPoint)
         {
             CheckStartConnection();
@@ -117,6 +178,7 @@ public class TShapePipe : Pipe
     
     public override void CheckDestinationConnection()
     {
+        Debug.Log($"检测终点连接性{state.ToString()}  {endTowards.ToString()}");
         switch (endTowards)
         {
             case PipeTowards.Above:

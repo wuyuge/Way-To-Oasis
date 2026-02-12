@@ -12,21 +12,21 @@ public abstract class Pipe : MonoBehaviour
     [SerializeField]
     protected GameObject above,below,left,right;
     public int pipeNumber;
-    protected PipeManager AboveComponent, LeftComponent,BelowComponent,RightComponent;
+    private PipeManager AboveComponent, LeftComponent,BelowComponent,RightComponent;
     private Animator _animator;
-    protected Image ObjectImage;
+    private Image _objectImage;
     public PipeTowards startTowards,endTowards;
-    protected static List<GameObject> ReachPipeList = new List<GameObject>();
+    private static List<GameObject> _reachPipeList = new List<GameObject>();
     protected static GameObject StartPoint;
     protected static PipeManager StartPipe;
     public bool startIsVertical,destinationIsVertical;
-    public Sprite pipeSprite;
+    public Sprite pipeSprite,pipeSpriteRed;
     protected PipeManager Manager;
     private static GameObject _startPipe, _endPipe;
     public GameObject upP, downP, leftP, rightP;
     private void Awake()
     {
-        ObjectImage = GetComponent<Image>();
+        _objectImage = GetComponent<Image>();
         Manager = GetComponent<PipeManager>();
         pipeNumber = transform.GetSiblingIndex();
         below = pipeNumber - 4 >= 0  ? transform.parent.GetChild(pipeNumber - 4).gameObject : null;
@@ -89,7 +89,6 @@ public abstract class Pipe : MonoBehaviour
     /// </summary>
     public virtual void Start()
     {
-        ObjectImage.sprite = pipeSprite;
         if (isStartPoint)
         {
             StartPoint = gameObject;
@@ -142,7 +141,7 @@ public abstract class Pipe : MonoBehaviour
                 }
 
             }
-            else if (!destinationIsVertical)
+            else
             {
                 if (left is null)
                 {
@@ -156,6 +155,14 @@ public abstract class Pipe : MonoBehaviour
             }
             SwitchPipePosition(_endPipe,endTowards);
         }
+        _objectImage.sprite = pipeSprite;
+        if (pipeNumber != 0)
+        {
+            if (pipeNumber % 2 != 0)
+            {
+                _objectImage.sprite = pipeSpriteRed;
+            }
+        }
     }
 
     #region 重置用
@@ -165,7 +172,16 @@ public abstract class Pipe : MonoBehaviour
     
     private void OnEnable()
     {
-        ObjectImage.sprite = pipeSprite;
+        _objectImage.sprite = pipeSprite;
+        if (pipeNumber != 0)
+        {
+            if (pipeNumber % 2 != 0)
+            {
+                _objectImage.sprite = pipeSpriteRed;
+            }
+        }
+        
+        
         RelinkOther();
     }
 
@@ -272,6 +288,7 @@ public abstract class Pipe : MonoBehaviour
                     endTowards = PipeTowards.Right;
                 }
             }
+            CheckDestinationConnection();
         }
     }
     
@@ -337,7 +354,7 @@ public abstract class Pipe : MonoBehaviour
             }
             
         }
-        ReachPipeList.Clear();
+        _reachPipeList.Clear();
     }
 
     public virtual void SetState()
@@ -360,6 +377,10 @@ public abstract class Pipe : MonoBehaviour
                 StartPoint = gameObject.transform.parent.GetChild(LuoGameStartPoint.GetStartPointIndex()).gameObject;
                 StartPipe = StartPoint.GetComponent<PipeManager>();
             }
+        }
+        if (isDestination)
+        {
+            CheckDestinationConnection();
         }
     }
 
@@ -384,6 +405,10 @@ public abstract class Pipe : MonoBehaviour
                 StartPipe = StartPoint.GetComponent<PipeManager>();
             }
         }
+        if (isDestination)
+        {
+            CheckDestinationConnection();
+        }
     }
 
     public virtual void CheckConnectivity()
@@ -397,12 +422,14 @@ public abstract class Pipe : MonoBehaviour
         DepthFSearch(PipeTowards.Below);
         DepthFSearch(PipeTowards.Left);
         DepthFSearch(PipeTowards.Right);
-        foreach (var pipe in ReachPipeList)
+        foreach (var pipe in _reachPipeList)
         {
             var manager = pipe.GetComponent<PipeManager>();
             if (manager.isDestination && manager.destinationConnected)
             {
                 LuoStaticData.Success = true;
+                TalkSysStaticData.TalkSysShowText.CompleteMiniGame();
+                gameObject.transform.parent.parent.parent.parent.gameObject.SetActive(false);
             }
         }
 
@@ -461,18 +488,18 @@ public abstract class Pipe : MonoBehaviour
             default:
                 return;
         }
-        if (tempPipe is not null && !ReachPipeList.Contains(tempPipe))
+        if (tempPipe is not null && !_reachPipeList.Contains(tempPipe))
         {
             if(tempComponent.HaveInterface(tempTowards) && HaveInterface(tempSelfTowards))
             {
-                ReachPipeList.Add(tempPipe);
+                _reachPipeList.Add(tempPipe);
                 tempComponent.SetConnect(true);
                 tempComponent.CheckConnectivity();
             }
         }
 
-        LuoStaticData.MaxReach = Mathf.Max(LuoStaticData.MaxReach, ReachPipeList.Count);
-        LuoStaticData.CurrentReach = ReachPipeList.Count;
+        LuoStaticData.MaxReach = Mathf.Max(LuoStaticData.MaxReach, _reachPipeList.Count);
+        LuoStaticData.CurrentReach = _reachPipeList.Count;
     }
 
     public void SwitchPipePosition(GameObject pipe,PipeTowards towards)
