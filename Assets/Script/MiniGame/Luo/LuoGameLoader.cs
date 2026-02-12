@@ -45,7 +45,7 @@ public class LuoGameLoader : MonoBehaviour
     }
 
 
-    private void Start()
+    private void OnEnable()
     {
         LoadLevel();
     }

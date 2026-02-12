@@ -418,6 +418,7 @@ public abstract class Pipe : MonoBehaviour
             RestConnection();
             return;
         }
+        
         DepthFSearch(PipeTowards.Above);
         DepthFSearch(PipeTowards.Below);
         DepthFSearch(PipeTowards.Left);
@@ -429,12 +430,18 @@ public abstract class Pipe : MonoBehaviour
             {
                 LuoStaticData.Success = true;
                 TalkSysStaticData.TalkSysShowText.CompleteMiniGame();
-                gameObject.transform.parent.parent.parent.parent.gameObject.SetActive(false);
+                Invoke(nameof(EndGame),1.5f);
+                
             }
         }
 
     }
 
+    private void EndGame()
+    {
+        gameObject.transform.parent.parent.parent.parent.gameObject.GetComponent<Animator>().SetTrigger("End");
+    }
+    
     /// <summary>
     /// 检查管道在指定方向上是否有接口。
     /// </summary>

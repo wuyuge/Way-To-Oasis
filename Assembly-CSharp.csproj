@@ -212,6 +212,7 @@
     <Compile Include="Assets\Script\Audio\AudioManager.cs" />
     <Compile Include="Assets\Script\End\EndMask.cs" />
     <Compile Include="Assets\Script\AnimCloseGameObj.cs" />
+    <Compile Include="Assets\Script\AnimatorGeneralFunction.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Script\TalkLine\ButtonSelect.cs" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
