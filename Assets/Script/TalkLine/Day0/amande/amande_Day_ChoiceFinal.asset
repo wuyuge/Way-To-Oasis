@@ -15,7 +15,7 @@ MonoBehaviour:
   TxtLine:
   - ->c
   - ->c
-  - "\u963F\u66FC\u5FB7\uFF1A\u8F9B\u82E6\u4F60\u4E86\u3002\u5927\u5BB6\u5BF9\u8FD9\u4EF6\u4E8B\u7684\u53CD\u5E94\u5982\u4F55\uFF1F"
+  - "\u963F\u66FC\u5FB7\uFF1A\u8F9B\u82E6\u4F60\u4E86\u3002\u5927\u5BB6\u5BF9\u8FD9\u4EF6\u4E8B\u7684\u53CD\u5E94\u5982\u4F55\uFF1F@{7}"
   - ${Choice}
   Option1: {fileID: 11400000, guid: 0e208d6bf5891e44ab3e90eb1e37e70b, type: 2}
   Option2: {fileID: 11400000, guid: 5979aad6fc73b9d4ebf02f09f6295d8e, type: 2}

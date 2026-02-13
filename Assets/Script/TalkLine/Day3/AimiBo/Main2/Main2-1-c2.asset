@@ -17,7 +17,7 @@ MonoBehaviour:
   - ->p
   - "\u6216\u8BB8\u662F\u574F\u4E8B\u7684\u5F00\u7AEF\u3002"
   - ->c
-  - "\u827E\u7C73\u8389\uFF1A\u5371\u673A\u610F\u8BC6\u4E0D\u9519\u3002"
+  - "\u827E\u7C73\u8389\uFF1A\u5371\u673A\u610F\u8BC6\u4E0D\u9519\u3002@{4}"
   - ${End}
   Option1: {fileID: 11400000, guid: e2e429031c4874641bd693aa32d0f703, type: 2}
   Option2: {fileID: 0}

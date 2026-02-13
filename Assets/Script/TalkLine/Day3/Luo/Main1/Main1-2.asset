@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - ->c
-  - "\u6D1B\u5C14\u574E\uFF1A\u665A\u4E0A\u597D\uFF0C\u961F\u957F\u3002"
+  - "\u6D1B\u5C14\u574E\uFF1A\u665A\u4E0A\u597D\uFF0C\u961F\u957F\u3002@{1}"
   - ->p
   - "\u4F60\u4F3C\u4E4E\u5F88\u96BE\u53D7\u3002"
   - ${End}

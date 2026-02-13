@@ -36,7 +36,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
     private int _stopCommend = 0;
     private const string CgPattern = @"CG\d+"; // 简化正则表达式
     private const string AsidePattern = @"A_";
-    private const string ExpressionPattern = @"@\{(.+?)\}"; // 新增：表情解析正则
+    private const string ExpressionPattern =  @"@\{(\d+)\}"; // 新增：表情解析正则
     private const string MiniPattern = @"^MINI\d{1}$";
     public bool CanShowText { get; set; }
 
@@ -50,7 +50,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
     public CgManager cgManager;
     public Manager skipManager;
     public GameObject aimiGame, amandeGame, boGame, luoGame;
-    public GameObject laiWenGame,playerTalkBack;
+    public GameObject laiWenGame;
 
     [Header("角色名映射（替代硬编码）")] // 新增：可视化配置角色名
     public List<CharacterNameMapping> characterNameMappings;
@@ -511,6 +511,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
     /// </summary>
     private string SetExpression(string text, string characterName)
     {
+        
         try
         {
             var match = Regex.Match(text, ExpressionPattern);
@@ -518,7 +519,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
             {
                 string expression = match.Groups[1].Value;
                 text = Regex.Replace(text, ExpressionPattern, string.Empty);
-
+                Debug.Log($"设置表情{expression} {characterName}");
                 if (showDebug)
                 {
                     Debug.Log($"表情:{expression} , 输出文本:{text}");

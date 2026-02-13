@@ -95,7 +95,7 @@ public class Character : MonoBehaviour
     public List<GameObject> CharacterList;
 
     public bool ShowInfo = false;
-    private bool Have_ShowInfo = false;
+    public bool Have_ShowInfo = false;
 
     private int InfoClick = 0;
 

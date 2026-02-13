@@ -16,8 +16,8 @@ MonoBehaviour:
   - ->c
   - ${ShowCharacterTalkBox}
   - ${LockSwitchStage}
-  - "\u827E\u7C73\u8389\uFF1A\u6709\u4E8B\uFF1F"
-  - "\u827E\u7C73\u8389\uFF1A\u6709\u4E8B\uFF1F"
+  - "\u827E\u7C73\u8389\uFF1A\u6709\u4E8B\uFF1F@{1}"
+  - "\u827E\u7C73\u8389\uFF1A\u6709\u4E8B\uFF1F@{1}"
   - ->p
   - "\u4ECA\u5929\u63A5\u6536\u5230\u4FE1\u53F7\u4E86\u5417\uFF1F"
   - CG2
