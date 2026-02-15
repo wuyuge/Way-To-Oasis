@@ -51,6 +51,7 @@
     <Compile Include="Assets\Script\Mask\AbandonTips\AbandonTips.cs" />
     <Compile Include="Assets\Script\UI\DownBar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\Script\UI\OppositeActive.cs" />
     <Compile Include="Assets\Script\TalkSys\TalkSysFullMode.cs" />
     <Compile Include="Assets\Script\MiniGame\Luo\PipeManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Script\Setting\Audio\AudioSettingManager.cs" />
     <Compile Include="Assets\Script\Day0\Day0SwicthMain.cs" />
+    <Compile Include="Assets\Script\Mission\Mission.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\SaveMenuInterface.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Script\DataManager\Developer\DevSaveSentString.cs" />
