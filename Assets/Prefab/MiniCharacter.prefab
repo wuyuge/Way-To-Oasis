@@ -955,10 +955,22 @@ MonoBehaviour:
     isRaining: 1
     isContinuous: 0
     speaker: 03000000
+  - textContainer: {fileID: 11400000, guid: 3d3e85c1f8e2f37418f82e26fa8e79b3, type: 2}
+    isRaining: 0
+    isContinuous: 1
+    speaker: 0000000001000000
+  - textContainer: {fileID: 11400000, guid: 6cd3bbc7cdf5b084cab382d971dccb07, type: 2}
+    isRaining: 0
+    isContinuous: 1
+    speaker: 0300000001000000
+  - textContainer: {fileID: 11400000, guid: 08458035433ee38429de0e1c9346d0e8, type: 2}
+    isRaining: 0
+    isContinuous: 1
+    speaker: 0200000004000000
   rain: {fileID: 0}
   state: {fileID: 5479206781262853986}
   talkSys: {fileID: 4821426798022909600}
-  waitTime: 5
+  waitTime: 3.5
   textWaitTime: 1
   aimi: {fileID: 0}
   amande: {fileID: 0}
