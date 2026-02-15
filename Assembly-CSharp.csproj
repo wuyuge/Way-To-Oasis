@@ -198,6 +198,7 @@
     <Compile Include="Assets\Script\DataManager\Developer\DevBody\DevBodyButton.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Script\UI\Menu\FpsCalculator.cs" />
+    <Compile Include="Assets\Script\Mission\MissionManager.cs" />
     <Compile Include="Assets\Script\Mask\MaskManager.cs" />
     <Compile Include="Assets\Script\DataManager\Setting\SettingInitialize.cs" />
     <Compile Include="Assets\Script\DataManager\Saves\AutoSave.cs" />

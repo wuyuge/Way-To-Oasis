@@ -531,10 +531,18 @@ MonoBehaviour:
     - {fileID: 5365482459874356769}
     - {fileID: 539104747143927749}
     expressions:
-    - name: 0
-      sprite: {fileID: 21300000, guid: 8c1fb0dc1a6dc4d449a64a6b420e0492, type: 3}
     - name: 1
-      sprite: {fileID: 21300000, guid: 4a5bdabbcb666f8418ad07626c26b410, type: 3}
+      sprite: {fileID: 21300000, guid: 92cba7bff51b26e47aae0931dfabc7c6, type: 3}
+    - name: 2
+      sprite: {fileID: 21300000, guid: 59f256e220119a6429cf13995544dc46, type: 3}
+    - name: 3
+      sprite: {fileID: 21300000, guid: 96f7a879d13811f47b5b8ff31954778f, type: 3}
+    - name: 4
+      sprite: {fileID: 21300000, guid: df97e17723b0d1647bd35d8ec1ef4f1b, type: 3}
+    - name: 5
+      sprite: {fileID: 21300000, guid: 2f6ec9a902538fa4bb7646fea9746c08, type: 3}
+    - name: 6
+      sprite: {fileID: 21300000, guid: 181e75dcdb55a5e40a7c5317486bc756, type: 3}
   - characterName: "\u827E\u7C73\u8389"
     relatedImages:
     - {fileID: 9121073920801299718}
@@ -1061,9 +1069,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4a5bdabbcb666f8418ad07626c26b410, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 92cba7bff51b26e47aae0931dfabc7c6, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1158,9 +1166,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4a5bdabbcb666f8418ad07626c26b410, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 92cba7bff51b26e47aae0931dfabc7c6, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
