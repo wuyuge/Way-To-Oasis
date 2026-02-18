@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Object",menuName = "Create Object")]
+[CreateAssetMenu(fileName = "New TextData",menuName = "创建数据/新建对话数据")]
 public class Manager : ScriptableObject
 {
     

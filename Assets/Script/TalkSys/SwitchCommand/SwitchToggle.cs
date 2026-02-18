@@ -141,6 +141,8 @@ public class SwitchToggle : SwitchCommand
                 tempProgress.CanSwitch = true;
                 tempProgress.SwtichProgress();
                 break;
+            
+                
         }
     }
 

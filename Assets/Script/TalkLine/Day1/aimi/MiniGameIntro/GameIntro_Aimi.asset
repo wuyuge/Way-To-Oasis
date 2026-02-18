@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: GameIntro_Aimi
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - ->c
+  - "\u827E\u7C73\u8389\uFF1A\u5148\u522B\u6025\u7740\u8D70\u3002"
+  - "\u827E\u7C73\u8389\uFF1A\u4ECA\u5929\u7684\u63A2\u6D4B\u6216\u8BB8\u9700\u8981\u4F60\u7684\u5E2E\u52A9\u3002"
+  - "\u827E\u7C73\u8389\uFF1A\u5F53\u7136\uFF0C\u4F60\u8981\u662F\u6CA1\u7A7A\u4E5F\u4E0D\u8981\u7D27\u3002\u4E0D\u8FC7\u662F\u6211\u591A\u8D39\u4E9B\u4E8B\u7F62\u4E86\u3002"
+  - ${Choice}
+  Option1: {fileID: 11400000, guid: a8c6dc0ffbe961c41ae02b109ae811f3, type: 2}
+  Option2: {fileID: 11400000, guid: 2b2e44e0c89672a428807f9670109b91, type: 2}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

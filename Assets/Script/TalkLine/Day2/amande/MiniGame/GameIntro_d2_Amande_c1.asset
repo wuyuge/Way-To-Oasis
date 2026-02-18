@@ -10,16 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
-  m_Name: fu_Day2_Shop_choice2
+  m_Name: GameIntro_d2_Amande_c1
   m_EditorClassIdentifier: 
   TxtLine:
-  - "\u6CA1\u4EC0\u4E48\u539F\u56E0\uFF0C\u6211\u4E50\u610F"
+  - "\u6211\u5F88\u4E50\u610F"
   - ->p
-  - "\u6CA1\u4EC0\u4E48\u539F\u56E0\uFF0C\u6211\u4E50\u610F\u3002"
-  - ->c
-  - "\u535A\u91D1\u68EE\uFF1A\u54C8\u54C8\u54C8\uFF0C\u4F60\u7EC8\u4E8E\u4E0D\u88C5\u4E86\uFF1F"
-  - ${End}
-  Option1: {fileID: 11400000, guid: a7826e1ebc361464887210fbaf3e7e79, type: 2}
+  - "\u6211\u5F88\u4E50\u610F\u3002"
+  Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}

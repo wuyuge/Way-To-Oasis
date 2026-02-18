@@ -203,6 +203,11 @@ MonoBehaviour:
   autoPlayDelay: 1
   cgManager: {fileID: 0}
   skipManager: {fileID: 11400000, guid: fe1f8465401e29e46823b95ffbe8976e, type: 2}
+  aimiGame: {fileID: 0}
+  amandeGame: {fileID: 0}
+  boGame: {fileID: 0}
+  luoGame: {fileID: 0}
+  laiWenGame: {fileID: 0}
   characterNameMappings:
   - EnglishName: 
     ChineseName: "\u827E\u7C73\u8389"
@@ -837,6 +842,10 @@ MonoBehaviour:
     actions:
     - {fileID: 6079799807752870375}
     functions: 00000000
+  - command: CheckAimiDead
+    actions:
+    - {fileID: 6079799807752870375}
+    functions: 09000000
   functionList: []
 --- !u!1 &5565000326094856922
 GameObject:

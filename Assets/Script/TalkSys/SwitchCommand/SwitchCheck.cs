@@ -30,7 +30,6 @@ public class SwitchCheck : SwitchCommand
 
     public override void Execute(FunctionCode.Function code)
     {
-        int curLine = _talkSys.line;
         _talkSys.ResetLine();
         switch (code)
         {
@@ -41,18 +40,20 @@ public class SwitchCheck : SwitchCommand
                     _talkSys.SwitchLine(TalkLine.Line1);
                     break;
                 }
+
                 _talkSys.SwitchLine(TalkLine.Line2);
                 break;
-            case FunctionCode.Function.B://原命令:/CheckEveryOneLive,dead,twicedeadchoice
+            case FunctionCode.Function.B: //原命令:/CheckEveryOneLive,dead,twicedeadchoice
                 //是否有人死亡
                 foreach (var c in _characters)
                 {
                     if (c.Dead)
                     {
-                        _talkSys.SwitchLine(TalkLine.Line2);//有人死亡转2号对话分支,否则1号
+                        _talkSys.SwitchLine(TalkLine.Line2); //有人死亡转2号对话分支,否则1号
                         return;
                     }
                 }
+
                 _talkSys.SwitchLine(TalkLine.Line1);
                 break;
             case FunctionCode.Function.C:
@@ -62,6 +63,7 @@ public class SwitchCheck : SwitchCommand
                     _talkSys.SwitchLine(TalkLine.Line1);
                     return;
                 }
+
                 _talkSys.SwitchLine(TalkLine.Line2);
                 break;
             case FunctionCode.Function.D:
@@ -73,12 +75,14 @@ public class SwitchCheck : SwitchCommand
                         if (c.Dead)
                         {
                             _talkSys.SwitchLine(TalkLine.Line2);
-                            return; 
+                            return;
                         }
+
                         break;
                     }
-                    
+
                 }
+
                 _talkSys.SwitchLine(TalkLine.Line1);
                 break;
             case FunctionCode.Function.E:
@@ -88,6 +92,7 @@ public class SwitchCheck : SwitchCommand
                     _talkSys.SwitchLine(TalkLine.Line2);
                     return;
                 }
+
                 _talkSys.SwitchLine(TalkLine.Line1);
                 break;
             case FunctionCode.Function.F:
@@ -117,6 +122,7 @@ public class SwitchCheck : SwitchCommand
                 {
                     _talkSys.SwitchLine(TalkLine.Line2);
                 }
+
                 break;
             case FunctionCode.Function.G:
                 //Day0检查是否与所有人对话
@@ -126,7 +132,8 @@ public class SwitchCheck : SwitchCommand
                     _talkSys.line = 0;
                     break;
                 }
-                _talkSys.line=5;
+
+                _talkSys.line = 5;
                 break;
             case FunctionCode.Function.H:
                 //检查是否持有博金森尸体
@@ -141,9 +148,10 @@ public class SwitchCheck : SwitchCommand
                             return;
                         }
                     }
+
                     _talkSys.buttonFunc.SetBoBodySpecialChoice(false);
                 }
-                
+
                 break;
             case FunctionCode.Function.I:
                 //检查艾米莉自杀事件
@@ -152,17 +160,87 @@ public class SwitchCheck : SwitchCommand
                     _talkSys.SwitchLine(TalkLine.Line1);
                     return;
                 }
+
                 _talkSys.SwitchLine(TalkLine.Line2);
                 break;
+            case FunctionCode.Function.J:
+                foreach (var c in _characters)
+                {
+                    if (c.CharacterName == "艾米莉")
+                    {
+                        if (c.Dead)
+                        {
+                            _talkSys.SwitchLine(TalkLine.Line3);
+                            return;
+                        }
+
+                        break;
+                    }
+                }
+                break;
+            case FunctionCode.Function.K:
+                //迷你游戏切换标志
+                break;
+            case FunctionCode.Function.Ka:
+                //阿曼德迷你游戏切换标志
+                foreach (var value in GlobalData.MiniGameManager.miniGameData)
+                {
+                    if (value.day == GlobalData.Day && value.characterName == "阿曼德" && value.canPlay)
+                    {
+                        _talkSys.SwitchLine(TalkLine.Line1);
+                    }
+                }
+                break;
+            case FunctionCode.Function.Kb:
+                //艾米莉迷你游戏切换标志
+                foreach (var value in GlobalData.MiniGameManager.miniGameData)
+                {
+                    if (value.day == GlobalData.Day && value.characterName == "艾米莉" && value.canPlay)
+                    {
+                        _talkSys.SwitchLine(TalkLine.Line1);
+                    }
+                }
+                break;
+            case FunctionCode.Function.Kc:
+                //博金森迷你游戏切换标志
+                foreach (var value in GlobalData.MiniGameManager.miniGameData)
+                {
+                    if (value.day == GlobalData.Day && value.characterName == "博金森"&& value.canPlay)
+                    {
+                        _talkSys.SwitchLine(TalkLine.Line1);
+                    }
+                }
+                break;
+            case FunctionCode.Function.Kd:
+                //洛尔坎迷你游戏切换标志
+                foreach (var value in GlobalData.MiniGameManager.miniGameData)
+                {
+                    if (value.day == GlobalData.Day && value.characterName == "洛尔坎"&& value.canPlay)
+                    {
+                        _talkSys.SwitchLine(TalkLine.Line1);
+                    }
+                }
+                break;
+            case FunctionCode.Function.Ke:
+                //莱文迷你游戏切换标志
+                foreach (var value in GlobalData.MiniGameManager.miniGameData)
+                {
+                    if (value.day == GlobalData.Day && value.characterName == "莱文"&& value.canPlay)
+                    {
+                        _talkSys.SwitchLine(TalkLine.Line1);
+                    }
+                }
+                break;
+
         }
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
 }

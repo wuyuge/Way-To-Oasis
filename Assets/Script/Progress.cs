@@ -610,6 +610,7 @@ public static class GlobalData
 {
 
     public static int Day { get; set; }
+    public static MiniGameIntroManager MiniGameManager { get; set; }
 
 }
 

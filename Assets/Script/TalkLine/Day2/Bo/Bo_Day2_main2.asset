@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
-  m_Name: Fu_Day2_main2
+  m_Name: Bo_Day2_main2
   m_EditorClassIdentifier: 
   TxtLine:
   - ->c
@@ -20,12 +20,13 @@ MonoBehaviour:
   - "\u535A\u91D1\u68EE\uFF1A\u5982\u679C\u4F60\u60F3\u4E0D\u5230\u529E\u6CD5\u8865\u5145\u98DF\u7269\uFF0C\u4E0D\u5982\u60F3\u60F3\u600E\u4E48\u8282\u7701\u98DF\u7269\u3002"
   - "\u535A\u91D1\u68EE\uFF1A\u4E00\u70B9\u5C0F\u5FE0\u544A\uFF0C\u4E3A\u4E86\u6211\u4EEC\u90FD\u80FD\u6D3B\u4E45\u4E00\u70B9\u3002"
   - "\u535A\u91D1\u68EE\uFF1A\u6CA1\u522B\u7684\u4E8B\u6211\u5C31\u5148\u8D70\u4E86\u3002"
+  - ${CheckMiniBo}
   - ${OpenSwitchStage}
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: 7b14d26baca59914481ba106d5996fb6, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0

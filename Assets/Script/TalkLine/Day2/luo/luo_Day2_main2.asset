@@ -25,12 +25,13 @@ MonoBehaviour:
   - "\u6D1B\u5C14\u574E\uFF1A\u6211\u4E5F\u53EA\u662F\u4E0D\u5E0C\u671B\u5728\u6211\u4EEC\u597D\u4E0D\u5BB9\u6613\u770B\u5230\u5E0C\u671B\u7684\u65F6\u5019\u56E0\u4E3A\u6211\u7684\u539F\u56E0\u65AD\u9001\u6389\u5B83\u3002"
   - "\u6D1B\u5C14\u574E\uFF1A\u603B\u800C\u8A00\u4E4B\uFF0C\u6211\u4F1A\u7EE7\u7EED\u5B8C\u6210\u597D\u8FD9\u4EF6\u4E8B\u7684\u3002@{4}"
   - "\u6D1B\u5C14\u574E\uFF1A\u771F\u5E0C\u671B\u660E\u5929\u4E00\u65E9\u5C31\u53EF\u4EE5\u542C\u5230\u8FD9\u6837\u7684\u597D\u6D88\u606F\u3002"
+  - ${CheckMiniL}
   - ${OpenSwitchStage}
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: ace05e0712311db46b7c5c347643b4d8, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0

@@ -18,10 +18,13 @@ MonoBehaviour:
   - "\u8FD8\u662F\u4E0D\u6253\u6270\u4ED6\u4E86\u3002"
   - ->c
   - "\u6D1B\u5C14\u574E\uFF1A\u54E6\u597D\u2026\u2026\u8F9B\u82E6\u4E86\u961F\u957F\u3002@{3}"
-  - ${End}
+  - ${CheckMiniL}
+  - ${CloseCharacterTalkBox}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
   Option1: {fileID: 11400000, guid: 05d851f3e26fe5d4aa8c0464b14460fd, type: 2}
   Option2: {fileID: 0}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: 05d851f3e26fe5d4aa8c0464b14460fd, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0

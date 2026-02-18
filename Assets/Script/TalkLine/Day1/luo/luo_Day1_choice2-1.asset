@@ -20,10 +20,13 @@ MonoBehaviour:
   - "\u6D1B\u5C14\u574E\uFF1A\u554A\u662F\u7684\uFF0C\u4E5F\u4E0D\u662F\u4EC0\u4E48\u5927\u4E8B\u2026\u2026\u5C31\u662F\u6211\u81EA\u5DF1\u6709\u4E9B\u7EA0\u7ED3\uFF0C\u6CA1\u4E8B\u7684\u3002@{3}"
   - "\u6D1B\u5C14\u574E\uFF1A\u2026\u2026"
   - "\u6D1B\u5C14\u574E\uFF1A\u6211\u4EEC\u90FD\u4F1A\u6D3B\u4E0B\u53BB\u7684\uFF0C\u5BF9\u5427\u3002"
-  - ${End}
+  - ${CheckMiniL}
+  - ${CloseCharacterTalkBox}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
   Option1: {fileID: 11400000, guid: 05d851f3e26fe5d4aa8c0464b14460fd, type: 2}
   Option2: {fileID: 0}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: 05d851f3e26fe5d4aa8c0464b14460fd, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0

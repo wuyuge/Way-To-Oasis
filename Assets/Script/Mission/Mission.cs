@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Mission", menuName = "Mission/Create Mission")]
+[CreateAssetMenu(fileName = "New Mission", menuName = "创建数据/新建任务数据")]
 public class Mission : ScriptableObject
 {
     // 单个任务的数据结构

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "New Level",menuName = "Create MiniGame Level/Luo")]
+[CreateAssetMenu(fileName = "New Level",menuName = "创建数据/新建洛尔坎关卡")]
 public class LuoLevelFile : ScriptableObject
 {
     [System.Serializable]

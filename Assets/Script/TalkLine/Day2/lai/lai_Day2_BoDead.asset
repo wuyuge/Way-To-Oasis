@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
-  m_Name: lai_Day_FuDead
+  m_Name: lai_Day2_BoDead
   m_EditorClassIdentifier: 
   TxtLine:
+  - ${CheckAimiDead}
+  - ${CheckAimiDead}
   - ->c
   - "\u83B1\u6587\uFF1A\u4F60\u628A\u4ED6\u6740\u4E86\uFF1F@{5}"
   - "\u83B1\u6587\uFF1A\u4F60\u628A\u4ED6\u6740\u4E86\uFF1F@{5}"
@@ -31,7 +33,7 @@ MonoBehaviour:
   - ${Choice}
   Option1: {fileID: 11400000, guid: 392d990229de5f34cb69206b1fb33751, type: 2}
   Option2: {fileID: 11400000, guid: bb5ff10142c0d0e469a8e9ee866201bd, type: 2}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: 8ffd047651f33fd40ad0b314775a744f, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0

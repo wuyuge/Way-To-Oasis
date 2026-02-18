@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: GameIntro_Luo_c2
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u62B1\u6B49\uFF0C\u8FD8\u6709\u522B\u7684\u4E8B"
+  - ->p
+  - "\u62B1\u6B49\uFF0C\u8FD8\u6709\u522B\u7684\u4E8B\u3002"
+  - ->c
+  - "\u6D1B\u5C14\u574E\uFF1A\u5E94\u8BE5\u662F\u6211\u8BF4\u624D\u5BF9\u2026\u2026\u8FD9\u672C\u6765\u5C31\u662F\u6211\u7684\u5DE5\u4F5C\u2026\u2026\u62B1\u6B49\u961F\u957F\u3002"
+  - ${CloseCharacterTalkBox}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

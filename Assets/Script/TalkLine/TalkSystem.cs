@@ -427,7 +427,6 @@ public class TalkSystem : MonoBehaviour
                 Debug.Log("Ô¤ÆÚÍâµÄline");
                 break;
         }
-
         line = 0;
     }
     public void SetTextBox(Manager textBox)
