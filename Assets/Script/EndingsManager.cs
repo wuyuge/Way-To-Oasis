@@ -7,16 +7,17 @@ public class EndingsManager : MonoBehaviour
 {
 
     public GameObject MainCharacter;
+    public Animator black;
     public List<GameObject> AllCharacter = new List<GameObject>();
 
-    public void ToEnd(string SceneName)
+    public IEnumerator ToEnd(string SceneName)
     {
+        black.SetTrigger("OnlyBlack");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene(SceneName);
-
-
-
     }
 
+    
 
     public bool CheckEnding()
     {
@@ -32,7 +33,7 @@ public class EndingsManager : MonoBehaviour
         // 优先检查反抗条件，可能更紧急
         if (notComfort >= 2)
         {
-            ToEnd("Be3");
+            StartCoroutine(ToEnd("Be3"));
             return true; // 触发此结局后直接返回，避免后续判断
         }
 
@@ -41,13 +42,13 @@ public class EndingsManager : MonoBehaviour
         {
             if (eatNum == 1)
             {
-                ToEnd("Be2");
+                StartCoroutine(ToEnd("Be2"));
                 return true;
             }
             // 处理主角进食的情况
             if (eatNum <= notEatNum)
             {
-                ToEnd("Be1");
+                StartCoroutine(ToEnd("Be1"));
                 return true;
             }
             
@@ -63,13 +64,13 @@ public class EndingsManager : MonoBehaviour
             // 检查全员未进食的特殊情况
             if (eatNum == 0 && currentNotDeadNum == 6)
             {
-                ToEnd("Be7");
+                StartCoroutine(ToEnd("Be7"));
                 return true;
             }
             // 检查只有主角存活的情况
             else if (currentNotDeadNum == 1)
             {
-                ToEnd("Be5");
+                StartCoroutine(ToEnd("Be5"));
                 return true;
             }
             // 其他主角饿死的情况
@@ -77,12 +78,12 @@ public class EndingsManager : MonoBehaviour
             {
                 if (currentNotDeadNum == 3)
                 {
-                    ToEnd("Be4-1");
+                    StartCoroutine(ToEnd("Be4-1"));
                     return true;
                 }
                 else if (currentNotDeadNum > 3)
                 {
-                    ToEnd("Be4-2");
+                    StartCoroutine(ToEnd("Be4-2"));
                     return true;
                 }
             }

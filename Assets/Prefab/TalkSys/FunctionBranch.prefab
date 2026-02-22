@@ -677,11 +677,11 @@ MonoBehaviour:
   - command: ShowCharacterTalkBox
     actions:
     - {fileID: 5440575785313673631}
-    functions: 32000000
+    functions: 35000000
   - command: CloseCharacterTalkBox
     actions:
     - {fileID: 5440575785313673631}
-    functions: 33000000
+    functions: 36000000
   - command: End
     actions:
     - {fileID: 5440575785313673631}
@@ -846,6 +846,26 @@ MonoBehaviour:
     actions:
     - {fileID: 6079799807752870375}
     functions: 09000000
+  - command: CheckMinia
+    actions:
+    - {fileID: 6079799807752870375}
+    functions: 2e000000
+  - command: CheckMiniA
+    actions:
+    - {fileID: 6079799807752870375}
+    functions: 2f000000
+  - command: CheckMiniB
+    actions:
+    - {fileID: 6079799807752870375}
+    functions: 30000000
+  - command: CheckMiniL
+    actions:
+    - {fileID: 6079799807752870375}
+    functions: 31000000
+  - command: CheckMinil
+    actions:
+    - {fileID: 6079799807752870375}
+    functions: 32000000
   functionList: []
 --- !u!1 &5565000326094856922
 GameObject:
@@ -978,6 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc204de942691214a8417be83f55a69d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doNotResetLineList: 2e0000002f000000300000003100000032000000
 --- !u!1 &7079499628955331618
 GameObject:
   m_ObjectHideFlags: 0

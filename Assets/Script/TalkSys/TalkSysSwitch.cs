@@ -90,6 +90,7 @@ public class TalkSysSwitch : MonoBehaviour,ITalkSysCore
             curText = curText.Replace("$", "");
             curText = curText.Replace("{", "");
             curText = curText.Replace("}", "");
+            Debug.Log(curText);
             bool isExist = false;
             foreach (var codes in switchCodes)
             {

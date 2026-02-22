@@ -26,7 +26,7 @@ MonoBehaviour:
   - ${DownTalkBox}
   Option1: {fileID: 11400000, guid: 05d851f3e26fe5d4aa8c0464b14460fd, type: 2}
   Option2: {fileID: 0}
-  Option3: {fileID: 11400000, guid: 05d851f3e26fe5d4aa8c0464b14460fd, type: 2}
+  Option3: {fileID: 11400000, guid: 5bf8990da28b85248961bbd1708d308e, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0

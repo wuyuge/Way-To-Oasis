@@ -37,12 +37,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BreakAmount: 11.400025
+    - _Alpha: 1
+    - _BreakAmount: 32.59979
     - _DepthOffset: -0.226
     - _DissolveThreshold: 0.36
     - _EdgeIntensity: 5
     - _EdgeThickness: 10
-    - _EdgeWidth: 0.024
+    - _EdgeWidth: 0.047
     - _FragmentCount: 3
     - _NoiseScale: -7.54
     - _NoiseSpeed: 2.21

@@ -9,6 +9,7 @@ public class SwitchCheck : SwitchCommand
     private bool ShopEvent => ShopEventBox.GeneralBool;
     private List<Character> _characters = new List<Character>();
     private Manager Aimi => _talkSys.aimi;
+    public List<FunctionCode.Function> doNotResetLineList;
 
     public override void Init(TalkSystem talkSys)
     {
@@ -30,7 +31,7 @@ public class SwitchCheck : SwitchCommand
 
     public override void Execute(FunctionCode.Function code)
     {
-        _talkSys.ResetLine();
+        if (!doNotResetLineList.Contains(code)) _talkSys.ResetLine();
         switch (code)
         {
             case FunctionCode.Function.A:
@@ -185,52 +186,77 @@ public class SwitchCheck : SwitchCommand
                 //阿曼德迷你游戏切换标志
                 foreach (var value in GlobalData.MiniGameManager.miniGameData)
                 {
-                    if (value.day == GlobalData.Day && value.characterName == "阿曼德" && value.canPlay)
+                    if (value.day == GlobalData.Day && value.characterName == "阿曼德")
                     {
-                        _talkSys.SwitchLine(TalkLine.Line1);
+                        if (value.canPlay)
+                        {
+                            _talkSys.ResetLine();
+                            _talkSys.SwitchLine(TalkLine.Line3);
+                        }
+                        return;
                     }
                 }
-                break;
+                return;
             case FunctionCode.Function.Kb:
                 //艾米莉迷你游戏切换标志
                 foreach (var value in GlobalData.MiniGameManager.miniGameData)
                 {
-                    if (value.day == GlobalData.Day && value.characterName == "艾米莉" && value.canPlay)
+                    if (value.day == GlobalData.Day && value.characterName == "艾米莉")
                     {
-                        _talkSys.SwitchLine(TalkLine.Line1);
+                        if (value.canPlay)
+                        {
+                            _talkSys.ResetLine();
+                            _talkSys.SwitchLine(TalkLine.Line3);
+                        }
+                        return;
                     }
                 }
-                break;
+                return;
             case FunctionCode.Function.Kc:
                 //博金森迷你游戏切换标志
                 foreach (var value in GlobalData.MiniGameManager.miniGameData)
                 {
-                    if (value.day == GlobalData.Day && value.characterName == "博金森"&& value.canPlay)
+                    if (value.day == GlobalData.Day && value.characterName == "博金森")
                     {
-                        _talkSys.SwitchLine(TalkLine.Line1);
+                        if (value.canPlay)
+                        {
+                            _talkSys.ResetLine();
+                            _talkSys.SwitchLine(TalkLine.Line3);
+                        }
+                        return;
                     }
                 }
-                break;
+                return;
             case FunctionCode.Function.Kd:
                 //洛尔坎迷你游戏切换标志
                 foreach (var value in GlobalData.MiniGameManager.miniGameData)
                 {
-                    if (value.day == GlobalData.Day && value.characterName == "洛尔坎"&& value.canPlay)
+                    if (value.day == GlobalData.Day && value.characterName == "洛尔坎")
                     {
-                        _talkSys.SwitchLine(TalkLine.Line1);
+                        if (value.canPlay)
+                        {
+                            _talkSys.ResetLine();
+                            _talkSys.SwitchLine(TalkLine.Line3);
+                        }
+                        return;
                     }
                 }
-                break;
+                return;
             case FunctionCode.Function.Ke:
                 //莱文迷你游戏切换标志
                 foreach (var value in GlobalData.MiniGameManager.miniGameData)
                 {
-                    if (value.day == GlobalData.Day && value.characterName == "莱文"&& value.canPlay)
+                    if (value.day == GlobalData.Day && value.characterName == "莱文")
                     {
-                        _talkSys.SwitchLine(TalkLine.Line1);
+                        if (value.canPlay)
+                        {
+                            _talkSys.ResetLine();
+                            _talkSys.SwitchLine(TalkLine.Line3);
+                        }
+                        return;
                     }
                 }
-                break;
+                return;
 
         }
     }

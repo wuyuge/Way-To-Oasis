@@ -15,7 +15,7 @@ public class MiniCharacterTalkSys : MonoBehaviour
 
     public List<CharacterTalk> characterTalks;
 
-    public void ShowText(string Name,string Text)
+    public void ShowAllText(string Name,string Text)
     {
         //Debug.Log($"接受数据说话人：{Name} 内容：{Text}");
         // 显示对话栏的逻辑

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public abstract class Pipe : MonoBehaviour
 {
@@ -155,13 +156,15 @@ public abstract class Pipe : MonoBehaviour
             }
             SwitchPipePosition(_endPipe,endTowards);
         }
-        _objectImage.sprite = pipeSprite;
-        if (pipeNumber != 0)
+
+        var temp = Random.Range(0, 1);
+        if (temp == 0)
         {
-            if (pipeNumber % 2 != 0)
-            {
-                _objectImage.sprite = pipeSpriteRed;
-            }
+            _objectImage.sprite = pipeSprite;
+        }
+        else
+        {
+            _objectImage.sprite = pipeSpriteRed;
         }
     }
 
@@ -172,13 +175,14 @@ public abstract class Pipe : MonoBehaviour
     
     private void OnEnable()
     {
-        _objectImage.sprite = pipeSprite;
-        if (pipeNumber != 0)
+        var temp = Random.Range(0, 1);
+        if (temp == 0)
         {
-            if (pipeNumber % 2 != 0)
-            {
-                _objectImage.sprite = pipeSpriteRed;
-            }
+            _objectImage.sprite = pipeSprite;
+        }
+        else
+        {
+            _objectImage.sprite = pipeSpriteRed;
         }
         
         
@@ -526,12 +530,12 @@ public abstract class Pipe : MonoBehaviour
             case PipeTowards.Right:
                 pipe.transform.position = rightP.transform.position;
                 // Z轴顺时针旋转90度（对应-90度）
-                pipe.transform.rotation = Quaternion.Euler(0, 0, -90);
+                pipe.transform.rotation = Quaternion.Euler(180, 0, -90);
                 break;
             case PipeTowards.Left:
                 pipe.transform.position = leftP.transform.position;
                 // Z轴逆时针旋转90度
-                pipe.transform.rotation = Quaternion.Euler(0, 0, 90);
+                pipe.transform.rotation = Quaternion.Euler(0, 180, 90);
                 break;
         }
     }

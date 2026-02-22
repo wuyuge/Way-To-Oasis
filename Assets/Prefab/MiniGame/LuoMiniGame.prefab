@@ -1037,9 +1037,11 @@ MonoBehaviour:
   mistake: {fileID: 11400000, guid: d98a2c46135a89a4f8cd898aee1a7028, type: 2}
   heavyMistake: {fileID: 11400000, guid: 04d7d3b7e6abfbe4d942ab954c902c84, type: 2}
   repeat: {fileID: 11400000, guid: 5217a1fa92042194bb1bd6d174fdd868, type: 2}
+  start: {fileID: 11400000, guid: 0b55deed87d7556418a23421cd4bd028, type: 2}
   checkTime: 0.25
   waitTime: 5
   timeOutInterval: 1
+  waitSeconds: 2
 --- !u!114 &5244382535307366858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1673,6 +1675,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelFile: {fileID: 11400000, guid: 24ba97f27423c9c46996502ea8855bf9, type: 2}
   replaceBox: {fileID: 2418811852659643847}
+  files:
+  - {fileID: 11400000, guid: 24ba97f27423c9c46996502ea8855bf9, type: 2}
+  - {fileID: 11400000, guid: d12b2816945b07b4480cb409a986ff0d, type: 2}
+  - {fileID: 11400000, guid: ceaabd136f154be438d30126f09afd85, type: 2}
 --- !u!1 &7230088247077208458
 GameObject:
   m_ObjectHideFlags: 0

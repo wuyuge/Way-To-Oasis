@@ -16,23 +16,40 @@ public class MiniLuoTalk : MonoBehaviour
         public Sprite sprite;
     }
     public List<Expressions> expressionsList;
-    public Manager normal,timeOut,success,mistake,heavyMistake,repeat;
+    public Manager normal,timeOut,success,mistake,heavyMistake,repeat,start;
     public float checkTime,waitTime;
     public int timeOutInterval;
     private Image _image;
     private static Coroutine _currentCoroutine;
     private int _lastSelectedIndex = -1;
-    private bool _succeed;
+    private bool _succeed,_isStart;
+    [Tooltip("设置起始对话等待时间(秒)")] public int waitSeconds;
 
     #region  初始化设置
     private void Awake()
     {
         _image = GetComponent<Image>();
+        if (start is null)
+        {
+            Debug.LogError("start未赋值",this);
+        }
+        
+        
+        
     }
 
     private void OnEnable()
     {
         ResetTalkLine();
+        if (GlobalData.Day == 1)
+        {
+            start.GeneralBool = true;
+        }
+        if (start.GeneralBool)
+        {
+            _isStart = true;
+            StartCoroutine(ShowText());
+        }
     }
 
     public void ResetTalkLine()
@@ -64,6 +81,19 @@ public class MiniLuoTalk : MonoBehaviour
     
 
     #endregion
+
+
+    private IEnumerator ShowText()
+    {
+        foreach (var value in start.TxtLine)
+        {
+            string tempText = value;
+            text.text = value;
+            yield return new WaitForSecondsRealtime(waitSeconds);
+        }
+
+        _isStart = false;
+    }
     
     
 
@@ -113,8 +143,11 @@ public class MiniLuoTalk : MonoBehaviour
 
     #region 文本处理 ProcessTextLine
     private void ProcessTextLine(int index,Manager targetManager)
-    
     {
+        if (_isStart)
+        {
+            return;
+        }
         string targetLine = targetManager.TxtLine[index];
         if (string.IsNullOrEmpty(targetLine))
         {

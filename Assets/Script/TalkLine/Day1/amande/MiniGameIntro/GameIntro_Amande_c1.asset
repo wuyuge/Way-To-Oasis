@@ -16,6 +16,7 @@ MonoBehaviour:
   - "\u6211\u5F88\u4E50\u610F"
   - ->p
   - "\u6211\u5F88\u4E50\u610F\u3002"
+  - MINI4
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

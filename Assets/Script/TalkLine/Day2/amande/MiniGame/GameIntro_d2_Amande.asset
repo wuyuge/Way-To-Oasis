@@ -18,8 +18,8 @@ MonoBehaviour:
   - "\u963F\u66FC\u5FB7\uFF1A\u5F00\u73A9\u7B11\u7684\uFF0C\u53EA\u662F\u5E0C\u671B\u4F60\u80FD\u5E2E\u6211\u4E9B\u5FD9\u800C\u5DF2\u3002@{5}"
   - "\u963F\u66FC\u5FB7\uFF1A\u8981\u662F\u8FD8\u6709\u522B\u7684\u4E8B\uFF0C\u4F60\u5F53\u7136\u53EF\u4EE5\u62D2\u7EDD\u3002\u6CA1\u5173\u7CFB\u7684\u3002"
   - ${Choice}
-  Option1: {fileID: 0}
-  Option2: {fileID: 0}
+  Option1: {fileID: 11400000, guid: e61e38910991f2f4d9c46eca5f9bfa26, type: 2}
+  Option2: {fileID: 11400000, guid: 1ecbc1791ce7b9d4d89011cf1b772944, type: 2}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}

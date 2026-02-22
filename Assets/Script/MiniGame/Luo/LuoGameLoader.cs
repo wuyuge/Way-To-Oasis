@@ -1,13 +1,21 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 public class LuoGameLoader : MonoBehaviour
 {
     public LuoLevelFile levelFile;
     public GameObject replaceBox;
-    
-    
+    public List<LuoLevelFile> files;
+    private List<LuoLevelFile> _usingFiles;
+
+    private void Awake()
+    {
+        _usingFiles = new List<LuoLevelFile>(files);
+    }
+
     public void LoadLevel(bool reset = false)
     {
         foreach (Transform obj in replaceBox.transform)
@@ -47,6 +55,15 @@ public class LuoGameLoader : MonoBehaviour
 
     private void OnEnable()
     {
+        // 关键修复：列表为空时重置
+        if (_usingFiles == null || _usingFiles.Count == 0)
+        {
+            _usingFiles = new List<LuoLevelFile>(files);
+            Debug.Log("关卡列表已耗尽，重置为初始列表");
+        }
+    
+        levelFile = _usingFiles[Random.Range(0, _usingFiles.Count)];
+        _usingFiles.Remove(levelFile);
         LoadLevel();
     }
 

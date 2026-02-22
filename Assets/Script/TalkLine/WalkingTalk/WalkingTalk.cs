@@ -247,7 +247,7 @@ public class WalkingTalk : MonoBehaviour
         }
 
         _isTalking = true;
-        talkSys?.ShowText(speakerName, content);
+        talkSys?.ShowAllText(speakerName, content);
         Invoke(nameof(ResetTalkState), textWaitTime);
     }
 
@@ -279,7 +279,7 @@ public class WalkingTalk : MonoBehaviour
 
             // 展示文本
             _isTalking = true;
-            talkSys?.ShowText(speakerName, content);
+            talkSys?.ShowAllText(speakerName, content);
             
             // 递增行索引并等待
             _continuousLine++;

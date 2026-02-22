@@ -44,10 +44,10 @@ public class AutoPlay : MonoBehaviour
                 _image.sprite = before;
                 break;
             case 1:
-                _image.sprite = after;
+                _image.sprite = speedUp;
                 break;
             case 2:
-                _image.sprite = speedUp;
+                _image.sprite = after;
                 break;
         }
     }

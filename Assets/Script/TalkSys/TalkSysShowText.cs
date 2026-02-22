@@ -119,6 +119,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
                 return;
             }
 
+            
             // 停止当前协程（快速跳过逻辑）
             if (_currentCoroutine != null)
             {
@@ -188,6 +189,9 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
                 continue;
             }
 
+            
+            
+
             // 显示文本逻辑
             CheckTextUI();
             _currentTextUI.text = string.Empty;
@@ -244,7 +248,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
         var tempHistory = new TextHistory();
         string charaName = string.Empty;
         string displayText = originalText;
-
+        
         // 说话人校正
         if (displayText.Contains("："))
         {
@@ -300,10 +304,9 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
             }
         }
 
-        // 迷你模式初始化
-        if (onMiniMode)
+        if (MiniMode)
         {
-            _miniCharacterTalkSys?.ShowText(charaName, string.Empty); // 空值保护
+            _miniCharacterTalkSys?.ShowAllText(charaName, string.Empty);
         }
 
         // 旁白处理
@@ -328,6 +331,10 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
         float actualInterval = IntervalTime - (IntervalTime * ((autoplay.Weight - 1) * 0.1f));
         actualInterval = Mathf.Max(0.01f, actualInterval); // 防止间隔为0
 
+        if (displayText.Contains("{PlayerName}"))
+        {
+            displayText = displayText.Replace("{PlayerName}", PlayerNameBox);
+        }
         foreach (var c in displayText)
         {
             _talkSys.Type?.Play(); // 空值保护
@@ -342,7 +349,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
                 {
                     _currentTextUI.text += c;
                 }
-                _miniCharacterTalkSys?.ShowText(charaName, c.ToString()); // 空值保护
+                _miniCharacterTalkSys?.ShowText(charaName, c); // 空值保护
             }
 
             yield return new WaitForSeconds(actualInterval);
@@ -433,6 +440,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
         string originalText = TalkLines[DayNum].TxtLine[LineIndex];
         string displayText = originalText;
 
+        
         if (!_isPlayerTalking)
         {
             var nameAndText = HandleCharacterName(originalText);
@@ -443,12 +451,16 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
             {
                 displayText = SetExpression(displayText, nameAndText.Name);
             }
-
+            
+            if (displayText.Contains("{PlayerName}"))
+            {
+                displayText = displayText.Replace("{PlayerName}", PlayerNameBox);
+            }
             // 迷你模式处理
             if (MiniMode)
             {
-                _miniCharacterTalkSys?.ShowText(nameAndText.Name, string.Empty);
-                _miniCharacterTalkSys?.ShowText(nameAndText.Name, displayText);
+                _miniCharacterTalkSys?.ShowAllText(nameAndText.Name, string.Empty);
+                _miniCharacterTalkSys?.ShowAllText(nameAndText.Name, displayText);
                 return;
             }
         }
