@@ -120,6 +120,7 @@
     <Compile Include="Assets\Script\TalkSys\TalkSysSwitch.cs" />
     <Compile Include="Assets\Script\MiniGame\Amande\MedicineComposer.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\ChildObj\DeleteChild.cs" />
+    <Compile Include="Assets\Script\Achievement\AchievementManager.cs" />
     <Compile Include="Assets\Script\Start\StartImport.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Steamworks.NET\SteamManager.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Assets\Script\Character\CharacterExpression.cs" />
     <Compile Include="Assets\Script\DataManager\SettingSave.cs" />
     <Compile Include="Assets\Script\MiniGame\Luo\Pipe4Way.cs" />
+    <Compile Include="Assets\Script\Achievement\Achievement.cs" />
     <Compile Include="Assets\Script\TalkSys\ITalkSysCore.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
@@ -190,6 +192,7 @@
     <Compile Include="Assets\Script\MiniCharacter\MiniCharacterTalkSys.cs" />
     <Compile Include="Assets\Script\DataManager\Developer\DevSaveSendToggle.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Script\Version.cs" />
     <Compile Include="Assets\Script\Setting\Video\Anti.cs" />
     <Compile Include="Assets\Script\QTE\QTEButtonSpawn.cs" />
     <Compile Include="Assets\Script\Text\AddPlayerName.cs" />

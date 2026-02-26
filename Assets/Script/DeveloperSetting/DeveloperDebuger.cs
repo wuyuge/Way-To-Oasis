@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -21,17 +22,33 @@ public class DeveloperDebuger : MonoBehaviour
     public GameObject Mask;
 
     private Camera mainCamera;
+    public Achievement achievementList;
+
+    private void Awake()
+    {
+        AchievementManager.UnlockAchievement("ACH_NEW_LEADER");
+    }
+
     void Start()
     {
         mainCamera = Camera.main;
+        
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F12))
         {
-            if(DeveloperPanel != null)
-            DeveloperPanel.SetActive(!DeveloperPanel.activeSelf);
+            if(DeveloperPanel != null) DeveloperPanel.SetActive(!DeveloperPanel.activeSelf);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            foreach (var value in achievementList.achievements)
+            {
+                AchievementManager.ClearAchievement(value);
+            }
+            
         }
     }
 
