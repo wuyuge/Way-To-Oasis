@@ -28,6 +28,8 @@ public class WalkingTalk : MonoBehaviour
     public float waitTime = 5f;
     [Tooltip("单条对话展示时长（秒）")]
     public float textWaitTime = 3f;
+    [Tooltip("连续对话最后一句展示时长（秒）")] // 新增参数
+    public float lastContinuousTextWaitTime = 5f;
     
     [Header("角色引用")]
     [Tooltip("Aimi角色（需关联存活状态）")]
@@ -48,6 +50,7 @@ public class WalkingTalk : MonoBehaviour
     private string _currentText; // 当前要展示的文本
     private int _continuousLine; // 连续对话当前行索引
     private Coroutine _continuousTalkCoroutine; // 连续对话协程引用（防止重复开启）
+    private MiniCharacterTalkSys _miniTalkSys;
 
     [System.Serializable]
     public class TalkList
@@ -72,6 +75,7 @@ public class WalkingTalk : MonoBehaviour
 
     private void Start()
     {
+        _miniTalkSys = GetComponent<MiniCharacterTalkSys>();
         // 空引用检查（关键组件）
         ValidateReferences();
         
@@ -281,9 +285,24 @@ public class WalkingTalk : MonoBehaviour
             _isTalking = true;
             talkSys?.ShowAllText(speakerName, content);
             
-            // 递增行索引并等待
+            // 判断是否为最后一行
+            bool isLastLine = _continuousLine == _showingManager.TxtLine.Count - 1;
+            // 递增行索引
             _continuousLine++;
-            yield return new WaitForSeconds(textWaitTime);
+            
+            // 根据是否最后一行选择不同的等待时间
+            if (isLastLine)
+            {
+                yield return new WaitForSeconds(lastContinuousTextWaitTime);
+                // 最后一行展示完毕后主动关闭对话
+                ResetTalkState();
+                // 如果对话系统有隐藏对话的方法，可以在这里调用
+                // talkSys?.HideText(); 
+            }
+            else
+            {
+                yield return new WaitForSeconds(textWaitTime);
+            }
         }
     }
 
@@ -366,6 +385,7 @@ public class WalkingTalk : MonoBehaviour
     private void ResetTalkState()
     {
         _isTalking = false;
+        _miniTalkSys.CompleteTalk();
     }
 
     /// <summary>

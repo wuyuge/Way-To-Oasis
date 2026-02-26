@@ -1,8 +1,8 @@
 {
     "SaveID": 0,
-    "SaveTime": "2026-02-22 14:10:07",
+    "SaveTime": "2026-02-26 11:48:04",
     "PlayerName": "■■",
-    "Day": 0,
+    "Day": 1,
     "Body": 1,
     "Food": 21,
     "AmandeKillSelf": false,
@@ -12,7 +12,7 @@
         "Leader"
     ],
     "UsedName": [],
-    "InMain": false,
+    "InMain": true,
     "CharacterWeight": [
         0,
         0,

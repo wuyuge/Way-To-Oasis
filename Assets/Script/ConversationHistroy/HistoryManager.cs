@@ -1,11 +1,20 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HistoryManager : MonoBehaviour
 {
     public List<GameObject> contents =  new List<GameObject>();
     public GameObject conversationPrefab;
-    
+    public Scrollbar verticalScrollbar;
+
+    private void OnEnable()
+    {
+        verticalScrollbar.value = 1f;
+    }
+
+
     public void Refresh()
     {
         if (contents.Count == 0)

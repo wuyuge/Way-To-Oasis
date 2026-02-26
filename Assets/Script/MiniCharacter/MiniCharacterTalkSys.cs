@@ -70,16 +70,14 @@ public class MiniCharacterTalkSys : MonoBehaviour
     {
         foreach (CharacterTalk character in characterTalks)
         {
-
-            
-            
-            
              character.characterTalkBar.text = "";
-             character.characterTalkBar.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Close");
-             continue;
+             Animator temp = character.characterTalkBar.transform.parent.gameObject.GetComponent<Animator>();
+             if (temp.enabled)
+             {
+                 temp.SetTrigger("Close");
+             }
+             
             
-
-
         }
     }
 

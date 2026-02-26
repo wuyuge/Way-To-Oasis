@@ -122,6 +122,7 @@
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\ChildObj\DeleteChild.cs" />
     <Compile Include="Assets\Script\Start\StartImport.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Steamworks.NET\SteamManager.cs" />
     <Compile Include="Assets\Script\Setting\CloseSetting.cs" />
     <Compile Include="Assets\Script\DataManager\Developer\DevBody\DevApplyBody.cs" />
     <Compile Include="Assets\Script\DataManager\Developer\DevSwtich.cs" />
@@ -216,6 +217,7 @@
     <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchSet.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\FileButtonRefresh.cs" />
     <Compile Include="Assets\Script\End\BackToStart.cs" />
+    <Compile Include="Assets\Script\MiniGame\Luo\LuoPositionKeeper.cs" />
     <Compile Include="Assets\Script\Audio\AudioManager.cs" />
     <Compile Include="Assets\Script\End\EndMask.cs" />
     <Compile Include="Assets\Script\AnimCloseGameObj.cs" />
@@ -246,6 +248,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\com.rlabrecque.steamworks.net\package.json" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Shader\Noise.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
@@ -1093,6 +1096,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="com.rlabrecque.steamworks.net.csproj">
+      <Project>{961ab5d2-170a-c002-838b-b5a3b008280e}</Project>
+      <Name>com.rlabrecque.steamworks.net</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.rlabrecque.steamworks.net.editor.csproj">
+      <Project>{b0bc7ac1-5262-91d4-4d3c-43b7326f28a1}</Project>
+      <Name>com.rlabrecque.steamworks.net.editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

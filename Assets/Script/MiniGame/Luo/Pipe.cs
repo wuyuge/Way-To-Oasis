@@ -157,7 +157,7 @@ public abstract class Pipe : MonoBehaviour
             SwitchPipePosition(_endPipe,endTowards);
         }
 
-        var temp = Random.Range(0, 1);
+        var temp = Random.Range(0, 2);
         if (temp == 0)
         {
             _objectImage.sprite = pipeSprite;
@@ -170,12 +170,72 @@ public abstract class Pipe : MonoBehaviour
 
     #region 重置用
 
+    private void Update()
+    {
+        // 每帧更新起点和终点的位置
+        UpdateStartEndPipePositions();
+    }
     
+    /// <summary>
+    /// 每帧更新起点和终点管道的位置
+    /// </summary>
+    private void UpdateStartEndPipePositions()
+    {
+        // 更新起点位置
+        if (_startPipe != null)
+        {
+            // 如果是起点管道，根据startTowards更新位置
+            if (isStartPoint)
+            {
+                UpdatePipePosition(_startPipe, startTowards);
+            }
+        }
+        
+        // 更新终点位置
+        if (_endPipe != null)
+        {
+            // 如果是终点管道，根据endTowards更新位置
+            if (isDestination)
+            {
+                UpdatePipePosition(_endPipe, endTowards);
+            }
+        }
+    }
+    
+    /// <summary>
+    /// 更新单个管道的位置（不修改缩放）
+    /// </summary>
+    private void UpdatePipePosition(GameObject pipe, PipeTowards towards)
+    {
+        switch (towards)
+        {
+            case PipeTowards.Above:
+                pipe.transform.position = upP.transform.position;
+                pipe.transform.rotation = Quaternion.Euler(0, 0, 0);
+                break;
+            
+            case PipeTowards.Below:
+                pipe.transform.position = downP.transform.position;
+                pipe.transform.rotation = Quaternion.Euler(0, 0, 180);
+                break;
+            
+            case PipeTowards.Right:
+                pipe.transform.position = rightP.transform.position;
+                pipe.transform.rotation = Quaternion.Euler(0, 0, -90);
+                break;
+            
+            case PipeTowards.Left:
+                pipe.transform.position = leftP.transform.position;
+                pipe.transform.rotation = Quaternion.Euler(0, 0, 90);
+                break;
+        }
+    }
 
     
     private void OnEnable()
     {
-        var temp = Random.Range(0, 1);
+        RelinkOther();
+        var temp = Random.Range(0, 2);
         if (temp == 0)
         {
             _objectImage.sprite = pipeSprite;
@@ -184,11 +244,19 @@ public abstract class Pipe : MonoBehaviour
         {
             _objectImage.sprite = pipeSpriteRed;
         }
-        
-        
-        RelinkOther();
+    
+        // 重新设置起点和终点的位置
+        if (isStartPoint)
+        {
+            SwitchPipePosition(_startPipe, startTowards);
+        }
+    
+        if (isDestination)
+        {
+            SwitchPipePosition(_endPipe, endTowards);
+        }
     }
-
+    
     void RelinkOther()
     {
         below = pipeNumber - 4 >= 0  ? transform.parent.GetChild(pipeNumber - 4).gameObject : null;
@@ -261,7 +329,7 @@ public abstract class Pipe : MonoBehaviour
                     startTowards = PipeTowards.Right;
                 }
             }
-            
+            SwitchPipePosition(_startPipe, startTowards);
             CheckStartConnection();
             CheckConnectivity();
             
@@ -292,6 +360,8 @@ public abstract class Pipe : MonoBehaviour
                     endTowards = PipeTowards.Right;
                 }
             }
+
+            SwitchPipePosition(_endPipe, endTowards);
             CheckDestinationConnection();
         }
     }
@@ -513,29 +583,23 @@ public abstract class Pipe : MonoBehaviour
         LuoStaticData.CurrentReach = _reachPipeList.Count;
     }
 
-    public void SwitchPipePosition(GameObject pipe,PipeTowards towards)
+    public void SwitchPipePosition(GameObject pipe, PipeTowards towards)
     {
+        // 重置缩放
+        pipe.transform.localScale = Vector3.one;
+        
+        // 更新位置和旋转
+        UpdatePipePosition(pipe, towards);
+        
+        // 根据方向设置缩放
         switch (towards)
         {
-            case PipeTowards.Above:
-                pipe.transform.position = upP.transform.position;
-                // 欧拉角(0,0,0) → 无旋转
-                pipe.transform.rotation = Quaternion.Euler(0, 0, 0);
-                break;
-            case PipeTowards.Below:
-                pipe.transform.position = downP.transform.position;
-                // 欧拉角(0,0,180) 等价于 -180，旋转效果一致
-                pipe.transform.rotation = Quaternion.Euler(0, 0, 180);
-                break;
             case PipeTowards.Right:
-                pipe.transform.position = rightP.transform.position;
-                // Z轴顺时针旋转90度（对应-90度）
-                pipe.transform.rotation = Quaternion.Euler(180, 0, -90);
-                break;
             case PipeTowards.Left:
-                pipe.transform.position = leftP.transform.position;
-                // Z轴逆时针旋转90度
-                pipe.transform.rotation = Quaternion.Euler(0, 180, 90);
+                pipe.transform.localScale = new Vector3(-0.7f, 0.7f, 0.7f);
+                break;
+            default:
+                pipe.transform.localScale = Vector3.one;
                 break;
         }
     }

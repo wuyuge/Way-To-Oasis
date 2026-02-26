@@ -16,8 +16,9 @@ MonoBehaviour:
   - "\u4E3E\u624B\u4E4B\u52B3"
   - ->p
   - "\u4E3E\u624B\u4E4B\u52B3\u3002"
-  - MINI2
   - ${CloseCharacterTalkBox}
+  - MINI2
+  - MINI2
   - ${OpenSwitchStage}
   - ${DownTalkBox}
   Option1: {fileID: 0}

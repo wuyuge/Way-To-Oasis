@@ -564,17 +564,32 @@ MonoBehaviour:
     - {fileID: 1968191709354230468}
     expressions:
     - name: 1
-      sprite: {fileID: 1774050632, guid: 590a59bf7cd16b84397a0c5e60ea4cb2, type: 3}
+      sprite: {fileID: -2098810379, guid: 590a59bf7cd16b84397a0c5e60ea4cb2, type: 3}
     - name: 2
-      sprite: {fileID: -1996394044, guid: e4ffecea01bb8f545876c58025b0038f, type: 3}
+      sprite: {fileID: 11659372, guid: e4ffecea01bb8f545876c58025b0038f, type: 3}
     - name: 3
-      sprite: {fileID: 207405964, guid: fd6b225e003f3724fb7adf9016dc52e6, type: 3}
+      sprite: {fileID: 2075237086, guid: fd6b225e003f3724fb7adf9016dc52e6, type: 3}
     - name: 4
-      sprite: {fileID: 398852596, guid: b5f5543e0b1dc2a4a8f25d0785ab97b6, type: 3}
+      sprite: {fileID: 1689076723, guid: b5f5543e0b1dc2a4a8f25d0785ab97b6, type: 3}
     - name: 5
-      sprite: {fileID: 837874714, guid: cb386703fd1488e438627aae52a8afb3, type: 3}
+      sprite: {fileID: -1374568153, guid: cb386703fd1488e438627aae52a8afb3, type: 3}
     - name: 6
-      sprite: {fileID: -1010217492, guid: 9943d8c5a69ddc045a337b46756237c2, type: 3}
+      sprite: {fileID: 2023035998, guid: 9943d8c5a69ddc045a337b46756237c2, type: 3}
+  - characterName: "\u535A\u91D1\u68EE"
+    relatedImages:
+    - {fileID: 9193028123446458217}
+    - {fileID: 2995627771966713185}
+    expressions:
+    - name: 1
+      sprite: {fileID: 1163071470, guid: fb79c97dd19191e46890446d1bc0d3fd, type: 3}
+    - name: 2
+      sprite: {fileID: -406714624, guid: 9483558f8cbda6248b49133f0e7e96be, type: 3}
+    - name: 3
+      sprite: {fileID: -1651370466, guid: 64a8314f726529841b769d88ba19e8ae, type: 3}
+    - name: 4
+      sprite: {fileID: -328907074, guid: cd0e3671d5c65b24da59eee7c5b94dea, type: 3}
+    - name: 5
+      sprite: {fileID: 1341088590, guid: 3bd2597cbd220914ba222bc798b85023, type: 3}
 --- !u!1 &2315652528603376887
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +658,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 76c3bc1ac05ace54a8081f1d671e89f2, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -974,7 +989,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 76c3bc1ac05ace54a8081f1d671e89f2, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
