@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4166258689060528541}
   - component: {fileID: 7515111890977240503}
   - component: {fileID: 3504967034429899228}
-  - component: {fileID: 3129897840633345688}
   - component: {fileID: 9192941051027170489}
+  - component: {fileID: 2830995670031974505}
   m_Layer: 5
   m_Name: Medicine
   m_TagString: Untagged
@@ -95,9 +95,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3129897840633345688}
-        m_TargetAssemblyTypeName: MedicineSender, Assembly-CSharp
-        m_MethodName: SendMedicine
+      - m_Target: {fileID: 2830995670031974505}
+        m_TargetAssemblyTypeName: MedicineSelector, Assembly-CSharp
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -107,19 +107,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3129897840633345688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404158200844840955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c483bf9a30a34af40834e10aa9410a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  medicineObject: {fileID: 11400000, guid: 01fedf21ebac5f949b0ab9c65e1c6a9e, type: 2}
 --- !u!95 &9192941051027170489
 Animator:
   serializedVersion: 5
@@ -141,6 +128,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2830995670031974505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404158200844840955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a47152a42d9e245bb7071f6a771b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  medicineObject: {fileID: 0}
 --- !u!1 &3431243179022446156
 GameObject:
   m_ObjectHideFlags: 0

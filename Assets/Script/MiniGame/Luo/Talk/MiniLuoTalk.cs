@@ -32,21 +32,17 @@ public class MiniLuoTalk : MonoBehaviour
         if (start is null)
         {
             Debug.LogError("start未赋值",this);
+            return;
         }
-        
-        
-        
+        start.GeneralBool = false;
     }
 
     private void OnEnable()
     {
         ResetTalkLine();
-        if (GlobalData.Day == 1)
+        if ((GlobalData.Day == 1 || GlobalData.Day == 2) && !start.GeneralBool)
         {
             start.GeneralBool = true;
-        }
-        if (start.GeneralBool)
-        {
             _isStart = true;
             StartCoroutine(ShowText());
         }

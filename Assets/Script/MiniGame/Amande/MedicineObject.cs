@@ -16,4 +16,6 @@ public class MedicineObject : ScriptableObject
 public static class MedicineManager
 {
     public static List<MedicineObject> Container = new List<MedicineObject>();
+    public static MedicineSender Sender;
+    public static MedicineComposer Composer;
 }

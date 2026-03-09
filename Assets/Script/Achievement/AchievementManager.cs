@@ -4,9 +4,13 @@ using UnityEngine;
 
 public static class AchievementManager
 {
+    
+    private const bool Unlockable = true;
+    
+    
     public static bool UnlockAchievement(string achievement)
     {
-        if (SteamManager.Initialized)
+        if (SteamManager.Initialized && Unlockable)
         {
             if(CheckAchievementStatus(achievement))
             {
@@ -28,7 +32,7 @@ public static class AchievementManager
 
     public static void ClearAchievement(string achievement)
     {
-        if (SteamManager.Initialized)
+        if (SteamManager.Initialized && Unlockable)
         {
             SteamUserStats.ClearAchievement(achievement);
             Debug.Log("锁定成就：" + achievement);
@@ -37,7 +41,7 @@ public static class AchievementManager
     
     public static bool CheckAchievementStatus(string achievementID)
     {
-        if (!SteamManager.Initialized)
+        if (SteamManager.Initialized && Unlockable)
         {
             SteamUserStats.GetAchievement(achievementID, out bool isUnlocked);
             return isUnlocked;

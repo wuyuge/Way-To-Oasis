@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   achievements:
   - ACH_NEW_LEADER
+  - ACH_ENVIRONMENT_CONTAMINATION

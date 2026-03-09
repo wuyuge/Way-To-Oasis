@@ -94,7 +94,9 @@
     <Compile Include="Assets\Script\DataManager\Developer\DevSaveSentString.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\SaveFileButton.cs" />
+    <Compile Include="Assets\Script\MiniGame\Bo\BoCollider.cs" />
     <Compile Include="Assets\Script\DataManager\SaveManager\SaveConstants.cs" />
+    <Compile Include="Assets\Script\MiniGame\Bo\BoMap.cs" />
     <Compile Include="Assets\Script\Shop\ShopCharacterSelect.cs" />
     <Compile Include="Assets\Script\Start\CancelName.cs" />
     <Compile Include="Assets\Script\MiniGame\Luo\AnglePipe.cs" />
@@ -127,6 +129,7 @@
     <Compile Include="Assets\Script\Setting\CloseSetting.cs" />
     <Compile Include="Assets\Script\DataManager\Developer\DevBody\DevApplyBody.cs" />
     <Compile Include="Assets\Script\DataManager\Developer\DevSwtich.cs" />
+    <Compile Include="Assets\Script\MiniGame\Amande\Amande\MiniAmandeTalk.cs" />
     <Compile Include="Assets\Script\UI\Obj\ObjectManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Script\UI\Character.cs" />
@@ -160,6 +163,7 @@
     <Compile Include="Assets\Script\DataManager\SettingSave.cs" />
     <Compile Include="Assets\Script\MiniGame\Luo\Pipe4Way.cs" />
     <Compile Include="Assets\Script\Achievement\Achievement.cs" />
+    <Compile Include="Assets\Script\MiniGame\Amande\MedicineSelecter.cs" />
     <Compile Include="Assets\Script\TalkSys\ITalkSysCore.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
@@ -230,6 +234,7 @@
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Shader\BoMapShader.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextFont\12.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
@@ -902,6 +907,9 @@
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>C:\Game\Oasis\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>C:\Game\Oasis\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>C:\Game\Oasis\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
@@ -1084,6 +1092,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>C:\Game\Oasis\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>C:\Game\Oasis\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
       <HintPath>C:\Game\Oasis\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>

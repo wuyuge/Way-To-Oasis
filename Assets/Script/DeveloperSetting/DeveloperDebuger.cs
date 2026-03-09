@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Cinemachine;
 
 public class DeveloperDebuger : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class DeveloperDebuger : MonoBehaviour
 
     private Camera mainCamera;
     public Achievement achievementList;
+    
+    private CinemachineImpulseSource _impulseSource;
 
     private void Awake()
     {
@@ -123,6 +126,6 @@ public class DeveloperDebuger : MonoBehaviour
         Mask.SetActive(false);
     }
 
-   
+
 
 }

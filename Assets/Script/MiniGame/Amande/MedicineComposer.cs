@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,11 @@ public class MedicineComposer : MonoBehaviour
         public List<MedicineObject> needMedicine;//需要药的列表
     }
     public List<Formula> formulas;
+
+    private void Awake()
+    {
+        MedicineManager.Composer = this;
+    }
 
     public void Compose()
     {
@@ -38,6 +44,8 @@ public class MedicineComposer : MonoBehaviour
 
         // 标记是否合成成功
         bool isComposeSuccess = false;
+        // 存储合成成功的药品类型
+        MedicineType synthesizedMedicine = default;
 
         foreach (var originalFormula in formulas)
         {
@@ -66,18 +74,25 @@ public class MedicineComposer : MonoBehaviour
             // 额外校验：副本列表为空才说明材料完全匹配（数量+种类）
             if (complete && tempNeedMedicine.Count == 0)
             {
-
+                // 记录合成成功的药品类型
+                synthesizedMedicine = originalFormula.medicineType;
+                // 清空材料容器
                 MedicineManager.Container.Clear();
                 isComposeSuccess = true;
                 break;
             }
         }
 
-        // 遍历完所有配方都未匹配成功，提示合成失败并清空材料
-        if (!isComposeSuccess)
+        // 根据合成结果输出对应日志
+        if (isComposeSuccess)
         {
-            Debug.LogError($"❌ 合成失败！当前材料组合【{currentMaterials}】无法合成任何药品，材料已清空。");
-            MedicineManager.Container.Clear(); 
+            // 合成成功：报告具体合成的药品名称
+            Debug.Log($"✅ 合成成功！使用材料【{currentMaterials}】合成出：{synthesizedMedicine}");
+        }
+        else
+        {
+            // 合成失败：提示失败并清空材料
+            Debug.Log($"❌ 合成失败！当前材料组合【{currentMaterials}】无法合成任何药品。");
         }
     }
 
