@@ -232,6 +232,10 @@ public class Progress : MonoBehaviour
     /// </summary>
     public void SwtichProgress()
     {
+        if (TutorialManager.TutorialIsShow)
+        {
+            return;
+        }
         AudioManager.AudioPlayer("Click");
         if(day_num > 3)
         {
@@ -611,6 +615,7 @@ public static class GlobalData
 
     public static int Day { get; set; }
     public static MiniGameIntroManager MiniGameManager { get; set; }
+    public static TalkSysShowText ShowText { get; set; }
 
 }
 

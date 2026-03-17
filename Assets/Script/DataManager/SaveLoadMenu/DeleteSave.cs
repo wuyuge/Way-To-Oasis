@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,8 @@ public class DeleteSave : MonoBehaviour
     private ISaveMenuInterface _saveButtonRefresher;
     public int num;
     public GameObject linkObj;
+    public Button fatherObj;
+    public bool isSave;
 
     /// <summary>
     /// 获取存档管理器
@@ -16,9 +19,21 @@ public class DeleteSave : MonoBehaviour
     private void Awake()
     {
         _saveManager = GameObject.Find("SaveManager").GetComponent<SaveManager>();
-        _saveButtonRefresher = gameObject.transform.parent.parent.parent.parent.parent.GetComponent<ISaveMenuInterface>();
         
     }
+
+    private void Start()
+    {
+        if (isSave)
+        {
+            _saveButtonRefresher = SLManager.SaveMenu;
+        }
+        else
+        {
+            _saveButtonRefresher = SLManager.LoadMenu;
+        }
+    }
+
 
     /// <summary>
     /// 删除存档后刷新存档界面
@@ -28,7 +43,7 @@ public class DeleteSave : MonoBehaviour
         _saveManager.DeleteData(num);
         _saveButtonRefresher.UpdateSaveMenu();
         linkObj.SetActive(false);
-        
+        Cancel();
     }
 
 
@@ -37,14 +52,14 @@ public class DeleteSave : MonoBehaviour
     {
         linkObj.SetActive(true);
         gameObject.GetComponent<Button>().enabled = false;
-        gameObject.transform.parent.GetComponent<Button>().enabled = false;
+        fatherObj.enabled = false;
     }
     
     public void Cancel()
     {
         linkObj.SetActive(false);
         gameObject.GetComponent<Button>().enabled = true;
-        gameObject.transform.parent.GetComponent<Button>().enabled = true;
+        fatherObj.enabled = true;
     }
 
     #endregion

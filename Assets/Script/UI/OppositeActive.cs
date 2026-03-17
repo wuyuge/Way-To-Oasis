@@ -5,8 +5,22 @@ using UnityEngine;
 public class OppositeActive : MonoBehaviour
 {
     public GameObject linkObject;
+    private Animator _anim;
     public void OnClick()
     {
-        linkObject.SetActive(!linkObject.activeSelf);
+        if (_anim is null)
+        {
+            _anim = linkObject.GetComponent<Animator>();
+        }
+
+        if (!linkObject.activeSelf)
+        {
+            linkObject.SetActive(true);
+        }
+        else
+        {
+            _anim.SetTrigger("Close");
+        }
+        
     }
 }

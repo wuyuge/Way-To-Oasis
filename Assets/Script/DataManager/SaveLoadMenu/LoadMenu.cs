@@ -27,6 +27,11 @@ public class LoadMenu : MonoBehaviour,ISaveMenuInterface
         UpdateSaveButtonStates();
     }
 
+    private void Awake()
+    {
+        SLManager.LoadMenu = this;
+    }
+
 
     private void OnEnable()
     {
@@ -118,3 +123,11 @@ public class LoadMenu : MonoBehaviour,ISaveMenuInterface
         autoSaveIsOn.GeneralBool = true;
     }
 }
+
+public static class SLManager
+{
+    public static LoadMenu LoadMenu { get; set; }
+    public static SaveMenu SaveMenu { get; set; }
+}
+
+

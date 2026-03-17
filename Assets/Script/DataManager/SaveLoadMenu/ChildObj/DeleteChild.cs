@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class DeleteChild : MonoBehaviour
 {
-    public void DeleteFile()
+    public void DeleteFile(GameObject o)
     {
-        gameObject.transform.parent.parent.gameObject.GetComponent<DeleteSave>().Delete();
+        o.GetComponent<DeleteSave>().Delete();
     }
 
-    public void CancelDelete()
+    public void CancelDelete(GameObject o)
     {
-        gameObject.transform.parent.parent.gameObject.GetComponent<DeleteSave>().Cancel();
+        o.GetComponent<DeleteSave>().Cancel();
     }
 }

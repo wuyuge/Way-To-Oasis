@@ -11,11 +11,12 @@ public class MiniCharacterTalkSys : MonoBehaviour
     {
         public string characterName;
         public TextMeshProUGUI characterTalkBar;
+        public TextMeshProUGUI thinkBar;
     }
 
     public List<CharacterTalk> characterTalks;
 
-    public void ShowAllText(string Name,string Text)
+    public void ShowAllText(string Name,string Text , bool isThinking = false)
     {
         //Debug.Log($"接受数据说话人：{Name} 内容：{Text}");
         // 显示对话栏的逻辑
@@ -25,15 +26,21 @@ public class MiniCharacterTalkSys : MonoBehaviour
 
             if (character.characterName == Name)
             {
+                if (isThinking)
+                {
+                    character.thinkBar.text = Text;
+                    character.thinkBar.transform.parent.gameObject.SetActive(true);
+                    continue;
+                }
                 character.characterTalkBar.text = Text;
                 character.characterTalkBar.transform.parent.gameObject.SetActive(true);
-
             }
             else
             {
+                character.thinkBar.text = "";
+                character.thinkBar.transform.parent.gameObject.SetActive(false);
                 character.characterTalkBar.text = "";
                 character.characterTalkBar.transform.parent.gameObject.SetActive(false);
-                continue;
             }
 
 
@@ -43,7 +50,7 @@ public class MiniCharacterTalkSys : MonoBehaviour
 
     }
 
-    public void ShowText(string charaName, char text)
+    public void ShowText(string charaName, char text, bool isThinking = false)
     {
         foreach (CharacterTalk character in characterTalks)
         {
@@ -72,7 +79,7 @@ public class MiniCharacterTalkSys : MonoBehaviour
         {
              character.characterTalkBar.text = "";
              Animator temp = character.characterTalkBar.transform.parent.gameObject.GetComponent<Animator>();
-             if (temp.enabled)
+             if (temp.gameObject.activeSelf)
              {
                  temp.SetTrigger("Close");
              }

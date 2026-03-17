@@ -7,23 +7,13 @@ public class Report : MonoBehaviour
 {
     public Manager Food,Body,Food2,Body2,CurrentDead;
     public Progress Day;
+    [SerializeField]
     private TextMeshProUGUI Text;
-    public string DefultText;
+    private string DefultText = "<size=200>Day {day}</size>\n\n{dead}剩余食物数量 {food}\n剩余尸体数量 <color=#00ff00ff>{body}</color>";
     public Manager AmandeKillSelf;
-    private void Start()
-    {
-        Text = GetComponent<TextMeshProUGUI>();
-        DefultText = Text.text;
-    }
-
 
     public void ShowText()
     {
-        if(Text == null)
-        {
-            Text = GetComponent<TextMeshProUGUI>();
-            DefultText = Text.text;
-        }
         Text.text = DefultText;
         string showdead = string.Empty;
         Text.text = Text.text.Replace("{day}", Day.day_num.ToString());
@@ -37,7 +27,7 @@ public class Report : MonoBehaviour
                 if (s.Contains("博金森"))
                 {
                     if(s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
-                    showdead += "你杀死了" + s + "\n";
+                        showdead += "你杀死了" + s + "\n";
                     else
                         showdead += "你杀死了" + s;
                 }
@@ -61,39 +51,24 @@ public class Report : MonoBehaviour
                     if (s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
                         showdead += s + "被你饿死了\n"; 
                     else showdead += s + "被你饿死了";
-
-
                 }
-
             }
-
             showdead += "</color>";
             Text.text = Text.text.Replace("{dead}", showdead + "\n");
-            
         }
         else
         {
-            
             Text.text = Text.text.Replace("{dead}", string.Empty);
-            
         }
-
         string FoodText = Mathf.Max(Food.Weight, Food2.Weight).ToString();
         string BodyText = Mathf.Max(Body.Weight, Body2.Weight).ToString();
 
-        Text.text = Text.text.Replace("{food}", "<color=#00ff00ff>" + FoodText + "</color>");
+        Text.text = Text.text.Replace("{food}", "<color=#00ff00ff>" + FoodText  + "</color>");
         if(Mathf.Max(Food.Weight, Food2.Weight) > 9)
         {
-            Text.text = Text.text.Replace("{body}", " " + BodyText);
+            Text.text = Text.text.Replace("{body}", " " + BodyText );
         }
-        else Text.text = Text.text.Replace("{body}", BodyText);
-
-
-
-
-
+        else Text.text = Text.text.Replace("{body}", BodyText );
+        
     }
-
-
-
 }

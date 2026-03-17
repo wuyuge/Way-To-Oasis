@@ -71,6 +71,7 @@
     <Compile Include="Assets\Script\UI\ShowText.cs" />
     <Compile Include="Assets\Script\TalkLine\TalkSystem.cs" />
     <Compile Include="Assets\Script\TalkLine\Day0\aimi bojin\aimibo.cs" />
+    <Compile Include="Assets\Script\Tutorial\TutorialControl.cs" />
     <Compile Include="Assets\Script\UI\UIshake.cs" />
     <Compile Include="Assets\Script\DataManager\SaveManager\SaveLoadManager.cs" />
     <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchTech.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="Assets\Script\MiniGame\Amande\MedicineComposer.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\ChildObj\DeleteChild.cs" />
     <Compile Include="Assets\Script\Achievement\AchievementManager.cs" />
+    <Compile Include="Assets\Script\MiniCharacter\MiniThinkBarPosition.cs" />
     <Compile Include="Assets\Script\Start\StartImport.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Steamworks.NET\SteamManager.cs" />
@@ -261,6 +263,7 @@
     <None Include="Assets\Shader\Noise.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Shader\UIBookPageFlip.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />

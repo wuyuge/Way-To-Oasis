@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Day0_Main
   m_EditorClassIdentifier: 
   TxtLine:
-  - ${TechClick}
+  - ->p
+  - "\u70B9\u51FB\u5DE6\u952E\u7EE7\u7EED......"
   - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u4F60\u6CA1\u4E8B\u5427\uFF0C\u25A0\u25A0\uFF1F@{7}"
   - ->p

@@ -1,10 +1,10 @@
 {
     "SaveID": 0,
-    "SaveTime": "2026-03-09 12:09:13",
+    "SaveTime": "2026-03-17 18:49:45",
     "PlayerName": "■■",
     "Day": 1,
     "Body": 1,
-    "Food": 15,
+    "Food": 6,
     "AmandeKillSelf": false,
     "CarryBo": false,
     "Stage": 0,
@@ -14,11 +14,11 @@
     "UsedName": [],
     "InMain": true,
     "CharacterWeight": [
+        3,
         0,
+        3,
         0,
-        0,
-        0,
-        0,
+        3,
         0
     ],
     "CharacterEat": [

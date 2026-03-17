@@ -173,6 +173,7 @@ RectTransform:
   - {fileID: 2986346362918637517}
   - {fileID: 6900125260995024958}
   - {fileID: 3099037050196523742}
+  - {fileID: 1031637933001041842}
   - {fileID: 454799879542256385}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -260,6 +261,7 @@ MonoBehaviour:
   saveIndex: 0
   linkObj: {fileID: 6622411929309844684}
   autoSaveIsOn: {fileID: 11400000, guid: ed134a364d869654d8789a9500132f98, type: 2}
+  deleteButton: {fileID: 5023877810933529589}
 --- !u!114 &5850936265750623051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,10 +413,10 @@ MonoBehaviour:
       - m_Target: {fileID: 183956959044292530}
         m_TargetAssemblyTypeName: DeleteChild, Assembly-CSharp
         m_MethodName: CancelDelete
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 5416829463853093474}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -689,10 +691,10 @@ MonoBehaviour:
       - m_Target: {fileID: 183956959044292530}
         m_TargetAssemblyTypeName: DeleteChild, Assembly-CSharp
         m_MethodName: CancelDelete
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 5416829463853093474}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -937,7 +939,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7082246648496526075}
-  - {fileID: 1031637933001041842}
   m_Father: {fileID: 4874050430772782634}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1077,10 +1078,10 @@ MonoBehaviour:
       - m_Target: {fileID: 3741956363561767476}
         m_TargetAssemblyTypeName: LoadChildObjManager, Assembly-CSharp
         m_MethodName: Cancel
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 393021352224874399}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1222,10 +1223,10 @@ MonoBehaviour:
       - m_Target: {fileID: 4421619391364202083}
         m_TargetAssemblyTypeName: DeleteChild, Assembly-CSharp
         m_MethodName: DeleteFile
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 5416829463853093474}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1561,7 +1562,7 @@ RectTransform:
   - {fileID: 8796722364453004932}
   - {fileID: 3165856774728117954}
   - {fileID: 1253337575125950388}
-  m_Father: {fileID: 3099037050196523742}
+  m_Father: {fileID: 4874050430772782634}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1799,6 +1800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 1
   linkObj: {fileID: 4995314203354107328}
+  fatherObj: {fileID: 5072948212236560807}
 --- !u!1 &6386352213182237157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1922,10 +1924,10 @@ MonoBehaviour:
       - m_Target: {fileID: 3741956363561767476}
         m_TargetAssemblyTypeName: LoadChildObjManager, Assembly-CSharp
         m_MethodName: Cancel
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 393021352224874399}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2236,10 +2238,10 @@ MonoBehaviour:
       - m_Target: {fileID: 6136072245012515711}
         m_TargetAssemblyTypeName: LoadChildObjManager, Assembly-CSharp
         m_MethodName: LoadFile
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 393021352224874399}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

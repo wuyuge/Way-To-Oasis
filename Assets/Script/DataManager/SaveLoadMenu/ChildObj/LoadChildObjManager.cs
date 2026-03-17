@@ -5,14 +5,14 @@ using UnityEngine;
 public class LoadChildObjManager : MonoBehaviour
 {
 
-    public void LoadFile()
+    public void LoadFile(GameObject o)
     {
-        gameObject.transform.parent.parent.gameObject.GetComponent<LoadFileButton>().Load();
+        o.GetComponent<LoadFileButton>().Load();
     }
 
-    public void Cancel()
+    public void Cancel(GameObject o)
     {
-        gameObject.transform.parent.parent.gameObject.GetComponent<LoadFileButton>().Cancel();
+        o.GetComponent<LoadFileButton>().Cancel();
     }
     
 }

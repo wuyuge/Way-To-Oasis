@@ -251,7 +251,7 @@ public class WalkingTalk : MonoBehaviour
         }
 
         _isTalking = true;
-        talkSys?.ShowAllText(speakerName, content);
+        talkSys?.ShowAllText(speakerName, content,true);
         Invoke(nameof(ResetTalkState), textWaitTime);
     }
 

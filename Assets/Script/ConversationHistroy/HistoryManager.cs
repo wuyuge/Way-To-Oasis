@@ -11,7 +11,7 @@ public class HistoryManager : MonoBehaviour
 
     private void OnEnable()
     {
-        verticalScrollbar.value = 1f;
+        verticalScrollbar.value = 0;
     }
 
 

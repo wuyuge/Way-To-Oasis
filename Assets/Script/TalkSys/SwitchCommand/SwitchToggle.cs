@@ -54,6 +54,7 @@ public class SwitchToggle : SwitchCommand
                 MoveUI(UIElement.Talk,UIMovement.Down);
                 _showText.CanShowText = false;
                 _showText.SetEmptyText();
+                TutorialManager.CharacterIsTalking = false;
                 break;
             
             case FunctionCode.Function.C:

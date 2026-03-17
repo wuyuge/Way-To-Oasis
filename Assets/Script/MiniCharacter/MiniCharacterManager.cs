@@ -16,6 +16,8 @@ public class MiniCharacterManager : MonoBehaviour
         public GameObject characterObject;
         [Tooltip("角色对应的对话栏")]
         public GameObject characterTalkBar;
+
+        public GameObject thinkBar;
         [Tooltip("角色Y轴固定位置（X轴由位置列表决定）")]
         public float fixedYPosition = 0f;
 
@@ -123,6 +125,11 @@ public class MiniCharacterManager : MonoBehaviour
                 character.characterTalkBar.SetActive(false);
             }
 
+            if (character.thinkBar is not null)
+            {
+                character.thinkBar.SetActive(false);
+            }
+
             // 初始激活所有角色（死亡检测会自动禁用死亡角色）
             character.characterObject.SetActive(true);
         }
@@ -205,6 +212,11 @@ public class MiniCharacterManager : MonoBehaviour
             if (character.characterTalkBar != null)
             {
                 character.characterTalkBar.SetActive(false);
+            }
+            
+            if (character.thinkBar is not null)
+            {
+                character.thinkBar.SetActive(false);
             }
         }
 

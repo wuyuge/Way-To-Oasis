@@ -12,14 +12,16 @@ public class SaveMenu : MonoBehaviour,ISaveMenuInterface
     public List<FileButtonRefresh> Buttons;
     public Manager autoSaveIsOn;
     
+    private void Awake()
+    {
+        SLManager.SaveMenu = this;
+    }
+    
     public void UpdateSaveMenu()
     {
         foreach (var value in Buttons)
         {
-            
             value.Refresh();
-            
-            
         }
     }
 

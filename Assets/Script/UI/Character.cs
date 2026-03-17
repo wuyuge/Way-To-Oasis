@@ -303,6 +303,7 @@ public class Character : MonoBehaviour
         if (Dead) return;
         if (CantWeight) return;
         if (!progress.start) return;
+
         // 获取资源选择面板（SelectBar）的状态，判断是否处于"食物选择"模式
         if (!gameObject.transform.parent.Find("SelectBar").GetComponent<AssResources>().Food)
         {
@@ -416,9 +417,15 @@ public class Character : MonoBehaviour
         if (Dead) return;
         if (!CanTalk) return;
         if (AfterSpecialTalk) return;
+        if (GlobalData.Day == 0 && have_talk && CharacterName == "阿曼德") return;
+        if (TutorialManager.TutorialIsShow && !TutorialManager.TutorialWeight)
+        {
+            TutorialManager.Controller.Shake();
+            return;
+        }
         
         TalkSystem talksys = TalkBar.GetComponent<TalkSystem>();
-        
+        TutorialManager.CharacterIsTalking = true;
         if (talksys.Daytime != 0)
         { if (Background.GetComponent<BackGroundMoving>().open) return; }
         

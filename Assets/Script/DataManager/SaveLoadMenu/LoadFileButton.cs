@@ -7,6 +7,7 @@ public class LoadFileButton : MonoBehaviour
     public int saveIndex;
     public GameObject linkObj;
     public Manager autoSaveIsOn;
+    public Button deleteButton;
 
     private void Awake()
     {
@@ -35,7 +36,14 @@ public class LoadFileButton : MonoBehaviour
     {
         linkObj.SetActive(true);
         gameObject.GetComponent<Button>().enabled = false;
-        if(saveIndex != 0) gameObject.transform.Find("Delete").GetComponent<Button>().enabled = false;
+        if(saveIndex != 0) deleteButton.enabled = false;
+        foreach (Transform value in gameObject.transform.parent)
+        {
+            if (value.gameObject != gameObject)
+            {
+                value.gameObject.GetComponent<LoadFileButton>().Cancel();
+            }
+        }
     }
 
 
@@ -43,7 +51,7 @@ public class LoadFileButton : MonoBehaviour
     {
         linkObj.SetActive(false);
         gameObject.GetComponent<Button>().enabled = true;
-        if(saveIndex != 0) gameObject.transform.Find("Delete").GetComponent<Button>().enabled = true;
+        if(saveIndex != 0) deleteButton.enabled = true;
     }
 
 

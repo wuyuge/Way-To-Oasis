@@ -3,19 +3,19 @@ using UnityEngine;
 public class SaveChildObjManager : MonoBehaviour
 {
 
-    public void CoverFile()
+    public void CoverFile(GameObject o)
     {
-        gameObject.transform.parent.parent.gameObject.GetComponent<SaveFileButton>().CoverFile();
+        o.GetComponent<SaveFileButton>().CoverFile();
     }
 
-    public void Cancel()
+    public void Cancel(GameObject o)
     {
-        gameObject.transform.parent.parent.gameObject.GetComponent<SaveFileButton>().Cancel();
+        o.GetComponent<SaveFileButton>().Cancel();
     }
-
-    public void SaveFile()
+    
+    public void SaveFile(GameObject o)
     {
-        gameObject.transform.parent.parent.gameObject.GetComponent<SaveFileButton>().SaveFile();
+        o.GetComponent<SaveFileButton>().SaveFile();
     }
 
 }

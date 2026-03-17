@@ -16,6 +16,7 @@ public class SaveFileButton : MonoBehaviour
     public FileButtonRefresh refresher;
     public GameObject coverTips,saveTips;
     public Manager autoSaveIsOn;
+    public Button deleteButton;
 
     /// <summary>
     /// 当游戏对象被启用时调用。此方法激活当前存档按钮，隐藏覆盖和保存提示，并根据自动保存管理器的状态调整其设置。
@@ -90,6 +91,21 @@ public class SaveFileButton : MonoBehaviour
     /// </summary>
     public void UpLinkObj()
     {
+        foreach (Transform value in gameObject.transform.parent)
+        {
+            if (value.gameObject != gameObject)
+            {
+                try
+                {
+                    value.gameObject.GetComponent<SaveFileButton>().Cancel();
+                }
+                catch (NullReferenceException e)
+                {
+                    Console.WriteLine(e);
+                }
+                
+            }
+        }
         if (FileExists())
         {
             ShowCoverFileTips();
@@ -97,8 +113,9 @@ public class SaveFileButton : MonoBehaviour
                 
         }
         saveTips.SetActive(true);
-        gameObject.transform.Find("Delete").GetComponent<Button>().enabled = false;
+        deleteButton.enabled = false;
         gameObject.GetComponent<Button>().enabled = false;
+        
     }
     
     
@@ -114,7 +131,7 @@ public class SaveFileButton : MonoBehaviour
             Save();
             refresher.Refresh();
             gameObject.GetComponent<Button>().enabled = true;
-            gameObject.transform.Find("Delete").GetComponent<Button>().enabled = true;
+            deleteButton.enabled = true;
             saveTips.SetActive(false);
         }
         catch (Exception e)
@@ -140,7 +157,7 @@ public class SaveFileButton : MonoBehaviour
             throw;
         }
         gameObject.GetComponent<Button>().enabled = true;
-        gameObject.transform.Find("Delete").GetComponent<Button>().enabled = true;
+        deleteButton.enabled = true;
         coverTips.SetActive(false);
     }
     /// <summary>
@@ -149,7 +166,7 @@ public class SaveFileButton : MonoBehaviour
     public void Cancel()
     {
         gameObject.GetComponent<Button>().enabled = true;
-        gameObject.transform.Find("Delete").GetComponent<Button>().enabled = true;
+        deleteButton.enabled = true;
         coverTips.SetActive(false);
         saveTips.SetActive(false);
     }
@@ -164,7 +181,7 @@ public class SaveFileButton : MonoBehaviour
     public void ShowCoverFileTips()
     {
         gameObject.GetComponent<Button>().enabled = false;
-        gameObject.transform.Find("Delete").GetComponent<Button>().enabled = false;
+        deleteButton.enabled = false;
         coverTips.SetActive(true);
         Debug.Log("存在文件,询问覆盖并返回");
         

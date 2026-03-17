@@ -60,6 +60,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
     private void Awake()
     {
         CanShowText = true;
+        GlobalData.ShowText = this;
     }
 
     public void Init(TalkSystem talkSys)
@@ -191,7 +192,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
 
             
             
-
+            
             // 显示文本逻辑
             CheckTextUI();
             _currentTextUI.text = string.Empty;
@@ -244,6 +245,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
             yield break;
         }
 
+        
         string originalText = TalkLines[DayNum].TxtLine[LineIndex];
         var tempHistory = new TextHistory();
         string charaName = string.Empty;
@@ -440,7 +442,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
         string originalText = TalkLines[DayNum].TxtLine[LineIndex];
         string displayText = originalText;
 
-        
+
         if (!_isPlayerTalking)
         {
             var nameAndText = HandleCharacterName(originalText);
