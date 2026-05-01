@@ -231,6 +231,7 @@ MonoBehaviour:
   blindPipe: {fileID: 5524564986437455166}
   tShapePipe: {fileID: 4693028933817377371}
   canReplace: 0
+  replaced: 0
   itemBox: {fileID: 0}
   _items: []
   isDestination: 0
@@ -322,8 +323,8 @@ MonoBehaviour:
   endTowards: 0
   startIsVertical: 0
   destinationIsVertical: 0
-  pipeSprite: {fileID: 21300000, guid: 791961e5722e9fa4a87fa571fa7bc3e2, type: 3}
-  pipeSpriteRed: {fileID: 21300000, guid: 8653e3ec6a2df7542baeacd5107398e0, type: 3}
+  pipeSprite: {fileID: 21300000, guid: 497c719492d2fda4bbf89bcfa9982680, type: 3}
+  pipeSpriteRed: {fileID: 21300000, guid: 1b317f25772975f46a20427a868690b4, type: 3}
   upP: {fileID: 0}
   downP: {fileID: 0}
   leftP: {fileID: 0}

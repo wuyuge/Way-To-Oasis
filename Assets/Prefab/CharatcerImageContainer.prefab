@@ -203,7 +203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1c36bf779ee86b14783068bdf4474300, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2212330f872612d4d909ef7dc5402cc8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -397,9 +397,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4fa65c563f97cc14bbe64006482e0437, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd6b225e003f3724fb7adf9016dc52e6, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -513,68 +513,68 @@ MonoBehaviour:
     - {fileID: 5720969200967824135}
     expressions:
     - name: 1
-      sprite: {fileID: 2147129176, guid: f658b5f31af17cd4584dec0a01f743fe, type: 3}
+      sprite: {fileID: -1035267913, guid: f658b5f31af17cd4584dec0a01f743fe, type: 3}
     - name: 2
-      sprite: {fileID: 197074601, guid: 93178918fa90d2e47bf8c4da28e5b006, type: 3}
+      sprite: {fileID: -317913750, guid: 93178918fa90d2e47bf8c4da28e5b006, type: 3}
     - name: 3
-      sprite: {fileID: 1799284700, guid: 82d7e7234fa91844f92fc8a626e0314d, type: 3}
+      sprite: {fileID: -1728316522, guid: 82d7e7234fa91844f92fc8a626e0314d, type: 3}
     - name: 4
-      sprite: {fileID: -845847546, guid: 5ea29fd3e03790b4d87afb9dd0576a9b, type: 3}
+      sprite: {fileID: 868746156, guid: 5ea29fd3e03790b4d87afb9dd0576a9b, type: 3}
     - name: 5
-      sprite: {fileID: 300793786, guid: dcb4775857608724c93377848e5a46f0, type: 3}
+      sprite: {fileID: -967110468, guid: dcb4775857608724c93377848e5a46f0, type: 3}
     - name: 6
-      sprite: {fileID: -382365824, guid: 54a74d9155d0b994a8e3399be0cddbaa, type: 3}
+      sprite: {fileID: -1444593750, guid: 54a74d9155d0b994a8e3399be0cddbaa, type: 3}
     - name: 7
-      sprite: {fileID: -2116862666, guid: b9f51b6c81b18854fa8dac4870e28b34, type: 3}
+      sprite: {fileID: 940589270, guid: b9f51b6c81b18854fa8dac4870e28b34, type: 3}
   - characterName: "\u83B1\u6587"
     relatedImages:
     - {fileID: 5365482459874356769}
     - {fileID: 539104747143927749}
     expressions:
     - name: 1
-      sprite: {fileID: 344307731, guid: 92cba7bff51b26e47aae0931dfabc7c6, type: 3}
+      sprite: {fileID: 21300000, guid: 92cba7bff51b26e47aae0931dfabc7c6, type: 3}
     - name: 2
-      sprite: {fileID: -1211641899, guid: 59f256e220119a6429cf13995544dc46, type: 3}
+      sprite: {fileID: 21300000, guid: 59f256e220119a6429cf13995544dc46, type: 3}
     - name: 3
-      sprite: {fileID: 474550893, guid: 96f7a879d13811f47b5b8ff31954778f, type: 3}
+      sprite: {fileID: 21300000, guid: 96f7a879d13811f47b5b8ff31954778f, type: 3}
     - name: 4
-      sprite: {fileID: -1407574301, guid: df97e17723b0d1647bd35d8ec1ef4f1b, type: 3}
+      sprite: {fileID: 21300000, guid: df97e17723b0d1647bd35d8ec1ef4f1b, type: 3}
     - name: 5
-      sprite: {fileID: 1411752608, guid: 2f6ec9a902538fa4bb7646fea9746c08, type: 3}
+      sprite: {fileID: 21300000, guid: 2f6ec9a902538fa4bb7646fea9746c08, type: 3}
     - name: 6
-      sprite: {fileID: -2133071746, guid: 181e75dcdb55a5e40a7c5317486bc756, type: 3}
+      sprite: {fileID: 21300000, guid: 181e75dcdb55a5e40a7c5317486bc756, type: 3}
   - characterName: "\u827E\u7C73\u8389"
     relatedImages:
     - {fileID: 9121073920801299718}
     - {fileID: 3141669974879155441}
     expressions:
     - name: 1
-      sprite: {fileID: 1250950512, guid: 2212330f872612d4d909ef7dc5402cc8, type: 3}
+      sprite: {fileID: 21300000, guid: 2212330f872612d4d909ef7dc5402cc8, type: 3}
     - name: 2
-      sprite: {fileID: 1968947793, guid: ad8008ba186fcbf4aa386aee2b870406, type: 3}
+      sprite: {fileID: 21300000, guid: ad8008ba186fcbf4aa386aee2b870406, type: 3}
     - name: 3
-      sprite: {fileID: -2044154910, guid: e4cfa93686032354ea568540dde72af3, type: 3}
+      sprite: {fileID: 21300000, guid: e4cfa93686032354ea568540dde72af3, type: 3}
     - name: 4
-      sprite: {fileID: -536881875, guid: 9fc650ef1dcb54045837fce2f831dbc3, type: 3}
+      sprite: {fileID: 21300000, guid: 9fc650ef1dcb54045837fce2f831dbc3, type: 3}
     - name: 5
-      sprite: {fileID: -1483769614, guid: f950f4569d2035b49ad275c0917cf460, type: 3}
+      sprite: {fileID: 21300000, guid: f950f4569d2035b49ad275c0917cf460, type: 3}
   - characterName: "\u6D1B\u5C14\u574E"
     relatedImages:
     - {fileID: 4490850508667321467}
     - {fileID: 1968191709354230468}
     expressions:
     - name: 1
-      sprite: {fileID: -2098810379, guid: 590a59bf7cd16b84397a0c5e60ea4cb2, type: 3}
+      sprite: {fileID: 21300000, guid: 590a59bf7cd16b84397a0c5e60ea4cb2, type: 3}
     - name: 2
-      sprite: {fileID: 11659372, guid: e4ffecea01bb8f545876c58025b0038f, type: 3}
+      sprite: {fileID: 21300000, guid: e4ffecea01bb8f545876c58025b0038f, type: 3}
     - name: 3
-      sprite: {fileID: 2075237086, guid: fd6b225e003f3724fb7adf9016dc52e6, type: 3}
+      sprite: {fileID: 21300000, guid: fd6b225e003f3724fb7adf9016dc52e6, type: 3}
     - name: 4
-      sprite: {fileID: 1689076723, guid: b5f5543e0b1dc2a4a8f25d0785ab97b6, type: 3}
+      sprite: {fileID: 21300000, guid: b5f5543e0b1dc2a4a8f25d0785ab97b6, type: 3}
     - name: 5
-      sprite: {fileID: -1374568153, guid: cb386703fd1488e438627aae52a8afb3, type: 3}
+      sprite: {fileID: 21300000, guid: cb386703fd1488e438627aae52a8afb3, type: 3}
     - name: 6
-      sprite: {fileID: 2023035998, guid: 9943d8c5a69ddc045a337b46756237c2, type: 3}
+      sprite: {fileID: 21300000, guid: 9943d8c5a69ddc045a337b46756237c2, type: 3}
   - characterName: "\u535A\u91D1\u68EE"
     relatedImages:
     - {fileID: 9193028123446458217}
@@ -1150,7 +1150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 354, y: -459}
+  m_AnchoredPosition: {x: 345, y: -459}
   m_SizeDelta: {x: 845, y: 2333.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7152603145290609042
@@ -1181,7 +1181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 92cba7bff51b26e47aae0931dfabc7c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f6ec9a902538fa4bb7646fea9746c08, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

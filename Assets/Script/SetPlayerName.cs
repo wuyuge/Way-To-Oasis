@@ -10,7 +10,11 @@ public class SetPlayerName : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerName.TxtLine[0] != "¡ö¡ö"  && !string.IsNullOrEmpty( PlayerName.TxtLine[0]))
+        if (string.IsNullOrEmpty(PlayerName.TxtLine[0]))
+        {
+            PlayerName.TxtLine[0] = "¡ö¡ö";
+        }
+        if (PlayerName.TxtLine[0] != "¡ö¡ö"  && !string.IsNullOrEmpty(PlayerName.TxtLine[0]))
         {
             TextBack.text = PlayerName.TxtLine[0];
         }

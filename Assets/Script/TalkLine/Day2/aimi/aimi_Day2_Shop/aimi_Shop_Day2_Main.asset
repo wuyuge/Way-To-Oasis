@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: aimi_Shop_Day2_Main
   m_EditorClassIdentifier: 
   TxtLine:
+  - ${ShowCharacterTalkBox}
+  - ${LockSwitchStage}
   - ->c
   - "\u827E\u7C73\u8389\uFF1A\u4F60\u8FD8\u60F3\u548C\u6211\u8BF4\u4EC0\u4E48\uFF1F@{3}"
   - "\u827E\u7C73\u8389\uFF1A\u4F60\u6216\u8BB8\u4EE5\u4E3A\u81EA\u5DF1\u505A\u51FA\u4E86\u6700\u7406\u6027\uFF0C\u6700\u987E\u5168\u5927\u5C40\u7684\u51B3\u5B9A\u3002"

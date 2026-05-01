@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - ${CheckShopEvent}
+  - ${CheckShopEvent}
+  - ${CheckShopEvent}
+  - ${CheckShopEvent}
   Option1: {fileID: 11400000, guid: 58bebf27d9ee83048973d629dd0669bb, type: 2}
   Option2: {fileID: 11400000, guid: ad517f53ce5749f408a54a7949b50c68, type: 2}
   Option3: {fileID: 0}

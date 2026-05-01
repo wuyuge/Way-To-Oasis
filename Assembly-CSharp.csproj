@@ -62,8 +62,11 @@
     <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchChoice.cs" />
     <Compile Include="Assets\Script\UI\UIGeneralFunction.cs" />
     <Compile Include="Assets\Script\New_Game.cs" />
+    <Compile Include="Assets\Script\Skip\SkipText.cs" />
     <Compile Include="Assets\Script\MiniGameIntroManager.cs" />
+    <Compile Include="Assets\Script\Shop\ShopIntro.cs" />
     <Compile Include="Assets\Script\MiniGame\Amande\MedicineSender.cs" />
+    <Compile Include="Assets\Script\Tutorial\TutorialMask.cs" />
     <Compile Include="Assets\Script\Text\AutoObjectNumUpdater.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\LoadFileButton.cs" />
     <Compile Include="Assets\Script\CharacterImageManager.cs" />
@@ -71,6 +74,7 @@
     <Compile Include="Assets\Script\UI\ShowText.cs" />
     <Compile Include="Assets\Script\TalkLine\TalkSystem.cs" />
     <Compile Include="Assets\Script\TalkLine\Day0\aimi bojin\aimibo.cs" />
+    <Compile Include="Assets\Script\Initial Interface\ColorChange.cs" />
     <Compile Include="Assets\Script\Tutorial\TutorialControl.cs" />
     <Compile Include="Assets\Script\UI\UIshake.cs" />
     <Compile Include="Assets\Script\DataManager\SaveManager\SaveLoadManager.cs" />
@@ -125,6 +129,7 @@
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\ChildObj\DeleteChild.cs" />
     <Compile Include="Assets\Script\Achievement\AchievementManager.cs" />
     <Compile Include="Assets\Script\MiniCharacter\MiniThinkBarPosition.cs" />
+    <Compile Include="Assets\Script\Tutorial\Tutorial4.cs" />
     <Compile Include="Assets\Script\Start\StartImport.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Steamworks.NET\SteamManager.cs" />
@@ -140,6 +145,7 @@
     <Compile Include="Assets\Script\DataManager\SaveManager\PlayerSaveData.cs" />
     <Compile Include="Assets\Script\Text\Report.cs" />
     <Compile Include="Assets\Script\UI\Menu\MenuManager.cs" />
+    <Compile Include="Assets\Book-Page Curl\scripts\AutoFlip.cs" />
     <Compile Include="Assets\Script\ConversationHistroy\HistoryManager.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\SaveMenu.cs" />
     <Compile Include="Assets\Script\Shop\ShopManager.cs" />
@@ -170,12 +176,13 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Script\Setting\SettingSwitch.cs" />
+    <Compile Include="Assets\Script\Tutorial\BookButton.cs" />
     <Compile Include="Assets\Script\UI\Menu\TextSpeedManager.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\DeleteSave.cs" />
-    <Compile Include="Assets\Script\DataManager\Saves\SaveDataManager.cs" />
     <Compile Include="Assets\Script\Rain\RandomRain.cs" />
     <Compile Include="Assets\Script\DataManager\Developer\DevSaveSendInt.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+    <Compile Include="Assets\Script\Initial Interface\ParallaxBackGround.cs" />
     <Compile Include="Assets\Script\DataManager\SaveLoadMenu\LoadMenu.cs" />
     <Compile Include="Assets\Script\QTE\QteSliderManager.cs" />
     <Compile Include="Assets\Script\Shop\ShopEventReseter.cs" />
@@ -204,6 +211,7 @@
     <Compile Include="Assets\Script\Text\AddPlayerName.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\Book-Page Curl\scripts\Book.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Script\Start\LoadOnStart.cs" />
     <Compile Include="Assets\Script\TalkSys\SwitchCommand\SwitchCommand.cs" />
@@ -233,6 +241,7 @@
     <Compile Include="Assets\Script\AnimatorGeneralFunction.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Script\TalkLine\ButtonSelect.cs" />
+    <Compile Include="Assets\Script\MutexObject.cs" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -262,6 +271,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Shader\Noise.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
+    <None Include="Assets\Book-Page Curl\scripts\PageShader.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Shader\UIBookPageFlip.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
@@ -537,6 +547,9 @@
     </Reference>
     <Reference Include="Unity.Android.GradleProject">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.58f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.58f1c1\Editor\Data\PlaybackEngines\MacStandaloneSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.58f1c1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -1035,9 +1048,6 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:\Game\Oasis\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Coffee.UnmaskForUGUI">
-      <HintPath>C:\Game\Oasis\Library\ScriptAssemblies\Coffee.UnmaskForUGUI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.003">
       <HintPath>C:\Game\Oasis\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.003.dll</HintPath>

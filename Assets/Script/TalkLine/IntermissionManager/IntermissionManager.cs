@@ -20,22 +20,16 @@ public class IntermissionManager : MonoBehaviour
     [Header("ÅÐ¶ÏÌõ¼þ")]
     public Manager AmandeKillSelf;
     public List<Character> characters;
-    private Progress AddObj;
-
-    private void Start()
-    {
-        AddObj = GetComponent<Progress>();
-    }
+    
 
     public Manager AddTextLine(string Stage)
     {
-        AddObj = GetComponent<Progress>();
-        int day_num = AddObj.day_num;
+        int dayNum = GlobalData.Day;
 
         foreach (TextLine line in Lines)
         {
 
-            if(line.Day == day_num && line.Stage == Stage)
+            if(line.Day == dayNum && line.Stage == Stage)
             {
                 if (!line.Have_Condition && !line.Have_Show)
                 {
@@ -108,10 +102,6 @@ public class IntermissionManager : MonoBehaviour
                     textLine.Have_Show = true;
                     return textLine.Text; 
                 }
-                else return null;
-            }
-            else
-            {
                 return null;
             }
         }

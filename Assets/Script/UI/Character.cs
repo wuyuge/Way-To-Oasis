@@ -28,40 +28,31 @@ public class Character : MonoBehaviour
     /// end：游戏结束/进度管理根对象（用于获取当前天数）
     /// </summary>
     public GameObject weight1, weight2, weight3, end;
-
     /// <summary>
     /// 当前天数记录（用于判断是否进入下一天，触发负重重置）
     /// </summary>
     public int curr_num;
-
     [Header("UI - 角色相关UI组件")]
     // 切换状态标记UI（可能用于标记角色是否被选中/处于特殊状态）
     public GameObject toggle;
-
     [Header("状态 - 关联游戏进度管理器")]
     // 游戏进度管理对象（Progress脚本挂载对象，用于判断当前游戏阶段）
     public Progress progress;
-
     [Header("对话列表 - 角色专属对话数据")]
     // 角色按天数对应的对话列表（索引对应天数，存储每天的对话数据）
     public List<Manager> textline = new List<Manager>();
-
     [Tooltip("挂载的对话Bar - 角色触发对话时使用的对话面板")]
     // 对话面板对象（挂载TalkSystem脚本，用于显示角色对话）
     public GameObject TalkBar;
-
     /// <summary>
     /// 对话状态标记（true：已触发过对话；false：未触发对话）
     /// </summary>
     public bool have_talk = false;
-
     /// <summary>
     /// 角色死亡状态标记（true：角色死亡，所有功能失效；false：角色存活，功能正常）
     /// </summary>
     public bool Dead;
-
     public Texture2D DeadImage;
-
     /// <summary>
     /// 角色进食状态标记（预留，暂未在现有逻辑中使用）
     /// </summary>
@@ -76,34 +67,31 @@ public class Character : MonoBehaviour
     public bool ClikDelay = false;
     [Header("Day0用")]
     public Manager Day0_Talk;
-
     public GameObject Background;
     /// <summary>
     /// 用于商店后限制对话触发
     /// </summary>
-
     public bool CanTalk = true;
-
-
     /// <summary>
     /// 是否无法负重（true：无法负重，禁用负重操作；false：可正常负重）
     /// </summary>
-
     public bool CantWeight = false;
-
     public List<GameObject> Child;
     public List<GameObject> CharacterList;
-
     public bool ShowInfo = false;
     public bool Have_ShowInfo = false;
-
+    public Manager killAimi;
     private int InfoClick = 0;
-
     private Image _weight1Image,_weight2Image,_weight3Image;
-
+    private Button _button;
 
     private void Awake()
     {
+        
+        if (killAimi is not null)
+        {
+            killAimi.GeneralBool = false;
+        }
         Attention = gameObject.transform.Find("Attention").gameObject;
         Attention2 = gameObject.transform.Find("Attention2").gameObject;
         //在初始加载且不是重新加载存档的场景刷新负重等状态
@@ -111,7 +99,7 @@ public class Character : MonoBehaviour
         {
             weight.Weight = 0;
             weight.Weight_tag = 0;
-            weight.Day1Eat = false;
+            weight.Eat = false;
             
             
         }
@@ -126,8 +114,12 @@ public class Character : MonoBehaviour
     void Start()
     {
         Delay = 1;
+        _button = GetComponent<Button>();
         // 绑定角色子对象中的ToggleUI（状态标记）
-        toggle = transform.Find("Toggle").gameObject;
+        if (toggle is null)
+        {
+            toggle = transform.Find("Toggle").gameObject;
+        }
         // 查找全局的进度管理根对象（End）
         end = GameObject.Find("End");
         // 记录初始天数（与Progress中的day_num同步）
@@ -139,8 +131,7 @@ public class Character : MonoBehaviour
         _weight1Image = weight1.GetComponent<Image>();
         _weight2Image = weight2.GetComponent<Image>();
         _weight3Image = weight3.GetComponent<Image>();
-        if(end.GetComponent<Progress>().day_num != 0)
-        Background = GameObject.Find("BackgroundContainer").gameObject;
+        if(end.GetComponent<Progress>().day_num != 0) Background = GameObject.Find("BackgroundContainer").gameObject;
         for (int i = 0; i < transform.childCount;i++)
         {
             Child.Add(transform.GetChild(i).gameObject);
@@ -191,14 +182,7 @@ public class Character : MonoBehaviour
         {
             Attention2.SetActive(false);
         }
-        if(progress.talk && CharacterName == "主角")
-        {
-            gameObject.GetComponent<Image>().color = Color.gray;
-        }
-        else
-        {
-            gameObject.GetComponent<Image>().color = Color.white;
-        }
+
 
 
         // 获取资源选择面板（SelectBar）的状态，判断是否处于"食物选择"模式
@@ -214,25 +198,24 @@ public class Character : MonoBehaviour
                     break;
                 }
             }
-            if (!InfoOn) 
-            gameObject.GetComponent<Button>().enabled = true;
-            else gameObject.GetComponent<Button>().enabled = false;
+            if (!InfoOn) _button.enabled = true;
+            else _button.enabled = false;
             toggle.SetActive(false);
         }
         else
         {
             // 食物选择模式：禁用角色按钮，显示ToggleUI（标记当前模式）
             toggle.SetActive(true);
-            gameObject.GetComponent<Button>().enabled = false;
+            _button.enabled = false;
         }
 
         // 检测是否进入下一天（当前记录的天数与Progress中的天数不一致）
-        if (curr_num != end.GetComponent<Progress>().day_num)
+        if (curr_num != GlobalData.Day)
         {
             // 重置角色负重为0（新的一天初始无负重）
             weight.Weight = 0;
             // 更新当前天数记录（与Progress同步）
-            curr_num = end.GetComponent<Progress>().day_num;
+            curr_num = GlobalData.Day;
             // 刷新负重进度条UI（重置为初始白色）
             Refresh();
         }
@@ -248,7 +231,7 @@ public class Character : MonoBehaviour
 
 
         //关闭角色资料逻辑
-        if(ShowInfo && (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) && !Have_ShowInfo && progress.GetComponent<Progress>().day_num == 0)
+        if(ShowInfo && (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) && !Have_ShowInfo && GlobalData.Day == 0)
         {
             if(CharacterName == "博金森" || CharacterName == "艾米莉")
             {
@@ -261,11 +244,8 @@ public class Character : MonoBehaviour
                 {
                     GameObject.Find("CharacterInfo").GetComponent<CharacterInfoManager>().CloseInfo();
                     TalkBar.GetComponent<TalkSystem>().on = true;
-
                     Have_ShowInfo = true;
-
                     OnTalk();
-
                     Invoke("SetBool", 1.5f);
                 }
             }
@@ -308,7 +288,7 @@ public class Character : MonoBehaviour
         if (!gameObject.transform.parent.Find("SelectBar").GetComponent<AssResources>().Food)
         {
             // 非食物选择模式：启用角色按钮，隐藏ToggleUI
-            gameObject.GetComponent<Button>().enabled = true;
+            _button.enabled = true;
             toggle.SetActive(false);
 
             // 1. 【分配食物到负重】：判断是否处于"食物负重分配"阶段，且满足分配条件
@@ -381,7 +361,7 @@ public class Character : MonoBehaviour
         {
             // 食物选择模式：禁用角色按钮，显示ToggleUI
             toggle.SetActive(true);
-            gameObject.GetComponent<Button>().enabled = false;
+            _button.enabled = false;
         }
     }
 
@@ -395,7 +375,7 @@ public class Character : MonoBehaviour
         // 【死亡状态判断】如果角色死亡，不执行UI刷新
         if (Dead) return;
         
-
+        ResetComfort();
         // 重置3个负重进度条颜色为白色（表示未占用）
         _weight1Image.color = Color.white;
         _weight2Image.color = Color.white;
@@ -447,19 +427,20 @@ public class Character : MonoBehaviour
             Invoke("SetClik", 5f);
             return;
         }
-        // 用于d0的新手引导
-        if (end.GetComponent<Progress>().day_num == 0)
-        {
-            Mask.gameObject.SetActive(false);
-        }
 
         //day0角色资料显示逻辑
         if (end.GetComponent<Progress>().day_num == 0 && !Have_ShowInfo)
         {
 
-            if(CharacterName == "艾米莉" || CharacterName == "博金森")
+            if(CharacterName == "艾米莉")
             {
                 gameObject.GetComponent<Aimibo>().ShowInfo("艾米莉");
+                ShowInfo = true;
+                return;
+            }
+            if (CharacterName == "博金森")
+            {
+                gameObject.GetComponent<Aimibo>().ShowInfo("博金森");
                 ShowInfo = true;
                 return;
             }
@@ -517,13 +498,18 @@ public class Character : MonoBehaviour
             }
             Invoke("SetClik", 5f);
         }
+
+        if (CharacterName == "主角")
+        {
+            have_talk = false;
+        }
         
     }
 
     void SetClik()
     {
         ClikDelay = false;
-        gameObject.GetComponent<Button>().enabled = true;
+        _button.enabled = true;
         TalkBar.GetComponent<TalkSystem>().on = true;
     }
 
@@ -630,7 +616,25 @@ public class Character : MonoBehaviour
 
     }
 
+    public void SetKilled()//角色反抗失败被主角杀死时调用
+    {
+        if (CharacterName == "艾米莉")
+        {
+            killAimi.GeneralBool = true;
+        }
+        Dead = true;
+        GlobalData.TalkSystem.DeadName.TxtLine.Add(CharacterName);
+        GlobalData.Progress.CurrentDead.TxtLine.Add(CharacterName);
+    }
 
 
+    public void ResetComfort()
+    {
+        Attention.SetActive(false);
+        AfterSpecialTalk = false;
+        Special1 = false;
+        Special2 = false;
+    }
+    
 
 }

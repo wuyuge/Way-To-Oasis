@@ -30,6 +30,8 @@ public class SaveFileButton : MonoBehaviour
         {
             autoSaveIsOn.GeneralBool = false;
         }
+
+        FileExists();
     }
 
     /// <summary>
@@ -45,12 +47,13 @@ public class SaveFileButton : MonoBehaviour
     /// 用于判断是否需要覆盖文件
     /// </summary>
     /// <returns>返回布尔型,存在True,不存在False</returns>
-    bool FileExists()
+    public bool FileExists()
     {
         string fileName = SaveConstants.SaveFileNameTemplate.Replace("{Field}", fileNum.ToString()); // 生成存档文件名
         string filePath = Path.Combine(SaveConstants.SaveFolderPath, fileName); // 生成存档文件路径
-        
-        return File.Exists(filePath);
+        bool result = File.Exists(filePath);
+        deleteButton.gameObject.SetActive(result);
+        return result;
         
         
     }
@@ -76,6 +79,7 @@ public class SaveFileButton : MonoBehaviour
         {
             _saveManager.SaveData(fileNum);
             refresher.Refresh();
+            FileExists();
         }
         catch (Exception e)
         {
@@ -91,6 +95,7 @@ public class SaveFileButton : MonoBehaviour
     /// </summary>
     public void UpLinkObj()
     {
+        GlobalData.CurrentSaveFileButton = gameObject;
         foreach (Transform value in gameObject.transform.parent)
         {
             if (value.gameObject != gameObject)
@@ -103,14 +108,12 @@ public class SaveFileButton : MonoBehaviour
                 {
                     Console.WriteLine(e);
                 }
-                
             }
         }
         if (FileExists())
         {
             ShowCoverFileTips();
             return;
-                
         }
         saveTips.SetActive(true);
         deleteButton.enabled = false;
@@ -159,6 +162,7 @@ public class SaveFileButton : MonoBehaviour
         gameObject.GetComponent<Button>().enabled = true;
         deleteButton.enabled = true;
         coverTips.SetActive(false);
+        FileExists();
     }
     /// <summary>
     /// 由子对象调用取消

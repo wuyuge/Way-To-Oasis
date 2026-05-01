@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: Day3_Lai_SuviveAlone-c1
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u786E\u5B9E\u6709\u5FC3\u4FC3\u6210\u8FD9\u4E2A\u7ED3\u679C"
+  - ->p
+  - "\u4F60\u6CA1\u731C\u9519\uFF0C\u6211\u786E\u5B9E\u662F\u6709\u5FC3\u4FC3\u6210\u8FD9\u4E2A\u7ED3\u679C\u3002"
+  - ->c
+  - "\u83B1\u6587\uFF1A\u2026\u2026@{6}"
+  - "\u83B1\u6587\uFF1A\u4E3A\u4EC0\u4E48\uFF1F"
+  - "\u83B1\u6587\uFF1A\u96BE\u9053\u4F60\u53EA\u662F\u5728\u627E\u4E50\u5B50\u5417\uFF01"
+  - "\u83B1\u6587\uFF1A\u4F60\u53C8\u6709\u4EC0\u4E48\u628A\u63E1\u4ECE\u8FD9\u91CC\u51FA\u53BB\uFF1F\u8FD8\u662F\u8BF4\u5C31\u662F\u56E0\u4E3A\u6CA1\u6709\u624D\u4F1A\u8FD9\u6837\u505A\uFF1F"
+  - "\u83B1\u6587\uFF1A{PlayerName}\uFF0C\u8FD9\u4E48\u591A\u5E74\u6211\u6216\u8BB8\u4ECE\u6765\u6CA1\u6709\u771F\u6B63\u5730\u8BA4\u8BC6\u4F60\u3002@{5}"
+  - "\u83B1\u6587\uFF1A\u6211\u771F\u7684\u5E0C\u671B\u8FD9\u4E0D\u4F1A\u662F\u4F60\u7684\u672C\u610F\u3002\u5C31\u7B97\u662F\u88AB\u903C\u75AF\u4E86\uFF0C\u4E5F\u597D\u8FC7\u73B0\u5728\u8FD9\u6837\u3002"
+  - "\u83B1\u6587\uFF1A\u2026\u2026"
+  - "\u83B1\u6587\uFF1A\u5C31\u8FD9\u6837\u5427\uFF0C\u53CD\u6B63\u6211\u7684\u6027\u547D\u4E5F\u65E9\u5C31\u4E0D\u5728\u6211\u7684\u624B\u4E0A\u4E86\u3002@{4}"
+  - ${OpenSwitchStage}
+  - ${CloseCharacterTalkBox}
+  - ${DisableMiniCharacter}
+  - ${DownTalkBox}
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Day1Eat: 0
+  GeneralBool: 0

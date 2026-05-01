@@ -16,6 +16,7 @@ MonoBehaviour:
   - ${LockSwitchStage}
   - ${SetMiniCharacterSit}
   - ${CloseCharacterTalkBox}
+  - ${LockSkip}
   - ${OnMiniMode}
   - ->c
   - "\u83B1\u6587\uFF1A\u2026\u2026"

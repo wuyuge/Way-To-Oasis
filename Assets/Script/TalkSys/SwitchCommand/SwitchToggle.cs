@@ -11,6 +11,8 @@ public class SwitchToggle : SwitchCommand
     #endregion
 
     private TalkSysShowText _showText;
+    [SerializeField]
+    private Button skipButton;
     
     private bool MiniMode
     {
@@ -111,7 +113,6 @@ public class SwitchToggle : SwitchCommand
             
             case FunctionCode.Function.I:
                 //关闭遮罩
-                _talkSys.mask.transform.parent.gameObject.SetActive(false);
                 break;
             case FunctionCode.Function.J:
                 //全屏黑屏   
@@ -140,10 +141,9 @@ public class SwitchToggle : SwitchCommand
                 //自动切换下一天
                 Progress tempProgress = _talkSys.DaytimeOBJ.GetComponent<Progress>();
                 tempProgress.CanSwitch = true;
-                tempProgress.SwtichProgress();
+                tempProgress.SwitchProgress();
                 break;
-            
-                
+
         }
     }
 

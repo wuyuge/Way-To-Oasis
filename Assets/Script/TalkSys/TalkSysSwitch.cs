@@ -44,7 +44,7 @@ public class TalkSysSwitch : MonoBehaviour,ITalkSysCore
     {
         _talkSys = talkSys;
        _talkLines = talkSys.Talklines;
-       if (switchCodes != null)
+       /*if (switchCodes != null)
        {
            foreach (var value in switchCodes)
            {
@@ -61,7 +61,7 @@ public class TalkSysSwitch : MonoBehaviour,ITalkSysCore
                    
                }
            } 
-       }
+       }*/
 
        foreach (var VARIABLE in functionList)
        {
@@ -117,7 +117,6 @@ public class TalkSysSwitch : MonoBehaviour,ITalkSysCore
             {
                 Debug.LogError($"标识命令不存在{curText}");
             }
-            
             _talkSys.line++;
             if (_talkSys.line < _talkLines[DayNum].TxtLine.Count && 
                 _talkLines[DayNum].TxtLine[_talkSys.line].Contains("$"))

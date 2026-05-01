@@ -31,8 +31,6 @@ public class AutoSave : MonoBehaviour
 
     }
     
-
-    // ReSharper disable Unity.PerformanceAnalysis
     /// <summary>
     /// 自动保存方法
     /// </summary>
@@ -43,7 +41,7 @@ public class AutoSave : MonoBehaviour
         {
             if (shop != null)
             {
-                if (autoSaveIsOn.GeneralBool && !shop.activeSelf)
+                if (autoSaveIsOn.GeneralBool && !shop.activeInHierarchy)
                 {
                 
                     try

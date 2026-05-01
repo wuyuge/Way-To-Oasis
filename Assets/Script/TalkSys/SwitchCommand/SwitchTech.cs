@@ -1,5 +1,4 @@
 using System;
-using Coffee.UIExtensions;
 using TMPro;
 using UnityEngine;
 
@@ -10,7 +9,6 @@ public class SwitchTech : SwitchCommand
     private Manager showTech;
     private GameObject _techMask;
     private TechTextList _textList;
-    private Unmask _maskTarget;
     private TextMeshProUGUI _maskText;
 
     /// <summary>
@@ -20,9 +18,6 @@ public class SwitchTech : SwitchCommand
     public override void Init(TalkSystem talkSys)
     {
         _talkSys = talkSys;
-        _techMask = _talkSys.mask;
-        _maskTarget = _techMask.GetComponent<Unmask>();
-        _maskText = _techMask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>();
         _textList = talkSys.TechTextList;
     }
 
@@ -99,11 +94,10 @@ public class SwitchTech : SwitchCommand
                 break;*/
             case FunctionCode.Function.J:
                 //使遮罩可以被鼠标点击关闭
-                _maskTarget.gameObject.transform.parent.gameObject.GetComponent<MaskManager>().ClickClose = true;
+                
                 break;
             case FunctionCode.Function.K:
                 //使遮罩不可以被鼠标点击关闭
-                _maskTarget.gameObject.transform.parent.gameObject.GetComponent<MaskManager>().ClickClose = false;
                 break;
                 
             default:
@@ -111,52 +105,7 @@ public class SwitchTech : SwitchCommand
                 break;
         }
     }
-
-
-    #region 遮罩调用
-
-    /// <summary>
-    /// 启用指定的遮罩并设置相关的技术文本。
-    /// </summary>
-    /// <param name="comment">用于查找对应技术文本的注释字符串。</param>
-    /// <param name="maskTarget">要启用的遮罩游戏对象。</param>
-    private void EnableMask(string comment, GameObject maskTarget)
-    {
-        var showText = GetTechText(comment);
-        SetTechMode(maskTarget,showText);
-    }
-
-
-    /// <summary>
-    /// 根据提供的遮罩对象和文本内容设置技术模式，用于显示特定的UI遮罩层并更新遮罩上的文本。
-    /// </summary>
-    /// <param name="maskGameObj">要作为遮罩目标的游戏对象。</param>
-    /// <param name="techText">将要在遮罩上显示的文本内容。</param>
-    private void SetTechMode(GameObject maskGameObj, string techText)
-    {
-        _techMask.transform.parent.gameObject.SetActive(true);
-        _maskTarget.m_FitTarget = maskGameObj.GetComponent<RectTransform>();
-        _maskText.text = techText;
-    }
-
-    /// <summary>
-    /// 根据给定的注释从TechTextList中获取相应的教学文本。
-    /// </summary>
-    /// <param name="comment">与所需教学文本关联的唯一标识符。</param>
-    /// <returns>如果找到匹配项，则返回对应的文本；否则返回空字符串。</returns>
-    private string GetTechText(string comment)
-    {
-        foreach (var techText in _textList.TextList)
-        {
-            if (techText.name == comment)
-            {
-                return techText.text;
-            }
-        }
-        return "";
-    }
-
-    #endregion
+    
 
     /// <summary>
     /// 从TalkSystem的CharacterList中选择一个满足条件的角色作为安抚对象。

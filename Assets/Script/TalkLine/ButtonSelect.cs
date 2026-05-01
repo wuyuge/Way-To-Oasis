@@ -10,7 +10,8 @@ public class ButtonSelect : MonoBehaviour
     public TalkSystem TalkSystem;
     public Manager textbox { get; set; }
     public TextMeshProUGUI buttonText;
-    public GameObject playerTalkBack;
+    [SerializeField]
+    private GameObject playerTalkBack;
     private void Awake()
     {
         if (buttonText == null)
@@ -26,15 +27,23 @@ public class ButtonSelect : MonoBehaviour
     {
         TalkSystem.on = true;
         TalkSystem.line = 1;
-        playerTalkBack.SetActive(true);
-        TalkSystem.SetTextBox(textbox);
-        TalkSystem.ShowText();
-        for (int i = 0; i < gameObject.transform.parent.childCount; i++)
+        try
         {
-            gameObject.transform.parent.GetChild(i).gameObject.SetActive(false);
+            playerTalkBack.SetActive(true);
         }
-        
-        
+        catch (Exception e)
+        {
+            Debug.LogError(e,this);
+        }
+        finally
+        {
+            TalkSystem.SetTextBox(textbox);
+            TalkSystem.ShowText();
+            for (int i = 0; i < gameObject.transform.parent.childCount; i++)
+            {
+                gameObject.transform.parent.GetChild(i).gameObject.SetActive(false);
+            }
+        }
     }
 
     public void SetTextBox(Manager textBox)
@@ -43,10 +52,11 @@ public class ButtonSelect : MonoBehaviour
         {
             textbox = textBox;
             buttonText.text = textbox.TxtLine[0];
-            if (playerTalkBack is not null)
+            if (playerTalkBack != null)
             {
                 playerTalkBack.SetActive(false);
             }
+
             
         }
         catch (Exception e)

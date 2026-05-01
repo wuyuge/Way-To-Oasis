@@ -208,16 +208,7 @@ public class MiniCharacterManager : MonoBehaviour
             bool isDead = deadCharacters.Contains(character.characterName);
             character.characterObject.SetActive(!isDead);
 
-            // 同步隐藏对话栏
-            if (character.characterTalkBar != null)
-            {
-                character.characterTalkBar.SetActive(false);
-            }
-            
-            if (character.thinkBar is not null)
-            {
-                character.thinkBar.SetActive(false);
-            }
+            Invoke(nameof(DelayTextBar),2f);
         }
 
         // 2. 收集存活角色
@@ -257,6 +248,28 @@ public class MiniCharacterManager : MonoBehaviour
             if (enableDebugLogs)
                 Debug.Log($"角色 {character.characterName} 已移动到位置 {i}");
         }
+    }
+
+    private void DelayTextBar()
+    {
+        foreach (var character in miniCharacters)
+        {
+            if (character.characterObject == null)
+                continue;
+
+            // 同步隐藏对话栏
+            if (character.characterTalkBar != null)
+            {
+                character.characterTalkBar.SetActive(false);
+            }
+            
+            if (character.thinkBar is not null)
+            {
+                character.thinkBar.SetActive(false);
+            }
+            
+        }
+        
     }
 
     #region 动画控制方法

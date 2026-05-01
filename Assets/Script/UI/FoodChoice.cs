@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class FoodChoice : MonoBehaviour
@@ -10,40 +11,38 @@ public class FoodChoice : MonoBehaviour
     public Manager Have_Food;
     public bool have;
     public GameObject Food_Text;
-    private Character Character;
+    public Character character;
     private bool Ban;
+    private Toggle _toggle;
 
 
     void Awake()
     {
-        
-
+        _toggle = gameObject.GetComponent<Toggle>();
         Invoke("open",0.8f);
-        Character = this.gameObject.transform.parent.gameObject.GetComponent<Character>();
+        if (character is null)
+        {
+            character = gameObject.transform.parent.gameObject.GetComponent<Character>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if (!End.GetComponent<Progress>().food)
+        if (GlobalData.Progress is not null)
         {
-           
-            gameObject.GetComponent<Toggle>().isOn = false;
-            
+            if (!GlobalData.Progress.food)
+            {
+                _toggle.isOn = false;
+            }
         }
         else
         {
-            gameObject.GetComponent<Toggle>().enabled = true;
+            _toggle.enabled = true;
         }
 
-        if (Character.weight.Day1Eat)
-        {
-            have = true;
-            gameObject.GetComponent<Toggle>().isOn = true;
-        }
-
-
+        have = character.weight.Eat;
+        _toggle.isOn = character.weight.Eat;
 
     }
 
@@ -52,29 +51,26 @@ public class FoodChoice : MonoBehaviour
     {
         if (Ban) return;
         
-        if(End.GetComponent<Progress>().food)
+        if(GlobalData.Progress.food)
         {
             if (Have_Food.Weight < 1 && !have)
             {
-                gameObject.GetComponent<Toggle>().isOn = false;
+                _toggle.isOn = false;
                 return;
             }
-            
 
             if (Have_Food.Weight >= 1 && choice)
             {
                 Have_Food.Weight -= 1;
                 have = true;
-                gameObject.transform.parent.GetComponent<Character>().eat = true;
-                
-                this.gameObject.transform.parent.GetComponent<Character>().weight.Day1Eat = true; 
+                character.eat = true;
+                character.weight.Eat = true; 
             }
             if (!choice && have)
             {
                 Have_Food.Weight += 1;
-                gameObject.transform.parent.GetComponent<Character>().eat = false;
-                
-                this.gameObject.transform.parent.GetComponent<Character>().weight.Day1Eat = false; 
+                character.eat = false;
+                character.weight.Eat = false; 
                 have = false;
             }
             Food_Text.GetComponent<TextMeshProUGUI>().text = Have_Food.Weight.ToString();
@@ -86,6 +82,7 @@ public class FoodChoice : MonoBehaviour
     {
         Ban = false;
     }
+    
 
 
 }

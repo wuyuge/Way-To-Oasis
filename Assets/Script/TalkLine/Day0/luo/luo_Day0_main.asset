@@ -16,6 +16,7 @@ MonoBehaviour:
   - ${ShowCharacterTalkBox}
   - ${LockSwitchStage}
   - ->p
+  - ->p
   - "\u961F\u957F\u6B7B\u4E86\u3002"
   - ->c
   - "\u6D1B\u5C14\u574E\uFF1A\u2026\u2026\u961F\u957F\u53BB\u4E16\u4E86\uFF1F\uFF01@{5}"

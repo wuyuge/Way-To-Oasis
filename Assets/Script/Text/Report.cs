@@ -10,7 +10,7 @@ public class Report : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI Text;
     private string DefultText = "<size=200>Day {day}</size>\n\n{dead}剩余食物数量 {food}\n剩余尸体数量 <color=#00ff00ff>{body}</color>";
-    public Manager AmandeKillSelf;
+    public Manager AmandeKillSelf,killAimi;
 
     public void ShowText()
     {
@@ -36,8 +36,23 @@ public class Report : MonoBehaviour
                     if (AmandeKillSelf.GeneralBool)
                     {
                         if (s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
-                            showdead +=  s + "死亡了";
+                            showdead +=  s + "死亡了\n";
                         else showdead += s + "死亡了";
+                    }
+                    else
+                    {
+                        if (s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
+                            showdead += s + "被你饿死了\n";
+                        else showdead += s + "被你饿死了";
+                    }
+                }
+                else if (s.Contains("艾米莉"))
+                {
+                    if (killAimi.GeneralBool)
+                    {
+                        if (s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
+                            showdead +=  s + "你杀死了\n";
+                        else showdead += s + "你杀死了";
                     }
                     else
                     {

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bo_Day1_choice1-2
   m_EditorClassIdentifier: 
   TxtLine:
-  - "\u6CA1\u4E8B\u4E86\uFF0C\u8F9B\u82E6\u4F60\u4E86"
+  - "\u6CA1\u4E8B\u4E86"
   - ->p
   - "\u6CA1\u4E8B\u4E86\uFF0C\u8F9B\u82E6\u4F60\u4E86\u3002"
   - ->c

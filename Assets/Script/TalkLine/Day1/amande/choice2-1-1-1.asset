@@ -22,7 +22,7 @@ MonoBehaviour:
   - ${End}
   Option1: {fileID: 11400000, guid: fa8bebc39663b784cb1116b7f674ed5c, type: 2}
   Option2: {fileID: 0}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: 7e36c9c55eb75714a9280f9e50e063e4, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0

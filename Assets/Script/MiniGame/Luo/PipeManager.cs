@@ -18,7 +18,7 @@ public class PipeManager : MonoBehaviour
     public BlindPipe blindPipe;
     public TShapePipe tShapePipe;
     private Button _button;
-    public bool canReplace;
+    public bool canReplace,replaced;
     public Transform itemBox;
     [SerializeField]
     public List<RectTransform> _items = new List<RectTransform>();
@@ -73,8 +73,11 @@ public class PipeManager : MonoBehaviour
             _items.Add(itemBox.GetChild(i).GetComponent<RectTransform>());
         }
     }
-    
-    
+
+    private void OnEnable()
+    {
+        replaced = false;
+    }
 
     private void LateUpdate()
     {
@@ -100,24 +103,26 @@ public class PipeManager : MonoBehaviour
         if (straightPipe is not null && straightPipe.enabled)
         {
             straightPipe.Click();
-            return;
         }
 
         if (anglePipe is not null && anglePipe.enabled)
         {
             anglePipe.Click();
-            return;
         }
         
         if (pipe4Way is not null && pipe4Way.enabled)
         {
             pipe4Way.Click();
-            return;
         }
 
         if (tShapePipe is not null && tShapePipe.enabled)
         {
             tShapePipe.Click();
+        }
+
+        if (blindPipe is not null && blindPipe.enabled)
+        {
+            blindPipe.Click();
         }
         
         System.DateTime now = System.DateTime.Now;
@@ -174,11 +179,11 @@ public class PipeManager : MonoBehaviour
         tempPipe.SetState(state);
     }
 
-    protected void DetectCollision()
+    private void DetectCollision()
     {
         if (canReplace)
         {
-            if (Collision == gameObject && !UiCollider.IsCollision(_rectTransform,_replaceRectTransform) && _replaceRectTransform.gameObject.activeSelf)
+            if (Collision == gameObject && !UiCollider.IsCollision(_rectTransform,_replaceRectTransform) && _replaceRectTransform.gameObject.activeInHierarchy)
             {
                 _isCollision = false;
                 _replaceItem.GetComponent<LuoDraggable>().CollisionExit();
@@ -190,7 +195,7 @@ public class PipeManager : MonoBehaviour
             {
                 try
                 {
-                    if (UiCollider.IsCollision(_rectTransform, rect) && rect.gameObject.activeSelf)
+                    if (UiCollider.IsCollision(_rectTransform, rect) && rect.gameObject.activeInHierarchy)
                     {
                         var temp = rect.GetComponent<LuoDraggable>();
                         temp.CollisionEnter();
@@ -220,6 +225,7 @@ public class PipeManager : MonoBehaviour
             _replaceItem.SetActive(false);
             _isCollision = false;
             canReplace = false;
+            replaced = true;
             Collision = null;
             GetComponent<Button>().enabled = true;
             SetOpen(_replaceType);

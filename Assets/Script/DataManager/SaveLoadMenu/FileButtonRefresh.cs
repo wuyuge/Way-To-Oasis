@@ -7,35 +7,27 @@ using UnityEngine.Serialization;
 public class FileButtonRefresh : MonoBehaviour
 {
 
-    public TextMeshProUGUI mainInfo,secInfo,timeInfo,textOnImage;
-    private SaveManager _saveManager;
+    public TextMeshProUGUI mainInfo,timeInfo,textOnImage;
+    public SaveManager saveManager;
     public int num;
     public List<string> stageNames;
     public bool reportSaveIsNull = true;
     public List<string> initialText;
 
-    private void Awake()
-    {
-        _saveManager = GameObject.Find("SaveManager").GetComponent<SaveManager>();
-        
-    }
-
     private void OnEnable()
     {
         Refresh();
-
     }
 
     public void Refresh()
     {
         try
         {
-            PlayerSaveData data = _saveManager.GetDataFormFile(num.ToString(),reportSaveIsNull);
+            PlayerSaveData data = saveManager.GetDataFromFile(num.ToString(),reportSaveIsNull);
             if (data == null)
             {
                 Debug.Log("存档为空");
                 mainInfo.text = "";
-                secInfo.text = "";
                 timeInfo.text = "";
                 textOnImage.text = "";
                 return;
@@ -45,9 +37,9 @@ public class FileButtonRefresh : MonoBehaviour
             InitialTextUI();
             
             
-            mainInfo.text = mainInfo.text.Replace("{Day}",data.Day.ToString());
+            mainInfo.text = mainInfo.text.Replace("{Day}",data.day.ToString());
             string stageString = string.Empty;
-            switch (data.Stage)
+            switch (data.stage)
             {
                 case 0:
                     stageString = stageNames[0];
@@ -60,10 +52,8 @@ public class FileButtonRefresh : MonoBehaviour
                     break;
             }
             mainInfo.text = mainInfo.text.Replace("{Stage}", stageString);
-            secInfo.text = secInfo.text.Replace("{Food}", data.Food.ToString());
-            secInfo.text = secInfo.text.Replace("{Body}",data.Body.ToString());
-            timeInfo.text = timeInfo.text.Replace("{Time}",data.SaveTime);
-            textOnImage.text = textOnImage.text.Replace("{Day}", data.Day.ToString());
+            timeInfo.text = timeInfo.text.Replace("{Time}",data.saveTime);
+            textOnImage.text = textOnImage.text.Replace("{Day}", data.day.ToString());
 
             #endregion
 
@@ -83,7 +73,6 @@ public class FileButtonRefresh : MonoBehaviour
     void InitialTextUI()
     {
         mainInfo.text = initialText[0];
-        secInfo.text = initialText[1];
         timeInfo.text = initialText[2];
         textOnImage.text = initialText[3];
     }

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
-
+#pragma warning disable CS0168
 public class MiniLuoTalk : MonoBehaviour
 {
     public TextMeshProUGUI text;
@@ -24,7 +25,12 @@ public class MiniLuoTalk : MonoBehaviour
     private int _lastSelectedIndex = -1;
     private bool _succeed,_isStart;
     [Tooltip("设置起始对话等待时间(秒)")] public int waitSeconds;
-
+    [SerializeField]
+    private GameObject cover;
+    [SerializeField]
+    private int curLine;
+    public bool startTalk;
+    
     #region  初始化设置
     private void Awake()
     {
@@ -40,12 +46,18 @@ public class MiniLuoTalk : MonoBehaviour
     private void OnEnable()
     {
         ResetTalkLine();
+        cover.SetActive(!start.GeneralBool);
+        curLine = 0;
         if ((GlobalData.Day == 1 || GlobalData.Day == 2) && !start.GeneralBool)
         {
             start.GeneralBool = true;
-            _isStart = true;
-            StartCoroutine(ShowText());
+            cover.SetActive(true);
+            startTalk = true;
+            Click();
+            return;
         }
+
+        startTalk = false;
     }
 
     public void ResetTalkLine()
@@ -63,7 +75,12 @@ public class MiniLuoTalk : MonoBehaviour
         {
             StopCoroutine(_currentCoroutine);
         }
-        _currentCoroutine = StartCoroutine(CheckText());
+
+        if (!startTalk)
+        {
+            _currentCoroutine = StartCoroutine(CheckText());
+        }
+        
     }
 
     private void OnDisable()
@@ -95,8 +112,24 @@ public class MiniLuoTalk : MonoBehaviour
 
     #region 点击设置文本
 
+    public void Update()
+    {
+        if (startTalk && Input.anyKeyDown)
+        {
+            Click();
+        }
+    }
+
     public void Click()
     {
+
+        if (startTalk)
+        {
+            StartTalk();
+            _image.color = new Color32(255, 255, 255, 255);
+            return;
+        }
+        
         // 1. 校验基础数据，避免空引用/索引越界
         if (normal == null || normal.TxtLine == null || normal.TxtLine.Count == 0)
         {
@@ -127,11 +160,34 @@ public class MiniLuoTalk : MonoBehaviour
         ProcessTextLine(tempIndex,normal);
     }
 
+
+    private void StartTalk()
+    {
+        try
+        {
+            ProcessTextLine(curLine,start);
+            curLine++;
+            if (start.TxtLine[curLine] is null)
+            {
+                startTalk = false;
+                cover.SetActive(false);
+            }
+        }
+        catch (ArgumentOutOfRangeException e)
+        {
+            startTalk = false;
+            cover.SetActive(false);
+        }
+        
+        
+    }
+    
+
     #endregion
 
     private void FixedUpdate()
     {
-        if (!_succeed)
+        if (!_succeed && !startTalk)
         {
             CheckSuccess();
         }
@@ -152,17 +208,10 @@ public class MiniLuoTalk : MonoBehaviour
             return;
         }
 
-        // 按中文冒号分割，过滤空值，避免分割后元素不足
-        string[] splitParts = targetLine.Split(new[] { '：' }, StringSplitOptions.RemoveEmptyEntries);
-        if (splitParts.Length < 2)
-        {
-            Debug.LogWarning($"文本行「{targetLine}」无有效中文冒号分割，直接显示整行");
-            text.text = targetLine;
-            return;
-        }
+        
 
         // 获取分割后第二段文本，校验非空
-        string tempText = splitParts[1];
+        string tempText = targetLine;
         if (string.IsNullOrEmpty(tempText))
         {
             Debug.LogWarning("分割后的第二段文本为空");
@@ -211,6 +260,11 @@ public class MiniLuoTalk : MonoBehaviour
     {
         while (true)
         {
+            if (startTalk)
+            {
+                yield return new WaitForSeconds(waitTime);
+                continue;
+            }
             
             if (CheckTime())
             {

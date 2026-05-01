@@ -77,9 +77,9 @@ public class MissionManager : MonoBehaviour
         }
         foreach (var value in miniGameIntroManager.miniGameData)
         {
-            if (value.day == GlobalData.Day && value.canPlay)
+            if (value.infos[GlobalData.Day].canPlay)
             {
-                missions[curIndex].text = "帮助" + value.characterName;
+                missions[curIndex].text = "帮助" + value.name;
                 curIndex++;
             }
         }

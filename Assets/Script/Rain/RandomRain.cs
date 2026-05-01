@@ -95,8 +95,11 @@ public class RandomRain : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
 
             // 随机下雨直接同步后处理（无延迟）
-            StartRainImmediate();
-
+            if (!StartRainImmediate())
+            {
+                continue;
+            }
+            
             float rainDuration = Random.Range(rainDurationRange.x, rainDurationRange.y);
             yield return new WaitForSeconds(rainDuration);
 
@@ -160,14 +163,20 @@ public class RandomRain : MonoBehaviour
     /// <summary>
     /// 立即开始下雨（同步后处理）
     /// </summary>
-    private void StartRainImmediate()
+    private bool StartRainImmediate()
     {
+        if (GlobalData.InShop)
+        {
+            return false;
+        }
+        
         isRaining = true;
         targetAlpha = rainAlpha;
         if (rainSystem != null)
         {
             rainSystem.SetActive(true);
         }
+        return true;
     }
 
     /// <summary>

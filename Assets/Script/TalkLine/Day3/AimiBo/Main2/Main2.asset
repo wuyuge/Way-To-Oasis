@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Main2
   m_EditorClassIdentifier: 
   TxtLine:
+  - ${SurviveAlone}
+  - ${SurviveAlone}
+  - ${CheckAmandeKillSelf}
   - ${CheckAmandeKillSelf}
   Option1: {fileID: 11400000, guid: acb43928e39c49849b41759ab6ca6e73, type: 2}
   Option2: {fileID: 11400000, guid: e8f86febb7d54ed46b142f789ba3923a, type: 2}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: f26043ce983e65c478ccd226f446c39e, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0

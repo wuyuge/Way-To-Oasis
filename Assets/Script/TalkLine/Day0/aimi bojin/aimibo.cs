@@ -4,17 +4,20 @@ public class Aimibo : MonoBehaviour
 {
     public Character LinkObj;
     private Character character;
-    private Progress progress;
+    public Progress progress;
     public bool InfoIsOn = false;
     private bool ShowBo = false;
+    private CharacterInfoManager _infoManager;
+    private bool _head = false;
 
     void Start()
     {
         // 只获取一次组件引用
         character = GetComponent<Character>();
-        if (character != null && character.end != null)
+        progress = GlobalData.Progress;
+        if (_infoManager is null && GlobalData.Day == 0)
         {
-            progress = character.end.GetComponent<Progress>();
+            _infoManager = GameObject.Find("CharacterInfo")?.GetComponent<CharacterInfoManager>();
         }
     }
 
@@ -22,25 +25,40 @@ public class Aimibo : MonoBehaviour
     {
         if (LinkObj != null && character != null && progress != null)
         {
-            if (LinkObj.have_talk && (progress.day_num == 0 || progress.day_num == 3))
+            if (progress.day_num == 0 || progress.day_num == 3)
             {
-                character.have_talk = true;
+                if (LinkObj.have_talk)
+                {
+                    character.have_talk = true;
+                }
             }
         }
 
+        if (GlobalData.Day != 0)
+        {
+            return;
+        }
         if (InfoIsOn && (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))) 
         {
-            if(!ShowBo)
+            if(!ShowBo && _head)
             {
-                GameObject.Find("CharacterInfo").GetComponent<CharacterInfoManager>().CloseInfo();
-                ShowInfo("博金森");
+                _infoManager.CloseInfo();
+                _infoManager.ShowInfo("艾米莉");
+                Debug.Log("展示艾米莉");
                 ShowBo = true;
             }
-            
+            else if (!ShowBo && !_head)
+            {
+                _infoManager.CloseInfo();
+                _infoManager.ShowInfo("博金森");
+                Debug.Log("展示博金森");
+                ShowBo = true;
+            }
             else
             {
                 gameObject.GetComponent<Character>().ShowInfo = true;
                 InfoIsOn = false;
+                Debug.Log("展示无");
             }
 
         }
@@ -52,12 +70,13 @@ public class Aimibo : MonoBehaviour
 
     public void ShowInfo(string Name)
     {
-
-        GameObject.Find("CharacterInfo").GetComponent<CharacterInfoManager>().ShowInfo(Name);
+        if (Name == "博金森")
+        {
+            _head = true;
+        }
+        _infoManager.ShowInfo(Name);
         InfoIsOn = true;
-
-
-
+        ShowBo = false;
     }
 
 

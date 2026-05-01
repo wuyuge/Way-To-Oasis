@@ -5,10 +5,12 @@ using UnityEngine;
 public class SettingSwitch : MonoBehaviour
 {
     public GameObject LinkObj;
+    public GameObject offObj;
+
     public void Click()
     {
         LinkObj.transform.SetAsLastSibling();
         LinkObj.SetActive(true);
-        gameObject.transform.parent.parent.gameObject.SetActive(false);
+        offObj.SetActive(false);
     }
 }

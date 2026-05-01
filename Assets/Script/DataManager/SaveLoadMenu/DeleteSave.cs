@@ -1,24 +1,25 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class DeleteSave : MonoBehaviour
 {
     
-    private SaveManager _saveManager;
+    [FormerlySerializedAs("_saveManager")] public SaveManager saveManager;
     private ISaveMenuInterface _saveButtonRefresher;
     public int num;
-    public GameObject linkObj;
+    [FormerlySerializedAs("linkObj")] public GameObject deleteTips;
     public Button fatherObj;
     public bool isSave;
-
+    public bool isSaveScene;
     /// <summary>
     /// 获取存档管理器
     /// 从父对象获取接口
     /// </summary>
     private void Awake()
     {
-        _saveManager = GameObject.Find("SaveManager").GetComponent<SaveManager>();
+        if(saveManager is null) saveManager = GameObject.Find("SaveManager").GetComponent<SaveManager>();
         
     }
 
@@ -40,24 +41,29 @@ public class DeleteSave : MonoBehaviour
     /// </summary>
     public void Delete()
     {
-        _saveManager.DeleteData(num);
+        saveManager.DeleteData(num);
         _saveButtonRefresher.UpdateSaveMenu();
-        linkObj.SetActive(false);
+        deleteTips.SetActive(false);
         Cancel();
+        if (isSaveScene)
+        {
+            fatherObj.GetComponent<SaveFileButton>().FileExists();
+        }
     }
 
 
     #region 子对象调用
     public void UpLinkObj()
     {
-        linkObj.SetActive(true);
+        GlobalData.CurrentSaveFileButton = gameObject;
+        deleteTips.SetActive(true);
         gameObject.GetComponent<Button>().enabled = false;
         fatherObj.enabled = false;
     }
     
     public void Cancel()
     {
-        linkObj.SetActive(false);
+        deleteTips.SetActive(false);
         gameObject.GetComponent<Button>().enabled = true;
         fatherObj.enabled = true;
     }

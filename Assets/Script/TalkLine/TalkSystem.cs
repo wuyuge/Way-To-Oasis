@@ -1,7 +1,5 @@
-using System;
-using Coffee.UIExtensions;
+
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -25,7 +23,6 @@ public class TalkSystem : MonoBehaviour
     public int Daytime;
     [Tooltip("当前正在显示的对话行索引")]
     public int line;
-
     [Header("文本框位置")]
     [Tooltip("玩家对话显示的文本框")]
     public TextMeshProUGUI Player;
@@ -47,11 +44,9 @@ public class TalkSystem : MonoBehaviour
     public bool ShowName = true;
     [Tooltip("判断是否是商店场景")]
     public bool _inshop;
-
     [Header("辨别是谁在说话")]
     [Tooltip("标记当前是否是玩家在说话（true=玩家，false=角色）")]
     public bool PlayerTalking = false;
-
     [Header("按钮位置")]
     [Tooltip("选择分支时的左按钮")]
     public Button UpButton;
@@ -68,19 +63,15 @@ public class TalkSystem : MonoBehaviour
     public GameObject amande;
     public GameObject charabar, black, MainCanvas;
     public List<GameObject> CharacterList;
+    public List<Character> characterComponentList;
     public Manager aimi;
     [Header("角色立绘控制器")]
     public CharacterImageManager CharacterImageManager;
-
     [Header("新手引导用对象")]
-    public GameObject mask;
     public GameObject DownBar;
     public Manager Day0_Talk,TeachComfort;
     public GameObject Menu;
-
-   
     public bool inTech = false;
-    
     public bool CanSkip = true;
     [Header("点击间隔配置")]
     [Tooltip("点击后允许再次点击的间隔时间（毫秒），建议设置200-500ms")]
@@ -97,35 +88,29 @@ public class TalkSystem : MonoBehaviour
     public Manager shopEvent;
     [Header("博金森死亡时间判断")]
     public Manager BoDeadTime;
-
     [Header("教程文本列表")]
     [SerializeField]
     public TechTextList TechTextList;
     public Manager ShowTech;
     [Header("小人对话管理")]
     public MiniCharacterTalkSys MiniCharacterManager;
-
     public bool MiniMode;
-
     [Header("噪点遮罩")]
     public GameObject NoiseMask;
     //一起黑屏控制
     private bool TogetherClose;
-
-
     [Header("立绘表情控制")]
     public List<string> Expressions = new List<string>();
     private CharacterExpression expression;
-
     public AudioSource Type;
     /*private bool CharaBarShow = true;*/
-
-
     [Header("子脚本")] 
     public TalkSysSwitch switchManager;
     public TalkSysShowText showText;
     public TalkSysUIButtonFunc buttonFunc;
 
+    public Manager reload;
+    
     /// <summary>
     /// 用于存档加载时暂时停止对话系统调用
     /// </summary>
@@ -139,13 +124,13 @@ public class TalkSystem : MonoBehaviour
     private void Awake()
     {
         Daytime = DaytimeOBJ.GetComponent<Progress>().day_num;
+        anim = gameObject.GetComponent<Animator>();
         PlayerNameText.text = PlayerName.TxtLine[0];
-        if (Daytime == 0)
-        {
-            Invoke(nameof(SetStartTalk),1f);
-        }
         Type = gameObject.GetComponent<AudioSource>();
+        GlobalData.TalkSystem = this;
     }
+    
+    
 
     void SetStartTalk()
     {
@@ -161,7 +146,17 @@ public class TalkSystem : MonoBehaviour
 
     private void OnEnable()
     {
+        buttonFunc.Init(this);
+        switchManager.Init(this);
+        showText.Init(this);
         TalkSysStaticData.TalkSys = this;
+        if (characterComponentList.Count == 0)
+        {
+            foreach (var value in CharacterList)
+            {
+                characterComponentList.Add(value.GetComponent<Character>());
+            }
+        }
     }
 
 
@@ -172,7 +167,7 @@ public class TalkSystem : MonoBehaviour
     {
         
         charaBar = gameObject.transform.parent.Find("DownBar").gameObject;
-        anim = gameObject.GetComponent<Animator>();
+        
         // 清空UI文本框
         CleanUI();
         // 隐藏选择按钮（初始状态不需要）
@@ -181,22 +176,20 @@ public class TalkSystem : MonoBehaviour
         // 从第0行开始显示对话
         ResetLine();
         // 从进度管理器获取当前天数
-        
-        
         expression = CharacterImageManager.gameObject.GetComponent<CharacterExpression>();
-        
-        buttonFunc.Init(this);
-        switchManager.Init(this);
-        showText.Init(this);
         
         if (on && DaytimeOBJ.GetComponent<Progress>().talk)
         {
             // 隐藏选择按钮（点击文本时关闭选择界面）
             UpButton.gameObject.SetActive(false);
             DownButton.gameObject.SetActive(false);
-
-           
         }
+
+        if (Daytime == 0 && !reload.GeneralBool && GlobalData.Progress.talk)
+        {
+            Invoke(nameof(SetStartTalk),1f);
+        }
+                
     }
 
     /// <summary>
@@ -359,7 +352,19 @@ public class TalkSystem : MonoBehaviour
     }
     public void ShowBar()
     {
+        if (anim is null)
+        {
+            anim = GetComponent<Animator>();
+        }
         anim.SetTrigger("Up");
+    }
+    public void HideBar()
+    {
+        if (anim is null)
+        {
+            anim = GetComponent<Animator>();
+        }
+        anim.SetTrigger("Down");
     }
     public void ResetLine()
     {
@@ -374,9 +379,6 @@ public class TalkSystem : MonoBehaviour
             return;
         }
         inTech = true;
-        mask.transform.parent.gameObject.SetActive(true);
-        mask.GetComponent<Unmask>().m_FitTarget = MaskGameObj.GetComponent<RectTransform>();
-        mask.transform.parent.Find("TechText").GetComponent<TextMeshProUGUI>().text = TechText;
     }
     private string SetTechText(string Comment)
     {

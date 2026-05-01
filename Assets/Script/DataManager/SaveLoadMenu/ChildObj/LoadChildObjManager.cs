@@ -5,14 +5,23 @@ using UnityEngine;
 public class LoadChildObjManager : MonoBehaviour
 {
 
-    public void LoadFile(GameObject o)
+    public List<GameObject> excludeList;
+    private void OnEnable()
     {
-        o.GetComponent<LoadFileButton>().Load();
+        foreach (var value in excludeList)
+        {
+            value.SetActive(false);
+        }
+    }
+    
+    public void LoadFile()
+    {
+        GlobalData.CurrentLoadFileButton.GetComponent<LoadFileButton>().Load();
     }
 
-    public void Cancel(GameObject o)
+    public void Cancel()
     {
-        o.GetComponent<LoadFileButton>().Cancel();
+        GlobalData.CurrentLoadFileButton.GetComponent<LoadFileButton>().Cancel();
     }
     
 }

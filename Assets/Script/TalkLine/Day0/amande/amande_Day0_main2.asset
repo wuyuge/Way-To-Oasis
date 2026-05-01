@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - ->p
+  - ->p
+  - ->p
   - "\u6211\u60F3\u95EE\u95EE\u4F60\u5BF9\u5982\u4F55\u5904\u7406\u8001\u961F\u957F\u9057\u4F53\u8FD9\u4EF6\u4E8B\u7684\u610F\u89C1\u3002"
   - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u8FD9\u6837\u5417\uFF0C\u5176\u4ED6\u4EBA\u7684\u610F\u89C1\u90FD\u95EE\u8FC7\u4E86\u5417\uFF1F@{7}"
@@ -25,6 +27,7 @@ MonoBehaviour:
   - ${OpenSwitchStage}
   - ${SetDay0SwitchStage}
   - ${TechClose}
+  - ${UnLockSkip}
   - ${DownTalkBox}
   Option1: {fileID: 0}
   Option2: {fileID: 0}

@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Twice-Main
   m_EditorClassIdentifier: 
   TxtLine:
+  - SurviveAlone
+  - ${CheckShopEvent}
   - ${CheckShopEvent}
   Option1: {fileID: 11400000, guid: cf16919c33dd3e14e9d05f4536411e1b, type: 2}
   Option2: {fileID: 11400000, guid: f82a1b00f56ca794588faf1e7e099ef5, type: 2}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: c87739a056e51094fa8d8f0306694162, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0

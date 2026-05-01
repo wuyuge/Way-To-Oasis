@@ -15,6 +15,7 @@ MonoBehaviour:
   TxtLine:
   - "\u521B\u9020\u5C38\u4F53"
   - ${KillSomeBody}
+  - ${KillSomeBody}
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

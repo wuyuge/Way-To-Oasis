@@ -10,9 +10,8 @@ using UnityEngine.Serialization;
 /// </summary>
 public class SaveManager : MonoBehaviour
 {
-    public RestoreSence restoreSence; // 场景同步管理器引用
+    [FormerlySerializedAs("restoreSence")] public RestoreSence restoreScene; // 场景同步管理器引用
     private PlayerSaveData _currentSaveData; // 当前存档数据对象
-    public bool enableEncrypt = true; // 是否启用加密
     [FormerlySerializedAs("Reload")] public Manager reload;
     
     private string _xorEncryptionKey = SaveConstants.EncryptionKey;
@@ -28,8 +27,8 @@ public class SaveManager : MonoBehaviour
             {
                 Debug.Log("检测到需要加载存档数据，正在加载...");
                 LoadData(reload.Weight);
-                restoreSence.ApplyData(_currentSaveData);
-                Invoke("SetReloadBool", 0.5f);
+                restoreScene.ApplyData(_currentSaveData);
+                reload.GeneralBool = false;
                 reload.Weight = 0;
             }
         }
@@ -48,13 +47,13 @@ public class SaveManager : MonoBehaviour
     /// </summary>
     void GetCurrentSaveData()
     {
-        if (restoreSence != null)
+        if (restoreScene != null)
         {
-            _currentSaveData = restoreSence.GetData();
+            _currentSaveData = restoreScene.GetData();
         }
         else
         {
-            Debug.LogError("GetCurrentSaveData: restoreSence 引用未设置！");
+            Debug.LogError("GetCurrentSaveData: restoreScene 引用未设置！");
         }
     }
 
@@ -77,12 +76,6 @@ public class SaveManager : MonoBehaviour
         try
         {
             string jsonData = JsonUtility.ToJson(_currentSaveData, prettyPrint: true);
-
-            if (enableEncrypt)
-            {
-                jsonData = XOREncrypt(jsonData);
-            }
-
             Directory.CreateDirectory(Path.GetDirectoryName(filePath));
             File.WriteAllText(filePath, jsonData);
 
@@ -123,18 +116,6 @@ public class SaveManager : MonoBehaviour
         try
         {
             string fileContent = File.ReadAllText(filePath);
-
-            if (enableEncrypt)
-            {
-                fileContent = XORDecrypt(fileContent);
-                if (string.IsNullOrEmpty(fileContent))
-                {
-                    Debug.LogError($"LoadData: 存档 {num} 解密失败。");
-                    _currentSaveData = null;
-                    return false;
-                }
-            }
-
             PlayerSaveData loadedData = JsonUtility.FromJson<PlayerSaveData>(fileContent);
 
             if (loadedData != null)
@@ -143,12 +124,11 @@ public class SaveManager : MonoBehaviour
                 Debug.Log($"存档 {num} 加载成功！");
                 return true;
             }
-            else
-            {
-                Debug.LogError($"LoadData: 存档 {num} 反序列化失败。");
-                _currentSaveData = null;
-                return false;
-            }
+            
+            Debug.LogError($"LoadData: 存档 {num} 反序列化失败。");
+            _currentSaveData = null;
+            return false;
+            
         }
         catch (Exception e)
         {
@@ -267,7 +247,7 @@ public class SaveManager : MonoBehaviour
     /// <param name="index">是一个字符串，表示存档文件的索引。</param>
     /// <param name="reportWarning">是否报告存档文件不存在问题</param>
     /// <returns></returns>
-    public PlayerSaveData GetDataFormFile(string index,bool reportWarning = true)
+    public PlayerSaveData GetDataFromFile(string index,bool reportWarning = true)
     {
         string fileName = SaveConstants.SaveFileNameTemplate.Replace("{Field}", index); // 生成存档文件名
         string filePath = Path.Combine(SaveConstants.SaveFolderPath, fileName); // 生成存档文件路径
@@ -281,17 +261,6 @@ public class SaveManager : MonoBehaviour
         try
         {
             string fileContent = File.ReadAllText(filePath); // 读取存档文件内容
-
-            if (enableEncrypt)
-            {
-                fileContent = XORDecrypt(fileContent); // 如果启用加密，解密文件内容
-                if (string.IsNullOrEmpty(fileContent))
-                {
-                    Debug.LogError($"GetDataFormFile: 存档 {index} 解密失败。"); // 如果解密失败，记录错误并返回 null
-                    return null;
-                }
-            }
-
             PlayerSaveData loadedData = JsonUtility.FromJson<PlayerSaveData>(fileContent); // 反序列化文件内容
 
             if (loadedData != null)
@@ -331,12 +300,6 @@ public class SaveManager : MonoBehaviour
         try
         {
             string jsonData = JsonUtility.ToJson(data, prettyPrint: true);
-
-            if (enableEncrypt)
-            {
-                jsonData = XOREncrypt(jsonData);
-            }
-
             Directory.CreateDirectory(Path.GetDirectoryName(filePath));
             File.WriteAllText(filePath, jsonData);
 

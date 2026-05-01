@@ -11,6 +11,8 @@ public class TutorialControl : MonoBehaviour
         public GameObject tutorialObject;
         public int checkPoint;
         public Animator complete;
+        public GameObject correct;
+        public Sprite bookPage1, bookPage2;
     }
     
     public List<Tutorial> tutorials;
@@ -19,14 +21,18 @@ public class TutorialControl : MonoBehaviour
     public bool checkEat = false;
     public bool checkWeight;
     public List<Manager> characters;
+    public List<Sprite> initialPage;
+    public Book book;
     private void Start()
     {
         TutorialManager.Controller = this;
+        book.bookPages = new List<Sprite>(initialPage);
     }
 
 
     public void ShowTutorial(int id)
     {
+        currentCheckPoint = 0;
         if (id > tutorials.Count)
         {
             Debug.LogError("教程id超出索引");
@@ -45,7 +51,7 @@ public class TutorialControl : MonoBehaviour
         }
 
         _currentId = id;
-        currentCheckPoint = 0;
+        
         TutorialManager.TutorialIsShow = true;
         tutorials[id].tutorialObject.SetActive(true);
     }
@@ -64,6 +70,9 @@ public class TutorialControl : MonoBehaviour
         tutorials[_currentId].tutorialObject.GetComponent<Animator>().SetTrigger("Hide");
         TutorialManager.TutorialIsShow = false;
         TutorialManager.TutorialWeight = false;
+        currentCheckPoint = 0;
+        book.bookPages.Add(tutorials[_currentId].bookPage1);
+        book.bookPages.Add(tutorials[_currentId].bookPage2);
         Invoke(nameof(DestroyTutorial),0.5f);
     }
     
@@ -78,18 +87,25 @@ public class TutorialControl : MonoBehaviour
         tutorials[_currentId].tutorialObject.GetComponent<Animator>().SetTrigger("Shake");
     }
 
+
+    
+
     private IEnumerator CheckEat()
     {
         while (checkEat)
         {
-            foreach (var item in characters)
+            if (TutorialManager.TutorialIsShow)
             {
-                if (item.Day1Eat)
+                foreach (var item in characters)
                 {
-                    tutorials[2].complete.SetTrigger("Comfirm");
-                    checkEat = false;
-                    AddCheckPoint();
-                    break;
+                    if (item.Eat)
+                    {
+                        tutorials[2].complete.SetTrigger("Comfirm");
+                        tutorials[2].correct.SetActive(true);
+                        checkEat = false;
+                        AddCheckPoint();
+                        break;
+                    }
                 }
             }
 
@@ -102,6 +118,7 @@ public class TutorialControl : MonoBehaviour
     {
         while (checkWeight)
         {
+            yield return new WaitForSeconds(0.5f);
             TutorialManager.TutorialWeight = true;
             foreach (var item in characters)
             {
@@ -114,7 +131,7 @@ public class TutorialControl : MonoBehaviour
                 }
             }
 
-            yield return new WaitForSeconds(0.5f);
+            
             
         }
         

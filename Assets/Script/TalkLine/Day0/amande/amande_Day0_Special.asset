@@ -19,7 +19,6 @@ MonoBehaviour:
   - "\u963F\u66FC\u5FB7\uFF1A\u5FEB\u53BB\u5427\uFF0C\u6211\u77E5\u9053\u4F60\u53EF\u4EE5\u7684\u3002"
   - ${SetAmanadeTwiceTalkOff}
   - ${CloseCharacterTalkBox}
-  - ${OpenSwitchStage}
   - ${DownTalkBox}
   Option1: {fileID: 0}
   Option2: {fileID: 0}

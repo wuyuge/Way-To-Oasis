@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Main0
   m_EditorClassIdentifier: 
   TxtLine:
-  - ${CheckSomeBodyDead}
-  - ${CheckSomeBodyDead}
-  - ${CheckSomeBodyDead}
-  - ${CheckSomeBodyDead}
-  - ${CheckSomeBodyDead}
-  Option1: {fileID: 11400000, guid: c31e6249832948740b6c5072e54f1835, type: 2}
-  Option2: {fileID: 11400000, guid: cfe216ea73c288d43bd6ec36e16a4fab, type: 2}
+  - ${CheckOnlyAmandeDead}
+  - ${CheckOnlyAmandeDead}
+  - ${CheckOnlyAmandeDead}
+  - ${CheckOnlyAmandeDead}
+  - ${CheckOnlyAmandeDead}
+  Option1: {fileID: 11400000, guid: cfe216ea73c288d43bd6ec36e16a4fab, type: 2}
+  Option2: {fileID: 11400000, guid: c31e6249832948740b6c5072e54f1835, type: 2}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}

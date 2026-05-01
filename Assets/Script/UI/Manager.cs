@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "New TextData",menuName = "创建数据/新建对话数据")]
 public class Manager : ScriptableObject
@@ -14,7 +15,7 @@ public class Manager : ScriptableObject
     public Manager SpecialTalk2;
     public int Weight;
     public int Weight_tag;
-    public bool Day1Eat;
+    [FormerlySerializedAs("Day1Eat")] public bool Eat;
     public bool GeneralBool;
 
 

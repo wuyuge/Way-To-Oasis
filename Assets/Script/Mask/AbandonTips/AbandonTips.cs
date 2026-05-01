@@ -13,7 +13,7 @@ public class AbandonTips : MonoBehaviour
 
     public void Confirm()
     {
-        progress.SwtichProgress();
+        progress.SwitchProgress();
         gameObject.transform.parent.gameObject.SetActive(false);
     }
 

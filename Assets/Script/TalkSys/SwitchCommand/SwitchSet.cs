@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class SwitchSet : SwitchCommand
     private TalkSystem _talkSys;
     private MiniCharacterManager _miniCharacterManager;
     private Progress _progress;
+    public GameObject miniCharacter;
     
     public override void Init(TalkSystem talkSys)
     {
@@ -66,11 +68,11 @@ public class SwitchSet : SwitchCommand
                 break;
             case FunctionCode.Function.Ia://开
                 _talkSys.amande.GetComponent<Character>().have_talk = true;
-                Execute(FunctionCode.Function.Db);
+                Execute(FunctionCode.Function.Da);
                 break;
             case FunctionCode.Function.Ib://关
                 _talkSys.amande.GetComponent<Character>().have_talk = false;
-                Execute(FunctionCode.Function.Da);
+                Execute(FunctionCode.Function.Db);
                 break;
             case FunctionCode.Function.J:
                 //消耗博金森尸体并且设定艾米莉不可负重
@@ -91,6 +93,35 @@ public class SwitchSet : SwitchCommand
                 //Day0开启切换阶段
                 _talkSys.DaytimeOBJ.GetComponent<Progress>().can_skip = true;
                 break;
+            
+            case FunctionCode.Function.L:
+                //禁用qq人
+                miniCharacter.SetActive(false);
+                return;
+            
+            case FunctionCode.Function.Ma://锁定跳过按钮
+                try
+                {
+                    GlobalData.SkipButton.lockButton = true;
+                }
+                catch (NullReferenceException e)
+                {
+                    Debug.Log($"全局跳过按钮无引用等待1秒重新尝试,{e}",this);
+                    Invoke(nameof(LockButton),1f);
+                }
+                
+                return;
+            
+            case FunctionCode.Function.Mb://解锁跳过按钮
+                GlobalData.SkipButton.lockButton = false;
+                return;
         }
     }
+    
+    
+    private void LockButton()
+    {
+        GlobalData.SkipButton.lockButton = true;
+    }
+    
 }

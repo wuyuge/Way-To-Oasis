@@ -1,27 +1,11 @@
 {
-    "SaveID": 0,
-    "SaveTime": "2026-03-17 18:49:45",
-    "PlayerName": "■■",
-    "Day": 1,
-    "Body": 1,
-    "Food": 6,
-    "AmandeKillSelf": false,
-    "CarryBo": false,
-    "Stage": 0,
-    "DeadName": [
-        "Leader"
-    ],
-    "UsedName": [],
-    "InMain": true,
-    "CharacterWeight": [
-        3,
-        0,
-        3,
-        0,
-        3,
-        0
-    ],
-    "CharacterEat": [
+    "saveTime": "2026-05-01 09:53:15",
+    "playerName": "■■",
+    "day": 3,
+    "stage": 1,
+    "food": 3,
+    "body": 1,
+    "characterDeadState": [
         false,
         false,
         false,
@@ -29,8 +13,7 @@
         false,
         false
     ],
-    "IsRaining": false,
-    "CharacterWeightTag": [
+    "characterCarry": [
         0,
         0,
         0,
@@ -38,25 +21,37 @@
         0,
         0
     ],
-    "afterShop": false,
-    "characterSpecial1": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+    "characterEatState": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
     ],
-    "characterSpecial2": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+    "characterCarryTag": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
     ],
-    "currentDead": [],
-    "unComfort": [
+    "miniGamePlayState": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
         false,
         false,
         false,

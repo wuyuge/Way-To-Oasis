@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: amande_Day2_SpecialMain2-1
   m_EditorClassIdentifier: 
   TxtLine:
+  - 
   - ${ShowCharacterTalkBox}
   - ${LockSwitchStage}
   - ->c

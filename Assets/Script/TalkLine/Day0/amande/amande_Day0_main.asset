@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: amande_Day0_main
   m_EditorClassIdentifier: 
   TxtLine:
+  - ${LockSkip}
   - ${ShowCharacterTalkBox}
   - ${LockSwitchStage}
   - ->c
@@ -25,5 +26,5 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0

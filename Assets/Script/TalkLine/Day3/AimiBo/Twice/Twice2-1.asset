@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - ->p
-  - "\u827E\u7C73\u8389\u6B63\u51B7\u51B7\u5730\u76EF\u7740\u4F60\uFF0C\u663E\u800C\u6613\u89C1\uFF0C\u5979\u5FC3\u60C5\u4E0D\u597D\u3002"
+  - ->p
+  - ->p
+  - "A_\u827E\u7C73\u8389\u6B63\u51B7\u51B7\u5730\u76EF\u7740\u4F60\uFF0C\u663E\u800C\u6613\u89C1\uFF0C\u5979\u5FC3\u60C5\u4E0D\u597D\u3002"
   - ${OpenSwitchStage}
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}

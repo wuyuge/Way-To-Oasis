@@ -174,6 +174,7 @@ public class TalkSysUIButtonFunc : MonoBehaviour, ITalkSysCore
                 tempImage.gameObject.SetActive(true);
                 break;
             case ButtonAction.Disable:
+                SetTextBox(textBox,tempTextBox);
                 tempImage.gameObject.SetActive(true);
                 tempBotton.interactable = false;
                 break;

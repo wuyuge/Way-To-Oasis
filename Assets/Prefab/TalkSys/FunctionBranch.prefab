@@ -591,6 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ddba1a61d9729444ab6d693ed83a45d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  miniCharacter: {fileID: 0}
 --- !u!1 &4800541162615888490
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,7 +782,7 @@ MonoBehaviour:
   - command: CheckBoDead
     actions:
     - {fileID: 6079799807752870375}
-    functions: 04000000
+    functions: 03000000
   - command: CheckHaveBoBody
     actions:
     - {fileID: 6079799807752870375}
@@ -834,10 +835,6 @@ MonoBehaviour:
     actions:
     - {fileID: 6079799807752870375}
     functions: 04000000
-  - command: CheckAimiEat
-    actions:
-    - {fileID: 6079799807752870375}
-    functions: 02000000
   - command: CheckShopEvent
     actions:
     - {fileID: 6079799807752870375}
@@ -866,7 +863,37 @@ MonoBehaviour:
     actions:
     - {fileID: 6079799807752870375}
     functions: 32000000
-  functionList: []
+  - command: CheckOnlyAmandeDead
+    actions:
+    - {fileID: 6079799807752870375}
+    functions: 0b000000
+  - command: DisableMiniCharacter
+    actions:
+    - {fileID: 7969461058781348794}
+    functions: 0b000000
+  - command: SurviveAlone
+    actions:
+    - {fileID: 6079799807752870375}
+    functions: 0c000000
+  - command: SurviveTwo
+    actions:
+    - {fileID: 6079799807752870375}
+    functions: 0c000000
+  - command: LockSkip
+    actions:
+    - {fileID: 7969461058781348794}
+    functions: 35000000
+  - command: UnLockSkip
+    actions:
+    - {fileID: 7969461058781348794}
+    functions: 36000000
+  functionList:
+  - {fileID: 7227461864645033651}
+  - {fileID: 7969461058781348794}
+  - {fileID: 6830617485111195375}
+  - {fileID: 2551249483796046366}
+  - {fileID: 6079799807752870375}
+  - {fileID: 5440575785313673631}
 --- !u!1 &5565000326094856922
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,6 +1025,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc204de942691214a8417be83f55a69d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characters: []
+  aimi: {fileID: 11400000, guid: b8d347bc59fee894890b27ae5d1b962b, type: 2}
   doNotResetLineList: 2e0000002f000000300000003100000032000000
 --- !u!1 &7079499628955331618
 GameObject:
@@ -1177,6 +1206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5cea78bf142df409c14629b951940b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skipButton: {fileID: 0}
 --- !u!1 &8907499373595800986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,6 +1251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f55523e74a95e1d48a485cf411b4402e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  haveBody: {fileID: 11400000, guid: c2d5f949fceb5fb46a5109f39c5d07fb, type: 2}
+  finalBody: {fileID: 11400000, guid: 0872d8d3dfe5938478ece7b8160a6ed7, type: 2}
 --- !u!1 &8976183349810028305
 GameObject:
   m_ObjectHideFlags: 0

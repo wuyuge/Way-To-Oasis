@@ -34,10 +34,10 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
     private Coroutine _autoPlayCoroutine; // 新增：管理自动播放协程
     private string PlayerNameBox => _talkSys.PlayerName.TxtLine[0];
     private int _stopCommend = 0;
-    private const string CgPattern = @"CG\d+"; // 简化正则表达式
-    private const string AsidePattern = @"A_";
-    private const string ExpressionPattern =  @"@\{(\d+)\}"; // 新增：表情解析正则
-    private const string MiniPattern = @"^MINI\d{1}$";
+    private const string CgPattern = @"CG\d+"; //CG标签
+    private const string AsidePattern = @"A_";//旁白标签
+    private const string ExpressionPattern =  @"@\{(\d+)\}"; //表情解析标签
+    private const string MiniPattern = @"^MINI\d{1}$";//迷你游戏标签
     public bool CanShowText { get; set; }
 
     [Header("调试配置")]
@@ -65,18 +65,24 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
 
     public void Init(TalkSystem talkSys)
     {
+        if (talkSys == null)
+        {
+            Debug.LogError("传入的 talkSys 参数为 null");
+            return;
+        }
+    
         _talkSys = talkSys;
         _switchManager = talkSys.switchManager;
         _miniCharacterTalkSys = talkSys.MiniCharacterManager;
         _playerName = talkSys.PlayerNameText;
         _shopGeneralName = talkSys.ShopName;
         _characterName = talkSys.Chara_Name;
-        // 初始化检查：角色名映射不能为空
-        if (characterNameMappings == null || characterNameMappings.Count == 0)
-        {
-            Debug.LogWarning("角色名映射列表为空，请在Inspector中配置！");
-        }
+    
+        // 添加验证日志
+        Debug.Log($"TalkSysShowText 初始化成功: _talkSys={_talkSys != null}, " +
+                  $"playerName={_playerName != null}, characterName={_characterName != null}");
     }
+    
     private void OnEnable()
     {
         TalkSysStaticData.TalkSysShowText = this;
@@ -169,6 +175,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
             {
                 ShowCg(curText);
                 _talkSys.line++;
+                ShowText();
                 return;
             }
             if (curText == "HideCg")
@@ -192,7 +199,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
 
             
             
-            
+
             // 显示文本逻辑
             CheckTextUI();
             _currentTextUI.text = string.Empty;
@@ -244,13 +251,23 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
             _currentCoroutine = null;
             yield break;
         }
-
+        
         
         string originalText = TalkLines[DayNum].TxtLine[LineIndex];
         var tempHistory = new TextHistory();
         string charaName = string.Empty;
         string displayText = originalText;
-        
+
+        if (originalText.Contains("$"))
+        {
+            ShowText();
+            yield break;
+        }
+
+        if (displayText == "->p" || displayText == "->c")
+        {
+            yield break;
+        }
         // 说话人校正
         if (displayText.Contains("："))
         {
@@ -258,6 +275,29 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
         }
 
         CheckTextUI();
+        
+        //替换已死亡角色名字
+        if (displayText.Contains("{DeadName}"))
+        {
+            var addedText = "";
+            var deadName = new List<string>();
+            foreach (var value in _talkSys.CharacterList)
+            {
+                var component = value.GetComponent<Character>();
+                if(!component.Dead) continue;
+                deadName.Add(component.CharacterName);
+            }
+
+            for (int i = 0; i < deadName.Count; i++)
+            {
+                addedText += deadName[i];
+                if (i < deadName.Count)
+                {
+                    addedText += ',';
+                }
+            }
+            displayText = displayText.Replace("{DeadName}", addedText);
+        }
 
         // 角色说话逻辑
         if (!_isPlayerTalking)
@@ -323,6 +363,10 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
         }
 
         // 历史记录存储
+        if (displayText.Contains("{PlayerName}"))
+        {
+            displayText = displayText.Replace("{PlayerName}", PlayerNameBox);
+        }
         tempHistory.Text = displayText;
         if (!string.IsNullOrWhiteSpace(tempHistory.Text))
         {
@@ -333,10 +377,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
         float actualInterval = IntervalTime - (IntervalTime * ((autoplay.Weight - 1) * 0.1f));
         actualInterval = Mathf.Max(0.01f, actualInterval); // 防止间隔为0
 
-        if (displayText.Contains("{PlayerName}"))
-        {
-            displayText = displayText.Replace("{PlayerName}", PlayerNameBox);
-        }
+        
         foreach (var c in displayText)
         {
             _talkSys.Type?.Play(); // 空值保护
@@ -412,6 +453,8 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
 
     public void StopOutputText()
     {
+        
+        
         if (_currentCoroutine != null)
         {
             StopCoroutine(_currentCoroutine);
@@ -441,7 +484,34 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
         _currentTextUI.text = string.Empty;
         string originalText = TalkLines[DayNum].TxtLine[LineIndex];
         string displayText = originalText;
+        
+        if (originalText.Contains("$"))
+        {
+            ShowText();
+            return;
+        }
+        //替换已死亡角色名字
+        if (displayText.Contains("{DeadName}"))
+        {
+            var addedText = "";
+            var deadName = new List<string>();
+            foreach (var value in _talkSys.CharacterList)
+            {
+                var component = value.GetComponent<Character>();
+                if(!component.Dead) continue;
+                deadName.Add(component.CharacterName);
+            }
 
+            for (int i = 0; i < deadName.Count; i++)
+            {
+                addedText += deadName[i];
+                if (i < deadName.Count)
+                {
+                    addedText += ',';
+                }
+            }
+            displayText = displayText.Replace("{DeadName}", addedText);
+        }
 
         if (!_isPlayerTalking)
         {
@@ -494,9 +564,16 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
     public void Skip()
     {
         // 空值保护
-        if (TalkLines == null || DayNum < 0 || DayNum >= TalkLines.Count)
+        if (_talkSys == null)
         {
-            Debug.LogError("跳过对话失败：对话数据无效");
+            Debug.LogWarning("Skip 被调用时 _talkSys 已为空，已安全拦截", this);
+            return;
+        }
+
+        // 安全检查对话数据
+        if (_talkSys.Talklines == null || DayNum < 0 || DayNum >= _talkSys.Talklines.Count)
+        {
+            Debug.LogError("跳过对话失败：对话数据无效", this);
             return;
         }
 
@@ -681,6 +758,10 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
     #endregion
     private void OnDestroy()
     {
+        if (GlobalData.Day == 0)
+        {
+            return;
+        }
         StopOutputText();
         if (_autoPlayCoroutine != null)
         {

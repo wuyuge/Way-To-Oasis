@@ -42,7 +42,11 @@ public class WalkingTalk : MonoBehaviour
     public Character lai;
     [Tooltip("Luo角色（需关联存活状态）")]
     public Character luo;
-
+    [Header("对话标记")] 
+    public bool isMultiple;
+    public bool haveTalk;
+    public int soloTalkTime;
+    
     // 私有状态变量
     private bool _isTalking; // 是否正在展示对话
     private Manager _showingManager; // 当前选中的文本容器
@@ -90,10 +94,28 @@ public class WalkingTalk : MonoBehaviour
     {
         while (true)
         {
+            //控制对话数量
+            if (state != null && state.isWalking)
+            {
+                if ((isMultiple && haveTalk) || (!isMultiple && soloTalkTime >= 2 && haveTalk))
+                {
+                    yield return new WaitForSeconds(1f);
+                    continue;
+                }
+            }
+            else if (!state.isWalking)
+            {
+                haveTalk = false;
+                isMultiple = false;
+                soloTalkTime = 0;
+                yield return new WaitForSeconds(1f);
+                continue; 
+            }
+            
             // 正在对话/角色未行走 → 等待
             if (_isTalking || (state != null && !state.isWalking))
             {
-                yield return new WaitForSeconds(waitTime);
+                yield return new WaitForSeconds(0.2f);
                 continue;
             }
 
@@ -151,6 +173,18 @@ public class WalkingTalk : MonoBehaviour
         bool isCurrentRaining = rain != null && rain.isRaining;
         List<TalkList> finalValidGroups = new List<TalkList>();
 
+        if (haveTalk && soloTalkTime > 0)
+        {
+            foreach (var value in baseValidGroups.ToList())
+            {
+                if (value.isContinuous)
+                {
+                    baseValidGroups.Remove(value);
+                }
+            }
+        }
+        
+
         if (isCurrentRaining)
         {
             // 雨天逻辑：70%概率选雨天专属对话，30%选非雨天对话
@@ -204,6 +238,8 @@ public class WalkingTalk : MonoBehaviour
 
         TalkList currentTalkGroup = talkListD13[_currentIndex];
         
+        //对话数量控制
+        
         // 非连续对话：随机选一条
         if (!currentTalkGroup.isContinuous)
         {
@@ -227,6 +263,8 @@ public class WalkingTalk : MonoBehaviour
             return;
         }
 
+        haveTalk = true;
+
         TalkList currentTalkGroup = talkListD13[_currentIndex];
         
         // 连续对话：启动协程逐行发送
@@ -238,10 +276,14 @@ public class WalkingTalk : MonoBehaviour
             {
                 StopCoroutine(_continuousTalkCoroutine);
             }
+
+            isMultiple = true;
             _continuousTalkCoroutine = StartCoroutine(ContinuousDialogueCoroutine());
             return;
         }
 
+        isMultiple = false;
+        
         // 单条对话：解析并展示
         (string speakerName, string content) = ParseDialogueText(_currentText);
         if (string.IsNullOrEmpty(content))
@@ -251,6 +293,8 @@ public class WalkingTalk : MonoBehaviour
         }
 
         _isTalking = true;
+        soloTalkTime++;
+        Debug.Log("输出文本");
         talkSys?.ShowAllText(speakerName, content,true);
         Invoke(nameof(ResetTalkState), textWaitTime);
     }
@@ -385,7 +429,7 @@ public class WalkingTalk : MonoBehaviour
     private void ResetTalkState()
     {
         _isTalking = false;
-        _miniTalkSys.CompleteTalk();
+        _miniTalkSys?.CompleteTalk();
     }
 
     /// <summary>
@@ -411,6 +455,7 @@ public class WalkingTalk : MonoBehaviour
     [ContextMenu("清空对话状态")]
     private void ClearDialogueState()
     {
+        isMultiple = false;
         _isTalking = false;
         _continuousLine = 0;
         if (_continuousTalkCoroutine != null)

@@ -1,21 +1,33 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SaveChildObjManager : MonoBehaviour
 {
 
-    public void CoverFile(GameObject o)
+    public List<GameObject> excludeList;
+
+    private void OnEnable()
     {
-        o.GetComponent<SaveFileButton>().CoverFile();
+        foreach (var value in excludeList)
+        {
+            value.SetActive(false);
+        }
     }
 
-    public void Cancel(GameObject o)
+    public void CoverFile()
     {
-        o.GetComponent<SaveFileButton>().Cancel();
+        GlobalData.CurrentSaveFileButton.GetComponent<SaveFileButton>().CoverFile();
+    }
+
+    public void Cancel()
+    {
+        GlobalData.CurrentSaveFileButton.GetComponent<SaveFileButton>().Cancel();
     }
     
-    public void SaveFile(GameObject o)
+    public void SaveFile()
     {
-        o.GetComponent<SaveFileButton>().SaveFile();
+        GlobalData.CurrentSaveFileButton.GetComponent<SaveFileButton>().SaveFile();
     }
 
 }

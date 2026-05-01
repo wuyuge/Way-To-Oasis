@@ -8,7 +8,8 @@ public class CgManager : MonoBehaviour
     public Image cgContainer;
     public GameObject initialTransForm,fullModeTransForm,frame,playerName,playerNameBox;
     public TalkSysShowText talkSysShowText;
-    private Animator _animator;
+    [SerializeField]
+    private Animator _animator,textBarAnim;
     private bool _fullMode;
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class CgManager : MonoBehaviour
         cgContainer.sprite = cgList[index];
         playerName.SetActive(false);
         playerNameBox.SetActive(false);
+        textBarAnim.SetTrigger("Up");
         return true;
         
     }
@@ -39,6 +41,7 @@ public class CgManager : MonoBehaviour
         playerName.SetActive(true);
         playerNameBox.SetActive(true);
         gameObject.SetActive(false);
+        textBarAnim.SetTrigger("Down");
     }
 
     public void SetFullMode(bool fullMode)

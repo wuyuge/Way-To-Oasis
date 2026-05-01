@@ -12,6 +12,12 @@ public class HistoryManager : MonoBehaviour
     private void OnEnable()
     {
         verticalScrollbar.value = 0;
+        GlobalData.ShowText.CanShowText = false;
+    }
+
+    private void OnDisable()
+    {
+        GlobalData.ShowText.CanShowText = true;
     }
 
 

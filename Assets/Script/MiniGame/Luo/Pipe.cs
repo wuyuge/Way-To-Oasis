@@ -25,6 +25,7 @@ public abstract class Pipe : MonoBehaviour
     protected PipeManager Manager;
     private static GameObject _startPipe, _endPipe;
     public GameObject upP, downP, leftP, rightP;
+    private RectTransform _transform;
     private void Awake()
     {
         _objectImage = GetComponent<Image>();
@@ -157,15 +158,7 @@ public abstract class Pipe : MonoBehaviour
             SwitchPipePosition(_endPipe,endTowards);
         }
 
-        var temp = Random.Range(0, 2);
-        if (temp == 0)
-        {
-            _objectImage.sprite = pipeSprite;
-        }
-        else
-        {
-            _objectImage.sprite = pipeSpriteRed;
-        }
+        
     }
 
     #region 重置用
@@ -232,11 +225,11 @@ public abstract class Pipe : MonoBehaviour
     }
 
     
-    private void OnEnable()
+    public virtual void OnEnable()
     {
         RelinkOther();
         var temp = Random.Range(0, 2);
-        if (temp == 0)
+        if (temp == 0 || Manager.replaced)
         {
             _objectImage.sprite = pipeSprite;
         }
@@ -255,6 +248,13 @@ public abstract class Pipe : MonoBehaviour
         {
             SwitchPipePosition(_endPipe, endTowards);
         }
+        
+        if (_transform is null)
+        {
+            _transform = GetComponent<RectTransform>();
+        }
+
+        _transform.pivot = new Vector2(0.5f, 0.5f);
     }
     
     void RelinkOther()
@@ -368,7 +368,7 @@ public abstract class Pipe : MonoBehaviour
     
     #endregion
     
-
+    
 
 
     public enum PipeTowards

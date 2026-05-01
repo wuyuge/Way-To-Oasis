@@ -23,15 +23,18 @@ public class SwitchShop : SwitchCommand
                 //开启商店场景
                 _talkSys._inshop = true;
                 _showText.CanShowText = true;
+                GlobalData.InShop = true;
                 break;
             case FunctionCode.Function.B:
                 //关闭商店场景
                 _talkSys._inshop = false;
                 _showText.CanShowText = false;
+                GlobalData.InShop = false;
                 _talkSys.ShopManager.SetActive(false);
                 break;
             case FunctionCode.Function.C:
                 //杀人接口
+                Debug.Log("KillSomeOne");
                 _talkSys.Day2_Shop_KillSomeOne.GeneralBool = true;
                 _talkSys.ShopCharaBar.SetActive(true);
                 _talkSys.ShopCharaBar.GetComponent<Animator>().SetTrigger("Up");

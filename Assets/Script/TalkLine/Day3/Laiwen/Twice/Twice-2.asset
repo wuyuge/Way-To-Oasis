@@ -15,6 +15,8 @@ MonoBehaviour:
   TxtLine:
   - ->p
   - "\u83B1\u6587\u5F00\u59CB\u5728\u901A\u8BAF\u5668\u4E0A\u6572\u6253\u4E9B\u4EC0\u4E48\u3002"
+  - ->p
+  - "\u83B1\u6587\u5F00\u59CB\u5728\u901A\u8BAF\u5668\u4E0A\u6572\u6253\u4E9B\u4EC0\u4E48\u3002"
   - ${OpenSwitchStage}
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}

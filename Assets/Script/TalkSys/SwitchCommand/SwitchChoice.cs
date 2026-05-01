@@ -10,7 +10,8 @@ public class SwitchChoice :SwitchCommand
     private List<Manager> _talkLines;
     private int DayNum => _talkSys?.Daytime ?? 0;
     private TalkSysUIButtonFunc _buttonManager;
-    
+
+    public Manager haveBody, finalBody;
     public override void Init(TalkSystem talkSys)
     {
         _talkSys = talkSys;
@@ -57,11 +58,17 @@ public class SwitchChoice :SwitchCommand
             return;
         }
 
+        
         _buttonManager.SwitchButtonState(ButtonName.ShopLeft, ButtonAction.Enable, _talkLines[DayNum].Option1);
         if (middleOn)
         {
+            if (haveBody.Weight == 0 && finalBody.Weight == 0)
+            {
+                _buttonManager.SwitchButtonState(ButtonName.ShopLeft, ButtonAction.Disable, _talkLines[DayNum].Option1);
+            }
             _buttonManager.SwitchButtonState(ButtonName.ShopRight, ButtonAction.Enable, _talkLines[DayNum].Option3);
             _buttonManager.SwitchButtonState(ButtonName.ShopMiddle,ButtonAction.Enable,_talkLines[DayNum].Option2);
+            
             return;
         }
         _buttonManager.SwitchButtonState(ButtonName.ShopRight, ButtonAction.Enable, _talkLines[DayNum].Option2);

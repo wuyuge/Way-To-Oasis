@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class DeleteChild : MonoBehaviour
 {
-    public void DeleteFile(GameObject o)
+    
+    public List<GameObject> excludeList;
+    private void OnEnable()
     {
-        o.GetComponent<DeleteSave>().Delete();
+        foreach (var value in excludeList)
+        {
+            value.SetActive(false);
+        }
+    }
+    public void DeleteFile()
+    {
+        GlobalData.CurrentSaveFileButton.GetComponent<DeleteSave>().Delete();
     }
 
-    public void CancelDelete(GameObject o)
+    public void CancelDelete()
     {
-        o.GetComponent<DeleteSave>().Cancel();
+        GlobalData.CurrentSaveFileButton.GetComponent<DeleteSave>().Cancel();
     }
 }
