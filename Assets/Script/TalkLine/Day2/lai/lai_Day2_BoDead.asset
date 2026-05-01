@@ -17,7 +17,6 @@ MonoBehaviour:
   - ${CheckAimiDead}
   - ->c
   - "\u83B1\u6587\uFF1A\u4F60\u628A\u4ED6\u6740\u4E86\uFF1F@{5}"
-  - "\u83B1\u6587\uFF1A\u4F60\u628A\u4ED6\u6740\u4E86\uFF1F@{5}"
   - ->p
   - "\u5982\u679C\u6709\u4E2A\u4EBA\u5927\u534A\u591C\u7684\u62FF\u7740\u5200\u6765\u627E\u4F60\uFF0C\u4F60\u4E5F\u4F1A\u8FD9\u4E48\u5E72\u7684\u3002"
   - ->c
@@ -38,5 +37,5 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0

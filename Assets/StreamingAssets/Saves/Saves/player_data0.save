@@ -1,16 +1,17 @@
 {
-    "saveTime": "2026-05-01 09:53:15",
+    "saveTime": "2026-05-01 13:18:54",
     "playerName": "■■",
     "day": 3,
-    "stage": 1,
-    "food": 3,
+    "stage": 2,
+    "food": 5,
     "body": 1,
+    "amandeKillSelfTag": true,
     "characterDeadState": [
         false,
         false,
+        true,
         false,
-        false,
-        false,
+        true,
         false
     ],
     "characterCarry": [
@@ -24,18 +25,34 @@
     "characterEatState": [
         true,
         true,
+        false,
         true,
-        true,
-        true,
+        false,
         true
     ],
     "characterCarryTag": [
         0,
-        0,
-        0,
         1,
         0,
+        0,
+        0,
         0
+    ],
+    "deadBodyContainer": [
+        "阿曼德Poison",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "currentDead": [
+        "",
+        "",
+        "",
+        "",
+        ""
     ],
     "miniGamePlayState": [
         false,

@@ -9,7 +9,7 @@ using UnityEngine.UI;
 /// </summary>
 public class RestoreSence : MonoBehaviour
 {
-    public Manager food , finalFood , body , finalBody , playerName , amandeKillSelfTag , deadBodyContainer;
+    public Manager food , finalFood , body , finalBody , playerName , amandeKillSelfTag , deadBodyContainer,currentDead;
     public GameObject mainCanvas, teachCanvas;
     public Progress mainProgress, teachProgress;
     public TalkSystem mainTalkSys, teachTalkSys;
@@ -29,6 +29,12 @@ public class RestoreSence : MonoBehaviour
         data.day = GlobalData.Day;
         data.stage = GlobalData.Stage;
         data.amandeKillSelfTag = amandeKillSelfTag.GeneralBool;
+
+        for (int i = 0; i < currentDead.TxtLine.Count; i++)
+        {
+            data.currentDead[i] = currentDead.TxtLine[i];
+        }
+        
         for (int i = 0; i < deadBodyContainer.TxtLine.Count; i++)
         {
             data.deadBodyContainer[i] = deadBodyContainer.TxtLine[i];
@@ -74,11 +80,28 @@ public class RestoreSence : MonoBehaviour
     {
         _curData = data;
         playerName.TxtLine[0] = data.playerName;//设定玩家名称
+        
+        deadBodyContainer.TxtLine.Clear();
         for (int i = 0; i < data.deadBodyContainer.Length; i++)
         {
-            deadBodyContainer.TxtLine[i] = data.deadBodyContainer[i];//恢复持有尸体列表
+            if (data.deadBodyContainer[i] == string.Empty)
+            {
+                continue; 
+            }
+            deadBodyContainer.TxtLine.Add(data.deadBodyContainer[i]);//恢复持有尸体列表
         }
-        amandeKillSelfTag.GeneralBool = data.amandeKillSelfTag;
+        
+        currentDead.TxtLine.Clear();
+        for (int i = 0; i < data.currentDead.Length; i++)
+        {
+            if (data.currentDead[i] == string.Empty)
+            {
+                continue; 
+            }
+            currentDead.TxtLine.Add(data.currentDead[i]);//恢复幕间死亡者提示
+        }
+        
+        amandeKillSelfTag.GeneralBool = data.amandeKillSelfTag;//恢复阿曼德自杀标记
         
         switch (data.stage)//设定食物，尸体数量
         {

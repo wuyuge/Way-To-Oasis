@@ -186,6 +186,7 @@ public class SwitchCheck : SwitchCommand
                     break;
                 }
             }
+            _talkSys.line++;
             return;  // 注意：这里没有SwitchLine，只是检查后返回
             
         case FunctionCode.Function.K:

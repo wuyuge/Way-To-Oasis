@@ -16,6 +16,7 @@ public class PlayerSaveData
     public bool[] characterEatState = new bool[6];
     public int[] characterCarryTag = new int[6];
     public string[] deadBodyContainer = new string[7];
+    public string[] currentDead = new string[5];
     public bool[] miniGamePlayState = new bool[20];
     
 
