@@ -15,7 +15,82 @@ MonoBehaviour:
   TxtLine:
   - "\u55EF\uFF0C\u6CA1\u95EE\u9898"
   - ->p
+  - ${CloseCharacterTalkBox}
   - "\u55EF\uFF0C\u6CA1\u95EE\u9898\u3002"
+  - "\u6211\u6CA1\u4EC0\u4E48\u4E8B\uFF0C\u90A3\u5C31\u5E2E\u4F60\u4E00\u628A\u3002"
+  - MINI5
+  - ${CloseCharacterTalkBox}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
+  data:
+  - cn: "\u55EF\uFF0C\u6CA1\u95EE\u9898"
+    en: Mm, no problem
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u55EF\uFF0C\u6CA1\u95EE\u9898\u3002"
+    en: Mm, no problem.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 14000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6211\u6CA1\u4EC0\u4E48\u4E8B\uFF0C\u90A3\u5C31\u5E2E\u4F60\u4E00\u628A\u3002"
+    en: I do not have anything to do. I will help you.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 14000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 4
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 140000002300000016000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 4
+    uncomfortType: 0
+    audioEffect: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -23,5 +98,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

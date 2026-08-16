@@ -49,21 +49,30 @@ public class SwitchCheck : SwitchCommand
             if (ShopEvent)
             {
                 _talkSys.SwitchLine(TalkLine.Line1);
+                
                 return;
             }
             _talkSys.SwitchLine(TalkLine.Line2);
+            
             return;
             
         case FunctionCode.Function.B:
+            Debug.Log("检测是否有人死亡");
+            if (_talkSys.useNewSys)
+            {
+                GlobalData.NewTalkSysShowText.SetChoiceLine(0,false);
+            }
             foreach (var c in _characters)
             {
                 if (c.Dead)
                 {
                     _talkSys.SwitchLine(TalkLine.Line2);
+                    
                     return;
                 }
             }
             _talkSys.SwitchLine(TalkLine.Line1);
+            
             return;
             
         case FunctionCode.Function.C:
@@ -71,9 +80,11 @@ public class SwitchCheck : SwitchCommand
             if (aimi.Eat)
             {
                 _talkSys.SwitchLine(TalkLine.Line1);
+                
                 return;
             }
             _talkSys.SwitchLine(TalkLine.Line2);
+            
             return;
             
         case FunctionCode.Function.D:
@@ -85,6 +96,7 @@ public class SwitchCheck : SwitchCommand
                     if (c.Dead)
                     {
                         _talkSys.SwitchLine(TalkLine.Line2);
+                        
                         return;
                     }
                     Debug.Log("博金森未死亡");
@@ -92,15 +104,18 @@ public class SwitchCheck : SwitchCommand
                 }
             }
             _talkSys.SwitchLine(TalkLine.Line1);
+            
             return;
             
         case FunctionCode.Function.E:
             if (_talkSys.Daytime - _talkSys.BoDeadTime.Weight > 1)
             {
                 _talkSys.SwitchLine(TalkLine.Line2);
+                
                 return;
             }
             _talkSys.SwitchLine(TalkLine.Line1);
+            
             return;
             
         case FunctionCode.Function.F:
@@ -141,6 +156,10 @@ public class SwitchCheck : SwitchCommand
             if (curTalk < 5)
             {
                 _talkSys.SwitchLine(TalkLine.Line3);
+                if (_talkSys.useNewSys)
+                {
+                    GlobalData.NewTalkSysShowText.SetChoiceLine(0,false);
+                }
                 _talkSys.line = 0;
                 return;
             }
@@ -168,9 +187,11 @@ public class SwitchCheck : SwitchCommand
             if (_talkSys.amandeKillself.GeneralBool)
             {
                 _talkSys.SwitchLine(TalkLine.Line1);
+                
                 return;
             }
             _talkSys.SwitchLine(TalkLine.Line2);
+            
             return;
             
         case FunctionCode.Function.J:
@@ -199,6 +220,7 @@ public class SwitchCheck : SwitchCommand
                 if (value.infos[GlobalData.Day].canPlay && value.name == "阿曼德")
                 {
                     _talkSys.ResetLine();
+                    if (_talkSys.useNewSys) GlobalData.NewTalkSysShowText.SetChoiceLine(0,false);
                     _talkSys.SwitchLine(TalkLine.Line3);
                     return;
                 }
@@ -211,6 +233,7 @@ public class SwitchCheck : SwitchCommand
                 if (value.infos[GlobalData.Day].canPlay && value.name == "艾米莉")
                 {
                     _talkSys.ResetLine();
+                    if (_talkSys.useNewSys) GlobalData.NewTalkSysShowText.SetChoiceLine(0,false);
                     _talkSys.SwitchLine(TalkLine.Line3);
                     return;
                 }
@@ -223,6 +246,7 @@ public class SwitchCheck : SwitchCommand
                 if (value.infos[GlobalData.Day].canPlay && value.name == "博金森")
                 {
                     _talkSys.ResetLine();
+                    if (_talkSys.useNewSys) GlobalData.NewTalkSysShowText.SetChoiceLine(0,false);
                     _talkSys.SwitchLine(TalkLine.Line3);
                     return;
                 }
@@ -235,6 +259,7 @@ public class SwitchCheck : SwitchCommand
                 if (value.infos[GlobalData.Day].canPlay && value.name == "洛尔坎")
                 {
                     _talkSys.ResetLine();
+                    if (_talkSys.useNewSys) GlobalData.NewTalkSysShowText.SetChoiceLine(0,false);
                     _talkSys.SwitchLine(TalkLine.Line3);
                     return;
                 }
@@ -247,6 +272,7 @@ public class SwitchCheck : SwitchCommand
                 if (value.infos[GlobalData.Day].canPlay && value.name == "莱文")
                 {
                     _talkSys.ResetLine();
+                    if (_talkSys.useNewSys) GlobalData.NewTalkSysShowText.SetChoiceLine(0,false);
                     _talkSys.SwitchLine(TalkLine.Line3);
                     return;
                 }
@@ -258,11 +284,13 @@ public class SwitchCheck : SwitchCommand
             {
                 if (value.Dead && value.CharacterName != "阿曼德")
                 {
+                    if (_talkSys.useNewSys) GlobalData.NewTalkSysShowText.SetChoiceLine(0,false);
                     _talkSys.SwitchLine(TalkLine.Line2);
                     _talkSys.line = 0;
                     return;
                 }
             }
+            if (_talkSys.useNewSys) GlobalData.NewTalkSysShowText.SetChoiceLine(0,false);
             _talkSys.SwitchLine(TalkLine.Line1);
             _talkSys.line = 0;
             return;
@@ -282,9 +310,11 @@ public class SwitchCheck : SwitchCommand
             {
                 _talkSys.SwitchLine(TalkLine.Line3);
                 _talkSys.line = 0;
+                if (_talkSys.useNewSys) GlobalData.NewTalkSysShowText.SetChoiceLine(0,false);
                 return;
             }
-            _talkSys.line++;
+            
+            if (!_talkSys.useNewSys)_talkSys.line++;
             return;
             
         case FunctionCode.Function.N:
@@ -295,16 +325,17 @@ public class SwitchCheck : SwitchCommand
                 if (!value.Dead)
                 {
                     tempLive++;
-                    if (tempLive > 1) break;
+                    if (tempLive > 2) break;
                 }
             }
             if (tempLive <= 2)
             {
                 _talkSys.SwitchLine(TalkLine.Line3);
+                if (_talkSys.useNewSys) GlobalData.NewTalkSysShowText.SetChoiceLine(0,false);
                 _talkSys.line = 0;
                 return;
             }
-            _talkSys.line++;
+            if (!_talkSys.useNewSys)_talkSys.line++;
             return;
     }
 }

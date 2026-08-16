@@ -3,13 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum MedicineType
+{
+    标准型速效污染阻隔剂,洛尔坎需要的防水镀剂,PRCT7型程序性细胞转换浓缩液,α型通用镇定剂
+}
 public class MedicineComposer : MonoBehaviour
 {
-    public enum MedicineType
-    {
-        标准型速效污染阻隔剂,洛尔坎需要的防水镀剂,PRCT7型程序性细胞转换浓缩液,α型通用镇定剂
-    }
-    
     [System.Serializable]
     public class Formula
     {
@@ -18,28 +17,31 @@ public class MedicineComposer : MonoBehaviour
         public List<MedicineObject> needMedicine;//需要药的列表
     }
     public List<Formula> formulas;
+    public List<MedicineObject> container = new List<MedicineObject>();
 
-    private void Awake()
+
+    private void OnEnable()
     {
-        MedicineManager.Composer = this;
+        MedicineManager.ComposedMedicine.Clear();
     }
 
-    public void Compose()
+
+    public bool Compose()
     {
         // 边界校验：避免空指针异常
         if (formulas == null || formulas.Count == 0)
         {
             Debug.LogWarning("未配置任何合成配方！");
-            return;
+            return false;
         }
-        if (MedicineManager.Container == null || MedicineManager.Container.Count == 0)
+        if (container == null || container.Count == 0)
         {
             Debug.LogWarning("材料容器为空，无法合成！");
-            return;
+            return false;
         }
 
         // 打印当前材料列表
-        string currentMaterials = GetMaterialsListString(MedicineManager.Container);
+        string currentMaterials = GetMaterialsListString(container);
         Debug.Log($"📋 当前材料容器中的材料列表：{currentMaterials}");
 
         // 标记是否合成成功
@@ -50,7 +52,7 @@ public class MedicineComposer : MonoBehaviour
         foreach (var originalFormula in formulas)
         {
             // 第一步：校验材料数量是否匹配
-            if (originalFormula.needNum != MedicineManager.Container.Count)
+            if (originalFormula.needNum != container.Count)
             {
                 continue;
             }
@@ -59,7 +61,7 @@ public class MedicineComposer : MonoBehaviour
             // 关键：创建配方材料列表的副本（只复制列表内容，不影响原始数据）
             List<MedicineObject> tempNeedMedicine = new List<MedicineObject>(originalFormula.needMedicine);
 
-            foreach (var obj in MedicineManager.Container)
+            foreach (var obj in container)
             {
                 // 检查当前材料是否在副本列表中
                 if (!tempNeedMedicine.Contains(obj))
@@ -75,10 +77,29 @@ public class MedicineComposer : MonoBehaviour
             if (complete && tempNeedMedicine.Count == 0)
             {
                 // 记录合成成功的药品类型
+                var check = false;
                 synthesizedMedicine = originalFormula.medicineType;
-                // 清空材料容器
-                MedicineManager.Container.Clear();
-                isComposeSuccess = true;
+                foreach (var value in AmandeGlobal.Mission)
+                {
+                    if (!value.composed && value.medicine == synthesizedMedicine)
+                    {
+                        MedicineManager.ComposedMedicine.Add(synthesizedMedicine);
+                       
+                        check = true;
+                        break;
+                    }
+
+                    if (!value.composed && value.medicine != synthesizedMedicine)
+                    {
+                        break;
+                    }
+                }
+                
+                isComposeSuccess = check;
+                if (!isComposeSuccess)
+                {
+                    Debug.Log("合成错误药剂");
+                }
                 break;
             }
         }
@@ -88,12 +109,9 @@ public class MedicineComposer : MonoBehaviour
         {
             // 合成成功：报告具体合成的药品名称
             Debug.Log($"✅ 合成成功！使用材料【{currentMaterials}】合成出：{synthesizedMedicine}");
+            return true;
         }
-        else
-        {
-            // 合成失败：提示失败并清空材料
-            Debug.Log($"❌ 合成失败！当前材料组合【{currentMaterials}】无法合成任何药品。");
-        }
+        return false;
     }
 
     /// <summary>

@@ -16,6 +16,55 @@ MonoBehaviour:
   - ->c
   - "\u535A\u91D1\u68EE\uFF1A\u4F60\u8FD9\u4E2A\u75AF\u5B50\uFF0C\u4F60\u4EE5\u4E3A\u6CA1\u4E86\u827E\u7C73\u8389\uFF0C\u4F60\u8FD8\u80FD\u6D3B\u591A\u4E45\uFF1F"
   - ${Choice}
+  data:
+  - cn: "\u4F60\u8FD9\u4E2A\u75AF\u5B50\uFF0C\u4F60\u4EE5\u4E3A\u6CA1\u4E86\u827E\u7C73\u8389\uFF0C\u4F60\u8FD8\u80FD\u6D3B\u591A\u4E45\uFF1F"
+    en: You lunatic. Do you think you can live much longer without Emily?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u8FD9\u4E2A\u75AF\u5B50\uFF0C\u4F60\u4EE5\u4E3A\u6CA1\u4E86\u827E\u7C73\u8389\uFF0C\u4F60\u8FD8\u80FD\u6D3B\u591A\u4E45\uFF1F"
+    en: You lunatic. Do you think you can live much longer without Emily?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: d0cede7778fee4e479e6e4a098676cea, type: 2}
   Option2: {fileID: 11400000, guid: a5ed4ee39f4136a47a60ba00fe51f8a4, type: 2}
   Option3: {fileID: 0}
@@ -23,5 +72,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

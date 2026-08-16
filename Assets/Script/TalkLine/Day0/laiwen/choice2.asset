@@ -20,6 +20,58 @@ MonoBehaviour:
   - ->c
   - "\u83B1\u6587\uFF1A\u6211\u8FD8\u662F\u7B2C\u4E00\u6B21\u53D1\u73B0\u4F60\u8FD9\u4E48\u5E7D\u9ED8\u54C8\u54C8\u3002@{3}"
   - ${End}
+  data:
+  - cn: "\u5E76\u4E0D\u51C6\u786E"
+    en: That is not exactly accurate
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u5E76\u4E0D\u51C6\u786E\u3002"
+    en: "That is not exactly accurate\u3002"
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u4E25\u683C\u6765\u8BB2\u6211\u4EE5\u524D\u4E5F\u662F\u4F60\u7684\u4E0A\u53F8\u3002"
+    en: That is not exactly accurate. Strictly speaking, I was already your superior
+      before.
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+  - cn: "\u6211\u8FD8\u662F\u7B2C\u4E00\u6B21\u53D1\u73B0\u4F60\u8FD9\u4E48\u5E7D\u9ED8\u54C8\u54C8\u3002"
+    en: This is the first time I have realized you are this funny. Haha.
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+  - cn: 
+    en: 
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
   Option1: {fileID: 11400000, guid: 8d7eb74e5909cca4d843a36e7b3bce5c, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -27,5 +79,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

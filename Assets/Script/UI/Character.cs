@@ -123,7 +123,7 @@ public class Character : MonoBehaviour
         // 查找全局的进度管理根对象（End）
         end = GameObject.Find("End");
         // 记录初始天数（与Progress中的day_num同步）
-        curr_num = end.GetComponent<Progress>().day_num;
+        curr_num = GlobalData.Progress.day_num;
         // 绑定角色子对象中的3个负重进度条UI
         weight1 = gameObject.transform.Find("Weight3").gameObject;
         weight2 = gameObject.transform.Find("Weight2").gameObject;
@@ -131,7 +131,7 @@ public class Character : MonoBehaviour
         _weight1Image = weight1.GetComponent<Image>();
         _weight2Image = weight2.GetComponent<Image>();
         _weight3Image = weight3.GetComponent<Image>();
-        if(end.GetComponent<Progress>().day_num != 0) Background = GameObject.Find("BackgroundContainer").gameObject;
+        if(GlobalData.Progress.day_num != 0) Background = GameObject.Find("BackgroundContainer").gameObject;
         for (int i = 0; i < transform.childCount;i++)
         {
             Child.Add(transform.GetChild(i).gameObject);
@@ -397,6 +397,7 @@ public class Character : MonoBehaviour
         if (Dead) return;
         if (!CanTalk) return;
         if (AfterSpecialTalk) return;
+        if (GlobalData.OnMiniGame) return;
         if (GlobalData.Day == 0 && have_talk && CharacterName == "阿曼德") return;
         if (TutorialManager.TutorialIsShow && !TutorialManager.TutorialWeight)
         {
@@ -429,7 +430,7 @@ public class Character : MonoBehaviour
         }
 
         //day0角色资料显示逻辑
-        if (end.GetComponent<Progress>().day_num == 0 && !Have_ShowInfo)
+        if (GlobalData.Progress.day_num == 0 && !Have_ShowInfo)
         {
 
             if(CharacterName == "艾米莉")
@@ -457,9 +458,9 @@ public class Character : MonoBehaviour
         
 
         // 判断当前游戏是否处于"对话阶段"（Progress中的talk状态为true）
-        if (progress.GetComponent<Progress>().talk && !ClikDelay)
+        if (GlobalData.Progress.talk && !ClikDelay)
         {
-            progress.GetComponent<Progress>().CanSwitch = false;
+            GlobalData.Progress.CanSwitch = false;
             talksys.on = false;
             ClikDelay = true;
             
@@ -468,14 +469,14 @@ public class Character : MonoBehaviour
             if (!have_talk)
             {
                 
-                if (progress.GetComponent<Progress>().day_num == 0 && CharacterName != "阿曼德")
+                if (GlobalData.Progress.day_num == 0 && CharacterName != "阿曼德")
                 {
                     Day0_Talk.Weight += 1;
                 }
                 // 显示对话面板
                 TalkBar.SetActive(true);
                 
-                talksys.Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num];
+                talksys.Talklines[GlobalData.Progress.day_num] = textline[GlobalData.Progress.day_num];
                 talksys.showText.CanShowText = true;
                 // 标记为已触发对话（避免重复触发）
                 have_talk = true;
@@ -488,7 +489,7 @@ public class Character : MonoBehaviour
             else
             {
                 TalkBar.SetActive(true);
-                talksys.Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num].Option3;
+                talksys.Talklines[GlobalData.Progress.day_num] = textline[GlobalData.Progress.day_num].Option3;
                 talksys.ShowBar();
                 talksys.showText.CanShowText = true;
                 
@@ -521,6 +522,11 @@ public class Character : MonoBehaviour
         // 显示对话面板（调用TalkSystem的ShowBar方法，可能包含动画）
         
         // 重置对话行数到第一行
+        if (talksys.useNewSys)
+        {
+            GlobalData.NewTalkSysShowText.SetChoiceLine(0,true);
+            GlobalData.NewTalkSysShowText.UnLockOutPut();
+        }
         talksys.line = 0;
         // 启动对话文本显示（异步执行，避免UI卡顿）
         talksys.showText.CanShowText = true;
@@ -530,7 +536,7 @@ public class Character : MonoBehaviour
 
     public void SetSpecialTalk1()
     {
-        TalkBar.GetComponent<TalkSystem>().Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num].SpecialTalk;
+        TalkBar.GetComponent<TalkSystem>().Talklines[GlobalData.Progress.day_num] = this.textline[GlobalData.Progress.day_num].SpecialTalk;
         TalkBar.GetComponent<TalkSystem>().on = true;
 
         TalkBar.SetActive(true);
@@ -549,7 +555,7 @@ public class Character : MonoBehaviour
 
     public void SetSpecialTalk2()
     {
-        TalkBar.GetComponent<TalkSystem>().Talklines[end.GetComponent<Progress>().day_num] = this.textline[end.GetComponent<Progress>().day_num].SpecialTalk2;
+        TalkBar.GetComponent<TalkSystem>().Talklines[GlobalData.Progress.day_num] = this.textline[GlobalData.Progress.day_num].SpecialTalk2;
         TalkBar.GetComponent<TalkSystem>().on = true;
         TalkBar.SetActive(true);
         Attention.SetActive(false);

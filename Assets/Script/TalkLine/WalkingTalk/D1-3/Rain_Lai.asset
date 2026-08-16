@@ -14,6 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u83B1\u6587\uFF1A\u5E94\u8BE5\u6362\u4EF6\u6234\u5E3D\u5B50\u7684\u5916\u5957\u7684\u3002"
+  data:
+  - cn: "\u5E94\u8BE5\u6362\u4EF6\u6234\u5E3D\u5B50\u7684\u5916\u5957\u7684\u3002"
+    en: I should have changed into a jacket with a hood.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -21,5 +37,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

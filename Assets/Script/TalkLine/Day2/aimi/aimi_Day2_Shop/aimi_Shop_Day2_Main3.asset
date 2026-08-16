@@ -23,6 +23,137 @@ MonoBehaviour:
   - "A_\u8FD9\u662F\u4E00\u4E2A\u6761\u4EF6\uFF0C\u800C\u5979\u5DF2\u7136\u4E0B\u5B9A\u4E86\u51B3\u5FC3\u3002"
   - 
   - ${End}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 1
+    cgNum: 8
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 1
+    cgNum: 8
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6D51\u6D4A\u7684\u98CE\u5439\u8D77\u5979\u7684\u515C\u5E3D\u4E0E\u53D1\u4E1D\uFF0C\u827E\u7C73\u8389\u91D1\u8272\u7684\u773C\u775B\u957F\u4E45\u5730\u51DD\u89C6\u7740\u4F60\u3002"
+    en: The muddy wind lifts her hood and hair. Emily's golden eyes stare at you
+      for a long time.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 8
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u548C\u5979\u4ECE\u6765\u4E0D\u662F\u4E00\u79CD\u4EBA\uFF0C\u8FD9\u4E00\u5929\u65E9\u665A\u4F1A\u5230\u6765\u3002\u800C\u4F60\u4EEC\u5BF9\u6B64\u90FD\u5FC3\u77E5\u809A\u660E\u3002"
+    en: You and she have never been the same kind of person. This day was bound to
+      come sooner or later, and both of you know it clearly.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 8
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u201C\u628A\u535A\u91D1\u68EE\u7684\u5C38\u4F53\u4EA4\u7ED9\u6211\u3002\u201D"
+    en: '"Give me Bokinson''s body."'
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 8
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8FD9\u662F\u4E00\u4E2A\u6761\u4EF6\uFF0C\u800C\u5979\u5DF2\u7136\u4E0B\u5B9A\u4E86\u51B3\u5FC3\u3002"
+    en: This is a condition, and she has already made up her mind.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 8
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 1
+    cgNum: 8
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 8
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: f8c6125ed88cc0c449b01375d6e8593c, type: 2}
   Option2: {fileID: 11400000, guid: 6223842f60ba8634c871ff2d816c4726, type: 2}
   Option3: {fileID: 0}
@@ -30,5 +161,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

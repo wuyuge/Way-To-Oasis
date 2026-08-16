@@ -244,12 +244,30 @@ public class WalkingTalk : MonoBehaviour
         if (!currentTalkGroup.isContinuous)
         {
             int randomLine = Random.Range(0, _showingManager.TxtLine.Count);
-            _currentText = _showingManager.TxtLine[randomLine];
+            if (GlobalData.TalkSystem.useNewSys)
+            {
+                randomLine = Random.Range(0, _showingManager.data.Count);
+                _currentText = GlobalData.Language.isEn
+                    ? _showingManager.data[randomLine].en
+                    : _showingManager.data[randomLine].cn;
+            }
+            else
+            {
+                _currentText = _showingManager.TxtLine[randomLine];
+            }
         }
         // 连续对话：选第一行（后续逐行播放）
         else
         {
-            _currentText = _showingManager.TxtLine.Count > 0 ? _showingManager.TxtLine[0] : null;
+            if (GlobalData.TalkSystem.useNewSys)
+            {
+                _currentText = GlobalData.Language.isEn ? _showingManager.data[0].en : _showingManager.data[0].cn;
+            }
+            else
+            {
+                _currentText = _showingManager.TxtLine.Count > 0 ? _showingManager.TxtLine[0] : null;
+            }
+            
         }
     }
 
@@ -285,7 +303,7 @@ public class WalkingTalk : MonoBehaviour
         isMultiple = false;
         
         // 单条对话：解析并展示
-        (string speakerName, string content) = ParseDialogueText(_currentText);
+        (string speakerName, string content) = ParseDialogueText(_currentText,_currentIndex);
         if (string.IsNullOrEmpty(content))
         {
             Debug.LogWarning($"对话文本解析失败：{_currentText}", this);
@@ -316,7 +334,11 @@ public class WalkingTalk : MonoBehaviour
 
             // 解析当前行文本
             string currentLine = _showingManager.TxtLine[_continuousLine];
-            (string speakerName, string content) = ParseDialogueText(currentLine);
+            if (GlobalData.TalkSystem.useNewSys)
+            {
+                currentLine = GlobalData.Language.isEn ? _showingManager.data[_continuousLine].en : _showingManager.data[_continuousLine].cn;
+            }
+            (string speakerName, string content) = ParseDialogueText(currentLine,_continuousLine);
             if (string.IsNullOrEmpty(content))
             {
                 Debug.LogWarning($"连续对话解析失败：{currentLine}", this);
@@ -353,26 +375,37 @@ public class WalkingTalk : MonoBehaviour
     /// <summary>
     /// 解析对话文本（格式：角色名：内容）
     /// </summary>
-    /// <param name="text">原始文本</param>
     /// <returns>（说话者名，内容）</returns>
-    private (string, string) ParseDialogueText(string text)
+    private (string, string) ParseDialogueText(string text,int index = 0)
     {
         if (string.IsNullOrEmpty(text))
         {
             return ("未知", string.Empty);
         }
 
-        int colonIndex = text.IndexOf('：');
-        // 无冒号 → 格式错误
-        if (colonIndex <= 0 || colonIndex >= text.Length - 1)
+        var speakerName = string.Empty;
+        var content = string.Empty;
+        if (GlobalData.TalkSystem.useNewSys)
         {
-            Debug.LogWarning($"对话文本格式错误（缺少中文冒号）：{text}", this);
-            return ("未知", text);
+            content = text;
+            speakerName = _showingManager.data[index].speaker.ToString();
         }
+        else
+        {
+            int colonIndex = text.IndexOf('：');
+            // 无冒号 → 格式错误
+            if (colonIndex <= 0 || colonIndex >= text.Length - 1)
+            {
+                Debug.LogWarning($"对话文本格式错误（缺少中文冒号）：{text}", this);
+                return ("未知", text);
+            }
 
-        // 解析说话者和内容
-        string speakerName = text.Substring(0, colonIndex).Trim();
-        string content = text.Substring(colonIndex + 1).Trim();
+            // 解析说话者和内容
+            speakerName = text.Substring(0, colonIndex).Trim();
+            content = text.Substring(colonIndex + 1).Trim();
+        }
+        
+        
         return (speakerName, content);
     }
 

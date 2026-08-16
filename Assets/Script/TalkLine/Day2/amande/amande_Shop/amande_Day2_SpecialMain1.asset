@@ -17,11 +17,208 @@ MonoBehaviour:
   - ${LockSwitchStage}
   - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u2026\u2026@{3}"
-  - "\u963F\u66FC\u5FB7\uFF1A\u6211\u6CA1\u60F3\u5230\u4F60\u4F1A\u8FD9\u4E48\u505A\u3002"
+  - ->p
+  - CG6
+  - "A_\u4F60\u4EEC\u4E4B\u95F4\u662F\u826F\u4E45\u7684\u6C89\u9ED8\u3002\u4F60\u770B\u7740\u5979\uFF0C\u5979\u7684\u8868\u60C5\u524D\u6240\u672A\u6709\u7684\u60B2\u4F24\u3002"
+  - "A_\u201C\u6211\u6CA1\u60F3\u5230\u4F60\u4F1A\u8FD9\u4E48\u505A\u3002\u201D\u963F\u66FC\u5FB7\u6700\u7EC8\u5F00\u53E3\u8BF4\u9053\u3002"
+  - "A_\u5979\u6216\u8BB8\u60F3\u4E86\u5F88\u591A\u4E1C\u897F\uFF0C\u6216\u8BB8\u4EC0\u4E48\u90FD\u6CA1\u60F3\uFF0C\u53EA\u662F\u8F7B\u8F7B\u8BF4\u4E86\u8FD9\u6837\u4E00\u53E5\u8BDD\u3002"
+  - 
+  - HideCg
+  - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u539F\u6765\u4F60\u662F\u4E3A\u4E86\u8FD9\u4E2A\u624D\u7559\u4E0B\u4ED6\u4EEC\u7684\u5C38\u4F53\u7684\u3002"
   - "\u963F\u66FC\u5FB7\uFF1A\u2026\u2026"
   - "\u963F\u66FC\u5FB7\uFF1A\u5176\u5B9E\uFF0C\u4F60\u65E9\u5C31\u77E5\u9053\u8FD9\u4EF6\u4E8B\u4F1A\u53D1\u751F\uFF0C\u5BF9\u5417\uFF1F"
   - ${Choice}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 2a0000001b0000001a000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u2026\u2026"
+    en: ...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 1
+    cgNum: 6
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4F60\u4EEC\u4E4B\u95F4\u662F\u826F\u4E45\u7684\u6C89\u9ED8\u3002\u4F60\u770B\u7740\u5979\uFF0C\u5979\u7684\u8868\u60C5\u524D\u6240\u672A\u6709\u7684\u60B2\u4F24\u3002"
+    en: There is a long silence between you. You look at her. Her expression is sadder
+      than you have ever seen it.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 6
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u201C\u6211\u6CA1\u60F3\u5230\u4F60\u4F1A\u8FD9\u4E48\u505A\u3002\u201D\u963F\u66FC\u5FB7\u6700\u7EC8\u5F00\u53E3\u8BF4\u9053\u3002"
+    en: '"I did not expect you to do this," Amanda finally says.'
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 6
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u5979\u6216\u8BB8\u60F3\u4E86\u5F88\u591A\u4E1C\u897F\uFF0C\u6216\u8BB8\u4EC0\u4E48\u90FD\u6CA1\u60F3\uFF0C\u53EA\u662F\u8F7B\u8F7B\u8BF4\u4E86\u8FD9\u6837\u4E00\u53E5\u8BDD\u3002"
+    en: Maybe she thought about many things. Maybe she thought about nothing at all.
+      She only says that softly.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 6
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3d000000
+    onlyCode: 1
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 6
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u539F\u6765\u4F60\u662F\u4E3A\u4E86\u8FD9\u4E2A\u624D\u7559\u4E0B\u4ED6\u4EEC\u7684\u5C38\u4F53\u7684\u3002"
+    en: So this is why you kept their bodies.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 6
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u2026\u2026"
+    en: ...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 6
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u5176\u5B9E\uFF0C\u4F60\u65E9\u5C31\u77E5\u9053\u8FD9\u4EF6\u4E8B\u4F1A\u53D1\u751F\uFF0C\u5BF9\u5417\uFF1F"
+    en: Actually, you knew this would happen from the beginning, right?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 6
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 6
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   Option1: {fileID: 11400000, guid: ce9fe81bcf093be47956a48dbf4b9a52, type: 2}
   Option2: {fileID: 11400000, guid: cfd1c7b010cca14428e0add7499188ad, type: 2}
   Option3: {fileID: 0}
@@ -29,5 +226,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

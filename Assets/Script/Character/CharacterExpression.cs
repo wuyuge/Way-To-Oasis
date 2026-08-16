@@ -151,6 +151,20 @@ public class CharacterExpression : MonoBehaviour
         return true;
     }
 
+    public void SetExpression(string name,int index)
+    {
+        foreach (var container in ExpressionContainers)
+        {
+            if (container.characterName == name)
+            {
+                foreach (var image in container.relatedImages)
+                {
+                    image.sprite = container.expressions[index - 1].sprite;
+                }
+            }
+        }
+    }
+
     /// <summary>
     /// 重新初始化配置（用于动态修改配置后刷新）
     /// </summary>

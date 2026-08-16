@@ -18,6 +18,14 @@ MonoBehaviour:
   - ${LockSwitchStage}
   - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u2026\u2026\u6211\u65E0\u6CD5\u63A5\u53D7\u4F60\u7684\u6240\u4F5C\u6240\u4E3A\u3002@{7}"
+  - ->p
+  - CG6
+  - "A_\u4F60\u770B\u7740\u5979\uFF0C\u5979\u7684\u8868\u60C5\u524D\u6240\u672A\u6709\u7684\u60B2\u4F24\u3002\u5373\u4F7F\u5728\u4F60\u4EEC\u8FF7\u5931\u7684\u65E5\u5B50\u91CC\u5979\u603B\u4F1A\u8FD9\u6837\uFF0C\u4F46\u6CA1\u6709\u4E00\u6B21\u8FD9\u6837\u5730\u4F7F\u4EBA\u96BE\u8FC7\u3002"
+  - "A_\u201C\u6211\u4E3A\u6211\u7684\u9009\u62E9\u800C\u611F\u5230\u540E\u6094\u3002\u201D\u5979\u7684\u58F0\u97F3\u8F7B\u5F97\u4F60\u51E0\u4E4E\u6CA1\u6709\u542C\u6E05\u3002"
+  - "A_\u5979\u6216\u8BB8\u60F3\u4E86\u5F88\u591A\u4E1C\u897F\uFF0C\u6216\u8BB8\u4EC0\u4E48\u90FD\u6CA1\u60F3\uFF0C\u4F46\u4F60\u90FD\u65E0\u4ECE\u5F97\u77E5\u4E86\u3002"
+  - 
+  - HideCg
+  - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u6211\u90A3\u65F6\u76F8\u4FE1\u4E86\u4F60\uFF0C\u7B54\u5E94\u4E86\u4F60\u7684\u8BF7\u6C42\uFF0C\u6CA1\u6709\u5728\u6240\u6709\u4EBA\u9762\u524D\u63ED\u9732\u4F60\u7684\u771F\u9762\u76EE\u3002"
   - "\u963F\u66FC\u5FB7\uFF1A\u2026\u2026\u76F4\u5230\u73B0\u5728\u6211\u624D\u610F\u8BC6\u5230\u6211\u505A\u51FA\u4E86\u4E00\u4E2A\u591A\u4E48\u9519\u8BEF\u7684\u51B3\u5B9A\u3002"
   - "\u963F\u66FC\u5FB7\uFF1A\u6211\u66FE\u7ECF\u60F3\u8981\u4FDD\u5168\u6240\u6709\u4EBA\uFF0C\u4FDD\u5168\u66F4\u591A\u4EBA\u2026\u2026\u81F3\u5C11\u4FDD\u5168\u81EA\u5DF1\u6D3B\u4E0B\u53BB\u3002\u5230\u5934\u6765\u5374\u53D1\u73B0\u65E0\u8BBA\u6211\u9009\u62E9\u4E86\u4EC0\u4E48\uFF0C\u90FD\u96BE\u9003\u6B7B\u4EA1\u7684\u547D\u8FD0\u3002@{3}"
@@ -33,6 +41,353 @@ MonoBehaviour:
   - ${CloseCharacterTalkBox}
   - ${OpenSwitchStage}
   - ${DownTalkBox}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 2a0000001b0000001a000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u2026\u2026\u6211\u65E0\u6CD5\u63A5\u53D7\u4F60\u7684\u6240\u4F5C\u6240\u4E3A\u3002"
+    en: ...I cannot accept what you did.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 1
+    cgNum: 6
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4F60\u770B\u7740\u5979\uFF0C\u5979\u7684\u8868\u60C5\u524D\u6240\u672A\u6709\u7684\u60B2\u4F24\u3002\u5373\u4F7F\u5728\u4F60\u4EEC\u8FF7\u5931\u7684\u65E5\u5B50\u91CC\u5979\u603B\u4F1A\u8FD9\u6837\uFF0C\u4F46\u6CA1\u6709\u4E00\u6B21\u8FD9\u6837\u5730\u4F7F\u4EBA\u96BE\u8FC7\u3002"
+    en: You look at her. Her expression is sadder than you have ever seen it. Even
+      during the days when you were lost, she often looked like this, but never once
+      in a way that hurt so much to see.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u201C\u6211\u4E3A\u6211\u7684\u9009\u62E9\u800C\u611F\u5230\u540E\u6094\u3002\u201D\u5979\u7684\u58F0\u97F3\u8F7B\u5F97\u4F60\u51E0\u4E4E\u6CA1\u6709\u542C\u6E05\u3002"
+    en: '"I regret my choice." Her voice is so soft that you almost do not hear it.'
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u5979\u6216\u8BB8\u60F3\u4E86\u5F88\u591A\u4E1C\u897F\uFF0C\u6216\u8BB8\u4EC0\u4E48\u90FD\u6CA1\u60F3\uFF0C\u4F46\u4F60\u90FD\u65E0\u4ECE\u5F97\u77E5\u4E86\u3002"
+    en: Maybe she thought about many things. Maybe she thought about nothing at all.
+      But you have no way of knowing anymore.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6211\u90A3\u65F6\u76F8\u4FE1\u4E86\u4F60\uFF0C\u7B54\u5E94\u4E86\u4F60\u7684\u8BF7\u6C42\uFF0C\u6CA1\u6709\u5728\u6240\u6709\u4EBA\u9762\u524D\u63ED\u9732\u4F60\u7684\u771F\u9762\u76EE\u3002"
+    en: I believed you then. I agreed to your request, and I did not expose your
+      true face in front of everyone.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u2026\u2026\u76F4\u5230\u73B0\u5728\u6211\u624D\u610F\u8BC6\u5230\u6211\u505A\u51FA\u4E86\u4E00\u4E2A\u591A\u4E48\u9519\u8BEF\u7684\u51B3\u5B9A\u3002"
+    en: ...Only now do I realize what a terrible mistake I made.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6211\u66FE\u7ECF\u60F3\u8981\u4FDD\u5168\u6240\u6709\u4EBA\uFF0C\u4FDD\u5168\u66F4\u591A\u4EBA\u2026\u2026\u81F3\u5C11\u4FDD\u5168\u81EA\u5DF1\u6D3B\u4E0B\u53BB\u3002\u5230\u5934\u6765\u5374\u53D1\u73B0\u65E0\u8BBA\u6211\u9009\u62E9\u4E86\u4EC0\u4E48\uFF0C\u90FD\u96BE\u9003\u6B7B\u4EA1\u7684\u547D\u8FD0\u3002"
+    en: I once wanted to protect everyone, protect more people... or at least protect
+      myself and survive. In the end, I discovered that no matter what I chose, I
+      could not escape the fate of death.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u5728\u4F60\u773C\u91CC\uFF0C\u6211\u4EEC\u8FD9\u4E9B\u4EBA\u90FD\u662F\u4EC0\u4E48\u2026\u2026"
+    en: In your eyes, what are we?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u597D\u7528\u7684\u5DE5\u5177\uFF0C\u8FD8\u662F\u53EF\u4F9B\u4EA4\u6362\u7684\u540E\u5907\u8D27\u7269\uFF1F"
+    en: Useful tools? Or reserve goods that can be exchanged?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4F60\u53EF\u4EE5\u4E3A\u4E86\u751F\u5B58\u727A\u7272\u4E00\u5207\uFF0C\u4E0D\u662F\u5417\uFF1F"
+    en: You can sacrifice everything for survival, can you not?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6D3B\u4E0B\u53BB\u7684\u53EF\u4EE5\u6CA1\u6709\u4EFB\u4F55\u4EBA\uFF0C\u4F46\u4E00\u5B9A\u6709\u4F60\u81EA\u5DF1\u3002"
+    en: No one else has to survive, but you yourself must.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4F60\u6CA1\u6709\u9519\u3002"
+    en: You are not wrong.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6211\u77E5\u9053\u8FD9\u4E0D\u662F\u4F60\u7684\u672C\u610F\uFF0C\u6CA1\u6709\u4EBA\u5E0C\u671B\u8FD9\u6837\u3002"
+    en: I know this was not what you wanted. No one wanted this.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4F46\u6211\u53EA\u662F\u96BE\u8FC7\uFF0C\u96BE\u8FC7\u5F88\u591A\u4E8B\u60C5\u3002"
+    en: But I am only sad. Sad about so many things.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u603B\u6709\u4E00\u5929\uFF0C\u6211\u4EEC\u90FD\u4F1A\u4E3A\u81EA\u5DF1\u7684\u9009\u62E9\u4ED8\u51FA\u4EE3\u4EF7\u3002"
+    en: One day, all of us will pay the price for our choices.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 1400000023000000160000003a000000
+    onlyCode: 0
+    speaker: 1
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -40,5 +395,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

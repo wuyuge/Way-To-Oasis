@@ -21,6 +21,70 @@ MonoBehaviour:
   - "\u6D1B\u5C14\u574E\uFF1A\u2026\u2026\u961F\u957F\u5BF9\u6211\u5F88\u597D\uFF0C\u6211\u4E0D\u5E0C\u671B\u4ED6\u7684\u9057\u4F53\u518D\u53D7\u5230\u4EC0\u4E48\u635F\u5BB3\u3002"
   - "\u6D1B\u5C14\u574E\uFF1A\u5982\u679C\u53EF\u4EE5\u7684\u8BDD\uFF0C\u6211\u60F3\u628A\u961F\u957F\u7684\u9AA8\u7070\u5E26\u56DE\u53BB\u2026\u2026\u81F3\u5C11\u4E0D\u80FD\u8BA9\u4ED6\u7559\u5728\u8FD9\u4E2A\u5730\u65B9\u3002@{1}"
   - ${End}
+  data:
+  - cn: "\u5904\u7406\u9057\u4F53\u7684\u610F\u89C1"
+    en: Opinion on handling the body
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u6211\u60F3\u95EE\u95EE\u4F60\u5BF9\u5982\u4F55\u5904\u7406\u8001\u961F\u957F\u9057\u4F53\u8FD9\u4EF6\u4E8B\u7684\u610F\u89C1\u3002"
+    en: I want to ask for your opinion on how we should deal with the old captain's
+      body.
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u6211\u7684\u610F\u89C1\u5417\uFF1F"
+    en: My opinion?
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+  - cn: "\u2026\u2026\u961F\u957F\u5BF9\u6211\u5F88\u597D\uFF0C\u6211\u4E0D\u5E0C\u671B\u4ED6\u7684\u9057\u4F53\u518D\u53D7\u5230\u4EC0\u4E48\u635F\u5BB3\u3002"
+    en: ...The captain treated me very well. I do not want his body to suffer any
+      more damage.
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u5982\u679C\u53EF\u4EE5\u7684\u8BDD\uFF0C\u6211\u60F3\u628A\u961F\u957F\u7684\u9AA8\u7070\u5E26\u56DE\u53BB\u2026\u2026\u81F3\u5C11\u4E0D\u80FD\u8BA9\u4ED6\u7559\u5728\u8FD9\u4E2A\u5730\u65B9\u3002"
+    en: If possible, I want to bring the captain's ashes back... At the very least,
+      we cannot let him stay in this place.
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 1
+    showCg: 0
+    cgNum: 0
+  - cn: 
+    en: 
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 0
+    speaker: 5
+    expression: 1
+    showCg: 0
+    cgNum: 0
   Option1: {fileID: 11400000, guid: a71b29e4103869344a10fc00975f01f7, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -28,5 +92,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

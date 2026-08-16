@@ -28,6 +28,7 @@ public class TalkSysSwitch : MonoBehaviour,ITalkSysCore
     [Header("挂载的子命令分支")]
     private List<SwitchCommand> functionList;
 
+    
     private void Start()
     {
         for (int i = 0; i < gameObject.transform.childCount; i++)
@@ -80,8 +81,7 @@ public class TalkSysSwitch : MonoBehaviour,ITalkSysCore
     public void DoSwitchCode()
     {
         //命令命名规范  ${命令}
-        try
-        {
+        
             string curText = _talkLines[DayNum].TxtLine[Line];
             if (curText.Contains("DownTalkBox"))
             {
@@ -118,21 +118,48 @@ public class TalkSysSwitch : MonoBehaviour,ITalkSysCore
                 Debug.LogError($"标识命令不存在{curText}");
             }
             _talkSys.line++;
+            if (curText.Contains("MINI"))
+            {
+                return;
+            }
             if (_talkSys.line < _talkLines[DayNum].TxtLine.Count && 
                 _talkLines[DayNum].TxtLine[_talkSys.line].Contains("$"))
             {
                 
                 DoSwitchCode();
             }
-
-        }
-        catch (Exception e)
-        {
-            Debug.LogError(e);
-        }
+            
     }
 
- 
+    public void DoSwitchCode(string curText)
+    {
+        bool isExist = false;
+        foreach (var codes in switchCodes)
+        {
+                
+            if (codes.command == curText)
+            {
+                isExist = true;
+                for (var i = 0; i < codes.actions.Count; i++)
+                {
+                    try
+                    {
+                        codes.actions[i].Execute(codes.functions[i]);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"错误指令{curText}  索引{i} 错误类型{e}");
+                        return;
+                    }
+                }
+            }
+  
+        }
+        if (!isExist)
+        {
+            Debug.LogError($"标识命令不存在{curText}");
+        }
+    }
 
     
     

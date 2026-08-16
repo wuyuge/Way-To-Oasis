@@ -20,6 +20,7 @@ public class Book : MonoBehaviour {
     RectTransform BookPanel;
     public Sprite background;
     public List<Sprite> bookPages;
+    public List<Sprite> bookPagesEn;
     public bool interactable=true;
     public bool enableShadowEffect=true;
     //represent the index of the sprite shown in the right page
@@ -330,15 +331,15 @@ public class Book : MonoBehaviour {
         Left.rectTransform.pivot = new Vector2(0, 0);
         Left.transform.position = RightNext.transform.position;
         Left.transform.eulerAngles = new Vector3(0, 0, 0);
-        Left.sprite = (currentPage < bookPages.Count) ? bookPages[currentPage] : background;
+        Left.sprite = (currentPage < bookPages.Count) ? GlobalData.Language.isEn ? bookPagesEn[currentPage] : bookPages[currentPage] : background;
         Left.transform.SetAsFirstSibling();
         
         Right.gameObject.SetActive(true);
         Right.transform.position = RightNext.transform.position;
         Right.transform.eulerAngles = new Vector3(0, 0, 0);
-        Right.sprite = (currentPage < bookPages.Count - 1) ? bookPages[currentPage + 1] : background;
+        Right.sprite = (currentPage < bookPages.Count - 1) ? GlobalData.Language.isEn ? bookPagesEn[currentPage + 1] : bookPages[currentPage + 1] : background;
 
-        RightNext.sprite = (currentPage < bookPages.Count - 2) ? bookPages[currentPage + 2] : background;
+        RightNext.sprite = (currentPage < bookPages.Count - 2) ? GlobalData.Language.isEn ? bookPagesEn[currentPage + 2] : bookPages[currentPage + 2] : background;
 
         LeftNext.transform.SetAsFirstSibling();
         if (enableShadowEffect) Shadow.gameObject.SetActive(true);
@@ -362,7 +363,7 @@ public class Book : MonoBehaviour {
 
         Right.gameObject.SetActive(true);
         Right.transform.position = LeftNext.transform.position;
-        Right.sprite = bookPages[currentPage - 1];
+        Right.sprite = GlobalData.Language.isEn ? bookPagesEn[currentPage - 1] : bookPages[currentPage - 1];
         Right.transform.eulerAngles = new Vector3(0, 0, 0);
         Right.transform.SetAsFirstSibling();
 
@@ -370,9 +371,9 @@ public class Book : MonoBehaviour {
         Left.rectTransform.pivot = new Vector2(1, 0);
         Left.transform.position = LeftNext.transform.position;
         Left.transform.eulerAngles = new Vector3(0, 0, 0);
-        Left.sprite = (currentPage >= 2) ? bookPages[currentPage - 2] : background;
+        Left.sprite = (currentPage >= 2) ? GlobalData.Language.isEn ? bookPagesEn[currentPage - 2] : bookPages[currentPage - 2] : background;
 
-        LeftNext.sprite = (currentPage >= 3) ? bookPages[currentPage - 3] : background;
+        LeftNext.sprite = (currentPage >= 3) ? GlobalData.Language.isEn ? bookPagesEn[currentPage - 3] : bookPages[currentPage - 3] : background;
 
         RightNext.transform.SetAsFirstSibling();
         if (enableShadowEffect) ShadowLTR.gameObject.SetActive(true);
@@ -407,8 +408,8 @@ public class Book : MonoBehaviour {
     Coroutine currentCoroutine;
     void UpdateSprites()
     {
-        LeftNext.sprite= (currentPage > 0 && currentPage <= bookPages.Count) ? bookPages[currentPage-1] : background;
-        RightNext.sprite=(currentPage>=0 &&currentPage<bookPages.Count) ? bookPages[currentPage] : background;
+        LeftNext.sprite= (currentPage > 0 && currentPage <= bookPages.Count) ? GlobalData.Language.isEn ? bookPagesEn[currentPage - 1] : bookPages[currentPage - 1] : background;
+        RightNext.sprite=(currentPage>=0 &&currentPage<bookPages.Count) ? GlobalData.Language.isEn ? bookPagesEn[currentPage] : bookPages[currentPage] : background;
     }
     public void TweenForward()
     {

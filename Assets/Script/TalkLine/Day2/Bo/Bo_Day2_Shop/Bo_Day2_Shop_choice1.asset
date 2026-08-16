@@ -19,6 +19,71 @@ MonoBehaviour:
   - ->c
   - "\u535A\u91D1\u68EE\uFF1A\u95ED\u5634\uFF0C\u6211\u4E0D\u4F1A\u76F8\u4FE1\u4F60\u7684\u9B3C\u8BDD\u4E86\u3002"
   - ${End}
+  data:
+  - cn: "\u522B\u65E0\u9009\u62E9"
+    en: There was no other choice
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8FD9\u662F\u552F\u4E00\u7684\u9009\u62E9\u3002"
+    en: There was no other choice.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u95ED\u5634\uFF0C\u6211\u4E0D\u4F1A\u76F8\u4FE1\u4F60\u7684\u9B3C\u8BDD\u4E86\u3002"
+    en: Shut up. I will not believe your nonsense anymore.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: a7826e1ebc361464887210fbaf3e7e79, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -26,5 +91,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

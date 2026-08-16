@@ -43,6 +43,354 @@ MonoBehaviour:
   - "\u535A\u91D1\u68EE\uFF1A\u6211\u6CA1\u610F\u89C1\u3002@{5}"
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 2a0000001b0000003a000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u961F\u957F\u6B7B\u4E86\u3002"
+    en: The captain passed away.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u2026\u55EF\uFF0C\u6211\u77E5\u9053\u4E86\u3002"
+    en: ...Mm. I see.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "(\u70B9\u70B9\u5934)"
+    en: (nods)
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u65E2\u7136\u662F\u4F60\u6765\u901A\u77E5\u8FD9\u4EF6\u4E8B\uFF0C\u770B\u6765\u4F60\u4E4B\u540E\u5C31\u662F\u65B0\u961F\u957F\u4E86\u3002"
+    en: Since you are the one telling us, it looks like you will be the new captain
+      from now on.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4E4B\u540E\u7684\u4FA6\u67E5\u7ED3\u679C\u6211\u4EEC\u4F1A\u76F4\u63A5\u5411\u4F60\u6C47\u62A5\u3002"
+    en: We will report the scouting results directly to you after this.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u5173\u4E8E\u8FD9\u4EF6\u4E8B\uFF0C\u4F60\u4EEC\u6CA1\u6709\u4EC0\u4E48\u60F3\u8BF4\u7684\u5417\uFF1F"
+    en: Do you have nothing to say about this?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6CA1\u6709\u65F6\u95F4\u60B2\u4F24\u4E86\uFF0C\u518D\u8FD9\u6837\u4E0B\u53BB\u6211\u4EEC\u5F88\u5FEB\u5C31\u4F1A\u6B65\u4E86\u4ED6\u7684\u540E\u5C18\u3002"
+    en: There is no time to grieve. If this continues, we will follow in his footsteps
+      very soon.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u7684\u786E\u5982\u6B64\uFF0C\u90A3\u5C31\u5148\u6C47\u62A5\u60C5\u51B5\u5427\u3002"
+    en: True. Then report the situation first.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u5F88\u9057\u61BE\uFF0C\u4ECA\u5929\u4F9D\u65E7\u65E0\u6CD5\u63A5\u6536\u5230\u4EFB\u4F55\u4FE1\u53F7\u3002"
+    en: Unfortunately, we still cannot receive any signal today.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6211\u4EEC\u5728\u6301\u7EED\u4E0D\u65AD\u5730\u53D1\u51FA\u8BAF\u606F\uFF0C\u73B0\u5728\u53EA\u80FD\u7948\u7977\u6551\u63F4\u961F\u6216\u662F\u4EFB\u4F55\u5176\u4ED6\u5546\u961F\u53EF\u4EE5\u63A5\u6536\u5230\u5E76\u63D0\u4F9B\u5E2E\u52A9\u3002"
+    en: "We\u2019ve been sending messages nonstop, praying rescue teams or caravans
+      get them and help."
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u81F3\u4E8E\u5176\u4ED6\u65B9\u9762\u2026"
+    en: As for the other matters...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u5468\u56F4\u6CA1\u6709\u4EFB\u4F55\u751F\u7269\u6D3B\u52A8\u7684\u75D5\u8FF9\uFF0C\u8FD9\u91CC\u662F\u5F7B\u5E95\u7684\u8352\u6F20\u3002"
+    en: There are no signs of any biological activity nearby. This place is a complete
+      desert.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6211\u77E5\u9053\u4E86\u3002"
+    en: I see.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u8F9B\u82E6\u4E86\u4E24\u4F4D\uFF0C\u8FD9\u5DF2\u7ECF\u662F\u6211\u4EEC\u5728\u5BFB\u627E\u51FA\u8DEF\u7684\u540C\u65F6\u80FD\u505A\u7684\u4E3A\u6570\u4E0D\u591A\u7684\u52AA\u529B\u4E86\u3002"
+    en: Thank you both. This is already one of the few things we can do while we
+      search for a way out.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u987A\u5E26\u4E00\u63D0\uFF0C\u6211\u60F3\u95EE\u95EE\u4F60\u4EEC\u5BF9\u5982\u4F55\u5904\u7406\u8001\u961F\u957F\u9057\u4F53\u8FD9\u4EF6\u4E8B\u7684\u610F\u89C1\u3002"
+    en: By the way, I want to ask for your opinions on how we should deal with the
+      old captain's body.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u968F\u4FBF\u4F60\uFF0C\u600E\u4E48\u5904\u7406\u90FD\u884C\u3002\u73B0\u5728\u6CA1\u65F6\u95F4\u987E\u5FCC\u90A3\u4E48\u591A\u4E86\u3002"
+    en: Do whatever you want. However you deal with it is fine. There is no time
+      to worry about so many things now.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6211\u6CA1\u610F\u89C1\u3002"
+    en: I have no objection.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 1400000016000000
+    onlyCode: 1
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 1400000016000000
+    onlyCode: 1
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 11400000, guid: be27a378a25bb2c4188c88b8b2dda662, type: 2}
@@ -50,5 +398,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

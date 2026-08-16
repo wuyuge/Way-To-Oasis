@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19373c80c27360d40b0fc11030b7b54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveManager: {fileID: 0}
   num: 1
   deleteTips: {fileID: 0}
   fatherObj: {fileID: 3905173970749969955}
@@ -416,6 +417,7 @@ GameObject:
   - component: {fileID: 5595239971083223058}
   - component: {fileID: 868926819891090910}
   - component: {fileID: 4357921179596496564}
+  - component: {fileID: 2981530327965069663}
   m_Layer: 5
   m_Name: SaveNum
   m_TagString: Untagged
@@ -539,6 +541,29 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2981530327965069663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5653137769287279546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702b120eed9791e4b914863504465eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: {fileID: 11400000, guid: 824057b5fd1df75479a56df414be097e, type: 2}
+  cn: "\u680F\u4F4D:4"
+  en: Slot:4
+  isImage: 0
+  image: {fileID: 0}
+  cnImage: {fileID: 0}
+  enImage: {fileID: 0}
+  isAnim: 0
+  isOptions: 0
+  cnOptions: []
+  enOptions: []
 --- !u!1 &6891996399934164967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,22 +1164,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainInfo: {fileID: 4875311489568363609}
-  secInfo: {fileID: 3094304674270365815}
   timeInfo: {fileID: 3983643029060392955}
   textOnImage: {fileID: 231412880915566439}
+  saveManager: {fileID: 0}
   num: 0
   stageNames:
   - "\u5206\u914D\u8D1F\u91CD\u9636\u6BB5"
   - "\u4EA4\u8C08\u9636\u6BB5"
   - "\u5206\u914D\u98DF\u7269\u9636\u6BB5"
+  stageNamesEn:
+  - Allocate supplies
+  - Conversation
+  - Allocate food
   reportSaveIsNull: 0
   initialText:
   - 'Day{Day}   {Stage}:'
   - "\u98DF\u7269\u6570\u91CF:{Food} \u5C38\u4F53\u6570\u91CF:{Body}"
   - '{Time}'
   - Day{Day}
-  saveButton: {fileID: 0}
-  loadButton: {fileID: 0}
+  language: {fileID: 11400000, guid: 824057b5fd1df75479a56df414be097e, type: 2}
 --- !u!114 &3204646798560356684
 MonoBehaviour:
   m_ObjectHideFlags: 0

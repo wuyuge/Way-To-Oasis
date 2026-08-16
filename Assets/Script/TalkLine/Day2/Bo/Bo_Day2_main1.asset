@@ -22,6 +22,83 @@ MonoBehaviour:
   - ${OpenSwitchStage}
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}
+  data:
+  - cn: "\u2026\u2026\u4F60\u6307\u671B\u6211\u8BF4\u4EC0\u4E48\uFF1F"
+    en: ...What do you expect me to say?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u77E5\u9053\u4F60\u5E72\u4E86\u4E9B\u4EC0\u4E48\u3002"
+    en: I know what you did.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u5176\u4ED6\u4EBA\u7684\u6B7B\u6D3B\u6211\u7BA1\u4E0D\u7740\uFF0C\u4F46\u4F60\u6700\u597D\u6709\u70B9\u5206\u5BF8\u3002"
+    en: I cannot control whether the others live or die, but you had better know
+      where the line is.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u522B\u628A\u4E3B\u610F\u6253\u5230\u4E0D\u8BE5\u6253\u7684\u4EBA\u8EAB\u4E0A\u3002"
+    en: Do not set your sights on people you should not touch.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: Do not set your sights on people you should not touch.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 230000001400000016000000
+    onlyCode: 1
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -29,5 +106,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

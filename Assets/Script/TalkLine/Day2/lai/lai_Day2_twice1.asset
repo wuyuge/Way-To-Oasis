@@ -15,9 +15,59 @@ MonoBehaviour:
   TxtLine:
   - ->p
   - "\u83B1\u6587\u6B63\u5728\u641C\u7D22\u201C\u5E2E\u52A9\u76EE\u6807\u201D\u3002"
+  - "\u83B1\u6587\u6B63\u5728\u641C\u7D22\u201C\u5E2E\u52A9\u76EE\u6807\u201D\u3002"
   - ${OpenSwitchStage}
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}
+  data:
+  - cn: "\u83B1\u6587\u6B63\u5728\u641C\u7D22\u201C\u5E2E\u52A9\u76EE\u6807\u201D\u3002"
+    en: Levine is searching for a "target to help."
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u83B1\u6587\u6B63\u5728\u641C\u7D22\u201C\u5E2E\u52A9\u76EE\u6807\u201D\u3002"
+    en: Levine is searching for a "target to help."
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 230000001400000016000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -25,5 +75,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

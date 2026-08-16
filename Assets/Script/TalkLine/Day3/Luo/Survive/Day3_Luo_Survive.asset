@@ -18,12 +18,78 @@ MonoBehaviour:
   - "\u6D1B\u5C14\u574E\uFF1A\u4E0B\u2026\u4E0B\u5348\u597D\uFF0C\u961F\u957F\u3002@{5}"
   - "\u6D1B\u5C14\u574E\uFF1A\u627E\u6211\u6709\u4EC0\u4E48\u4E8B\u5417\uFF1F"
   - ${Choice}
+  data:
+  - cn: "\u4E0B\u2026\u4E0B\u5348\u597D\uFF0C\u961F\u957F\u3002"
+    en: G-good afternoon, Captain.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4E0B\u2026\u4E0B\u5348\u597D\uFF0C\u961F\u957F\u3002"
+    en: G-good afternoon, Captain.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u627E\u6211\u6709\u4EC0\u4E48\u4E8B\u5417\uFF1F"
+    en: ' Is there something you need from me?'
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: c70937c282b497344a5ce2ad18ab1a92, type: 2}
-  Option2: {fileID: 11400000, guid: 2f0f0d2782a5ca84bb37406709241f1c, type: 2}
+  Option2: {fileID: 11400000, guid: b92ae569a58e54e48b1dfca5e534094c, type: 2}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

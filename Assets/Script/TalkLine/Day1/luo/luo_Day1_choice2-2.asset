@@ -22,12 +22,89 @@ MonoBehaviour:
   - ${CloseCharacterTalkBox}
   - ${OpenSwitchStage}
   - ${DownTalkBox}
-  Option1: {fileID: 11400000, guid: 05d851f3e26fe5d4aa8c0464b14460fd, type: 2}
+  data:
+  - cn: "\u4E0D\u6253\u6270\u4ED6"
+    en: Do not disturb him
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u8FD8\u662F\u4E0D\u6253\u6270\u4ED6\u4E86\u3002"
+    en: I'll not disturb him anymore.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u54E6\u597D\u2026\u2026\u8F9B\u82E6\u4E86\u961F\u957F\u3002"
+    en: Oh, okay... Thank you for your hard work, Captain.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 0a000000
+    onlyCode: 0
+    speaker: 5
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 140000002300000016000000
+    onlyCode: 0
+    speaker: 5
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 11400000, guid: 5bf8990da28b85248961bbd1708d308e, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

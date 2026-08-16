@@ -13,6 +13,7 @@ public class New_Game : MonoBehaviour
     public Manager DeadName;
     public Manager Day0_Talk;
     public AudioSource Start_Audio;
+    public LuoTalkData luoMini;
     public void Clik()
     {
         if (is_New)
@@ -32,6 +33,8 @@ public class New_Game : MonoBehaviour
         {
             m.GeneralBool = false;
         }
+
+        luoMini.showed = false;
         Start_Audio.Play();
         Day0_Talk.Weight = 0;
     }

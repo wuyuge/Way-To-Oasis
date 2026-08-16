@@ -20,6 +20,87 @@ MonoBehaviour:
   - "\u6D1B\u5C14\u574E\uFF1A\u6211\u4E5F\u89C9\u5F97\uFF0C\u81F3\u5C11\u53EF\u4EE5\u7ED9\u4EBA\u4E00\u70B9\u5FC3\u7406\u5B89\u6170\u3002"
   - "\u6D1B\u5C14\u574E\uFF1A\u53CD\u6B63\uFF0C\u6211\u73B0\u5728\u4E5F\u6539\u53D8\u4E0D\u4E86\u522B\u7684\u4EC0\u4E48\u4E86\u3002@{1}"
   - ${End}
+  data:
+  - cn: "\u5F88\u6709\u8DA3\u7684\u8BF4\u6CD5"
+    en: That is an interesting saying
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5F88\u6709\u8DA3\u7684\u8BF4\u6CD5\u3002"
+    en: That is an interesting saying.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u4E5F\u89C9\u5F97\uFF0C\u81F3\u5C11\u53EF\u4EE5\u7ED9\u4EBA\u4E00\u70B9\u5FC3\u7406\u5B89\u6170\u3002"
+    en: I think so too. At least it gives people a little comfort.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u53CD\u6B63\uFF0C\u6211\u73B0\u5728\u4E5F\u6539\u53D8\u4E0D\u4E86\u522B\u7684\u4EC0\u4E48\u4E86\u3002"
+    en: In any case, I cannot change anything else now.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 5
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 28888f6a6ad859e49b89e0178a57df47, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -27,5 +108,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

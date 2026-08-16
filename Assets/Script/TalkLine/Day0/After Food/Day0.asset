@@ -55,6 +55,542 @@ MonoBehaviour:
   - "\u83B1\u6587\uFF1A\u770B\u6765\u4EE5\u540E\u5F97\u662F\u4F60\u6765\u627F\u62C5\u8FD9\u4E2A\u8D23\u4EFB\u4E86\u54AF\uFF0C{PlayerName}\u3002"
   - "\u6D1B\u5C14\u574E\uFF1A\u6211\u4E0D\u662F\u8FD9\u4E2A\u610F\u601D\u2026\u2026"
   - ${End}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 1b00000027000000140000001a00000021000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u2026"
+    en: ...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u4F1A\u6000\u5FF5\u4E9A\u6469\u65AF\u7684\u3002"
+    en: I will miss Amos.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u4E5F\u4E00\u6837\u3002"
+    en: Me too.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5567\uFF0C\u8FD9\u6837\u7684\u4EBA\u603B\u662F\u6D3B\u4E0D\u4E45\u3002"
+    en: Tsk. People like that never last long
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4ED6\u662F\u600E\u4E48\u6B7B\u7684\uFF0C\u963F\u66FC\u5FB7\uFF1F"
+    en: How did he die, Amanda?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u786E\u5B9E\u6CA1\u6709\u63D0\u8FC7\u3002"
+    en: You really did not mention it.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u662F\u6C61\u67D3\uFF0C\u4E9A\u6469\u65AF\u4E4B\u524D\u53D7\u4E86\u4F24\uFF0C\u52A0\u4E0A\u4E00\u4E9B\u522B\u7684\u56E0\u7D20\u3002"
+    en: 'It was pollution.Amos had been injured before, and with other factors compounding
+      it... '
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4ED6\u7684\u8EAB\u4F53\u6CA1\u80FD\u6491\u5230\u9884\u8BA1\u7684\u65F6\u95F4\u3002"
+    en: His body just couldn't hold out any longer.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u8FD9\u6837\u5417\u3002"
+    en: ...I see.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5148\u4E0D\u8C08\u8FD9\u4E2A\u95EE\u9898\u4E86\u3002"
+    en: Let us not talk about that for now.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u540C\u610F\u827E\u7C73\u8389\u7684\u89C2\u70B9\uFF0C\u53EA\u662F\u867D\u7136\u5730\u70B9\u548C\u65F6\u95F4\u90FD\u4E0D\u592A\u6070\u5F53\uFF0C\u4F46\u6211\u4EEC\u662F\u4E0D\u662F\u5E94\u8BE5\uFF0C\u81F3\u5C11\u548C\u4ED6\u544A\u4E2A\u522B\u3002"
+    en: I agree with Emily. But even though the place and timing are not exactly
+      right, should we at least say goodbye to him?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4E0D\u8BBA\u662F\u770B\u5728\u961F\u4F0D\uFF0C\u8FD8\u662F\u4E9A\u6469\u65AF\u672C\u4EBA\u7684\u60C5\u9762\u4E0A\u3002"
+    en: Whether for the sake of the team, or for Amos himself.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u83B1\u6587\u8BF4\u5F97\u5BF9\uFF0C\u6211\u4EEC\u9700\u8981\u4E00\u4E9B\u6170\u85C9\u3002"
+    en: Levine is right. We need some comfort.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 1
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u62FF\u51FA\u4E86\u961F\u957F\u7684\u62A4\u76EE\u955C\u653E\u5728\u4E86\u8EAB\u524D\u7684\u7A7A\u5730\u4E0A\u3002"
+    en: You take out the captain's goggles and place them on the open ground in front
+      of you.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u62A4\u76EE\u955C\u5176\u4E2D\u4E00\u5757\u955C\u7247\u5E03\u6EE1\u4E86\u88C2\u75D5\uFF0C\u968F\u7740\u4F60\u7684\u52A8\u4F5C\u53C8\u9707\u843D\u4E86\u4E00\u4E9B\u7EC6\u5C0F\u7684\u788E\u7247\u3002"
+    en: One lens of the goggles is covered with cracks. As you move, a few tiny fragments
+      fall from it.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6240\u6709\u4EBA\u90FD\u9759\u9759\u5730\u770B\u7740\u4F60\u7684\u52A8\u4F5C\uFF0C\u6CA1\u6709\u8BF4\u8BDD\u3002"
+    en: Everyone quietly watches what you are doing. No one speaks.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u2026\u6211\u8BA4\u8BC6\u4E86\u4ED6\u5F88\u4E45\u3002\u5C3D\u7BA1\u5BF9\u8FD9\u4E00\u5929\u65E9\u6709\u9884\u6599\uFF0C\u5374\u8FD8\u662F\u89C9\u5F97\u7A81\u7136\u3002"
+    en: ...I knew him for a long time. Even though I had expected this day would
+      come, it still feels sudden.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u522B\u592A\u96BE\u8FC7\u3002\u6709\u65F6\u5019\u6211\u4EEC\u53EA\u80FD\u9009\u62E9\u63A5\u53D7\u3002"
+    en: Do not be too sad. Sometimes all we can do is accept it.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u81F3\u5C11\u6211\u4EEC\u4F1A\u5E26\u7740\u8FD9\u4E2A\u8D70\u51FA\u53BB\u3002"
+    en: At least we will bring this out with us.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u771F\u662F\u9F13\u821E\u58EB\u6C14\uFF0C\u827E\u7C73\u8389\u3002"
+    en: Very inspiring, Emily.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u771F\u5FC3\u5E0C\u671B\u6211\u4EEC\u90FD\u80FD\u6D3B\u7740\u79BB\u5F00\u8FD9\u91CC\u3002"
+    en: I truly hope all of us can leave this place alive.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u5C11\u5728\u90A3\u8BF4\u8FD9\u4E9B\u3002"
+    en: ...Stop saying things like that.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8FD9\u4E0D\u662F\u633A\u597D\u7684\u561B\uFF0C\u521A\u521A\u7684\u6C14\u6C1B\u5B9E\u5728\u662F\u4F4E\u843D\u3002"
+    en: Is that not fine? The mood just now was far too low.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u55EF\uFF0C\u6D1B\u5C14\u574E\uFF1F\u4F60\u4F3C\u4E4E\u6709\u4EC0\u4E48\u60F3\u8BF4\u7684\u3002"
+    en: Mm, Lorquin? You seem to have something you want to say.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\uFF0C\u867D\u7136\u6211\u8BA4\u8BC6\u961F\u957F\u4E0D\u4E45\uFF0C\u4F46\u4ED6\u4E00\u76F4\u90FD\u5F88\u7167\u987E\u6211\u3002"
+    en: I... Although I did not know the captain for very long, he always took care
+      of me.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u771F\u7684\u5F88\u611F\u6FC0\u4ED6\uFF0C\u771F\u7684\u3002"
+    en: I am truly grateful to him. Truly.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5982\u679C\u4E0D\u662F\u961F\u957F\uFF0C\u6211\u6050\u6015\u5230\u73B0\u5728\u90FD\u6CA1\u80FD\u8DDF\u5927\u5BB6\u8BF4\u4E0A\u591A\u5C11\u8BDD\u3002"
+    en: If it were not for the captain, I probably still would not have managed to
+      say much to everyone.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u770B\u6765\u4EE5\u540E\u5F97\u662F\u4F60\u6765\u627F\u62C5\u8FD9\u4E2A\u8D23\u4EFB\u4E86\u54AF\uFF0C{PlayerName}\u3002"
+    en: Looks like you will have to take on that responsibility from now on,{PlayerName}.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u4E0D\u662F\u8FD9\u4E2A\u610F\u601D\u2026\u2026"
+    en: That is not what I meant...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: b6ec72255f4e71e4fa996785cc173920, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -62,5 +598,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

@@ -22,6 +22,88 @@ MonoBehaviour:
   - ${OpenSwitchStage}
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}
+  data:
+  - cn: "\u73B0\u5728\u60F3\u8FD9\u4E2A\u5DF2\u7ECF\u592A\u665A\u4E86"
+    en: It is too late to think about that now
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u73B0\u5728\u60F3\u8FD9\u4E2A\u5DF2\u7ECF\u592A\u665A\u4E86\u3002"
+    en: It is too late to think about that now.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u53EF\u80FD\u5C31\u662F\u6211\u8FD0\u6C14\u4E0D\u597D\u5427\uFF0C\u7B2C\u4E00\u6B21\u63A5\u4EFB\u52A1\u5C31\u9047\u89C1\u8FD9\u79CD\u4E8B\u3002"
+    en: Maybe I am just unlucky. The first time I take a commission, something like
+      this happens.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u62B1\u6B49\uFF0C\u961F\u957F\u6211\u60F3\u4E00\u4E2A\u4EBA\u5F85\u4E00\u4F1A\u3002"
+    en: Sorry, Captain. I want to be alone for a while.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 230000001400000016000000
+    onlyCode: 1
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -29,5 +111,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

@@ -19,6 +19,71 @@ MonoBehaviour:
   - ->c
   - "\u827E\u7C73\u8389\uFF1A\u5F88\u4E50\u89C2\u7684\u60F3\u6CD5\uFF0C\u961F\u4F0D\u9700\u8981\u8FD9\u6837\u7684\u6C1B\u56F4\u3002@{4}"
   - ${End}
+  data:
+  - cn: "\u6CA1\u6709\u4EC0\u4E48\u6BD4\u53D8\u5316\u66F4\u597D"
+    en: Nothing is better than change
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6CA1\u6709\u4EC0\u4E48\u6BD4\u53D8\u5316\u66F4\u597D\u3002"
+    en: Nothing is better than change.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5F88\u4E50\u89C2\u7684\u60F3\u6CD5\uFF0C\u961F\u4F0D\u9700\u8981\u8FD9\u6837\u7684\u6C1B\u56F4\u3002"
+    en: A very optimistic thought. The team needs that kind of atmosphere.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 2
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: e2e429031c4874641bd693aa32d0f703, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -26,5 +91,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

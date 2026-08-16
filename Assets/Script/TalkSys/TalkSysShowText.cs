@@ -61,6 +61,10 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
     {
         CanShowText = true;
         GlobalData.ShowText = this;
+        if (GlobalData.History == null)
+        {
+            GlobalData.History = historyManager;
+        }
     }
 
     public void Init(TalkSystem talkSys)
@@ -298,6 +302,17 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
             }
             displayText = displayText.Replace("{DeadName}", addedText);
         }
+        
+        // 旁白处理
+        if (Regex.IsMatch(displayText, AsidePattern))
+        {
+            tempHistory.IsASide = true;
+            displayText = displayText.Replace("A_", string.Empty);
+        }
+        else
+        {
+            tempHistory.IsASide = false;
+        }
 
         // 角色说话逻辑
         if (!_isPlayerTalking)
@@ -351,16 +366,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
             _miniCharacterTalkSys?.ShowAllText(charaName, string.Empty);
         }
 
-        // 旁白处理
-        if (Regex.IsMatch(displayText, AsidePattern))
-        {
-            tempHistory.IsASide = true;
-            displayText = displayText.Replace("A_", string.Empty);
-        }
-        else
-        {
-            tempHistory.IsASide = false;
-        }
+        
 
         // 历史记录存储
         if (displayText.Contains("{PlayerName}"))
@@ -404,7 +410,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
         _currentCoroutine = null;
 
         // 核心优化：自动播放改用协程，可取消
-        if (autoplay.GeneralBool && IsTalkDataValid())
+        if (autoplay.GeneralBool && IsTalkDataValid() && !GlobalData.TalkSystem.useNewSys)
         {
             if (_autoPlayCoroutine != null)
             {
@@ -490,6 +496,67 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
             ShowText();
             return;
         }
+
+        if (!_isPlayerTalking)
+        {
+            var nameAndText = HandleCharacterName(originalText);
+            displayText = nameAndText.Text;
+
+            // 表情解析
+            if (displayText.Contains("@"))
+            {
+                displayText = SetExpression(displayText, nameAndText.Name);
+            }
+            
+            if (displayText.Contains("{PlayerName}"))
+            {
+                displayText = displayText.Replace("{PlayerName}", PlayerNameBox);
+            }
+            
+            // 旁白处理
+            if (displayText.Contains("A_"))
+            {
+                displayText = displayText.Replace("A_", string.Empty);
+            }
+            
+            //替换已死亡角色名字
+            if (displayText.Contains("{DeadName}"))
+            {
+                var addedText = "";
+                var deadName = new List<string>();
+                foreach (var value in _talkSys.CharacterList)
+                {
+                    var component = value.GetComponent<Character>();
+                    if(!component.Dead) continue;
+                    deadName.Add(component.CharacterName);
+                }
+
+                for (int i = 0; i < deadName.Count; i++)
+                {
+                    addedText += deadName[i];
+                    if (i < deadName.Count)
+                    {
+                        addedText += ',';
+                    }
+                }
+                displayText = displayText.Replace("{DeadName}", addedText);
+            }
+            
+            // 迷你模式处理
+            if (MiniMode)
+            {
+                _miniCharacterTalkSys?.ShowAllText(nameAndText.Name, string.Empty);
+                _miniCharacterTalkSys?.ShowAllText(nameAndText.Name, displayText);
+                return;
+            }
+        }
+        
+        // 旁白处理
+        if (displayText.Contains("A_"))
+        {
+            displayText = displayText.Replace("A_", string.Empty);
+        }
+        
         //替换已死亡角色名字
         if (displayText.Contains("{DeadName}"))
         {
@@ -511,38 +578,6 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
                 }
             }
             displayText = displayText.Replace("{DeadName}", addedText);
-        }
-
-        if (!_isPlayerTalking)
-        {
-            var nameAndText = HandleCharacterName(originalText);
-            displayText = nameAndText.Text;
-
-            // 表情解析
-            if (displayText.Contains("@"))
-            {
-                displayText = SetExpression(displayText, nameAndText.Name);
-            }
-            
-            if (displayText.Contains("{PlayerName}"))
-            {
-                displayText = displayText.Replace("{PlayerName}", PlayerNameBox);
-            }
-            // 迷你模式处理
-            if (MiniMode)
-            {
-                _miniCharacterTalkSys?.ShowAllText(nameAndText.Name, string.Empty);
-                _miniCharacterTalkSys?.ShowAllText(nameAndText.Name, displayText);
-                return;
-            }
-        }
-        else
-        {
-            // 旁白处理
-            if (Regex.IsMatch(displayText, AsidePattern))
-            {
-                displayText = displayText.Replace("A_", string.Empty);
-            }
         }
 
         _currentTextUI.text = displayText;
@@ -713,8 +748,8 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
 
     public void CloseCg()
     {
-        cgManager?.HideCg(); // 空值保护
-        FullModeState.SetValue(false); // 新增：关闭CG时退出全屏模式
+        cgManager?.HideCg(); 
+        FullModeState.SetValue(false); // 关闭CG时退出全屏模式
     }
     #endregion
     #region 迷你游戏管理

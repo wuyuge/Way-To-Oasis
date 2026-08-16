@@ -21,6 +21,103 @@ MonoBehaviour:
   - "\u535A\u91D1\u68EE\uFF1A\u4F60\u4EE5\u4E3A\u81EA\u5DF1\u5F88\u5389\u5BB3\uFF0C{PlayerName}\uFF1F"
   - "\u535A\u91D1\u68EE\uFF1A\u53BB\u6B7B\u5427\uFF0C\u6211\u4EEC\u4ECA\u5929\u5C31\u505A\u4E2A\u4E86\u65AD\u3002"
   - ${End}
+  data:
+  - cn: "\u6211\u4E0D\u5728\u4E4E"
+    en: I do not care
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u4E0D\u5728\u4E4E\u3002"
+    en: I do not care.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5BF9\uFF0C\u6CA1\u9519\uFF0C\u4F60\u4E0D\u7528\u5728\u4E4E\uFF0C\u56E0\u4E3A\u6211\u4ECA\u5929\u5C31\u8981\u6740\u4E86\u4F60\u3002"
+    en: Right. Exactly. You do not have to care, because I am going to kill you today.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u4EE5\u4E3A\u81EA\u5DF1\u5F88\u5389\u5BB3\uFF0C{PlayerName}\uFF1F"
+    en: "You think you are impressive\uFF0C{PlayerName}\uFF1F"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u53BB\u6B7B\u5427\uFF0C\u6211\u4EEC\u4ECA\u5929\u5C31\u505A\u4E2A\u4E86\u65AD\u3002"
+    en: Go to hell! We settle this today.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 77f4627483d35d849824ef275b9e4934, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -28,5 +125,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

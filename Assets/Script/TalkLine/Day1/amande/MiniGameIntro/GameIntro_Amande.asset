@@ -20,6 +20,90 @@ MonoBehaviour:
   - "\u963F\u66FC\u5FB7\uFF1A\u5F00\u73A9\u7B11\u7684\uFF0C\u53EA\u662F\u5E0C\u671B\u4F60\u80FD\u534F\u52A9\u6211\u5B8C\u6210\u4E9B\u7B80\u5355\u7684\u5DE5\u4F5C\u3002@{5}"
   - "\u963F\u66FC\u5FB7\uFF1A\u8981\u662F\u8FD8\u6709\u522B\u7684\u4E8B\uFF0C\u4F60\u5F53\u7136\u53EF\u4EE5\u62D2\u7EDD\u3002\u6CA1\u5173\u7CFB\u7684\u3002"
   - ${Choice}
+  data:
+  - cn: "\u5BF9\u4E86\uFF0C\u4F5C\u4E3A\u961F\u957F\uFF0C\u4E0D\u5982\u4ECA\u5929\u5C31\u6765\u5C65\u884C\u4E00\u4E0B\u8D23\u4EFB\u5427\uFF1F"
+    en: Oh, by the way, as the captain, why not fulfill one of your responsibilities
+      today?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5BF9\u4E86\uFF0C\u4F5C\u4E3A\u961F\u957F\uFF0C\u4E0D\u5982\u4ECA\u5929\u5C31\u6765\u5C65\u884C\u4E00\u4E0B\u8D23\u4EFB\u5427\uFF1F"
+    en: Oh, by the way, as the captain, why not fulfill one of your responsibilities
+      today?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5F00\u73A9\u7B11\u7684\uFF0C\u53EA\u662F\u5E0C\u671B\u4F60\u80FD\u534F\u52A9\u6211\u5B8C\u6210\u4E9B\u7B80\u5355\u7684\u5DE5\u4F5C\u3002"
+    en: I am joking. I only hope you can help me finish some simple work.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8981\u662F\u8FD8\u6709\u522B\u7684\u4E8B\uFF0C\u4F60\u5F53\u7136\u53EF\u4EE5\u62D2\u7EDD\u3002\u6CA1\u5173\u7CFB\u7684\u3002"
+    en: If you still have other things to do, of course you can refuse. It is all
+      right.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 26382b02e6dc53546ae9f73691e04de7, type: 2}
   Option2: {fileID: 11400000, guid: b17fdf43fd6dc6d4594928b6189812fe, type: 2}
   Option3: {fileID: 0}
@@ -27,5 +111,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

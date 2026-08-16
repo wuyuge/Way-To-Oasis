@@ -19,6 +19,37 @@ MonoBehaviour:
   - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u5DF2\u7ECF\u901A\u77E5\u6240\u6709\u4EBA\u4E86\u5417\uFF1F@{7}"
   - ${Choice}
+  data:
+  - cn: 
+    en: 
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 1a0000002a0000001b000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u5DF2\u7ECF\u901A\u77E5\u6240\u6709\u4EBA\u4E86\u5417\uFF1F"
+    en: Have you told everyone already?
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+  - cn: 
+    en: 
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
   Option1: {fileID: 11400000, guid: 5bc4df577b666b94390d45e244191498, type: 2}
   Option2: {fileID: 11400000, guid: 4a6ef54ab22631a4d8ac7e47d3cf6091, type: 2}
   Option3: {fileID: 0}
@@ -28,3 +59,4 @@ MonoBehaviour:
   Weight_tag: 0
   Eat: 0
   GeneralBool: 0
+  isEn: 0

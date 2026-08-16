@@ -27,9 +27,17 @@ public class ButtonSelect : MonoBehaviour
     {
         TalkSystem.on = true;
         TalkSystem.line = 1;
+        if (TalkSystem.useNewSys)
+        {
+            GlobalData.NewTalkSysShowText.SetChoiceLine(1,false);
+            GlobalData.NewTalkSysShowText.UnLockOutPut();
+        }
         try
         {
-            playerTalkBack.SetActive(true);
+            if (playerTalkBack != null)
+            {
+                playerTalkBack.SetActive(true);
+            }
         }
         catch (Exception e)
         {
@@ -51,12 +59,27 @@ public class ButtonSelect : MonoBehaviour
         try
         {
             textbox = textBox;
-            buttonText.text = textbox.TxtLine[0];
+            if (GlobalData.TalkSystem.useNewSys)
+            {
+                if (GlobalData.Language.isEn)
+                {
+                    buttonText.text = textbox.data[0].en;
+                }
+                else
+                {
+                    buttonText.text = textbox.data[0].cn;
+                }
+            }
+            else
+            {
+                buttonText.text = textbox.TxtLine[0];
+            }
+            
             if (playerTalkBack != null)
             {
                 playerTalkBack.SetActive(false);
             }
-
+            
             
         }
         catch (Exception e)

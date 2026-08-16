@@ -24,12 +24,160 @@ MonoBehaviour:
   - "\u6D1B\u5C14\u574E\uFF1A\u5BF9\u4E0D\u8D77\u961F\u957F\uFF0C\u6211\u4F1A\u52AA\u529B\u7684\u3002"
   - "\u6D1B\u5C14\u574E\uFF1A\u6211\u771F\u7684\u4E0D\u60F3\u6B7B\u5728\u8FD9\u91CC\u3002"
   - ${Choice}
+  data:
+  - cn: "\u70B9\u7834\u4ED6\u7684\u6050\u60E7"
+    en: Point out his fear
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u597D\u50CF\u6709\u70B9\u5BB3\u6015\u3002\u4E3A\u4EC0\u4E48\uFF1F"
+    en: You seem a little scared. Why?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u6CA1\u6709\uFF01\u6211\u53EA\u662F\uFF0C\u53EA\u662F\u6709\u70B9\u4E0D\u8212\u670D\u3002"
+    en: I am not! I am just, just feeling a little unwell.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6BD5\u7ADF\u6211\u4E4B\u524D\u4ECE\u6765\u6CA1\u6709\u4E00\u5929\u8D70\u8FC7\u8FD9\u4E48\u591A\u8DEF\uFF0C\u6709\u4E9B\u592A\u7D2F\u4E86\u3002"
+    en: After all, I have never walked this much in one day before. I am a little
+      too tired.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 2c000000
+    onlyCode: 1
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4E0D\u662F\u4E0D\u662F\uFF0C\u6211\u6CA1\u6709\u62B1\u6028\u7684\u610F\u601D\u3002\u6211\u4F1A\u8DDF\u4E0A\u4F60\u4EEC\u7684\u811A\u6B65\u7684\uFF0C\u4E0D\u8981\u629B\u4E0B\u6211\u2026\u2026"
+    en: No, no, that is not what I meant. I am not complaining. I will keep up with
+      all of you. Do not leave me behind...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5BF9\u4E0D\u8D77\u961F\u957F\uFF0C\u6211\u4F1A\u52AA\u529B\u7684\u3002"
+    en: I am sorry, Captain. I will work hard.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u771F\u7684\u4E0D\u60F3\u6B7B\u5728\u8FD9\u91CC\u3002"
+    en: I really do not want to die here.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 04b4417f525b626488d911cd625b0d75, type: 2}
-  Option2: {fileID: 11400000, guid: b92ae569a58e54e48b1dfca5e534094c, type: 2}
+  Option2: {fileID: 11400000, guid: 192eb1ed739bfb34c933077920793269, type: 2}
   Option3: {fileID: 11400000, guid: 40767747f8ca4b6419ef638877ad9ff0, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

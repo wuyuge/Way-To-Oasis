@@ -9,105 +9,107 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38b284a238ae3c1449abcf3746654f93, type: 3}
+  m_Script: {fileID: 11500000, guid: 053e3f319b9e1e74eaa6d61776688672, type: 3}
   m_Name: Level3
   m_EditorClassIdentifier: 
-  pipeTypeList:
-  - type: 5
-    state: 0
-    isStartPoint: 0
-    startIsVertical: 0
+  level:
+  - pipe: 6
+    toward: 0
+    isStart: 0
+    startPos: 0
     isDestination: 0
-    destinationIsVertical: 0
-  - type: 4
-    state: 3
-    isStartPoint: 0
-    startIsVertical: 0
+    destinationPos: 0
+  - pipe: 4
+    toward: 0
+    isStart: 0
+    startPos: 0
     isDestination: 0
-    destinationIsVertical: 0
-  - type: 4
-    state: 0
-    isStartPoint: 0
-    startIsVertical: 0
+    destinationPos: 0
+  - pipe: 6
+    toward: 0
+    isStart: 0
+    startPos: 0
     isDestination: 0
-    destinationIsVertical: 0
-  - type: 3
-    state: 0
-    isStartPoint: 0
-    startIsVertical: 0
+    destinationPos: 0
+  - pipe: 0
+    toward: 1
+    isStart: 0
+    startPos: 0
     isDestination: 0
-    destinationIsVertical: 0
-  - type: 0
-    state: 0
-    isStartPoint: 1
-    startIsVertical: 0
+    destinationPos: 0
+  - pipe: 0
+    toward: 0
+    isStart: 1
+    startPos: 2
     isDestination: 0
-    destinationIsVertical: 0
-  - type: 1
-    state: 3
-    isStartPoint: 0
-    startIsVertical: 0
+    destinationPos: 0
+  - pipe: 1
+    toward: 2
+    isStart: 0
+    startPos: 0
     isDestination: 0
-    destinationIsVertical: 0
-  - type: 5
-    state: 0
-    isStartPoint: 0
-    startIsVertical: 0
+    destinationPos: 0
+  - pipe: 6
+    toward: 0
+    isStart: 0
+    startPos: 0
     isDestination: 0
-    destinationIsVertical: 0
-  - type: 1
-    state: 1
-    isStartPoint: 0
-    startIsVertical: 0
+    destinationPos: 0
+  - pipe: 3
+    toward: 1
+    isStart: 0
+    startPos: 0
     isDestination: 1
-    destinationIsVertical: 0
-  - type: 1
-    state: 0
-    isStartPoint: 0
-    startIsVertical: 0
+    destinationPos: 3
+  - pipe: 6
+    toward: 1
+    isStart: 0
+    startPos: 0
     isDestination: 0
-    destinationIsVertical: 0
-  - type: 0
-    state: 1
-    isStartPoint: 0
-    startIsVertical: 0
+    destinationPos: 3
+  - pipe: 5
+    toward: 0
+    isStart: 0
+    startPos: 0
     isDestination: 0
-    destinationIsVertical: 0
-  - type: 0
-    state: 1
-    isStartPoint: 0
-    startIsVertical: 0
+    destinationPos: 3
+  - pipe: 1
+    toward: 0
+    isStart: 0
+    startPos: 0
     isDestination: 0
-    destinationIsVertical: 0
-  - type: 4
-    state: 3
-    isStartPoint: 0
-    startIsVertical: 0
+    destinationPos: 3
+  - pipe: 3
+    toward: 0
+    isStart: 0
+    startPos: 0
     isDestination: 0
-    destinationIsVertical: 0
-  - type: 3
-    state: 0
-    isStartPoint: 0
-    startIsVertical: 0
+    destinationPos: 3
+  - pipe: 6
+    toward: 0
+    isStart: 0
+    startPos: 0
     isDestination: 0
-    destinationIsVertical: 0
-  - type: 4
-    state: 1
-    isStartPoint: 0
-    startIsVertical: 0
+    destinationPos: 3
+  - pipe: 6
+    toward: 0
+    isStart: 0
+    startPos: 0
     isDestination: 0
-    destinationIsVertical: 0
-  - type: 0
-    state: 0
-    isStartPoint: 0
-    startIsVertical: 0
+    destinationPos: 3
+  - pipe: 0
+    toward: 0
+    isStart: 0
+    startPos: 0
     isDestination: 0
-    destinationIsVertical: 0
-  - type: 5
-    state: 0
-    isStartPoint: 0
-    startIsVertical: 0
+    destinationPos: 3
+  - pipe: 6
+    toward: 0
+    isStart: 0
+    startPos: 0
     isDestination: 0
-    destinationIsVertical: 0
-  replaceItems:
-  - {fileID: 2969781392484391114, guid: b23d0729172d94440809aeebd9becd6c, type: 3}
+    destinationPos: 3
+  items: 03000000
+  source1: 1
+  source2: 1
+  rank: 1

@@ -122,42 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &845760178 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 486651369985357979, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
-  m_PrefabInstance: {fileID: 1602996270}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &845760180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845760178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4acd5df45f65df04282e1f514f12b9e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DeadList: {fileID: 11400000, guid: c8ab95b3287d57a4bb4d8f73e4f5c66b, type: 2}
-  UseList: {fileID: 11400000, guid: 723d01c626f2adf449dac6e05d48bcc0, type: 2}
-  Laiwen: "\u201C\u6211\u8BF4\u961F\u957F\uFF0C\u8FD9\u6837\u4F1A\u4E0D\u4F1A\u592A\u8FC7\u60B2\u58EE\u4E86\u3002\u201D"
-  Aimi: "\u201C\u4F60\u8981\u662F\u4E0D\u60F3\u6D3B\u975E\u5F97\u5E26\u4E0A\u6211\u4EEC\u5417\uFF1F\u201D"
-  Bo: "\u201C\u4E0D\u5982\u6362\u4E2A\u8111\u5B50\u6E05\u695A\u4E9B\u7684\u9886\u8896\u3002\u201D"
-  Luo: "\u201C\u6211\u4EEC\u771F\u7684\u8981\u8FD9\u6837\u653E\u5F03\u5417\uFF1F\u201D"
---- !u!114 &845760184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845760178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed2c5941a7dcd764a8ada3f245c9d07d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerName: {fileID: 11400000, guid: 748c360d1bf29ef408e278ede50fb2b2, type: 2}
 --- !u!1 &862443432
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,19 +255,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2464871338798718914, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
-      propertyPath: m_text
-      value: "\n\n\u4E0D\u77E5\u51FA\u4E8E\u4EC0\u4E48\u60F3\u6CD5\uFF0C\u4F60\u9009\u62E9\u4E86\u8FD9\u6837\u4E00\u79CD\u5904\u7406\u65B9\u5F0F\u3002\r\n\u7ED3\u679C\u51FA\u4E4E\u610F\u6599\u7684\u795E\u5947\u3002\r\n\u5728\u4E00\u4E2A\u9700\u8981\u6709\u4EBA\u8BF4\u4E9B\u4EC0\u4E48\u7684\u65F6\u5019\uFF0C\u961F\u4F0D\u53CD\u800C\u7B2C\u4E00\u6B21\u5B89\u9759\u4E86\u4E0B\u6765\u3002\r\n\u6240\u6709\u7684\u5FF5\u5934\u90FD\u88AB\u8FD9\u79CD\u4F1F\u5927\u800C\u7EDF\u4E00\u7684\u5949\u732E\u611F\u4E0E\u56E2\u7ED3\u62B9\u9664\u3002\u4E00\u65F6\u4E4B\u95F4\uFF0C\u6CA1\u6709\u4EBA\u63D0\u51FA\u53CD\u5BF9\u3002\r\n{Laiwen}\u826F\u4E45\u8FC7\u540E\uFF0C\u6709\u4EBA\u63D0\u51FA\u4E86\u610F\u89C1\u3002\r\n{Aimi}
-        {Bo} {Luo}\u201C\u2026\u2026\u201D\r\n\u6700\u540E\u7684\u8A00\u8BED\u90FD\u5F52\u4E8E\u4E86\u5BC2\u9759\u3002\r\n\u6240\u6709\u4EBA\u7A81\u7136\u610F\u8BC6\u5230\u4F60\u63D0\u51FA\u7684\u5EFA\u8BAE\u6216\u8BB8\u662F\u8DDD\u79BB\u89E3\u8131\u6700\u8FD1\u7684\u8DEF\u5F84\u3002\r\n\u6CA1\u6709\u4EBA\u613F\u610F\u5728\u6CE8\u5B9A\u7EDD\u671B\u7684\u4E16\u754C\u4E2D\u91CD\u590D\u5F98\u5F8A\u3002\r\n\u4E00\u79CD\u5FF5\u5934\u6307\u5F15\u7740\u4F60\u4EEC\u6700\u7EC8\u9020\u6210\u4E86\u8FD9\u4E00\u7FA4\u4F53\u6027\u7684\u884C\u4E3A\u3002\r\n\u4F60\u7684\u51B3\u5B9A\u7EC8\u7ED3\u4E86\u8FD9\u4E00\u5207\uFF0C\u53C8\u5C06\u5BFC\u5411\u65B0\u7684\u5F00\u59CB\u3002\n\u665A\u5B89,{PlayerName}\u3002"
-      objectReference: {fileID: 0}
     - target: {fileID: 2831235445705680550, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 2913693875263732570, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
       propertyPath: m_text
-      value: "<size=120>\u7FA4\u4F53\u6548\u5E94</size>"
+      value: "\u7FA4\u4F53\u6548\u5E94"
       objectReference: {fileID: 0}
+    - target: {fileID: 3485904747555625811, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
+      propertyPath: cn
+      value: "\u7FA4\u4F53\u6548\u5E94"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485904747555625811, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
+      propertyPath: en
+      value: Group Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338476706974111365, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
+      propertyPath: textLine
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ce23dec6338422478f6af703ae67471, type: 2}
     - target: {fileID: 6494024347474171970, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -384,16 +355,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7834386552732626777, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
+      propertyPath: cn
+      value: "\u4E0D\u77E5\u51FA\u4E8E\u4EC0\u4E48\u60F3\u6CD5\uFF0C\u4F60\u9009\u62E9\u4E86\u8FD9\u6837\u4E00\u79CD\u5904\u7406\u65B9\u5F0F\u3002<br>
+        \u7ED3\u679C\u51FA\u4E4E\u610F\u6599\u7684\u795E\u5947\u3002<br>\u5728\u4E00\u4E2A\u9700\u8981\u6709\u4EBA\u8BF4\u4E9B\u4EC0\u4E48\u7684\u65F6\u5019\uFF0C\u961F\u4F0D\u53CD\u800C\u7B2C\u4E00\u6B21\u5B89\u9759\u4E86\u4E0B\u6765\u3002<br>
+        \u6240\u6709\u7684\u5FF5\u5934\u90FD\u88AB\u8FD9\u79CD\u4F1F\u5927\u800C\u7EDF\u4E00\u7684\u5949\u732E\u611F\u4E0E\u56E2\u7ED3\u62B9\u9664\u3002<br>\u4E00\u65F6\u4E4B\u95F4\uFF0C\u6CA1\u6709\u4EBA\u63D0\u51FA\u53CD\u5BF9\u3002<br>\u201C\u2026\u2026\u201D<br>
+        \u6700\u540E\u7684\u8A00\u8BED\u90FD\u5F52\u4E8E\u4E86\u5BC2\u9759\u3002<br>
+        \u6240\u6709\u4EBA\u7A81\u7136\u610F\u8BC6\u5230\u4F60\u63D0\u51FA\u7684\u5EFA\u8BAE\u6216\u8BB8\u662F\u8DDD\u79BB\u89E3\u8131\u6700\u8FD1\u7684\u8DEF\u5F84\u3002<br>
+        \u6CA1\u6709\u4EBA\u613F\u610F\u5728\u6CE8\u5B9A\u7EDD\u671B\u7684\u4E16\u754C\u4E2D\u91CD\u590D\u5F98\u5F8A\u3002<br>
+        \u5982\u679C\u8FDE\u4F60\u90FD\u653E\u5F03\u4E86\u7684\u8BDD\u2026\u2026
+        <br>\u4E00\u79CD\u5FF5\u5934\u6307\u5F15\u7740\u4F60\u4EEC\u6700\u7EC8\u9020\u6210\u4E86\u8FD9\u4E00\u7FA4\u4F53\u6027\u7684\u884C\u4E3A\u3002<br>
+        \u4F60\u7684\u51B3\u5B9A\u7EC8\u7ED3\u4E86\u8FD9\u4E00\u5207\uFF0C\u53C8\u5C06\u5BFC\u5411\u65B0\u7684\u5F00\u59CB\u3002<br>
+        \u665A\u5B89\uFF0C{PlayerName}\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834386552732626777, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
+      propertyPath: en
+      value: For reasons only you know, you chose to handle things in this way.<br>
+        The result was strangely miraculous.<br> At a moment when someone should
+        have spoken up, the team instead fell silent for the first time.<br> Every
+        thought was erased by this great and unified sense of devotion and solidarity.<br>
+        For a brief while, no one objected.<br>"...<br>" The final words all returned
+        to silence.<br>Everyone suddenly realized that the proposal you made might
+        be the path closest to release.<br> No one wants to keep wandering in a world
+        doomed to despair.<br> If even you have given up...<br> A single thought
+        guided all of you, leading at last to this collective act.<br> Your decision
+        ended everything, and it will lead to a new beginning.<br> Good night, {PlayerName}.<br>
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834386552732626777, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
+      propertyPath: playerName
+      value: 
+      objectReference: {fileID: 11400000, guid: 748c360d1bf29ef408e278ede50fb2b2, type: 2}
+    - target: {fileID: 7834386552732626777, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
+      propertyPath: replaceName
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 486651369985357979, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 845760180}
-    - targetCorrespondingSourceObject: {fileID: 486651369985357979, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 845760184}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

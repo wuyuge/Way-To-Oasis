@@ -40,7 +40,7 @@ public class DeveloperDebuger : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F12))
+        /*if (Input.GetKeyDown(KeyCode.F12))
         {
             if(DeveloperPanel != null) DeveloperPanel.SetActive(!DeveloperPanel.activeSelf);
         }
@@ -52,7 +52,7 @@ public class DeveloperDebuger : MonoBehaviour
                 AchievementManager.ClearAchievement(value);
             }
             
-        }
+        }*/
     }
 
     public void ResetBody()

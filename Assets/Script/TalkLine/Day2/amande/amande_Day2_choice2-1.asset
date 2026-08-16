@@ -30,6 +30,184 @@ MonoBehaviour:
   - ${CloseCharacterTalkBox}
   - ${OpenSwitchStage}
   - ${DownTalkBox}
+  data:
+  - cn: "\u6211\u4EEC\u4F1A\u627E\u5230\u8865\u7ED9"
+    en: We will find supplies
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u4EEC\u4F1A\u627E\u5230\u8865\u7ED9\u3002"
+    en: We will find supplies.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F46\u613F\u5982\u6B64\u2026\u5C3D\u7BA1\u6211\u4EEC\u90FD\u77E5\u9053\u8FD9\u4EF6\u4E8B\u53D1\u751F\u7684\u6982\u7387\u591A\u4E48\u5FAE\u5C0F\u3002"
+    en: I hope so... even though we all know how small the chance is.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6000\u7740\u8D8A\u5927\u7684\u5E0C\u671B\uFF0C\u53EA\u4F1A\u6536\u83B7\u66F4\u591A\u7684\u5931\u671B\u3002"
+    en: The greater the hope, the greater the disappointment.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8BF4\u662F\u4FA5\u5E78\u5FC3\u7406\u4E5F\u597D\uFF0C\u592A\u8FC7\u4E50\u89C2\u4E5F\u7F62\u3002\u6211\u65E0\u6BD4\u771F\u5FC3\u5730\u5E0C\u671B\u5E76\u76F8\u4FE1\u6211\u4EEC\u80FD\u8D70\u51FA\u8FD9\u91CC\u3002"
+    en: Call it wishful thinking, or call it being too optimistic. I sincerely hope
+      and believe that we can get out of here.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u65E0\u8BBA\u4E2D\u95F4\u9700\u8981\u4ED8\u51FA\u4EC0\u4E48\u4EE3\u4EF7\u3002"
+    en: No matter what price we have to pay on the way.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: ......
+    en: ...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u2026\u6CA1\u529E\u6CD5\uFF0C\u6211\u53EA\u80FD\u8FD9\u6837\u8BF4\u670D\u81EA\u5DF1\u3002"
+    en: ...There is nothing else I can do. This is the only way I can convince myself.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5982\u679C\u4E00\u70B9\u5E0C\u671B\u90FD\u6CA1\u6709\u4E86\u7684\u8BDD\uFF0C\u6211\u5B81\u613F\u7ACB\u523B\u6B7B\u6389\u3002"
+    en: If there were no hope at all, I would rather die right now.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 0b000000
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 140000002300000016000000
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 11400000, guid: 00b1d100c0e9bc24ba5625c48adcf067, type: 2}
@@ -37,5 +215,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

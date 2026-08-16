@@ -22,6 +22,103 @@ MonoBehaviour:
   - "\u963F\u66FC\u5FB7\uFF1A\u6211\u6CA1\u6709\u529E\u6CD5\u4E0D\u53BB\u60F3\u4E00\u4E9B\u4E0D\u597D\u7684\u4E8B\u3002@{7}"
   - "\u963F\u66FC\u5FB7\uFF1A\u6700\u8FDF\u660E\u5929\u5C31\u4F1A\u6709\u4EBA\u56E0\u9965\u997F\u800C\u6B7B\u53BB\u3002"
   - ${Choice}
+  data:
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u600E\u4E48\u4E86\uFF1F"
+    en: What's wrong?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u6CA1\u6709\u529E\u6CD5\u4E0D\u53BB\u60F3\u4E00\u4E9B\u4E0D\u597D\u7684\u4E8B\u3002"
+    en: I cannot stop thinking about bad things.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6700\u8FDF\u660E\u5929\u5C31\u4F1A\u6709\u4EBA\u56E0\u9965\u997F\u800C\u6B7B\u53BB\u3002"
+    en: By tomorrow at the latest, someone will die from hunger.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 207c9147fee38174bba15e6821671f05, type: 2}
   Option2: {fileID: 11400000, guid: 43f44afdd341d784b826326eefd7408a, type: 2}
   Option3: {fileID: 0}
@@ -29,5 +126,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

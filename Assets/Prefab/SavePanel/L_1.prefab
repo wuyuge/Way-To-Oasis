@@ -139,7 +139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainInfo: {fileID: 3746952509045681117}
-  secInfo: {fileID: 0}
   timeInfo: {fileID: 5125081767722379391}
   textOnImage: {fileID: 8314041038194569443}
   saveManager: {fileID: 0}
@@ -148,12 +147,17 @@ MonoBehaviour:
   - "\u5206\u914D\u8D1F\u91CD\u9636\u6BB5"
   - "\u4EA4\u8C08\u9636\u6BB5"
   - "\u5206\u914D\u98DF\u7269\u9636\u6BB5"
+  stageNamesEn:
+  - Allocate supplies
+  - Conversation
+  - Allocate food
   reportSaveIsNull: 1
   initialText:
   - 'Day{Day}   {Stage}:'
   - "\u98DF\u7269\u6570\u91CF:{Food} \u5C38\u4F53\u6570\u91CF:{Body}"
   - '{Time}'
   - Day{Day}
+  language: {fileID: 11400000, guid: 824057b5fd1df75479a56df414be097e, type: 2}
 --- !u!1 &1215405987126171211
 GameObject:
   m_ObjectHideFlags: 0

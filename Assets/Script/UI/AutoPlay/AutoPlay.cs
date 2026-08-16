@@ -30,7 +30,7 @@ public class AutoPlay : MonoBehaviour
         {
             autoPlayManager.GeneralBool = true;
             autoPlayManager.Weight = 4;
-            GlobalData.ShowText.ShowText();
+            
         }
         else
         {

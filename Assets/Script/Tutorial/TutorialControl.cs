@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class TutorialControl : MonoBehaviour
 {
     [System.Serializable]
@@ -22,11 +23,22 @@ public class TutorialControl : MonoBehaviour
     public bool checkWeight;
     public List<Manager> characters;
     public List<Sprite> initialPage;
+    public List<Sprite> initialPageEn;
     public Book book;
-    private void Start()
+    public Manager restoreScene;
+    public List<Sprite> restoreInitialPage;
+    public List<Sprite> restoreInitialPageEn;
+    
+    private void Awake()
     {
         TutorialManager.Controller = this;
         book.bookPages = new List<Sprite>(initialPage);
+        book.bookPagesEn = new List<Sprite>(initialPageEn);
+        if (restoreScene.GeneralBool)
+        {
+            book.bookPages = new List<Sprite>(restoreInitialPage);
+            book.bookPagesEn = new List<Sprite>(restoreInitialPageEn);
+        }
     }
 
 

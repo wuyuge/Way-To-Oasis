@@ -62,14 +62,13 @@ public class MiniCharacterManager : MonoBehaviour
 
     public bool isWalking;
 
-    private void Awake()
-    {
-        InitializeComponents();
-        InitializeCharacters();
-    }
+
 
     private void Start()
     {
+        InitializeComponents();
+        InitializeCharacters();
+        
         // 初始分配一次位置
         UpdateCharacterPositions();
         LightAnim = CampLight.GetComponent<Animator>();

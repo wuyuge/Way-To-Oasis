@@ -32,13 +32,17 @@ public class ShopCharacterSelect : MonoBehaviour
         {
             DeadName.TxtLine.Add(Name);
             TalkSys.GetComponent<TalkSystem>().ShowKillTalk();
-            this.Character.Dead = true;
+            Character.Dead = true;
             if(ts.Daytime == 2)
             {
                 ts.on = true;
                 ts.Talklines[ts.Daytime] = SpecialTalk;
                 ts._inshop = true;
                 ts.line = 0;
+                if (ts.useNewSys)
+                {
+                    GlobalData.NewTalkSysShowText.SetChoiceLine(0,false);
+                }
                 _ = ts.ShowText();
             }
             FinalBody.Weight += 1;

@@ -16,8 +16,57 @@ MonoBehaviour:
   - ->c
   - "\u53EF\u601C\u7684\u5B69\u5B50\uFF0C\u65B0\u4EBA\u60F3\u88AB\u63A5\u7EB3\u8FD8\u771F\u662F\u96BE\u4E8B\u3002"
   - "\u53EF\u601C\u7684\u5B69\u5B50\uFF0C\u65B0\u4EBA\u60F3\u88AB\u63A5\u7EB3\u8FD8\u771F\u662F\u96BE\u4E8B\u3002"
-  - "\u4F60\u5728\u6240\u6709\u4EBA\u90FD\u6CA1\u6709\u6765\u7684\u53CA\u9632\u5907\u7684\u60C5\u51B5\u4E0B\uFF0C\u7528\u6700\u5FEB\u7684\u901F\u5EA6\u6740\u6B7B\u4E86\u6D1B\u5C14\u574E\u3002"
+  - "A_\u4F60\u5728\u6240\u6709\u4EBA\u90FD\u6CA1\u6709\u6765\u7684\u53CA\u9632\u5907\u7684\u60C5\u51B5\u4E0B\uFF0C\u7528\u6700\u5FEB\u7684\u901F\u5EA6\u6740\u6B7B\u4E86\u6D1B\u5C14\u574E\u3002"
   - ${End}
+  data:
+  - cn: "\u53EF\u601C\u7684\u5B69\u5B50\uFF0C\u65B0\u4EBA\u60F3\u88AB\u63A5\u7EB3\u8FD8\u771F\u662F\u96BE\u4E8B\u3002"
+    en: Poor child. It really is difficult for a newcomer to be accepted.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u5728\u6240\u6709\u4EBA\u90FD\u6CA1\u6709\u6765\u7684\u53CA\u9632\u5907\u7684\u60C5\u51B5\u4E0B\uFF0C\u7528\u6700\u5FEB\u7684\u901F\u5EA6\u6740\u6B7B\u4E86\u6D1B\u5C14\u574E\u3002"
+    en: Before anyone has time to prepare, you kill Lorquin as quickly as possible.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 809cfbfa1454deb438b26fa81d2b57f4, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -25,5 +74,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

@@ -17,15 +17,86 @@ MonoBehaviour:
   - "\u83B1\u6587\uFF1A\u5C31\u804A\u5230\u8FD9\u5427\uFF0C\u961F\u957F\u3002@{1}"
   - "\u83B1\u6587\uFF1A\u6211\u6025\u7740\u7ED9\u4EBA\u5E2E\u5FD9\u5462\u3002"
   - "\u83B1\u6587\uFF1A\u6BD5\u7ADF\uFF0C\u8981\u627E\u5230\u4E00\u4E2A\u5408\u9002\u7684\u5E2E\u52A9\u76EE\u6807\u4E5F\u4E0D\u662F\u4EF6\u7B80\u5355\u7684\u4E8B\u3002"
+  - ${CheckMinil}
   - ${OpenSwitchStage}
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}
-  Option1: {fileID: 0}
+  data:
+  - cn: "\u5C31\u804A\u5230\u8FD9\u5427\uFF0C\u961F\u957F\u3002"
+    en: Let us stop here, Captain.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6211\u6025\u7740\u7ED9\u4EBA\u5E2E\u5FD9\u5462\u3002"
+    en: I am in a hurry to go help someone.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6BD5\u7ADF\uFF0C\u8981\u627E\u5230\u4E00\u4E2A\u5408\u9002\u7684\u5E2E\u52A9\u76EE\u6807\u4E5F\u4E0D\u662F\u4EF6\u7B80\u5355\u7684\u4E8B\u3002"
+    en: After all, finding a suitable target to help is not exactly easy.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 4
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  Option1: {fileID: 11400000, guid: 6dee061f70450854fbe834c0e9a4d01c, type: 2}
   Option2: {fileID: 0}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: 6dee061f70450854fbe834c0e9a4d01c, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

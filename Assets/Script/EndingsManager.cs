@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,11 +11,17 @@ public class EndingsManager : MonoBehaviour
     public Animator black;
     public List<GameObject> AllCharacter = new List<GameObject>();
 
+    private void Awake()
+    {
+        GlobalData.EndingsManager = this;
+    }
+
     public IEnumerator ToEnd(string SceneName)
     {
         black.SetTrigger("OnlyBlack");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneName);
+        
     }
 
     
@@ -62,7 +69,7 @@ public class EndingsManager : MonoBehaviour
             }
 
             // 检查全员未进食的特殊情况
-            if (eatNum == 0 && currentNotDeadNum == 6)
+            if (eatNum == 0 && currentNotDeadNum >= 3)
             {
                 StartCoroutine(ToEnd("Be7"));
                 return true;

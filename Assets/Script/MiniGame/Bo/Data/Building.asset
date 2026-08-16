@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ae011b533908545b1817a211c04d0a, type: 3}
+  m_Name: Building
+  m_EditorClassIdentifier: 
+  data:
+  - cn: "\u4E00\u4E9B\u5E9F\u94C1\u800C\u5DF2\u3002\u8FD9\u91CC\u4EE5\u524D\u5E94\u8BE5\u662F\u4E2A\u67A2\u7EBD\u7AD9\u3002\u5982\u679C\u4E0D\u662F\u6C61\u67D3\uFF0C\u8FD9\u91CC\u4E0D\u4F1A\u662F\u73B0\u5728\u8FD9\u6837\u3002"
+    en: Just scrap metal. This place should have been a hub station before. If not
+      for the pollution, it would not be like this now.
+    expression: 1
+  - cn: "\u2026\u2026\u73B0\u5728\u6C61\u67D3\u904D\u5730\u90FD\u662F\uFF0C\u8FD9\u6837\u7684\u5730\u65B9\u591A\u4E86\u53BB\u4E86\uFF0C\u6CA1\u4EC0\u4E48\u7279\u522B\u7684\u3002"
+    en: ...Pollution is everywhere now. There are plenty of places like this. Nothing
+      special.
+    expression: 2
+  description:
+    cn: "\u6587\u660E\u7684\u5E9F\u589F\u4E0E\u6B8B\u9AB8\u3002\u4F60\u80FD\u4ECE\u4E2D\u7AA5\u89C1\u4E9B\u8BB8\u8FC7\u53BB\u7684\u4F59\u6656\uFF0C\u4F46\u5982\u4ECA\u5DF2\u662F\u4E00\u7247\u8352\u829C\u3002\u8FD9\u91CC\u6CA1\u6709\u4EBA\u4E86\uFF0C\u53EA\u6709\u5B83\u4EEC\u4E0E\u98CE\u6C99\u4F5C\u4F34\u3002"
+    en: Ruins and remains of civilization. You can glimpse a faint afterglow of the
+      past in them, but now everything is barren. There are no people here anymore.
+      Only these remains keep company with the wind and sand.
+    expression: 1

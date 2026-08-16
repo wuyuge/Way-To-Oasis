@@ -41,7 +41,7 @@ public class AutoSave : MonoBehaviour
         {
             if (shop != null)
             {
-                if (autoSaveIsOn.GeneralBool && !shop.activeInHierarchy)
+                if (autoSaveIsOn.GeneralBool && !shop.activeInHierarchy && !GlobalData.OnMiniGame && !GlobalData.AfterShop)
                 {
                 
                     try

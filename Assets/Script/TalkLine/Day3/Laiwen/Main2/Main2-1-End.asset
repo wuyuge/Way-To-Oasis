@@ -20,6 +20,52 @@ MonoBehaviour:
   - ${OpenSwitchStage}
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}
+  data:
+  - cn: "\u5443\uFF0C\u4F60\u8BF4\u7684\u4E5F\u6709\u9053\u7406\u3002"
+    en: Uh, you do have a point.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 6
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u81F3\u5C11\u6211\u4EEC\u53EF\u4EE5\u544A\u8BEB\u4ED6\u4EEC: \u4E0D\u8981\u6D6A\u8D39\u98DF\u7269\u3002"
+    en: 'At least we can warn them: do not waste food.'
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 230000001400000016000000
+    onlyCode: 1
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -27,5 +73,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

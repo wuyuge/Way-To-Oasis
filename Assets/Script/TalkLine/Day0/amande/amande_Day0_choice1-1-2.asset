@@ -19,6 +19,48 @@ MonoBehaviour:
   - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u90A3\u5C31\u597D\u2026\u6BD4\u8D77\u54C0\u60BC\uFF0C\u6211\u4EEC\u8FD8\u662F\u5E94\u8BE5\u60F3\u60F3\u600E\u4E48\u6D3B\u7740\u8D70\u51FA\u53BB"
   - ${End}
+  data:
+  - cn: "\u63A5\u53D7\u4E86"
+    en: They accepted it
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u63A5\u53D7\u4E86\u3002"
+    en: They accepted it.
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u90A3\u5C31\u597D\u2026\u6BD4\u8D77\u54C0\u60BC\uFF0C\u6211\u4EEC\u8FD8\u662F\u5E94\u8BE5\u60F3\u60F3\u600E\u4E48\u6D3B\u7740\u8D70\u51FA\u53BB\u3002"
+    en: That is good... More than mourning, we should think about how to get out
+      alive.
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: 
+    en: 
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
   Option1: {fileID: 11400000, guid: e39ac9900ac2c314e975885d7a211ecf, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -26,5 +68,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

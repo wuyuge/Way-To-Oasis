@@ -18,6 +18,52 @@ MonoBehaviour:
   - ->p
   - "\u4F60\u4F3C\u4E4E\u5F88\u96BE\u53D7\u3002"
   - ${End}
+  data:
+  - cn: "\u665A\u4E0A\u597D\uFF0C\u961F\u957F\u3002"
+    en: Good evening, Captain.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u4F60\u4F3C\u4E4E\u5F88\u96BE\u53D7\u3002"
+    en: You seem to be suffering.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 0
+    speaker: 5
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: 8b96f1f2fa942d64786de18521401241, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -25,5 +71,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

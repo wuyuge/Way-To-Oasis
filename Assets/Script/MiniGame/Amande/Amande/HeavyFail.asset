@@ -15,6 +15,38 @@ MonoBehaviour:
   TxtLine:
   - "\u52C7\u4E8E\u5C1D\u8BD5\u59CB\u7EC8\u662F\u4F60\u7684\u4F18\u826F\u54C1\u683C\u3002\u6211\u4E00\u76F4\u4EE5\u6765\u90FD\u4E3A\u4F60\u7684\u521B\u9020\u529B\u611F\u5230\u60CA\u5947\u3002"
   - "\u55EF\u2026\u662F\u592A\u7D2F\u4E86\u5417\uFF1F\u6216\u8BB8\u4F60\u9700\u8981\u4F11\u606F\u4E00\u4E0B\u3002\u8FD8\u662F\u8BA9\u6211\u6765\u5427\u3002"
+  data:
+  - cn: "\u52C7\u4E8E\u5C1D\u8BD5\u59CB\u7EC8\u662F\u4F60\u7684\u4F18\u826F\u54C1\u683C\u3002\u6211\u4E00\u76F4\u4EE5\u6765\u90FD\u4E3A\u4F60\u7684\u521B\u9020\u529B\u611F\u5230\u60CA\u5947\u3002"
+    en: The courage to try has always been one of your excellent qualities. I have
+      always been amazed by your creativity
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u55EF\u2026\u662F\u592A\u7D2F\u4E86\u5417\uFF1F\u6216\u8BB8\u4F60\u9700\u8981\u4F11\u606F\u4E00\u4E0B\u3002\u8FD8\u662F\u8BA9\u6211\u6765\u5427\u3002"
+    en: Hmm... Are you too tired? Maybe you need to rest. Let me do it instead.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -22,5 +54,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

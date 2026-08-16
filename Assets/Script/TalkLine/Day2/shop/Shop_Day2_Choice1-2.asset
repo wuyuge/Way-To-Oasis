@@ -16,6 +16,55 @@ MonoBehaviour:
   - "\u4F60\u60F3\u8981\u4EC0\u4E48\uFF1F"
   - "\u4F60\u60F3\u8981\u4EC0\u4E48\uFF1F"
   - ${End}
+  data:
+  - cn: "\u4F60\u60F3\u8981\u4EC0\u4E48\uFF1F"
+    en: What do you want?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u60F3\u8981\u4EC0\u4E48\uFF1F"
+    en: What do you want?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u60F3\u8981\u4EC0\u4E48\uFF1F"
+    en: What do you want?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: b8e91ccdcae543b449907a65cf155c7b, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -23,5 +72,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

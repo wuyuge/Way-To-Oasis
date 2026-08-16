@@ -2,608 +2,461 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public abstract class Pipe : MonoBehaviour
 {
+    [Header("旋转平滑速度")]
+    public float rotateSpeed = 5f;
+    private Quaternion targetRot;
+    private bool isRotating = false;
+    private Coroutine _coroutine;
     public bool isConnected;
-    public bool isStartPoint,isDestination;
-    [SerializeField]
-    protected GameObject above,below,left,right;
-    public int pipeNumber;
-    private PipeManager AboveComponent, LeftComponent,BelowComponent,RightComponent;
-    private Animator _animator;
-    private Image _objectImage;
-    public PipeTowards startTowards,endTowards;
-    private static List<GameObject> _reachPipeList = new List<GameObject>();
-    protected static GameObject StartPoint;
-    protected static PipeManager StartPipe;
-    public bool startIsVertical,destinationIsVertical;
-    public Sprite pipeSprite,pipeSpriteRed;
-    protected PipeManager Manager;
-    private static GameObject _startPipe, _endPipe;
-    public GameObject upP, downP, leftP, rightP;
-    private RectTransform _transform;
-    private void Awake()
-    {
-        _objectImage = GetComponent<Image>();
-        Manager = GetComponent<PipeManager>();
-        pipeNumber = transform.GetSiblingIndex();
-        below = pipeNumber - 4 >= 0  ? transform.parent.GetChild(pipeNumber - 4).gameObject : null;
-        above = pipeNumber + 4 < transform.parent.childCount ? gameObject.transform.parent.GetChild(pipeNumber + 4).gameObject : null;
-        var rightIndex = pipeNumber + 1;
-        right = (rightIndex < transform.parent.childCount) && (pipeNumber % 4 != 3) 
-            ? transform.parent.GetChild(rightIndex).gameObject 
-            : null;
-        var leftIndex = pipeNumber - 1;
-        left = (leftIndex >= 0) && (pipeNumber % 4 != 0) 
-            ? transform.parent.GetChild(leftIndex).gameObject 
-            : null;
-        try
-        {
-            if (above is not null)
-            {
-                AboveComponent = above.GetComponent<PipeManager>();
-                
-            }
-            if (below is not null)
-            {
-                BelowComponent = below.GetComponent<PipeManager>();
-                
-            }
-            if (left is not null)
-            {
-                LeftComponent = left.GetComponent<PipeManager>();
-                
-            }
-            if (right is not null)
-            {
-                RightComponent = right.GetComponent<PipeManager>();
-                
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.LogError(e,this);
-            throw;
-        }
-        
-        _animator = GetComponent<Animator>();
-        if (_startPipe is null)
-        {
-            _startPipe = gameObject.transform.parent.parent.parent.Find("StartPipe").gameObject;
-        }
-        if (_endPipe is null)
-        {
-            _endPipe = gameObject.transform.parent.parent.parent.Find("EndPipe").gameObject;
-        }
-
-        upP = transform.Find("Up").gameObject;
-        downP = transform.Find("Down").gameObject;
-        rightP = transform.Find("Right").gameObject;
-        leftP = transform.Find("Left").gameObject;
-    }
+    public bool isStart, isDestination;
+    protected Toward startPos, destinationPos;
+    public Toward curToward;
+    public Pipe up, down, left, right;
+    public int index;
+    private List<Toward> _walls = new List<Toward>();
+    public bool breakTag;
+    [Header("颜色")]
+    public Sprite normal, red;
+    private const int MaxRollTime = 40;
+    public bool RandomColor = true;
+    public AudioSource aS;
+    private Coroutine _rollCheckRoutine; // RollCheck 协程（新增）
 
     /// <summary>
-    /// 初始化管道组件。如果该管道是起点，开始尝试链接其他管道形成通路
+    /// 列
     /// </summary>
-    public virtual void Start()
-    {
-        if (isStartPoint)
-        {
-            StartPoint = gameObject;
-            StartPipe = StartPoint.GetComponent<PipeManager>();
-        }   
-
-        
-        if (isStartPoint)
-        {
-            if (startIsVertical)
-            {
-                if (above is null)
-                {
-                    startTowards = PipeTowards.Above;
-                }
-                else if (below is null)
-                {
-                    startTowards = PipeTowards.Below;
-                }
-               
-            }
-            else if (!startIsVertical)
-            {
-                if (left is null)
-                {
-                    startTowards = PipeTowards.Left;
-                }
-
-                if (right is null)
-                {
-                    startTowards = PipeTowards.Right;
-                }
-            }
-            SwitchPipePosition(_startPipe,startTowards);
-            CheckStartConnection();
-            CheckConnectivity();
-            
-        }
-        if (isDestination)
-        {
-            if (destinationIsVertical)
-            {
-                if (above is null)
-                {
-                    endTowards = PipeTowards.Above;
-                }
-                else if (below is null)
-                {
-                    endTowards = PipeTowards.Below;
-                }
-
-            }
-            else
-            {
-                if (left is null)
-                {
-                    endTowards = PipeTowards.Left;
-                }
-
-                if (right is null)
-                {
-                    endTowards = PipeTowards.Right;
-                }
-            }
-            SwitchPipePosition(_endPipe,endTowards);
-        }
-
-        
-    }
-
-    #region 重置用
-
-    private void Update()
-    {
-        // 每帧更新起点和终点的位置
-        UpdateStartEndPipePositions();
-    }
-    
+    public int col;
     /// <summary>
-    /// 每帧更新起点和终点管道的位置
+    /// 行
     /// </summary>
-    private void UpdateStartEndPipePositions()
+    public int row;
+
+    public int RollTime
     {
-        // 更新起点位置
-        if (_startPipe != null)
-        {
-            // 如果是起点管道，根据startTowards更新位置
-            if (isStartPoint)
-            {
-                UpdatePipePosition(_startPipe, startTowards);
-            }
-        }
-        
-        // 更新终点位置
-        if (_endPipe != null)
-        {
-            // 如果是终点管道，根据endTowards更新位置
-            if (isDestination)
-            {
-                UpdatePipePosition(_endPipe, endTowards);
-            }
-        }
+        get;
+        set;
     }
     
-    /// <summary>
-    /// 更新单个管道的位置（不修改缩放）
-    /// </summary>
-    private void UpdatePipePosition(GameObject pipe, PipeTowards towards)
+
+
+    private void OnEnable()
     {
-        switch (towards)
-        {
-            case PipeTowards.Above:
-                pipe.transform.position = upP.transform.position;
-                pipe.transform.rotation = Quaternion.Euler(0, 0, 0);
-                break;
-            
-            case PipeTowards.Below:
-                pipe.transform.position = downP.transform.position;
-                pipe.transform.rotation = Quaternion.Euler(0, 0, 180);
-                break;
-            
-            case PipeTowards.Right:
-                pipe.transform.position = rightP.transform.position;
-                pipe.transform.rotation = Quaternion.Euler(0, 0, -90);
-                break;
-            
-            case PipeTowards.Left:
-                pipe.transform.position = leftP.transform.position;
-                pipe.transform.rotation = Quaternion.Euler(0, 0, 90);
-                break;
-        }
-    }
+        if (aS == null) aS = GetComponent<AudioSource>();
 
-    
-    public virtual void OnEnable()
-    {
-        RelinkOther();
-        var temp = Random.Range(0, 2);
-        if (temp == 0 || Manager.replaced)
+        if (!RandomColor)
         {
-            _objectImage.sprite = pipeSprite;
-        }
-        else
-        {
-            _objectImage.sprite = pipeSpriteRed;
-        }
-    
-        // 重新设置起点和终点的位置
-        if (isStartPoint)
-        {
-            SwitchPipePosition(_startPipe, startTowards);
-        }
-    
-        if (isDestination)
-        {
-            SwitchPipePosition(_endPipe, endTowards);
-        }
-        
-        if (_transform is null)
-        {
-            _transform = GetComponent<RectTransform>();
-        }
-
-        _transform.pivot = new Vector2(0.5f, 0.5f);
-    }
-    
-    void RelinkOther()
-    {
-        below = pipeNumber - 4 >= 0  ? transform.parent.GetChild(pipeNumber - 4).gameObject : null;
-        above = pipeNumber + 4 < transform.parent.childCount ? gameObject.transform.parent.GetChild(pipeNumber + 4).gameObject : null;
-        var rightIndex = pipeNumber + 1;
-        right = (rightIndex < transform.parent.childCount) && (pipeNumber % 4 != 3) 
-            ? transform.parent.GetChild(rightIndex).gameObject 
-            : null;
-        var leftIndex = pipeNumber - 1;
-        left = (leftIndex >= 0) && (pipeNumber % 4 != 0) 
-            ? transform.parent.GetChild(leftIndex).gameObject 
-            : null;
-        try
-        {
-            if (above is not null)
-            {
-                AboveComponent = above.GetComponent<PipeManager>();
-                
-            }
-            if (below is not null)
-            {
-                BelowComponent = below.GetComponent<PipeManager>();
-                
-            }
-            if (left is not null)
-            {
-                LeftComponent = left.GetComponent<PipeManager>();
-                
-            }
-            if (right is not null)
-            {
-                RightComponent = right.GetComponent<PipeManager>();
-                
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.LogError(e,this);
-            throw;
-        }
-        if (isStartPoint)
-        {
-            StartPoint = gameObject;
-            StartPipe = StartPoint.GetComponent<PipeManager>();
-        }   
-        
-        if (isStartPoint)
-        {
-            if (startIsVertical)
-            {
-                if (above is null)
-                {
-                    startTowards = PipeTowards.Above;
-                }
-                else if (below is null)
-                {
-                    startTowards = PipeTowards.Below;
-                }
-               
-            }
-            else if (!startIsVertical)
-            {
-                if (left is null)
-                {
-                    startTowards = PipeTowards.Left;
-                }
-
-                if (right is null)
-                {
-                    startTowards = PipeTowards.Right;
-                }
-            }
-            SwitchPipePosition(_startPipe, startTowards);
-            CheckStartConnection();
-            CheckConnectivity();
-            
-        }
-        if (isDestination)
-        {
-            if (destinationIsVertical)
-            {
-                if (above is null)
-                {
-                    endTowards = PipeTowards.Above;
-                }
-                else if (below is null)
-                {
-                    endTowards = PipeTowards.Below;
-                }
-
-            }
-            else if (!destinationIsVertical)
-            {
-                if (left is null)
-                {
-                    endTowards = PipeTowards.Left;
-                }
-
-                if (right is null)
-                {
-                    endTowards = PipeTowards.Right;
-                }
-            }
-
-            SwitchPipePosition(_endPipe, endTowards);
-            CheckDestinationConnection();
-        }
-    }
-    
-    #endregion
-    
-    
-
-
-    public enum PipeTowards
-    {
-        Above,
-        Below,
-        Left,
-        Right,
-        None
-    }
-
-    public void Click()
-    {
-        _animator.SetTrigger("rotate");
-        if (LuoStaticData.CurrentPipe == gameObject)
-        {
-            LuoStaticData.RollTime++;
-        }
-        else
-        {
-            LuoStaticData.CurrentPipe = gameObject;
-            LuoStaticData.RollTime = 0;
-        }
-    }
-
-    /// <summary>
-    /// 用于新组件被添加时对四个方向的调用更新
-    /// </summary>
-    /// <param name="towards"></param>
-    public void UpdateLinkComponent(PipeTowards towards)
-    {
-        switch (towards)
-        {
-            case PipeTowards.Above:
-                AboveComponent = above.GetComponent<PipeManager>();
-                break;
-            case PipeTowards.Below:
-                BelowComponent = below.GetComponent<PipeManager>();
-                break;
-            case PipeTowards.Right:
-                RightComponent = right.GetComponent<PipeManager>();
-                break;
-            case PipeTowards.Left:
-                LeftComponent = left.GetComponent<PipeManager>();
-                break;
-        }
-    }
-
-    public void RestConnection()
-    {
-        for (int index = 0; index < transform.parent.childCount; index++)
-        {
-            PipeManager tempPipe = transform.parent.GetChild(index).gameObject.GetComponent<PipeManager>();
-            if (!tempPipe.isStartPoint)
-            {
-                tempPipe.SetConnect(false);
-            }
-            
-        }
-        _reachPipeList.Clear();
-    }
-
-    public virtual void SetState()
-    {
-        RestConnection();
-        if (isStartPoint)
-        {
-            CheckStartConnection();
-            if (isStartPoint && isConnected)
-            {
-                CheckConnectivity();
-            }
-        }
-        else
-        {
-            if (StartPipe is not null) StartPipe.CheckConnectivity();
-            else
-            {
-                Debug.LogWarning("起始点空,重新链接起点");
-                StartPoint = gameObject.transform.parent.GetChild(LuoGameStartPoint.GetStartPointIndex()).gameObject;
-                StartPipe = StartPoint.GetComponent<PipeManager>();
-            }
-        }
-        if (isDestination)
-        {
-            CheckDestinationConnection();
-        }
-    }
-
-    public virtual void SetState(int stateIndex)
-    {
-        RestConnection();
-        if (isStartPoint)
-        {
-            CheckStartConnection();
-            if (isStartPoint && isConnected)
-            {
-                CheckConnectivity();
-            }
-        }
-        else
-        {
-            if (StartPipe is not null) StartPipe.CheckConnectivity();
-            else
-            {
-                Debug.LogWarning("起始点空,重新链接起点");
-                StartPoint = gameObject.transform.parent.GetChild(LuoGameStartPoint.GetStartPointIndex()).gameObject;
-                StartPipe = StartPoint.GetComponent<PipeManager>();
-            }
-        }
-        if (isDestination)
-        {
-            CheckDestinationConnection();
-        }
-    }
-
-    public virtual void CheckConnectivity()
-    {
-        if (!isConnected && isStartPoint)
-        {
-            RestConnection();
+            GetComponent<Image>().sprite = normal;
             return;
         }
-        
-        DepthFSearch(PipeTowards.Above);
-        DepthFSearch(PipeTowards.Below);
-        DepthFSearch(PipeTowards.Left);
-        DepthFSearch(PipeTowards.Right);
-        foreach (var pipe in _reachPipeList)
+        var i = Random.Range(0, 2);
+        if (i == 0)
         {
-            var manager = pipe.GetComponent<PipeManager>();
-            if (manager.isDestination && manager.destinationConnected)
+            GetComponent<Image>().sprite = normal;
+        }
+        else
+        {
+            GetComponent<Image>().sprite = red;
+        }
+    }
+
+
+    void Update()
+    {
+        if (!RandomColor)
+        {
+            GetComponent<Image>().sprite = normal;
+            
+        }
+        if (!isRotating) return;
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * rotateSpeed);
+
+        if (Quaternion.Angle(transform.rotation, targetRot) < 7.5f)
+        {
+            transform.rotation = targetRot;
+            isRotating = false;
+        }
+    }
+
+    #region 旋转
+
+    public void RotateRight90()
+    {
+        if (isRotating) return;
+        aS.Play();
+        targetRot = Quaternion.Euler(0, 0, transform.eulerAngles.z + 90f);
+        isRotating = true;
+        LuoGlobalData.TotalRollTime++;
+        if (LuoGlobalData.TotalRollTime >= MaxRollTime)
+        {
+            LuoGlobalData.TalkSys.SetFail();
+        }
+        SetRepeat();
+        RotateToward();
+        RefreshAllConnections();
+    }
+
+    public void RotateLeft90()
+    {
+        if (isRotating) return;
+        aS.Play();
+        targetRot = Quaternion.Euler(0, 0, transform.eulerAngles.z - 90f);
+        isRotating = true;
+        LuoGlobalData.TotalRollTime++;
+        if (LuoGlobalData.TotalRollTime >= MaxRollTime)
+        {
+            LuoGlobalData.TalkSys.SetFail();
+        }
+        SetRepeat();
+        RotateToward();
+        RefreshAllConnections();
+    }
+
+    #endregion
+
+    private void SetRepeat()
+    {
+        RollTime++;
+        foreach (var value in LuoGlobalData.PipeList)
+        {
+            if (value == null) continue;
+            if(value != this)
             {
-                LuoStaticData.Success = true;
-                TalkSysStaticData.TalkSysShowText.CompleteMiniGame();
-                Invoke(nameof(EndGame),1.5f);
-                
+                value.RollTime = 0;
             }
         }
 
-    }
-
-    private void EndGame()
-    {
-        gameObject.transform.parent.parent.parent.parent.gameObject.GetComponent<Animator>().SetTrigger("End");
-    }
-    
-    /// <summary>
-    /// 检查管道在指定方向上是否有接口。
-    /// </summary>
-    /// <param name="towards">传入方为基准，接受方相对的方向 例如传入方在接受方上面,则传入Below</param>
-    /// <returns>如果在指定方向上有接口，则返回true；否则返回false。</returns>
-    public abstract bool HaveInterface(PipeTowards towards);
-
-    public abstract void CheckStartConnection();
-    
-    public abstract void CheckDestinationConnection();
-
-    /// <summary>
-    /// 使用深度优先搜索算法检查并连接管道。该方法根据传入的方向尝试链接当前管道与相邻管道，如果相邻管道存在且尚未被访问过，并且两者之间有接口可以连接，则将相邻管道标记为已连接，并继续从该相邻管道开始进行深度优先搜索。
-    /// </summary>
-    /// <param name="towards">指定要检查和连接的相对方向（上、下、左、右）。</param>
-    private void DepthFSearch(PipeTowards towards)
-    {
-        GameObject tempPipe;
-        PipeManager tempComponent;
-        PipeTowards tempTowards,tempSelfTowards;
-        switch (towards)
+        if (RollTime >= 12)
         {
-            //传入方在接受方下面
-            case PipeTowards.Above:
-                tempPipe = above;
-                tempComponent = AboveComponent;
-                tempTowards = PipeTowards.Below;
-                tempSelfTowards = PipeTowards.Above;
-                break;
-            //传入方在接收方上面
-            case PipeTowards.Below:
-                tempPipe = below;
-                tempComponent = BelowComponent;
-                tempTowards = PipeTowards.Above;
-                tempSelfTowards = PipeTowards.Below;
-                break;
-            //传入方在接收方右边
-            case PipeTowards.Left:
-                tempPipe = left;
-                tempComponent = LeftComponent;
-                tempTowards = PipeTowards.Right;
-                tempSelfTowards = PipeTowards.Left;
-                break;
-            //传入方在接收方左边
-            case PipeTowards.Right:
-                tempPipe = right;
-                tempComponent = RightComponent;
-                tempTowards = PipeTowards.Left;
-                tempSelfTowards = PipeTowards.Right;
-                break;
-            default:
-                return;
+            LuoGlobalData.TalkSys.SetRepeat();
+            RollTime = 3;
         }
-        if (tempPipe is not null && !_reachPipeList.Contains(tempPipe))
+    }
+    
+    
+
+    /// <summary>
+    /// 全图重置连通性 + 从起点重新扩散
+    /// </summary>
+    private void RefreshAllConnections()
+    {
+        // 1. 重置所有管道的连通状态
+        foreach (var pipe in LuoGlobalData.PipeList)
         {
-            if(tempComponent.HaveInterface(tempTowards) && HaveInterface(tempSelfTowards))
+            if (pipe != null) pipe.isConnected = false;
+        }
+
+        // 2. 起点设为连通，开始洪水填充
+        if (LuoGlobalData.StartPipe != null)
+        {
+            LuoGlobalData.StartPipe.isConnected = true;
+            LuoGlobalData.StartPipe.Check();
+        }
+    }
+
+    public void SetStart(Toward pos)
+    {
+        isStart = true;
+        startPos = pos;
+        isConnected = true; // 起点默认连通
+        LuoGlobalData.StartPipe = this;
+    }
+
+    public void SetDestination(Toward pos)
+    {
+        isDestination = true;
+        destinationPos = pos;
+        LuoGlobalData.DestinationPipe = this;
+    }
+
+    /// <summary>
+    /// 重新计算自身连通性；如果从"不通变通"，就向四周扩散
+    /// </summary>
+    public virtual void Check()
+    {
+        // 子类重写：根据开口方向 + 邻居状态 更新 isConnected
+        CalculateConnection();
+        CheckInitial();
+
+        if (isConnected && !LuoGlobalData.LinkedPipeList.Contains(this))
+        {
+            LuoGlobalData.LinkedPipeList.Add(this);
+            if (isDestination)
             {
-                _reachPipeList.Add(tempPipe);
-                tempComponent.SetConnect(true);
-                tempComponent.CheckConnectivity();
+                _coroutine = StartCoroutine(CheckBreak());
+            }
+        }
+        
+        if (isStart)
+        {
+            if (LuoGlobalData.LinkedPipeList.Count > LuoGlobalData.MaxCorrect)
+            {
+                LuoGlobalData.MaxCorrect = LuoGlobalData.LinkedPipeList.Count;
+            }
+            else if (LuoGlobalData.LinkedPipeList.Count < LuoGlobalData.MaxCorrect)
+            {
+                LuoGlobalData.TalkSys.CheckMistake(LuoGlobalData.LinkedPipeList.Count);
             }
         }
 
-        LuoStaticData.MaxReach = Mathf.Max(LuoStaticData.MaxReach, _reachPipeList.Count);
-        LuoStaticData.CurrentReach = _reachPipeList.Count;
-    }
-
-    public void SwitchPipePosition(GameObject pipe, PipeTowards towards)
-    {
-        // 重置缩放
-        pipe.transform.localScale = Vector3.one;
-        
-        // 更新位置和旋转
-        UpdatePipePosition(pipe, towards);
-        
-        // 根据方向设置缩放
-        switch (towards)
+        if (!isConnected && LuoGlobalData.LinkedPipeList.Contains(this))
         {
-            case PipeTowards.Right:
-            case PipeTowards.Left:
-                pipe.transform.localScale = new Vector3(-0.7f, 0.7f, 0.7f);
-                break;
-            default:
-                pipe.transform.localScale = Vector3.one;
-                break;
+            LuoGlobalData.LinkedPipeList.Remove(this);
+            if (isDestination)
+            {
+                if (_coroutine != null)
+                {
+                    StopCoroutine(_coroutine);
+                    _coroutine = null;
+                }
+            }
+        }
+        
+        if (isDestination && isConnected)
+        {
+            CheckDestination();
+        }
+        
+    }
+    
+    protected abstract void CheckDestination();
+    
+
+    IEnumerator RollCheck()
+    {
+        while (true)
+        {
+            Check();
+            yield return new WaitForSecondsRealtime(0.25f);
         }
     }
     
     
+    
+
+    /// <summary>
+    /// 子类重写：根据自身管道类型判断是否连通
+    /// </summary>
+    protected virtual void CalculateConnection()
+    {
+        CheckInitial(); // 兼容原有 CheckInitial 逻辑
+    }
+
+    protected abstract void CheckInitial();
+
+    public virtual void RotateToward()
+    {
+        curToward = curToward switch
+        {
+            Toward.Up    => Toward.Right,
+            Toward.Right => Toward.Down,
+            Toward.Down  => Toward.Left,
+            Toward.Left  => Toward.Up,
+            _ => curToward
+        };
+    }
+
+    public void SetToward(Toward pos, int num)
+    {
+        curToward = pos;
+        index = num;
+        col = index % 4;
+        row = index / 4;
+        LuoGlobalData.PipeList[index] = this;
+        SetEdge();
+
+        // 先停止旧的，再启动新的，防止重复叠加
+        if (_rollCheckRoutine != null)
+            StopCoroutine(_rollCheckRoutine);
+        _rollCheckRoutine = StartCoroutine(RollCheck());
+    }
+
+    /// <summary>
+    /// 所有管道生成完毕后统一调用一次，建立邻居关系
+    /// </summary>
+    public void CacheNeighbors()
+    {
+        int col = index % 4;
+        int row = index / 4;
+
+        up    = row > 0 ? LuoGlobalData.PipeList[index - 4] : null;
+        down  = row < 3 ? LuoGlobalData.PipeList[index + 4] : null;
+        left  = col > 0 ? LuoGlobalData.PipeList[index - 1] : null;
+        right = col < 3 ? LuoGlobalData.PipeList[index + 1] : null;
+    }
+
+    /// <summary>
+    /// 根据方向取邻居（工具方法，子类通用）
+    /// </summary>
+    protected Pipe GetNeighbor(Toward dir)
+    {
+        return dir switch
+        {
+            Toward.Up    => up,
+            Toward.Down  => down,
+            Toward.Left  => left,
+            Toward.Right => right,
+            _ => null
+        };
+    }
+    
+    
+    /// <summary>
+    /// 某个方向是否有开口（由子类根据管道类型实现）
+    /// </summary>
+    public abstract bool HasOpening(Toward dir);
+
+    /// <summary>
+    /// 工具方法：取反方向
+    /// </summary>
+    protected Toward GetOpposite(Toward t)
+    {
+        return t switch
+        {
+            Toward.Up    => Toward.Down,
+            Toward.Down  => Toward.Up,
+            Toward.Left  => Toward.Right,
+            Toward.Right => Toward.Left,
+            _ => t
+        };
+    }
+
+    private IEnumerator CheckBreak()
+    {
+        while (true)
+        {
+            // 自身已被销毁，直接退出
+            if (this == null) yield break;
+
+            bool pass = true;
+            // 用副本遍历，避免遍历期间列表被修改
+            var snapshot = new List<Pipe>(LuoGlobalData.LinkedPipeList);
+            foreach (var value in snapshot)
+            {
+                // 跳过已销毁的管道
+                if (value == null) continue;
+
+                if (!value.CheckPipeBreak())
+                {
+                    pass = false;
+                    Debug.Log("出现断点在", value.gameObject);
+                    break;
+                }
+            }
+
+            // 列表为空时不能算通关
+            if (snapshot.Count == 0)
+                pass = false;
+
+            if (pass)
+            {
+                LuoGlobalData.TalkSys.SetSuccess();
+                _coroutine = null; // 协程正常结束，置空避免后续 StopCoroutine 报错
+                yield break;
+            }
+            else
+            {
+                LuoGlobalData.TalkSys.SetBreak();
+            }
+
+            if (isDestination && !isConnected)
+            {
+                _coroutine = null;
+                yield break;
+            }
+
+            yield return new WaitForSecondsRealtime(0.25f);
+        }
+    }
+
+
+    protected abstract bool CheckPipeBreak();
+
+    
+    protected bool IsEdge()
+    {
+        return (row == 0 || row == 3) && (col == 0 || col == 3);
+    }
+    
+    protected bool IsEdge(Toward dir)
+    {
+        return _walls.Contains(dir);
+    }
+    
+    
+
+    private void SetEdge()
+    {
+        if (row == 0)
+        {
+            _walls.Add(Toward.Up);
+        }
+        else if (row == 3)
+        {
+            _walls.Add(Toward.Down);
+        }
+
+        if (col == 0)
+        {
+            _walls.Add(Toward.Left);
+        }
+        else if (col == 3)
+        { 
+            _walls.Add(Toward.Right);
+        }
+        
+    }
+    
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns> a为上下   b为左右</returns>
+    protected (Toward a, Toward b) GetEdge()
+    {
+        (Toward a, Toward b) result = new ();
+
+        if (row == 0)
+        {
+            result.a = Toward.Up;
+        }
+
+        if (row == 3)
+        {
+            result.a = Toward.Down;
+        }
+
+        if (col == 0)
+        {
+            result.b = Toward.Left;
+        }
+
+        if (col == 3)
+        {
+            result.b = Toward.Right;
+        }
+
+        return result;
+
+    }
+    
+    private void OnDestroy()
+    {
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+            _coroutine = null;
+        }
+        if (_rollCheckRoutine != null)
+        {
+            StopCoroutine(_rollCheckRoutine);
+            _rollCheckRoutine = null;
+        }
+    }
 
 }

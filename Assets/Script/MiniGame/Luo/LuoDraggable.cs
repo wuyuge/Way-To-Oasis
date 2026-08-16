@@ -9,7 +9,7 @@ public class LuoDraggable : Draggable, IPointerUpHandler, IPointerDownHandler
 {
     [SerializeField]
     public bool canRelease;
-    public PipeType itemType;
+    
     
     private Vector3 _startWorldPosition; // 使用世界坐标保存初始位置
 
@@ -55,4 +55,11 @@ public class LuoDraggable : Draggable, IPointerUpHandler, IPointerDownHandler
         // 可以在这里更新起始位置，如果需要的话
         // _startWorldPosition = transform.position;
     }
+    
+    public void SetLimitArea(RectTransform area)
+    {
+        limitArea = area;
+    }
+    
+    
 }

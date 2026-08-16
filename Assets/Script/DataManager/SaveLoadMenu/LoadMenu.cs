@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
 
 /// <summary>
 /// 存档菜单管理器：检测存档文件并控制对应按钮的激活状态
@@ -21,6 +22,8 @@ public class LoadMenu : MonoBehaviour,ISaveMenuInterface
     public int maxSaveSlots = 6;
 
     public Manager autoSaveIsOn;
+    // 替换：移除 Scrollbar，使用 ScrollRect
+    public ScrollRect scrollRect;
 
     public void UpdateSaveMenu()
     {
@@ -40,6 +43,9 @@ public class LoadMenu : MonoBehaviour,ISaveMenuInterface
         
         // 检测存档文件并更新按钮状态
         UpdateSaveButtonStates();
+        
+        // 延迟一帧等待UGUI布局完成，重置滚动位置（原来 scrollbar.value=1 → 对应 scrollRect 0，底部）
+        StartCoroutine(ResetScrollToBottom());
     }
 
     /// <summary>
@@ -117,10 +123,21 @@ public class LoadMenu : MonoBehaviour,ISaveMenuInterface
     
     //TODO :莱文特殊存档结局
 
+    IEnumerator ResetScrollToBottom()
+    {
+        yield return null;
+        if(scrollRect != null)
+        {
+            // 原 verticalScrollbar.value =1（滚动到底部）等价于 verticalNormalizedPosition = 0
+            scrollRect.verticalNormalizedPosition = 0;
+        }
+    }
 
     private void OnDisable()
     {
         autoSaveIsOn.GeneralBool = true;
+        // OnDisable物体即将失效，协程在这里不建议跑；OnDisable阶段RectTransform已经可能失效，直接删掉滚动赋值
+        // verticalScrollbar.value = 1;
     }
 }
 
@@ -129,5 +146,3 @@ public static class SLManager
     public static LoadMenu LoadMenu { get; set; }
     public static SaveMenu SaveMenu { get; set; }
 }
-
-

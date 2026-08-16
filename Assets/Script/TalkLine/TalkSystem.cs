@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -108,8 +109,11 @@ public class TalkSystem : MonoBehaviour
     public TalkSysSwitch switchManager;
     public TalkSysShowText showText;
     public TalkSysUIButtonFunc buttonFunc;
+    public NewTalkSysShowText newTalkSysShowText;
 
     public Manager reload;
+    public Manager language;
+    public bool useNewSys;
     
     /// <summary>
     /// 用于存档加载时暂时停止对话系统调用
@@ -119,6 +123,8 @@ public class TalkSystem : MonoBehaviour
         get;
         set;
     }
+    
+    
 
 
     private void Awake()
@@ -128,6 +134,7 @@ public class TalkSystem : MonoBehaviour
         PlayerNameText.text = PlayerName.TxtLine[0];
         Type = gameObject.GetComponent<AudioSource>();
         GlobalData.TalkSystem = this;
+        GlobalData.Language = language;
     }
     
     
@@ -149,6 +156,7 @@ public class TalkSystem : MonoBehaviour
         buttonFunc.Init(this);
         switchManager.Init(this);
         showText.Init(this);
+        newTalkSysShowText.Init(this);
         TalkSysStaticData.TalkSys = this;
         if (characterComponentList.Count == 0)
         {
@@ -228,7 +236,14 @@ public class TalkSystem : MonoBehaviour
 
     public int ShowText()
     {
-        showText.ShowText();
+        if (!useNewSys)
+        {
+            showText.ShowText();
+        }
+        else
+        {
+            newTalkSysShowText.ShowText();
+        }
 
 
         return 0;
@@ -339,7 +354,6 @@ public class TalkSystem : MonoBehaviour
                 {
                         Debug.Log("第一次商店杀死艾米莉");
                         CharacterList[3].GetComponent<Character>().Special2 = true;
-                        CharacterList[3].GetComponent<Character>().NotComfort = true;
                         CharacterList[3].GetComponent<Character>().EnableTalk();
                         CharacterList[3].GetComponent<Character>().Attention.SetActive(true);
                 }
@@ -360,10 +374,7 @@ public class TalkSystem : MonoBehaviour
     }
     public void HideBar()
     {
-        if (anim is null)
-        {
-            anim = GetComponent<Animator>();
-        }
+        anim = GetComponent<Animator>();
         anim.SetTrigger("Down");
     }
     public void ResetLine()
@@ -408,8 +419,11 @@ public class TalkSystem : MonoBehaviour
     }
     public void SwitchExpression(string CharaName,string Expression)
     {
-
         expression.SetExpression(CharaName,Expression);
+    }
+    public void SwitchExpression(string CharaName,int index)
+    {
+        expression.SetExpression(CharaName,index);
     }
     public void SwitchLine(TalkLine switchLine)
     {
@@ -430,6 +444,10 @@ public class TalkSystem : MonoBehaviour
                 break;
         }
         line = 0;
+        if (useNewSys)
+        {
+            newTalkSysShowText.SetChoiceLine(0,false);
+        }
     }
     public void SetTextBox(Manager textBox)
     {

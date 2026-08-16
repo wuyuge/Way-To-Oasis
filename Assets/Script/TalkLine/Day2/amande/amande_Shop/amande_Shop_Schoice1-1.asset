@@ -25,6 +25,159 @@ MonoBehaviour:
   - "\u963F\u66FC\u5FB7\uFF1A\u6BD5\u7ADF\u77E5\u9053\u7684\u592A\u591A\u5BF9\u6211\u6765\u8BF4\u4E5F\u4E0D\u4E00\u5B9A\u662F\u4EF6\u597D\u4E8B\uFF0C\u5BF9\u5427\uFF1F@{7}"
   - "\u963F\u66FC\u5FB7\uFF1A\u65E0\u8BBA\u4F60\u5148\u524D\u5982\u4F55\u6253\u7B97\uFF0C\u53D1\u751F\u7684\u4E8B\u4E0D\u4F1A\u6709\u4EFB\u4F55\u53D8\u5316\u3002"
   - ${End}
+  data:
+  - cn: "\u6211\u65E9\u6709\u9884\u6599"
+    en: I expected it
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u65E9\u6709\u9884\u6599\u3002"
+    en: I expected it.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u55EF\u3002"
+    en: Mm.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u4ECE\u4EC0\u4E48\u65F6\u5019\u5F00\u59CB\u7684\uFF1F\u51B3\u5FC3\u7559\u4E0B\u5C38\u4F53\u7684\u65F6\u5019\uFF0C\u5206\u914D\u8D1F\u91CD\u7684\u65F6\u5019\u2026\u2026"
+    en: When did it start? When you decided to keep the bodies? When you assigned
+      the carrying load...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u2026\u2026\u8FD8\u662F\u5728\u6CA1\u6709\u4EBA\u6B7B\u53BB\u4E4B\u524D\u5C31\u5DF2\u7ECF\u505A\u597D\u4E86\u51B3\u5B9A\uFF1F"
+    en: ...Or had you already made the decision before anyone died?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u7B97\u4E86\uFF0C\u4F60\u4E00\u5B9A\u4E5F\u89C9\u5F97\u8FD9\u4E9B\u95EE\u9898\u6BEB\u65E0\u610F\u4E49\u3002"
+    en: Forget it. You must think these questions are meaningless too.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u73B0\u5728\u4E00\u5207\u5DF2\u6210\u5B9A\u5C40\uFF0C\u5C31\u7B97\u5F97\u77E5\u4F60\u7684\u521D\u8877\u4E5F\u53EA\u4F1A\u5F92\u589E\u65E0\u610F\u4E49\u7684\u714E\u71AC\u3002"
+    en: Everything has already been decided. Even if I learn what you intended at
+      first, it will only add meaningless suffering.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6BD5\u7ADF\u77E5\u9053\u7684\u592A\u591A\u5BF9\u6211\u6765\u8BF4\u4E5F\u4E0D\u4E00\u5B9A\u662F\u4EF6\u597D\u4E8B\uFF0C\u5BF9\u5427\uFF1F"
+    en: After all, knowing too much is not necessarily a good thing for me, right?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u65E0\u8BBA\u4F60\u5148\u524D\u5982\u4F55\u6253\u7B97\uFF0C\u53D1\u751F\u7684\u4E8B\u4E0D\u4F1A\u6709\u4EFB\u4F55\u53D8\u5316\u3002"
+    en: No matter what you planned before, what happened will not change.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: 3ad07acae70c6b94bb9a566f4c0f0ea7, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -32,5 +185,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

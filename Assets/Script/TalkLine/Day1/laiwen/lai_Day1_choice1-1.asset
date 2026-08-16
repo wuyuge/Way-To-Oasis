@@ -19,6 +19,75 @@ MonoBehaviour:
   - ->c
   - "\u83B1\u6587\uFF1A\u4E0D\u6127\u662F\u4F60\uFF0C\u8BA9\u4EBA\u6311\u4E0D\u51FA\u4E00\u70B9\u9519\u6765\u3002"
   - ${End}
+  data:
+  - cn: "\u8F7B\u800C\u6613\u4E3E"
+    en: Easy
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u8F7B\u800C\u6613\u4E3E\u3002"
+    en: Easy.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4E0D\u6127\u662F\u4F60\uFF0C\u8BA9\u4EBA\u6311\u4E0D\u51FA\u4E00\u70B9\u9519\u6765\u3002"
+    en: Easy.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   Option1: {fileID: 11400000, guid: db9a427df7e61ff45bd702b80a03d63e, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -26,5 +95,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

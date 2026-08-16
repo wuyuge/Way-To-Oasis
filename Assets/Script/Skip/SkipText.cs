@@ -22,14 +22,16 @@ public class SkipText : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!lockButton)
-        {
-            button.interactable = GlobalData.ShowText.CanShowText;
-        }
-        else
-        {
-            button.interactable = false;
-        }
+        button.interactable = !lockButton;
         
     }
+
+    public void Skip()
+    {
+        if (GlobalData.TalkSystem.useNewSys)
+        {
+            GlobalData.NewTalkSysShowText.Skip();
+        }
+    }
+    
 }

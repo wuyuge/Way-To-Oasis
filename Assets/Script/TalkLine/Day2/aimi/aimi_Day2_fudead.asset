@@ -19,6 +19,22 @@ MonoBehaviour:
   - ${CheckAimiEat}
   - ${CheckAimiEat}
   - ${CheckAimiEat}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 01000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: c55cdfbab04fdca4c8e4c8e2cb278adb, type: 2}
   Option2: {fileID: 11400000, guid: f848a5539e4427647a5ed9b61304433d, type: 2}
   Option3: {fileID: 0}
@@ -26,5 +42,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

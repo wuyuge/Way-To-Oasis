@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4228997976002538665}
   - component: {fileID: 172254159002416488}
   - component: {fileID: 1134804364535449780}
+  - component: {fileID: 8853273742334425436}
   m_Layer: 5
   m_Name: Tips
   m_TagString: Untagged
@@ -156,3 +157,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8853273742334425436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773828712599454556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702b120eed9791e4b914863504465eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: {fileID: 11400000, guid: 824057b5fd1df75479a56df414be097e, type: 2}
+  cn: "\u6309\u4EFB\u610F\u952E\u7EE7\u7EED"
+  en: Press any key

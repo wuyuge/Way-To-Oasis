@@ -18,7 +18,8 @@ public class PlayerSaveData
     public string[] deadBodyContainer = new string[7];
     public string[] currentDead = new string[5];
     public bool[] miniGamePlayState = new bool[20];
-    
-
-
+    public string[] usedBodyContainer = new string[10];
+    public bool afterShop;
+    public int[] characterSpTalkState = new int[6];
+    public bool[] characterComfortState = new bool[6];
 }

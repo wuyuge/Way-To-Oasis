@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: LuoNotDead
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u8352\u6F20\u4E0A\u7684\u5929\u6C14\u77AC\u606F\u4E07\u53D8\uFF0C\u4E0B\u96E8\u4E5F\u662F\u5E38\u6709\u7684\u4E8B\u60C5\u3002"
+  - "\u9664\u4E86\u96E8\u6C34\u91CC\u53EF\u80FD\u643A\u5E26\u7684\u6C61\u67D3\u6E90\u5916\uFF0C\u6DB2\u4F53\u672C\u8EAB\u4E5F\u4F1A\u5BF9\u8BBE\u5907\u9020\u6210\u4E00\u4E9B\u635F\u5BB3\u3002"
+  - "\u6CA1\u6709\u59A5\u5584\u7684\u9632\u62A4\u63AA\u65BD\uFF0C\u6211\u4EEC\u7684\u8F7D\u5177\u53EF\u80FD\u4E0D\u52303\u5929\u5C31\u4F1A\u62A5\u5E9F\u4E86\u5427\u3002"
+  - ${Create}
+  - ${Last}
+  - "\u6700\u540E\u662FPRCT-7\uFF0C\u4E00\u79CD\u5F88\u6709\u6548\u7684\u6D3B\u6027\u836F\u5242\u3002"
+  - "\u7B97\u5F97\u4E0A\u662F\u6211\u7684\u79C1\u4EBA\u8BF7\u6C42\uFF0C\u9EBB\u70E6\u4F60\u4E86\u3002"
+  data:
+  - cn: "\u8352\u6F20\u4E0A\u7684\u5929\u6C14\u77AC\u606F\u4E07\u53D8\uFF0C\u4E0B\u96E8\u4E5F\u662F\u5E38\u6709\u7684\u4E8B\u60C5\u3002"
+    en: The weather in the desert changes in an instant. Rain is common.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u9664\u4E86\u96E8\u6C34\u91CC\u53EF\u80FD\u643A\u5E26\u7684\u6C61\u67D3\u6E90\u5916\uFF0C\u6DB2\u4F53\u672C\u8EAB\u4E5F\u4F1A\u5BF9\u8BBE\u5907\u9020\u6210\u4E00\u4E9B\u635F\u5BB3\u3002"
+    en: Besides the possible pollutants carried in rainwater, the liquid itself can
+      also damage equipment.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6CA1\u6709\u59A5\u5584\u7684\u9632\u62A4\u63AA\u65BD\uFF0C\u6211\u4EEC\u7684\u8F7D\u5177\u53EF\u80FD\u4E0D\u52303\u5929\u5C31\u4F1A\u62A5\u5E9F\u4E86\u5427\u3002"
+    en: Without proper protective measures, our vehicle might be completely ruined
+      in less than three days.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: ${Create}
+    en: ${Create}
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: ${Last}
+    en: ${Last}
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6700\u540E\u662FPRCT-7\uFF0C\u4E00\u79CD\u5F88\u6709\u6548\u7684\u6D3B\u6027\u836F\u5242\u3002"
+    en: Last is PRCT-7, a very effective active medicine.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u7B97\u5F97\u4E0A\u662F\u6211\u7684\u79C1\u4EBA\u8BF7\u6C42\uFF0C\u9EBB\u70E6\u4F60\u4E86\u3002"
+    en: You could call this my personal request. Thank you for the trouble.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Eat: 0
+  GeneralBool: 1
+  isEn: 0

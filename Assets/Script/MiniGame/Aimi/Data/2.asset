@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0d7022325ba6c48a153673d65af036, type: 3}
+  m_Name: 2
+  m_EditorClassIdentifier: 
+  description: "\u4E0D\u5BFB\u5E38\u7684\u58F0\u97F3\u3002\u5148\u8BB0\u5F55\u4E0B\u6765\u5427\u3002"
+  en: An unusual sound. Record it first.
+  expression: 3

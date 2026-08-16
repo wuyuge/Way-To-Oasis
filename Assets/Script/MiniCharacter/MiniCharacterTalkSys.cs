@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
@@ -21,6 +22,7 @@ public class MiniCharacterTalkSys : MonoBehaviour
         //Debug.Log($"接受数据说话人：{Name} 内容：{Text}");
         // 显示对话栏的逻辑
 
+        _talkExecuted = false;
         foreach (CharacterTalk character in characterTalks)
         {
 
@@ -52,6 +54,7 @@ public class MiniCharacterTalkSys : MonoBehaviour
 
     public void ShowText(string charaName, char text, bool isThinking = false)
     {
+        _talkExecuted = false;
         foreach (CharacterTalk character in characterTalks)
         {
 
@@ -88,9 +91,14 @@ public class MiniCharacterTalkSys : MonoBehaviour
         }
     }
 
+    private bool _talkExecuted = false;
 
-
-
-
-
+    private void Update()
+    {
+        if (GlobalData.Progress.start && !_talkExecuted)
+        {
+            _talkExecuted = true; // 上锁，防止再次执行
+            CompleteTalk();
+        }
+    }
 }

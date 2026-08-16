@@ -18,6 +18,88 @@ MonoBehaviour:
   - "\u827E\u7C73\u8389\uFF1A\u5E0C\u671B\u4ECA\u5929\u80FD\u6709\u6240\u6536\u83B7\u3002"
   - "\u827E\u7C73\u8389\uFF1A\u8FD9\u6B21\u7ED3\u675F\u4EE5\u540E\u81F3\u5C11\u8981\u4F11\u5047\u4E09\u4E2A\u6708\u3002\u4E0D\uFF0C\u8FD8\u662F\u534A\u5E74\u597D\u4E86\u3002"
   - "\u827E\u7C73\u8389\uFF1A\u56DE\u53BB\u5C31\u80FD\u542C\u5230\u906E\u5149\u5668\u4E50\u961F(Eclipser)\u7684\u65B0\u4E13\u8F91\u4E86\u3002"
+  data:
+  - cn: "\u2026\u6709\u4EBA\u5728\u53EB\u6211\u5417\uFF1F\u8033\u673A\u97F3\u91CF\u4F3C\u4E4E\u6709\u4E9B\u5927\u4E86\u3002"
+    en: ...Is someone calling me? The headphone volume seems a little too high.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u4E00\u5B9A\u4F1A\u8D70\u51FA\u53BB\u7684\uFF0C\u4E00\u5B9A\u3002"
+    en: I will definitely get out. Definitely.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5E0C\u671B\u4ECA\u5929\u80FD\u6709\u6240\u6536\u83B7\u3002"
+    en: I hope we find something today.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8FD9\u6B21\u7ED3\u675F\u4EE5\u540E\u81F3\u5C11\u8981\u4F11\u5047\u4E09\u4E2A\u6708\u3002\u4E0D\uFF0C\u8FD8\u662F\u534A\u5E74\u597D\u4E86\u3002"
+    en: I hope we find something today.After this is over, I need at least three
+      months off. No, half a year would be better.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u56DE\u53BB\u5C31\u80FD\u542C\u5230\u906E\u5149\u5668\u4E50\u961F\u7684\u65B0\u4E13\u8F91\u4E86\u3002"
+    en: Once I get back, I can listen to Eclipser's new album.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -25,5 +107,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

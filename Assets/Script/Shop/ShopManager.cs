@@ -42,7 +42,7 @@ public class ShopManager : MonoBehaviour
 
     public bool ExchangeFood()
     {
-
+        Debug.Log("½»»»Κ¬Με");
         int canUseBody = 0;
         foreach(string s in DeadName.TxtLine)
         {

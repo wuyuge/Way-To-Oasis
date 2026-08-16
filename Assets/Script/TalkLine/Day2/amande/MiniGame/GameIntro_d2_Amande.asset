@@ -18,6 +18,67 @@ MonoBehaviour:
   - "\u963F\u66FC\u5FB7\uFF1A\u5F00\u73A9\u7B11\u7684\uFF0C\u53EA\u662F\u5E0C\u671B\u4F60\u80FD\u5E2E\u6211\u4E9B\u5FD9\u800C\u5DF2\u3002@{5}"
   - "\u963F\u66FC\u5FB7\uFF1A\u8981\u662F\u8FD8\u6709\u522B\u7684\u4E8B\uFF0C\u4F60\u5F53\u7136\u53EF\u4EE5\u62D2\u7EDD\u3002\u6CA1\u5173\u7CFB\u7684\u3002"
   - ${Choice}
+  data:
+  - cn: "\u8FD9\u4E9B\u8BDD\u9898\u662F\u4E0D\u662F\u592A\u6C89\u91CD\u4E86\u4E9B\uFF1F\u8981\u4E0D\u7528\u5DE5\u4F5C\u8F6C\u79FB\u4E00\u4E0B\u6CE8\u610F\u529B\u5427\u3002"
+    en: Are these topics a little too heavy? Why not use work to distract ourselves?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u5F00\u73A9\u7B11\u7684\uFF0C\u53EA\u662F\u5E0C\u671B\u4F60\u80FD\u5E2E\u6211\u4E9B\u5FD9\u800C\u5DF2\u3002"
+    en: I am joking. I only hope you can help me with a few things.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u8981\u662F\u8FD8\u6709\u522B\u7684\u4E8B\uFF0C\u4F60\u5F53\u7136\u53EF\u4EE5\u62D2\u7EDD\u3002\u6CA1\u5173\u7CFB\u7684\u3002"
+    en: If you still have other things to do, of course you can refuse. It is fine.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: e61e38910991f2f4d9c46eca5f9bfa26, type: 2}
   Option2: {fileID: 11400000, guid: 1ecbc1791ce7b9d4d89011cf1b772944, type: 2}
   Option3: {fileID: 0}
@@ -25,5 +86,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

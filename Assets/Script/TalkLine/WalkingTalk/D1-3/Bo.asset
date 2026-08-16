@@ -18,6 +18,82 @@ MonoBehaviour:
   - "\u535A\u91D1\u68EE\uFF1A\u6211\u4E0D\u4F1A\u6B7B\u5728\u8FD9\u7684\u3002"
   - "\u535A\u91D1\u68EE\uFF1A\u827E\u7C73\u8389\u4F3C\u4E4E\u770B\u4E0A\u53BB\u4E0D\u592A\u9AD8\u5174\u3002\u2026\u53D1\u751F\u4EC0\u4E48\u4E86\u3002"
   - "\u535A\u91D1\u68EE\uFF1A\u8FD9\u91CC\u6B7B\u8FC7\u5F88\u591A\u4EBA\uFF0C\u6211\u4EEC\u4E0D\u4F1A\u6210\u4E3A\u5176\u4E2D\u4E4B\u4E00\u3002"
+  data:
+  - cn: "\u90A3\u8FB9\u597D\u50CF\u6709\u52A8\u9759\u3002\u2026\u9519\u89C9\u5417\uFF1F"
+    en: There seems to be movement over there. ...Was it my imagination?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u5FEB\u5230\u4E86\u5417\uFF1F\u8BE5\u68C0\u67E5\u4E00\u4E0B\u5468\u56F4\u4E86\u3002"
+    en: Are we almost there? I should check the surroundings.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u4E0D\u4F1A\u6B7B\u5728\u8FD9\u7684\u3002"
+    en: I will not die here.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u827E\u7C73\u8389\u4F3C\u4E4E\u770B\u4E0A\u53BB\u4E0D\u592A\u9AD8\u5174\u3002\u2026\u53D1\u751F\u4EC0\u4E48\u4E86\u3002"
+    en: Emily seems unhappy. ...What happened?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u8FD9\u91CC\u6B7B\u8FC7\u5F88\u591A\u4EBA\uFF0C\u6211\u4EEC\u4E0D\u4F1A\u6210\u4E3A\u5176\u4E2D\u4E4B\u4E00\u3002"
+    en: Many people have died here. We will not become one of them.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -25,5 +101,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

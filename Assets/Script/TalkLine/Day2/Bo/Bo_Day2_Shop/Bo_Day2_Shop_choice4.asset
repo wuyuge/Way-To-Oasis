@@ -20,6 +20,87 @@ MonoBehaviour:
   - "\u535A\u91D1\u68EE\uFF1A\u4F60\u7684\u8111\u5B50\u88AB\u6C99\u5B50\u7CCA\u4F4F\u4E86\u662F\u5417\uFF1F\u8FD8\u662F\u8BF4\u4F60\u5F7B\u5E95\u75AF\u4E86\u3002"
   - "\u535A\u91D1\u68EE\uFF1A\u65E0\u6240\u8C13\uFF0C\u6211\u4ECA\u5929\u5C31\u9001\u4F60\u4E00\u7A0B\u3002@{5}"
   - ${End}
+  data:
+  - cn: "\u591A\u8C22\u5173\u5FC3"
+    en: Thank you for your concern
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u591A\u8C22\u5173\u5FC3\u3002"
+    en: Thank you for your concern.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u7684\u8111\u5B50\u88AB\u6C99\u5B50\u7CCA\u4F4F\u4E86\u662F\u5417\uFF1F\u8FD8\u662F\u8BF4\u4F60\u5F7B\u5E95\u75AF\u4E86\u3002"
+    en: Is your brain full of sand? Or have you completely lost your mind?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u65E0\u6240\u8C13\uFF0C\u6211\u4ECA\u5929\u5C31\u9001\u4F60\u4E00\u7A0B\u3002"
+    en: Whatever. I will send you to hell today.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 77f4627483d35d849824ef275b9e4934, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -27,5 +108,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

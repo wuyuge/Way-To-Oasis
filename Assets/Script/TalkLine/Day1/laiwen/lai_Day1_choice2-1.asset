@@ -19,6 +19,67 @@ MonoBehaviour:
   - ->c
   - "\u83B1\u6587\uFF1A\u6709\u4EC0\u4E48\u611F\u5174\u8DA3\u7684\u8BDD\u9898\u5417\uFF1F"
   - ${Choice}
+  data:
+  - cn: "\u597D\u554A"
+    en: Sure
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u597D\u554A\u3002"
+    en: Sure.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6709\u4EC0\u4E48\u611F\u5174\u8DA3\u7684\u8BDD\u9898\u5417\uFF1F"
+    en: Any topic you are interested in?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: 8a064cac40914774380a81fdc136cf96, type: 2}
   Option2: {fileID: 11400000, guid: 6feab3d168f5bf348acac96f31503501, type: 2}
   Option3: {fileID: 0}
@@ -26,5 +87,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

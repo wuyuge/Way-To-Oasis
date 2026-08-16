@@ -21,6 +21,47 @@ MonoBehaviour:
   - ->c
   - ->c
   - ${End}
+  data:
+  - cn: "\u901A\u77E5\u5B8C\u4E86"
+    en: "Everyone\u2019s been told"
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u901A\u77E5\u5B8C\u4E86\u3002"
+    en: "Everyone\u2019s been told."
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: 
+    en: 
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 05000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: 
+    en: 
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
   Option1: {fileID: 11400000, guid: eaa5001ad49051045abfc784e82acf2d, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 11400000, guid: cd4eba7903741d64e9e99e19b4f7f080, type: 2}
@@ -28,5 +69,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

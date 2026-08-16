@@ -29,6 +29,112 @@ MonoBehaviour:
   - ${TechClose}
   - ${UnLockSkip}
   - ${DownTalkBox}
+  data:
+  - cn: "\u6211\u60F3\u95EE\u95EE\u4F60\u5BF9\u5982\u4F55\u5904\u7406\u8001\u961F\u957F\u9057\u4F53\u8FD9\u4EF6\u4E8B\u7684\u610F\u89C1\u3002"
+    en: I want to ask for your opinion on how we should deal with the old captain's
+      body.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6211\u60F3\u95EE\u95EE\u4F60\u5BF9\u5982\u4F55\u5904\u7406\u8001\u961F\u957F\u9057\u4F53\u8FD9\u4EF6\u4E8B\u7684\u610F\u89C1\u3002"
+    en: I want to ask for your opinion on how we should deal with the old captain's
+      body.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u8FD9\u6837\u5417\uFF0C\u5176\u4ED6\u4EBA\u7684\u610F\u89C1\u90FD\u95EE\u8FC7\u4E86\u5417\uFF1F"
+    en: I see. Have you asked everyone else for their opinions?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u662F\u7684\u3002"
+    en: Yes.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u2026\u6211\u53EA\u662F\u4E0D\u5E0C\u671B\u8BA9\u4ED6\u66DD\u5C38\u8352\u91CE\u3002\u6211\u77E5\u9053\u6211\u7684\u8BF7\u6C42\u6709\u4E9B\u8FC7\u5206\u2026\u4E0D\u7528\u7406\u4F1A\u6211\uFF0C\u4F60\u6765\u51B3\u5B9A\u5C31\u597D\u3002"
+    en: ...I just don't want to leave him exposed in the wilderness. I know my request
+      is a little unreasonable... You do not have to listen to me. You decide.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 140000002300000026000000300000003a00000016000000
+    onlyCode: 1
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -36,5 +142,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

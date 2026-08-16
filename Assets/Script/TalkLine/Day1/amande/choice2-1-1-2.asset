@@ -20,6 +20,82 @@ MonoBehaviour:
   - "\u963F\u66FC\u5FB7\uFF1A\u5F88\u6B63\u5E38\uFF0C\u7A81\u5982\u5176\u6765\u7684\u8D23\u4EFB\u4F1A\u7ED9\u4EBA\u5E26\u6765\u91CD\u62C5\u3002@{5}"
   - "\u963F\u66FC\u5FB7\uFF1A\u4F60\u4F1A\u4E60\u60EF\u7684\u3002"
   - ${End}
+  data:
+  - cn: "\u6709\u70B9\u4E0D\u77E5\u6240\u63AA"
+    en: I feel a little overwhelmed.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6709\u70B9\u4E0D\u77E5\u6240\u63AA\u3002"
+    en: I feel a little overwhelmed.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u5F88\u6B63\u5E38\uFF0C\u7A81\u5982\u5176\u6765\u7684\u8D23\u4EFB\u4F1A\u7ED9\u4EBA\u5E26\u6765\u91CD\u62C5\u3002"
+    en: That is normal. Sudden responsibility can become a heavy burden.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u4F60\u4F1A\u4E60\u60EF\u7684\u3002"
+    en: You will get used to it.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: fa8bebc39663b784cb1116b7f674ed5c, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -27,5 +103,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

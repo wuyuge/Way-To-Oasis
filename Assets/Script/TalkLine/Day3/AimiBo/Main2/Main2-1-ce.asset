@@ -36,6 +36,204 @@ MonoBehaviour:
   - ${OpenSwitchStage}
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}
+  data:
+  - cn: "\u4F60\u8BF4\u5F97\u5BF9\u3002"
+    en: You are right.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u603B\u4E4B\u6211\u4F1A\u5C3D\u5FEB\u63A2\u6D4B\u60C5\u51B5\uFF0C\u660E\u5929\u5E94\u8BE5\u5C31\u4F1A\u6709\u6240\u6536\u83B7\u3002"
+    en: In any case, I will investigate the situation as soon as possible. We should
+      have results tomorrow.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u4ECA\u5929\u5C31\u5148\u597D\u597D\u4F11\u606F\u5427\u3002"
+    en: Rest properly today.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u2026\u2026\u8FD8\u6709\u4EC0\u4E48\u4E8B\u5417\uFF1F"
+    en: ...Is there anything else?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u963F\u66FC\u5FB7\u6B7B\u4E86\uFF0C\u4F60\u6CA1\u6709\u4EC0\u4E48\u60F3\u8BF4\u7684\u5417\u3002"
+    en: Amanda is dead. You have nothing to say?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u611F\u5230\u9057\u61BE\u3002"
+    en: I feel sorry.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u4E5F\u4E00\u6837\uFF0C\u5979\u8FC7\u4E8E\u575A\u97E7\u4E86\u3002"
+    en: Same. She was too resilient.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u8FD9\u4E0D\u662F\u4EF6\u574F\u4E8B\uFF0C\u4F46\u5BF9\u5979\u6765\u8BF4\u8D1F\u62C5\u592A\u5927\u4E86\u3002"
+    en: That is not a bad thing, but for her, it was too heavy a burden.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u5E0C\u671B\u5979\u80FD\u5C31\u6B64\u5F97\u5230\u89E3\u8131\u3002"
+    en: I hope she has found release.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u867D\u7136\u8FD9\u5F88\u6B8B\u9177\uFF0C\u4F46\u662F\u961F\u957F\u6211\u4E0D\u5F97\u4E0D\u63D0\u9192\u4F60\uFF0C\u6CA1\u6709\u533B\u751F\u4F1A\u4F7F\u6211\u4EEC\u9762\u4E34\u66F4\u5927\u7684\u98CE\u9669\u3002"
+    en: Although this is cruel, Captain, I have to remind you that without a doctor,
+      we will face greater risks.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u4F1A\u5C3D\u529B\u907F\u514D\u7684\u3002"
+    en: I will do my best to avoid that.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 230000001400000016000000
+    onlyCode: 1
+    speaker: 3
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -43,5 +241,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

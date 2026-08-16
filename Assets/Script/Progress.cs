@@ -69,7 +69,6 @@ public class Progress : MonoBehaviour
     public DayNightSystem DNSys;
     // 用于判断day0遮罩是否用过
     private bool Day0MaskUsed = false;
-    private bool TipsWeight = false;
     private TalkSystem talkSys;
     [Header("阿曼德自杀判断")]
     public Manager AmandeKillSelf;
@@ -88,12 +87,12 @@ public class Progress : MonoBehaviour
     [Header("跳过对话提示")]
     public GameObject TalkTips;
     public Manager TalkTipsBool;
-    private bool _showedTalkTips;
     [Header("饿死队员提示")]
     public GameObject killTips;
     public Manager killTipsBool;
-
-    private int _killTipsTime = 0;
+    public GameObject day0TalkTips;
+    public GameObject day0FoodTalkTips;
+    public GameObject comfortTips;
     //重置每天的商店事件
     public ShopEventReseter shopEventReseter;
     private Button _thisButton;
@@ -163,7 +162,11 @@ public class Progress : MonoBehaviour
 
     private void Update()
     {
-        _thisButton.interactable = CanSwitch;
+        if (day_num != 0)
+        {
+            _thisButton.interactable = CanSwitch;
+        }
+        
     }
 
 
@@ -171,7 +174,7 @@ public class Progress : MonoBehaviour
     {
         if(day_num == 0 && food && !Day0MaskUsed)
         {
-            bool allEat = DownBar.GetComponent<ObjectManager>().CheckEat(false);
+            DownBar.GetComponent<ObjectManager>().CheckEat(false);
         }
 
         /*if(SwitchPlaying)
@@ -192,7 +195,7 @@ public class Progress : MonoBehaviour
     /// 根据当前游戏阶段（start/talk/food），切换到下一个阶段，并执行对应逻辑
     /// 包含：状态标记更新、UI文本颜色更新、背景滚动控制、幕间对话触发、日期更新等
     /// </summary>
-    public void SwitchProgress()
+    public void SwitchProgress(bool skipTips = false)
     {
         
         if (TutorialManager.TutorialIsShow)
@@ -203,21 +206,23 @@ public class Progress : MonoBehaviour
         AudioManager.AudioPlayer("Click");
         if(day_num > 3)
         {
-            GameObject.Find("EndingsManager").GetComponent<EndingsManager>().ToEnd("Demo-End");
+            GlobalData.EndingsManager.ToEnd("Demo-End");
         }
         // 1. 从【开始阶段】切换到【对话阶段】
         if (start && CanSwitch)
         {
             if (DNSys.time < DNSys.Frist - 0.005f) return;
             // 通知对象管理器更新道具携带数量（可能同步背包显示）
-            if (!TipsWeight && !AbandonBool.GeneralBool)
+            if (!skipTips)
             {
-                bool allCarry = ObjectManager.GetComponent<ObjectManager>().SetCarryNum(true);
-                if (!allCarry)
+                if (!AbandonBool.GeneralBool)
                 {
-                    abandon.gameObject.SetActive(true);
-                    TipsWeight = true;
-                    return;
+                    bool allCarry = ObjectManager.GetComponent<ObjectManager>().SetCarryNum(true);
+                    if (!allCarry)
+                    {
+                        abandon.gameObject.SetActive(true);
+                        return;
+                    }
                 }
             }
             else
@@ -233,21 +238,47 @@ public class Progress : MonoBehaviour
             talk = true;  // 进入对话阶段
             state.SetTrigger("Switch");
         }
+        
+        else if (talk && !CanSwitch && day_num == 0 && !GlobalData.ShowText.CanShowText)
+        {
+            day0TalkTips.SetActive(true);
+        }
 
         // 2. 从【对话阶段】切换到【进食阶段】
         else if (talk && CanSwitch)
         {
             if (DNSys.time < DNSys.Second - 0.005f && day_num != 0) return;
 
-            if (!DownBar.GetComponent<ObjectManager>().CheckTalk() && day_num != 0 && !_showedTalkTips)
+            if (!skipTips && !GlobalData.AfterShop)
             {
-                if (!TalkTipsBool.GeneralBool)
+                bool checkTalk = true;
+                foreach (var value in GlobalData.TalkSystem.characterComponentList)
                 {
-                    TalkTips.SetActive(true);
-                    _showedTalkTips = true;
-                    return;
+                    if (value.CharacterName == "主角")
+                    {
+                        continue;
+                    }
+                    if (!value.have_talk && !value.Dead)
+                    {
+                        checkTalk = false;
+                    }
                 }
+                if (!checkTalk && day_num != 0)
+                {
+                    if (!TalkTipsBool.GeneralBool)
+                    {
+                        TalkTips.SetActive(true);
+                        return;
+                    }
 
+                }
+            }
+            
+
+            if (!CheckComfort())
+            {
+                comfortTips.SetActive(true);
+                return;
             }
 
 
@@ -268,6 +299,8 @@ public class Progress : MonoBehaviour
                         SwitchPlaying = true;
                         Invoke("SetShop", 5.5f);
                     }*/
+
+                    GlobalData.AfterShop = true;
                     var shopAnim = shopIntro.GetComponent<Animator>();
                     shopIntro.SetActive(true);
                     shopAnim.SetInteger("Phase",shopAnim.GetInteger("Phase") + 1);
@@ -284,6 +317,11 @@ public class Progress : MonoBehaviour
                 talkSys.Talklines[day_num] = beforeFood[day_num];
                 talkSys.line = 0;  // 重置对话行数
                 talkSys.showText.CanShowText = true;
+                if (talkSys.useNewSys)
+                {
+                    GlobalData.NewTalkSysShowText.UnLockOutPut();
+                    GlobalData.NewTalkSysShowText.SetChoiceLine(0,true);
+                }
                 _ = talkSys.ShowText();  // 启动对话显示
                 TalkBar.GetComponent<Animator>().SetTrigger("Up");
                 if (TalkBar.transform.position.y == 0)
@@ -307,7 +345,7 @@ public class Progress : MonoBehaviour
             }
             DownBar.GetComponent<ObjectManager>().ResetEat();
             SetComfort();
-            
+            GlobalData.AfterShop = false;
             SwitchStageBar.SetActive(true);
             
             
@@ -318,7 +356,13 @@ public class Progress : MonoBehaviour
         else if (food && CanSwitch)
         {
             if (DNSys.on) return;
-            if (!CheckEatState()) return;
+            if (!skipTips)
+            {
+                if (!CheckEatState()) return; //饿死队员提示
+            }
+            
+            
+            
             bool allEat = false;
             CurrentDead.TxtLine.Clear();
             // 特殊逻辑：第0天（可能是教程天）的进食完成判断
@@ -327,7 +371,7 @@ public class Progress : MonoBehaviour
                 // 检查是否满足进食条件（若未满足，不执行阶段切换）
                 if (!DownBar.GetComponent<ObjectManager>().CheckEat(false))
                 {
-                    talkSys.Mask(DownBar.transform.Find("MaskLayer").gameObject,"AllEat");
+                    day0FoodTalkTips.SetActive(true);
                     return;  // 退出方法，不切换阶段
                 }
 
@@ -354,6 +398,11 @@ public class Progress : MonoBehaviour
                         talkSys.Talklines[day_num] = afterFood[day_num];
                         talkSys.line = 0;  // 重置对话行数
                         talkSys.showText.CanShowText = true;
+                        if (talkSys.useNewSys)
+                        {
+                            GlobalData.NewTalkSysShowText.UnLockOutPut();
+                            GlobalData.NewTalkSysShowText.SetChoiceLine(0,true);
+                        }
                         _ = talkSys.ShowText();  // 启动对话显示
                         TalkBar.GetComponent<Animator>().SetTrigger("Up");// 对话栏显示动画
                         afterFood[day_num] = null;  // 清空当前天数的对话数据（避免重复触发）
@@ -366,6 +415,11 @@ public class Progress : MonoBehaviour
                     talkSys.Talklines[day_num] = afterFood[day_num];
                     talkSys.line = 0;  // 重置对话行数
                     talkSys.showText.CanShowText = true;
+                    if (talkSys.useNewSys)
+                    {
+                        GlobalData.NewTalkSysShowText.UnLockOutPut();
+                        GlobalData.NewTalkSysShowText.SetChoiceLine(0,true);
+                    }
                     _ = talkSys.ShowText();  // 启动对话显示
                     TalkBar.GetComponent<Animator>().SetTrigger("Up");  // 对话栏显示动画
                     if (TalkBar.transform.position.y == 0)
@@ -379,9 +433,13 @@ public class Progress : MonoBehaviour
             }
             else
             {
-                if (day_num > 3)
+                if (day_num == 3)
                 {
-                    GameObject.Find("EndingsManager").GetComponent<EndingsManager>().ToEnd("Demo-End");
+                    if(! GlobalData.EndingsManager.CheckEnding())
+                    {
+                        StartCoroutine(GlobalData.EndingsManager.ToEnd("Demo-End"));
+                        return;
+                    }
                 }
             }
 
@@ -416,15 +474,13 @@ public class Progress : MonoBehaviour
             start = true;  // 进入下一天的开始阶段
             talk = false;  // 退出对话阶段
             food = false;  // 退出进食阶段
-            _showedTalkTips = false;
-            TipsWeight = false;
-            _killTipsTime = 0;
             day_num += 1;  // 天数+1（进入下一天）
             day.text = "Day " + day_num;  // 更新日期显示
             if(day_num == 2 || day_num == 5 || day_num == 7)
             {
                 ShopTalk = true;
             }
+            
 
             if (shopEventReseter != null)
             {
@@ -432,12 +488,6 @@ public class Progress : MonoBehaviour
             }
             
             // 非第0天的特殊处理：场景明暗切换（先暗后亮，模拟昼夜交替）
-            
-            if (day_num != 0)
-                beforeStart[day_num] = GetComponent<IntermissionManager>().AddTextLine("BeforeStart");
-
-            
-
             //重置安抚状态
             foreach (var value in talkSys.CharacterList)
             {
@@ -458,6 +508,9 @@ public class Progress : MonoBehaviour
             {
                 g.GetComponent<Character>().EnableTalk();
             }
+            
+            if (day_num != 0)
+                beforeStart[day_num] = GetComponent<IntermissionManager>().AddTextLine("BeforeStart");
 
             // 触发下一天开始前的幕间对话（若存在对应天数的对话数据）
             if (beforeStart[day_num] != null)
@@ -469,6 +522,11 @@ public class Progress : MonoBehaviour
                 talkSys.line = 0;// 重置对话行数
                 talkSys.on = true;
                 talkSys.showText.CanShowText = true;
+                if (talkSys.useNewSys)
+                {
+                    GlobalData.NewTalkSysShowText.UnLockOutPut();
+                    GlobalData.NewTalkSysShowText.SetChoiceLine(0,true);
+                }
                 talkSys.ShowText();
                 // 启动对话显示
                 TalkBar.GetComponent<Animator>().SetTrigger("start");  // 对话栏显示动画
@@ -484,10 +542,7 @@ public class Progress : MonoBehaviour
                 Invoke("TurnLight", 1.8f);  // 延迟1秒后执行亮化（Invoke 用于延迟调用方法）
             }
 
-            if (day_num == 4)
-            {
-                if(! GameObject.Find("EndingsManager").GetComponent<EndingsManager>().CheckEnding()) SceneManager.LoadScene("Demo-End");
-            }
+            
 
         }
         
@@ -506,11 +561,6 @@ public class Progress : MonoBehaviour
             GlobalData.Stage = 2;
         }
     }
-
-
-
-
-
 
     private void KillAmande()
     {
@@ -542,9 +592,9 @@ public class Progress : MonoBehaviour
         }
     }
 
-    bool CheckEatState()
+    private bool CheckEatState()
     {
-        if (killTipsBool.GeneralBool || day_num == 0 || _killTipsTime != 0)
+        if (killTipsBool.GeneralBool || day_num == 0)
         {
             return true;
         }
@@ -554,13 +604,30 @@ public class Progress : MonoBehaviour
             if (!GlobalData.Characters[i].Dead && !GlobalData.Characters[i].weight.Eat)
             {
                 killTips.SetActive(true);
-                _killTipsTime++;
                 return false;
             }
         }
 
         return true;
     }
+
+    private bool CheckComfort()//检查角色安抚对话状态
+    {
+        foreach (var value in GlobalData.Characters)
+        {
+            if (value.NotComfort || value.Dead)
+            {
+                continue;
+            }
+            if (value.Special1 || value.Special2)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+    
 
     /// <summary>
     /// 场景亮化方法（延迟调用）
@@ -591,6 +658,12 @@ public class Progress : MonoBehaviour
         
         ShopTalk = false;
         talkSys.showText.CanShowText = true;
+        if(talkSys.useNewSys)
+        {
+            GlobalData.NewTalkSysShowText.UnLockOutPut();
+            GlobalData.NewTalkSysShowText.SetChoiceLine(0,true);
+            GlobalData.NewTalkSysShowText.SetShopStatus(true);
+        }
         Shop.gameObject.SetActive(true);
     }
 
@@ -651,5 +724,15 @@ public static class GlobalData
 
     public static SkipText SkipButton { get; set; }
     public static int Stage { get; set; }
+
+    public static bool AfterShop { get; set; }
+    
+    public static Manager Language { get; set; }
+    public static NewTalkSysShowText NewTalkSysShowText { get; set; }
+    
+    public static HistoryManager History { get; set; }
+    public static bool OnMiniGame { get; set; }
+    public static AdditionAudioEffect AudioEffect { get; set; }
+    public static EndingsManager EndingsManager {get; set; }
 }
 

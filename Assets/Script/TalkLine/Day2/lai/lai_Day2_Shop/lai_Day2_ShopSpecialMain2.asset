@@ -15,10 +15,204 @@ MonoBehaviour:
   TxtLine:
   - ->c
   - "\u83B1\u6587\uFF1A\u6211\u8BF4\u4E0D\u6E05\u695A\uFF0C\u961F\u957F\u3002@{4}"
-  - "\u83B1\u6587\uFF1A\u95EE\u9898\u5E76\u4E0D\u51FA\u5728\u7ED3\u679C\u4E0A\u3002"
-  - "\u83B1\u6587\uFF1A\u4F46\u6211\u4EEC\u662F\u4E0D\u662F\u5E94\u8BE5\u6362\u4E2A\u66F4\u516C\u5E73\u4E9B\u7684\u65B9\u5F0F\uFF1F@{1}"
+  - CG7
+  - "A_\u83B1\u6587\u8F6C\u5934\u770B\u7740\u7BDD\u706B\uFF0C\u706B\u7130\u7684\u5149\u8F89\u6295\u5C04\u5728\u4ED6\u7684\u8138\u4E0A\u3002"
+  - "A_\u4ED6\u7684\u5934\u53D1\u5782\u843D\u5728\u8138\u4FA7\uFF0C\u8BA9\u4F60\u65E0\u6CD5\u770B\u6E05\u4ED6\u7684\u8868\u60C5\u3002"
+  - "A_\u201C\u95EE\u9898\u5E76\u4E0D\u51FA\u5728\u7ED3\u679C\u4E0A\u3002\u201D\u83B1\u6587\u8FD9\u6837\u8BF4\u7740\uFF0C\u4F60\u89C9\u5F97\u4ED6\u7684\u8BED\u6C14\u4F3C\u4E4E\u548C\u5E73\u65F6\u5F88\u4E0D\u4E00\u6837\u3002"
+  - "A_\u4F60\u540C\u6837\u77E5\u9053\u8FD9\u4E0D\u5BF9\u52B2\uFF0C\u4F46\u6CA1\u6709\u4EBA\u80FD\u89E3\u51B3\u8FD9\u4E2A\u95EE\u9898\u3002"
+  - "A_\u4F60\u6C89\u9ED8\u4E86\u8BB8\u4E45\u3002"
+  - "A_\u8FD8\u6CA1\u7B49\u4F60\u60F3\u597D\u600E\u4E48\u56DE\u7B54\uFF0C\u83B1\u6587\u4EFF\u4F5B\u53C8\u56DE\u5230\u539F\u6765\u7684\u6837\u5B50\uFF0C\u6D3B\u8DC3\u6C14\u6C1B\u822C\u7684\u7B11\u4E86\u7B11\u3002"
+  - 
+  - HideCg
+  - ->c
+  - "\u83B1\u6587\uFF1A\u4F46\u6211\u4EEC\u662F\u4E0D\u662F\u5E94\u8BE5\u6362\u4E2A\u66F4\u516C\u5E73\u4E9B\u7684\u65B9\u5F0F\uFF1F@{3}"
   - "\u83B1\u6587\uFF1A\u81F3\u5C11\u4E0D\u662F\u5B8C\u5168\u7531\u4F60\u4E00\u4E2A\u4EBA\u51B3\u5B9A\u3002"
   - ${Choice}
+  data:
+  - cn: "\u6211\u8BF4\u4E0D\u6E05\u695A\uFF0C\u961F\u957F\u3002"
+    en: I cannot explain it clearly, Captain.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 4
+    showCg: 1
+    cgNum: 7
+    minigameType: 0
+  - cn: "\u83B1\u6587\u8F6C\u5934\u770B\u7740\u7BDD\u706B\uFF0C\u706B\u7130\u7684\u5149\u8F89\u6295\u5C04\u5728\u4ED6\u7684\u8138\u4E0A\u3002"
+    en: Levine turns his head and looks at the campfire. The light of the flames
+      falls across his face.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 4
+    showCg: 0
+    cgNum: 7
+    minigameType: 0
+  - cn: "\u4ED6\u7684\u5934\u53D1\u5782\u843D\u5728\u8138\u4FA7\uFF0C\u8BA9\u4F60\u65E0\u6CD5\u770B\u6E05\u4ED6\u7684\u8868\u60C5\u3002"
+    en: His hair hangs beside his face, making it impossible for you to see his expression
+      clearly.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 4
+    showCg: 0
+    cgNum: 7
+    minigameType: 0
+  - cn: "\u201C\u95EE\u9898\u5E76\u4E0D\u51FA\u5728\u7ED3\u679C\u4E0A\u3002\u201D\u83B1\u6587\u8FD9\u6837\u8BF4\u7740\uFF0C\u4F60\u89C9\u5F97\u4ED6\u7684\u8BED\u6C14\u4F3C\u4E4E\u548C\u5E73\u65F6\u5F88\u4E0D\u4E00\u6837\u3002"
+    en: '"The problem is not the result," Levine says. His tone seems very different
+      from usual.'
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 4
+    showCg: 0
+    cgNum: 7
+    minigameType: 0
+  - cn: "\u4F60\u540C\u6837\u77E5\u9053\u8FD9\u4E0D\u5BF9\u52B2\uFF0C\u4F46\u6CA1\u6709\u4EBA\u80FD\u89E3\u51B3\u8FD9\u4E2A\u95EE\u9898\u3002"
+    en: You also know this is wrong, but no one can solve the problem.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 4
+    showCg: 0
+    cgNum: 7
+    minigameType: 0
+  - cn: "\u4F60\u6C89\u9ED8\u4E86\u8BB8\u4E45\u3002"
+    en: You are silent for a long time.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 4
+    showCg: 0
+    cgNum: 7
+    minigameType: 0
+  - cn: "\u8FD8\u6CA1\u7B49\u4F60\u60F3\u597D\u600E\u4E48\u56DE\u7B54\uFF0C\u83B1\u6587\u4EFF\u4F5B\u53C8\u56DE\u5230\u539F\u6765\u7684\u6837\u5B50\uFF0C\u6D3B\u8DC3\u6C14\u6C1B\u822C\u7684\u7B11\u4E86\u7B11\u3002"
+    en: Before you can think of how to answer, Levine seems to return to his old
+      self again and smiles as if trying to lighten the mood.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 4
+    showCg: 0
+    cgNum: 7
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 4
+    expression: 4
+    showCg: 0
+    cgNum: 7
+    minigameType: 0
+  - cn: "\u4F46\u6211\u4EEC\u662F\u4E0D\u662F\u5E94\u8BE5\u6362\u4E2A\u66F4\u516C\u5E73\u4E9B\u7684\u65B9\u5F0F\uFF1F"
+    en: But should we perhaps change to a fairer method?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 7
+    minigameType: 0
+  - cn: "\u81F3\u5C11\u4E0D\u662F\u5B8C\u5168\u7531\u4F60\u4E00\u4E2A\u4EBA\u51B3\u5B9A\u3002"
+    en: At least one where it is not completely decided by you alone.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 7
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 7
+    minigameType: 0
   Option1: {fileID: 11400000, guid: 2e675203348d0fa408110bcf4d9308d5, type: 2}
   Option2: {fileID: 11400000, guid: c21591b139fb95d43931a453d7eb49e1, type: 2}
   Option3: {fileID: 0}
@@ -26,5 +220,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

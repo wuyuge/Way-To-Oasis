@@ -15,9 +15,61 @@ MonoBehaviour:
   TxtLine:
   - ->p
   - "A_\u83B1\u6587\u56DE\u5E94\u4E86\u4F60\uFF0C\u4F46\u4F60\u770B\u5F97\u51FA\u4ED6\u4F3C\u4E4E\u4E0D\u60F3\u804A\u5929\u4E86\u3002"
+  - "A_\u83B1\u6587\u56DE\u5E94\u4E86\u4F60\uFF0C\u4F46\u4F60\u770B\u5F97\u51FA\u4ED6\u4F3C\u4E4E\u4E0D\u60F3\u804A\u5929\u4E86\u3002"
   - ${OpenSwitchStage}
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}
+  data:
+  - cn: "\u83B1\u6587\u56DE\u5E94\u4E86\u4F60\uFF0C\u4F46\u4F60\u770B\u5F97\u51FA\u4ED6\u4F3C\u4E4E\u4E0D\u60F3\u804A\u5929\u4E86\u3002"
+    en: Levine responds to you, but you can tell he does not seem to want to chat
+      anymore.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u83B1\u6587\u56DE\u5E94\u4E86\u4F60\uFF0C\u4F46\u4F60\u770B\u5F97\u51FA\u4ED6\u4F3C\u4E4E\u4E0D\u60F3\u804A\u5929\u4E86\u3002"
+    en: Levine responds to you, but you can tell he does not seem to want to chat
+      anymore.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 230000001400000016000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -25,5 +77,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

@@ -29,6 +29,201 @@ MonoBehaviour:
   - ${OpenSwitchStage}
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}
+  data:
+  - cn: "\u4E0B\u5348\u597D\uFF0C\u961F\u957F\u3002"
+    en: Good afternoon, Captain.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4E0B\u5348\u597D\uFF0C\u961F\u957F\u3002"
+    en: Good afternoon, Captain.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4ECA\u5929\u7684\u8F7D\u5177\u4E5F\u72B6\u6001\u826F\u597D\uFF0C\u8BF7\u653E\u5FC3\u3002"
+    en: The vehicle is still in good condition today. Please do not worry.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u53EA\u8981\u6211\u4EEC\u80FD\u627E\u5230\u8DEF\u7EBF\u6216\u8005\u63A5\u6536\u5230\u4EFB\u4F55\u4FE1\u53F7\u5C31\u53EF\u4EE5\u7ACB\u523B\u5168\u901F\u51FA\u53D1\u3002"
+    en: As long as we find a route or receive any signal, we can set out at full
+      speed immediately.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F46\u5728\u8FD9\u4E4B\u524D\u6211\u4EEC\u53EA\u80FD\u5C3D\u529B\u8282\u7701\u71C3\u6599\u3002"
+    en: But before that, we can only do our best to save fuel.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u5DF2\u7ECF\u505A\u7684\u5F88\u597D\u4E86\u3002"
+    en: You are already doing very well.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8C22\u8C22\u4F60\uFF0C\u961F\u957F\u3002"
+    en: Thank you, Captain.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u4E5F\u53EA\u662F\u4E0D\u5E0C\u671B\u5728\u6211\u4EEC\u597D\u4E0D\u5BB9\u6613\u770B\u5230\u5E0C\u671B\u7684\u65F6\u5019\u56E0\u4E3A\u6211\u7684\u539F\u56E0\u65AD\u9001\u6389\u5B83\u3002"
+    en: I just do not want to ruin our hope because of my own mistakes after we finally
+      manage to see it.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u603B\u800C\u8A00\u4E4B\uFF0C\u6211\u4F1A\u7EE7\u7EED\u5B8C\u6210\u597D\u8FD9\u4EF6\u4E8B\u7684\u3002"
+    en: In short, I will keep doing this job well.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u771F\u5E0C\u671B\u660E\u5929\u4E00\u65E9\u5C31\u53EF\u4EE5\u542C\u5230\u8FD9\u6837\u7684\u597D\u6D88\u606F\u3002"
+    en: I really hope we can hear good news like that first thing tomorrow morning.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: I really hope we can hear good news like that first thing tomorrow morning.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 0a000000
+    onlyCode: 1
+    speaker: 5
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: I really hope we can hear good news like that first thing tomorrow morning.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 230000001400000016000000
+    onlyCode: 1
+    speaker: 5
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 11400000, guid: ace05e0712311db46b7c5c347643b4d8, type: 2}
@@ -36,5 +231,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

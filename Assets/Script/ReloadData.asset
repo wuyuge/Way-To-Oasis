@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ReloadData
   m_EditorClassIdentifier: 
   TxtLine: []
+  data: []
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -22,3 +23,4 @@ MonoBehaviour:
   Weight_tag: 0
   Eat: 0
   GeneralBool: 0
+  isEn: 0

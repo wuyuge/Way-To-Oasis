@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: Be3
+  m_EditorClassIdentifier: 
+  TxtLine: []
+  data:
+    - cn: "\u4F60\u4EE5\u4E3A\u4ECA\u5929\u4F1A\u548C\u5F80\u5E38\u4E00\u6837\u7ED3\u675F\uFF0C\u4F46\u4F3C\u4E4E\u6709\u5F88\u591A\u4EBA\u5BF9\u4F60\u7684\u6240\u4F5C\u6240\u4E3A\u90FD\u5FC3\u6000\u6028\u5FF5\u3002"
+      en: You thought today would end like any other day, but it seems many people
+        had been harboring resentment over your actions.
+      codes: 
+    - cn: "\u4E8E\u662F\uFF0C\u4F60\u5728\u591C\u6DF1\u4E4B\u65F6\u8FCE\u6765\u4E86\u4E24\u4F4D\u4E0D\u8BF7\u81EA\u6765\u7684\u5BA2\u4EBA\u3002"
+      en: And so, deep in the night, two uninvited guests came for you.
+      codes: 
+    - cn: "\u4ED6\u4EEC\u4E3A\u4E86\u590D\u4EC7\uFF0C\u4E3A\u4E86\u6C42\u751F\u7684\u53EF\u80FD\uFF0C\u4E3A\u4E86\u516C\u6B63\u7684\u5F85\u9047\u53D1\u8D77\u4E86\u53CD\u6297\u3002"
+      en: They rose up for revenge, for the chance to survive, and for what they
+        believed was fair treatment.
+      codes: 
+    - cn: "\u53CD\u5BF9\u8005\u4EEC\u805A\u5728\u4E00\u8D77\u7ED9\u4E86\u4F60\u8FD9\u4E2A\u6559\u8BAD\uFF0C\u6216\u8BB8\u4EFB\u4F55\u4EE3\u4EF7\u5728\u4ED6\u4EEC\u773C\u4E2D\u90FD\u662F\u503C\u5F97\u7684\u3002"
+      en: The dissenters gathered together and taught you this lesson. In their eyes,
+        perhaps any price was worth paying.
+      codes: 
+    - cn: "\u4F60\u611F\u53D7\u7740\u8840\u6DB2\u4ECE\u4F24\u53E3\u6D41\u51FA\uFF0C\u901F\u5EA6\u968F\u7740\u4F60\u751F\u547D\u7684\u6D41\u901D\u9010\u6E10\u653E\u7F13\u3002"
+      en: You feel blood flowing from your wound, its pace slowing as your life drains
+        away.
+      codes: 
+    - cn: "\u8352\u6F20\u91CC\u7684\u5929\u6C14\u4E0D\u7B97\u51B7\uFF0C\u4F46\u4F60\u7684\u8EAB\u4F53\u7684\u786E\u6B63\u5728\u9010\u6E10\u4E27\u5931\u6E29\u5EA6\u3002"
+      en: The desert weather is not exactly cold, yet your body is steadily losing
+        warmth.
+      codes: 
+    - cn: "\u4F60\u60F3\u770B\u770B\u5929\u7A7A\uFF0C\u5374\u53EA\u80FD\u770B\u5230\u6C89\u95F7\u7684\u5E10\u7BF7\u9876\uFF0C\u5E03\u6599\u5F88\u7C97\u7CD9\uFF0C\u9644\u7740\u7740\u4E00\u4E9B\u7802\u783E\u4E0E\u6C61\u6E0D\u3002"
+      en: You want to look at the sky, but all you can see is the dull roof of the
+        tent. <br> The fabric is rough, with sand and stains clinging to it.
+      codes: 
+    - cn: "\u4F60\u7A81\u7136\u56DE\u60F3\u8D77\u4E86\u6BCF\u4E00\u4E2A\u88AB\u81EA\u5DF1\u6740\u6B7B\u7684\u4EBA\u3002"
+      en: Suddenly, you remember every person you killed.
+      codes: 
+    - cn: "\u4F46\u4F60\u5E94\u8BE5\u6307\u8D23\u81EA\u5DF1\u5417\uFF1F\u60F3\u8981\u6D3B\u4E0B\u53BB\u5E76\u4E0D\u662F\u4F60\u7684\u9519\u3002"
+      en: But should you blame yourself? Wanting to survive was not your fault.
+      codes: 
+    - cn: "\u540C\u6837\u4E5F\u4E0D\u662F\u4ED6\u4EEC\u7684\u3002"
+      en: Nor was it theirs.
+      codes: 
+    - cn: "\u53EA\u80FD\u8BF4\u4F60\u786E\u5B9E\u4E0D\u9002\u5408\u8FD9\u4E2A\u804C\u4F4D\u3002"
+      en: It only means that you were never truly suited for this position.
+      codes: 
+    - cn: "\u4E0B\u4E00\u6B21\uFF0C\u4F60\u4F1A\u505A\u7684\u66F4\u597D\uFF0C\u5BF9\u5427\u3002"
+      en: 'Next time, you will do better. Right? '
+      codes: 
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Eat: 0
+  GeneralBool: 0
+  isEn: 0

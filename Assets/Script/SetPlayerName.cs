@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+#pragma warning disable
 
 public class SetPlayerName : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class SetPlayerName : MonoBehaviour
 
     public void Import()
     {
-        _ = transform.parent.gameObject.GetComponent<StartImportLine>().StartImport();
+        transform.parent.gameObject.GetComponent<StartImportLine>().StartImport();
     }
 
 

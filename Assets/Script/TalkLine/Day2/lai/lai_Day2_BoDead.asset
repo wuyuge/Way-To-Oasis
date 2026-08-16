@@ -30,6 +30,201 @@ MonoBehaviour:
   - "\u83B1\u6587\uFF1A\u9A6C\u4E0A\u6211\u4EEC\u4F1A\u4E00\u4E2A\u4E00\u4E2A\u88AB\u997F\u6B7B\uFF0C\u4E0D\u8FC7\u4F60\u6765\u51B3\u5B9A\u6211\u4EEC\u7684\u6B7B\u4EA1\u987A\u5E8F\u8FD8\u633A\u6709\u8DA3\u7684\u3002"
   - "\u83B1\u6587\uFF1A\u662F\u5427\uFF0C\u961F\u957F\u3002"
   - ${Choice}
+  data:
+  - cn: 
+    en: Right, Captain?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 00000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u628A\u4ED6\u6740\u4E86\uFF1F"
+    en: You killed him?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5982\u679C\u6709\u4E2A\u4EBA\u5927\u534A\u591C\u7684\u62FF\u7740\u5200\u6765\u627E\u4F60\uFF0C\u4F60\u4E5F\u4F1A\u8FD9\u4E48\u5E72\u7684\u3002"
+    en: If someone came to you in the middle of the night with a knife, you would
+      do the same.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u54CE\uFF0C\u6BD5\u7ADF\u4F60\u6CA1\u6709\u7ED9\u4ED6\u548C\u827E\u7C73\u8389\u90FD\u5206\u5403\u7684\uFF0C\u8FD9\u4E5F\u662F\u610F\u6599\u4E4B\u5185\u7684\u4E8B\u60C5\u3002"
+    en: Ah, well, since you did not give both of them food, that was expected.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8FD9\u4EF6\u4E8B\u60C5\u7ED3\u675F\u4E86\u5427\uFF1F\u4F60\u4E0D\u4F1A\u8FD8\u60F3\u5BF9\u827E\u7C73\u8389\u52A8\u624B\u5427\uFF1F"
+    en: Is this over now? You are not planning to go after Emily too, are you?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6CA1\u6709\u5FC5\u8981\uFF0C\u6211\u4E0D\u4F1A\u8FC1\u6012\u522B\u4EBA\u7684\u3002"
+    en: There is no need. I will not take my anger out on someone else.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u90A3\u6700\u597D\u4E0D\u8FC7\u4E86\uFF0C\u5E0C\u671B\u6211\u4EEC\u63A5\u4E0B\u53BB\u80FD\u597D\u8FD0\u4E00\u70B9\u3002"
+    en: That is for the best. I hope we can have a little more luck from now on.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5C31\u73B0\u5B9E\u60C5\u51B5\u800C\u8A00\uFF0C\u6211\u4EEC\u5E94\u8BE5\u662F\u6D3B\u4E0D\u4E45\u4E86\u3002"
+    en: Realistically speaking, we probably will not live much longer.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u9A6C\u4E0A\u6211\u4EEC\u4F1A\u4E00\u4E2A\u4E00\u4E2A\u88AB\u997F\u6B7B\uFF0C\u4E0D\u8FC7\u4F60\u6765\u51B3\u5B9A\u6211\u4EEC\u7684\u6B7B\u4EA1\u987A\u5E8F\u8FD8\u633A\u6709\u8DA3\u7684\u3002"
+    en: Soon, we will starve one by one. But having you decide the order of our deaths
+      is rather interesting.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u662F\u5427\uFF0C\u961F\u957F\u3002"
+    en: Right, Captain?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: Right, Captain?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 392d990229de5f34cb69206b1fb33751, type: 2}
   Option2: {fileID: 11400000, guid: bb5ff10142c0d0e469a8e9ee866201bd, type: 2}
   Option3: {fileID: 11400000, guid: 8ffd047651f33fd40ad0b314775a744f, type: 2}
@@ -39,3 +234,4 @@ MonoBehaviour:
   Weight_tag: 0
   Eat: 0
   GeneralBool: 0
+  isEn: 0

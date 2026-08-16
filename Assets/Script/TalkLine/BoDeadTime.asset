@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BoDeadTime
   m_EditorClassIdentifier: 
   TxtLine: []
+  data: []
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -20,5 +21,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

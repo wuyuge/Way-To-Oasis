@@ -51,6 +51,12 @@ public class SwitchChoice :SwitchCommand
         _talkSys.Player.text = string.Empty;
         if (_talkSys.Daytime != 0)_talkSys.ShopTextBar.GetComponent<TextMeshProUGUI>().text = string.Empty;
         _talkSys.showText.CanShowText = false;
+
+        if (_talkSys.useNewSys)
+        {
+            GlobalData.NewTalkSysShowText.LockOutPut();
+        }
+        
         if (!inShop)
         {
             _buttonManager.SwitchButtonState(ButtonName.Left,ButtonAction.Enable,_talkLines[DayNum].Option1);

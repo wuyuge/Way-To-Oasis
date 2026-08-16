@@ -16,6 +16,52 @@ MonoBehaviour:
   - "\u963F\u66FC\u5FB7\uFF1A\u5728\u542C\u4EC0\u4E48\u6709\u8DA3\u7684\u4E1C\u897F\u5417\uFF1F"
   - "\u827E\u7C73\u8389\uFF1A\u653E\u70B9\u97F3\u4E50\u800C\u5DF2\uFF0C\u4E0D\u81F3\u4E8E\u90A3\u4E48\u65E0\u804A\u3002"
   - "\u827E\u7C73\u8389\uFF1A\u6709\u673A\u4F1A\u7ED9\u4F60\u5206\u4EAB\u4E00\u4E9B\u3002"
+  data:
+  - cn: "\u5728\u542C\u4EC0\u4E48\u6709\u8DA3\u7684\u4E1C\u897F\u5417\uFF1F"
+    en: Are you listening to something interesting?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u653E\u70B9\u97F3\u4E50\u800C\u5DF2\uFF0C\u4E0D\u81F3\u4E8E\u90A3\u4E48\u65E0\u804A\u3002"
+    en: Just some music. It keeps things from getting too boring.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6709\u673A\u4F1A\u7ED9\u4F60\u5206\u4EAB\u4E00\u4E9B\u3002"
+    en: I can share some with you when there is a chance.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -23,5 +69,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

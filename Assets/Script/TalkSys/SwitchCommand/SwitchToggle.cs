@@ -49,11 +49,13 @@ public class SwitchToggle : SwitchCommand
                 break;
             case FunctionCode.Function.Ba://上升
                 MoveUI(UIElement.Talk, UIMovement.Up);
+                if(_talkSys.useNewSys) GlobalData.NewTalkSysShowText.UnLockOutPut();
                 _showText.CanShowText = true;
                 _showText.SetEmptyText();
                 break;
             case FunctionCode.Function.Bb://下降
                 MoveUI(UIElement.Talk,UIMovement.Down);
+                if(_talkSys.useNewSys) GlobalData.NewTalkSysShowText.LockOutPut();
                 _showText.CanShowText = false;
                 _showText.SetEmptyText();
                 TutorialManager.CharacterIsTalking = false;
@@ -74,6 +76,10 @@ public class SwitchToggle : SwitchCommand
                 //切换下一个对话数据
                 _talkSys.Talklines[_talkSys.Daytime] = _talkSys.Talklines[_talkSys.Daytime].Option1;
                 _talkSys.line = 0;
+                if (_talkSys.useNewSys)
+                {
+                    GlobalData.NewTalkSysShowText.SetChoiceLine(0,false);
+                }
                 break;
             case FunctionCode.Function.E:
                 //开关角色分配食物按钮

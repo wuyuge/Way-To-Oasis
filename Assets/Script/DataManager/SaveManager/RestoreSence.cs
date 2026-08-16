@@ -9,7 +9,7 @@ using UnityEngine.UI;
 /// </summary>
 public class RestoreSence : MonoBehaviour
 {
-    public Manager food , finalFood , body , finalBody , playerName , amandeKillSelfTag , deadBodyContainer,currentDead;
+    public Manager food , finalFood , body , finalBody , playerName , amandeKillSelfTag , deadBodyContainer,currentDead,usedBody;
     public GameObject mainCanvas, teachCanvas;
     public Progress mainProgress, teachProgress;
     public TalkSystem mainTalkSys, teachTalkSys;
@@ -29,6 +29,37 @@ public class RestoreSence : MonoBehaviour
         data.day = GlobalData.Day;
         data.stage = GlobalData.Stage;
         data.amandeKillSelfTag = amandeKillSelfTag.GeneralBool;
+        data.afterShop = GlobalData.AfterShop;
+        if (GlobalData.AfterShop)
+        {
+            //商店后角色反抗对话数据保存
+            //0为没有反抗对话，1是sp1，2是sp2，3是进行过安抚对话
+            for (int i = 0; i < GlobalData.TalkSystem.characterComponentList.Count; i++)
+            {
+                data.characterComfortState[i] = GlobalData.TalkSystem.characterComponentList[i].NotComfort;
+                if (GlobalData.TalkSystem.characterComponentList[i].Special1)
+                {
+                    data.characterSpTalkState[i] = 1;
+                    continue;
+                }
+                if (GlobalData.TalkSystem.characterComponentList[i].Special2)
+                {
+                    data.characterSpTalkState[i] = 2;
+                    continue;
+                }
+                if (GlobalData.TalkSystem.characterComponentList[i].AfterSpecialTalk)
+                {
+                    data.characterSpTalkState[i] = 3;
+                    continue;
+                }
+                data.characterSpTalkState[i] = 0;
+            }
+        }
+        else
+        {
+            data.characterComfortState = new bool[6];
+            data.characterSpTalkState = new int[6];
+        }
 
         for (int i = 0; i < currentDead.TxtLine.Count; i++)
         {
@@ -40,6 +71,10 @@ public class RestoreSence : MonoBehaviour
             data.deadBodyContainer[i] = deadBodyContainer.TxtLine[i];
         }
 
+        for (int i = 0; i < usedBody.TxtLine.Count; i++)
+        {
+            data.usedBodyContainer[i] = usedBody.TxtLine[i];
+        }
         //TODO:保存小游戏是否可玩状态
         
 
@@ -89,6 +124,16 @@ public class RestoreSence : MonoBehaviour
                 continue; 
             }
             deadBodyContainer.TxtLine.Add(data.deadBodyContainer[i]);//恢复持有尸体列表
+        }
+
+        usedBody.TxtLine.Clear();
+        for (int i = 0; i < data.usedBodyContainer.Length; i++)//恢复使用尸体列表
+        {
+            if (data.usedBodyContainer[i] == string.Empty)
+            {
+                continue; 
+            }
+            usedBody.TxtLine.Add(data.usedBodyContainer[i]);
         }
         
         currentDead.TxtLine.Clear();
@@ -171,6 +216,8 @@ public class RestoreSence : MonoBehaviour
             mainProgress.CanSwitch = true;
         }
 
+        TutorialManager.TutorialIsShow = _curData.day == 1 && _curData.stage == 0;
+
         if (_curData.day == 2)
         {
             mainTalkSys.HideBar();
@@ -181,12 +228,16 @@ public class RestoreSence : MonoBehaviour
 
         if (_curData.day == 3)
         {
-            mainTalkSys.HideBar();
+            if (_curData.stage != 0)
+            {
+                mainInterMission.Lines.RemoveAt(2);
+                mainTalkSys.HideBar();
+            }
             mainTalkSys.showText.CanShowText = false;
             mainProgress.CanSwitch = true;
         }
         
-        if (_curData.stage == 2)
+        if (_curData.stage == 2)//设定时间状态
         {
             mainDayNightSys.SetSecond();
         }
@@ -195,6 +246,35 @@ public class RestoreSence : MonoBehaviour
             mainDayNightSys.SetFirst(); 
         }
 
+        if (_curData.afterShop)
+        {
+            for (int i = 0; i < _curData.characterSpTalkState.Length; i++)
+            {
+                GlobalData.TalkSystem.characterComponentList[i].NotComfort = _curData.characterComfortState[i];
+                if (_curData.characterSpTalkState[i] == 0)
+                {
+                    continue;
+                }
+
+                if (_curData.characterSpTalkState[i] == 1)
+                {
+                    GlobalData.TalkSystem.characterComponentList[i].Special1 = true;
+                    continue;
+                }
+                
+                if (_curData.characterSpTalkState[i] == 2)
+                {
+                    GlobalData.TalkSystem.characterComponentList[i].Special2 = true;
+                    continue;
+                }
+                
+                if (_curData.characterSpTalkState[i] == 3)
+                {
+                    GlobalData.TalkSystem.characterComponentList[i].NotComfort = true;
+                }
+            }
+        }
+        
     }
     
     private void SetTeach()

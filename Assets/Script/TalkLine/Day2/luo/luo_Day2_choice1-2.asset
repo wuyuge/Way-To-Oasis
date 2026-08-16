@@ -20,6 +20,82 @@ MonoBehaviour:
   - ->c
   - "\u6D1B\u5C14\u574E\uFF1A\u4E0D\u7528\u5BF9\u6211\u9053\u6B49\uFF0C\u961F\u957F\u3002@{3}"
   - ${End}
+  data:
+  - cn: "\u6211\u975E\u5E38\u62B1\u6B49"
+    en: I'm very sorry
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u975E\u5E38\u62B1\u6B49\u3002"
+    en: I'm very sorry.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u4F46\u8FD9\u6837\u7684\u60C5\u51B5\u4E0D\u4F1A\u662F\u6700\u540E\u4E00\u6B21\u3002"
+    en: But this situation will not be the last time.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u4E0D\u7528\u5BF9\u6211\u9053\u6B49\uFF0C\u961F\u957F\u3002"
+    en: You do not need to apologize to me, Captain.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 5
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: 36ccc573359d66742add27e5d5b73c47, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -27,5 +103,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

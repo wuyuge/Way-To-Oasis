@@ -11,6 +11,7 @@ public class SaveLoadManager : MonoBehaviour
     public GameObject linkMenu;
     public GameObject shop;
     private Button _button;
+    public bool isLoad;
 
     private void Awake()
     {
@@ -20,13 +21,22 @@ public class SaveLoadManager : MonoBehaviour
 
     private void OnEnable()
     {
-        if (shop != null)
+        if (shop == null) return;
+        bool canClick;
+        if (isLoad)
         {
-            _button.interactable = !shop.activeSelf;
+            canClick = !shop.activeSelf;
         }
+        else
+        {
+            canClick = !GlobalData.OnMiniGame && !shop.activeSelf;
+        }
+
         
+        _button.interactable = canClick;
     }
 
+    
 
     public void Open()
     {

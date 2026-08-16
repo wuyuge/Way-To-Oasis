@@ -26,6 +26,128 @@ MonoBehaviour:
   - ${CloseCharacterTalkBox}
   - ${DisableMiniCharacter}
   - ${DownTalkBox}
+  data:
+  - cn: "\u773C\u4E0B\u7684\u60C5\u666F\u662F\u65E0\u5FC3\u4E4B\u4E3E"
+    en: The current situation was not intentional
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u8FD9\u4E0D\u662F\u6211\u7684\u672C\u610F\uFF0C\u6211\u540C\u6837\u4E0D\u60F3\u770B\u5230\u73B0\u5728\u7684\u60C5\u5F62\u3002"
+    en: This was not what I wanted. I did not want to see things become like this
+      either.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u2026\u2026\u6211\u4F9D\u65E7\u4F1A\u9009\u62E9\u76F8\u4FE1\u4F60\u3002"
+    en: ...I will still choose to believe you.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u4E0D\u7BA1\u4F60\u8BF4\u7684\u662F\u4E0D\u662F\u771F\u7684\uFF0C\u53CD\u6B63\u4E8B\u60C5\u4E5F\u4E0D\u4F1A\u6709\u4EC0\u4E48\u6539\u53D8\u3002"
+    en: Whether what you said is true or not, nothing will change anyway.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u60F3\u4F60\u5E94\u8BE5\u8FD8\u6709\u522B\u7684\u4E8B\u8981\u5FD9\u5427\uFF1F"
+    en: I think you probably still have other things to do, right?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u4ECA\u5929\u5C31\u804A\u5230\u8FD9\u5427\u3002"
+    en: Let us stop here for today.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 23000000140000001500000016000000
+    onlyCode: 1
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -33,5 +155,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

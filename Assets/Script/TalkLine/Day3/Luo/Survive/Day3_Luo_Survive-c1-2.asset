@@ -13,16 +13,107 @@ MonoBehaviour:
   m_Name: Day3_Luo_Survive-c1-2
   m_EditorClassIdentifier: 
   TxtLine:
-  - "\u88C5\u4F5C\u6BEB\u65E0\u5BDF\u89C9"
+  - "\u6211\u5DF2\u6709\u5224\u65AD"
   - ->p
-  - "\u6CA1\u4EC0\u4E48\uFF0C\u53EA\u662F\u6765\u6253\u4E2A\u62DB\u547C\u3002"
-  - "\u6D1B\u5C14\u574E\uFF1A\u5662\u5662\uFF0C\u4E00\u5207\u90FD\u548C\u4EE5\u524D\u4E00\u6837\uFF0C\u8BF7\u653E\u5FC3\u3002@{5}"
-  - "\u6D1B\u5C14\u574E\uFF1A\u6211\u4F1A\u5B8C\u6210\u597D\u5DE5\u4F5C\u7684\uFF0C\u8FD9\u4E5F\u662F\u6211\u5E94\u8BE5\u505A\u7684\u54C8\u54C8\u3002"
-  - "\u6D1B\u5C14\u574E\uFF1A\u6CA1\u4EC0\u4E48\u4E8B\u7684\u8BDD\uFF0C\u6211\u8FD8\u662F\u5148\u8D70\u5427\u2026\u2026"
-  - "\u6D1B\u5C14\u574E\uFF1A\u8F7D\u5177\u8FD8\u9700\u8981\u4E00\u4E9B\u4F8B\u884C\u4FDD\u517B\uFF0C\u961F\u957F\u4F60\u5E94\u8BE5\u4E5F\u6709\u522B\u7684\u4E8B\u8981\u505A\u5427\u2026\u2026"
+  - "\u522B\u60F3\u592A\u591A\uFF0C\u6211\u4F1A\u505A\u51FA\u6B63\u786E\u7684\u51B3\u5B9A\u3002"
+  - ->c
+  - "\u6D1B\u5C14\u574E\uFF1A\u2026\u2026@{1}"
+  - "\u6D1B\u5C14\u574E\uFF1A\u6211\u77E5\u9053\u4E86\u3002"
+  - "\u6D1B\u5C14\u574E\uFF1A\u62B1\u6B49\u961F\u957F\uFF0C\u6211\u8FD8\u6709\u4E9B\u5DE5\u4F5C\u6CA1\u6709\u505A\u5B8C\u3002\u90A3\u6211\u5148\u8D70\u4E86\u3002@{3}"
   - ${OpenSwitchStage}
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}
+  data:
+  - cn: "\u6211\u5DF2\u6709\u5224\u65AD"
+    en: I have already made my judgment
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u522B\u60F3\u592A\u591A\uFF0C\u6211\u4F1A\u505A\u51FA\u6B63\u786E\u7684\u51B3\u5B9A\u3002"
+    en: Do not think too much. I will make the correct decision.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u77E5\u9053\u4E86\u3002"
+    en: I understand.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u62B1\u6B49\u961F\u957F\uFF0C\u6211\u8FD8\u6709\u4E9B\u5DE5\u4F5C\u6CA1\u6709\u505A\u5B8C\u3002\u90A3\u6211\u5148\u8D70\u4E86\u3002"
+    en: Sorry, Captain. I still have some work I have not finished. I will go first.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 230000001400000016000000
+    onlyCode: 1
+    speaker: 5
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -30,5 +121,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

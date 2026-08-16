@@ -22,15 +22,166 @@ MonoBehaviour:
   - "\u83B1\u6587\uFF1A\u867D\u7136\u6211\u5F88\u60F3\u626F\u4E9B\u4EC0\u4E48\u4EBA\u4EBA\u5E73\u7B49\u7684\u5927\u9053\u7406\uFF0C\u4F46\u8FD9\u79CD\u8BDD\u73B0\u5728\u6765\u770B\u5B8C\u5168\u5C31\u662F\u7A7A\u8C08\u554A\uFF0C\u7279\u6B8A\u60C5\u51B5\u7279\u6B8A\u624B\u6BB5\u561B\u3002@{3}"
   - "\u83B1\u6587\uFF1A\u54C8\u54C8\uFF0C\u4E0D\u8FC7\u662F\u968F\u4FBF\u53D1\u53D1\u7262\u9A9A\uFF0C\u522B\u4ECB\u610F\u554A\u961F\u957F\u3002"
   - "\u83B1\u6587\uFF1A\u4E4B\u540E\u600E\u4E48\u529E\u4F60\u81EA\u5DF1\u6743\u8861\u5C31\u597D\uFF0C\u6211\u7684\u610F\u89C1\u5E76\u4E0D\u91CD\u8981\u3002"
+  - ${CheckMinil}
   - ${OpenSwitchStage}
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}
-  Option1: {fileID: 0}
+  data:
+  - cn: "\u6211\u4E5F\u662F\u6CA1\u529E\u6CD5"
+    en: I had no choice
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u4E5F\u662F\u6CA1\u529E\u6CD5\u3002"
+    en: I had no choice.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6CA1\u6709\u8D23\u602A\u4F60\u7684\u610F\u601D\uFF0C\u6709\u4EF7\u503C\u7684\u4EBA\u603B\u80FD\u6D3B\u5F97\u66F4\u4E45\u4E00\u70B9\u3002\u4E07\u4E00\u6211\u4EEC\u771F\u6709\u673A\u4F1A\u51FA\u53BB\u5462\uFF1F"
+    en: I am not blaming you. Valuable people always get to live a little longer.
+      What if we really do get the chance to leave?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5509\uFF0C\u751F\u547D\u4EF7\u503C\u5982\u4F55\u8861\u91CF\u8FD9\u79CD\u8001\u751F\u5E38\u8C08\u7684\u95EE\u9898\uFF0C\u653E\u5728\u8FD9\u91CC\u8FD8\u771F\u662F\u4E0D\u5408\u65F6\u5B9C\u3002"
+    en: 'Sigh. The old question of how to measure the value of life is really out
+      of place here. '
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u867D\u7136\u6211\u5F88\u60F3\u626F\u4E9B\u4EC0\u4E48\u4EBA\u4EBA\u5E73\u7B49\u7684\u5927\u9053\u7406\uFF0C\u4F46\u8FD9\u79CD\u8BDD\u73B0\u5728\u6765\u770B\u5B8C\u5168\u5C31\u662F\u7A7A\u8C08\u554A\uFF0C\u7279\u6B8A\u60C5\u51B5\u7279\u6B8A\u624B\u6BB5\u561B\u3002"
+    en: Although I would love to talk about grand principles like everyone being
+      equal, words like that are completely empty now. Special situations need special
+      methods.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u54C8\u54C8\uFF0C\u4E0D\u8FC7\u662F\u968F\u4FBF\u53D1\u53D1\u7262\u9A9A\uFF0C\u522B\u4ECB\u610F\u554A\u961F\u957F\u3002"
+    en: Haha, I am just complaining. Do not mind me, Captain.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4E4B\u540E\u600E\u4E48\u529E\u4F60\u81EA\u5DF1\u6743\u8861\u5C31\u597D\uFF0C\u6211\u7684\u610F\u89C1\u5E76\u4E0D\u91CD\u8981\u3002"
+    en: You can weigh what to do next yourself. My opinion is not important.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 230000001400000016000000
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  Option1: {fileID: 11400000, guid: 2652d6d3f3775a64aa5a761a7c629e00, type: 2}
   Option2: {fileID: 0}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: 2652d6d3f3775a64aa5a761a7c629e00, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

@@ -13,21 +13,255 @@ MonoBehaviour:
   m_Name: Day3_AfterFood
   m_EditorClassIdentifier: 
   TxtLine:
-  - ${ShowCharacterTalkBox}
+  - ${CloseCharacterTalkBox}
   - ${LockSwitchStage}
   - ->p
   - ->p
   - "\u4ECA\u5929\u4F3C\u4E4E\u53D1\u751F\u4E86\u5F88\u591A\u4E8B\uFF0C\u53C8\u4F3C\u4E4E\u548C\u524D\u4E24\u65E5\u6CA1\u6709\u4EFB\u4F55\u5206\u522B\u3002"
   - "\u6CA1\u6709\u4EBA\u6709\u5174\u81F4\u518D\u804A\u4E9B\u4EC0\u4E48\uFF0C\u5927\u5BB6\u90FD\u65E9\u65E9\u5730\u56DE\u53BB\u4F11\u606F\u4E86\u3002"
   - "\u4F60\u56DE\u5230\u4E86\u6B47\u811A\u7684\u5E10\u7BF7\uFF0C\u5374\u53D1\u73B0\u65E9\u5C31\u6709\u4E00\u4E2A\u4EBA\u5728\u91CC\u9762\u7B49\u7740\u4F60\u4E86\u3002"
-  - "\u2026\u2026\u6709\u4EC0\u4E48\u4E8B\uFF1F"
+  - CG12
+  - "A_\u827E\u7C73\u8389\u9732\u51FA\u4E86\u4E00\u79CD\u5939\u6742\u7740\u63F6\u63C4\u4E0E\u81EA\u4FE1\u7684\u5FAE\u7B11\uFF0C\u5979\u663E\u7136\u6EE1\u610F\u4E8E\u81EA\u5DF1\u7684\u53D1\u73B0\u3002"
+  - "A_\u4F60\u77E5\u9053\u8FD9\u4E00\u523B\u8FDF\u65E9\u4F1A\u5230\u6765\uFF0C\u6216\u8005\u8BF4\u4F60\u539F\u672C\u5C31\u6CA1\u60F3\u7792\u8FC7\u5979\u3002"
+  - "\u201C\u2026\u2026\u6709\u4EC0\u4E48\u4E8B\uFF1F\u201D"
+  - "A_\u201C\u6709\u4E9B\u4E8B\u9700\u8981\u786E\u8BA4\u4E00\u4E0B\u3002\u201D\u827E\u7C73\u8389\u5411\u4F60\u53D1\u51FA\u4E86\u9080\u8BF7\u3002"
+  - "A_\u8352\u539F\u4E0A\u6CA1\u6709\u661F\u661F\uFF0C\u660F\u6697\u7684\u6708\u5149\u4ECE\u5979\u80CC\u540E\u7167\u5C04\u8FC7\u6765\u3002"
+  - "A_\u201C\u5982\u679C\u6211\u7684\u63A8\u65AD\u6CA1\u6709\u51FA\u9519\uFF0C\u662F\u4F60\u6740\u4E86\u4E9A\u6469\u65AF\uFF0C\u5BF9\u5427\u3002\u201D"
+  - 
+  - HideCg
   - ->c
-  - "\u827E\u7C73\u8389\uFF1A\u6709\u4E9B\u4E8B\u9700\u8981\u786E\u8BA4\u4E00\u4E0B\u3002@{4}"
-  - "\u827E\u7C73\u8389\uFF1A\u5982\u679C\u6211\u7684\u63A8\u65AD\u6CA1\u6709\u51FA\u9519\uFF0C\u662F\u4F60\u6740\u4E86\u4E9A\u6469\u65AF\uFF0C\u5BF9\u5427\u3002"
+  - 
   - ${TogetherGoDark}
   - ${OpenSwitchStage}
-  - ${CloseCharacterTalkBox}
   - ${NextDay}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 3e0000001b0000002a000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4ECA\u5929\u4F3C\u4E4E\u53D1\u751F\u4E86\u5F88\u591A\u4E8B\uFF0C\u53C8\u4F3C\u4E4E\u548C\u524D\u4E24\u65E5\u6CA1\u6709\u4EFB\u4F55\u5206\u522B\u3002"
+    en: Many things seem to have happened today, and yet it also seems no different
+      from the first two days.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6CA1\u6709\u4EBA\u6709\u5174\u81F4\u518D\u804A\u4E9B\u4EC0\u4E48\uFF0C\u5927\u5BB6\u90FD\u65E9\u65E9\u5730\u56DE\u53BB\u4F11\u606F\u4E86\u3002"
+    en: No one is in the mood to talk anymore. Everyone goes back early to rest.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4F60\u56DE\u5230\u4E86\u6B47\u811A\u7684\u5E10\u7BF7\uFF0C\u5374\u53D1\u73B0\u65E9\u5C31\u6709\u4E00\u4E2A\u4EBA\u5728\u91CC\u9762\u7B49\u7740\u4F60\u4E86\u3002"
+    en: You return to the tent where you stop for the night, only to find that someone
+      has already been waiting inside.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 1
+    cgNum: 12
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u827E\u7C73\u8389\u9732\u51FA\u4E86\u4E00\u79CD\u5939\u6742\u7740\u63F6\u63C4\u4E0E\u81EA\u4FE1\u7684\u5FAE\u7B11\uFF0C\u5979\u663E\u7136\u6EE1\u610F\u4E8E\u81EA\u5DF1\u7684\u53D1\u73B0\u3002"
+    en: Emily shows a smile mixed with teasing and confidence. She is clearly satisfied
+      with what she has discovered.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 1
+    cgNum: 12
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4F60\u77E5\u9053\u8FD9\u4E00\u523B\u8FDF\u65E9\u4F1A\u5230\u6765\uFF0C\u6216\u8005\u8BF4\u4F60\u539F\u672C\u5C31\u6CA1\u60F3\u7792\u8FC7\u5979\u3002"
+    en: You know this moment would come sooner or later. Or rather, you never intended
+      to hide it from her in the first place.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 1
+    cgNum: 12
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u201C\u2026\u2026\u6709\u4EC0\u4E48\u4E8B\uFF1F\u201D"
+    en: '"...What is it?"'
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 1
+    cgNum: 12
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u201C\u6709\u4E9B\u4E8B\u9700\u8981\u786E\u8BA4\u4E00\u4E0B\u3002\u201D\u827E\u7C73\u8389\u5411\u4F60\u53D1\u51FA\u4E86\u9080\u8BF7\u3002"
+    en: '"There are some things I need to confirm." Emily extends an invitation to
+      you.'
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 1
+    cgNum: 12
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u8352\u539F\u4E0A\u6CA1\u6709\u661F\u661F\uFF0C\u660F\u6697\u7684\u6708\u5149\u4ECE\u5979\u80CC\u540E\u7167\u5C04\u8FC7\u6765\u3002"
+    en: There are no stars over the wasteland. Dim moonlight shines from behind her.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 1
+    cgNum: 12
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u201C\u5982\u679C\u6211\u7684\u63A8\u65AD\u6CA1\u6709\u51FA\u9519\uFF0C\u662F\u4F60\u6740\u4E86\u4E9A\u6469\u65AF\uFF0C\u5BF9\u5427\u3002\u201D"
+    en: "\"If my reasoning\u2019s correct\u2026 you\u2019re the one who killed Amos,
+      aren\u2019t you??\""
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 1
+    cgNum: 12
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 3d000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 1
+    cgNum: 12
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 230000001c000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 1
+    cgNum: 12
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -37,3 +271,4 @@ MonoBehaviour:
   Weight_tag: 0
   Eat: 0
   GeneralBool: 0
+  isEn: 0

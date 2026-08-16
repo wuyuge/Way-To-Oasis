@@ -20,12 +20,181 @@ MonoBehaviour:
   - "\u963F\u66FC\u5FB7\uFF1A\u6211\u7684\u770B\u6CD5\u5417\uFF1F"
   - "\u963F\u66FC\u5FB7\uFF1A\u867D\u7136\u6211\u89C9\u5F97\u4F60\u6709\u4E9B\u8FC7\u4E8E\u7126\u8E81\u4E86\uFF0C\u4F46\u5982\u679C\u8FD9\u6837\u80FD\u8BA9\u4F60\u653E\u677E\u4E9B\u2026\u2026\u597D\u5427\u3002"
   - "\u963F\u66FC\u5FB7\uFF1A\u55EF\u2026\u2026\u4ECE\u8C01\u5F00\u59CB\u6BD4\u8F83\u597D\u5462\uFF1F\u6D1B\u5C14\u574E\u600E\u4E48\u6837\uFF1F\u5E74\u8F7B\u7684\u65B0\u4EBA\u603B\u662F\u503C\u5F97\u4E00\u4E9B\u4F18\u5F85\u3002@{1}"
-  - "\u963F\u66FC\u5FB7\uFF1A\u6211\u89C9\u5F97\u4ED6\u662F\u4E2A\u5F88\u6709\u5929\u8D4B\u7684\u5B69\u5B50\uFF0C\u800C\u4E14\u6CA1\u6709\u4EE5\u5F80\u90A3\u4E9B\u673A\u68B0\u4FEE\u7406\u5E08\u7684\u81ED\u6BDB\u75C5\u3002\u90A3\u4E9B\u4EBA\u6CA1\u51E0\u4E2A\u813E\u6C14\u597D\u7684\uFF0C\u4F46\u6D1B\u5C14\u574E\u813E\u6C14\u597D\u7684\u786E\u5B9E\u6709\u4E9B\u8FC7\u5934\u4E86\u3002"
+  - "\u963F\u66FC\u5FB7\uFF1A\u6211\u89C9\u5F97\u4ED6\u662F\u4E2A\u5F88\u6709\u5929\u8D4B\u7684\u5B69\u5B50\uFF0C\u800C\u4E14\u6CA1\u6709\u4EE5\u5F80\u90A3\u4E9B\u673A\u68B0\u4FEE\u7406\u5E08\u7684\u81ED\u6BDB\u75C5\u3002"
+  - "\u963F\u66FC\u5FB7\uFF1A\u90A3\u4E9B\u4EBA\u6CA1\u51E0\u4E2A\u813E\u6C14\u597D\u7684\uFF0C\u4F46\u6D1B\u5C14\u574E\u813E\u6C14\u597D\u7684\u786E\u5B9E\u6709\u4E9B\u8FC7\u5934\u4E86\u3002"
   - "\u963F\u66FC\u5FB7\uFF1A\u8BF4\u8D77\u83B1\u6587\u7684\u8BDD\uFF0C\u4ED6\u8DDF\u7740\u8001\u961F\u957F\u6700\u4E45\uFF0C\u7ECF\u9A8C\u4E30\u5BCC\uFF0C\u5728\u5DE5\u4F5C\u4E0A\u5341\u5206\u53EF\u9760\uFF0C\u5982\u679C\u80FD\u6539\u6539\u4ED6\u90A3\u4E9B\u574F\u4E60\u60EF\u5C31\u66F4\u597D\u4E86\u3002
     @{5}"
   - "\u963F\u66FC\u5FB7\uFF1A\u81F3\u4E8E\u827E\u7C73\u8389\u548C\u535A\u91D1\u68EE\u2026\u2026\u6211\u548C\u4ED6\u4EEC\u76F8\u5904\u4E0D\u7B97\u5F88\u591A\uFF0C\u4F60\u8981\u4E0D\u76F4\u63A5\u627E\u4ED6\u4EEC\u804A\u804A\uFF0C\u8BF4\u4E0D\u5B9A\u4F1A\u6709\u6240\u6536\u83B7\u3002"
   - "\u963F\u66FC\u5FB7\uFF1A\u8FD8\u6709\u4EC0\u4E48\u60F3\u804A\u7684\u5417?"
   - ${Choice}
+  data:
+  - cn: "\u5173\u4E8E\u961F\u4F0D"
+    en: About the team
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u60F3\u542C\u542C\u4F60\u5BF9\u5176\u4ED6\u4EBA\u7684\u770B\u6CD5\u3002"
+    en: I want to hear what you think of the others.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u7684\u770B\u6CD5\u5417\uFF1F"
+    en: My thoughts?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u867D\u7136\u6211\u89C9\u5F97\u4F60\u6709\u4E9B\u8FC7\u4E8E\u7126\u8E81\u4E86\uFF0C\u4F46\u5982\u679C\u8FD9\u6837\u80FD\u8BA9\u4F60\u653E\u677E\u4E9B\u2026\u597D\u5427\u3002"
+    en: Although I think you are a little too anxious, if this helps you relax...
+      all right.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u55EF\u2026\u2026\u4ECE\u8C01\u5F00\u59CB\u6BD4\u8F83\u597D\u5462\uFF1F\u6D1B\u5C14\u574E\u600E\u4E48\u6837\uFF1F\u5E74\u8F7B\u7684\u65B0\u4EBA\u603B\u662F\u503C\u5F97\u4E00\u4E9B\u4F18\u5F85\u3002"
+    en: Hmm... Who should I start with? How about Lorquin? Young newcomers always
+      deserve a little kindness.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u89C9\u5F97\u4ED6\u662F\u4E2A\u5F88\u6709\u5929\u8D4B\u7684\u5B69\u5B50\uFF0C\u800C\u4E14\u6CA1\u6709\u4EE5\u5F80\u90A3\u4E9B\u673A\u68B0\u4FEE\u7406\u5E08\u7684\u81ED\u6BDB\u75C5\u3002"
+    en: I think he is a very talented kid, and he does not have the usual bad habits
+      of mechanical repair technicians.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u90A3\u4E9B\u4EBA\u6CA1\u51E0\u4E2A\u813E\u6C14\u597D\u7684\uFF0C\u4F46\u6D1B\u5C14\u574E\u813E\u6C14\u597D\u7684\u786E\u5B9E\u6709\u4E9B\u8FC7\u5934\u4E86\u3002"
+    en: Very few people in that line of work have good tempers, but Lorquin's temper
+      is almost too good.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8BF4\u8D77\u83B1\u6587\u7684\u8BDD\uFF0C\u4ED6\u8DDF\u7740\u8001\u961F\u957F\u6700\u4E45\uFF0C\u7ECF\u9A8C\u4E30\u5BCC\uFF0C\u5728\u5DE5\u4F5C\u4E0A\u5341\u5206\u53EF\u9760\uFF0C\u5982\u679C\u80FD\u6539\u6539\u4ED6\u90A3\u4E9B\u574F\u4E60\u60EF\u5C31\u66F4\u597D\u4E86\u3002 "
+    en: 'As for Levine, he followed the old captain the longest. He is experienced
+      and very reliable at work. '
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 1
+    enBranch:
+    - It would be even better if he could fix some of his bad habits.
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u81F3\u4E8E\u827E\u7C73\u8389\u548C\u535A\u91D1\u68EE\u2026\u2026\u6211\u548C\u4ED6\u4EEC\u76F8\u5904\u4E0D\u7B97\u5F88\u591A\uFF0C\u4F60\u8981\u4E0D\u76F4\u63A5\u627E\u4ED6\u4EEC\u804A\u804A\uFF0C\u8BF4\u4E0D\u5B9A\u4F1A\u6709\u6240\u6536\u83B7\u3002"
+    en: As for Emily and Bokinson... I have not spent that much time with them. Why
+      not talk to them directly? Maybe you will learn something.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 99fae648141846743a3cadebe6e76b28, type: 2}
   Option2: {fileID: 11400000, guid: e937a4076b361d942ab6a30f8b29a38d, type: 2}
   Option3: {fileID: 0}
@@ -33,5 +202,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

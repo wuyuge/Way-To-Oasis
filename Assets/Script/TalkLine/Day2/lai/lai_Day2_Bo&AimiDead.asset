@@ -29,6 +29,172 @@ MonoBehaviour:
   - ${OpenSwitchStage}
   - ${CloseCharacterTalkBox}
   - ${DownTalkBox}
+  data:
+  - cn: "\u8BF4\u5B9E\u8BDD\uFF0C\u6211\u771F\u6CA1\u60F3\u5230\u4F60\u4F1A\u8FD9\u6837\u5E72\u3002"
+    en: To be honest, I really did not expect you to do this.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8BF4\u5B9E\u8BDD\uFF0C\u6211\u771F\u6CA1\u60F3\u5230\u4F60\u4F1A\u8FD9\u6837\u5E72\u3002"
+    en: To be honest, I really did not expect you to do this.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4E0D\u7BA1\u662F\u4ECE\u4FA6\u67E5\u63A2\u6D4B\u7684\u91CD\u8981\u6027\u8FD8\u662F\u4E2A\u4EBA\u60C5\u611F\u800C\u8A00\uFF0C\u6211\u4EEC\u90FD\u8FDC\u6CA1\u6709\u8FBE\u5230\u9700\u8981\u727A\u7272\u4EFB\u4F55\u4EBA\uFF0C\u5C24\u5176\u662F\u4ED6\u4EEC\u7684\u65F6\u5019\u3002"
+    en: Whether it is because of the importance of scouting and detection or because
+      of personal feelings, we are nowhere near the point where we need to sacrifice
+      anyone, especially them.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8FD9\u4EF6\u4E8B\u5B9E\u5728\u6709\u4E9B\u6781\u7AEF\uFF0C\u4E5F\u5BB9\u6613\u8BA9\u4EBA\u8054\u60F3\u5F88\u591A\u4E0D\u597D\u7684\u7ED3\u679C\u3002"
+    en: This is too extreme, and it makes it easy to imagine many bad outcomes.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4E8B\u60C5\u5DF2\u7ECF\u53D1\u751F\u4E86\u3002"
+    en: It has already happened.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6240\u4EE5\u6211\u4EEC\u53EA\u80FD\u63A5\u53D7\uFF1F"
+    en: So we can only accept it?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6216\u8BB8\u4E0D\u662F\u6240\u6709\u4EBA\u90FD\u4F1A\u6EE1\u610F\u4F60\u7684\u9009\u62E9\uFF0C\u4F46\u2026\u2026\u81F3\u5C11\u73B0\u5728\u8FD9\u6837\u7684\u4EBA\u5C11\u4E86\u4E24\u4E2A\u3002"
+    en: Maybe not everyone will be satisfied with your choice, but... at least there
+      are two fewer people like that now.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u52A0\u6CB9\u5427\uFF0C\u961F\u957F\u3002\u53EA\u8981\u6211\u4EEC\u90FD\u60F3\u4E00\u8D77\u6D3B\u7740\u51FA\u53BB\uFF0C\u6211\u4EEC\u5C31\u59CB\u7EC8\u7AD9\u5728\u540C\u4E00\u6218\u7EBF\u4E0A\u3002"
+    en: Do your best, Captain. As long as we all want to get out alive together,
+      we are still on the same side.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: Do your best, Captain. As long as we all want to get out alive together,
+      we are still on the same side.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 230000001400000016000000
+    onlyCode: 1
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -36,5 +202,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

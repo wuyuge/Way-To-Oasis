@@ -9,19 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ee703a3033055140a9e692c6dd5ea80, type: 3}
   m_Name: Success
   m_EditorClassIdentifier: 
-  TxtLine:
-  - "\u6CA1\u6709\u4E00\u4E1D\u72B9\u8C6B\u5730\u5B8C\u6210\u4E86\uFF0C\u961F\u957F\u4F60\u8BF4\u4E0D\u5B9A\u6BD4\u6211\u66F4\u9002\u5408\u5F53\u673A\u68B0\u7EF4\u4FEE\u5458\u30020"
-  - "\u6F02\u4EAE\u7684\u624B\u6CD5\uFF01\u961F\u957F\u4F60\u771F\u662F\u592A\u5389\u5BB3\u4E86\u30020"
-  - "\u4ECA\u5929\u80FD\u8FD9\u4E48\u5FEB\u5B8C\u6210\u5DE5\u4F5C\u591A\u4E8F\u4E86\u4F60\u7684\u5E2E\u52A9\uFF0C\u961F\u957F\u30020"
-  Option1: {fileID: 0}
-  Option2: {fileID: 0}
-  Option3: {fileID: 0}
-  SpecialTalk: {fileID: 0}
-  SpecialTalk2: {fileID: 0}
-  Weight: 0
-  Weight_tag: 0
-  Day1Eat: 0
-  GeneralBool: 0
+  talkDatas:
+  - cn: "\u6CA1\u6709\u4E00\u4E1D\u72B9\u8C6B\u5730\u5B8C\u6210\u4E86\uFF0C\u961F\u957F\u4F60\u8BF4\u4E0D\u5B9A\u6BD4\u6211\u66F4\u9002\u5408\u5F53\u673A\u68B0\u7EF4\u4FEE\u5458\u3002"
+    en: You finished it without a moment's hesitation. Captain, maybe you are more
+      suited to being a mechanic than I am.
+    express: 0
+  - cn: "\u6F02\u4EAE\u7684\u624B\u6CD5\uFF01\u961F\u957F\u4F60\u771F\u662F\u592A\u5389\u5BB3\u4E86\u3002"
+    en: Beautiful technique! Captain, you really are amazing.
+    express: 0
+  - cn: "\u4ECA\u5929\u80FD\u8FD9\u4E48\u5FEB\u5B8C\u6210\u5DE5\u4F5C\u591A\u4E8F\u4E86\u4F60\u7684\u5E2E\u52A9\uFF0C\u961F\u957F\u3002"
+    en: We finished today's work so quickly thanks to your help, Captain.
+    express: 0

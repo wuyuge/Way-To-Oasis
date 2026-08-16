@@ -19,12 +19,96 @@ MonoBehaviour:
   - "\u83B1\u6587\uFF1A\u6B63\u597D\u73B0\u5728\u6CA1\u4EC0\u4E48\u4E8B\u5E72\uFF0C\u6211\u60F3\u4E0D\u5982\u8D81\u8FD9\u4E2A\u673A\u4F1A\u597D\u597D\u6536\u62FE\u4E00\u4E0B\u3002"
   - "\u83B1\u6587\uFF1A\u6211\u62C5\u5FC3\u4E00\u4E2A\u4EBA\u6CA1\u6CD5\u6536\u62FE\uFF0C\u60F3\u8BF7\u4F60\u5E2E\u4E2A\u5FD9\u3002"
   - ${Choice}
-  Option1: {fileID: 0}
-  Option2: {fileID: 0}
+  data:
+  - cn: "\u961F\u957F\uFF0C\u6709\u6CA1\u6709\u5174\u8DA3\u6765\u7ED9\u6211\u642D\u628A\u624B\uFF1F"
+    en: Captain, are you interested in giving me a hand?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4E4B\u524D\u7684\u65F6\u5019\u90FD\u6CA1\u6709\u6CE8\u610F\uFF0C\u5230\u73B0\u5728\u624D\u53D1\u73B0\u6211\u7ADF\u7136\u628A\u5DE5\u4F5C\u6587\u4EF6\u548C\u4E71\u4E03\u516B\u7CDF\u7684\u5404\u79CD\u4E1C\u897F\u5168\u90FD\u4E00\u80A1\u8111\u5730\u585E\u8FDB\u4E86\u7BB1\u5B50\u91CC\u3002"
+    en: I did not notice before, but only now did I realize that I stuffed my work
+      documents and all kinds of random things into the same box.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6B63\u597D\u73B0\u5728\u6CA1\u4EC0\u4E48\u4E8B\u5E72\uFF0C\u6211\u60F3\u4E0D\u5982\u8D81\u8FD9\u4E2A\u673A\u4F1A\u597D\u597D\u6536\u62FE\u4E00\u4E0B\u3002"
+    en: Since there is nothing much to do right now, I thought I might as well take
+      this chance to sort it out properly.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u62C5\u5FC3\u4E00\u4E2A\u4EBA\u6CA1\u6CD5\u6536\u62FE\uFF0C\u60F3\u8BF7\u4F60\u5E2E\u4E2A\u5FD9\u3002"
+    en: I am worried I cannot handle it alone, so I wanted to ask you for help.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: I am worried I cannot handle it alone, so I wanted to ask you for help.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  Option1: {fileID: 11400000, guid: b6862928849d385478a19564eea98401, type: 2}
+  Option2: {fileID: 11400000, guid: be1394d1f0ef70a4a93138524d092006, type: 2}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

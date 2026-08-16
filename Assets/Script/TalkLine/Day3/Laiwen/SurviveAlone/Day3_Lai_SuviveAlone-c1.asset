@@ -29,6 +29,185 @@ MonoBehaviour:
   - ${CloseCharacterTalkBox}
   - ${DisableMiniCharacter}
   - ${DownTalkBox}
+  data:
+  - cn: "\u786E\u5B9E\u6709\u5FC3\u4FC3\u6210\u8FD9\u4E2A\u7ED3\u679C"
+    en: I did intentionally make this happen
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u6CA1\u731C\u9519\uFF0C\u6211\u786E\u5B9E\u662F\u6709\u5FC3\u4FC3\u6210\u8FD9\u4E2A\u7ED3\u679C\u3002"
+    en: You guessed right. I did intentionally make this happen.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 6
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4E3A\u4EC0\u4E48\uFF1F"
+    en: Why?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 6
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u96BE\u9053\u4F60\u53EA\u662F\u5728\u627E\u4E50\u5B50\u5417\uFF01"
+    en: Were you only doing this for fun!
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 6
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u53C8\u6709\u4EC0\u4E48\u628A\u63E1\u4ECE\u8FD9\u91CC\u51FA\u53BB\uFF1F\u8FD8\u662F\u8BF4\u5C31\u662F\u56E0\u4E3A\u6CA1\u6709\u624D\u4F1A\u8FD9\u6837\u505A\uFF1F"
+    en: What confidence do you have that you can get out of here? Or did you do this
+      exactly because you have none?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 6
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "{PlayerName}\uFF0C\u8FD9\u4E48\u591A\u5E74\u6211\u6216\u8BB8\u4ECE\u6765\u6CA1\u6709\u771F\u6B63\u5730\u8BA4\u8BC6\u4F60\u3002"
+    en: '{PlayerName}, after all these years, maybe I never truly knew you.'
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u771F\u7684\u5E0C\u671B\u8FD9\u4E0D\u4F1A\u662F\u4F60\u7684\u672C\u610F\u3002\u5C31\u7B97\u662F\u88AB\u903C\u75AF\u4E86\uFF0C\u4E5F\u597D\u8FC7\u73B0\u5728\u8FD9\u6837\u3002"
+    en: I really hope this was not what you wanted. Even if you were driven mad,
+      that would be better than this.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5C31\u8FD9\u6837\u5427\uFF0C\u53CD\u6B63\u6211\u7684\u6027\u547D\u4E5F\u65E9\u5C31\u4E0D\u5728\u6211\u7684\u624B\u4E0A\u4E86\u3002"
+    en: Let it be, then. My life has not been in my own hands for a long time anyway.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 23000000140000001500000016000000
+    onlyCode: 1
+    speaker: 4
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -36,5 +215,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

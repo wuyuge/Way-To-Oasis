@@ -13,14 +13,112 @@ MonoBehaviour:
   m_Name: aimi_Shop_Day2_Choice1-3
   m_EditorClassIdentifier: 
   TxtLine:
-  - "\u7ED3\u679C\u4E0D\u4F1A\u6709\u4EFB\u4F55\u53D8\u5316"
+  - "\u7ED3\u679C\u662F\u4E00\u6837\u7684"
   - ->p
-  - "\u7ED3\u679C\u4E0D\u4F1A\u6709\u4EFB\u4F55\u53D8\u5316\u3002"
+  - "\u7ED3\u679C\u662F\u4E00\u6837\u7684"
   - ->c
   - "\u827E\u7C73\u8389\uFF1A\u2026\u2026\u8FD9\u5C31\u662F\u6211\u6C38\u8FDC\u65E0\u6CD5\u7406\u89E3\u4F60\u7684\u4E00\u70B9\u3002"
   - "\u827E\u7C73\u8389\uFF1A\u4F60\u4E0D\u662F\u4E00\u4E2A\u51B7\u9177\u65E0\u60C5\u7684\u4EBA\uFF0C\u4F46\u5374\u80FD\u8F7B\u6613\u505A\u51FA\u8FD9\u79CD\u51B3\u5B9A\u3002"
   - "\u827E\u7C73\u8389\uFF1A\u4F60\u4F1A\u4E3A\u6B64\u611F\u5230\u75DB\u82E6\u5417\uFF1F"
   - ${Choice}
+  data:
+  - cn: "\u7ED3\u679C\u662F\u4E00\u6837\u7684"
+    en: The result is the same
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u7ED3\u679C\u662F\u4E00\u6837\u7684\u3002"
+    en: The result is the same.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u2026\u8FD9\u5C31\u662F\u6211\u6C38\u8FDC\u65E0\u6CD5\u7406\u89E3\u4F60\u7684\u4E00\u70B9\u3002"
+    en: ...That is the part of you I will never understand.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u4E0D\u662F\u4E00\u4E2A\u51B7\u9177\u65E0\u60C5\u7684\u4EBA\uFF0C\u4F46\u5374\u80FD\u8F7B\u6613\u505A\u51FA\u8FD9\u79CD\u51B3\u5B9A\u3002"
+    en: You are not a cold and heartless person, but you can still make this kind
+      of decision so easily.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u4F1A\u4E3A\u6B64\u611F\u5230\u75DB\u82E6\u5417\uFF1F"
+    en: Will you suffer because of it?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 8a0679c67e8d10c49a7ea41c174c8e75, type: 2}
   Option2: {fileID: 11400000, guid: 3304bf3ef5fad6b41b7566bc9d89b3c3, type: 2}
   Option3: {fileID: 0}
@@ -28,5 +126,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

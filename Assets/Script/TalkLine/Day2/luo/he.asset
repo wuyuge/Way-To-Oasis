@@ -18,6 +18,57 @@ MonoBehaviour:
   - ->c
   - "\u6D1B\u5C14\u574E\uFF1A\u6628\u5929\u6211\u4EEC\u8FD8\u5728\u4E00\u8D77\u4F11\u606F\uFF0C\u95F2\u804A\uFF0C\u4ECA\u5929\u5C31\u53EA\u80FD\u89C1\u5230\u4ED6\u7684\u5C38\u4F53\u3002"
   - ${Choice}
+  data:
+  - cn: "\u6628\u5929\u6211\u4EEC\u8FD8\u5728\u4E00\u8D77\u4F11\u606F\uFF0C\u95F2\u804A\uFF0C\u4ECA\u5929\u5C31\u53EA\u80FD\u89C1\u5230\u4ED6\u7684\u5C38\u4F53\u3002"
+    en: Yesterday we were still resting together, talking casually. Today, all we
+      can see is his body.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6628\u5929\u6211\u4EEC\u8FD8\u5728\u4E00\u8D77\u4F11\u606F\uFF0C\u95F2\u804A\uFF0C\u4ECA\u5929\u5C31\u53EA\u80FD\u89C1\u5230\u4ED6\u7684\u5C38\u4F53\u3002"
+    en: Yesterday we were still resting together, talking casually. Today, all we
+      can see is his body.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: e051adb49ff7c17429d632c86c5fb5d4, type: 2}
   Option2: {fileID: 11400000, guid: 6e76fdc40e81ede4e8a593446ee18854, type: 2}
   Option3: {fileID: 0}
@@ -25,5 +76,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

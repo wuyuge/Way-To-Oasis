@@ -27,7 +27,7 @@ public class Aimibo : MonoBehaviour
         {
             if (progress.day_num == 0 || progress.day_num == 3)
             {
-                if (LinkObj.have_talk)
+                if (LinkObj.have_talk && !LinkObj.Dead)
                 {
                     character.have_talk = true;
                 }

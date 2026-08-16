@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: HalfComplete
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u8FD9\u7247\u533A\u57DF\u5F88\u5FEB\u5C31\u63A2\u7D22\u5B8C\u4E86\uFF0C\u518D\u575A\u6301\u4E00\u4E0B\u3002"
+  - "\u5E0C\u671B\u7B49\u4F1A\u80FD\u6709\u6240\u6536\u83B7\u3002"
+  - "\u6709\u65F6\u5019\u6211\u5E0C\u671B\u5DE5\u4F5C\u53EF\u4EE5\u665A\u70B9\u7ED3\u675F\uFF0C\u81F3\u5C11\u8FD9\u6837\u8BF4\u660E\u6211\u4EEC\u8FD8\u6709\u673A\u4F1A\u627E\u5230\u4FE1\u53F7\u3002"
+  data:
+  - cn: "\u8FD9\u7247\u533A\u57DF\u5F88\u5FEB\u5C31\u63A2\u7D22\u5B8C\u4E86\uFF0C\u518D\u575A\u6301\u4E00\u4E0B\u3002"
+    en: This area will be fully explored soon. Hold on a little longer.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u5E0C\u671B\u7B49\u4F1A\u80FD\u6709\u6240\u6536\u83B7\u3002"
+    en: I hope we can find something later.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6709\u65F6\u5019\u6211\u5E0C\u671B\u5DE5\u4F5C\u53EF\u4EE5\u665A\u70B9\u7ED3\u675F\uFF0C\u81F3\u5C11\u8FD9\u6837\u8BF4\u660E\u6211\u4EEC\u8FD8\u6709\u673A\u4F1A\u627E\u5230\u4FE1\u53F7\u3002"
+    en: Sometimes I wish the work wouldn't end so soon. At least that would mean
+      we still have a chance to find a signal.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Eat: 0
+  GeneralBool: 1
+  isEn: 0

@@ -8,6 +8,6 @@ public class MedicineSelector : MonoBehaviour
 
     public void Select()
     {
-        MedicineManager.Sender.SetMedicine(medicineObject);
+        MedicineManager.Medicine = medicineObject;
     }
 }

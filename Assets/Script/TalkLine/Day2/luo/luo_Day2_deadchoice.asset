@@ -16,6 +16,22 @@ MonoBehaviour:
   - ${ShowCharacterTalkBox}
   - ${LockSwitchStage}
   - ${CheckSomeBodyDead}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 2a0000001b0000000f000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: cae6878aac9afbf46828b4303cab6d76, type: 2}
   Option2: {fileID: 11400000, guid: a147838ad242d914a81ff9bc9ab53312, type: 2}
   Option3: {fileID: 11400000, guid: a9c140613cf8ee34a9dd9911b2aca675, type: 2}
@@ -23,5 +39,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

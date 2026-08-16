@@ -76,18 +76,10 @@ public class SwitchSet : SwitchCommand
                 break;
             case FunctionCode.Function.J:
                 //消耗博金森尸体并且设定艾米莉不可负重
-                int index = -1;
-                foreach(string s in _talkSys.DeadName.TxtLine)
-                {
-                    index++;
-                    if(s == "博金森")
-                    {
-                        _talkSys.UsedBody.TxtLine.Add("博金森Used");
-                        _talkSys.DeadName.TxtLine.RemoveAt(index);
-                    }
-
-                }
-                _talkSys.CharacterList[1].GetComponent<Character>().CantWeight = true;
+                Debug.Log("消耗博金森尸体");
+                _talkSys.DeadName.TxtLine.Remove("博金森");
+                _talkSys.UsedBody.TxtLine.Add("博金森Used");
+                _talkSys.characterComponentList[1].CantWeight = true;
                 break;
             case FunctionCode.Function.K:
                 //Day0开启切换阶段

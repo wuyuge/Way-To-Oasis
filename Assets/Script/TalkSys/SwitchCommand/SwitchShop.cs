@@ -30,6 +30,11 @@ public class SwitchShop : SwitchCommand
                 _talkSys._inshop = false;
                 _showText.CanShowText = false;
                 GlobalData.InShop = false;
+                if (_talkSys.useNewSys)
+                {
+                    GlobalData.NewTalkSysShowText.LockOutPut();
+                    GlobalData.NewTalkSysShowText.SetShopStatus(false);
+                }
                 _talkSys.ShopManager.SetActive(false);
                 break;
             case FunctionCode.Function.C:

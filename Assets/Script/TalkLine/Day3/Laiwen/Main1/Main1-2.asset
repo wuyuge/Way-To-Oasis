@@ -14,6 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - ${CheckSomeBodyDead}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 0f000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: 07c2919d59936e447809bacb466a5a77, type: 2}
   Option2: {fileID: 11400000, guid: 869fda7867248fd4b836eb991fed34a7, type: 2}
   Option3: {fileID: 0}
@@ -21,5 +37,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

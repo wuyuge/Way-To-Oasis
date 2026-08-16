@@ -8,11 +8,12 @@ public class EndMask : MonoBehaviour
 
     public Image image;
     public Material material;
-    public GameObject BackToStart;
     public GameObject Text;
     private bool Breaking;
     public float AddAmount;
     new public AudioSource audio;
+    public GameObject skip;
+    public bool openSkip;
     private void Start()
     {
         material = GetComponent<Image>().material;
@@ -24,6 +25,10 @@ public class EndMask : MonoBehaviour
     public void Click()
     {
         Breaking = true;
+        if (openSkip)
+        {
+            skip.SetActive(true);
+        }
         audio.Play();
 
     }
@@ -50,8 +55,6 @@ public class EndMask : MonoBehaviour
     {
         if (!Text.activeSelf)
             Text.SetActive(true);
-        if (!BackToStart.activeSelf)
-            BackToStart.SetActive(true);
     }
 
 

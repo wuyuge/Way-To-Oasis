@@ -19,6 +19,71 @@ MonoBehaviour:
   - ->c
   - "\u535A\u91D1\u68EE\uFF1A\u54C8\u54C8\u54C8\uFF0C\u4F60\u7EC8\u4E8E\u4E0D\u88C5\u4E86\uFF1F"
   - ${End}
+  data:
+  - cn: "\u968F\u5FC3\u800C\u5DF2"
+    en: I just felt like it
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6CA1\u4EC0\u4E48\u539F\u56E0\uFF0C\u6211\u4E50\u610F\u3002"
+    en: No reason. I wanted to.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u54C8\u54C8\u54C8\uFF0C\u4F60\u7EC8\u4E8E\u4E0D\u88C5\u4E86\uFF1F"
+    en: Ha. You finally stopped pretending?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: a7826e1ebc361464887210fbaf3e7e79, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -26,5 +91,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

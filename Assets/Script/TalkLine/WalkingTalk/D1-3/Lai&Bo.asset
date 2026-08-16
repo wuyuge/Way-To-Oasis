@@ -17,6 +17,67 @@ MonoBehaviour:
   - "\u535A\u91D1\u68EE\uFF1A\u4F60\u80FD\u4E0D\u80FD\u6D88\u505C\u4E00\u4F1A\u3002"
   - "\u83B1\u6587\uFF1A\u62B1\u6B49\u62B1\u6B49\uFF0C\u4E0D\u77E5\u4E0D\u89C9\u5C31\u54FC\u51FA\u6765\u4E86\u5462\u3002"
   - "\u535A\u91D1\u68EE\uFF1A\u54FC\u3002"
+  data:
+  - cn: "\u54FC\u266A~\u266B~"
+    en: "Hm-hmm\u266A~\u266B~"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u4F60\u80FD\u4E0D\u80FD\u6D88\u505C\u4E00\u4F1A\u3002"
+    en: Can you be quiet for a while?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u62B1\u6B49\u62B1\u6B49\uFF0C\u4E0D\u77E5\u4E0D\u89C9\u5C31\u54FC\u51FA\u6765\u4E86\u5462\u3002"
+    en: Sorry, sorry. I started humming without realizing it.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u54FC\u3002"
+    en: Hmph.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -24,5 +85,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

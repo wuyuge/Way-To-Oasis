@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631795722512e854398e62f2769a76a1, type: 3}
+  m_Name: "\u624B\u5957"
+  m_EditorClassIdentifier: 
+  dataName: "\u624B\u5957"
+  context: "\u83B1\u6587\u7684\u624B\u5957\uFF0C\u770B\u5F97\u51FA\u6765\u7528\u4E86\u5F88\u4E45\u4F46\u7231\u62A4\u5F97\u5F88\u597D\u3002"
+  enContext: Levine's gloves. They have clearly been used for a long time, but they
+    have been cared for very well.
+  expression: 0

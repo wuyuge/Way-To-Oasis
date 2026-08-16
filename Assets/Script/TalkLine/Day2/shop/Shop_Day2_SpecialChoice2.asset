@@ -19,6 +19,82 @@ MonoBehaviour:
   - "\u6211\u671F\u5F85\u542C\u89C1\u4F60\u7684\u6B7B\u8BAF\u3002"
   - "\u518D\u89C1"
   - ${OffShop}
+  data:
+  - cn: "\u4E0D\u6362\u5C38\u4F53"
+    en: Do not trade a body
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u591A\u4E48\u9AD8\u5C1A\u7684\u9009\u62E9\uFF0C\u7EF4\u62A4\u4E86\u4EBA\u7684\u5E95\u7EBF\u4E0E\u5C0A\u4E25\u3002"
+    en: What a noble choice. You have protected the bottom line and dignity of humanity.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u671F\u5F85\u542C\u89C1\u4F60\u7684\u6B7B\u8BAF\u3002"
+    en: I look forward to hearing news of your death.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u518D\u89C1"
+    en: Goodbye.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 20000000
+    onlyCode: 1
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -26,5 +102,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

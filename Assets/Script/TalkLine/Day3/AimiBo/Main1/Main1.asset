@@ -17,12 +17,62 @@ MonoBehaviour:
   - ${SurviveAlone}
   - ${CheckBoDeadTime}
   - ${CheckBoDeadTime}
-  Option1: {fileID: 11400000, guid: fd23b1a20fc256246bf9f92343c2e75b, type: 2}
-  Option2: {fileID: 11400000, guid: 38997a1b6da9ed345b0883de9447591c, type: 2}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 2c000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 2c000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 04000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  Option1: {fileID: 11400000, guid: 38997a1b6da9ed345b0883de9447591c, type: 2}
+  Option2: {fileID: 11400000, guid: fd23b1a20fc256246bf9f92343c2e75b, type: 2}
   Option3: {fileID: 11400000, guid: f26043ce983e65c478ccd226f446c39e, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

@@ -19,6 +19,75 @@ MonoBehaviour:
   - ->c
   - "\u83B1\u6587\uFF1A\u4E0D\u7528\u8C26\u865A\u961F\u957F\uFF0C\u4F60\u660E\u660E\u5C31\u505A\u7684\u5F88\u5B8C\u7F8E\u3002"
   - ${End}
+  data:
+  - cn: "\u9A6C\u9A6C\u864E\u864E"
+    en: Just so-so
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u9A6C\u9A6C\u864E\u864E\u3002"
+    en: Just so-so.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4E0D\u7528\u8C26\u865A\u961F\u957F\uFF0C\u4F60\u660E\u660E\u5C31\u505A\u7684\u5F88\u5B8C\u7F8E\u3002"
+    en: No need to be modest, Captain. You are clearly doing perfectly.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   Option1: {fileID: 11400000, guid: db9a427df7e61ff45bd702b80a03d63e, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -26,5 +95,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

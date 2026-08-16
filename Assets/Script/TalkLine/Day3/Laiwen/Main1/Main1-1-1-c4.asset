@@ -19,6 +19,67 @@ MonoBehaviour:
   - ->c
   - "\u83B1\u6587\uFF1A\u6211\u4E5F\u662F\u8FD9\u6837\u5E0C\u671B\u7684\uFF0C\u81F3\u5C11\u8FD9\u610F\u5473\u7740\u6211\u4EEC\u8BF4\u4E0D\u5B9A\u5F88\u5FEB\u5C31\u80FD\u51FA\u53BB\u4E86\u3002"
   - ${End}
+  data:
+  - cn: "\u4E0D\u4F1A"
+    en: No
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u4E0D\u4F1A\u3002"
+    en: No.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u4E5F\u662F\u8FD9\u6837\u5E0C\u671B\u7684\uFF0C\u81F3\u5C11\u8FD9\u610F\u5473\u7740\u6211\u4EEC\u8BF4\u4E0D\u5B9A\u5F88\u5FEB\u5C31\u80FD\u51FA\u53BB\u4E86\u3002"
+    en: I hope so too. At least that would mean we may be able to get out soon.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: 6dc88b5ed0f6d4143b02c716586301f3, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -26,5 +87,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

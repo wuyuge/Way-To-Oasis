@@ -14,6 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u963F\u66FC\u5FB7\uFF1A\u4E0B\u96E8\u4E86\u3002\u7B49\u4F1A\u8981\u8BB0\u5F97\u63D0\u9192\u5927\u5BB6\u6CE8\u610F\u4FDD\u6696\u3002"
+  data:
+  - cn: "\u4E0B\u96E8\u4E86\u3002\u7B49\u4F1A\u8981\u8BB0\u5F97\u63D0\u9192\u5927\u5BB6\u6CE8\u610F\u4FDD\u6696\u3002"
+    en: It is raining. I need to remember to remind everyone to stay warm later.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -21,5 +37,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

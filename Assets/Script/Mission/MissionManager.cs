@@ -24,6 +24,11 @@ public class MissionManager : MonoBehaviour
 
     private void OnEnable()
     {
+        if (GlobalData.Day == 0)
+        {
+            SetEmpty();
+            return;
+        }
         UpdateMissionDisplay();
     }
 
@@ -79,11 +84,23 @@ public class MissionManager : MonoBehaviour
         {
             if (value.infos[GlobalData.Day].canPlay)
             {
+                if (value.name == "莱文" && GlobalData.Day == 2 && GlobalData.Characters[1].Dead && GlobalData.Characters[3].Dead)
+                {
+                    continue;
+                }
                 missions[curIndex].text = "帮助" + value.name;
                 curIndex++;
             }
         }
         
     }
+
+    public void SetEmpty()
+    {
+        foreach (var value in missions)
+        {
+            value.text = string.Empty;
+        }
+    }    
 }
 

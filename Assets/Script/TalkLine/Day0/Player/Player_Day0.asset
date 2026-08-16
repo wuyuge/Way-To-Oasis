@@ -19,12 +19,44 @@ MonoBehaviour:
   - "\u6216\u8BB8\u6211\u8FD8\u6CA1\u6709\u505A\u597D\u901A\u77E5\u5176\u4ED6\u4EBA\u7684\u51C6\u5907\u3002"
   - "\u8FD8\u662F\u518D\u601D\u8003\u4E00\u4E0B\u5427\u3002"
   - ${Choice}
+  data:
+  - cn: 
+    en: 
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 1b000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u6216\u8BB8\u6211\u8FD8\u6CA1\u6709\u505A\u597D\u901A\u77E5\u5176\u4ED6\u4EBA\u7684\u51C6\u5907\u3002"
+    en: Maybe I am still not ready to inform everyone else.
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u8FD8\u662F\u518D\u601D\u8003\u4E00\u4E0B\u5427\u3002"
+    en: I should think about it a little more.
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 10000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
   Option1: {fileID: 11400000, guid: 4eac636eb60a5a24c8baaac76ccbf59a, type: 2}
   Option2: {fileID: 11400000, guid: 24eb74f1bc27474448a98c562b6c07ed, type: 2}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
-  Weight: 4
+  Weight: 7
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

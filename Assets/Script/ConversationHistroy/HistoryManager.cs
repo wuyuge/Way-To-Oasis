@@ -9,15 +9,30 @@ public class HistoryManager : MonoBehaviour
     public GameObject conversationPrefab;
     public Scrollbar verticalScrollbar;
 
+    public void Awake()
+    {
+        GlobalData.History = this;
+        Debug.Log("历史管理器初始化");
+    }
+
+
     private void OnEnable()
     {
         verticalScrollbar.value = 0;
         GlobalData.ShowText.CanShowText = false;
+        if (GlobalData.TalkSystem.useNewSys)
+        {
+            GlobalData.NewTalkSysShowText.OnHistory = true;
+        }
     }
 
     private void OnDisable()
     {
         GlobalData.ShowText.CanShowText = true;
+        if (GlobalData.TalkSystem.useNewSys)
+        {
+            GlobalData.NewTalkSysShowText.OnHistory = false;
+        }
     }
 
 
