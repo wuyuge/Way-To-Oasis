@@ -412,6 +412,7 @@ public class Progress : MonoBehaviour
                 }
                 else
                 {
+                    talkSys.Talklines[day_num] = null;
                     talkSys.Talklines[day_num] = afterFood[day_num];
                     talkSys.line = 0;  // 重置对话行数
                     talkSys.showText.CanShowText = true;
@@ -474,7 +475,9 @@ public class Progress : MonoBehaviour
             start = true;  // 进入下一天的开始阶段
             talk = false;  // 退出对话阶段
             food = false;  // 退出进食阶段
+            talkSys.Talklines[day_num] = null;
             day_num += 1;  // 天数+1（进入下一天）
+            GlobalData.Day = day_num;
             day.text = "Day " + day_num;  // 更新日期显示
             if(day_num == 2 || day_num == 5 || day_num == 7)
             {
@@ -527,7 +530,7 @@ public class Progress : MonoBehaviour
                     GlobalData.NewTalkSysShowText.UnLockOutPut();
                     GlobalData.NewTalkSysShowText.SetChoiceLine(0,true);
                 }
-                talkSys.ShowText();
+                /*talkSys.ShowText();*/
                 // 启动对话显示
                 TalkBar.GetComponent<Animator>().SetTrigger("start");  // 对话栏显示动画
             }

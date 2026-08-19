@@ -195,6 +195,7 @@ public class RestoreSence : MonoBehaviour
         Debug.Log("设定主画布");
         mainProgress.day_num = _curData.day;//设定时间
         mainProgress.SetStage(_curData.stage);//设定阶段
+        GlobalData.NewTalkSysShowText.LockOutPut();
         for (int i = 0; i < mainTalkSys.characterComponentList.Count; i++)//设定角色死亡，负重,吃东西状态
         {
             mainTalkSys.characterComponentList[i].Dead = _curData.characterDeadState[i];

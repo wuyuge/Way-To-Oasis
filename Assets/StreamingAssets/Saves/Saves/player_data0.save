@@ -1,9 +1,9 @@
 {
-    "saveTime": "2026-08-15 11:16:18",
+    "saveTime": "2026-08-17 10:53:36",
     "playerName": "■■",
-    "day": 0,
-    "stage": 2,
-    "food": 21,
+    "day": 3,
+    "stage": 1,
+    "food": 3,
     "body": 1,
     "amandeKillSelfTag": false,
     "characterDeadState": [
@@ -23,12 +23,12 @@
         0
     ],
     "characterEatState": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
     ],
     "characterCarryTag": [
         0,
@@ -36,7 +36,7 @@
         0,
         0,
         0,
-        0
+        1
     ],
     "deadBodyContainer": [
         "Leader",

@@ -25,7 +25,7 @@ MonoBehaviour:
     cnBranch: []
     enHaveBranch: 0
     enBranch: []
-    isPlayerTalking: 0
+    isPlayerTalking: 1
     isAside: 0
     codes: 
     onlyCode: 0
@@ -34,21 +34,25 @@ MonoBehaviour:
     showCg: 0
     cgNum: 0
     minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   - cn: "\u535A\u91D1\u68EE\u6B63\u5728\u62A4\u7406\u6B66\u5668\u3002"
     en: Bokinson is maintaining his weapon.
     cnHaveBranch: 0
     cnBranch: []
     enHaveBranch: 0
     enBranch: []
-    isPlayerTalking: 0
+    isPlayerTalking: 1
     isAside: 0
     codes: 140000002300000016000000
     onlyCode: 1
-    speaker: 0
+    speaker: 3
     expression: 0
     showCg: 0
     cgNum: 0
     minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

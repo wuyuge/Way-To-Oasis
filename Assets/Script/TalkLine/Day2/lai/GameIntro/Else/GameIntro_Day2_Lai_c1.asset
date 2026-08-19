@@ -65,7 +65,7 @@ MonoBehaviour:
     enBranch: []
     isPlayerTalking: 1
     isAside: 0
-    codes: 14000000
+    codes: 
     onlyCode: 0
     speaker: 0
     expression: 0

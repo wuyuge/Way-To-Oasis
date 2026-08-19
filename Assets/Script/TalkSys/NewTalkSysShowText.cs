@@ -589,6 +589,8 @@ public class NewTalkSysShowText : MonoBehaviour,ITalkSysCore
     public void Skip()
     {
         RunCode(SkipManager,0);
+        StopAllCoroutines();
+        _talkSys.Player.text = string.Empty;
     }
     
 }

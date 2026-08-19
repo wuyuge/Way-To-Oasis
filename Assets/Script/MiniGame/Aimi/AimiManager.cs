@@ -182,11 +182,17 @@ public class AimiManager : MonoBehaviour
             }
             else if (_failed)
             {
-                PlayText(language.isEn ? fail.data[curLine].en : fail.data[curLine].cn);
-                image.sprite = expressions[fail.data[curLine].expression];
-                image.SetNativeSize();
+                // ========== 第169行 增加空值&索引越界保护 ==========
+                if (fail != null && fail.data != null && curLine >= 0 && curLine < fail.data.Count)
+                {
+                    var item = fail.data[curLine];
+                    string showTxt = language.isEn ? item.en : item.cn;
+                    PlayText(showTxt);
+                    image.sprite = expressions[item.expression];
+                    image.SetNativeSize();
+                }
                 curLine++;
-                if (curLine > fail.data.Count - 1)
+                if (fail != null && fail.data != null && curLine > fail.data.Count - 1)
                 {
                     AimiGlobalManager.Failed = false;
                     Invoke(nameof(SetEnd), 1.25f);

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -53,30 +54,34 @@ public class MiniCharacterManager : MonoBehaviour
 
     private Animator LightAnim;
 
-
     public GameObject CampLight;
-
     public AudioSource WalkingSound;
-
     public GameObject CampFire;
-
     public bool isWalking;
-
 
 
     private void Start()
     {
         InitializeComponents();
         InitializeCharacters();
-        
+
         // 初始分配一次位置
         UpdateCharacterPositions();
-        LightAnim = CampLight.GetComponent<Animator>();
+        if (CampLight != null && !CampLight.IsDestroyed())
+        {
+            LightAnim = CampLight.GetComponent<Animator>();
+        }
     }
 
     private void Update()
     {
         CheckDeathStatusChanges();
+    }
+
+    private void OnDisable()
+    {
+        // 物体失活/销毁时，清除所有Invoke延时，防止销毁后回调执行
+        CancelInvoke();
     }
 
     /// <summary>
@@ -112,19 +117,19 @@ public class MiniCharacterManager : MonoBehaviour
     {
         foreach (var character in miniCharacters)
         {
-            if (character.characterObject == null)
+            if (character.characterObject == null || character.characterObject.IsDestroyed())
             {
                 Debug.LogWarning($"角色 {character.characterName} 未指定实体对象");
                 continue;
             }
 
             // 初始隐藏对话栏
-            if (character.characterTalkBar != null)
+            if (character.characterTalkBar != null && !character.characterTalkBar.IsDestroyed())
             {
                 character.characterTalkBar.SetActive(false);
             }
 
-            if (character.thinkBar is not null)
+            if (character.thinkBar != null && !character.thinkBar.IsDestroyed())
             {
                 character.thinkBar.SetActive(false);
             }
@@ -201,13 +206,17 @@ public class MiniCharacterManager : MonoBehaviour
         // 1. 处理死亡角色（禁用）
         foreach (var character in miniCharacters)
         {
-            if (character.characterObject == null)
+            if (character.characterObject == null || character.characterObject.IsDestroyed())
                 continue;
 
             bool isDead = deadCharacters.Contains(character.characterName);
             character.characterObject.SetActive(!isDead);
 
-            Invoke(nameof(DelayTextBar),2f);
+            // 仅当自身未销毁，才发起延时
+            if (!this.IsDestroyed())
+            {
+                Invoke(nameof(DelayTextBar), 2f);
+            }
         }
 
         // 2. 收集存活角色
@@ -215,6 +224,7 @@ public class MiniCharacterManager : MonoBehaviour
         foreach (var character in miniCharacters)
         {
             if (character.characterObject != null &&
+                !character.characterObject.IsDestroyed() &&
                 character.characterObject.activeSelf &&
                 !deadCharacters.Contains(character.characterName))
             {
@@ -251,129 +261,177 @@ public class MiniCharacterManager : MonoBehaviour
 
     private void DelayTextBar()
     {
+        // 自身已经销毁直接退出
+        if (this.IsDestroyed()) return;
+
         foreach (var character in miniCharacters)
         {
-            if (character.characterObject == null)
+            if (character.characterObject == null || character.characterObject.IsDestroyed())
                 continue;
 
             // 同步隐藏对话栏
-            if (character.characterTalkBar != null)
+            if (character.characterTalkBar != null && !character.characterTalkBar.IsDestroyed())
             {
                 character.characterTalkBar.SetActive(false);
             }
-            
-            if (character.thinkBar is not null)
+
+            if (character.thinkBar != null && !character.thinkBar.IsDestroyed())
             {
                 character.thinkBar.SetActive(false);
             }
-            
+
         }
-        
+
     }
 
     #region 动画控制方法
     public void ShowMiniCharacter()
     {
-        if (_animator != null)
+        if (_animator != null && !_animator.IsDestroyed())
             _animator.SetTrigger("Show");
     }
 
     public void CloseMiniCharacter()
     {
-        if (_animator != null)
+        if (_animator != null && !_animator.IsDestroyed())
             _animator.SetTrigger("Close");
-        LightAnim.SetTrigger("Close");
+        if (LightAnim != null && !LightAnim.IsDestroyed())
+            LightAnim.SetTrigger("Close");
     }
 
     public void SetSit()
     {
-        if (_animator != null)
+        // 自身已经销毁直接返回，不再执行任何逻辑
+        if (this.IsDestroyed()) return;
+
+        if (_animator != null && !_animator.IsDestroyed())
             _animator.enabled = false;
 
         foreach (var character in miniCharacters)
         {
-            if (character.characterObject == null)
+            if (character.characterObject == null || character.characterObject.IsDestroyed())
                 continue;
 
             var anim = character.characterObject.GetComponent<Animator>();
-            if (anim != null)
+            if (anim != null && !anim.IsDestroyed())
                 anim.SetTrigger("Sit");
 
-            character.characterObject.GetComponent<RectTransform>().position = character.SitPosition.position;
-
+            if (character.SitPosition != null && !character.SitPosition.IsDestroyed())
+            {
+                character.characterObject.GetComponent<RectTransform>().position = character.SitPosition.position;
+            }
         }
 
-        CampFire.SetActive(true);
-
+        // ✅ 增加销毁状态保护，防止OnDestroy链路调用时报错
+        if (CampFire != null && !CampFire.IsDestroyed())
+        {
+            CampFire.SetActive(true);
+        }
 
         isWalking = false;
-        CampLight.SetActive(true);
+
+        if (CampLight != null && !CampLight.IsDestroyed())
+        {
+            CampLight.SetActive(true);
+        }
 
         Invoke(nameof(EnableAnimator), 1f);
     }
 
     public void SetStand()
     {
-        if (_animator != null)
+        if (this.IsDestroyed()) return;
+
+        if (_animator != null && !_animator.IsDestroyed())
             _animator.enabled = false;
 
         foreach (var character in miniCharacters)
         {
-            if (character.characterObject == null)
+            if (character.characterObject == null || character.characterObject.IsDestroyed())
                 continue;
 
             var anim = character.characterObject.GetComponent<Animator>();
-            if (anim != null)
+            if (anim != null && !anim.IsDestroyed())
                 anim.SetTrigger("Stand");
         }
         UpdateCharacterPositions();
-        CampLight.SetActive(false);
+
+        if (CampLight != null && !CampLight.IsDestroyed())
+        {
+            CampLight.SetActive(false);
+        }
+
         Invoke(nameof(EnableAnimator), 1f);
-        if(WalkingSound.isPlaying)         
+
+        if (WalkingSound != null && !WalkingSound.IsDestroyed() && WalkingSound.isPlaying)
         {
             WalkingSound.Stop();
         }
         isWalking = false;
-        CampFire.SetActive(false);
+
+        if (CampFire != null && !CampFire.IsDestroyed())
+        {
+            CampFire.SetActive(false);
+        }
     }
 
     public void SetWalk()
     {
-        if (_animator != null)
+        if (this.IsDestroyed()) return;
+
+        if (_animator != null && !_animator.IsDestroyed())
             _animator.enabled = false;
-        WalkingSound.Play();
+
+        if (WalkingSound != null && !WalkingSound.IsDestroyed())
+        {
+            WalkingSound.Play();
+        }
+
         foreach (var character in miniCharacters)
         {
-            if (character.characterObject == null)
+            if (character.characterObject == null || character.characterObject.IsDestroyed())
                 continue;
 
             var anim = character.characterObject.GetComponent<Animator>();
+            if (anim == null || anim.IsDestroyed()) continue;
+
             if (anim.GetBool("Stand"))
             {
                 anim.ResetTrigger("Stand");
             }
-            
+
             anim.SetTrigger("Walk");
         }
 
         isWalking = true;
-        CampFire.SetActive(false);
+
+        if (CampFire != null && !CampFire.IsDestroyed())
+        {
+            CampFire.SetActive(false);
+        }
+
         Invoke(nameof(EnableAnimator), 1f);
     }
 
-
-
     private void EnableAnimator()
     {
-        if (_animator != null)
+        // 延时回调时对象已经销毁，直接退出
+        if (this.IsDestroyed()) return;
+
+        if (_animator != null && !_animator.IsDestroyed())
+        {
             _animator.enabled = true;
+        }
     }
     #endregion
 
 
     public void OffLight()
     {
-        LightAnim.SetTrigger("Close");
+        if (LightAnim != null && !LightAnim.IsDestroyed())
+        {
+            LightAnim.SetTrigger("Close");
+        }
     }
 
 }

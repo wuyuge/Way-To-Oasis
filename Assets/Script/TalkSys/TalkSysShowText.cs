@@ -791,7 +791,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
     }
     
     #endregion
-    private void OnDestroy()
+    /*private void OnDestroy()
     {
         if (GlobalData.Day == 0)
         {
@@ -802,7 +802,7 @@ public class TalkSysShowText : MonoBehaviour, ITalkSysCore
         {
             StopCoroutine(_autoPlayCoroutine);
         }
-    }
+    }*/
     
     public void StopNextCommend()
     {

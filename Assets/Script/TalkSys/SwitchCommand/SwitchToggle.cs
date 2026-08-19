@@ -55,7 +55,10 @@ public class SwitchToggle : SwitchCommand
                 break;
             case FunctionCode.Function.Bb://下降
                 MoveUI(UIElement.Talk,UIMovement.Down);
-                if(_talkSys.useNewSys) GlobalData.NewTalkSysShowText.LockOutPut();
+                if(_talkSys.useNewSys)
+                {
+                    GlobalData.NewTalkSysShowText.LockOutPut();
+                }
                 _showText.CanShowText = false;
                 _showText.SetEmptyText();
                 TutorialManager.CharacterIsTalking = false;

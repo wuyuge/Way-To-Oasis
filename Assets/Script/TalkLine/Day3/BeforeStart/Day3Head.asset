@@ -36,6 +36,7 @@ MonoBehaviour:
     cgNum: 0
     minigameType: 0
     uncomfortType: 0
+    audioEffect: 0
   - cn: 
     en: 
     cnHaveBranch: 0
@@ -52,6 +53,41 @@ MonoBehaviour:
     cgNum: 0
     minigameType: 0
     uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 02000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 02000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   Option1: {fileID: 11400000, guid: eca6d84a1ab64dc43b1b5782d1a1079e, type: 2}
   Option2: {fileID: 11400000, guid: 38f2b4cc7ee89f941863157500309687, type: 2}
   Option3: {fileID: 0}
