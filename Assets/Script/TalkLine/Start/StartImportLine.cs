@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class StartImportLine : MonoBehaviour
 {
@@ -19,15 +22,19 @@ public class StartImportLine : MonoBehaviour
     public GameObject PlayerNameBar;
     private bool Import;
     public AudioSource Type;
-
+    public Manager language;
+    private bool _stop = false;
+    public float switchInterval;
 
     public async Task StartImport()
     {
         int index = 0;
         Import = true;
-        foreach (string s in TextLine.TxtLine)
+        
+        foreach (Manager.TextData d in TextLine.data)
         {
 
+            var s = language.isEn ? d.en : d.cn;
             foreach (char c in s)
             {
                 if (TextUI.text[TextUI.text.Length - 1] == '¨€')
@@ -53,8 +60,9 @@ public class StartImportLine : MonoBehaviour
             {
                 TextUI.text = TextUI.text.Remove(TextUI.text.Length - 1);
             }
-            if(s != TextLine.TxtLine[TextLine.TxtLine.Count - 1])
-            TextUI.text += "\n";
+            if(s != (language.isEn
+                   ? TextLine.data[TextLine.data.Count - 1].en
+                   : TextLine.data[TextLine.data.Count - 1].cn)) TextUI.text += "\n";
             index++;
 
         }
@@ -63,7 +71,7 @@ public class StartImportLine : MonoBehaviour
             Tips.SetActive(true);
             SwitchScence = true;
         }
-        while (true)
+        while (!_stop)
         {
             if (TextUI.text[TextUI.text.Length - 1] == '¨€') TextUI.text = TextUI.text.Remove(TextUI.text.Length - 1);
             await Task.Delay(EndDelay);
@@ -90,7 +98,7 @@ public class StartImportLine : MonoBehaviour
                 Tips.SetActive(true);
                 DelayTime = 0;
                 BlockDelayTime = 0;
-                Invoke("SetStage", 0.2f) ;
+                Invoke("SetStage", switchInterval) ;
             }
         }
     }
@@ -107,13 +115,14 @@ public class StartImportLine : MonoBehaviour
     {
 
         PlayerNameBar.SetActive(true);
-
-
-
+        
     }
 
 
-
-
-
+    private void OnDestroy()
+    {
+        _stop = true;
+        StopAllCoroutines();
+        Type.Stop();
+    }
 }

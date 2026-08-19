@@ -1,0 +1,108 @@
+{
+    "saveTime": "2026-08-15 11:16:18",
+    "playerName": "■■",
+    "day": 0,
+    "stage": 2,
+    "food": 21,
+    "body": 1,
+    "amandeKillSelfTag": false,
+    "characterDeadState": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ],
+    "characterCarry": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "characterEatState": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ],
+    "characterCarryTag": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "deadBodyContainer": [
+        "Leader",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "currentDead": [
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "miniGamePlayState": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ],
+    "usedBodyContainer": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "afterShop": false,
+    "characterSpTalkState": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "characterComfortState": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ]
+}

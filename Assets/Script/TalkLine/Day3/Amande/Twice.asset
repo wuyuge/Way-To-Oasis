@@ -13,11 +13,42 @@ MonoBehaviour:
   m_Name: Twice
   m_EditorClassIdentifier: 
   TxtLine:
-  - closecharabar
-  - p
-  - "\u963F\u66FC\u5FB7\u5BF9\u4F60\u9732\u51FA\u4E86\u4E00\u4E2A\u60B2\u4F24\u7684\u7B11\u5BB9\uFF0C\u6CA1\u6709\u8BF4\u8BDD\u3002"
-  - upcbar
-  - down
+  - ->p
+  - "A_\u963F\u66FC\u5FB7\u5BF9\u4F60\u9732\u51FA\u4E86\u4E00\u4E2A\u60B2\u4F24\u7684\u7B11\u5BB9\uFF0C\u6CA1\u6709\u8BF4\u8BDD\u3002"
+  - ${OpenSwitchStage}
+  - ${CloseCharacterTalkBox}
+  - ${DownTalkBox}
+  data:
+  - cn: "\u963F\u66FC\u5FB7\u5BF9\u4F60\u9732\u51FA\u4E86\u4E00\u4E2A\u60B2\u4F24\u7684\u7B11\u5BB9\uFF0C\u6CA1\u6709\u8BF4\u8BDD\u3002"
+    en: Amanda gives you a sad smile and says nothing.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u963F\u66FC\u5FB7\u5BF9\u4F60\u9732\u51FA\u4E86\u4E00\u4E2A\u60B2\u4F24\u7684\u7B11\u5BB9\uFF0C\u6CA1\u6709\u8BF4\u8BDD\u3002"
+    en: Amanda gives you a sad smile and says nothing.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 230000001400000016000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -25,5 +56,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

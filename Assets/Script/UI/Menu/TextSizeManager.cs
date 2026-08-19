@@ -26,7 +26,7 @@ public class TextSizeManager : MonoBehaviour , SettingInitialize
 
         SetTextSize(manager.setting.TextSize);
         GetComponent<Slider>().value = manager.setting.TextSize;
-        Debug.Log("文字大小初始化");
+        
 
 
     }

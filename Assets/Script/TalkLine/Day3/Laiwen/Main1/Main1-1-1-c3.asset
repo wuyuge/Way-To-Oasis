@@ -14,11 +14,73 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u4F1A"
-  - p
+  - ->p
   - "\u4F1A\u3002"
-  - c
-  - "\u83B1\u6587\uFF1A\u771F\u60B2\u89C2\u554A\u961F\u957F\uFF0C\u4E0D\u7BA1\u505A\u597D\u6700\u574F\u7684\u51C6\u5907\u4E0D\u662F\u574F\u4E8B\u3002{Laugh}"
-  - end
+  - ->c
+  - "\u83B1\u6587\uFF1A\u771F\u60B2\u89C2\u554A\u961F\u957F\uFF0C\u4E0D\u7BA1\u505A\u597D\u6700\u574F\u7684\u51C6\u5907\u4E0D\u662F\u574F\u4E8B\u3002"
+  - ${End}
+  data:
+  - cn: "\u4F1A"
+    en: Yes
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u4F1A\u3002"
+    en: Yes.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u771F\u60B2\u89C2\u554A\u961F\u957F\uFF0C\u4E0D\u7BA1\u505A\u597D\u6700\u574F\u7684\u51C6\u5907\u4E0D\u662F\u574F\u4E8B\u3002"
+    en: You're really pessimistic, Captain. Being prepared for the worst is not a
+      bad thing.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: 6dc88b5ed0f6d4143b02c716586301f3, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -26,5 +88,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

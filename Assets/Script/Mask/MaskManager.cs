@@ -1,30 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
+#pragma warning disable
+#pragma warning disable CS0612
+using System;
 using UnityEngine;
-
+[Obsolete]
 public class MaskManager : MonoBehaviour
 {
 
     public bool ClickClose = true;
     private bool ClickDelay = false;
-
-    private void Update()
-    {
-        if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) && ClickClose && !ClickDelay)
-        {
-            ClickDelay = true;
-            Invoke("SetMask", 0.5f);
-
-        }
-    }
+    
 
     public void SetClik(bool Value)
     {
+        return;
         ClickClose = Value;
     }
 
     void SetMask()
     {
+        return;
         ClickDelay = false;
         gameObject.SetActive(false);
     }
@@ -32,6 +26,7 @@ public class MaskManager : MonoBehaviour
 
     private void OnDisable()
     {
+        return;
         ClickDelay = false;
         ClickClose = true;
     }

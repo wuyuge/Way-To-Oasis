@@ -13,7 +13,25 @@ MonoBehaviour:
   m_Name: Laiwen_Day3_Head
   m_EditorClassIdentifier: 
   TxtLine:
-  - /CheckShopEvent
+  - ${ShowCharacterTalkBox}
+  - ${LockSwitchStage}
+  - ${CheckShopEvent}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 2a0000001b0000000e000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: d134b5a56ee54fe4e8e14bbbdcc1cc62, type: 2}
   Option2: {fileID: 11400000, guid: e0b0fd627dc14164aad0d4dc61715ddc, type: 2}
   Option3: {fileID: 11400000, guid: b992d8ec0c2449a468b081b5692c0c02, type: 2}
@@ -21,5 +39,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

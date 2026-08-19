@@ -14,13 +14,105 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u2026\u2026"
-  - p
+  - ->p
   - "\u2026\u2026"
-  - c
-  - "\u83B1\u6587\uFF1A\u2026\u2026\u8BF7\u4E0D\u8981\u8FD9\u6837\uFF0C\u961F\u957F\u3002\u4F60\u7684\u6C89\u9ED8\u4F1A\u7ED9\u6211\u5E26\u6765\u5FC3\u7406\u521B\u4F24\u7684\u3002"
+  - ->c
+  - "\u83B1\u6587\uFF1A\u2026\u2026\u8BF7\u4E0D\u8981\u8FD9\u6837\uFF0C\u961F\u957F\u3002\u4F60\u7684\u6C89\u9ED8\u4F1A\u7ED9\u6211\u5E26\u6765\u5FC3\u7406\u521B\u4F24\u7684\u3002@{6}"
   - "\u83B1\u6587\uFF1A\u5443\uFF0C\u603B\u800C\u8A00\u4E4B\uFF0C\u6211\u5C31\u5F53\u4F60\u9ED8\u8BA4\u4E86\u5427\uFF0C\u53CD\u6B63\u6CA1\u6709\u4EBA\u80FD\u62D2\u7EDD\u9001\u4E0A\u95E8\u6765\u7684\u514D\u8D39\u52B3\u52A8\u529B\u3002"
   - "\u83B1\u6587\uFF1A\u6709\u4EBA\u591A\u5E72\u4E00\u4E9B\u6D3B\u5BF9\u5927\u5BB6\u90FD\u6CA1\u6709\u574F\u5904\u4E0D\u662F\u5417\u3002"
-  - end
+  - ${End}
+  data:
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u2026\u2026\u8BF7\u4E0D\u8981\u8FD9\u6837\uFF0C\u961F\u957F\u3002\u4F60\u7684\u6C89\u9ED8\u4F1A\u7ED9\u6211\u5E26\u6765\u5FC3\u7406\u521B\u4F24\u7684\u3002"
+    en: ...Please do not do that, Captain. Your silence will give me emotional trauma.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 6
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u5443\uFF0C\u603B\u800C\u8A00\u4E4B\uFF0C\u6211\u5C31\u5F53\u4F60\u9ED8\u8BA4\u4E86\u5427\uFF0C\u53CD\u6B63\u6CA1\u6709\u4EBA\u80FD\u62D2\u7EDD\u9001\u4E0A\u95E8\u6765\u7684\u514D\u8D39\u52B3\u52A8\u529B\u3002"
+    en: Uh, in any case, I will take that as your agreement. No one can refuse free
+      labor delivered to their door, anyway.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 6
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6709\u4EBA\u591A\u5E72\u4E00\u4E9B\u6D3B\u5BF9\u5927\u5BB6\u90FD\u6CA1\u6709\u574F\u5904\u4E0D\u662F\u5417\u3002"
+    en: It does not hurt anyone if someone does a little extra work, right?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 6
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: It does not hurt anyone if someone does a little extra work, right?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 0
+    speaker: 4
+    expression: 6
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: 71be089212bc0984892aa07a32775eb7, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -28,5 +120,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

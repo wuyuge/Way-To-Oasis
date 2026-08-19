@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: Bo_Day2_main2
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - ->c
+  - "\u535A\u91D1\u68EE\uFF1A\u548C\u6628\u5929\u4E00\u6837\uFF0C\u6CA1\u6709\u751F\u7269\u75D5\u8FF9\u4E5F\u6CA1\u6709\u627E\u5230\u8865\u7ED9\u3002@{5}"
+  - "\u535A\u91D1\u68EE\uFF1A\u548C\u6628\u5929\u4E00\u6837\uFF0C\u6CA1\u6709\u751F\u7269\u75D5\u8FF9\u4E5F\u6CA1\u6709\u627E\u5230\u8865\u7ED9\u3002@{5}"
+  - "\u535A\u91D1\u68EE\uFF1A\u6211\u4EEC\u5F88\u5FEB\u5C31\u8981\u88AB\u997F\u6B7B\u4E86\u3002@{2}"
+  - "\u535A\u91D1\u68EE\uFF1A\u5982\u679C\u4F60\u60F3\u4E0D\u5230\u529E\u6CD5\u8865\u5145\u98DF\u7269\uFF0C\u4E0D\u5982\u60F3\u60F3\u600E\u4E48\u8282\u7701\u98DF\u7269\u3002@{5}"
+  - "\u535A\u91D1\u68EE\uFF1A\u4E00\u70B9\u5C0F\u5FE0\u544A\uFF0C\u4E3A\u4E86\u6211\u4EEC\u90FD\u80FD\u6D3B\u4E45\u4E00\u70B9\u3002"
+  - "\u535A\u91D1\u68EE\uFF1A\u6CA1\u522B\u7684\u4E8B\u6211\u5C31\u5148\u8D70\u4E86\u3002"
+  - ${CheckMiniBo}
+  - ${OpenSwitchStage}
+  - ${CloseCharacterTalkBox}
+  - ${DownTalkBox}
+  data:
+  - cn: "\u548C\u6628\u5929\u4E00\u6837\uFF0C\u6CA1\u6709\u751F\u7269\u75D5\u8FF9\u4E5F\u6CA1\u6709\u627E\u5230\u8865\u7ED9\u3002"
+    en: Same as yesterday. No signs of living things, and no supplies found.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u548C\u6628\u5929\u4E00\u6837\uFF0C\u6CA1\u6709\u751F\u7269\u75D5\u8FF9\u4E5F\u6CA1\u6709\u627E\u5230\u8865\u7ED9\u3002"
+    en: Same as yesterday. No signs of living things, and no supplies found.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u4EEC\u5F88\u5FEB\u5C31\u8981\u88AB\u997F\u6B7B\u4E86\u3002"
+    en: We are going to starve soon.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5982\u679C\u4F60\u60F3\u4E0D\u5230\u529E\u6CD5\u8865\u5145\u98DF\u7269\uFF0C\u4E0D\u5982\u60F3\u60F3\u600E\u4E48\u8282\u7701\u98DF\u7269\u3002"
+    en: If you cannot think of a way to replenish the food, you might as well think
+      about how to save it.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4E00\u70B9\u5C0F\u5FE0\u544A\uFF0C\u4E3A\u4E86\u6211\u4EEC\u90FD\u80FD\u6D3B\u4E45\u4E00\u70B9\u3002"
+    en: A small piece of advice, so that all of us can live a little longer.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6CA1\u522B\u7684\u4E8B\u6211\u5C31\u5148\u8D70\u4E86\u3002"
+    en: If there is nothing else, I will leave first.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: If there is nothing else, I will leave first.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  Option1: {fileID: 11400000, guid: 7b14d26baca59914481ba106d5996fb6, type: 2}
+  Option2: {fileID: 0}
+  Option3: {fileID: 11400000, guid: 7b14d26baca59914481ba106d5996fb6, type: 2}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Eat: 0
+  GeneralBool: 0
+  isEn: 0

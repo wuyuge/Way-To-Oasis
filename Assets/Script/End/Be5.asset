@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: Be5
+  m_EditorClassIdentifier: 
+  TxtLine: []
+  data:
+    - cn: "\u4F60\u4E00\u4E2A\u4EBA\u82DF\u5EF6\u6B8B\u5598\u5230\u4E86\u4ECA\u5929\uFF0C\u5374\u4F9D\u65E7\u96BE\u9003\u6B7B\u4EA1\u7684\u5384\u8FD0\u3002"
+      en: You dragged yourself along until today, alone and barely alive, <br>  yet
+        you still could not escape the inevitability of death.
+      codes: 
+    - cn: "\u591A\u4E48\u4EE4\u4EBA\u611F\u6168\u4E0E\u550F\u5618\uFF0C\u6211\u4EE5\u4E3A\u4F60\u81F3\u5C11\u80FD\u518D\u591A\u6D3B\u90A3\u4E48\u51E0\u5929\uFF0C\u4E5F\u7B97\u914D\u5F97\u4E0A\u6B7B\u53BB\u4EBA\u7684\u727A\u7272\u3002"
+      en: How moving. How tragic.<br> I thought you would at least last a few more
+        days, <br>  long enough to be worthy of the sacrifices made by the dead.
+      codes: 
+    - cn: "\u6240\u4EE5\u4F60\u662F\u600E\u4E48\u8BA9\u81EA\u5DF1\u6CA6\u843D\u5230\u73B0\u5728\u8FD9\u4E2A\u5730\u6B65\u7684\uFF1F"
+      en: So how did you let yourself fall to this point?
+      codes: 
+    - cn: "\u4E0D\u5408\u65F6\u5B9C\u7684\u4EC1\u6148\u8FD8\u662F\u65E0\u6CD5\u8DE8\u8D8A\u7684\u5E95\u7EBF\uFF1F"
+      en: Was it misplaced kindness, or a boundary you could never cross?
+      codes: 
+    - cn: "\u55EF\uFF0C\u5E94\u8BE5\u90FD\u4E0D\u662F\u3002"
+      en: No. Probably neither.
+      codes: 
+    - cn: "\u4F60\u662F\u4E2A\u597D\u4EBA\uFF0C\u4F46\u8FD8\u4E0D\u591F\u597D\u3002\u4F60\u60F3\u5F53\u4E2A\u574F\u4EBA\uFF0C\u5374\u53C8\u505A\u4E0D\u5230\u3002"
+      en: You are a good person, but not good enough.<br> You want to be a bad person,
+        but you cannot quite do that either.
+      codes: 
+    - cn: "\u8FD9\u6837\u5939\u5728\u4E2D\u95F4\u7684\u5904\u5883\u624D\u662F\u6700\u714E\u71AC\u7684\uFF0C\u800C\u5927\u90E8\u5206\u4EBA\u90FD\u8FD9\u6837\u5728\u8FD9\u6837\u7684\u5730\u5E26\u5F98\u5F8A\u3002"
+      en: Being trapped in the middle is the most tormenting place of all, <br> 
+        and most people wander in that same gray space.
+      codes: 
+    - cn: "\u8FD9\u6CA1\u4EC0\u4E48\u9519\uFF0C\u53EA\u662F\u73B0\u5728\u7684\u5904\u5883\u5BF9\u4F60\u4E0D\u592A\u53CB\u597D\u3002"
+      en: There is nothing wrong with that.<br> The situation simply was not kind
+        to you.
+      codes: 
+    - cn: "\u5E0C\u671B\u4E0B\u6B21\u4F60\u80FD\u679C\u65AD\u4E00\u70B9\uFF0C\u522B\u8BA9\u72B9\u8C6B\u65AD\u9001\u4E86\u4F60\u7684\u6027\u547D\u3002"
+      en: Next time, I hope you will be more decisive.<br> Do not let hesitation
+        cost you your life.
+      codes: 
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Eat: 0
+  GeneralBool: 0
+  isEn: 0

@@ -13,13 +13,93 @@ MonoBehaviour:
   m_Name: Main2-2-End
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
-  - "\u83B1\u6587\uFF1A\u6211\u4EEC\u90FD\u76F8\u4FE1\u8FD9\u4E00\u70B9\u3002{Laugh}"
+  - ->c
+  - "\u83B1\u6587\uFF1A\u6211\u4EEC\u90FD\u76F8\u4FE1\u8FD9\u4E00\u70B9\u3002"
   - "\u83B1\u6587\uFF1A\u5BF9\u4E86\uFF0C\u6211\u6253\u7B97\u5728\u901A\u8BAF\u5668\u4E0A\u628A\u8FD9\u51E0\u5929\u7684\u4E8B\u8BB0\u4E0B\u6765\uFF0C\u987A\u4FBF\u7ED9\u81EA\u5DF1\u5199\u4E00\u4EFD\u5893\u5FD7\u94ED"
   - "\u83B1\u6587\uFF1A\u867D\u7136\u73B0\u5728\u6CA1\u6709\u4FE1\u53F7\uFF0C\u4E07\u4E00\u4EE5\u540E\u522B\u7684\u63A2\u6D4B\u961F\u641C\u6551\u961F\u8DEF\u8FC7\u8FD9\u91CC\uFF0C\u8FD8\u80FD\u8BA9\u8FD9\u4E8B\u91CD\u89C1\u5929\u65E5\u3002"
   - "\u83B1\u6587\uFF1A\u8BF4\u4E0D\u5B9A\u5927\u5BB6\u90FD\u4F1A\u88AB\u6211\u4EEC\u575A\u5B88\u4EBA\u6027\u5E95\u7EBF\u7684\u505A\u6CD5\u6240\u611F\u52A8\u3002"
-  - upcbar
-  - down
+  - ${OpenSwitchStage}
+  - ${CloseCharacterTalkBox}
+  - ${DownTalkBox}
+  data:
+  - cn: "\u6211\u4EEC\u90FD\u76F8\u4FE1\u8FD9\u4E00\u70B9\u3002"
+    en: We all believe that.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u5BF9\u4E86\uFF0C\u6211\u6253\u7B97\u5728\u901A\u8BAF\u5668\u4E0A\u628A\u8FD9\u51E0\u5929\u7684\u4E8B\u8BB0\u4E0B\u6765\uFF0C\u987A\u4FBF\u7ED9\u81EA\u5DF1\u5199\u4E00\u4EFD\u5893\u5FD7\u94ED\u3002"
+    en: Right. I plan to record what happened these past few days on my communicator,
+      and write myself an epitaph while I am at it.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u867D\u7136\u73B0\u5728\u6CA1\u6709\u4FE1\u53F7\uFF0C\u4E07\u4E00\u4EE5\u540E\u522B\u7684\u63A2\u6D4B\u961F\u641C\u6551\u961F\u8DEF\u8FC7\u8FD9\u91CC\uFF0C\u8FD8\u80FD\u8BA9\u8FD9\u4E8B\u91CD\u89C1\u5929\u65E5\u3002"
+    en: There is no signal now, but if another survey team or rescue team passes
+      through here one day, this whole thing might come to light.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u8BF4\u4E0D\u5B9A\u5927\u5BB6\u90FD\u4F1A\u88AB\u6211\u4EEC\u575A\u5B88\u4EBA\u6027\u5E95\u7EBF\u7684\u505A\u6CD5\u6240\u611F\u52A8\u3002"
+    en: "Maybe everyone will be moved by how we held on to humanity\u2019s last shreds
+      of morality."
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 230000001400000016000000
+    onlyCode: 1
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -27,5 +107,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

@@ -13,19 +13,197 @@ MonoBehaviour:
   m_Name: lai_Day0_main
   m_EditorClassIdentifier: 
   TxtLine:
-  - p
+  - ${ShowCharacterTalkBox}
+  - ${LockSwitchStage}
+  - ->p
+  - ->p
   - "\u4E9A\u6469\u65AF\u6B7B\u4E86\u3002"
-  - c
-  - "\u83B1\u6587\uFF1A\u554A\uFF0C\u8FD8\u771F\u662F\u610F\u5916\u2026\u2026\u53EF\u601C\u7684\u8001\u4E9A\u6469\u65AF\u3002{Calm}"
-  - p
+  - ->c
+  - "\u83B1\u6587\uFF1A\u554A\uFF0C\u8FD8\u771F\u662F\u610F\u5916\u2026\u2026\u53EF\u601C\u7684\u8001\u4E9A\u6469\u65AF\u3002@{1}"
+  - ->p
   - "\u4F60\u4E0D\u4E3A\u4ED6\u96BE\u8FC7\u4E00\u4E0B\u5417\uFF1F\u6211\u4EE5\u4E3A\u4F60\u4EEC\u4EA4\u60C5\u4E0D\u6D45\u3002"
-  - c
+  - ->c
   - "\u83B1\u6587\uFF1A\u2026\u7B97\u4E0D\u4E0A\u96BE\u8FC7\uFF0C\u4EE5\u73B0\u5728\u7684\u72B6\u51B5\u6765\u8BB2\uFF0C\u6B7B\u4E86\u4E5F\u4E0D\u7B97\u662F\u4E00\u4EF6\u574F\u4E8B\u3002"
   - "\u83B1\u6587\uFF1A\u800C\u4E14\u4ED6\u5E74\u7EAA\u5927\u4E86\uFF0C\u65E9\u665A\u4F1A\u6709\u8FD9\u4E00\u5929\u7684\u3002\u6211\u65E9\u5C31\u529D\u8FC7\u4ED6\u5E94\u8BE5\u8001\u8001\u5B9E\u5B9E\u9000\u4F11\uFF0C\u53EA\u53EF\u60DC\u2026\u2026"
-  - "\u83B1\u6587\uFF1A\u5509\uFF0C\u4ED6\u662F\u4E2A\u79F0\u804C\u7684\u7BA1\u7406\u8005\uFF0C\u96BE\u5F97\u7684\u597D\u4EBA\uFF0C\u4F1F\u5927\u7684\u961F\u957F\uFF0C\u6211\u4F1A\u6000\u5FF5\u4ED6\u8FD8\u5728\u7684\u90A3\u4E9B\u65E5\u5B50\u3002"
-  - "\u83B1\u6587\uFF1A\u4E0D\u8FC7\u73B0\u5728\u8BF4\u8FD9\u4E9B\u4E5F\u6CA1\u6709\u4EC0\u4E48\u610F\u4E49\u4E86\uFF0C\u4ED6\u5E94\u8BE5\u66F4\u5E0C\u671B\u770B\u5230\u6211\u4EEC\u6D3B\u7740\u8D70\u51FA\u53BB\u800C\u4E0D\u662F\u4E3A\u4ED6\u5982\u4F55\u54ED\u6CE3\u3002"
-  - "\u83B1\u6587\uFF1A\u6362\u4E2A\u8BDD\u9898\u5427\u3002\u6240\u4EE5\u4F60\u73B0\u5728\u662F\u961F\u957F\u4E86\uFF0C\u6211\u7684\u65B0\u4E0A\u53F8\uFF1F{Laugh}"
-  - choice
+  - "\u83B1\u6587\uFF1A\u5509\uFF0C\u4ED6\u662F\u4E2A\u79F0\u804C\u7684\u7BA1\u7406\u8005\uFF0C\u96BE\u5F97\u7684\u597D\u4EBA\uFF0C\u4F1F\u5927\u7684\u961F\u957F\uFF0C\u6211\u4F1A\u6000\u5FF5\u4ED6\u8FD8\u5728\u7684\u90A3\u4E9B\u65E5\u5B50\u3002@{5}"
+  - "\u83B1\u6587\uFF1A\u4E0D\u8FC7\u73B0\u5728\u8BF4\u8FD9\u4E9B\u4E5F\u6CA1\u6709\u4EC0\u4E48\u610F\u4E49\u4E86\uFF0C\u4ED6\u5E94\u8BE5\u66F4\u5E0C\u671B\u770B\u5230\u6211\u4EEC\u6D3B\u7740\u8D70\u51FA\u53BB\u800C\u4E0D\u662F\u4E3A\u4ED6\u5982\u4F55\u54ED\u6CE3\u3002@{1}"
+  - "\u83B1\u6587\uFF1A\u6362\u4E2A\u8BDD\u9898\u5427\u3002\u6240\u4EE5\u4F60\u73B0\u5728\u662F\u961F\u957F\u4E86\uFF0C\u6211\u7684\u65B0\u4E0A\u53F8\uFF1F@{3}"
+  - ${Choice}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 1b0000002a0000003a000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4E9A\u6469\u65AF\u6B7B\u4E86\u3002"
+    en: Amos is dead.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u554A\uFF0C\u8FD8\u771F\u662F\u610F\u5916\u2026\u2026\u53EF\u601C\u7684\u8001\u4E9A\u6469\u65AF\u3002"
+    en: Ah. That really is unexpected... poor old Amos.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4F60\u4E0D\u4E3A\u4ED6\u96BE\u8FC7\u4E00\u4E0B\u5417\uFF1F\u6211\u4EE5\u4E3A\u4F60\u4EEC\u4EA4\u60C5\u4E0D\u6D45\u3002"
+    en: Are you not sad about him? I thought the two of you were close.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u2026\u7B97\u4E0D\u4E0A\u96BE\u8FC7\uFF0C\u4EE5\u73B0\u5728\u7684\u72B6\u51B5\u6765\u8BB2\uFF0C\u6B7B\u4E86\u4E5F\u4E0D\u7B97\u662F\u4E00\u4EF6\u574F\u4E8B\u3002"
+    en: '...I would not call it sadness. '
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 1
+    enBranch:
+    - Considering our current situation, dying is not exactly the worst thing.
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u800C\u4E14\u4ED6\u5E74\u7EAA\u5927\u4E86\uFF0C\u65E9\u665A\u4F1A\u6709\u8FD9\u4E00\u5929\u7684\u3002\u6211\u65E9\u5C31\u529D\u8FC7\u4ED6\u5E94\u8BE5\u8001\u8001\u5B9E\u5B9E\u9000\u4F11\uFF0C\u53EA\u53EF\u60DC\u2026\u2026"
+    en: 'Besides, he was old. This day was going to come sooner or later. '
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 1
+    enBranch:
+    - I told him long ago that he should retire properly. Unfortunately...
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u5509\uFF0C\u4ED6\u662F\u4E2A\u79F0\u804C\u7684\u7BA1\u7406\u8005\uFF0C\u96BE\u5F97\u7684\u597D\u4EBA\uFF0C\u4F1F\u5927\u7684\u961F\u957F\uFF0C\u6211\u4F1A\u6000\u5FF5\u4ED6\u8FD8\u5728\u7684\u90A3\u4E9B\u65E5\u5B50\u3002"
+    en: 'Sigh. He was a capable manager, a rare good man, and a great captain. '
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 1
+    enBranch:
+    - I will miss the days when he was still here.
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4E0D\u8FC7\u73B0\u5728\u8BF4\u8FD9\u4E9B\u4E5F\u6CA1\u6709\u4EC0\u4E48\u610F\u4E49\u4E86\uFF0C\u4ED6\u5E94\u8BE5\u66F4\u5E0C\u671B\u770B\u5230\u6211\u4EEC\u6D3B\u7740\u8D70\u51FA\u53BB\u800C\u4E0D\u662F\u4E3A\u4ED6\u5982\u4F55\u54ED\u6CE3\u3002"
+    en: But there is no point saying all this now. He would probably rather see us
+      get out alive than watch us cry over him.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6362\u4E2A\u8BDD\u9898\u5427\u3002\u6240\u4EE5\u4F60\u73B0\u5728\u662F\u961F\u957F\u4E86\uFF0C\u6211\u7684\u65B0\u4E0A\u53F8\uFF1F"
+    en: Let us change the subject. So now you are the captain, my new superior?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   Option1: {fileID: 11400000, guid: c1e95045e5e56fd48934fd199766eec9, type: 2}
   Option2: {fileID: 11400000, guid: 2b8e98b074ef7cf41b8467298cb702ad, type: 2}
   Option3: {fileID: 11400000, guid: 059b60e4aa53c6e41965fb3ec93a5715, type: 2}
@@ -33,5 +211,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

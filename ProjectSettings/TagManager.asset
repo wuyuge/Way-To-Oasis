@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LuoSetAble
   layers:
   - Default
   - TransparentFX
@@ -12,7 +13,7 @@ TagManager:
   - Water
   - UI
   - Post Processing
-  - 
+  - CG
   - 
   - 
   - 
@@ -46,4 +47,7 @@ TagManager:
     locked: 0
   - name: Shadow
     uniqueID: 1180243765
+    locked: 0
+  - name: Game
+    uniqueID: 1334796815
     locked: 0

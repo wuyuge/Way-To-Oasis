@@ -14,26 +14,207 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u727A\u7272\u4E0D\u53EF\u907F\u514D"
-  - p
+  - ->p
   - "\u727A\u7272\u4E0D\u53EF\u907F\u514D\u3002"
-  - c
-  - "\u963F\u66FC\u5FB7\uFF1A\u2026\u6CA1\u6709\u4EBA\u7518\u613F\u5982\u6B64\u3002"
+  - ->c
+  - "\u963F\u66FC\u5FB7\uFF1A\u2026\u6CA1\u6709\u4EBA\u7518\u613F\u5982\u6B64\u3002@{3}"
   - "\u963F\u66FC\u5FB7\uFF1A\u8C01\u90FD\u4E0D\u77E5\u9053\u8FDC\u5904\u7684\u5F71\u5B50\u662F\u8FB9\u5883\u7684\u62A4\u680F\u8FD8\u662F\u4E00\u7247\u666E\u901A\u7684\u5DE8\u77F3\u7FA4\u3002\u65E0\u8BBA\u5B83\u662F\u4EC0\u4E48\uFF0C\u6211\u4EEC\u90FD\u4E0D\u53EF\u80FD\u505C\u4E0B\u3002"
-  - "\u963F\u66FC\u5FB7\uFF1A\u4E3A\u4E86\u4E00\u4E1D\u9003\u8131\u7684\u53EF\u80FD\uFF0C\u6211\u613F\u610F\u5FCD\u53D7\u4EFB\u4F55\u714E\u71AC\u3002"
-  - p
+  - "\u963F\u66FC\u5FB7\uFF1A\u4E3A\u4E86\u4E00\u4E1D\u9003\u8131\u7684\u53EF\u80FD\uFF0C\u6211\u613F\u610F\u5FCD\u53D7\u4EFB\u4F55\u714E\u71AC\u3002@{7}"
+  - ->p
   - "\u4F60\u8FD8\u771F\u662F\u3002"
-  - c
-  - "\u963F\u66FC\u5FB7\uFF1A\u8C22\u8C22\u5938\u5956\u3002{Laugh}"
+  - ->c
+  - "\u963F\u66FC\u5FB7\uFF1A\u8C22\u8C22\u5938\u5956\u3002@{5}"
   - "\u963F\u66FC\u5FB7\uFF1A\u5012\u4E0D\u5982\u8BF4\u662F\u8FD9\u79CD\u610F\u5FF5\u5728\u652F\u6491\u6211\u3002"
-  - "\u963F\u66FC\u5FB7\uFF1A\u5982\u679C\u4E00\u70B9\u5E0C\u671B\u90FD\u6CA1\u6709\u4E86\u7684\u8BDD\uFF0C\u6211\u5B81\u613F\u7ACB\u523B\u6B7B\u6389\u3002"
-  - upcbar
-  - down
+  - "\u963F\u66FC\u5FB7\uFF1A\u5982\u679C\u4E00\u70B9\u5E0C\u671B\u90FD\u6CA1\u6709\u4E86\u7684\u8BDD\uFF0C\u6211\u5B81\u613F\u7ACB\u523B\u6B7B\u6389\u3002@{1}"
+  - ${CheckMinia}
+  - ${CloseCharacterTalkBox}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
+  data:
+  - cn: "\u727A\u7272\u4E0D\u53EF\u907F\u514D"
+    en: Sacrifice is unavoidable
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u727A\u7272\u4E0D\u53EF\u907F\u514D\u3002"
+    en: Sacrifice is unavoidable.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u6CA1\u6709\u4EBA\u7518\u613F\u5982\u6B64\u3002"
+    en: ...No one accepts that willingly.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8C01\u90FD\u4E0D\u77E5\u9053\u8FDC\u5904\u7684\u5F71\u5B50\u662F\u8FB9\u5883\u7684\u62A4\u680F\u8FD8\u662F\u4E00\u7247\u666E\u901A\u7684\u5DE8\u77F3\u7FA4\u3002\u65E0\u8BBA\u5B83\u662F\u4EC0\u4E48\uFF0C\u6211\u4EEC\u90FD\u4E0D\u53EF\u80FD\u505C\u4E0B\u3002"
+    en: None of us knows whether the shadow in the distance is the border fence or
+      just a normal cluster of huge rocks. Whatever it is, we cannot stop.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4E3A\u4E86\u4E00\u4E1D\u9003\u8131\u7684\u53EF\u80FD\uFF0C\u6211\u613F\u610F\u5FCD\u53D7\u4EFB\u4F55\u714E\u71AC\u3002"
+    en: For the smallest chance of escape, I am willing to endure any torment.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u8FD8\u771F\u662F\u3002"
+    en: That is very you.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8C22\u8C22\u5938\u5956\u3002"
+    en: Thank you for the compliment.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5012\u4E0D\u5982\u8BF4\u662F\u8FD9\u79CD\u610F\u5FF5\u5728\u652F\u6491\u6211\u3002"
+    en: Or rather, that belief is what keeps me standing.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5982\u679C\u4E00\u70B9\u5E0C\u671B\u90FD\u6CA1\u6709\u4E86\u7684\u8BDD\uFF0C\u6211\u5B81\u613F\u7ACB\u523B\u6B7B\u6389\u3002"
+    en: If there were no hope at all, I would rather die right now.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 0b000000
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 140000002300000016000000
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: 00b1d100c0e9bc24ba5625c48adcf067, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

@@ -13,8 +13,30 @@ MonoBehaviour:
   m_Name: luo_Day0_main2
   m_EditorClassIdentifier: 
   TxtLine:
-  - upcbar
-  - down
+  - ${CloseCharacterTalkBox}
+  - ${CloseCharacterTalkBox}
+  - ${DownTalkBox}
+  data:
+  - cn: 
+    en: 
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 1400000016000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: 
+    en: 
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 1400000016000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -22,5 +44,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

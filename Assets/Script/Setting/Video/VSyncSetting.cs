@@ -21,7 +21,7 @@ public class VSyncSetting : MonoBehaviour,SettingInitialize
     {
         QualitySettings.vSyncCount = vSync;
         Manager.setting.Vsync = vSync;
-        Debug.Log("´¹Ö±Í¬²½ " + vSync);
+        
     }
 
 

@@ -13,17 +13,166 @@ MonoBehaviour:
   m_Name: lai_Day2_main2
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
-  - "\u83B1\u6587\uFF1A\u961F\u957F\uFF0C\u6709\u4EC0\u4E48\u6536\u83B7\u5417\uFF1F{Laugh}"
-  - p
+  - ->c
+  - "\u83B1\u6587\uFF1A\u961F\u957F\uFF0C\u6709\u4EC0\u4E48\u6536\u83B7\u5417\uFF1F@{6}"
+  - "\u83B1\u6587\uFF1A\u961F\u957F\uFF0C\u6709\u4EC0\u4E48\u6536\u83B7\u5417\uFF1F@{6}"
+  - ->p
   - "\u5F88\u9057\u61BE\uFF0C\u4E0D\u7BA1\u662F\u8865\u7ED9\u8FD8\u662F\u8DEF\u7EBF\uFF0C\u6211\u4EEC\u90FD\u4E00\u65E0\u6240\u83B7\u3002"
-  - c
-  - "\u83B1\u6587\uFF1A\u8FD9\u6837\u554A\u2026\u2026{Calm}"
-  - "\u83B1\u6587\uFF1A\u554A\uFF0C\u62B1\u6B49\u6211\u6CA1\u6709\u50AC\u4FC3\u4F60\u7684\u610F\u601D\uFF0C\u6BD5\u7ADF\u4F60\u80AF\u5B9A\u662F\u6700\u7740\u6025\u7684\u90A3\u4E2A\u4EBA\u3002{Laugh}"
-  - "\u83B1\u6587\uFF1A\u867D\u7136\u4F60\u53EF\u80FD\u770B\u4E0D\u51FA\u6765\uFF0C\u4F46\u6211\u4F5C\u4E3A\u540E\u52E4\u5B8C\u5168\u5E2E\u4E0D\u4E0A\u4EC0\u4E48\u5FD9\u8FD9\u4EF6\u4E8B\u7ED9\u6211\u7684\u6253\u51FB\u8FD8\u662F\u5F88\u5927\u7684\u3002"
+  - ->c
+  - "\u83B1\u6587\uFF1A\u8FD9\u6837\u554A\u2026\u2026@{5}"
+  - "\u83B1\u6587\uFF1A\u554A\uFF0C\u62B1\u6B49\u6211\u6CA1\u6709\u50AC\u4FC3\u4F60\u7684\u610F\u601D\uFF0C\u6BD5\u7ADF\u4F60\u80AF\u5B9A\u662F\u6700\u7740\u6025\u7684\u90A3\u4E2A\u4EBA\u3002@{6}"
+  - "\u83B1\u6587\uFF1A\u867D\u7136\u4F60\u53EF\u80FD\u770B\u4E0D\u51FA\u6765\uFF0C\u4F46\u6211\u4F5C\u4E3A\u540E\u52E4\u5B8C\u5168\u5E2E\u4E0D\u4E0A\u4EC0\u4E48\u5FD9\u8FD9\u4EF6\u4E8B\u7ED9\u6211\u7684\u6253\u51FB\u8FD8\u662F\u5F88\u5927\u7684\u3002@{1}"
   - "\u83B1\u6587\uFF1A\u6240\u4EE5\u8981\u662F\u6709\u4EC0\u4E48\u6D88\u606F\uFF0C\u6216\u8005\u4EFB\u4F55\u6211\u80FD\u5E2E\u4E0A\u5FD9\u7684\u4E8B\u60C5\uFF0C\u6211\u90FD\u53EF\u4EE5\u5E72\u3002"
-  - "\u83B1\u6587\uFF1A\u6280\u672F\u6027\u7684\u5DE5\u4F5C\u6307\u671B\u4E0D\u4E0A\uFF0C\u591A\u62FF\u70B9\u4E1C\u897F\uFF0C\u642D\u5EFA\u8425\u5730\u4EC0\u4E48\u7684\u6211\u8FD8\u662F\u53EF\u4EE5\u80DC\u4EFB\u7684\u3002"
-  - choice
+  - "\u83B1\u6587\uFF1A\u6280\u672F\u6027\u7684\u5DE5\u4F5C\u6307\u671B\u4E0D\u4E0A\uFF0C\u591A\u62FF\u70B9\u4E1C\u897F\uFF0C\u642D\u5EFA\u8425\u5730\u4EC0\u4E48\u7684\u6211\u8FD8\u662F\u53EF\u4EE5\u80DC\u4EFB\u7684\u3002@{3}"
+  - ${Choice}
+  data:
+  - cn: "\u961F\u957F\uFF0C\u6709\u4EC0\u4E48\u6536\u83B7\u5417\uFF1F"
+    en: Captain, did you find anything?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 6
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u961F\u957F\uFF0C\u6709\u4EC0\u4E48\u6536\u83B7\u5417\uFF1F"
+    en: Captain, did you find anything?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 6
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5F88\u9057\u61BE\uFF0C\u4E0D\u7BA1\u662F\u8865\u7ED9\u8FD8\u662F\u8DEF\u7EBF\uFF0C\u6211\u4EEC\u90FD\u4E00\u65E0\u6240\u83B7\u3002"
+    en: Unfortunately, whether it is supplies or a route, we found nothing.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 6
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8FD9\u6837\u554A\u2026\u2026"
+    en: I see...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u554A\uFF0C\u62B1\u6B49\u6211\u6CA1\u6709\u50AC\u4FC3\u4F60\u7684\u610F\u601D\uFF0C\u6BD5\u7ADF\u4F60\u80AF\u5B9A\u662F\u6700\u7740\u6025\u7684\u90A3\u4E2A\u4EBA\u3002"
+    en: Ah, sorry, I did not mean to rush you. You must be the most anxious person
+      here.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 6
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u867D\u7136\u4F60\u53EF\u80FD\u770B\u4E0D\u51FA\u6765\uFF0C\u4F46\u6211\u4F5C\u4E3A\u540E\u52E4\u5B8C\u5168\u5E2E\u4E0D\u4E0A\u4EC0\u4E48\u5FD9\u8FD9\u4EF6\u4E8B\u7ED9\u6211\u7684\u6253\u51FB\u8FD8\u662F\u5F88\u5927\u7684\u3002"
+    en: Although you may not be able to tell, the fact that I cannot help much as
+      a logistics officer has hit me quite hard.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6240\u4EE5\u8981\u662F\u6709\u4EC0\u4E48\u6D88\u606F\uFF0C\u6216\u8005\u4EFB\u4F55\u6211\u80FD\u5E2E\u4E0A\u5FD9\u7684\u4E8B\u60C5\uFF0C\u6211\u90FD\u53EF\u4EE5\u5E72\u3002"
+    en: So if there is any news, or anything I can help with, I can do it.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6280\u672F\u6027\u7684\u5DE5\u4F5C\u6307\u671B\u4E0D\u4E0A\uFF0C\u591A\u62FF\u70B9\u4E1C\u897F\uFF0C\u642D\u5EFA\u8425\u5730\u4EC0\u4E48\u7684\u6211\u8FD8\u662F\u53EF\u4EE5\u80DC\u4EFB\u7684\u3002"
+    en: You cannot count on me for technical work, but I can carry more things, set
+      up camp, and so on.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 715c9d46826031f4686991edefa9695e, type: 2}
   Option2: {fileID: 11400000, guid: c29286738bb810d448440e728bd1e9a6, type: 2}
   Option3: {fileID: 0}
@@ -31,5 +180,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

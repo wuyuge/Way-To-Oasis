@@ -13,7 +13,44 @@ MonoBehaviour:
   m_Name: Main0
   m_EditorClassIdentifier: 
   TxtLine:
-  - /CheckEveryOneLive
+  - ${CheckOnlyAmandeDead}
+  - ${CheckOnlyAmandeDead}
+  - ${CheckOnlyAmandeDead}
+  - ${CheckOnlyAmandeDead}
+  - ${CheckOnlyAmandeDead}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 0d000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 0d000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: cfe216ea73c288d43bd6ec36e16a4fab, type: 2}
   Option2: {fileID: 11400000, guid: c31e6249832948740b6c5072e54f1835, type: 2}
   Option3: {fileID: 0}
@@ -21,5 +58,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

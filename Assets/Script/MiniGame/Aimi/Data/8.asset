@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0d7022325ba6c48a153673d65af036, type: 3}
+  m_Name: 8
+  m_EditorClassIdentifier: 
+  description: "\u5F88\u65E0\u804A\u5417\uFF1F\u5DE5\u4F5C\u5C31\u662F\u8FD9\u6837\u7684\u3002"
+  en: Boring? Work is like this.
+  expression: 3

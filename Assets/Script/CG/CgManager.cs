@@ -1,0 +1,64 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class CgManager : MonoBehaviour
+{
+    public List<Sprite> cgList;
+    public Image cgContainer;
+    public GameObject initialTransForm,fullModeTransForm,frame,playerName,playerNameBox;
+    public TalkSysShowText talkSysShowText;
+    [SerializeField]
+    private Animator _animator,textBarAnim;
+    private bool _fullMode;
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
+    public bool ShowCg(int index)
+    {
+        if (cgList.Count < index)
+        {
+            Debug.LogError("索引超出cg列表长度");
+            return false;
+        }
+        cgContainer.sprite = cgList[index];
+        playerName.SetActive(false);
+        playerNameBox.SetActive(false);
+        textBarAnim.SetTrigger("Up");
+        return true;
+        
+    }
+    
+    public void HideCg()
+    {
+        _animator.SetTrigger("Close");
+    }
+
+    public void SetFalse()
+    {
+        playerName.SetActive(true);
+        playerNameBox.SetActive(true);
+        gameObject.SetActive(false);
+        textBarAnim.SetTrigger("Down");
+    }
+
+    public void SetFullMode(bool fullMode)
+    {
+        _animator.SetBool("FullMode", fullMode);
+        _fullMode = fullMode;
+    }
+
+    public void SwitchTransForm()
+    {
+        if (!_fullMode)
+        {
+            frame.transform.SetParent(fullModeTransForm.transform);
+            return;
+        }
+        frame.transform.SetParent(initialTransForm.transform);
+    }
+    
+    
+}

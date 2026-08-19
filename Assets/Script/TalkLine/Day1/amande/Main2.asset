@@ -13,11 +13,57 @@ MonoBehaviour:
   m_Name: Main2
   m_EditorClassIdentifier: 
   TxtLine:
-  - p
+  - ->p
   - "\u2026\u2026"
-  - c
-  - "\u963F\u66FC\u5FB7\uFF1A\u804A\u70B9\u522B\u7684\u5427\uFF0C\u73B0\u5728\u7684\u6C14\u6C1B\u6709\u4E9B\u592A\u6C89\u91CD\u4E86\u3002"
-  - choice
+  - ->c
+  - "\u963F\u66FC\u5FB7\uFF1A\u804A\u70B9\u522B\u7684\u5427\uFF0C\u73B0\u5728\u7684\u6C14\u6C1B\u6709\u4E9B\u592A\u6C89\u91CD\u4E86\u3002@{5}"
+  - ${Choice}
+  data:
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u804A\u70B9\u522B\u7684\u5427\uFF0C\u73B0\u5728\u7684\u6C14\u6C1B\u6709\u4E9B\u592A\u6C89\u91CD\u4E86\u3002"
+    en: Let us talk about something else. The mood is a little too heavy right now.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: df69983515eea4b41bb1e7d38d9ea997, type: 2}
   Option2: {fileID: 11400000, guid: ef2bb9b411918af4bb4695e5ecb82a69, type: 2}
   Option3: {fileID: 0}
@@ -25,5 +71,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

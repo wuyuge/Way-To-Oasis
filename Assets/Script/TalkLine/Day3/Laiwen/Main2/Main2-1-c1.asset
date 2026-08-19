@@ -14,9 +14,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u6211\u4EEC\u7684\u5E95\u7EBF\u597D\u4F4E"
-  - p
+  - ->p
   - "\u6211\u4EEC\u7684\u5E95\u7EBF\u597D\u4F4E\u3002"
-  - end
+  - ${End}
+  data:
+  - cn: "\u6211\u4EEC\u7684\u5E95\u7EBF\u597D\u4F4E"
+    en: Our bottom line is too low
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u4EEC\u7684\u5E95\u7EBF\u597D\u4F4E\u3002"
+    en: Our bottom line is too low.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: 838614b367c69cc45bfe69d0c65d7aa0, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -24,5 +70,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

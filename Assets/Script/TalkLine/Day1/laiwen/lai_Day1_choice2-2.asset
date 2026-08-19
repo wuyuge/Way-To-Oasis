@@ -14,13 +14,90 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u4E0D\u7528\u4E86"
-  - p
+  - ->p
   - "\u4E0D\u7528\u4E86\u3002"
-  - c
+  - ->c
   - "\u83B1\u6587\uFF1A\u8FD9\u6837\u554A\uFF0C\u54C8\u54C8\u770B\u6765\u4F60\u5174\u81F4\u4E0D\u9AD8\u3002"
   - "\u83B1\u6587\uFF1A\u8FD8\u662F\u65E9\u70B9\u4F11\u606F\u5427\u3002"
-  - upcbar
-  - down
+  - ${CloseCharacterTalkBox}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
+  data:
+  - cn: "\u4E0D\u7528\u4E86"
+    en: Never mind
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u4E0D\u7528\u4E86\u3002"
+    en: Never mind.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u8FD9\u6837\u554A\uFF0C\u54C8\u54C8\u770B\u6765\u4F60\u5174\u81F4\u4E0D\u9AD8\u3002"
+    en: I see. Haha, looks like you are not very interested.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u8FD8\u662F\u65E9\u70B9\u4F11\u606F\u5427\u3002"
+    en: You should rest early.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u8FD8\u662F\u65E9\u70B9\u4F11\u606F\u5427\u3002"
+    en: You should rest early.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 140000002300000016000000
+    onlyCode: 1
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -28,5 +105,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

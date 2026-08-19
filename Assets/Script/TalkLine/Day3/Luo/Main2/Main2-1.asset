@@ -13,10 +13,109 @@ MonoBehaviour:
   m_Name: Main2-1
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
-  - "\u6D1B\u5C14\u574E\uFF1A\u961F\u957F\uFF0C\u6211\u4E0D\u77E5\u9053\u8BE5\u8BF4\u4EC0\u4E48\u3002"
-  - "\u6D1B\u5C14\u574E\uFF1A\u6211\u6709\u79CD\u9884\u611F\uFF0C\u4ECA\u5929\u4F1A\u662F\u6211\u751F\u547D\u7684\u6700\u540E\u4E00\u5929\u3002"
-  - choice
+  - ->c
+  - ->c
+  - ->c
+  - "\u6D1B\u5C14\u574E\uFF1A\u961F\u957F\uFF0C\u6211\u4E0D\u77E5\u9053\u8BE5\u8BF4\u4EC0\u4E48\u3002@{5}"
+  - "\u6D1B\u5C14\u574E\uFF1A\u6211\u6709\u79CD\u9884\u611F\uFF0C\u4ECA\u5929\u4F1A\u662F\u6211\u751F\u547D\u7684\u6700\u540E\u4E00\u5929\u3002@{3}"
+  - ${Choice}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u961F\u957F\uFF0C\u6211\u4E0D\u77E5\u9053\u8BE5\u8BF4\u4EC0\u4E48\u3002"
+    en: Captain, I do not know what to say.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u6709\u79CD\u9884\u611F\uFF0C\u4ECA\u5929\u4F1A\u662F\u6211\u751F\u547D\u7684\u6700\u540E\u4E00\u5929\u3002"
+    en: I have a feeling that today will be the last day of my life.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 5
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 9e1a63cf02f7e6c4e9bc29accd6a4186, type: 2}
   Option2: {fileID: 11400000, guid: b571faa6cbfcae6438e1250ee433465e, type: 2}
   Option3: {fileID: 0}
@@ -24,5 +123,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

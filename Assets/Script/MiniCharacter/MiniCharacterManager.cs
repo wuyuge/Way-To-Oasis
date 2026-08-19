@@ -16,6 +16,8 @@ public class MiniCharacterManager : MonoBehaviour
         public GameObject characterObject;
         [Tooltip("角色对应的对话栏")]
         public GameObject characterTalkBar;
+
+        public GameObject thinkBar;
         [Tooltip("角色Y轴固定位置（X轴由位置列表决定）")]
         public float fixedYPosition = 0f;
 
@@ -58,16 +60,15 @@ public class MiniCharacterManager : MonoBehaviour
 
     public GameObject CampFire;
 
+    public bool isWalking;
 
 
-    private void Awake()
-    {
-        InitializeComponents();
-        InitializeCharacters();
-    }
 
     private void Start()
     {
+        InitializeComponents();
+        InitializeCharacters();
+        
         // 初始分配一次位置
         UpdateCharacterPositions();
         LightAnim = CampLight.GetComponent<Animator>();
@@ -121,6 +122,11 @@ public class MiniCharacterManager : MonoBehaviour
             if (character.characterTalkBar != null)
             {
                 character.characterTalkBar.SetActive(false);
+            }
+
+            if (character.thinkBar is not null)
+            {
+                character.thinkBar.SetActive(false);
             }
 
             // 初始激活所有角色（死亡检测会自动禁用死亡角色）
@@ -201,11 +207,7 @@ public class MiniCharacterManager : MonoBehaviour
             bool isDead = deadCharacters.Contains(character.characterName);
             character.characterObject.SetActive(!isDead);
 
-            // 同步隐藏对话栏
-            if (character.characterTalkBar != null)
-            {
-                character.characterTalkBar.SetActive(false);
-            }
+            Invoke(nameof(DelayTextBar),2f);
         }
 
         // 2. 收集存活角色
@@ -247,6 +249,28 @@ public class MiniCharacterManager : MonoBehaviour
         }
     }
 
+    private void DelayTextBar()
+    {
+        foreach (var character in miniCharacters)
+        {
+            if (character.characterObject == null)
+                continue;
+
+            // 同步隐藏对话栏
+            if (character.characterTalkBar != null)
+            {
+                character.characterTalkBar.SetActive(false);
+            }
+            
+            if (character.thinkBar is not null)
+            {
+                character.thinkBar.SetActive(false);
+            }
+            
+        }
+        
+    }
+
     #region 动画控制方法
     public void ShowMiniCharacter()
     {
@@ -282,7 +306,7 @@ public class MiniCharacterManager : MonoBehaviour
         CampFire.SetActive(true);
 
 
-
+        isWalking = false;
         CampLight.SetActive(true);
 
         Invoke(nameof(EnableAnimator), 1f);
@@ -309,6 +333,7 @@ public class MiniCharacterManager : MonoBehaviour
         {
             WalkingSound.Stop();
         }
+        isWalking = false;
         CampFire.SetActive(false);
     }
 
@@ -330,6 +355,8 @@ public class MiniCharacterManager : MonoBehaviour
             
             anim.SetTrigger("Walk");
         }
+
+        isWalking = true;
         CampFire.SetActive(false);
         Invoke(nameof(EnableAnimator), 1f);
     }

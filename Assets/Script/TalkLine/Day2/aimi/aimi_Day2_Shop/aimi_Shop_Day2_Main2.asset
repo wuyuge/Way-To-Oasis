@@ -13,13 +13,112 @@ MonoBehaviour:
   m_Name: aimi_Shop_Day2_Main2
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
+  - ->c
   - "\u827E\u7C73\u8389\uFF1A\u4E0D\uFF0C\u6211\u786E\u5B9E\u5728\u4E3A\u4F60\u6740\u6B7B\u535A\u91D1\u68EE\u800C\u6124\u6012\u3002"
   - "\u827E\u7C73\u8389\uFF1A\u4F46\u8FD9\u4E0D\u662F\u6700\u5173\u952E\u7684\u95EE\u9898\u3002"
   - "\u827E\u7C73\u8389\uFF1A\u6211\u53EF\u4EE5\u63A5\u53D7\u6211\u4EEC\u6B7B\u4E8E\u516C\u6B63\u7684\u5BF9\u51B3\uFF0C\u751A\u81F3\u6CA1\u6709\u5F97\u5230\u98DF\u7269\u88AB\u997F\u6B7B\u3002"
   - "\u827E\u7C73\u8389\uFF1A\u81F3\u5C11\u8FD9\u6837\uFF0C\u6211\u4EEC\u4F1A\u5728\u665A\u4E0A\u62FF\u7740\u6B66\u5668\u7ED9\u4F60\u4E00\u4E2A\u60E8\u75DB\u7684\u6559\u8BAD\u3002"
   - "\u827E\u7C73\u8389\uFF1A\u800C\u4E0D\u662F\u73B0\u5728\u8FD9\u79CD\u60C5\u51B5\uFF0C\u88AB\u5982\u6B64\u5351\u52A3\u7684\u624B\u6BB5\u5077\u88AD\u3002"
-  - choice
+  - ${Choice}
+  data:
+  - cn: "\u4E0D\uFF0C\u6211\u786E\u5B9E\u5728\u4E3A\u4F60\u6740\u6B7B\u535A\u91D1\u68EE\u800C\u6124\u6012\u3002"
+    en: No. I am angry that you killed Bokinson.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F46\u8FD9\u4E0D\u662F\u6700\u5173\u952E\u7684\u95EE\u9898\u3002"
+    en: But that is not the key issue.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u53EF\u4EE5\u63A5\u53D7\u6211\u4EEC\u6B7B\u4E8E\u516C\u6B63\u7684\u5BF9\u51B3\uFF0C\u751A\u81F3\u6CA1\u6709\u5F97\u5230\u98DF\u7269\u88AB\u997F\u6B7B\u3002"
+    en: I can accept us dying in a fair fight, or even starving because we were not
+      given food.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u81F3\u5C11\u8FD9\u6837\uFF0C\u6211\u4EEC\u4F1A\u5728\u665A\u4E0A\u62FF\u7740\u6B66\u5668\u7ED9\u4F60\u4E00\u4E2A\u60E8\u75DB\u7684\u6559\u8BAD\u3002"
+    en: At least that way, we would take our weapons at night and teach you a painful
+      lesson.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u800C\u4E0D\u662F\u73B0\u5728\u8FD9\u79CD\u60C5\u51B5\uFF0C\u88AB\u5982\u6B64\u5351\u52A3\u7684\u624B\u6BB5\u5077\u88AD\u3002"
+    en: Not this, being ambushed by such a despicable method.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: a0256d7156438b64ebf9693d7d986118, type: 2}
   Option2: {fileID: 11400000, guid: 25462182d45e6fa4495aeb1099b45e54, type: 2}
   Option3: {fileID: 0}
@@ -27,5 +126,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

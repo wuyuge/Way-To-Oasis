@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: Start
+  m_EditorClassIdentifier: 
+  TxtLine: []
+  data:
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u2026\u2026\u2026\u2026"
+    en: "\u2026\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6211\u4EE5\u4E3A\u6211\u6C47\u62A5\u7684\u5DF2\u7ECF\u5F88\u6E05\u695A\u4E86\u3002"
+    en: I thought my report was already clear enough.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6211\u4EEC\u5C31\u975E\u5F97\u5B66\u7740\u90A3\u4E9B\u4F01\u4E1A\u641E\u4E9B\u62A5\u544A\u5236\u5EA6\u5417\uFF1F"
+    en: Do we really have to learn from those companies and create a reporting system?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6211\u786E\u5B9E\u6495\u4E86\u51E0\u5F20\u5E9F\u7EB8\uFF0C\u4F46\u662F\u2026\u2026"
+    en: I did tear up a few pieces of scrap paper, but...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u597D\u5427\uFF0C\u5982\u679C\u4F60\u6267\u610F\u8981\u628A\u5B83\u4EEC\u62FC\u8D77\u6765\uFF0C\u968F\u4FBF\u4F60\u5427\u3002"
+    en: Fine. If you insist on putting them back together, do whatever you want.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Eat: 0
+  GeneralBool: 1
+  isEn: 0

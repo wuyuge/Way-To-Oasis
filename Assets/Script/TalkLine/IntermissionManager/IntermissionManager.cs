@@ -20,22 +20,16 @@ public class IntermissionManager : MonoBehaviour
     [Header("判断条件")]
     public Manager AmandeKillSelf;
     public List<Character> characters;
-    private Progress AddObj;
-
-    private void Start()
-    {
-        AddObj = GetComponent<Progress>();
-    }
+    
 
     public Manager AddTextLine(string Stage)
     {
-        AddObj = GetComponent<Progress>();
-        int day_num = AddObj.day_num;
+        int dayNum = GlobalData.Day;
 
         foreach (TextLine line in Lines)
         {
 
-            if(line.Day == day_num && line.Stage == Stage)
+            if(line.Day == dayNum && line.Stage == Stage)
             {
                 if (!line.Have_Condition && !line.Have_Show)
                 {
@@ -49,6 +43,30 @@ public class IntermissionManager : MonoBehaviour
         return null;
 
     }
+
+
+    /// <summary>
+    /// 用于删除某天的某个对话项
+    /// 需要参数 字符串类型 阶段 整数类型 天数
+    /// </summary>
+    public void DeleteLine(string Stage ,int Day)
+    {
+        int index = 0;
+        foreach (TextLine textLine in Lines)
+        {
+            if(textLine.Day == Day && textLine.Stage == Stage)
+            {
+                Lines.RemoveAt(index);
+                return;
+            }
+            index++;
+        }
+
+        Debug.LogError("加载存档删除前置对话失败 没有对应对话数据");
+
+    }
+
+
 
 
     Manager CheckCondition(TextLine textLine)
@@ -84,10 +102,6 @@ public class IntermissionManager : MonoBehaviour
                     textLine.Have_Show = true;
                     return textLine.Text; 
                 }
-                else return null;
-            }
-            else
-            {
                 return null;
             }
         }

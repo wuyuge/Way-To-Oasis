@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631795722512e854398e62f2769a76a1, type: 3}
+  m_Name: "\u6587\u4EF6\u888B"
+  m_EditorClassIdentifier: 
+  dataName: "\u6587\u4EF6\u888B"
+  context: "\u4E00\u888B\u6574\u9F50\u653E\u597D\u7684\u6587\u4EF6\uFF0C\u653E\u7F6E\u4E86\u6700\u8FD1\u4E24\u4E2A\u6708\u4F60\u4EEC\u961F\u4F0D\u63A5\u53D6\u7684\u6240\u6709\u59D4\u6258\u7684\u8BE6\u7EC6\u5185\u5BB9\u3002\u770B\u6765\u9664\u4E86\u7535\u5B50\u5B58\u6863\u4EE5\u5916\uFF0C\u83B1\u6587\u8FD8\u989D\u5916\u4FDD\u5B58\u4E86\u4E00\u4EFD\u7EB8\u8D28\u5185\u5BB9\u4EE5\u4FBF\u4E0D\u65F6\u4E4B\u9700\u3002\u53EA\u662F\u4F60\u770B\u7740\u6587\u4EF6\u888B\uFF0C\u4E0D\u7981\u4EA7\u751F\u4E86\u4E00\u4E2A\u7591\u95EE\uFF0C\u8FD9\u6837\u653E\u6587\u4EF6\u771F\u7684\u4E0D\u4F1A\u76B1\u5417\u2026\u2026"
+  enContext: 'A neatly organized folder containing the details of every commission
+    your team accepted over the past two months. It seems that besides digital archives,
+    Levine also keeps an extra paper copy in case of need. But looking at the folder,
+    you cannot help wondering: would documents really not get wrinkled like this...?'
+  expression: 1

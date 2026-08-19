@@ -13,13 +13,67 @@ MonoBehaviour:
   m_Name: Main2
   m_EditorClassIdentifier: 
   TxtLine:
-  - /CheckEveryOneLive
+  - ${SurviveTwo}
+  - ${SurviveTwo}
+  - ${CheckSomeBodyDead}
+  - ${CheckSomeBodyDead}
+  - ${CheckSomeBodyDead}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 2d000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 2d000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 0f000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: d67f20be695f6e34ca83caa4a4c24a77, type: 2}
   Option2: {fileID: 11400000, guid: 3595a948f1bab34489508f1a33980759, type: 2}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: 2ce59a7942fdcfe44bb9c85d18ec69d7, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

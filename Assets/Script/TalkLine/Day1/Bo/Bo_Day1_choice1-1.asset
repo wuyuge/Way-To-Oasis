@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: Bo_Day1_choice1-1
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u6765\u804A\u804A\u5929\u5427"
+  - ->p
+  - "\u5DE5\u4F5C\u7ED3\u675F\u4E86\uFF0C\u6765\u804A\u804A\u5929\u5427\u3002"
+  - ->c
+  - "\u535A\u91D1\u68EE\uFF1A\u2026\u2026\u5982\u679C\u4F60\u771F\u7684\u5F88\u60F3\u6EE1\u8DB3\u81EA\u5DF1\u7684\u793E\u4EA4\u9700\u6C42\uFF0C\u6211\u5EFA\u8BAE\u53BB\u627E\u522B\u4EBA\u3002@{1}"
+  - ${CloseCharacterTalkBox}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
+  data:
+  - cn: "\u6765\u804A\u804A\u5929\u5427"
+    en: Let us chat.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u2026\u2026\u5982\u679C\u4F60\u771F\u7684\u5F88\u60F3\u6EE1\u8DB3\u81EA\u5DF1\u7684\u793E\u4EA4\u9700\u6C42\uFF0C\u6211\u5EFA\u8BAE\u53BB\u627E\u522B\u4EBA\u3002"
+    en: ...If you really want to satisfy your social needs, I suggest finding someone
+      else.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 140000002300000016000000
+    onlyCode: 1
+    speaker: 3
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Eat: 0
+  GeneralBool: 0
+  isEn: 0

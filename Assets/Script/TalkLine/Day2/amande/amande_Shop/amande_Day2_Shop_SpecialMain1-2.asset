@@ -13,9 +13,59 @@ MonoBehaviour:
   m_Name: amande_Day2_Shop_SpecialMain1-2
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
-  - "\u963F\u66FC\u5FB7\uFF1A\u4F60\u628A\u6240\u6709\u4EBA\u90FD\u89C6\u4F5C\u4F60\u6D3B\u4E0B\u53BB\u7684\u5DE5\u5177\uFF0C\u8FD9\u5176\u4E2D\u4E5F\u5305\u62EC\u6211\u5417\uFF1F"
-  - choice
+  - ->c
+  - "\u963F\u66FC\u5FB7\uFF1A\u6211\u7A76\u7ADF\u5E94\u8BE5\u600E\u4E48\u505A\u624D\u597D\uFF0C{PlayerName}\u2026\u2026@{4}"
+  - "\u963F\u66FC\u5FB7\uFF1A\u4F60\u628A\u6240\u6709\u4EBA\u90FD\u89C6\u4F5C\u4F60\u6D3B\u4E0B\u53BB\u7684\u5DE5\u5177\uFF0C\u8FD9\u5176\u4E2D\u4E5F\u5305\u62EC\u6211\u5417\uFF1F@{7}"
+  - ${Choice}
+  data:
+  - cn: "\u4F60\u628A\u6240\u6709\u4EBA\u90FD\u89C6\u4F5C\u4F60\u6D3B\u4E0B\u53BB\u7684\u5DE5\u5177\uFF0C\u8FD9\u5176\u4E2D\u4E5F\u5305\u62EC\u6211\u5417\uFF1F"
+    en: You see everyone as tools for your own survival. Does that include me too?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u628A\u6240\u6709\u4EBA\u90FD\u89C6\u4F5C\u4F60\u6D3B\u4E0B\u53BB\u7684\u5DE5\u5177\uFF0C\u8FD9\u5176\u4E2D\u4E5F\u5305\u62EC\u6211\u5417\uFF1F"
+    en: You see everyone as tools for your own survival. Does that include me too?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 49f55b563976db0488d8bc6f71722e67, type: 2}
   Option2: {fileID: 11400000, guid: 697486c82aaa92e4ea4a8dcf13f8dae5, type: 2}
   Option3: {fileID: 0}
@@ -23,5 +73,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

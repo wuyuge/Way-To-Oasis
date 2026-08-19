@@ -199,6 +199,18 @@ PrefabInstance:
       propertyPath: m_text
       value: "<size=120>\u5949\u732E</size>"
       objectReference: {fileID: 0}
+    - target: {fileID: 3485904747555625811, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
+      propertyPath: cn
+      value: "\u5949\u732E"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485904747555625811, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
+      propertyPath: en
+      value: Devotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338476706974111365, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
+      propertyPath: textLine
+      value: 
+      objectReference: {fileID: 11400000, guid: dd9cd2f1c01ae184fa89c39fb4ec17ed, type: 2}
     - target: {fileID: 6494024347474171970, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -278,6 +290,43 @@ PrefabInstance:
     - target: {fileID: 6494024347474171970, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422208012078317054, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 58c38fd9104c2f44b8d52bea1b13b86f, type: 3}
+    - target: {fileID: 7422208012078317054, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834386552732626777, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
+      propertyPath: cn
+      value: "\u4F60\u628A\u98DF\u7269\u5206\u7ED9\u4E86\u6240\u6709\u4EBA\uFF0C\u552F\u72EC\u6CA1\u7559\u4E00\u4EFD\u7ED9\u81EA\u5DF1\u3002<br>
+        \u4F60\u7528\u81EA\u5DF1\u7684\u5949\u732E\u591A\u6551\u4E86\u4E00\u4E2A\u4EBA\uFF0C\u4EE3\u4EF7\u662F\u81EA\u5DF1\u7684\u751F\u547D\u3002<br>
+        \u8FD9\u662F\u4F60\u7B2C\u4E00\u6B21\u604D\u7136\u5927\u609F\u5730\u53D1\u73B0\u81EA\u5DF1\u5176\u5B9E\u662F\u4E00\u4E2A\u5584\u4EBA\uFF0C
+        <br> \u8FD8\u662F\u8BF4\u4F60\u53EA\u662F\u4E0D\u60F3\u627F\u62C5\u8FD9\u4EFD\u8D23\u4EFB\u6240\u4EE5\u9009\u62E9\u4E86\u901A\u8FC7\u6B7B\u4EA1\u9003\u907F\uFF1F<br>
+        \u8FD9\u4E00\u5207\u90FD\u65E0\u5173\u7D27\u8981\u4E86\uFF0C\u56E0\u4E3A\u6B7B\u4EA1\u6CA1\u6709\u7559\u7ED9\u4F60\u66F4\u591A\u601D\u8003\u7684\u65F6\u95F4\u3002<br>
+        \u4F60\u4E0D\u559C\u6B22\u9965\u997F\u7684\u611F\u89C9\uFF0C\u6240\u4EE5\u9009\u62E9\u4E86\u66F4\u5E72\u8106\u7684\u65B9\u5F0F\u3002<br>
+        \u5728\u4F60\u6B7B\u540E\u2026\u2026\u6216\u8BB8\u4F60\u5F88\u60F3\u77E5\u9053\u88AB\u4F60\u629B\u4E0B\u90A3\u4E24\u4E2A\u4EBA\u600E\u4E48\u6837\u4E86\uFF1F<br>
+        \u4ED6\u4EEC\u751A\u81F3\u79F0\u4E0D\u4E0A\u662F\u4E00\u652F\u961F\u4F0D\uFF0C\u800C\u4E14\u5F88\u5FEB\u5C31\u4F1A\u6709\u81EA\u76F8\u6B8B\u6740\u7684\u98CE\u9669\u3002<br>
+        \u4ED6\u4EEC\u6709\u6CA1\u6709\u8D70\u51FA\u8FD9\u7247\u8352\u6F20\uFF1F<br>
+        \u5F88\u9057\u61BE\uFF0C\u8FD9\u90FD\u4E0E\u4F60\u65E0\u5173\u4E86\u3002<br>
+        \u5E0C\u671B\u4E0B\u6B21\u7741\u5F00\u773C\u7684\u65F6\u5019\uFF0C\u4F60\u89C1\u5230\u7684\u4E0D\u518D\u662F\u8FD9\u7247\u5929\u7A7A\u3002<br>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834386552732626777, guid: 770bfc08bacbc964484e69a2f0568c05, type: 3}
+      propertyPath: en
+      value: You gave food to everyone, leaving none for yourself.<br> Through your
+        devotion, you saved one more person.<br> The price was your own life.<br>
+        Suddenly, for the first time, you realize that you may actually be a good
+        person.<br> Or maybe you simply did not want to carry this responsibility
+        anymore, and chose death as a way to escape it.<br> None of it matters now,
+        because death leaves you no more time to think.<br> You never liked the feeling
+        of hunger, so you chose a cleaner end.<br> After your death...<br> Perhaps
+        you would like to know what happened to the two people you left behind.<br>
+        They can hardly be called a team, and very soon, they may face the risk of
+        turning on each other.<br> Did they make it out of this desert?<br> Unfortunately,
+        none of that has anything to do with you anymore.<br> May the next sky you
+        see when you open your eyes not be this one.<br>
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

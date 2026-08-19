@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: Day3_Luo_Survive-sp
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - ->c
+  - ->c
+  - "\u6D1B\u5C14\u574E\uFF1A\u4E0D\u662F\u4E0D\u662F\uFF0C\u6211\u6CA1\u6709\u62B1\u6028\u7684\u610F\u601D\u3002\u6211\u4F1A\u8DDF\u4E0A\u4F60\u7684\u811A\u6B65\u7684\uFF0C\u4E0D\u8981\u629B\u4E0B\u6211\u2026\u2026@{5}"
+  - "\u6D1B\u5C14\u574E\uFF1A\u5BF9\u4E0D\u8D77\u961F\u957F\uFF0C\u6211\u4F1A\u52AA\u529B\u7684\u3002"
+  - "\u6D1B\u5C14\u574E\uFF1A\u6211\u771F\u7684\u4E0D\u60F3\u6B7B\u5728\u8FD9\u91CC\u3002"
+  - ${Choice}
+  data:
+  - cn: "\u4E0D\u662F\u4E0D\u662F\uFF0C\u6211\u6CA1\u6709\u62B1\u6028\u7684\u610F\u601D\u3002\u6211\u4F1A\u8DDF\u4E0A\u4F60\u7684\u811A\u6B65\u7684\uFF0C\u4E0D\u8981\u629B\u4E0B\u6211\u2026\u2026"
+    en: No, no, that is not what I meant. I am not complaining. I will keep up with
+      you. Do not leave me behind...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4E0D\u662F\u4E0D\u662F\uFF0C\u6211\u6CA1\u6709\u62B1\u6028\u7684\u610F\u601D\u3002\u6211\u4F1A\u8DDF\u4E0A\u4F60\u7684\u811A\u6B65\u7684\uFF0C\u4E0D\u8981\u629B\u4E0B\u6211\u2026\u2026"
+    en: No, no, that is not what I meant. I am not complaining. I will keep up with
+      you. Do not leave me behind...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5BF9\u4E0D\u8D77\u961F\u957F\uFF0C\u6211\u4F1A\u52AA\u529B\u7684\u3002"
+    en: I am sorry, Captain. I will work hard.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u771F\u7684\u4E0D\u60F3\u6B7B\u5728\u8FD9\u91CC\u3002"
+    en: "I really don\u2018t want to die here."
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  Option1: {fileID: 11400000, guid: 04b4417f525b626488d911cd625b0d75, type: 2}
+  Option2: {fileID: 11400000, guid: 192eb1ed739bfb34c933077920793269, type: 2}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Eat: 0
+  GeneralBool: 0
+  isEn: 0

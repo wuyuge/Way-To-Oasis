@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: GameIntro_D2_Bo
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - ->p
+  - "A_\u535A\u91D1\u68EE\u4F3C\u4E4E\u5FD8\u8BB0\u628A\u4FA6\u67E5\u62A5\u544A\u4EA4\u7ED9\u4F60\u4E86\u3002\u4F46\u8FD9\u4E5F\u4E0D\u662F\u4EC0\u4E48\u7279\u522B\u91CD\u8981\u7684\u4E1C\u897F\u3002"
+  - ${Choice}
+  data:
+  - cn: "\u535A\u91D1\u68EE\u4F3C\u4E4E\u5FD8\u8BB0\u628A\u4FA6\u67E5\u62A5\u544A\u4EA4\u7ED9\u4F60\u4E86\u3002\u4F46\u8FD9\u4E5F\u4E0D\u662F\u4EC0\u4E48\u7279\u522B\u91CD\u8981\u7684\u4E1C\u897F\u3002"
+    en: Bokinson seems to have forgotten to give you the scouting report. But it
+      is not anything especially important.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  Option1: {fileID: 11400000, guid: f86087bfde224b5409e8be5d4e2e7265, type: 2}
+  Option2: {fileID: 11400000, guid: 456d2fbedbf247f4ca975174f987bb5d, type: 2}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Eat: 0
+  GeneralBool: 0
+  isEn: 0

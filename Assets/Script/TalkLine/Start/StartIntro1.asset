@@ -1,0 +1,184 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: StartIntro1
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u94C1\u9508\u5473\u4E0E\u6CE5\u571F\u7684\u6E7F\u6DA6\u6C14\u606F\u6D8C\u5165\u4F60\u7684\u9F3B\u8154\u3002"
+  - "\u94C1\u9508\u5473\u4E0E\u6CE5\u571F\u7684\u6E7F\u6DA6\u6C14\u606F\u6D8C\u5165\u4F60\u7684\u9F3B\u8154\u3002"
+  - "\u8FD9\u5473\u9053\u6709\u4E9B\u719F\u6089\uFF0C\u7ADF\u7136\u5E26\u6765\u4E86\u4E9B\u8BB8\u5B89\u5B9A\u7684\u75B2\u5026\uFF0C\u4E5F\u7F13\u89E3\u4E86\u4EE4\u4EBA\u96BE\u71AC\u7684\u9965\u997F\u611F\u3002"
+  - "\u5BF9\uFF0C\u4F60\u5F88\u997F\uFF0C\u997F\u5F97\u60F3\u8981\u541E\u566C\u4E00\u5207\u53EF\u4EE5\u541E\u566C\u7684\u4E1C\u897F\u3002"
+  - "\u4F46\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709\u4E86\uFF0C\u53EA\u7559\u8352\u829C\u7684\u5927\u5730\u5728\u4F60\u8EAB\u4FA7\u77D7\u7ACB\u3002"
+  - "\u59D4\u6258\uFF0C\u961F\u4F0D\uFF0C\u8DEF\u7EBF\u2026\u2026\u5728\u4F60\u4EEC\u751F\u6D3B\u4E2D\u8426\u7ED5\u7684\u4E8B\u7269\u6700\u7EC8\u6D88\u6563\u5728\u5C18\u571F\u4E2D\u3002"
+  - "\u5728\u5FEB\u8981\u9677\u5165\u5B89\u7720\u4E4B\u9645\uFF0C\u4F60\u53C8\u60F3\u8D77\u4E86\u4E00\u4E2A\u65B0\u7684\u95EE\u9898\u3002"
+  - "\u8FD8\u5DEE\u591A\u5C11\u5929\u5C31\u80FD\u8D70\u51FA\u53BB\u4E86\uFF1F\u79BB\u5F00\u8FD9\u7247\u4EA4\u53E0/\u626D\u66F2\u7684\u8352\u539F/\u571F\u5730\u3002"
+  - "\u2026\u2026"
+  data:
+  - cn: "\u94C1\u9508\u5473\u4E0E\u6CE5\u571F\u7684\u6E7F\u6DA6\u6C14\u606F\u6D8C\u5165\u4F60\u7684\u9F3B\u8154\u3002"
+    en: The scent of rust and damp earth floods your nose.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u94C1\u9508\u5473\u4E0E\u6CE5\u571F\u7684\u6E7F\u6DA6\u6C14\u606F\u6D8C\u5165\u4F60\u7684\u9F3B\u8154\u3002"
+    en: The scent of rust and damp earth floods your nose.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8FD9\u5473\u9053\u6709\u4E9B\u719F\u6089\uFF0C\u7ADF\u7136\u5E26\u6765\u4E86\u4E9B\u8BB8\u5B89\u5B9A\u7684\u75B2\u5026\uFF0C\u4E5F\u7F13\u89E3\u4E86\u4EE4\u4EBA\u96BE\u71AC\u7684\u9965\u997F\u611F\u3002"
+    en: It feels strangely familiar. Somehow, it brings a tired kind of comfort,
+      and eases the unbearable hunger.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5BF9\uFF0C\u4F60\u5F88\u997F\uFF0C\u997F\u5F97\u60F3\u8981\u541E\u566C\u4E00\u5207\u53EF\u4EE5\u541E\u566C\u7684\u4E1C\u897F\u3002"
+    en: Yes. You are hungry. So hungry that you want to devour anything that can
+      be devoured.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F46\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709\u4E86\uFF0C\u53EA\u7559\u8352\u829C\u7684\u5927\u5730\u5728\u4F60\u8EAB\u4FA7\u77D7\u7ACB\u3002"
+    en: But there is nothing left here. Only the barren earth rises around you.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u59D4\u6258\uFF0C\u961F\u4F0D\uFF0C\u8DEF\u7EBF\u2026\u2026\u5728\u4F60\u4EEC\u751F\u6D3B\u4E2D\u8426\u7ED5\u7684\u4E8B\u7269\u6700\u7EC8\u6D88\u6563\u5728\u5C18\u571F\u4E2D\u3002"
+    en: The commission, the team, the route... everything that once revolved around
+      your lives has finally scattered into dust.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5728\u5FEB\u8981\u9677\u5165\u5B89\u7720\u4E4B\u9645\uFF0C\u4F60\u53C8\u60F3\u8D77\u4E86\u4E00\u4E2A\u65B0\u7684\u95EE\u9898\u3002"
+    en: Just as you are about to slip into a peaceful sleep, another question comes
+      to mind.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8FD8\u5DEE\u591A\u5C11\u5929\u5C31\u80FD\u8D70\u51FA\u53BB\u4E86\uFF1F\u79BB\u5F00\u8FD9\u7247\u4EA4\u53E0/\u626D\u66F2\u7684\u8352\u539F/\u571F\u5730\u3002"
+    en: How many more days until you can get out?<br> Until you can leave this overlapping,
+      twisted wasteland behind?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u2026"
+    en: ...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Eat: 0
+  GeneralBool: 0
+  isEn: 0

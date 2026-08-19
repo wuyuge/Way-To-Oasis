@@ -13,19 +13,81 @@ MonoBehaviour:
   m_Name: Day0
   m_EditorClassIdentifier: 
   TxtLine:
-  - /locktoggle
-  - lock
-  - closecharabar
-  - /noname
-  - p
-  - "\u5728\u4E00\u5929\u7ED3\u675F\u4E4B\u524D\u6211\u9700\u8981\u5206\u914D\u98DF\u7269\u7ED9\u961F\u53CB\u3002"
-  - "\u5982\u679C\u4EFB\u4F55\u4EBA\u6CA1\u6709\u5206\u914D\u5F97\u5230\u98DF\u7269\uFF0C\u4ED6\u90FD\u4F1A\u5728\u4E00\u5929\u7ED3\u675F\u540E\u6B7B\u53BB\u3002"
+  - ${LockSwitchStage}
+  - ${CloseCharacterTalkBox}
+  - ${LockSkip}
+  - ->p
+  - ->p
+  - "\u5728\u4E00\u5929\u4E2D\u4E0D\u540C\u7684\u5DE5\u4F5C\u9636\u6BB5\u6211\u6709\u4E0D\u540C\u7684\u4E8B\u60C5\u9700\u8981\u5904\u7406\u3002"
+  - "\u5728\u4E00\u5929\u7ED3\u675F\u4E4B\u524D\uFF0C\u6211\u9700\u8981\u5206\u914D\u98DF\u7269\u7ED9\u961F\u53CB\u3002"
+  - "\u5982\u679C\u6709\u4EBA\u6CA1\u6709\u5206\u914D\u5F97\u5230\u98DF\u7269\uFF0C\u4ED6\u5C06\u4F1A\u5728\u4E00\u5929\u7ED3\u675F\u540E\u6B7B\u53BB\u3002"
   - "\u8981\u6CE8\u610F\u5982\u679C\u6CA1\u6709\u5F97\u5230\u98DF\u7269\u7684\u4EBA\u592A\u591A\uFF0C\u8BF4\u4E0D\u5B9A\u4F1A\u5F15\u53D1\u4EC0\u4E48\u4E0D\u597D\u7684\u540E\u679C\u3002"
-  - upcbar
-  - techfood
-  - /unlocktoggle
-  - /ResetTrigger
-  - down
+  - ${UnLockSkip}
+  - ${TechFood}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
+  data:
+  - cn: 
+    en: 
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 1b000000140000001a000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u5728\u4E00\u5929\u4E2D\u4E0D\u540C\u7684\u5DE5\u4F5C\u9636\u6BB5\u6211\u6709\u4E0D\u540C\u7684\u4E8B\u60C5\u9700\u8981\u5904\u7406\u3002"
+    en: At different stages of work during the day, I have different things to handle.
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u5728\u4E00\u5929\u7ED3\u675F\u4E4B\u524D\uFF0C\u6211\u9700\u8981\u5206\u914D\u98DF\u7269\u7ED9\u961F\u53CB\u3002"
+    en: Before the day ends, I need to distribute food to my teammates.
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u5982\u679C\u6709\u4EBA\u6CA1\u6709\u5206\u914D\u5F97\u5230\u98DF\u7269\uFF0C\u4ED6\u5C06\u4F1A\u5728\u4E00\u5929\u7ED3\u675F\u540E\u6B7B\u53BB\u3002"
+    en: If someone is not given food, that person will die at the end of the day.
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u8981\u6CE8\u610F\u5982\u679C\u6CA1\u6709\u5F97\u5230\u98DF\u7269\u7684\u4EBA\u592A\u591A\uFF0C\u8BF4\u4E0D\u5B9A\u4F1A\u5F15\u53D1\u4EC0\u4E48\u4E0D\u597D\u7684\u540E\u679C\u3002"
+    en: I need to remember that if too many people do not receive food, something
+      bad may happen.
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: 
+    en: 
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 3a000000320000002300000016000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -33,5 +95,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

@@ -12,13 +12,13 @@ public class TextSpeedManager : MonoBehaviour, IPointerUpHandler,SettingInitiali
     public Slider OtherSlider;
     public TextPreview Preview;
     private int PreviewSpeed;
-    private SettingDataManager Manager;
+    public SettingDataManager manager;
 
 
     public void Initialize(SettingDataManager manager)
     {
         
-        Manager = manager;
+        this.manager = manager;
         if (SceneManager.GetActiveScene().name != "Start")
         {
             SetTextSpeed(manager.setting.TextSpeed);
@@ -37,18 +37,18 @@ public class TextSpeedManager : MonoBehaviour, IPointerUpHandler,SettingInitiali
         OtherSlider.value = speed;
         Difference = (int)(Difference * speed);
         if (talkSystem != null)
-        talkSystem.TextSpeedI = MinSpeed + Difference;
+        talkSystem.TextSpeedI = (MinSpeed + Difference)*0.001f;
         if (sys2 != null)
-        sys2.TextSpeedI = MinSpeed + Difference;
+        sys2.TextSpeedI = (MinSpeed + Difference)*0.001f;
         PreviewSpeed = MinSpeed + Difference;
 
-        Manager.setting.TextSpeed = speed;
+        manager.setting.TextSpeed = speed;
 
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("UI元素上鼠标抬起");
+        
         _ = Preview.ResetSpeed(PreviewSpeed);
     }
 

@@ -13,17 +13,103 @@ MonoBehaviour:
   m_Name: Main3
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
-  - "\u963F\u66FC\u5FB7\uFF1A\u2026\u2026"
+  - ${CheckMinia}
+  - ${CheckMinia}
+  - ${CheckMinia}
+  - "\u963F\u66FC\u5FB7\uFF1A\u2026\u2026@{3}"
   - "\u963F\u66FC\u5FB7\uFF1A\u62B1\u6B49\u6211\u6709\u4E9B\u7D2F\u4E86\uFF0C\u4ECA\u5929\u5C31\u5148\u804A\u5230\u8FD9\u5427\u3002"
-  - upcbar
-  - down
-  Option1: {fileID: 0}
+  - ${CheckMinia}
+  - ${OpenSwitchStage}
+  - ${CloseCharacterTalkBox}
+  - ${DownTalkBox}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 0b000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u62B1\u6B49\u6211\u6709\u4E9B\u7D2F\u4E86\uFF0C\u4ECA\u5929\u5C31\u5148\u804A\u5230\u8FD9\u5427\u3002"
+    en: Sorry, I am a little tired. Let us stop here for today.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 0b000000
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 140000002300000016000000
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  Option1: {fileID: 11400000, guid: 7e36c9c55eb75714a9280f9e50e063e4, type: 2}
   Option2: {fileID: 0}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: 7e36c9c55eb75714a9280f9e50e063e4, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

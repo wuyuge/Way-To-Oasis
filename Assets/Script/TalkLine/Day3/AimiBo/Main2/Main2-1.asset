@@ -13,18 +13,183 @@ MonoBehaviour:
   m_Name: Main2-1
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
-  - "\u827E\u7C73\u8389\uFF1A\u5F88\u9057\u61BE\u3002"
-  - p
+  - ->c
+  - ->c
+  - ->c
+  - "\u827E\u7C73\u8389\uFF1A\u5F88\u9057\u61BE\u3002@{2}"
+  - ->p
   - "\u6211\u660E\u767D\uFF0C\u6211\u5DF2\u7ECF\u4E60\u60EF\u5931\u671B\u7684\u611F\u53D7\u4E86\u3002"
-  - c
-  - "\u827E\u7C73\u8389\uFF1A\u4F46\u8FD9\u4E0D\u610F\u5473\u7740\u6211\u4F1A\u653E\u5F03\u6216\u7740\u6577\u884D\u4E86\u4E8B\u3002"
+  - ->c
+  - "\u827E\u7C73\u8389\uFF1A\u4F46\u8FD9\u4E0D\u610F\u5473\u7740\u6211\u4F1A\u653E\u5F03\u6216\u7740\u6577\u884D\u4E86\u4E8B\u3002@{1}"
   - "\u827E\u7C73\u8389\uFF1A\u4E8B\u5B9E\u4E0A\uFF0C\u6211\u8BA4\u4E3A\u73B0\u5728\u7684\u72B6\u6001\u624D\u662F\u6700\u9002\u5408\u5DE5\u4F5C\u7684\u72B6\u6001\u3002"
-  - "\u827E\u7C73\u8389\uFF1A\u2026\u2026\u5FC3\u7406\u4E0A\u7684\u3002\u8FD9\u91CC\u7684\u73AF\u5883\u7CDF\u900F\u4E86\u3002"
-  - "\u535A\u91D1\u68EE\uFF1A\u6211\u540C\u610F\u827E\u7C73\u8389\u7684\u8BF4\u6CD5\u3002"
+  - "\u827E\u7C73\u8389\uFF1A\u2026\u2026\u5FC3\u7406\u4E0A\u7684\u3002\u8FD9\u91CC\u7684\u73AF\u5883\u7CDF\u900F\u4E86\u3002@{2}"
+  - "\u535A\u91D1\u68EE\uFF1A\u6211\u540C\u610F\u827E\u7C73\u8389\u7684\u8BF4\u6CD5\u3002@{5}"
   - "\u535A\u91D1\u68EE\uFF1A\u8FD9\u91CC\u7684\u98CE\u6C99\u6709\u4E0D\u4E00\u6837\u7684\u6C14\u606F\uFF0C\u6211\u4EEC\u8FDB\u5165\u4E86\u4E00\u7247\u65B0\u7684\u533A\u57DF\u3002"
-  - "\u535A\u91D1\u68EE\uFF1A\u8FD9\u5728\u539F\u5148\u7684\u8DEF\u7EBF\u4E0E\u60C5\u62A5\u4E2D\u90FD\u6CA1\u6709\u63D0\u53CA\uFF0C\u6211\u4E0D\u786E\u5B9A\u662F\u4E0D\u662F\u4E00\u79CD\u597D\u7684\u8BAF\u53F7\u3002"
-  - choice
+  - "\u535A\u91D1\u68EE\uFF1A\u8FD9\u5728\u539F\u5148\u7684\u8DEF\u7EBF\u4E0E\u60C5\u62A5\u4E2D\u90FD\u6CA1\u6709\u63D0\u53CA\uFF0C\u6211\u4E0D\u786E\u5B9A\u662F\u4E0D\u662F\u4E00\u79CD\u597D\u7684\u8BAF\u53F7\u3002@{2}"
+  - ${Choice}
+  data:
+  - cn: "\u5F88\u9057\u61BE\u3002"
+    en: Unfortunately.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u5F88\u9057\u61BE\u3002"
+    en: Unfortunately.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u660E\u767D\uFF0C\u6211\u5DF2\u7ECF\u4E60\u60EF\u5931\u671B\u7684\u611F\u53D7\u4E86\u3002"
+    en: I understand. I have already gotten used to disappointment.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F46\u8FD9\u4E0D\u610F\u5473\u7740\u6211\u4F1A\u653E\u5F03\u6216\u7740\u6577\u884D\u4E86\u4E8B\u3002"
+    en: That does not mean I will give up or do a careless job.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4E8B\u5B9E\u4E0A\uFF0C\u6211\u8BA4\u4E3A\u73B0\u5728\u7684\u72B6\u6001\u624D\u662F\u6700\u9002\u5408\u5DE5\u4F5C\u7684\u72B6\u6001\u3002"
+    en: In fact, I think our current state is the most suitable state for work.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u2026\u5FC3\u7406\u4E0A\u7684\u3002\u8FD9\u91CC\u7684\u73AF\u5883\u7CDF\u900F\u4E86\u3002"
+    en: ...Mentally. The environment here is terrible.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u540C\u610F\u827E\u7C73\u8389\u7684\u8BF4\u6CD5\u3002"
+    en: I agree with Emily.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8FD9\u91CC\u7684\u98CE\u6C99\u6709\u4E0D\u4E00\u6837\u7684\u6C14\u606F\uFF0C\u6211\u4EEC\u8FDB\u5165\u4E86\u4E00\u7247\u65B0\u7684\u533A\u57DF\u3002"
+    en: The wind and sand here smell different. We have entered a new area.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u8FD9\u5728\u539F\u5148\u7684\u8DEF\u7EBF\u4E0E\u60C5\u62A5\u4E2D\u90FD\u6CA1\u6709\u63D0\u53CA\uFF0C\u6211\u4E0D\u786E\u5B9A\u662F\u4E0D\u662F\u4E00\u79CD\u597D\u7684\u8BAF\u53F7\u3002"
+    en: This was not mentioned in the original route or the intelligence. I am not
+      sure whether it is a good sign.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: This was not mentioned in the original route or the intelligence. I am not
+      sure whether it is a good sign.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 3
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 62586bab953434c41a886761359eea25, type: 2}
   Option2: {fileID: 11400000, guid: 4351290c4a619a347ac4531824513b57, type: 2}
   Option3: {fileID: 0}
@@ -32,5 +197,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

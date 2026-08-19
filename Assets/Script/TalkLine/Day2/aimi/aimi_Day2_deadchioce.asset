@@ -13,13 +13,34 @@ MonoBehaviour:
   m_Name: aimi_Day2_deadchioce
   m_EditorClassIdentifier: 
   TxtLine:
-  - dead
-  Option1: {fileID: 11400000, guid: 1d71c27a3d2c27f4fae95d283360bc51, type: 2}
-  Option2: {fileID: 11400000, guid: 79a06455a5fdcfa42aca141d72903282, type: 2}
+  - ${LockSwitchStage}
+  - ${ShowCharacterTalkBox}
+  - ${CheckSomeBodyDead}
+  - ${CheckSomeBodyDead}
+  - ${CheckSomeBodyDead}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 1b0000002a0000000f000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  Option1: {fileID: 11400000, guid: 79a06455a5fdcfa42aca141d72903282, type: 2}
+  Option2: {fileID: 11400000, guid: 1d71c27a3d2c27f4fae95d283360bc51, type: 2}
   Option3: {fileID: 11400000, guid: 90362a3b5910cdd43b016cc2fba9a144, type: 2}
   SpecialTalk: {fileID: 11400000, guid: 4775d4f37ea31d44387e0b817f5a05fc, type: 2}
   SpecialTalk2: {fileID: 11400000, guid: 4775d4f37ea31d44387e0b817f5a05fc, type: 2}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

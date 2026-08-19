@@ -13,13 +13,66 @@ MonoBehaviour:
   m_Name: Twice
   m_EditorClassIdentifier: 
   TxtLine:
-  - /CheckShopEvent
+  - ${CheckShopEvent}
+  - ${CheckShopEvent}
+  - ${CheckShopEvent}
+  - ${CheckShopEvent}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 2c000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 2c000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 0e000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 58bebf27d9ee83048973d629dd0669bb, type: 2}
   Option2: {fileID: 11400000, guid: ad517f53ce5749f408a54a7949b50c68, type: 2}
-  Option3: {fileID: 0}
+  Option3: {fileID: 11400000, guid: 7e41bdecdf8d8ed4faa30223b8168a68, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

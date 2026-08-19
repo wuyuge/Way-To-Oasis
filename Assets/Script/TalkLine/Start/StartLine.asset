@@ -15,6 +15,27 @@ MonoBehaviour:
   TxtLine:
   - "\u4E9A\u6469\u65AF\u961F\u957F\u6B7B\u540E5\u5206\u949F"
   - "\u5546\u961F\u8FF7\u5931\u7B2C\u25A0\u5929"
+  data:
+  - cn: "\u4E9A\u6469\u65AF\u961F\u957F\u6B7B\u540E5\u5206\u949F"
+    en: "Five Minutes after Captain Amos\u2019s Death"
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u5546\u961F\u8FF7\u5931\u7B2C\u25A0\u5929"
+    en: "Day \u25A0 of  the Caravan Astray"
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -22,5 +43,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

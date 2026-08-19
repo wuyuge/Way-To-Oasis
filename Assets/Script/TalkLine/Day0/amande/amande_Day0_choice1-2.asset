@@ -14,11 +14,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u8FD8\u6CA1\u6709"
-  - c
+  - ->p
+  - "\u8FD8\u6CA1\u6709\u3002"
+  - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u6CA1\u6709\u7684\u8BDD\u5C31\u5148\u53BB\u5427\u3002\u6211\u4E00\u4E2A\u4EBA\u7F13\u4E00\u7F13\u5C31\u597D\u3002 "
-  - notover
-  - upcbar
-  - down
+  - ${SetAmanadeTwiceTalkOff}
+  - ${CloseCharacterTalkBox}
+  - ${DownTalkBox}
+  data:
+  - cn: "\u8FD8\u6CA1\u6709"
+    en: Not yet
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u8FD8\u6CA1\u6709\u3002"
+    en: Not yet.
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u6CA1\u6709\u7684\u8BDD\u5C31\u5148\u53BB\u5427\u3002\u6211\u4E00\u4E2A\u4EBA\u7F13\u4E00\u7F13\u5C31\u597D\u3002 "
+    en: If not, go do that first. I will be fine calming down by myself.
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: 
+    en: 
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 240000001400000016000000
+    onlyCode: 1
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -26,5 +69,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

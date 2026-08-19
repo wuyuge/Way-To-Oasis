@@ -14,15 +14,137 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u6211\u5E76\u975E\u6709\u6240\u51C6\u5907"
-  - p
+  - ->p
   - "\u6211\u5E76\u975E\u6709\u6240\u51C6\u5907\u3002"
-  - c
-  - "\u963F\u66FC\u5FB7\uFF1A\u662F\u5417\uFF1F\u6211\u591A\u4E48\u5E0C\u671B\u53EF\u4EE5\u518D\u4E00\u6B21\u76F8\u4FE1\u4F60\u3002"
-  - "\u963F\u66FC\u5FB7\uFF1A\u4F60\u4E4B\u524D\u6765\u627E\u6211\u7684\u65F6\u5019\uFF0C\u544A\u8BC9\u4E86\u6211\u4F60\u7684\u5168\u90E8\u60F3\u6CD5\uFF0C\u6216\u8005\u8BF4\u2026\u2026\u6211\u4EE5\u4E3A\u7684\u5168\u90E8\u3002"
+  - ->c
+  - "\u963F\u66FC\u5FB7\uFF1A\u662F\u5417\uFF1F\u6211\u591A\u4E48\u5E0C\u671B\u53EF\u4EE5\u518D\u4E00\u6B21\u76F8\u4FE1\u4F60\u3002@{3}"
+  - "\u963F\u66FC\u5FB7\uFF1A\u4F60\u4E4B\u524D\u6765\u627E\u6211\u7684\u65F6\u5019\uFF0C\u544A\u8BC9\u4E86\u6211\u4F60\u7684\u5168\u90E8\u60F3\u6CD5\uFF0C\u6216\u8005\u8BF4\u2026\u2026\u6211\u4EE5\u4E3A\u7684\u5168\u90E8\u3002@{7}"
   - "\u963F\u66FC\u5FB7\uFF1A\u6211\u4EE5\u4E3A\u4F60\u662F\u771F\u7684\u60F3\u5E26\u9886\u66F4\u591A\u7684\u4EBA\u8D70\u51FA\u8FD9\u91CC\u3002"
   - "\u963F\u66FC\u5FB7\uFF1A\u81F3\u5C11\u2026\u2026\u6211\u4EE5\u4E3A\u6211\u4EEC\u662F\u540C\u4F34\u3002"
-  - "\u963F\u66FC\u5FB7\uFF1A\u4F46\u6211\u73B0\u5728\u505A\u4E0D\u5230\u4E86\u3002"
-  - end
+  - "\u963F\u66FC\u5FB7\uFF1A\u6211\u7A76\u7ADF\u5E94\u8BE5\u600E\u4E48\u505A\u624D\u597D\uFF0C\u25A0\u25A0\u2026\u2026"
+  - ${End}
+  data:
+  - cn: "\u6211\u5E76\u975E\u6709\u6240\u51C6\u5907"
+    en: I was not prepared for this
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u5E76\u975E\u6709\u6240\u51C6\u5907\u3002"
+    en: I was not prepared for this.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u662F\u5417\uFF1F\u6211\u591A\u4E48\u5E0C\u671B\u53EF\u4EE5\u518D\u4E00\u6B21\u76F8\u4FE1\u4F60\u3002"
+    en: Is that so? How badly I wish I could believe you one more time.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u4F60\u4E4B\u524D\u6765\u627E\u6211\u7684\u65F6\u5019\uFF0C\u544A\u8BC9\u4E86\u6211\u4F60\u7684\u5168\u90E8\u60F3\u6CD5\uFF0C\u6216\u8005\u8BF4\u2026\u2026\u6211\u4EE5\u4E3A\u7684\u5168\u90E8\u3002"
+    en: When you came to me before, you told me all your thoughts, or rather... what
+      I thought was all of them.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u4EE5\u4E3A\u4F60\u662F\u771F\u7684\u60F3\u5E26\u9886\u66F4\u591A\u7684\u4EBA\u8D70\u51FA\u8FD9\u91CC\u3002"
+    en: I thought you truly wanted to lead more people out of here.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u81F3\u5C11\u2026\u2026\u6211\u4EE5\u4E3A\u6211\u4EEC\u662F\u540C\u4F34\u3002"
+    en: At least... I thought we were companions.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u7A76\u7ADF\u5E94\u8BE5\u600E\u4E48\u505A\u624D\u597D\uFF0C{PlayerName}......"
+    en: What should I do now,{PlayerName}...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 0
+    speaker: 1
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: 3ad07acae70c6b94bb9a566f4c0f0ea7, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -30,5 +152,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

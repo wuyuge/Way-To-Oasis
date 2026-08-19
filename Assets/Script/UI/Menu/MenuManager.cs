@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour
     public Material Error;
     public Animator Black;
     private SettingDataManager SettingManager;
+    
 
 
     private void Awake()
@@ -24,7 +25,7 @@ public class MenuManager : MonoBehaviour
             Error.SetFloat("_ColorShift", 0);
             Error.SetFloat("_GlitchSpeed", 0);
         }
-        SettingManager = GameObject.Find("SaveManager").GetComponent<SettingDataManager>();
+        
     }
 
     void Update()
@@ -125,6 +126,10 @@ public class MenuManager : MonoBehaviour
     
     void SaveSetting()
     {
+        if (SettingManager == null)
+        {
+            SettingManager = GameObject.Find("SaveManager").GetComponent<SettingDataManager>();
+        }
         SettingManager.Save();
     }
 

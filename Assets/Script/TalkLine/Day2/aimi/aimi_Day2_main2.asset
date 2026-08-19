@@ -13,11 +13,93 @@ MonoBehaviour:
   m_Name: aimi_Day2_main2
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
-  - "\u827E\u7C73\u8389\uFF1A\u4E0D\u7528\u671F\u5F85\u4E86\uFF0C\u4ECA\u5929\u8FD8\u662F\u6CA1\u6709\u4EFB\u4F55\u6536\u83B7\u3002"
-  - "\u827E\u7C73\u8389\uFF1A\u4F60\u8FD8\u662F\u60F3\u60F3\u600E\u4E48\u8BA9\u81EA\u5DF1\u6D3B\u8FC7\u660E\u5929\u5427\u3002"
+  - ->c
+  - "\u827E\u7C73\u8389\uFF1A\u4E0D\u7528\u671F\u5F85\u4E86\uFF0C\u4ECA\u5929\u8FD8\u662F\u6CA1\u6709\u4EFB\u4F55\u6536\u83B7\u3002@{1}"
+  - "\u827E\u7C73\u8389\uFF1A\u4E0D\u7528\u671F\u5F85\u4E86\uFF0C\u4ECA\u5929\u8FD8\u662F\u6CA1\u6709\u4EFB\u4F55\u6536\u83B7\u3002@{1}"
+  - "\u827E\u7C73\u8389\uFF1A\u4F60\u8FD8\u662F\u60F3\u60F3\u600E\u4E48\u8BA9\u81EA\u5DF1\u6D3B\u8FC7\u660E\u5929\u5427\u3002@{4}"
   - "\u827E\u7C73\u8389\uFF1A\u6CA1\u6709\u5403\u7684\uFF0C\u4FDD\u4E0D\u9F50\u6709\u4EBA\u4F1A\u94E4\u800C\u8D70\u9669\u628A\u4F60\u63A8\u7FFB\u4E86\u3002"
-  - choice
+  - ${Choice}
+  data:
+  - cn: "\u4E0D\u7528\u671F\u5F85\u4E86\uFF0C\u4ECA\u5929\u8FD8\u662F\u6CA1\u6709\u4EFB\u4F55\u6536\u83B7\u3002"
+    en: Do not get your hopes up. We still found nothing today.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4E0D\u7528\u671F\u5F85\u4E86\uFF0C\u4ECA\u5929\u8FD8\u662F\u6CA1\u6709\u4EFB\u4F55\u6536\u83B7\u3002"
+    en: Do not get your hopes up. We still found nothing today.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u8FD8\u662F\u60F3\u60F3\u600E\u4E48\u8BA9\u81EA\u5DF1\u6D3B\u8FC7\u660E\u5929\u5427\u3002"
+    en: You should think about how to keep yourself alive tomorrow.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6CA1\u6709\u5403\u7684\uFF0C\u4FDD\u4E0D\u9F50\u6709\u4EBA\u4F1A\u94E4\u800C\u8D70\u9669\u628A\u4F60\u63A8\u7FFB\u4E86\u3002"
+    en: Without food, someone may take a desperate risk and overthrow you.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 0
+    speaker: 2
+    expression: 4
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 931471ffcd6bb3142bb7b4447c5396a5, type: 2}
   Option2: {fileID: 11400000, guid: b9dd3256074ef544c927cbe6e77eeb1f, type: 2}
   Option3: {fileID: 0}
@@ -25,5 +107,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

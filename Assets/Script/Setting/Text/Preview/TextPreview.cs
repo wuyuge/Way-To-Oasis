@@ -8,12 +8,17 @@ public class TextPreview : MonoBehaviour
 {
     private TextMeshProUGUI Text;
     private bool IsShowing,Break;
-    private string StartText;
+    public string StartText;
+    public string en;
+    public string cn;
     public int CurrentSpeed;
-    private void Start()
+    public Manager language;
+    private void OnEnable()
     {
         Text = GetComponent<TextMeshProUGUI>();
-        StartText = Text.text;
+        
+        StartText = language.isEn ? en : cn;
+        Text.text = StartText;
     }
 
 
@@ -62,8 +67,7 @@ public class TextPreview : MonoBehaviour
         {
             _ = ResetSpeed(CurrentSpeed);
         }
-
-
+        
 
     }
 

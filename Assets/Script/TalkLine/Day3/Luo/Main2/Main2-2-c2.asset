@@ -14,13 +14,111 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u4F3C\u4E4E\u6CA1\u6709\u4EC0\u4E48\u4F9D\u636E"
-  - p
+  - ->p
   - "\u4F3C\u4E4E\u6CA1\u6709\u4EC0\u4E48\u4F9D\u636E\u3002"
-  - c
-  - "\u6D1B\u5C14\u574E\uFF1A\u7684\u786E\u5982\u6B64\u3002"
+  - ->c
+  - "\u6D1B\u5C14\u574E\uFF1A\u7684\u786E\u5982\u6B64\u3002@{5}"
   - "\u6D1B\u5C14\u574E\uFF1A\u53EA\u662F\u6211\u6BCF\u6B21\u8FD9\u4E48\u505A\u90FD\u5F88\u6709\u7528\u3002"
   - "\u6D1B\u5C14\u574E\uFF1A\u867D\u7136\u4E0D\u77E5\u9053\u662F\u56E0\u4E3A\u8FD9\u4E2A\u65B9\u6CD5\u8FD8\u662F\u8BF4\u574F\u4E8B\u672C\u8EAB\u5C31\u4E0D\u4F1A\u53D1\u751F\u3002"
-  - end
+  - ${End}
+  data:
+  - cn: "\u4F3C\u4E4E\u6CA1\u6709\u4EC0\u4E48\u4F9D\u636E"
+    en: There does not seem to be much basis for that
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F3C\u4E4E\u6CA1\u6709\u4EC0\u4E48\u4F9D\u636E\u3002"
+    en: There does not seem to be much basis for that.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u7684\u786E\u5982\u6B64\u3002"
+    en: That is true.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u53EA\u662F\u6211\u6BCF\u6B21\u8FD9\u4E48\u505A\u90FD\u5F88\u6709\u7528\u3002"
+    en: It is only that every time I do this, it works very well.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u867D\u7136\u4E0D\u77E5\u9053\u662F\u56E0\u4E3A\u8FD9\u4E2A\u65B9\u6CD5\u8FD8\u662F\u8BF4\u574F\u4E8B\u672C\u8EAB\u5C31\u4E0D\u4F1A\u53D1\u751F\u3002"
+    en: Although I do not know whether it is because of this method, or because the
+      bad thing was never going to happen.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 5
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 28888f6a6ad859e49b89e0178a57df47, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -28,5 +126,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

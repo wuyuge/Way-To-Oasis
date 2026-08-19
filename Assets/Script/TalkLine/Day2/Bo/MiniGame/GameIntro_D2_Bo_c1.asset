@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: GameIntro_D2_Bo_c1
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u53EB\u4F4F\u8BE2\u95EE"
+  - ->p
+  - "\u4F60\u662F\u4E0D\u662F\u5FD8\u4E86\u4EC0\u4E48\uFF1F"
+  - ->c
+  - "\u535A\u91D1\u68EE\uFF1A\u2026\u2026\u6CA1\u4EC0\u4E48\u6709\u7528\u7684\u4E1C\u897F\u503C\u5F97\u6C47\u62A5\u3002@{5}"
+  - ->p
+  - "\u90A3\u4FA6\u67E5\u62A5\u544A\u5462\uFF0C\u6309\u89C4\u77E9\u4F60\u80AF\u5B9A\u5199\u4E86\u3002"
+  - ->c
+  - "\u535A\u91D1\u68EE\uFF1A\u6211\u786E\u5B9E\u5199\u4E86\uFF0C\u4F46\u2026\u2026@{2}"
+  data:
+  - cn: "\u53EB\u4F4F\u8BE2\u95EE"
+    en: Stop him and ask
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u662F\u4E0D\u662F\u5FD8\u4E86\u4EC0\u4E48\uFF1F"
+    en: Did you forget something?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u2026\u6CA1\u4EC0\u4E48\u6709\u7528\u7684\u4E1C\u897F\u503C\u5F97\u6C47\u62A5\u3002"
+    en: ...There is nothing useful worth reporting.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u90A3\u4FA6\u67E5\u62A5\u544A\u5462\uFF0C\u6309\u89C4\u77E9\u4F60\u80AF\u5B9A\u5199\u4E86\u3002"
+    en: What about the scouting report? According to the rules, you definitely wrote
+      one.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u786E\u5B9E\u5199\u4E86\uFF0C\u4F46\u2026\u2026"
+    en: I did write it, but...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 3
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 140000002300000016000000
+    onlyCode: 0
+    speaker: 3
+    expression: 2
+    showCg: 0
+    cgNum: 0
+    minigameType: 3
+    uncomfortType: 0
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Eat: 0
+  GeneralBool: 0
+  isEn: 0

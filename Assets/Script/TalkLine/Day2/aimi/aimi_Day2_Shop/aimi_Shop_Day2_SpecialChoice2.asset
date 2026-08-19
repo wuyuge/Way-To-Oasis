@@ -13,17 +13,103 @@ MonoBehaviour:
   m_Name: aimi_Shop_Day2_SpecialChoice2
   m_EditorClassIdentifier: 
   TxtLine:
-  - "\u6211\u505A\u4E0D\u5230\u3002"
-  - c
-  - "\u827E\u7C73\u8389\uFF1A\u90A3\u5C31\u514D\u8C08\u3002\u6211\u4EEC\u4E4B\u95F4\u6CE8\u5B9A\u4F1A\u6709\u4EBA\u5728\u4ECA\u5929\u6B7B\u53BB\u3002"
-  - p
+  - "\u62D2\u7EDD"
+  - ->c
+  - "\u827E\u7C73\u8389\uFF1A\u90A3\u5C31\u514D\u8C08\u3002\u6211\u4EEC\u4E4B\u95F4\u6CE8\u5B9A\u4F1A\u6709\u4EBA\u5728\u4ECA\u5929\u6B7B\u53BB\u3002@{1}"
+  - ->p
   - "\u4F60\u505A\u4E0D\u5230\u3002"
-  - c
-  - "\u827E\u7C73\u8389\uFF1A\u8BD5\u8BD5\u5C31\u77E5\u9053\u4E86\u3002"
-  - /aimifail
-  - upcbar
-  - allover
-  - down
+  - ->c
+  - "\u827E\u7C73\u8389\uFF1A\u8BD5\u8BD5\u5C31\u77E5\u9053\u4E86\u3002@{3}"
+  - '#Aimi'
+  - ${CloseCharacterTalkBox}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
+  data:
+  - cn: "\u62D2\u7EDD"
+    en: Refuse
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u90A3\u5C31\u514D\u8C08\u3002\u6211\u4EEC\u4E4B\u95F4\u6CE8\u5B9A\u4F1A\u6709\u4EBA\u5728\u4ECA\u5929\u6B7B\u53BB\u3002"
+    en: Then there is nothing to discuss. One of us is destined to die today.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4F60\u505A\u4E0D\u5230\u3002"
+    en: You cannot do it.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u8BD5\u8BD5\u5C31\u77E5\u9053\u4E86\u3002"
+    en: We will know once we try.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 2
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 1400000023000000160000003a000000
+    onlyCode: 0
+    speaker: 2
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -31,5 +117,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

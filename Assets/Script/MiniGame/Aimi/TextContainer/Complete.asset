@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: Complete
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u4ECA\u5929\u5C31\u5230\u8FD9\u91CC\u5427\uFF0C\u8F9B\u82E6\u4E86\u3002"
+  - "\u539F\u672C\u6211\u8FD8\u62C5\u5FC3\u4F60\u80FD\u4E0D\u80FD\u575A\u6301\u4E0B\u6765\uFF0C\u6BD5\u7ADF\u8FD9\u662F\u4E2A\u65E0\u804A\u7684\u53EA\u4F1A\u7ED9\u4EBA\u5E26\u6765\u5931\u671B\u7684\u5DE5\u4F5C\u3002"
+  - "\u4F46\u4E0D\u5F97\u4E0D\u8BF4\uFF0C\u6709\u4F60\u5E2E\u5FD9\u4ECA\u5929\u5DE5\u4F5C\u82B1\u8D39\u7684\u65F6\u95F4\u8282\u7701\u4E86\u4E00\u534A\u3002"
+  - "\u4E4B\u540E\u6709\u4EC0\u4E48\u9700\u8981\u968F\u65F6\u53EB\u6211\uFF0C\u8C22\u4E86\u3002"
+  data:
+  - cn: "\u4ECA\u5929\u5C31\u5230\u8FD9\u91CC\u5427\uFF0C\u8F9B\u82E6\u4E86\u3002"
+    en: That is all for today. Thank you for your hard work.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u539F\u672C\u6211\u8FD8\u62C5\u5FC3\u4F60\u80FD\u4E0D\u80FD\u575A\u6301\u4E0B\u6765\uFF0C\u6BD5\u7ADF\u8FD9\u662F\u4E2A\u65E0\u804A\u7684\u53EA\u4F1A\u7ED9\u4EBA\u5E26\u6765\u5931\u671B\u7684\u5DE5\u4F5C\u3002"
+    en: I was originally worried about whether you could keep going. After all, this
+      is boring work that only brings disappointment.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4F46\u4E0D\u5F97\u4E0D\u8BF4\uFF0C\u6709\u4F60\u5E2E\u5FD9\u4ECA\u5929\u5DE5\u4F5C\u82B1\u8D39\u7684\u65F6\u95F4\u8282\u7701\u4E86\u4E00\u534A\u3002"
+    en: But I have to say, with your help, today's work took only half the time.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4E4B\u540E\u6709\u4EC0\u4E48\u9700\u8981\u968F\u65F6\u53EB\u6211\uFF0C\u8C22\u4E86\u3002"
+    en: Call me anytime if you need anything later. Thanks.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Eat: 0
+  GeneralBool: 1
+  isEn: 0

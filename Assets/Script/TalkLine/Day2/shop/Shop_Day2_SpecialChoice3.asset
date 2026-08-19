@@ -14,14 +14,128 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u6211\u6CA1\u6709\u5C38\u4F53\u4E0E\u4F60\u4EA4\u6362"
-  - p
+  - ->p
   - "\u6211\u6CA1\u6709\u5C38\u4F53\u4E0E\u4F60\u4EA4\u6362\u3002"
-  - c
+  - ->c
   - "\u6211\u4F3C\u4E4E\u4E0D\u662F\u5F88\u7406\u89E3\u4F60\u7684\u610F\u601D\u3002"
   - "\u4F60\u8BF4\uFF0C\u6CA1\u6709\uFF1F"
   - "\u54C8\u54C8\u54C8\u54C8\uFF0C\u8FD9\u4EF6\u4E8B\u4ECE\u6765\u4E0D\u53D6\u51B3\u4E8E\u4F60\u6709\u4EC0\u4E48\uFF0C\u800C\u662F\u4F60\u60F3\u8981\u4EC0\u4E48\u3002"
   - "\u505A\u51FA\u9009\u62E9\u624D\u662F\u6700\u56F0\u96BE\u7684\u73AF\u8282\uFF0C\u6293\u7D27\u65F6\u95F4\u60F3\u60F3\u5427\u3002"
-  - /specialchoice
+  - ${SpecialChoice}
+  data:
+  - cn: "\u6211\u6CA1\u6709\u5C38\u4F53\u4E0E\u4F60\u4EA4\u6362"
+    en: I do not have a body to trade with you
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u6CA1\u6709\u5C38\u4F53\u4E0E\u4F60\u4EA4\u6362\u3002"
+    en: I do not have a body to trade with you.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u4F3C\u4E4E\u4E0D\u662F\u5F88\u7406\u89E3\u4F60\u7684\u610F\u601D\u3002"
+    en: I don't seem to understand what you mean.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F60\u8BF4\uFF0C\u6CA1\u6709\uFF1F"
+    en: You are saying you do not have one?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u54C8\u54C8\u54C8\u54C8\uFF0C\u8FD9\u4EF6\u4E8B\u4ECE\u6765\u4E0D\u53D6\u51B3\u4E8E\u4F60\u6709\u4EC0\u4E48\uFF0C\u800C\u662F\u4F60\u60F3\u8981\u4EC0\u4E48\u3002"
+    en: Hahahaha. This matter has never depended on what you have. It depends on
+      what you want.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u505A\u51FA\u9009\u62E9\u624D\u662F\u6700\u56F0\u96BE\u7684\u73AF\u8282\uFF0C\u6293\u7D27\u65F6\u95F4\u60F3\u60F3\u5427\u3002"
+    en: Making the choice is the hardest part. Think quickly.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 2b000000
+    onlyCode: 1
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 1995ce667c11e51429c13093934364bd, type: 2}
   Option2: {fileID: 11400000, guid: 7ca7884cb13eb314ebd04e1b87a2f680, type: 2}
   Option3: {fileID: 11400000, guid: 09af0ecec74b33a41ab406d3187a6332, type: 2}
@@ -29,5 +143,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

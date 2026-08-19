@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,7 +24,7 @@ public class CharacterImageManager : MonoBehaviour
         }
         if (!haveImage)
         {
-            Debug.Log("显示角色对话框");
+            
             anim.SetTrigger("Up");
         }
         switch (name)
@@ -72,9 +71,7 @@ public class CharacterImageManager : MonoBehaviour
                         LeftBar.SetActive(true);
                     }
                 }
-
-
-                return;
+                break;
             case "艾米莉":
 
                 if (CheckRight(1))
@@ -115,7 +112,7 @@ public class CharacterImageManager : MonoBehaviour
                         LeftBar.SetActive(true);
                     }
                 }
-                return;
+                break;
             case "莱文":
 
                 if (CheckRight(2))
@@ -157,7 +154,7 @@ public class CharacterImageManager : MonoBehaviour
                         LeftBar.SetActive(true);
                     }
                 }
-                return;
+                break;
             case "博金森":
 
                 if (CheckRight(3))
@@ -199,7 +196,7 @@ public class CharacterImageManager : MonoBehaviour
                         LeftBar.SetActive(true);
                     }
                 }
-                return;
+                break;
             case "洛尔坎":
 
                 if (CheckRight(4))
@@ -240,13 +237,20 @@ public class CharacterImageManager : MonoBehaviour
                         LeftBar.SetActive(true);
                     }
                 }
-                return;
-
-
-
-
+                break;
         }
-        
+
+        if (RightBar.activeSelf)
+        {
+            anim.SetBool("Right",true);
+            anim.SetBool("Left",false);
+        }
+
+        if (LeftBar.activeSelf)
+        {
+            anim.SetBool("Right",false);
+            anim.SetBool("Left",true);
+        }
 
     }
 
@@ -280,10 +284,15 @@ public class CharacterImageManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// 检查右侧图像列表中指定索引位置的图像是否处于激活状态。
+    /// </summary>
+    /// <param name="CurIndex">要检查的图像在RightImage列表中的索引。</param>
+    /// <returns>如果指定索引位置的图像是激活状态，则返回true；否则，若无任何图像处于激活状态或指定索引位置的图像未激活，则返回true。</returns>
     private bool CheckRight(int CurIndex)
     {
         int index = -1;
-        foreach(GameObject g in RightImage)
+        foreach (GameObject g in RightImage)
         {
             index++;
             if (g.activeSelf)
@@ -300,6 +309,12 @@ public class CharacterImageManager : MonoBehaviour
 
 
     }
+
+    /// <summary>
+    /// 检查左侧图像列表中指定索引位置的图像是否处于激活状态。
+    /// </summary>
+    /// <param name="CurIndex">要检查的图像在LeftImage列表中的索引。</param>
+    /// <returns>如果指定索引位置的图像是激活状态，则返回true；否则返回false。若无任何图像处于激活状态，也返回true。</returns>
     private bool CheckLeft(int CurIndex)
     {
         int index = -1;
@@ -320,8 +335,7 @@ public class CharacterImageManager : MonoBehaviour
 
 
     }
-
-
+    
 
     public void ResetTrigger()
     {
@@ -335,7 +349,7 @@ public class CharacterImageManager : MonoBehaviour
         foreach(GameObject g in RightImage)
         {
             if(g.activeSelf && !g.GetComponent<Animator>().GetBool("close"))
-            g.GetComponent<Animator>().SetTrigger("close");
+                g.GetComponent<Animator>().SetTrigger("close");
         }
         foreach(GameObject g in LeftImage)
         {
@@ -343,7 +357,7 @@ public class CharacterImageManager : MonoBehaviour
                 g.GetComponent<Animator>().SetTrigger("close");
         }
         if(!anim.GetBool("Down"))
-        anim.SetTrigger("Down");
+            anim.SetTrigger("Down");
         Invoke("SetGameObj",0.5f);
     }
     private void SetGameObj()

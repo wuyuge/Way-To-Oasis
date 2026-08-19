@@ -14,12 +14,80 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u6211\u4E0D\u77E5\u9053"
-  - p
+  - ->p
   - "\u6211\u4E0D\u77E5\u9053\u3002"
-  - c
+  - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u2026\u2026\u6211\u81EA\u59CB\u81F3\u7EC8\u90FD\u76F8\u4FE1\u4F60\u4F1A\u505A\u51FA\u6700\u6B63\u786E\u7684\u9009\u62E9\uFF0C\u4F60\u4F1A\u7528\u6700\u5C0F\u7684\u727A\u7272\u5E26\u6211\u4EEC\u79BB\u5F00\u8FD9\u4E2A\u9B3C\u5730\u65B9\u3002"
-  - upcbar
-  - down
+  - ${CloseCharacterTalkBox}
+  - ${OpenSwitchStage}
+  - ${DownTalkBox}
+  data:
+  - cn: "\u6211\u4E0D\u77E5\u9053"
+    en: I don't know
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u4E0D\u77E5\u9053\u3002"
+    en: I don't know.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u2026\u6211\u81EA\u59CB\u81F3\u7EC8\u90FD\u76F8\u4FE1\u4F60\u4F1A\u505A\u51FA\u6700\u6B63\u786E\u7684\u9009\u62E9\uFF0C\u4F60\u4F1A\u7528\u6700\u5C0F\u7684\u727A\u7272\u5E26\u6211\u4EEC\u79BB\u5F00\u8FD9\u4E2A\u9B3C\u5730\u65B9\u3002"
+    en: ...From beginning to end, I have believed that you would make the most correct
+      choice. You will take us out of this damned place with the smallest sacrifice
+      possible.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 140000002300000016000000
+    onlyCode: 1
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -27,5 +95,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

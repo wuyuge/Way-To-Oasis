@@ -7,7 +7,7 @@ public class AddPlayerName : MonoBehaviour
 {
     private TextMeshProUGUI text;
     public Manager PlayerName;
-    private void Awake()
+    private void Update()
     {
         text = GetComponent<TextMeshProUGUI>();
         text.text = text.text.Replace("{PlayerName}", PlayerName.TxtLine[0]);

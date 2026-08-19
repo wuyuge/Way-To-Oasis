@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopCharacterSelect : MonoBehaviour
 {
@@ -11,31 +13,37 @@ public class ShopCharacterSelect : MonoBehaviour
     public GameObject TalkSys;
     public Character Character;
     public Manager SpecialTalk,FinalFood,FinalBody;
+    private ShopCharacterManager _shopComponent;
+    private Animator _shopAnim;
 
-    private void Start()
+    private void Awake()
     {
-        
+        _shopAnim = ShopManager.GetComponent<Animator>();
+        _shopComponent = ShopManager.GetComponent<ShopCharacterManager>();
         ShopTextBar = gameObject.transform.parent.parent.Find("TextBar").gameObject;
     }
-
 
 
     public void Clik()
     {
         TalkSystem ts = TalkSys.GetComponent<TalkSystem>();
         //如果是要杀人
-        if (ShopManager.GetComponent<ShopCharacterManager>().kill && Name != "Leader")
+        if (_shopComponent.kill && Name != "Leader")
         {
             DeadName.TxtLine.Add(Name);
             TalkSys.GetComponent<TalkSystem>().ShowKillTalk();
-            this.Character.Dead = true;
+            Character.Dead = true;
             if(ts.Daytime == 2)
             {
                 ts.on = true;
                 ts.Talklines[ts.Daytime] = SpecialTalk;
                 ts._inshop = true;
                 ts.line = 0;
-                _ = ts.ShowText(true);
+                if (ts.useNewSys)
+                {
+                    GlobalData.NewTalkSysShowText.SetChoiceLine(0,false);
+                }
+                _ = ts.ShowText();
             }
             FinalBody.Weight += 1;
             TalkSys.GetComponent<TalkSystem>();
@@ -78,7 +86,7 @@ public class ShopCharacterSelect : MonoBehaviour
         
         //_ = TalkSys.GetComponent<TalkSystem>().ShowText();
         TalkSys.GetComponent<TalkSystem>().on = true;
-        ShopManager.GetComponent<Animator>().SetTrigger("Down");
+        _shopAnim.SetTrigger("Down");
         await Task.Delay(1000);
         ShopManager.SetActive(false);
     }

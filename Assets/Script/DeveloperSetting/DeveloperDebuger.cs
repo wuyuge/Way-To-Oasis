@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Cinemachine;
 
 public class DeveloperDebuger : MonoBehaviour
 {
@@ -21,18 +23,36 @@ public class DeveloperDebuger : MonoBehaviour
     public GameObject Mask;
 
     private Camera mainCamera;
+    public Achievement achievementList;
+    
+    private CinemachineImpulseSource _impulseSource;
+
+    private void Awake()
+    {
+        AchievementManager.UnlockAchievement("ACH_NEW_LEADER");
+    }
+
     void Start()
     {
         mainCamera = Camera.main;
+        
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F12))
+        /*if (Input.GetKeyDown(KeyCode.F12))
         {
-            if(DeveloperPanel != null)
-            DeveloperPanel.SetActive(!DeveloperPanel.activeSelf);
+            if(DeveloperPanel != null) DeveloperPanel.SetActive(!DeveloperPanel.activeSelf);
         }
+        
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            foreach (var value in achievementList.achievements)
+            {
+                AchievementManager.ClearAchievement(value);
+            }
+            
+        }*/
     }
 
     public void ResetBody()
@@ -72,12 +92,12 @@ public class DeveloperDebuger : MonoBehaviour
 
     public void UpTalkBar()
     {
-        TalkBar.SetTrigger("up");
+        TalkBar.SetTrigger("Up");
     }
 
     public void DownTalkBar()
     {
-        TalkBar.SetTrigger("down");
+        TalkBar.SetTrigger("Down");
     }
 
     public void UpCharaBar()
@@ -106,6 +126,6 @@ public class DeveloperDebuger : MonoBehaviour
         Mask.SetActive(false);
     }
 
-   
+
 
 }

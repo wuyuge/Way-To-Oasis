@@ -13,18 +13,119 @@ MonoBehaviour:
   m_Name: Day1
   m_EditorClassIdentifier: 
   TxtLine:
-  - closecharabar
-  - lock
-  - p
-  - 
+  - ->p
+  - ${LockSwitchStage}
+  - ${TechWeight}
+  - "\u7B2C\u4E8C\u5929\u4E86\uFF0C\u662F\u65F6\u5019\u96C6\u5408\u5206\u914D\u4ECA\u5929\u884C\u8FDB\u65F6\u7684\u8D1F\u91CD\u4E86\u3002"
   - "\u7B2C\u4E8C\u5929\u4E86\uFF0C\u662F\u65F6\u5019\u96C6\u5408\u5206\u914D\u4ECA\u5929\u884C\u8FDB\u65F6\u7684\u8D1F\u91CD\u4E86\u3002"
   - "\u6BCF\u4EBA\u6700\u591A\u53EF\u4EE5\u643A\u5E26\u8D1F\u91CD\u91CF\u4E3A3\u7684\u7269\u54C1\u3002"
   - "\u4E00\u4EFD\u98DF\u7269\u7684\u8D1F\u91CD\u4E3A1\uFF0C\u4E00\u5177\u5C38\u4F53\u7684\u8D1F\u91CD\u4E3A3\u3002"
   - "\u2026\u2026\u5728\u73B0\u5728\u7684\u73AF\u5883\u4E2D\uFF0C\u5C38\u4F53\u6700\u591A\u4FDD\u6301\u4E09\u5929\u5C31\u4F1A\u65E0\u6CD5\u7EE7\u7EED\u643A\u5E26\u3002"
   - "\u5982\u679C\u4E0D\u60F3\u643A\u5E26\u4EFB\u610F\u7269\u54C1\uFF0C\u5728\u5206\u914D\u8D1F\u91CD\u73AF\u8282\u4E2D\u4E0D\u8BA9\u4EFB\u4F55\u4EBA\u643A\u5E26\u8BE5\u7269\u54C1\u5373\u53EF\u3002"
-  - techweight
-  - upcbar
-  - down
+  - ${DownTalkBox}
+  - ${OpenSwitchStage}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 1b00000037000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u7B2C\u4E8C\u5929\u4E86\uFF0C\u662F\u65F6\u5019\u96C6\u5408\u5206\u914D\u4ECA\u5929\u884C\u8FDB\u65F6\u7684\u8D1F\u91CD\u4E86\u3002"
+    en: It is the second day. It is time to gather everyone and assign today's carrying
+      load for the march.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u6BCF\u4EBA\u6700\u591A\u53EF\u4EE5\u643A\u5E26\u8D1F\u91CD\u91CF\u4E3A3\u7684\u7269\u54C1\u3002"
+    en: Each person can carry items with a maximum total load of 3.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u4E00\u4EFD\u98DF\u7269\u7684\u8D1F\u91CD\u4E3A1\uFF0C\u4E00\u5177\u5C38\u4F53\u7684\u8D1F\u91CD\u4E3A3\u3002"
+    en: One portion of food has a load value of 1. One body has a load value of 3.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u2026\u2026\u5728\u73B0\u5728\u7684\u73AF\u5883\u4E2D\uFF0C\u5C38\u4F53\u6700\u591A\u4FDD\u6301\u4E09\u5929\u5C31\u4F1A\u65E0\u6CD5\u7EE7\u7EED\u643A\u5E26\u3002"
+    en: ...In the current environment, a body can only be preserved for up to three
+      days before it can no longer be carried.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u5982\u679C\u4E0D\u60F3\u643A\u5E26\u4EFB\u610F\u7269\u54C1\uFF0C\u5728\u5206\u914D\u8D1F\u91CD\u73AF\u8282\u4E2D\u4E0D\u8BA9\u4EFB\u4F55\u4EBA\u643A\u5E26\u8BE5\u7269\u54C1\u5373\u53EF\u3002"
+    en: If I do not want anyone to carry a certain item, simply do not assign that
+      item to anyone during the load distribution phase.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 2300000016000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -32,5 +133,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

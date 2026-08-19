@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee703a3033055140a9e692c6dd5ea80, type: 3}
+  m_Name: Fail
+  m_EditorClassIdentifier: 
+  talkDatas:
+  - cn: "\u6CA1\u4E8B\u7684\uFF0C\u8FD9\u4E5F\u662F\u5E38\u6709\u7684\u4E8B\u2026\u8F9B\u82E6\u4F60\u4E86\u3002"
+    en: ' It is all right. This kind of thing happens often... Thank you for your
+      hard work.'
+    express: 2
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+  - cn: "\u603B\u4E4B\u8C22\u8C22\u4F60\u6765\u5E2E\u5FD9\uFF0C\u4E0B\u6B21\u4E00\u5B9A\u4F1A\u6210\u529F\u7684\u3002"
+    en: Anyway, thank you for helping. We will definitely succeed next time.
+    express: 2
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+  showed: 0

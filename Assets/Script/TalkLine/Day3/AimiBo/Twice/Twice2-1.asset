@@ -13,11 +13,62 @@ MonoBehaviour:
   m_Name: Twice2-1
   m_EditorClassIdentifier: 
   TxtLine:
-  - closecharabar
-  - p
-  - "\u827E\u7C73\u8389\u6B63\u51B7\u51B7\u5730\u76EF\u7740\u4F60\uFF0C\u663E\u800C\u6613\u89C1\uFF0C\u5979\u5FC3\u60C5\u4E0D\u597D\u3002"
-  - upcbar
-  - down
+  - ->p
+  - ->p
+  - ->p
+  - "A_\u827E\u7C73\u8389\u6B63\u51B7\u51B7\u5730\u76EF\u7740\u4F60\uFF0C\u663E\u800C\u6613\u89C1\uFF0C\u5979\u5FC3\u60C5\u4E0D\u597D\u3002"
+  - ${OpenSwitchStage}
+  - ${CloseCharacterTalkBox}
+  - ${DownTalkBox}
+  data:
+  - cn: "\u827E\u7C73\u8389\u6B63\u51B7\u51B7\u5730\u76EF\u7740\u4F60\uFF0C\u663E\u800C\u6613\u89C1\uFF0C\u5979\u5FC3\u60C5\u4E0D\u597D\u3002"
+    en: Emily is staring at you coldly. Clearly, she is in a bad mood.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u827E\u7C73\u8389\u6B63\u51B7\u51B7\u5730\u76EF\u7740\u4F60\uFF0C\u663E\u800C\u6613\u89C1\uFF0C\u5979\u5FC3\u60C5\u4E0D\u597D\u3002"
+    en: Emily is staring at you coldly. Clearly, she is in a bad mood.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 230000001400000016000000
+    onlyCode: 1
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -25,5 +76,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

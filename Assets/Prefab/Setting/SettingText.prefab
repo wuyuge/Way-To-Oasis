@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 4973013724476104054}
   - component: {fileID: 7834603809778355724}
   - component: {fileID: 1555141236648146590}
+  - component: {fileID: 2116727451399565214}
+  - component: {fileID: 1628983051123751390}
+  - component: {fileID: 3493653041790456720}
   m_Layer: 5
   m_Name: SettingText
   m_TagString: Untagged
@@ -134,3 +137,48 @@ MonoBehaviour:
   m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2116727451399565214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742559796798742588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702b120eed9791e4b914863504465eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: {fileID: 11400000, guid: 824057b5fd1df75479a56df414be097e, type: 2}
+  cn: "\u663E\u793A\u5E27\u6570"
+  en: FPS
+--- !u!114 &1628983051123751390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742559796798742588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702b120eed9791e4b914863504465eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: {fileID: 11400000, guid: 824057b5fd1df75479a56df414be097e, type: 2}
+  cn: "\u5206\u8FA8\u7387"
+  en: Resolution
+--- !u!114 &3493653041790456720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742559796798742588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702b120eed9791e4b914863504465eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: {fileID: 11400000, guid: 824057b5fd1df75479a56df414be097e, type: 2}
+  cn: "\u5C4F\u5E55\u6A21\u5F0F"
+  en: Display Mode

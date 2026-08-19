@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0d7022325ba6c48a153673d65af036, type: 3}
+  m_Name: 13
+  m_EditorClassIdentifier: 
+  description: "\u4E00\u4E9B\u8DB3\u8FF9\u3002\u8FD9\u91CC\u6765\u4E86\u4E0D\u5C11\u5012\u9709\u86CB\u3002\u5E0C\u671B\u6211\u4EEC\u4E0D\u8981\u8FD9\u4E48\u5FEB\u89C1\u5230\u4ED6\u4EEC\u7684\u5C38\u4F53\u3002"
+  en: Some footprints. Quite a few unlucky people came here. I hope we do not see
+    their bodies too soon.
+  expression: 4

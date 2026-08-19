@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee703a3033055140a9e692c6dd5ea80, type: 3}
+  m_Name: Break
+  m_EditorClassIdentifier: 
+  talkDatas:
+  - cn: "\u4F3C\u4E4E\u8FD8\u6709\u54EA\u91CC\u6CA1\u6709\u8FDE\u4E0A\u2026\u518D\u68C0\u67E5\u4E00\u4E0B\u5427\u3002"
+    en: ' It seems like something is still not connected... Let us check again.'
+    express: 2
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+  - cn: "\u79BB\u6210\u529F\u4E0D\u8FDC\u4E86\u3002"
+    en: We are not far from success.
+    express: 0
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+  - cn: "\u5185\u90E8\u4F3C\u4E4E\u8FD8\u6709\u4E9B\u95EE\u9898\u2026\u5728\u54EA\u5462\u2026"
+    en: There still seems to be a problem inside... Where is it...
+    express: 2
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+  showed: 0

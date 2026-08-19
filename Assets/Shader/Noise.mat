@@ -31,10 +31,10 @@ Material:
     m_Floats:
     - _MaskEdgeSmooth: 0.2
     - _MaskThreshold: 1
-    - _NoiseContrast: 5
-    - _NoiseDensity: 1.05
+    - _NoiseContrast: 2.48
+    - _NoiseDensity: 2
     - _NoiseIntensity: 1
-    - _NoiseScale: 11.5
+    - _NoiseScale: 4.8
     - _NoiseSpeed: 0.000001
     m_Colors:
     - _Color: {r: 0.3584906, g: 0.35100704, b: 0.33650768, a: 1}

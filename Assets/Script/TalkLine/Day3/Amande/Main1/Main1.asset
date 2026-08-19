@@ -13,14 +13,144 @@ MonoBehaviour:
   m_Name: Main1
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
-  - "\u963F\u66FC\u5FB7\uFF1A\u6211\u6709\u4E9B\u540E\u6094\u4E86\u3002{Calm}"
+  - ->c
+  - "\u963F\u66FC\u5FB7\uFF1A\u6211\u6709\u4E9B\u540E\u6094\u4E86\u3002@{7}"
+  - "\u963F\u66FC\u5FB7\uFF1A\u6211\u6709\u4E9B\u540E\u6094\u4E86\u3002@{7}"
   - "\u963F\u66FC\u5FB7\uFF1A\u4E00\u5207\u90FD\u6CA1\u6709\u53D1\u751F\u53D8\u5316\u3002"
-  - "\u963F\u66FC\u5FB7\uFF1A\u4F46\u8FD9\u4E0D\u662F\u4F60\u7684\u9519\u3002\u6211\u77E5\u9053\u4F60\u52AA\u529B\u8FC7\u4E86\u3002{Laugh}"
+  - "\u963F\u66FC\u5FB7\uFF1A\u4F46\u8FD9\u4E0D\u662F\u4F60\u7684\u9519\u3002\u6211\u77E5\u9053\u4F60\u52AA\u529B\u8FC7\u4E86\u3002@{5}"
   - "\u963F\u66FC\u5FB7\uFF1A\u2026\u2026"
-  - "\u963F\u66FC\u5FB7\uFF1A\u73B0\u5728\u8BF4\u4EC0\u4E48\u4E5F\u6CA1\u6709\u610F\u4E49\u4E86\u3002"
+  - "\u963F\u66FC\u5FB7\uFF1A\u73B0\u5728\u8BF4\u4EC0\u4E48\u4E5F\u6CA1\u6709\u610F\u4E49\u4E86\u3002@{3}"
   - "\u963F\u66FC\u5FB7\uFF1A\u6211\u6539\u53D8\u4E0D\u4E86\u4EFB\u4F55\u4E8B\uFF0C\u6211\u4EEC\u8981\u6B7B\u4E86\u3002"
-  - choice
+  - ${Choice}
+  data:
+  - cn: "\u6211\u6709\u4E9B\u540E\u6094\u4E86\u3002"
+    en: I regret it a little.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u6709\u4E9B\u540E\u6094\u4E86\u3002"
+    en: I regret it a little.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4E00\u5207\u90FD\u6CA1\u6709\u53D1\u751F\u53D8\u5316\u3002"
+    en: Nothing has changed.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 7
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u4F46\u8FD9\u4E0D\u662F\u4F60\u7684\u9519\u3002\u6211\u77E5\u9053\u4F60\u52AA\u529B\u8FC7\u4E86\u3002"
+    en: But this is not your fault. I know you tried.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 5
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u73B0\u5728\u8BF4\u4EC0\u4E48\u4E5F\u6CA1\u6709\u610F\u4E49\u4E86\u3002"
+    en: There is no point saying anything now.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: "\u6211\u6539\u53D8\u4E0D\u4E86\u4EFB\u4F55\u4E8B\uFF0C\u6211\u4EEC\u8981\u6B7B\u4E86\u3002"
+    en: I cannot change anything. We are going to die.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  - cn: 
+    en: I cannot change anything. We are going to die.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 1
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
   Option1: {fileID: 11400000, guid: 9fdf595df8f8f7e4db7c219d3d0c6c08, type: 2}
   Option2: {fileID: 11400000, guid: bffe84ff9d35f084bb4b6e5ad15f4737, type: 2}
   Option3: {fileID: 0}
@@ -28,5 +158,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

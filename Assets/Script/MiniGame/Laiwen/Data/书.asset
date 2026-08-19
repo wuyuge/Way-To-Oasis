@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631795722512e854398e62f2769a76a1, type: 3}
+  m_Name: "\u4E66"
+  m_EditorClassIdentifier: 
+  dataName: "\u5C0F\u8BF4"
+  context: "\u4E00\u672C\u770B\u4E86\u4E00\u534A\u7684\u6050\u6016\u5C0F\u8BF4\uFF0C\u5185\u5BB9\u65E0\u804A\u81F3\u6781\uFF0C\u67D0\u79CD\u610F\u4E49\u4E0A\u53EF\u4EE5\u7B97\u662F\u7761\u524D\u8BFB\u7269\u7684\u7A0B\u5EA6\u3002\u4E66\u540D\u53EB\u505A\u300A\u5343\u4E07\u522B\u62AC\u5934\u300B\uFF0C\u5728\u4E3B\u89D2\u4E0D\u542C\u529D\u544A\u62AC\u5934\u5C06\u8981\u89C1\u5230\u67D0\u79CD\u6050\u6016\u751F\u7269\u7684\u90A3\u4E00\u9875\u5939\u4E86\u4E66\u7B7E\u5E26\u3002\u4F60\u6CA1\u5FCD\u4F4F\u5411\u4E0A\u770B\u4E86\u770B\uFF0C\u4EC0\u4E48\u90FD\u6CA1\u53D1\u751F\u3002"
+  enContext: ' A half-read horror novel. The content is extremely boring, which in
+    a way makes it good bedtime reading. The title is Never Look Up. A bookmark is
+    placed on the page where the protagonist ignores the warning and is about to
+    look up and see some terrifying creature. You cannot help looking upward. Nothing
+    happens.'
+  expression: 2

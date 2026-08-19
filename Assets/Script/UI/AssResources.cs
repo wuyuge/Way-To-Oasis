@@ -5,28 +5,21 @@ using UnityEngine.UI;
 
 public class AssResources : MonoBehaviour
 {
-    public GameObject End;
-    public GameObject Food_Ban, Body_Ban;
+    public Progress End;
     public bool Food;
     public bool Body,Weight_Food;
-    private Toggle Food_Toogle, Body_Toogle;
-    void Start()
-    {
-        Food_Toogle = Food_Ban.transform.parent.GetComponent<Toggle>();
-        Body_Toogle = Body_Ban.transform.parent.GetComponent<Toggle>();
-        End = GameObject.Find("End");
-    }
+    public Toggle Food_Toogle, Body_Toogle;
 
     // Update is called once per frame
     private void Update()
     {
-        if (End.GetComponent<Progress>().start != true)
+        if (End.start != true)
         {
             
             Food_Toogle.enabled = false;
             Body_Toogle.enabled = false;
         }
-        else if (End.GetComponent<Progress>().start == true)
+        else if (End.start)
         {
 
             Food_Toogle.enabled = true;
@@ -39,7 +32,7 @@ public class AssResources : MonoBehaviour
 
         
 
-        if (!End.GetComponent<Progress>().start)
+        if (!End.start)
         {
             Body = false;
             Weight_Food = false;

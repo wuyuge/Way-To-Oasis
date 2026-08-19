@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631795722512e854398e62f2769a76a1, type: 3}
+  m_Name: "\u53E3\u6C14\u6E05\u65B0\u5242"
+  m_EditorClassIdentifier: 
+  dataName: "\u53E3\u6C14\u6E05\u65B0\u5242"
+  context: "\u8584\u8377\u5473\u7684\u53E3\u6C14\u6E05\u65B0\u5242\uFF0C\u5E38\u7528\u4E8E\u5546\u4E1A\u793E\u4EA4\uFF0C\u63A5\u53D6\u59D4\u6258\u7684\u573A\u5408\u3002"
+  enContext: Mint-flavored breath freshener, often used for business socializing
+    and taking commissions.
+  expression: 0

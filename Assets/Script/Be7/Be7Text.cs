@@ -5,12 +5,23 @@ using UnityEngine;
 
 public class Be7Text : MonoBehaviour
 {
-    public Manager DeadList, UseList;
+    public Manager DeadList, UseList, language;
     public string Laiwen, Aimi, Bo, Luo;
+    public string LaiwenEn, AimiEn, BoEn, LuoEn;
     private bool LaiwenDead,AimiDead,BoDead,LuoDead;
+    public string cn, en;
 
     public void Start()
     {
+        if (language.isEn)
+        {
+            GetComponent<TextMeshProUGUI>().text = en;
+        }
+        else
+        {
+            GetComponent<TextMeshProUGUI>().text = cn;
+        }
+        
         
         foreach (string s in DeadList.TxtLine)
         {
@@ -66,25 +77,54 @@ public class Be7Text : MonoBehaviour
 
         if (!LaiwenDead)
         {
-            Text.text = Text.text.Replace("{Laiwen}", Laiwen);
+            if (language.isEn)
+            {
+                Text.text = Text.text.Replace("{Laiwen}", LaiwenEn);
+            }
+            else
+            {
+                Text.text = Text.text.Replace("{Laiwen}", Laiwen);
+            }
+            
         }
         else Text.text = Text.text.Replace("{Laiwen}", "");
 
         if (!AimiDead)
         {
-            Text.text = Text.text.Replace("{Aimi}", Aimi);
+            if (language.isEn)
+            {
+                Text.text = Text.text.Replace("{Aimi}", AimiEn);
+            }
+            else
+            {
+                Text.text = Text.text.Replace("{Aimi}", Aimi);
+            }
         }
         else Text.text = Text.text.Replace("{Aimi}", "");
 
         if (!BoDead)
         {
-            Text.text = Text.text.Replace("{Bo}", Bo);
+            if (language.isEn)
+            {
+                Text.text = Text.text.Replace("{Bo}", BoEn);
+            }
+            else
+            {
+                Text.text = Text.text.Replace("{Bo}", Bo);
+            }
         }
         else Text.text = Text.text.Replace("{Bo}", "");
 
         if (!LuoDead)
         {
-            Text.text = Text.text.Replace("{Luo}", Luo);
+            if (language.isEn)
+            {
+                Text.text = Text.text.Replace("{Luo}", LuoEn);
+            }
+            else
+            {
+                Text.text = Text.text.Replace("{Luo}", Luo);
+            }
         }
         else Text.text = Text.text.Replace("{Luo}", "");
 

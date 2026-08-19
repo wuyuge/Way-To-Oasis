@@ -14,11 +14,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u5BF9"
-  - p
+  - ->p
   - "\u5BF9\u3002"
-  - c
+  - ->c
   - "\u83B1\u6587\uFF1A\u597D\u597D\u597D\uFF0C\u90A3\u8BA9\u6211\u4EEC\u6765\u8C08\u4E00\u4E9B\u961F\u957F\u624D\u77E5\u9053\u7684\u79D8\u5BC6\u5427\u3002"
-  - end
+  - ${End}
+  data:
+  - cn: "\u5BF9"
+    en: Yes
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u5BF9\u3002"
+    en: Yes.
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: "\u597D\u597D\u597D\uFF0C\u90A3\u8BA9\u6211\u4EEC\u6765\u8C08\u4E00\u4E9B\u961F\u957F\u624D\u77E5\u9053\u7684\u79D8\u5BC6\u5427\u3002"
+    en: Great.Then let us talk about the secrets only a captain would know.
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+  - cn: 
+    en: 
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 17000000
+    onlyCode: 1
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
   Option1: {fileID: 11400000, guid: 8d7eb74e5909cca4d843a36e7b3bce5c, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -26,5 +67,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

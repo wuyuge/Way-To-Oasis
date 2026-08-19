@@ -14,13 +14,104 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxtLine:
   - "\u610F\u5916\u5730\u5F88\u5B89\u5FC3"
-  - p
+  - ->p
   - "\u610F\u5916\u5730\u5F88\u5B89\u5FC3\u3002"
-  - c
+  - ->c
   - "\u963F\u66FC\u5FB7\uFF1A\u2026\u54C8\u54C8\uFF0C\u771F\u50CF\u4F60\u4F1A\u8BF4\u51FA\u6765\u7684\u8BDD\u3002"
   - "\u963F\u66FC\u5FB7\uFF1A\u4F60\u8FD9\u6837\u60F3\u6211\u5C31\u653E\u5FC3\u4E86\u3002"
   - "\u963F\u66FC\u5FB7\uFF1A\u8FD8\u6709\u4EC0\u4E48\u60F3\u804A\u7684\u5417?"
-  - choice
+  - ${Choice}
+  data:
+  - cn: "\u610F\u5916\u5730\u5F88\u5B89\u5FC3"
+    en: Unexpectedly reassuring
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u610F\u5916\u5730\u5F88\u5B89\u5FC3\u3002"
+    en: Unexpectedly reassuring.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u2026\u54C8\u54C8\uFF0C\u771F\u50CF\u4F60\u4F1A\u8BF4\u51FA\u6765\u7684\u8BDD\u3002"
+    en: ...Haha. That really sounds like something you would say.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u4F60\u8FD9\u6837\u60F3\u6211\u5C31\u653E\u5FC3\u4E86\u3002"
+    en: If that is how you think, then I feel relieved.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u8FD8\u6709\u4EC0\u4E48\u60F3\u804A\u7684\u5417?"
+    en: Is there anything else you want to talk about?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 1
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: 7fe20d85bbb7f7e49b18b9019bceb485, type: 2}
   Option2: {fileID: 11400000, guid: 8f332fbf255011446a46ee326ad642c3, type: 2}
   Option3: {fileID: 0}
@@ -28,5 +119,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

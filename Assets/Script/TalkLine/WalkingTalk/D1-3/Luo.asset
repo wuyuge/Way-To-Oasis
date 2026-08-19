@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c288d988ac7bdcb4282927f6e43bc5de, type: 3}
+  m_Name: Luo
+  m_EditorClassIdentifier: 
+  TxtLine:
+  - "\u6D1B\u5C14\u574E\uFF1A\u2026\u65E9\u77E5\u9053\u591A\u5E26\u51E0\u526F\u5907\u7528\u7684\u4E86\u3002"
+  - "\u6D1B\u5C14\u574E\uFF1A\u9633\u5149\u597D\u523A\u773C\uFF0C\u660E\u660E\u6CA1\u6709\u592A\u9633\u6765\u7740\u2026\u6709\u70B9\u770B\u4E0D\u6E05\u8DEF\u4E86\u3002"
+  - "\u6D1B\u5C14\u574E\uFF1A\u597D\u60F3\u56DE\u5BB6\u554A\u3002"
+  - "\u6D1B\u5C14\u574E\uFF1A\u2026\u6211\u518D\u4E5F\u4E0D\u62B1\u6028\u4FEE\u91CE\u5730\u8F66\u65E0\u804A\u4E86\u3002"
+  - "\u6D1B\u5C14\u574E\uFF1A\u811A\u597D\u75DB\uFF0C\u611F\u89C9\u8FD9\u51E0\u5929\u8D70\u5B8C\u4E86\u6211\u4E00\u5E74\u7684\u8DEF\u3002"
+  - "\u6D1B\u5C14\u574E\uFF1A\u5982\u679C\u4E0B\u6B21\u8FD8\u6709\u59D4\u6258\u7684\u8BDD\u2026\u2026\u554A\u554A\u554A\u8FD9\u6B21\u90FD\u4E0D\u4E00\u5B9A\u80FD\u51FA\u53BB\u5462\uFF0C\u522B\u4E71\u60F3\u4E86\u3002"
+  - "\u6D1B\u5C14\u574E\uFF1A\u518D\u575A\u6301\u51E0\u6B65\u5C31\u80FD\u4F11\u606F\u4E86\uFF0C\u547C\u2026\u2026"
+  data:
+  - cn: "\u2026\u65E9\u77E5\u9053\u591A\u5E26\u51E0\u526F\u5907\u7528\u7684\u4E86\u3002"
+    en: ...If I had known, I would have brought a few more spare sets.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u9633\u5149\u597D\u523A\u773C\uFF0C\u660E\u660E\u6CA1\u6709\u592A\u9633\u6765\u7740\u2026\u6709\u70B9\u770B\u4E0D\u6E05\u8DEF\u4E86\u3002"
+    en: "The sunlight is so blinding\u2014even though there's clearly no sun out...
+      I can barely see the road."
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u597D\u60F3\u56DE\u5BB6\u554A\u3002"
+    en: I want to go home so badly.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u2026\u6211\u518D\u4E5F\u4E0D\u62B1\u6028\u4FEE\u91CE\u5730\u8F66\u65E0\u804A\u4E86\u3002"
+    en: ...I will never complain that fixing field vehicles is boring again.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u811A\u597D\u75DB\uFF0C\u611F\u89C9\u8FD9\u51E0\u5929\u8D70\u5B8C\u4E86\u6211\u4E00\u5E74\u7684\u8DEF\u3002"
+    en: My feet hurt. It feels like I've walked a year's worth of miles in just these
+      few days.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u5982\u679C\u4E0B\u6B21\u8FD8\u6709\u59D4\u6258\u7684\u8BDD\u2026\u2026\u554A\u554A\u554A\u8FD9\u6B21\u90FD\u4E0D\u4E00\u5B9A\u80FD\u51FA\u53BB\u5462\uFF0C\u522B\u4E71\u60F3\u4E86\u3002"
+    en: If there is another commission next time... Ahhh, I might not even get out
+      this time. Stop thinking nonsense.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u518D\u575A\u6301\u51E0\u6B65\u5C31\u80FD\u4F11\u606F\u4E86\uFF0C\u547C\u2026\u2026"
+    en: Just a few more steps and we can rest. Hah...
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  Option1: {fileID: 0}
+  Option2: {fileID: 0}
+  Option3: {fileID: 0}
+  SpecialTalk: {fileID: 0}
+  SpecialTalk2: {fileID: 0}
+  Weight: 0
+  Weight_tag: 0
+  Eat: 0
+  GeneralBool: 0
+  isEn: 0

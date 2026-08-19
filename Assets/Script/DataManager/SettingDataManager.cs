@@ -21,6 +21,7 @@ public class PlayerSetting
 
 public class SettingDataManager : MonoBehaviour
 {
+
     public PlayerSetting setting;
     public bool encrypt = true;  // 默认启用加密
     private string encryptionKey = "Way_To_Oasis";  // 加密密钥
@@ -40,10 +41,10 @@ public class SettingDataManager : MonoBehaviour
 
         foreach (var obj in InitializeObj)
         {
-            Debug.Log($"初始化{obj.name}");
+            
             obj.GetComponent<SettingInitialize>().Initialize(this);
         }
-
+        UnityEngine.Rendering.DebugManager.instance.enableRuntimeUI = false;
     }
 
     void SaveSetting()

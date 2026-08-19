@@ -13,11 +13,59 @@ MonoBehaviour:
   m_Name: Main1-End
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
+  - ->c
   - "\u83B1\u6587\uFF1A\u4E0D\u8BF4\u8FD9\u4E2A\u4E86\uFF0C\u592A\u6C89\u91CD\u7684\u5FC3\u7406\u72B6\u51B5\u4E0D\u9002\u5408\u8352\u91CE\u6C42\u751F\u3002"
   - "\u83B1\u6587\uFF1A\u65E9\u70B9\u4F11\u606F\u5427\u961F\u957F\uFF0C\u660E\u5929\u8FD8\u9700\u8981\u7EE7\u7EED\u8D76\u8DEF\u5462\u3002"
-  - upcbar
-  - down
+  - ${OpenSwitchStage}
+  - ${CloseCharacterTalkBox}
+  - ${DownTalkBox}
+  data:
+  - cn: "\u4E0D\u8BF4\u8FD9\u4E2A\u4E86\uFF0C\u592A\u6C89\u91CD\u7684\u5FC3\u7406\u72B6\u51B5\u4E0D\u9002\u5408\u8352\u91CE\u6C42\u751F\u3002"
+    en: Let us stop talking about this. A mental state this heavy is not suitable
+      for wilderness survival.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u65E9\u70B9\u4F11\u606F\u5427\u961F\u957F\uFF0C\u660E\u5929\u8FD8\u9700\u8981\u7EE7\u7EED\u8D76\u8DEF\u5462\u3002"
+    en: Rest early, Captain. We still have to keep moving tomorrow.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 230000001400000016000000
+    onlyCode: 1
+    speaker: 4
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}
@@ -25,5 +73,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

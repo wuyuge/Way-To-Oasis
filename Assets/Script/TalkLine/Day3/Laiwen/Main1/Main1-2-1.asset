@@ -13,13 +13,106 @@ MonoBehaviour:
   m_Name: Main1-2-1
   m_EditorClassIdentifier: 
   TxtLine:
-  - c
-  - "\u83B1\u6587\uFF1A\u6628\u5929\u7684\u4E8B\u7B80\u76F4\u5C31\u662F\u4E00\u573A\u5669\u68A6\uFF0C\u5BF9\u5427\u3002{Laugh}"
+  - ->c
+  - "\u83B1\u6587\uFF1A\u6628\u5929\u7684\u4E8B\u7B80\u76F4\u5C31\u662F\u4E00\u573A\u5669\u68A6\uFF0C\u5BF9\u5427\u3002@{3}"
   - "\u83B1\u6587\uFF1A\u552F\u4E00\u7684\u597D\u6D88\u606F\u662F\uFF0C\u65E0\u8BBA\u6211\u4EEC\u5F97\u51FA\u4E86\u4EC0\u4E48\u7ED3\u8BBA\u90FD\u6CA1\u6709\u5FC5\u8981\u7ACB\u523B\u5206\u4EAB\u3002"
   - "\u83B1\u6587\uFF1A\u73B0\u5728\u6211\u4EEC\u624B\u5934\u4E0A\u6700\u5BBD\u88D5\u7684\u662F\u65F6\u95F4\uFF0C\u6700\u7A00\u7F3A\u7684\u4E5F\u662F\u3002"
   - "\u83B1\u6587\uFF1A\u6211\u4E0D\u5F97\u4E0D\u63D0\u51FA\u4E00\u4E2A\u7591\u95EE\uFF0C\u961F\u957F\u3002"
   - "\u83B1\u6587\uFF1A\u8FD9\u6837\u7684\u4E8B\u60C5\u4F1A\u518D\u6B21\u53D1\u751F\u5417\uFF1F"
-  - choice
+  - ${Choice}
+  data:
+  - cn: "\u6628\u5929\u7684\u4E8B\u7B80\u76F4\u5C31\u662F\u4E00\u573A\u5669\u68A6\uFF0C\u5BF9\u5427\u3002"
+    en: What happened yesterday was basically a nightmare, right?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u552F\u4E00\u7684\u597D\u6D88\u606F\u662F\uFF0C\u65E0\u8BBA\u6211\u4EEC\u5F97\u51FA\u4E86\u4EC0\u4E48\u7ED3\u8BBA\u90FD\u6CA1\u6709\u5FC5\u8981\u7ACB\u523B\u5206\u4EAB\u3002"
+    en: "The only good news is that whatever conclusions we reached, we don\u2019t
+      have to disclose them right away."
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u73B0\u5728\u6211\u4EEC\u624B\u5934\u4E0A\u6700\u5BBD\u88D5\u7684\u662F\u65F6\u95F4\uFF0C\u6700\u7A00\u7F3A\u7684\u4E5F\u662F\u3002"
+    en: "We have more time than anything else, yet it\u2019s the one thing we\u2019re
+      running out of the fastest."
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u4E0D\u5F97\u4E0D\u63D0\u51FA\u4E00\u4E2A\u7591\u95EE\uFF0C\u961F\u957F\u3002"
+    en: I have to ask you a question, Captain.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u8FD9\u6837\u7684\u4E8B\u60C5\u4F1A\u518D\u6B21\u53D1\u751F\u5417\uFF1F"
+    en: Will something like this happen again?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 4
+    expression: 3
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: ffadd1f1afccf6647bf6ec35d742831f, type: 2}
   Option2: {fileID: 11400000, guid: 3806d04cd99e15449bee9751ffadc78d, type: 2}
   Option3: {fileID: 0}
@@ -27,5 +120,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

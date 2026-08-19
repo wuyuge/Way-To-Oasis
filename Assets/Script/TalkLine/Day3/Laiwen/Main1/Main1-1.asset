@@ -13,13 +13,33 @@ MonoBehaviour:
   m_Name: Main1-1
   m_EditorClassIdentifier: 
   TxtLine:
-  - /CheckEveryOneLive
-  Option1: {fileID: 11400000, guid: be7374de90b2f5a42b56c7b38e7bed4f, type: 2}
-  Option2: {fileID: 11400000, guid: 12605afd0e87e294881adfff5adc008c, type: 2}
+  - ${CheckSomeBodyDead}
+  - ${CheckSomeBodyDead}
+  - ${CheckSomeBodyDead}
+  data:
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 0f000000
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+  Option1: {fileID: 11400000, guid: 12605afd0e87e294881adfff5adc008c, type: 2}
+  Option2: {fileID: 11400000, guid: be7374de90b2f5a42b56c7b38e7bed4f, type: 2}
   Option3: {fileID: 0}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

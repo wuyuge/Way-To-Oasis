@@ -13,12 +13,74 @@ MonoBehaviour:
   m_Name: Main2-End
   m_EditorClassIdentifier: 
   TxtLine:
-  - p
+  - ->p
   - "\u2026\u2026"
-  - c
-  - "\u6D1B\u5C14\u574E\uFF1A\u6211\u6709\u65F6\u5019\u4F1A\u60F3\uFF0C\u5982\u679C\u6211\u7684\u6280\u672F\u518D\u597D\u4E00\u70B9\uFF0C\u662F\u4E0D\u662F\u6211\u4EEC\u65E9\u5C31\u80FD\u51FA\u53BB\u4E86\u3002"
+  - ->c
+  - "\u6D1B\u5C14\u574E\uFF1A\u6211\u6709\u65F6\u5019\u4F1A\u60F3\uFF0C\u5982\u679C\u6211\u7684\u6280\u672F\u518D\u597D\u4E00\u70B9\uFF0C\u662F\u4E0D\u662F\u6211\u4EEC\u65E9\u5C31\u80FD\u51FA\u53BB\u4E86\u3002@{1}"
   - "\u6D1B\u5C14\u574E\uFF1A\u4E3A\u4EC0\u4E48\u6211\u505A\u4E0D\u5230\u3002"
-  - choice
+  - ${Choice}
+  data:
+  - cn: "\u2026\u2026"
+    en: "\u2026"
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 1
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u6211\u6709\u65F6\u5019\u4F1A\u60F3\uFF0C\u5982\u679C\u6211\u7684\u6280\u672F\u518D\u597D\u4E00\u70B9\uFF0C\u662F\u4E0D\u662F\u6211\u4EEC\u65E9\u5C31\u80FD\u51FA\u53BB\u4E86\u3002"
+    en: Sometimes I think that if my skills were a little better, maybe we would
+      have gotten out long ago.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: "\u4E3A\u4EC0\u4E48\u6211\u505A\u4E0D\u5230\u3002"
+    en: Why can I not do it?
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 5
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 10000000
+    onlyCode: 1
+    speaker: 5
+    expression: 1
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
   Option1: {fileID: 11400000, guid: 71743bbae02b46541b5df93089a520fc, type: 2}
   Option2: {fileID: 11400000, guid: 611751f6bb96e5d4ead05ce7eb636139, type: 2}
   Option3: {fileID: 0}
@@ -26,5 +88,6 @@ MonoBehaviour:
   SpecialTalk2: {fileID: 0}
   Weight: 0
   Weight_tag: 0
-  Day1Eat: 0
+  Eat: 0
   GeneralBool: 0
+  isEn: 0

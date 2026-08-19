@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
+    <file url="file://$PROJECT_DIR$/Assets/Script/Be7/Be7Text.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Character/CharacterExpression.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/CharacterImageManager.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/LoadingSwitch.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/SaveManager/PlayerSaveData.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/SaveManager/RestoreSence.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/SaveManager/SaveConstants.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/SaveManager/SaveManager.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/SaveManager/SavingManager.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/SaveMenu/SaveMenu.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/Saves/SaveDataManager.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/DataManager/SettingDataManager.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/DayNightSystem.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/DeveloperSetting/DeveloperDebuger.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/EndingsManager.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/MiniCharacter/MiniCharacterManager.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/MiniCharacter/MiniCharacterTalkSys.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/MiniCharacter/TalkBarLinker.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/New_Game.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Progress.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Rain/RandomRain.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/SetPlayerName.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Setting/Video/Anti.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Setting/Video/AntiQuality.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Setting/Video/SetFPS.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Setting/Video/SetScreenMode.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Setting/Video/SetScreenResolution.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Setting/Video/VSyncSetting.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Shop/ShopCharacterManager.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Shop/ShopCharacterSelect.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Shop/ShopManager.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Skip.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/TalkLine/Day0/aimi bojin/aimibo.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/TalkLine/IntermissionManager/IntermissionManager.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/TalkLine/Start/StartImportLine.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/TalkLine/TalkSystem.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Text/Report.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/UI/BackGroundMove/BackGroundMoving.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/UI/Character.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/UI/DownBar.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/UI/Menu/FpsCalculator.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/UI/Menu/TextSizeManager.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/UI/Menu/TextSpeedManager.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/UI/Obj/ObjectManager.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/UI/UIshake.cs" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Shader/Break.shader" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Shader/Circle.shader" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Shader/EdgeShader.shader" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Shader/Error.shader" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/Assets/Shader/Noise.shader" charset="GB18030" />
+  </component>
+</project>
