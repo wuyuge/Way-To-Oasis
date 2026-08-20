@@ -44,7 +44,7 @@ public class SwitchShop : SwitchCommand
                 _talkSys.ShopCharaBar.SetActive(true);
                 _talkSys.ShopCharaBar.GetComponent<Animator>().SetTrigger("Up");
                 _talkSys.ShopCharaBar.GetComponent<ShopCharacterManager>().KillSB();
-                _talkSys.on = false;
+                GlobalData.NewTalkSysShowText.LockOutPut();
                 break;
             case FunctionCode.Function.D:
                 //换尸体接口
@@ -57,7 +57,7 @@ public class SwitchShop : SwitchCommand
                     _talkSys.ShopCharaBar.SetActive(true);
                     _talkSys.ShopCharaBar.GetComponent<Animator>().SetTrigger("Up");
                     _talkSys.ShopCharaBar.GetComponent<ShopCharacterManager>().SelectBody();
-                    _talkSys.on = false;
+                    GlobalData.NewTalkSysShowText.LockOutPut();
                     return;
 
 

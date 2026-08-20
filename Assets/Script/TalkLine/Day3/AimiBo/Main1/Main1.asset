@@ -34,6 +34,7 @@ MonoBehaviour:
     cgNum: 0
     minigameType: 0
     uncomfortType: 0
+    audioEffect: 0
   - cn: 
     en: 
     cnHaveBranch: 0
@@ -50,6 +51,7 @@ MonoBehaviour:
     cgNum: 0
     minigameType: 0
     uncomfortType: 0
+    audioEffect: 0
   - cn: 
     en: 
     cnHaveBranch: 0
@@ -66,8 +68,9 @@ MonoBehaviour:
     cgNum: 0
     minigameType: 0
     uncomfortType: 0
-  Option1: {fileID: 11400000, guid: 38997a1b6da9ed345b0883de9447591c, type: 2}
-  Option2: {fileID: 11400000, guid: fd23b1a20fc256246bf9f92343c2e75b, type: 2}
+    audioEffect: 0
+  Option1: {fileID: 11400000, guid: fd23b1a20fc256246bf9f92343c2e75b, type: 2}
+  Option2: {fileID: 11400000, guid: 38997a1b6da9ed345b0883de9447591c, type: 2}
   Option3: {fileID: 11400000, guid: f26043ce983e65c478ccd226f446c39e, type: 2}
   SpecialTalk: {fileID: 0}
   SpecialTalk2: {fileID: 0}

@@ -209,7 +209,7 @@ public class RestoreSence : MonoBehaviour
         }
 
         
-        if (_curData.day == 1 && (_curData.stage == 1 || _curData.stage == 2)) //day1对话阶段，禁止负重阶段起始对话
+        if (_curData.day == 1) //day1对话阶段，禁止负重阶段起始对话
         {
             mainTalkSys.HideBar();
             mainInterMission.Lines.RemoveAt(0);

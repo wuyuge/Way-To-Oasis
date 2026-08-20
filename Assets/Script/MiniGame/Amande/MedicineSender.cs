@@ -49,6 +49,11 @@ public class MedicineSender : MonoBehaviour
             return;
         }
         _containNum++;
+        var animNum = _containNum;
+        if (animNum >= 4)
+        {
+            _containNum = 4;
+        }
         if (medicineObject != null)
         {
             composer.container.Add(medicineObject);
@@ -64,7 +69,7 @@ public class MedicineSender : MonoBehaviour
                 compete = true;
             }
         }
-        liquid.SetInteger("contain",_containNum);
+        liquid.SetInteger("contain",animNum);
     }
     
 

@@ -36,6 +36,7 @@ MonoBehaviour:
     cgNum: 0
     minigameType: 0
     uncomfortType: 0
+    audioEffect: 0
   - cn: "\u4E0D\u4F1A\uFF0C\u75DB\u82E6\u6BEB\u65E0\u7528\u5904\u3002"
     en: I will not. Pain is useless.
     cnHaveBranch: 0
@@ -52,6 +53,7 @@ MonoBehaviour:
     cgNum: 0
     minigameType: 0
     uncomfortType: 0
+    audioEffect: 0
   - cn: "\u968F\u4FBF\u4F60\u600E\u4E48\u8BF4\u3002"
     en: Say whatever you want.
     cnHaveBranch: 0
@@ -68,6 +70,7 @@ MonoBehaviour:
     cgNum: 0
     minigameType: 0
     uncomfortType: 0
+    audioEffect: 0
   - cn: 
     en: 
     cnHaveBranch: 0
@@ -77,13 +80,14 @@ MonoBehaviour:
     isPlayerTalking: 0
     isAside: 0
     codes: 17000000
-    onlyCode: 0
+    onlyCode: 1
     speaker: 2
     expression: 0
     showCg: 0
     cgNum: 0
     minigameType: 0
     uncomfortType: 0
+    audioEffect: 0
   Option1: {fileID: 11400000, guid: 0da54080b77b64f46bd20a963f8d843b, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

@@ -36,6 +36,25 @@ MonoBehaviour:
     showCg: 0
     cgNum: 0
     minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u672A\u63A5\u6536\u5230\u4FE1\u53F7\uFF0C\u65E0\u6CD5\u89C4\u5212\u8DEF\u7EBF\u3002"
+    en: No signals received. Unable to plan a route.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 2
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   - cn: "\u4F60\u8FD8\u6709\u4E8B\uFF1F\u8BC6\u76F8\u70B9\u6EDA\u5427\u3002"
     en: Do you need anything else? Be smart and get lost.
     cnHaveBranch: 0
@@ -51,6 +70,8 @@ MonoBehaviour:
     showCg: 0
     cgNum: 0
     minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   - cn: 
     en: 
     cnHaveBranch: 0
@@ -66,6 +87,8 @@ MonoBehaviour:
     showCg: 0
     cgNum: 0
     minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   Option1: {fileID: 0}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

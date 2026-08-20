@@ -38,7 +38,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha: 1
-    - _BreakAmount: 10.00002
+    - _BreakAmount: 0
     - _DepthOffset: -0.226
     - _DissolveThreshold: 0.36
     - _EdgeIntensity: 5

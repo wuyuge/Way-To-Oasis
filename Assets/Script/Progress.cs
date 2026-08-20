@@ -174,7 +174,7 @@ public class Progress : MonoBehaviour
     {
         if(day_num == 0 && food && !Day0MaskUsed)
         {
-            DownBar.GetComponent<ObjectManager>().CheckEat(false);
+            GlobalData.ObjectManager.CheckEat(false);
         }
 
         /*if(SwitchPlaying)
@@ -369,7 +369,7 @@ public class Progress : MonoBehaviour
             if (day_num == 0)
             {
                 // 检查是否满足进食条件（若未满足，不执行阶段切换）
-                if (!DownBar.GetComponent<ObjectManager>().CheckEat(false))
+                if (!GlobalData.ObjectManager.CheckEat(false))
                 {
                     day0FoodTalkTips.SetActive(true);
                     return;  // 退出方法，不切换阶段
@@ -382,7 +382,13 @@ public class Progress : MonoBehaviour
                 Final_Food.Weight = 0;
             }
             else
-            { allEat = DownBar.GetComponent<ObjectManager>().CheckEat(true); } // 判断哪个角色没有进食并将其状态设为死亡}
+            {
+                allEat = GlobalData.ObjectManager.CheckEat(true);
+                if (GlobalData.EndingsManager.CheckEnding())
+                {
+                    return;
+                }
+            } // 判断哪个角色没有进食并将其状态设为死亡}
             if (day_num != 0)
                 afterFood[day_num] = GetComponent<IntermissionManager>().AddTextLine("AfterFood");
 
@@ -737,5 +743,6 @@ public static class GlobalData
     public static bool OnMiniGame { get; set; }
     public static AdditionAudioEffect AudioEffect { get; set; }
     public static EndingsManager EndingsManager {get; set; }
+    public static ObjectManager ObjectManager { get; set; }
 }
 

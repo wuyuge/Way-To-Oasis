@@ -96,7 +96,17 @@ public class TutorialControl : MonoBehaviour
 
     public void Shake()
     {
-        tutorials[_currentId].tutorialObject.GetComponent<Animator>().SetTrigger("Shake");
+        // 空保护：教程未显示 / 索引越界 / 对象为空直接返回，不执行逻辑
+        if (!TutorialManager.TutorialIsShow) return;
+        if (_currentId < 0 || _currentId >= tutorials.Count) return;
+
+        var t = tutorials[_currentId];
+        if (t == null || t.tutorialObject == null) return;
+    
+        Animator anim = t.tutorialObject.GetComponent<Animator>();
+        if (anim == null) return;
+
+        anim.SetTrigger("Shake");
     }
 
 

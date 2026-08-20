@@ -432,7 +432,7 @@ public class Character : MonoBehaviour
         //day0角色资料显示逻辑
         if (GlobalData.Progress.day_num == 0 && !Have_ShowInfo)
         {
-
+            talksys.showText.CanShowText = true;
             if(CharacterName == "艾米莉")
             {
                 gameObject.GetComponent<Aimibo>().ShowInfo("艾米莉");

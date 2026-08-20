@@ -24,20 +24,29 @@ public class Report : MonoBehaviour
         {
             showdead += "<color=#ff0000ff>";
             var addText = string.Empty;
+            
+            // 新增：记录已经打印过的角色，用来去重
+            HashSet<string> printedChara = new HashSet<string>();
+
             foreach (string s in CurrentDead.TxtLine)
             {
-                
+                // 获取当前这条记录对应的角色名
+                string charaName = GetCharaName(s);
+                // 如果为空，或者已经输出过这个角色，直接跳过
+                if (string.IsNullOrEmpty(charaName) || printedChara.Contains(charaName))
+                {
+                    continue;
+                }
+                // 标记该角色已经输出，后续不再打印
+                printedChara.Add(charaName);
+
                 if (s.Contains("博金森"))
                 {
                     addText = GlobalData.Language.isEn ? "You killed " : "你杀死了";
-                    if (showdead.Contains(addText))
-                    {
-                        continue;
-                    }
                     if(s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
-                        showdead += addText + GetCharaName(s) + "\n";
+                        showdead += addText + charaName + "\n";
                     else
-                        showdead += addText + GetCharaName(s);
+                        showdead += addText + charaName;
                 }
                 else if (s.Contains("阿曼德"))
                 {
@@ -45,15 +54,15 @@ public class Report : MonoBehaviour
                     {
                         addText = GlobalData.Language.isEn ? "dead" : "死亡了";
                         if (s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
-                            showdead +=  GetCharaName(s) + $"{addText}\n";
-                        else showdead += GetCharaName(s) + addText;
+                            showdead += charaName + $"{addText}\n";
+                        else showdead += charaName + addText;
                     }
                     else
                     {
                         addText = GlobalData.Language.isEn ? " was starved to death by you" : "被你饿死了";
                         if (s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
-                            showdead += GetCharaName(s) + $"{addText}\n";
-                        else showdead += GetCharaName(s) + addText;
+                            showdead += charaName + $"{addText}\n";
+                        else showdead += charaName + addText;
                     }
                 }
                 else if (s.Contains("艾米莉"))
@@ -63,23 +72,23 @@ public class Report : MonoBehaviour
                     {
                         addText = GlobalData.Language.isEn ? "You killed" : "你杀死了";
                         if (s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
-                            showdead += addText + GetCharaName(s) + "\n";
-                        else showdead += addText + GetCharaName(s);
+                            showdead += addText + charaName + "\n";
+                        else showdead += addText + charaName;
                     }
                     else
                     {
                         addText = GlobalData.Language.isEn ? " was starved to death by you" : "被你饿死了";
                         if (s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
-                            showdead += GetCharaName(s) + $"{addText}\n";
-                        else showdead += GetCharaName(s) + addText;
+                            showdead += charaName + $"{addText}\n";
+                        else showdead += charaName + addText;
                     }
                 }
                 else
                 {
                     addText = GlobalData.Language.isEn ? " was starved to death by you" : "被你饿死了";
                     if (s != CurrentDead.TxtLine[CurrentDead.TxtLine.Count - 1])
-                        showdead += GetCharaName(s) + $"{addText}\n";
-                    else showdead += GetCharaName(s) + addText;
+                        showdead += charaName + $"{addText}\n";
+                    else showdead += charaName + addText;
                 }
             }
             showdead += "</color>";
@@ -124,6 +133,4 @@ public class Report : MonoBehaviour
         }
         return string.Empty;
     }
-    
-    
 }

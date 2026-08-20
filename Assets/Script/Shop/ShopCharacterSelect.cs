@@ -48,7 +48,7 @@ public class ShopCharacterSelect : MonoBehaviour
             FinalBody.Weight += 1;
             TalkSys.GetComponent<TalkSystem>();
             _ = SetAnimation();
-
+            GlobalData.NewTalkSysShowText.UnLockOutPut();
 
         }
         else//ÄÃÊ¬Ìå»»Ê³Îï
@@ -72,6 +72,7 @@ public class ShopCharacterSelect : MonoBehaviour
             TalkSys.GetComponent<TalkSystem>().DownBar.GetComponent<ObjectManager>().Food_Text.text = FinalFood.Weight.ToString();
             TalkSys.GetComponent<TalkSystem>().DownBar.GetComponent<ObjectManager>().Body_Text.text = FinalBody.Weight.ToString();
             _ = SetAnimation();
+            GlobalData.NewTalkSysShowText.UnLockOutPut();
 
         }
 

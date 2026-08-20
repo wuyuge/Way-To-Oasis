@@ -36,6 +36,7 @@ MonoBehaviour:
     cgNum: 0
     minigameType: 0
     uncomfortType: 0
+    audioEffect: 0
   - cn: "\u4F60\u5728\u6240\u6709\u4EBA\u90FD\u6CA1\u6709\u6765\u7684\u53CA\u9632\u5907\u7684\u60C5\u51B5\u4E0B\uFF0C\u7528\u6700\u5FEB\u7684\u901F\u5EA6\u6740\u6B7B\u4E86\u83B1\u6587\u3002"
     en: Before anyone has time to prepare, you kill Levine as quickly as possible.
     cnHaveBranch: 0
@@ -52,6 +53,24 @@ MonoBehaviour:
     cgNum: 0
     minigameType: 0
     uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u4E0D\u7B97\u516C\u6B63\uFF0C\u4F46\u6548\u7387\u5F88\u9AD8\u3002"
+    en: It is not fair, but it is efficient.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 1
+    codes: 
+    onlyCode: 0
+    speaker: 0
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   - cn: 
     en: 
     cnHaveBranch: 0
@@ -60,7 +79,7 @@ MonoBehaviour:
     enBranch: []
     isPlayerTalking: 0
     isAside: 0
-    codes: 17000000
+    codes: 18000000
     onlyCode: 1
     speaker: 6
     expression: 0
@@ -68,6 +87,58 @@ MonoBehaviour:
     cgNum: 0
     minigameType: 0
     uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u5E0C\u671B\u4F60\u4E0D\u4F1A\u56E0\u6B64\u540E\u6094\u3002"
+    en: I hope you will not regret this.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: "\u6211\u60F3\u6211\u4EEC\u5F88\u5FEB\u5C31\u4F1A\u518D\u89C1\u7684\u3002"
+    en: I think we will meet again very soon.
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 
+    onlyCode: 0
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
+  - cn: 
+    en: 
+    cnHaveBranch: 0
+    cnBranch: []
+    enHaveBranch: 0
+    enBranch: []
+    isPlayerTalking: 0
+    isAside: 0
+    codes: 2000000031000000
+    onlyCode: 1
+    speaker: 6
+    expression: 0
+    showCg: 0
+    cgNum: 0
+    minigameType: 0
+    uncomfortType: 0
+    audioEffect: 0
   Option1: {fileID: 11400000, guid: 809cfbfa1454deb438b26fa81d2b57f4, type: 2}
   Option2: {fileID: 0}
   Option3: {fileID: 0}

@@ -80,6 +80,7 @@ public class SwitchSet : SwitchCommand
                 _talkSys.DeadName.TxtLine.Remove("博金森");
                 _talkSys.UsedBody.TxtLine.Add("博金森Used");
                 _talkSys.characterComponentList[1].CantWeight = true;
+                GlobalData.ObjectManager.Final_Body.Weight -= 1;
                 break;
             case FunctionCode.Function.K:
                 //Day0开启切换阶段
